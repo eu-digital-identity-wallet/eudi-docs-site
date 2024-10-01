@@ -1,0 +1,53 @@
+name: Detect markdown file changes and trigger build action
+
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - closed
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true
+
+    outputs:
+      mutation: ${{ steps.check_md_files.outputs.result }}
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2  # Fetch at least two commits
+
+      - name: Set up git
+        run: |
+          git config --global user.email "actions@github.com"
+          git config --global user.name "GitHub Actions"
+
+      - name: Check for changed markdown files
+        id: check_md_files
+        run: |
+          echo "Checking for changes in the latest push."
+          if git rev-parse HEAD^ >/dev/null 2>&1; then
+            echo "Check for changes between the last two commits."
+            if git diff --name-only HEAD^ HEAD | grep '\.md$'; then
+              echo "result=md-files-changed" >> "$GITHUB_OUTPUT"
+            fi
+          else
+            echo "First commit detected, checking only HEAD."
+            # Check only the current commit.
+            if git diff --name-only HEAD | grep '\.md$'; then
+              echo "result=md-files-changed" >> "$GITHUB_OUTPUT"
+            fi
+          fi
+
+      - name: Trigger build action if markdown files are changed
+        if: steps.check_md_files.outputs.result == 'md-files-changed'
+        run: |
+          curl -X POST \
+          -H "Authorization: token ${{ secrets.PAT }}" \
+          -H "Accept: application/vnd.github.v3+json" \
+          https://api.github.com/repos/30fyllos/multi-repo-md/dispatches \
+          -d '{"event_type": "trigger-build"}'
+          echo "Event dispatched successfully."

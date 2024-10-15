@@ -6,7 +6,7 @@
 # EU Digital Identity Wallet
 ## Digital Identity Regulation
 
-Under the [Electronic Identification, Authentication and Trust Services (eIDAS) Regulation](https://digital-strategy.ec.europa.eu/en/policies/eidas-regulation), EU Member States may, on a voluntary basis, notify and recognise, national electronic identification schemes in their Member States. The recognition of notified electronic identification became mandatory in 2018.
+:smile: :heavy_exclamation_mark: Under the [Electronic Identification, Authentication and Trust Services (eIDAS) Regulation](https://digital-strategy.ec.europa.eu/en/policies/eidas-regulation), EU Member States may, on a voluntary basis, notify and recognise, national electronic identification schemes in their Member States. The recognition of notified electronic identification became mandatory in 2018.
 Yet, there is no requirement for Member States to develop a national electronic identification and to make it interoperable with those in other Member States. This has led to discrepancies between countries.
 The new Regulation on digital identity addresses shortcomings in eIDAS by improving the effectiveness of the framework and extending its benefits to the private sector.
 Member States will offer citizens and businesses digital wallets that will be able to link various aspects of their national digital identities. These may be provided by public authorities or the private sector, if they are recognized by the Member States.
@@ -18,6 +18,18 @@ The EU Digital Identity Wallet will be:
 * **controlled by users**: The EU Digital Identity Wallets will enable people to choose and keep track of their identity, data and certificates which they share with third parties. Anything which is not necessary to share will not be shared.
 
 Consumers should also be able to access services online without having to use private platforms or unnecessarily sharing personal data. They will have full control of the data they share.
+
+The released software is an initial development release version:
+
+-  The initial development release is an early endeavor reflecting the efforts of a short timeboxed period, and by no means can be considered as the final product.
+-  The initial development release may be changed substantially over time, might introduce new features but also may change or remove existing ones, potentially breaking compatibility with your existing code.
+-  The initial development release is limited in functional scope.
+-  The initial development release may contain errors or design flaws and other problems that could cause system or other failures and data loss.
+-  The initial development release has reduced security, privacy, availability, and reliability standards relative to future releases. This could make the software slower, less reliable, or more vulnerable to attacks than mature software.
+-  The initial development release is not yet comprehensively documented.
+-  Users of the software must perform sufficient engineering and additional testing in order to properly evaluate their application and determine whether any of the open-sourced components is suitable for use in that application.
+-  We strongly recommend to not put this version of the software into production use.
+-  Only the latest version of the software will be supported
 
 ## Architecture and Reference Framework
 

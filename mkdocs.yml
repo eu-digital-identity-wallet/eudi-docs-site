@@ -1,11 +1,12 @@
-site_name: DEVELOPER HUB
+site_name: DEVELOPERS HUB
 theme:
   name: material
   font:
     text: Roboto
-  logo: assets/flag_black_white_low.jpg
+  logo: assets/normal-reproduction-low-resolution.jpg
   favicon: assets/normal-reproduction-low-resolution.jpg
   palette:
+    - primary: primary
     # Palette toggle for automatic mode
     - media: "(prefers-color-scheme)"
       toggle:
@@ -136,7 +137,7 @@ nav:
           - Travel Scenario: eudi-web-booking-service-demo/README.md
           - Payment Scenario: temp/coming_soon_4.md
           - rQES Scenario: temp/coming_soon_5.md
-      - Roadmap for the development of RI: https://github.com/orgs/eu-digital-identity-wallet/projects/24
+      - Roadmap for the development of RI: roadmap-of-development-of-ri.md
   - How TOs:
       - How to for Wallet Provider:
           - Android:

@@ -123,16 +123,22 @@ plugins:
             - '**/*.png'
 
 nav:
+  - About:
+      - Contributions: CONTRIBUTIONS.md
+      - Code of Conduct: code-of-conduct.md
+      - Licensing: 
+          - Libraries and tools: license.md
+          - UI applications: license-ui.md
   - Getting started:
       - Introduction: getting-started.md
-      - Get Started as a Wallet Provider: temp/coming_soon.md
-      - Get Started as an Issuer Provider: temp/coming_soon_1.md
-      - Get Started as a Verifier Provider: temp/coming_soon_2.md
+      - Get Started as a Wallet Provider: getting-started-wallet-provider.md
+      - Get Started as an Issuer Provider: getting-started-issuer-provider.md
+      - Get Started as a Verifier Provider: getting-started-verifier-provider.md
       - How to use the wallet as is:
-          - Android: eudi-app-android-wallet-ui/README.md
-          - iOS: eudi-app-ios-wallet-ui/README.md
+          - Android: eudi-app-android-wallet-ui/how-to-use-app.md
+          - iOS: eudi-app-ios-wallet-ui/how-to-use-app.md
   - Specifications:
-      - Architecture Reference Framework: temp/coming_soon_3.md
+      - Architecture Reference Framework: arf_intro.md
       - Use cases:
           - Travel Scenario: eudi-web-booking-service-demo/README.md
           - Payment Scenario: temp/coming_soon_4.md
@@ -150,11 +156,12 @@ nav:
       - How to for Verifier Provider: temp/coming_soon_7.md
       - Issuing Attestations: temp/coming_soon_8.md
   - Tools:
-      - Libraries: temp/coming_soon_9.md
+      - Libraries: 
+          - Android: temp/coming_soon_9.md
+          - iOS: temp/coming_soon_10.md
       - Core: temp/coming_soon_10.md
+          - Android: temp/coming_soon_9.md
+          - iOS: temp/coming_soon_10.md
       - Verifier: temp/coming_soon_11.md
       - Issuer: temp/coming_soon_12.md
       - Test Suite: temp/coming_soon_13.md
-  - Contribution:
-      - Code of Conduct and Contributions: temp/coming_soon_14.md
-      - Licensing: temp/coming_soon_15.md

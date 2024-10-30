@@ -124,7 +124,7 @@ plugins:
 
 nav:
   - About:
-      - Contributions: contributions.md
+      - Contributions: CONTRIBUTIONS.md
       - Code of Conduct: code-of-conduct.md
       - Licensing: 
           - Libraries and tools: license.md

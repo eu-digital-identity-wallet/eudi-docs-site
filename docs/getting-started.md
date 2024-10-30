@@ -24,7 +24,8 @@ Let's start with your implementation!
 
 | Role        | Description | Get Started     |
 | :---        | :---        | :---            |
-| Wallet Provider      | Build EUDI Wallet applications available for end users       | [Link to How To - Wallets]()        |
+| Wallet Provider      | Build EUDI Wallet applications available for end users       | [Android Wallet Provider](../eudi-app-android-wallet-ui/wiki/how_to_build/)
+[iOS Wallet Provider](../eudi-app-ios-wallet-ui/wiki/how_to_build/)        |
 | Issuer   | Build trusted applications that can issue attributes and attestations to EUDI Wallets according to the protocols and interfaces of the EUDI Wallet framework        | [Link to How To - Issuer]()      |
 | Relying Party   | Build trusted applications that can request attributes and attestations from EUDI Wallets according to the protocols and interfaces of the EUDI Wallet framework       | [Link to How To - Verifier]()        |
 

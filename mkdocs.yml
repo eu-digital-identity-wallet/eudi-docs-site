@@ -138,7 +138,7 @@ nav:
           - Android: eudi-app-android-wallet-ui/how-to-use-app.md
           - iOS: eudi-app-ios-wallet-ui/how-to-use-app.md
   - Specifications:
-      - Architecture Reference Framework: arf_intro.md
+      - Architecture Reference Framework: arf-intro.md
       - Use cases:
           - Travel Scenario: eudi-web-booking-service-demo/README.md
           - Payment Scenario: temp/coming_soon_4.md
@@ -152,16 +152,16 @@ nav:
           - iOS:
               - iOS wallet ui: eudi-app-ios-wallet-ui/wiki/how_to_build.md
               - iOS core: eudi-lib-ios-wallet-kit/README.md
-      - How to for Issuer Provider: temp/coming_soon_6.md
-      - How to for Verifier Provider: temp/coming_soon_7.md
-      - Issuing Attestations: temp/coming_soon_8.md
+      - How to for Issuer Provider: eudi-srv-web-issuing-eudiw-py/blob/main/README.md
+      - How to for Verifier Provider: eudi-web-verifier/blob/main/README.md
+      - Issuing Attestations: eudi-srv-web-issuing-eudiw-py/blob/main/api_docs/add_credential.md
   - Tools:
       - Libraries: 
           - Android: temp/coming_soon_9.md
           - iOS: temp/coming_soon_10.md
       - Core:
-          - Android: temp/coming_soon_9.md
-          - iOS: temp/coming_soon_10.md
+          - Android: eudi-lib-android-wallet-core/blob/main/README.md
+          - iOS: eudi-lib-ios-wallet-kit/blob/main/README.md
       - Verifier: temp/coming_soon_11.md
       - Issuer: temp/coming_soon_12.md
       - Test Suite: temp/coming_soon_13.md

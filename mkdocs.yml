@@ -159,7 +159,7 @@ nav:
       - Libraries: 
           - Android: temp/coming_soon_9.md
           - iOS: temp/coming_soon_10.md
-      - Core: temp/coming_soon_10.md
+      - Core:
           - Android: temp/coming_soon_9.md
           - iOS: temp/coming_soon_10.md
       - Verifier: temp/coming_soon_11.md

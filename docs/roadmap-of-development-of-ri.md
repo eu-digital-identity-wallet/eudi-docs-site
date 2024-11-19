@@ -1,11 +1,7 @@
 # EUDI Wallet Public Roadmap
 
-As of September 2024 the Roadmap of EUDI Wallet was made available in order for the community to:
+Roadmap of the EUDI Wallet reference implementation provides a transparent view of the features and enhancements that are currently being developed or planned to the future. Its purpose is to promote open communication and collaboration in our community.
 
-	- be aware of the upcoming changes in the Reference Implementation,
-	
-	- be able to affect the upcoming changes in the Reference Implementation through suggestions and proposals, and
-	
-	- have the opportunity to contribute in the upcoming changes
+V[iew the roadmap of the EUDI Wallet reference implementation](https://github.com/orgs/eu-digital-identity-wallet/projects/24).
 
-Public Roadmap for the Reference Implementation can be found online [here](https://github.com/orgs/eu-digital-identity-wallet/projects/24){:target="_blank"}
+Engage in discussions around the roadmap in the [Discussions](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/discussions).

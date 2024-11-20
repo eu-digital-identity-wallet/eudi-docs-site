@@ -163,5 +163,5 @@ nav:
           - Android: eudi-lib-android-wallet-core/blob/main/README.md
           - iOS: eudi-lib-ios-wallet-kit/blob/main/README.md
       - Verifier: temp/coming_soon_11.md
-      - Issuer: temp/coming_soon_12.md
-      - Test Suite: temp/coming_soon_13.md
+      - Issuer: tools-issuer.md
+      - Test Suite: test-suite-intro.md

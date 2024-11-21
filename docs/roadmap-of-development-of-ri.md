@@ -1,7 +1,15 @@
-# EUDI Wallet Public Roadmap
+# EUDI Wallet Reference Implementation
 
-Roadmap of the EUDI Wallet reference implementation provides a transparent view of the features and enhancements that are currently being developed or planned to the future. Its purpose is to promote open communication and collaboration in our community.
+The EUDI Wallet Reference Implementation consists of open-source code libraries and a reference application that are publicly available and ready to be used by Member States and stakeholders to build their own applications.
 
-V[iew the roadmap of the EUDI Wallet reference implementation](https://github.com/orgs/eu-digital-identity-wallet/projects/24).
+Its goal is to showcase a robust and interoperable platform for digital identification, authentication and electronic signatures based on common standards across the European Union.
+
+Reference Implementation can be used by wallet providers, issuers and verifiers as a basis for the own solution. It also includes a comprehensive test suite, which contains tools to support testing and ensure that your implementation meets the functional requirements.
+
+## Check out the roadmap to see what new features are coming next
+
+New features are regularly added to the reference implementation. Roadmap of the EUDI Wallet reference implementation provides a transparent view of the features and enhancements that are currently being developed or planned to the future. Its purpose is to promote open communication and collaboration in our community.
+
+[View the roadmap of the EUDI Wallet reference implementation](https://github.com/orgs/eu-digital-identity-wallet/projects/24).
 
 Engage in discussions around the roadmap in the [Discussions](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/discussions).

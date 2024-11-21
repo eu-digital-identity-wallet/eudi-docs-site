@@ -121,6 +121,16 @@ plugins:
           imports:
             - '**/*.md'
             - '**/*.png'
+        - name: eudi-srv-web-issuing-eudiw-py
+          import_url: 'https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py?multi_docs=True&branch=main'
+          imports:
+            - '**/*.md'
+            - '**/*.png'
+        - name: eudi-web-verifier
+          import_url: 'https://github.com/eu-digital-identity-wallet/eudi-web-verifier?multi_docs=True&branch=main'
+          imports:
+            - '**/*.md'
+            - '**/*.png'
 
 nav:
   - Getting started:
@@ -146,9 +156,9 @@ nav:
           - iOS:
               - iOS wallet ui: eudi-app-ios-wallet-ui/wiki/how_to_build.md
               - iOS core: eudi-lib-ios-wallet-kit/README.md
-      - How to for Issuer Provider: eudi-srv-web-issuing-eudiw-py/blob/main/README.md
-      - How to for Verifier Provider: eudi-web-verifier/blob/main/README.md
-      - Issuing Attestations: eudi-srv-web-issuing-eudiw-py/blob/main/api_docs/add_credential.md
+      - How to for Issuer Provider: eudi-srv-web-issuing-eudiw-py/README.md
+      - How to for Verifier Provider: eudi-web-verifier/README.md
+      - Issuing Attestations: eudi-srv-web-issuing-eudiw-py/api_docs/add_credential.md
   - Test Suite:
       - Libraries: 
           - Android: tools-lib-android.md

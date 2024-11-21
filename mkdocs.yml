@@ -123,12 +123,6 @@ plugins:
             - '**/*.png'
 
 nav:
-  - About:
-      - Contributions: CONTRIBUTIONS.md
-      - Code of Conduct: code-of-conduct.md
-      - Licensing: 
-          - Libraries and tools: license.md
-          - UI applications: license-ui.md
   - Getting started:
       - Introduction: getting-started.md
       - Get Started as a Wallet Provider: getting-started-wallet-provider.md
@@ -155,13 +149,19 @@ nav:
       - How to for Issuer Provider: eudi-srv-web-issuing-eudiw-py/blob/main/README.md
       - How to for Verifier Provider: eudi-web-verifier/blob/main/README.md
       - Issuing Attestations: eudi-srv-web-issuing-eudiw-py/blob/main/api_docs/add_credential.md
-  - Tools:
+  - Test Suite:
       - Libraries: 
-          - Android: temp/coming_soon_9.md
-          - iOS: temp/coming_soon_10.md
+          - Android: tools-lib-android.md
+          - iOS: tools-lib-ios.md
       - Core:
-          - Android: eudi-lib-android-wallet-core/blob/main/README.md
-          - iOS: eudi-lib-ios-wallet-kit/blob/main/README.md
-      - Verifier: temp/coming_soon_11.md
+          - Android: eudi-lib-android-wallet-core/README.md
+          - iOS: eudi-lib-ios-wallet-kit/README.md
+      - Verifier: tools-verifier.md
       - Issuer: tools-issuer.md
       - Test Suite: test-suite-intro.md
+  - About:
+      - Contributions: CONTRIBUTIONS.md
+      - Code of Conduct: code-of-conduct.md
+      - Licensing: 
+          - Libraries and tools: license.md
+          - UI applications: license-ui.md

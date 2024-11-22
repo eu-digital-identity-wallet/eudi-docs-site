@@ -135,19 +135,19 @@ plugins:
 nav:
   - Getting started:
       - Introduction: getting-started.md
-      - Get Started as a Wallet Provider: getting-started-wallet-provider.md
-      - Get Started as an Issuer Provider: getting-started-issuer-provider.md
-      - Get Started as a Verifier Provider: getting-started-verifier-provider.md
+      - Build a Wallet: getting-started-wallet-provider.md
+      - Build an Issuer: getting-started-issuer-provider.md
+      - Build a Verifier: getting-started-verifier-provider.md
       - How to use the wallet as is:
           - Android: eudi-app-android-wallet-ui/how-to-use-app.md
           - iOS: eudi-app-ios-wallet-ui/how-to-use-app.md
   - Specifications:
       - Architecture Reference Framework: arf-intro.md
+      - Reference Implementation: roadmap-of-development-of-ri.md
       - Use cases:
           - Travel Scenario: eudi-web-booking-service-demo/README.md
           - Payment Scenario: temp/coming_soon_4.md
           - rQES Scenario: temp/coming_soon_5.md
-      - Roadmap for the development of RI: roadmap-of-development-of-ri.md
   - How TOs:
       - How to for Wallet Provider:
           - Android:
@@ -156,19 +156,24 @@ nav:
           - iOS:
               - iOS wallet ui: eudi-app-ios-wallet-ui/wiki/how_to_build.md
               - iOS core: eudi-lib-ios-wallet-kit/README.md
-      - How to for Issuer Provider: eudi-srv-web-issuing-eudiw-py/README.md
+      - How to for Issuer Provider: 
+          - General: eudi-srv-web-issuing-eudiw-py/README.md 
+          - New Attestations: eudi-srv-web-issuing-eudiw-py/api_docs/add_credential.md
+          - FAQ: temp/coming_soon_3.md
       - How to for Verifier Provider: eudi-web-verifier/README.md
-      - Issuing Attestations: eudi-srv-web-issuing-eudiw-py/api_docs/add_credential.md
-  - Test Suite:
       - Libraries: 
           - Android: tools-lib-android.md
           - iOS: tools-lib-ios.md
       - Core:
           - Android: eudi-lib-android-wallet-core/README.md
           - iOS: eudi-lib-ios-wallet-kit/README.md
-      - Verifier: tools-verifier.md
+  - Test Suite:
       - Issuer: tools-issuer.md
-      - Test Suite: test-suite-intro.md
+      - Online Verifier: tools-verifier.md
+      - Verifier Application: test-suite-intro.md
+      - Wallet Application:
+          - Android: eudi-app-android-wallet-ui/how-to-use-app.md
+          - iOS: eudi-app-ios-wallet-ui/how-to-use-app.md
   - About:
       - Contributions: CONTRIBUTIONS.md
       - Code of Conduct: code-of-conduct.md

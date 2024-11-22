@@ -1,7 +1,5 @@
 # Build a Wallet
 
-EU Digital Identity Wallets will enable users to access online services, store and share digital documents, and create qualified electronic signatures. 
-	
 The reference implementation offers a comprehensive set of tools, libraries and test services to support and help you with building your own wallet. Let’s get started!
 
 ## Try the ready-made application

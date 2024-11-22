@@ -4,7 +4,7 @@ The reference implementation offers a comprehensive set of tools, libraries and 
 
 ## Try the ready-made application
 
-A reference application for the wallet is available for both Android and iOS. With it, you can familiarize yourself with the application and test its functionalities before starting the development of your own wallet. Instructions for setting up the application can be found [here](../eudi-app-android-wallet-ui/how-to-use-app/).
+A reference application for the wallet is available for both Android and iOS. With it, you can familiarize yourself with the application and test the wallet functionalities before starting the development of your own wallet. Instructions for setting up the application can be found [here](../eudi-app-android-wallet-ui/how-to-use-app/).
 
 ## Use the libraries to build your own wallet
 

@@ -1,5 +1,3 @@
-## Issuance
-
 As part of the test suite, we offer an issuer, that allows you to test various issuance flows of OpenID4VCI with your wallet:
 - Credential Offer
 - Credential Offer Pre-Authorization

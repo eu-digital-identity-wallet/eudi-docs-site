@@ -1,5 +1,7 @@
 # Build a Wallet
 
+EUDI Wallet Providers are Member States of organizations that are mandated or recognized by Member States to make the EUDI Wallet available to end users. They are responsible for providing the EUDI Wallet, which gives users full control over their Person Identification Data (PID) and Electronic Attestations of Attributes (QEAA, PuB-EAA or EAA).
+
 The reference implementation offers a comprehensive set of tools, libraries and test services to support and help you with building your own wallet. Let’s get started!
 
 ## Try the ready-made application

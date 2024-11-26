@@ -142,13 +142,19 @@ nav:
           - Android: eudi-app-android-wallet-ui/how-to-use-app.md
           - iOS: eudi-app-ios-wallet-ui/how-to-use-app.md
   - Specifications:
+      - Introduction: intro-specs.md
       - Architecture Reference Framework: arf-intro.md
-      - Reference Implementation: roadmap-of-development-of-ri.md
+      - Reference Implementation: 
+          - Introduction: roadmap-of-development-of-ri.md
+          - Contributions: CONTRIBUTIONS.md
+          - Code of Conduct: code-of-conduct.md
+          - Licensing: 
+              - Libraries and tools: license.md
+              - UI applications: license-ui.md
       - Use cases:
           - Travel Scenario: eudi-web-booking-service-demo/README.md
-          - Payment Scenario: temp/coming_soon_4.md
-          - rQES Scenario: temp/coming_soon_5.md
   - How TOs:
+      - Introduction: intro-howtos.md
       - How to for Wallet Provider:
           - Android:
               - Android wallet ui: eudi-app-android-wallet-ui/wiki/how_to_build.md
@@ -168,6 +174,7 @@ nav:
           - Android: eudi-lib-android-wallet-core/README.md
           - iOS: eudi-lib-ios-wallet-kit/README.md
   - Test Suite:
+      - Introduction: intro-test-suite.md
       - Issuer: tools-issuer.md
       - Online Verifier: tools-verifier.md
       - Verifier Application: test-suite-intro.md
@@ -175,8 +182,4 @@ nav:
           - Android: eudi-app-android-wallet-ui/how-to-use-app.md
           - iOS: eudi-app-ios-wallet-ui/how-to-use-app.md
   - About:
-      - Contributions: CONTRIBUTIONS.md
-      - Code of Conduct: code-of-conduct.md
-      - Licensing: 
-          - Libraries and tools: license.md
-          - UI applications: license-ui.md
+      - Introduction: intro-about.md

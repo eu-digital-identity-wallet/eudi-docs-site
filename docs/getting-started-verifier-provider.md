@@ -7,18 +7,18 @@ Let’s get started!
 ## Try the test verifier
 
 **Online verifier**
-The reference implementation includes a test online verifier that you can use to familiarise yourself with the functionalities. [Read more here](.tools-verifier)
+The reference implementation includes a test online verifier that you can use to familiarise yourself with the functionalities. [Read more here](../tools-verifier)
 
 **Verifier Application for proximity use**
-The reference implementation of a verifier application can be used in proximity use cases. [Read more here](.tools-verifier-app)
+The reference implementation of a verifier application can be used in proximity use cases. [Read more here](../tools-verifier-app)
 
 ## Use the libraries to build your own verifier
 
-You can start developing the verifier based on the libraries available in the reference implementation. [Read more here](.eudi-web-verifier)
+You can start developing the verifier based on the libraries available in the reference implementation. [Read more here](../eudi-web-verifier)
 
 ## Test your verifier 
 
 The Test Suite offers comprehensive tools to test your own verifier implementation.
 
-- [Test your verifier with the ready made wallet](.eudi-app-android-wallet-ui/how-to-use-app/)
+- [Test your verifier with the ready made wallet](../eudi-app-android-wallet-ui/how-to-use-app/)
 - [Use the test issuer](.tools-issuer)

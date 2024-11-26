@@ -20,6 +20,6 @@ The reference implementation
 
 The Test Suite offers comprehensive tools to test your own wallet implementation. It includes both an Issuer and a Verifier, so you don’t need to build them yourself. With the Test Suite you can
 
-- [Issue crederntials to your wallet](tools-verifier/)
-- [Test your wallet in an online service](url)
-- [Test your wallet with verifier application](url)
+- [Issue crederntials to your wallet](.tools-issuer)
+- [Test your wallet in an online service](.tools-verifier/)
+- [Test your wallet with verifier application]()

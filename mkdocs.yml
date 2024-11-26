@@ -138,9 +138,6 @@ nav:
       - Build a Wallet: getting-started-wallet-provider.md
       - Build an Issuer: getting-started-issuer-provider.md
       - Build a Verifier: getting-started-verifier-provider.md
-      - How to use the wallet as is:
-          - Android: eudi-app-android-wallet-ui/how-to-use-app.md
-          - iOS: eudi-app-ios-wallet-ui/how-to-use-app.md
   - Specifications:
       - Introduction: intro-specs.md
       - Architecture Reference Framework: arf-intro.md
@@ -152,33 +149,30 @@ nav:
               - Libraries and tools: license.md
               - UI applications: license-ui.md
       - Use cases:
+          - Introduction: use-cases.md
           - Travel Scenario: eudi-web-booking-service-demo/README.md
   - How TOs:
       - Introduction: intro-howtos.md
       - How to for Wallet Provider:
+          - How to for Wallet Provider: how-to-wallet.md
           - Android:
               - Android wallet ui: eudi-app-android-wallet-ui/wiki/how_to_build.md
               - Android core: eudi-lib-android-wallet-core/README.md
           - iOS:
               - iOS wallet ui: eudi-app-ios-wallet-ui/wiki/how_to_build.md
               - iOS core: eudi-lib-ios-wallet-kit/README.md
-      - How to for Issuer Provider: 
+      - How to for Issuer: 
           - General: eudi-srv-web-issuing-eudiw-py/README.md 
           - New Attestations: eudi-srv-web-issuing-eudiw-py/api_docs/add_credential.md
           - FAQ: temp/coming_soon_3.md
-      - How to for Verifier Provider: eudi-web-verifier/README.md
-      - Libraries: 
-          - Android: tools-lib-android.md
-          - iOS: tools-lib-ios.md
-      - Core:
-          - Android: eudi-lib-android-wallet-core/README.md
-          - iOS: eudi-lib-ios-wallet-kit/README.md
-  - Test Suite:
-      - Introduction: intro-test-suite.md
+      - How to for Verifier: eudi-web-verifier/README.md
+  - Test Suite: 
+      - Introduction: test-suite.md
       - Issuer: tools-issuer.md
       - Online Verifier: tools-verifier.md
-      - Verifier Application: test-suite-intro.md
-      - Wallet Application:
+      - Verifier Application: eudi-app-android-wallet-ui/wiki/verifier_proximity.md
+      - Wallet:
+          - Wallet: test-suite-wallet.md
           - Android: eudi-app-android-wallet-ui/how-to-use-app.md
           - iOS: eudi-app-ios-wallet-ui/how-to-use-app.md
   - About:

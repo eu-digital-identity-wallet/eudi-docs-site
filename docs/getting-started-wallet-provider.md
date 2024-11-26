@@ -22,4 +22,4 @@ The Test Suite offers comprehensive tools to test your own Wallet implementation
 
 - [Issue credentials to your Wallet](../tools-issuer)
 - [Test your Wallet in an online service](../tools-verifier/)
-- [Test your Wallet with the verifier application](../eudi-app-android-wallet-ui/wiki/verifier_proximity/)
+- [Test your Wallet with the Verifier application](../eudi-app-android-wallet-ui/wiki/verifier_proximity/)

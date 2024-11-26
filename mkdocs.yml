@@ -166,6 +166,7 @@ nav:
       - Online Verifier: tools-verifier.md
       - Verifier Application: eudi-app-android-wallet-ui/wiki/verifier_proximity.md
       - Wallet:
+          - Wallet: test-suite-wallet.md
           - Android: eudi-app-android-wallet-ui/how-to-use-app.md
           - iOS: eudi-app-ios-wallet-ui/how-to-use-app.md
   - About:

@@ -10,20 +10,11 @@ The reference implementation includes a test Issuer that you can use to familiar
 
 ## Use the libraries to build your own Issuer
 
-<<<<<<< HEAD
-You can start developing the issuer based on the libraries available in the reference implementation. [Learn more](../eudi-srv-web-issuing-eudiw-py)
-=======
-You can start developing the Issuer based on the libraries available in the reference implementation. [Learn more](.eudi-srv-web-issuing-eudiw-py)
->>>>>>> 7570dc5ac7cbc4e069e361ed210408ef887b53b7
+You can start developing the Issuer based on the libraries available in the reference implementation. [Learn more](../eudi-srv-web-issuing-eudiw-py)
 
 ## Test your Issuer
 
 The Test Suite offers comprehensive tools to test your own Issuer implementation. With the Test Suite you can
 
-<<<<<<< HEAD
-- [Issue crederntials to a ready-made test wallet](../test-suite-wallet.md)
-- [Verify the credentials issued by your solution with an online verifier](../tools-verifier/)
-=======
-- [Issue crederntials to a ready-made test Wallet](.test-suite-wallet.md)
-- [Verify the credentials issued by your solution with an online Verifier](.tools-verifier/)
->>>>>>> 7570dc5ac7cbc4e069e361ed210408ef887b53b7
+- [Issue crederntials to a ready-made test Wallet](../test-suite-wallet.md)
+- [Verify the credentials issued by your solution with an online Verifier](../tools-verifier/)

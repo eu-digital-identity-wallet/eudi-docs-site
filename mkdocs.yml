@@ -141,12 +141,14 @@ nav:
   - Specifications:
       - Architecture Reference Framework: arf-intro.md
       - Reference Implementation: roadmap-of-development-of-ri.md
-      - Use cases:
+      - Use cases: 
+          - Use cases: use-cases.md
           - Travel Scenario: eudi-web-booking-service-demo/README.md
           - Payment Scenario: temp/coming_soon_4.md
           - rQES Scenario: temp/coming_soon_5.md
   - How TOs:
       - How to for Wallet Provider:
+          - How to for Wallet Provider: how-to-wallet.md
           - Android:
               - Android wallet ui: eudi-app-android-wallet-ui/wiki/how_to_build.md
               - Android core: eudi-lib-android-wallet-core/README.md
@@ -158,7 +160,8 @@ nav:
           - New Attestations: eudi-srv-web-issuing-eudiw-py/api_docs/add_credential.md
           - FAQ: temp/coming_soon_3.md
       - How to for Verifier: eudi-web-verifier/README.md
-  - Test Suite:
+  - Test Suite: 
+      - Test Suite: test-suite.md
       - Issuer: tools-issuer.md
       - Online Verifier: tools-verifier.md
       - Verifier Application: eudi-app-android-wallet-ui/wiki/verifier_proximity.md

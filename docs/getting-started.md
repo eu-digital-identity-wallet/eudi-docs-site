@@ -13,12 +13,7 @@ Let's start with your implementation!
 
 ## Learn more about
 
-<<<<<<< HEAD
-## Discover also
 
-- What is the [EUDI Wallet Reference Implementation](.roadmap-of-development-of-ri)? 
-=======
 - What is the [EUDI Wallet Reference Implementation](../roadmap-of-development-of-ri)? 
->>>>>>> 7570dc5ac7cbc4e069e361ed210408ef887b53b7
 - Which are technical specifications for the EUDI Wallet? Check the [Architecture Reference Framework](../arf-intro) to find out more.
 - Which use cases can be supported by the EUDI Wallet? Check the [Use Cases](../use-cases.md) to find out more.

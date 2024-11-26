@@ -1,10 +1,10 @@
 # Build a Wallet
 
-EUDI Wallet Providers are Member States of organizations that are mandated or recognized by Member States to make the EUDI Wallet available to end users. The terms and conditions of the mandate or recognition are for each Member State to determine. The EUDI Wallet Providers are responsible for providing the EUDI Wallet, which gives users full control over their Person Identification Data (PID) and Electronic Attestations of Attributes (QEAA, PuB-EAA or EAA). EUDI Wallet Providers are responsible for ensuring compliance with the requirements for EUDI Wallets.
+EUDI Wallet Providers are Member States or organizations that are mandated or recognized by Member States to make the EUDI Wallet available to end users. The terms and conditions of the mandate or recognition are for each Member State to determine. The EUDI Wallet Providers are responsible for providing the EUDI Wallet, which gives users full control over their Person Identification Data (PID) and Electronic Attestations of Attributes (QEAA, PuB-EAA or EAA). EUDI Wallet Providers are responsible for ensuring compliance with the requirements for EUDI Wallets.
 
 The reference implementation offers a comprehensive set of tools, libraries and test services to support and help you with building your own wallet. Let’s get started!
 
-## Try the ready-made application
+## Try the ready-made Wallet application
 
 A reference application for the wallet is available for both Android and iOS. With it, you can familiarize yourself with the application and test the wallet functionalities before starting the development of your own wallet. Instructions for setting up the application can be found [here](../eudi-app-android-wallet-ui/how-to-use-app/).
 
@@ -16,10 +16,10 @@ The reference implementation
 	
 - for iOS developers: [iOS Wallet Provider](../eudi-app-ios-wallet-ui/wiki/how_to_build/)
 
-## Test
+## Test your Wallet
 
 The Test Suite offers comprehensive tools to test your own wallet implementation. It includes both an Issuer and a Verifier, so you don’t need to build them yourself. With the Test Suite you can
 
-- [Issue crederntials to your wallet](.tools-issuer)
-- [Test your wallet in an online service](.tools-verifier/)
-- [Test your wallet with verifier application]()
+- [Issue credentials to your wallet](.tools-issuer)
+- [Test your Wallet in an online service](.tools-verifier/)
+- [Test your Wallet with verifier application]()

@@ -6,14 +6,14 @@ Let's start with your implementation!
 
 | Role    | Description | Get Started |
 | -------- | ------- |------- |
-| Wallet Provider | Build EUDI Wallet applications available for end users |[Build a Wallet](url)|
-| Issuer |   Build trusted applications that can issue attributes and attestations to EUDI Wallets according to the protocols and interfaces of the EUDI Wallet framework. | [Build an Issuer](url) |
-| Relying party  | Build trusted applications that can request attributes and attestations from EUDI Wallets according to the protocols and interfaces of the EUDI Wallet framework |[Build a Verifier](url) |
+| Wallet Provider | Build EUDI Wallet applications available for end users |[Build a Wallet](getting-started-wallet-provider)|
+| Issuer |   Build trusted applications that can issue attributes and attestations to EUDI Wallets according to the protocols and interfaces of the EUDI Wallet framework. | [Build an Issuer](getting-started-issuer-provider) |
+| Relying party  | Build trusted applications that can request attributes and attestations from EUDI Wallets according to the protocols and interfaces of the EUDI Wallet framework |[Build a Verifier](ugetting-started-verifier-provider) |
 
 
 
 ## Discover also
 
-- What is the [EUDI Wallet Reference Implementation](url)? 
-- Which are technical specifications for the EUDI Wallet? Check the [Architecture Reference Framework]() to find out more.
-- Which use cases can be supported by the EUDI Wallet? Check the [Use Cases]() to find out more.
+- What is the [EUDI Wallet Reference Implementation](.roadmap-of-development-of-ri)? 
+- Which are technical specifications for the EUDI Wallet? Check the [Architecture Reference Framework](.arf-intro) to find out more.
+- Which use cases can be supported by the EUDI Wallet? Check the [Use Cases](.use-cases.md) to find out more.

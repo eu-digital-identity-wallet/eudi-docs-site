@@ -6,10 +6,12 @@ Let’s get started!
 
 ## Try the test Verifier
 
-**Online Verifier**
+### Online Verifier
+
 The reference implementation includes a test online verifier that you can use to familiarise yourself with the functionalities. [Read more here](../tools-verifier)
 
-**Verifier Application for proximity use**
+### Verifier Application for proximity use
+
 The reference implementation of a Verifier application can be used in proximity use cases. [Read more here](../tools-verifier-app)
 
 ## Use the libraries to build your own Verifier

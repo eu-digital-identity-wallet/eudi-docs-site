@@ -135,9 +135,9 @@ plugins:
 nav:
   - Getting started:
       - Introduction: getting-started.md
-      - Build a Wallet: getting-started-wallet-provider.md
-      - Build an Issuer: getting-started-issuer-provider.md
-      - Build a Verifier: getting-started-verifier-provider.md
+      - Build a Wallet: build-a-wallet.md
+      - Build an Issuer: build-an-issuer.md
+      - Build a Verifier: build-a-verifier.md
   - Specifications:
       - Introduction: intro-specs.md
       - Architecture Reference Framework: arf-intro.md

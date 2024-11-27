@@ -1,6 +1,6 @@
 # Use cases
 
-EUDI Wallets will simplify the lives of citizens and businesses in many way; making data more secure and private. It will also improve security and flexibility for governments and businesses when carrying out transactions online. [Read more about the use cases](https://ec.europa.eu/digital-building-blocks/sites/display/EUDIGITALIDENTITYWALLET/The+many+use+cases+of+the+EU+Digital+Identity+Wallet)
+EUDI Wallets will simplify the lives of citizens and businesses in many ways; making data more secure and private. It will also improve security and flexibility for governments and businesses when carrying out transactions online. [Read more about the use cases](https://ec.europa.eu/digital-building-blocks/sites/display/EUDIGITALIDENTITYWALLET/The+many+use+cases+of+the+EU+Digital+Identity+Wallet)
 
 ## Travel Scenario
 
@@ -15,6 +15,6 @@ The Reference Implementation includes the travel use case implementation to show
 
 **Test online or run locally** 
 
-Access the the booking service used in the scenario: [https://dev.booking.demo.eudiw.dev](https://dev.booking.demo.eudiw.dev). You can use the [ready-made test Wallet ](https://mgiakkou.github.io/devhub/test-suite-wallet/)for the scenario.
+Access the booking service used in the scenario: [https://dev.booking.demo.eudiw.dev](https://dev.booking.demo.eudiw.dev). You can use the [ready-made test Wallet ](https://mgiakkou.github.io/devhub/test-suite-wallet/)for the scenario.
 
 You can also [run the booking service locally](https://github.com/eu-digital-identity-wallet/eudi-web-booking-service-demo).

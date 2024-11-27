@@ -5,7 +5,6 @@ theme:
     text: Roboto
   logo: assets/normal-reproduction-low-resolution.jpg
   favicon: assets/normal-reproduction-low-resolution.jpg
-  extra_css: css/extra.css
   palette:
     - primary: primary
     # Palette toggle for automatic mode
@@ -36,6 +35,9 @@ theme:
     - navigation.prune
     - navigation.top
     - navigation.footer
+
+extra_css:
+  - css/extra.css
 
 markdown_extensions:
   - footnotes

@@ -16,6 +16,6 @@ You can start developing the Issuer based on the libraries available in the refe
 
 The Test Suite offers comprehensive tools to test your own Issuer implementation. With the Test Suite you can
 
-- [Issue credentials to a ready-made test Wallet](../test-suite-wallet/)
-- [Verify the credentials issued by your solution with an online Verifier](../tools-verifier/)
+- [Issue credentials to a ready-made test Wallet](../test-suite-wallet)
+- [Verify the credentials issued by your solution with an online Verifier](../tools-verifier)
 

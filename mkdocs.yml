@@ -5,6 +5,7 @@ theme:
     text: Roboto
   logo: assets/normal-reproduction-low-resolution.jpg
   favicon: assets/normal-reproduction-low-resolution.jpg
+  extra_css: [css/extra.css]
   palette:
     - primary: primary
     # Palette toggle for automatic mode
@@ -84,9 +85,6 @@ extra:
       as to measure the effectiveness of our documentation and whether users
       find what they're searching for. With your consent, you're helping us to
       make our documentation better.
-
-extra_css:
-    -css/extra.css
     
 plugins:
   - search

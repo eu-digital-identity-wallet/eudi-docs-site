@@ -150,7 +150,6 @@ nav:
               - UI applications: license-ui.md
       - Use cases:
           - Introduction: use-cases.md
-          - Travel Scenario: travel-scenario.md
   - How TOs:
       - Introduction: intro-howtos.md
       - How to for Wallet Provider:

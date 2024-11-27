@@ -1,9 +1,0 @@
-.md-sidebar--secondary{
-    display: none !important;
-}
-.md-tabs__item:hover,
-.md-tabs__item--active {
-    border-bottom: 3px solid #FFFFFF;
-    padding-bottom: 3px;
-    background: rgb(0 0 0 / 25%);
-}

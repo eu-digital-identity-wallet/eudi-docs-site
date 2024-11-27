@@ -12,7 +12,7 @@ The reference implementation includes a test online Verifier that you can use to
 
 ### Verifier Application for proximity use
 
-The reference implementation of a Verifier application can be used in proximity use cases. [Read more here]([../eudi-app-android-wallet-ui/wiki/verifier_proximity)
+The reference implementation of a Verifier application can be used in proximity use cases. [Read more here](../eudi-app-android-wallet-ui/wiki/verifier_proximity)
 
 ## Use the libraries to build your own Verifier
 

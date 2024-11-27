@@ -36,6 +36,9 @@ theme:
     - navigation.footer
     - navigation.indexes
 
+extra_css:
+  - css/extra.css
+
 markdown_extensions:
   - footnotes
   - tables
@@ -87,7 +90,7 @@ extra:
       as to measure the effectiveness of our documentation and whether users
       find what they're searching for. With your consent, you're helping us to
       make our documentation better.
-
+    
 plugins:
   - search
   - multirepo:
@@ -124,40 +127,58 @@ plugins:
           imports:
             - '**/*.md'
             - '**/*.png'
+        - name: eudi-srv-web-issuing-eudiw-py
+          import_url: 'https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py?multi_docs=True&branch=main'
+          imports:
+            - '**/*.md'
+            - '**/*.png'
+        - name: eudi-web-verifier
+          import_url: 'https://github.com/eu-digital-identity-wallet/eudi-web-verifier?multi_docs=True&branch=main'
+          imports:
+            - '**/*.md'
+            - '**/*.png'
 
 nav:
   - Getting started:
       - Introduction: getting-started.md
-      - Get Started as a Wallet Provider: temp/coming_soon.md
-      - Get Started as an Issuer Provider: temp/coming_soon_1.md
-      - Get Started as a Verifier Provider: temp/coming_soon_2.md
-      - How to use the wallet as is:
-          - Android: eudi-app-android-wallet-ui/README.md
-          - iOS: eudi-app-ios-wallet-ui/README.md
+      - Build a Wallet: build-a-wallet.md
+      - Build an Issuer: build-an-issuer.md
+      - Build a Verifier: build-a-verifier.md
   - Specifications:
-      - Architecture Reference Framework: temp/coming_soon_3.md
+      - Introduction: intro-specs.md
+      - Architecture Reference Framework: arf-intro.md
+      - Reference Implementation: 
+          - Introduction: roadmap-of-development-of-ri.md
+          - Contributions: CONTRIBUTIONS.md
+          - Code of Conduct: code-of-conduct.md
+          - Licensing: 
+              - Libraries and tools: license.md
+              - UI applications: license-ui.md
       - Use cases:
-          - Travel Scenario: eudi-web-booking-service-demo/README.md
-          - Payment Scenario: temp/coming_soon_4.md
-          - rQES Scenario: temp/coming_soon_5.md
-      - Roadmap for the development of RI: roadmap-of-development-of-ri.md
+          - Introduction: use-cases.md
   - How TOs:
+      - Introduction: intro-howtos.md
       - How to for Wallet Provider:
+          - How to for Wallet Provider: how-to-wallet.md
           - Android:
               - Android wallet ui: eudi-app-android-wallet-ui/wiki/how_to_build.md
               - Android core: eudi-lib-android-wallet-core/README.md
           - iOS:
               - iOS wallet ui: eudi-app-ios-wallet-ui/wiki/how_to_build.md
               - iOS core: eudi-lib-ios-wallet-kit/README.md
-      - How to for Issuer Provider: temp/coming_soon_6.md
-      - How to for Verifier Provider: temp/coming_soon_7.md
-      - Issuing Attestations: temp/coming_soon_8.md
-  - Tools:
-      - Libraries: temp/coming_soon_9.md
-      - Core: temp/coming_soon_10.md
-      - Verifier: temp/coming_soon_11.md
-      - Issuer: temp/coming_soon_12.md
-      - Test Suite: temp/coming_soon_13.md
-  - Contribution:
-      - Code of Conduct and Contributions: temp/coming_soon_14.md
-      - Licensing: temp/coming_soon_15.md
+      - How to for Issuer: 
+          - General: eudi-srv-web-issuing-eudiw-py/README.md 
+          - New Attestations: eudi-srv-web-issuing-eudiw-py/api_docs/add_credential.md
+          - FAQ: temp/coming_soon_3.md
+      - How to for Verifier: eudi-web-verifier/README.md
+  - Test Suite: 
+      - Introduction: test-suite.md
+      - Issuer: tools-issuer.md
+      - Online Verifier: tools-verifier.md
+      - Verifier Application: eudi-app-android-wallet-ui/wiki/verifier_proximity.md
+      - Wallet:
+          - Wallet: test-suite-wallet.md
+          - Android: eudi-app-android-wallet-ui/how-to-use-app.md
+          - iOS: eudi-app-ios-wallet-ui/how-to-use-app.md
+  - About:
+      - Introduction: intro-about.md

@@ -1,6 +1,6 @@
 # Build an Issuer
 
-If you are responsible for providing the PID or Qualified or Non-Qualified Electronic Attestatios to the EUDI Wallet, you need to develop on Issuer. The reference implementation offers a comprehensive set of tools, software libraries and testing services to support you with building your own Issuer. Let’s get started!
+If you are responsible for providing the PID or Qualified or Non-Qualified Electronic Attestations to the EUDI Wallet, you need to develop an Issuer. The reference implementation offers a comprehensive set of tools, software libraries and testing services to support you with building your own Issuer. Let’s get started!
 										
 ## Try the test Issuer
 

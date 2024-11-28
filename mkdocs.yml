@@ -149,9 +149,9 @@ nav:
           - Contributions: CONTRIBUTIONS.md
           - Code of Conduct: code-of-conduct.md
           - Licensing: 
-              - Libraries and tools: license.md
-              - UI applications: license-ui.md
-      - Use cases:
+              - Libraries and Tools: license.md
+              - UI Applications: license-ui.md
+      - Use Cases:
           - Introduction: use-cases.md
   - How TOs:
       - Introduction: intro-howtos.md
@@ -173,7 +173,7 @@ nav:
       - Issuer: tools-issuer.md
       - Online Verifier: tools-verifier.md
       - Verifier Application: eudi-app-android-wallet-ui/wiki/verifier_proximity.md
-      - Wallet:
+      - Wallet Application:
           - Wallet: test-suite-wallet.md
           - Android: eudi-app-android-wallet-ui/how-to-use-app.md
           - iOS: eudi-app-ios-wallet-ui/how-to-use-app.md

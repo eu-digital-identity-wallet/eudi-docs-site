@@ -1,4 +1,4 @@
-# Architecture and reference framework
+# Architecture and Reference Framework
 
 The Architecture and Reference Framework (ARF) outlines the specifications required to develop an interoperable European Digital Identity (EUDI) Wallet Solution based on common standards and practices. It defines high-level requirements to ensure consistent implementation across Member States.
 

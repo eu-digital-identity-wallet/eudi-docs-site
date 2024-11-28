@@ -6,11 +6,11 @@ The reference implementation provides tools, libraries, and test services to sup
 
 ## Try the ready-made Wallet application
 
-A reference application for the Wallet is available for both Android and iOS. With it, you can familiarize yourself with the application and test the Wallet functionalities before starting the development of your own Wallet. Instructions for setting up the application can be found [here](../eudi-app-android-wallet-ui/how-to-use-app/).
+A reference application for the Wallet is available for both Android and iOS. This allows you to familiarise yourself with the application and test the Wallet functionalities before starting the development of your own Wallet. Instructions for setting up the application can be found [here](../test-suite-wallet).
 
 ## Use the libraries to build your own Wallet
 
-Reference implementation 
+Leverage the reference implementation libraries tailored to your platform: 
 
 - for Android developers: [Android Wallet Provider](../eudi-app-android-wallet-ui/wiki/how_to_build/)
 	

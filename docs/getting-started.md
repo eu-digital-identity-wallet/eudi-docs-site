@@ -1,6 +1,6 @@
 # Getting Started 
 
-This section provides practical guidance for your EUDI Wallet project. Whether you are a Wallet provider, a PID or (Q)EAA Issuer, or a Relying Party, the guide provides clear, step-by-step instructions and examples to help you get started. It will also assist you in evaluating how you can leverage the EUDIW reference implementation in your development project and how to make the most of it.
+This section provides practical guidance for your EUDI Wallet project. Whether you are a Wallet Provider, a PID or (Q)EAA Issuer, or a Relying Party, the guide provides clear, step-by-step instructions and examples to help you get started. It also assists you in evaluating how you can leverage the EUDIW reference implementation in your development project and how to make the most of it.
 
 Let's start with your implementation!
 

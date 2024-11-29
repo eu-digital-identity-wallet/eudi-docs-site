@@ -140,6 +140,7 @@ nav:
       - Wallet: build-a-wallet.md
       - Issuer: build-an-issuer.md
       - Verifier: build-a-verifier.md
+      - Demo: demo-travel.md
   - Specifications:
       - Introduction: intro-specs.md
       - Architecture Reference Framework: arf-intro.md
@@ -150,8 +151,6 @@ nav:
           - Licensing: 
               - Libraries and Tools: license.md
               - UI Applications: license-ui.md
-      - Demo Use Cases:
-          - Introduction: use-cases.md
   - How TOs:
       - Introduction: intro-howtos.md
       - How to for Wallet:

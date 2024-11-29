@@ -6,7 +6,7 @@ The reference implementation provides tools, libraries, and test services to sup
 
 ## Try the Reference Implementation Wallet Application
 
-A reference application for the Wallet is available for both Android and iOS. This allows you to familiarise yourself with the application and test the Wallet functionalities before starting the development of your own Wallet. Instructions for setting up the application can be found [here](../test-suite-wallet).
+A reference application for the Wallet is available for both Android and iOS. This allows you to familiarise yourself with the application and test the Wallet functionalities before starting the development of your own Wallet. [Set up the application by following the installation steps](../test-suite-wallet).
 
 ## Use the libraries to build your own Wallet
 

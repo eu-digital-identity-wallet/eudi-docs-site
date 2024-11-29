@@ -150,7 +150,7 @@ nav:
           - Licensing: 
               - Libraries and Tools: license.md
               - UI Applications: license-ui.md
-      - Use Cases:
+      - Demo Use Cases:
           - Introduction: use-cases.md
   - How TOs:
       - Introduction: intro-howtos.md

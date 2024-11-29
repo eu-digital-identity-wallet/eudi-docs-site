@@ -23,4 +23,3 @@ Start developing your Verifier using the libraries provided in the reference imp
 The Test Suite offers comprehensive tools to test your own Verifier implementation.
 
 - [Test your Verifier with the ready-made Wallet](../eudi-app-android-wallet-ui/how-to-use-app/)
-- [Use the test Issuer](../tools-issuer)

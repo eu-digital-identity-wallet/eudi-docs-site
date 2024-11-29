@@ -4,7 +4,7 @@ Let's start with your implementation!
 
 | Operating System    | Description | Get Started |
 | -------- | ------- |------- |
-| Android | Reference Implementation Wallet Application |[Build a Wallet](../eudi-app-android-wallet-ui/wiki/how_to_build)|
-| Android | Reference Implementation Core | [Build an Issuer](../eudi-lib-android-wallet-core) |
-| iOS  | Reference Implementation Wallet Application |[Build a Verifier](../eudi-app-ios-wallet-ui/wiki/how_to_build) |
-| iOS  | Reference Implementation Core |[Build a Verifier](../eudi-lib-ios-wallet-kit) |
+| Android | Reference Implementation Wallet Application |[Android Wallet](../eudi-app-android-wallet-ui/wiki/how_to_build)|
+| Android | Reference Implementation Core | [Android Core](../eudi-lib-android-wallet-core) |
+| iOS  | Reference Implementation Wallet Application |[iOS Wallet](../eudi-app-ios-wallet-ui/wiki/how_to_build) |
+| iOS  | Reference Implementation Core |[iOS Core](../eudi-lib-ios-wallet-kit) |

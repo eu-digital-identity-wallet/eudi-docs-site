@@ -15,6 +15,6 @@ The Reference Implementation includes the travel use case implementation to show
 
 **Test online or run locally** 
 
-Access the booking service used in the scenario: [https://dev.booking.demo.eudiw.dev](https://dev.booking.demo.eudiw.dev). You can use the [ready-made test Wallet ](https://mgiakkou.github.io/devhub/test-suite-wallet/)for the scenario.
+Access the booking service used in the scenario: [https://dev.booking.demo.eudiw.dev](https://dev.booking.demo.eudiw.dev). You can use the [Reference Implementation Wallet ](../test-suite-wallet/)for the scenario.
 
 You can also [run the booking service locally](https://github.com/eu-digital-identity-wallet/eudi-web-booking-service-demo).

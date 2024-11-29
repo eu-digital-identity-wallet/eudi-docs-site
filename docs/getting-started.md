@@ -10,6 +10,7 @@ Let's start with your implementation!
 | Issuer |   Build trusted applications that can issue attributes and attestations to EUDI Wallets according to the protocols and interfaces of the EUDI Wallet framework. | [Build an Issuer](../getting-started-issuer-provider) |
 | Relying Party  | Build trusted applications that can request attributes and attestations from EUDI Wallets according to the protocols and interfaces of the EUDI Wallet framework.|[Build a Verifier](../getting-started-verifier-provider) |
 
+Explore also how the EUDI Wallet can be used in travel use cases: [see the demo](../demo-travel.md). 
 
 ## Learn more about
 

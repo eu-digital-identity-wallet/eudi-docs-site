@@ -34,7 +34,6 @@ theme:
     - navigation.prune
     - navigation.top
     - navigation.footer
-    - navigation.indexes
 
 extra_css:
   - css/extra.css
@@ -151,22 +150,24 @@ nav:
           - Licensing: 
               - Libraries and Tools: license.md
               - UI Applications: license-ui.md
-      - Use Cases: 
+      - Use Cases:
           - Introduction: use-cases.md
   - How TOs:
       - Introduction: intro-howtos.md
-      - How to for Wallet: 
+      - How to for Wallet:
           - Introduction: how-to-wallet.md
-          - Android wallet UI: eudi-app-android-wallet-ui/wiki/how_to_build.md
-          - Android core: eudi-lib-android-wallet-core/README.md
+          - Android:
+              - Android wallet UI: eudi-app-android-wallet-ui/wiki/how_to_build.md
+              - Android core: eudi-lib-android-wallet-core/README.md
           - iOS:
               - iOS wallet UI: eudi-app-ios-wallet-ui/wiki/how_to_build.md
               - iOS core: eudi-lib-ios-wallet-kit/README.md
-      - How to for Issuer: 
+      - How to for Issuer:
           - Introduction: eudi-srv-web-issuing-eudiw-py/README.md
           - New Attestations: eudi-srv-web-issuing-eudiw-py/api_docs/add_credential.md
       - How to for Verifier:
           - Introduction: eudi-web-verifier/README.md
+
   - Test Suite: 
       - Introduction: test-suite.md
       - Wallet Application:

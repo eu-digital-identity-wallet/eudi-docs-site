@@ -146,7 +146,7 @@ nav:
       - Architecture Reference Framework: arf-intro.md
       - Reference Implementation: 
           - Introduction: roadmap-of-development-of-ri.md
-          - Contributions: CONTRIBUTIONS.md
+          - Code Contributions: CONTRIBUTIONS.md
           - Code of Conduct: code-of-conduct.md
           - Licensing: 
               - Libraries and Tools: license.md
@@ -158,10 +158,10 @@ nav:
       - How to for Wallet Provider:
           - How to for Wallet Provider: how-to-wallet.md
           - Android:
-              - Android wallet ui: eudi-app-android-wallet-ui/wiki/how_to_build.md
+              - Android wallet UI: eudi-app-android-wallet-ui/wiki/how_to_build.md
               - Android core: eudi-lib-android-wallet-core/README.md
           - iOS:
-              - iOS wallet ui: eudi-app-ios-wallet-ui/wiki/how_to_build.md
+              - iOS wallet UI: eudi-app-ios-wallet-ui/wiki/how_to_build.md
               - iOS core: eudi-lib-ios-wallet-kit/README.md
       - How to for Issuer: 
           - General: eudi-srv-web-issuing-eudiw-py/README.md 

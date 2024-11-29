@@ -164,18 +164,18 @@ nav:
               - iOS wallet UI: eudi-app-ios-wallet-ui/wiki/how_to_build.md
               - iOS core: eudi-lib-ios-wallet-kit/README.md
       - How to for Issuer: 
-          - General: eudi-srv-web-issuing-eudiw-py/README.md 
+          - Introduction: eudi-srv-web-issuing-eudiw-py/README.md
           - New Attestations: eudi-srv-web-issuing-eudiw-py/api_docs/add_credential.md
-          - FAQ: temp/coming_soon_3.md
-      - How to for Verifier: eudi-web-verifier/README.md
+      - How to for Verifier:
+          - Introduction: eudi-web-verifier/README.md
   - Test Suite: 
       - Introduction: test-suite.md
+      - Wallet Application:
+          - Introduction: test-suite-wallet.md
+          - Android: eudi-app-android-wallet-ui/how-to-use-app.md
+          - iOS: eudi-app-ios-wallet-ui/how-to-use-app.md
       - Issuer: tools-issuer.md
       - Online Verifier: tools-verifier.md
       - Verifier Application: eudi-app-android-wallet-ui/wiki/verifier_proximity.md
-      - Wallet Application:
-          - Wallet: test-suite-wallet.md
-          - Android: eudi-app-android-wallet-ui/how-to-use-app.md
-          - iOS: eudi-app-ios-wallet-ui/how-to-use-app.md
   - About:
       - Introduction: intro-about.md

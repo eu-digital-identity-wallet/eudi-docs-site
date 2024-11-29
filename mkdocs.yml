@@ -138,9 +138,9 @@ plugins:
 nav:
   - Getting started:
       - Introduction: getting-started.md
-      - Build a Wallet: build-a-wallet.md
-      - Build an Issuer: build-an-issuer.md
-      - Build a Verifier: build-a-verifier.md
+      - Wallet: build-a-wallet.md
+      - Issuer: build-an-issuer.md
+      - Verifier: build-a-verifier.md
   - Specifications:
       - Introduction: intro-specs.md
       - Architecture Reference Framework: arf-intro.md
@@ -151,15 +151,14 @@ nav:
           - Licensing: 
               - Libraries and Tools: license.md
               - UI Applications: license-ui.md
-      - Use Cases:
+      - Use Cases: 
           - Introduction: use-cases.md
   - How TOs:
       - Introduction: intro-howtos.md
-      - How to for Wallet Provider:
-          - How to for Wallet Provider: how-to-wallet.md
-          - Android:
-              - Android wallet UI: eudi-app-android-wallet-ui/wiki/how_to_build.md
-              - Android core: eudi-lib-android-wallet-core/README.md
+      - How to for Wallet: 
+          - Introduction: how-to-wallet.md
+          - Android wallet UI: eudi-app-android-wallet-ui/wiki/how_to_build.md
+          - Android core: eudi-lib-android-wallet-core/README.md
           - iOS:
               - iOS wallet UI: eudi-app-ios-wallet-ui/wiki/how_to_build.md
               - iOS core: eudi-lib-ios-wallet-kit/README.md

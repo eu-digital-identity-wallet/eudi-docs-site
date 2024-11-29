@@ -4,13 +4,13 @@ If you want to build trusted applications that can request attributes and attest
 
 Let’s get started!
 
-## Try the test Verifier
+## Try the Reference Implementation Verifier
 
-### Online Verifier
+### Remote Verifier
 
 The reference implementation includes a test online Verifier that you can use to familiarise yourself with the functionalities. [Learn more](../tools-verifier)
 
-### Verifier Application for proximity use
+### Proximity Verifier
 
 The reference implementation of a Verifier application can be used in proximity use cases. [Learn more](../eudi-app-android-wallet-ui/wiki/verifier_proximity)
 

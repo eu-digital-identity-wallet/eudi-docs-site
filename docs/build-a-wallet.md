@@ -4,7 +4,7 @@ EUDI Wallet Providers are Member States or organizations that are mandated or re
 
 The reference implementation provides tools, libraries, and test services to support and help you with building your own Wallet. Let’s get started!
 
-## Try the ready-made Wallet application
+## Try the Reference Implementation Wallet Applcation
 
 A reference application for the Wallet is available for both Android and iOS. This allows you to familiarise yourself with the application and test the Wallet functionalities before starting the development of your own Wallet. Instructions for setting up the application can be found [here](../test-suite-wallet).
 

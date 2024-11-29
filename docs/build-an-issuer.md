@@ -2,7 +2,7 @@
 
 If you are responsible for providing the PID or Qualified or Non-Qualified Electronic Attestations to the EUDI Wallet, you will need to develop an Issuer. The reference implementation offers a comprehensive set of tools, software libraries and testing services to support you with building your own Issuer. Let’s get started!
 										
-## Try the test Issuer
+## Try the Reference Implementation Issuer
 
 The reference implementation includes a test Issuer that you can use to familiarise yourself with the functionalities of the Issuer. The test Issuer is available online or you can install it locally. 
 

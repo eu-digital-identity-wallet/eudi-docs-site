@@ -16,6 +16,6 @@ Start developing your Issuer using the libraries included in the reference imple
 
 The Test Suite offers comprehensive tools to test your own Issuer implementation. With the Test Suite you can
 
-- [Issue credentials to a ready-made test Wallet](../test-suite-wallet)
+- [Issue credentials to the EUDI Wallet Reference Implementation](../test-suite-wallet)
 - [Verify the credentials issued by your solution with an online Verifier](../tools-verifier)
 

@@ -51,7 +51,7 @@ This version of the EUDIW Issuer supports the [OpenId for Verifiable Credential 
 You can use the EUDIW Issuer at https://issuer.eudiw.dev/, or install it locally.
 
 
-## :heavy_exclamation_mark: Disclaimer
+## Disclaimer
 
 The released software is a initial development release version:
 

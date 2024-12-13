@@ -38,7 +38,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install mkdocs mkdocs-multirepo-plugin mkdocs-material
+          pip install mkdocs mkdocs-multirepo-plugin mkdocs-material mkdocs-breadcrumbs-plugin
 
       - name: Deploy site
         run: mkdocs gh-deploy --force

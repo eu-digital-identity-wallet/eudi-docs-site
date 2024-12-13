@@ -6,9 +6,9 @@ Let's start with your implementation!
 
 | Role    | Description | Get Started |
 | -------- | ------- |------- |
-| Wallet Provider | Build EUDI Wallet applications available for end users. |[Build a Wallet](../getting-started-wallet-provider)|
-| Issuer |   Build trusted applications that can issue attributes and attestations to EUDI Wallets according to the protocols and interfaces of the EUDI Wallet framework. | [Build an Issuer](../getting-started-issuer-provider) |
-| Relying Party  | Build trusted applications that can request attributes and attestations from EUDI Wallets according to the protocols and interfaces of the EUDI Wallet framework.|[Build a Verifier](../getting-started-verifier-provider) |
+| Wallet Provider | Build EUDI Wallet applications available for end users. |[Build a Wallet](../build-a-wallet)|
+| Issuer |   Build trusted applications that can issue attributes and attestations to EUDI Wallets according to the protocols and interfaces of the EUDI Wallet framework. | [Build an Issuer](../build-an-issuer) |
+| Relying Party  | Build trusted applications that can request attributes and attestations from EUDI Wallets according to the protocols and interfaces of the EUDI Wallet framework.|[Build a Verifier](../build-a-verifier) |
 
 Explore also how the EUDI Wallet can be used in travel use cases: [see the demo](../demo-travel.md). 
 

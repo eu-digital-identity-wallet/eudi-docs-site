@@ -1,3 +1,5 @@
+# Specifications
+
 Explore the EUDI Wallet specifications.
 
 **Architecture and Reference Framework**

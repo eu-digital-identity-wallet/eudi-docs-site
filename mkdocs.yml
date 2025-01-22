@@ -183,7 +183,7 @@ nav:
           - Introduction: Wallet Test Suite.md
           - Android: eudi-app-android-wallet-ui/how-to-use-app.md
           - iOS: eudi-app-ios-wallet-ui/how-to-use-app.md
-      - Issuer: Issuer TestSuite.md
+      - Issuer: Issuer Test Suite.md
       - Online Verifier: Verifier Test Suite.md
       - Verifier Application: eudi-app-android-wallet-ui/wiki/verifier_proximity.md
   - About:

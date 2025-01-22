@@ -34,7 +34,6 @@ theme:
     - navigation.prune
     - navigation.top
     - navigation.footer
-    - navigation.instant
 
 extra_css:
   - css/extra.css
@@ -146,7 +145,7 @@ plugins:
 
 nav:
   - Getting started:
-      - Introduction: getting-started.md
+      - Introduction: Getting Started.md
       - Wallet: build-a-wallet.md
       - Issuer: build-an-issuer.md
       - Verifier: build-a-verifier.md

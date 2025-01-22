@@ -34,6 +34,7 @@ theme:
     - navigation.prune
     - navigation.top
     - navigation.footer
+    - navigation.instant
 
 extra_css:
   - css/extra.css
@@ -146,24 +147,24 @@ plugins:
 nav:
   - Getting started:
       - Introduction: Getting Started.md
-      - Wallet: build-a-wallet.md
-      - Issuer: build-an-issuer.md
-      - Verifier: build-a-verifier.md
-      - Demo: demo-travel.md
+      - Wallet: Build Wallet.md
+      - Issuer: Build Issuer.md
+      - Verifier: Build Verifier.md
+      - Demo: Demo.md
   - Specifications:
-      - Introduction: intro-specs.md
-      - Architecture Reference Framework: arf-intro.md
+      - Introduction: Specifications.md
+      - Architecture Reference Framework: ARF.md
       - Reference Implementation: 
-          - Introduction: roadmap-of-development-of-ri.md
-          - Code Contributions: CONTRIBUTIONS.md
-          - Code of Conduct: code-of-conduct.md
+          - Introduction: RI Roadmap.md
+          - Code Contributions: Contributions.md
+          - Code of Conduct: Code of Conduct.md
           - Licensing: 
-              - Libraries and Tools: license.md
-              - UI Applications: license-ui.md
+              - Libraries and Tools: License Lib.md
+              - UI Applications: Licence UI.md
   - How TOs:
-      - Introduction: intro-howtos.md
+      - Introduction: HowTo.md
       - How to for Wallet:
-          - Introduction: how-to-wallet.md
+          - Introduction: HowTo Wallet.md
           - Android:
               - Android wallet UI: eudi-app-android-wallet-ui/wiki/how_to_build.md
               - Android core: eudi-lib-android-wallet-core/README.md
@@ -177,13 +178,13 @@ nav:
           - Introduction: eudi-web-verifier/README.md
 
   - Test Suite: 
-      - Introduction: test-suite.md
+      - Introduction: Test Suite.md
       - Wallet Application:
-          - Introduction: test-suite-wallet.md
+          - Introduction: Wallet Test Suite.md
           - Android: eudi-app-android-wallet-ui/how-to-use-app.md
           - iOS: eudi-app-ios-wallet-ui/how-to-use-app.md
-      - Issuer: tools-issuer.md
-      - Online Verifier: tools-verifier.md
+      - Issuer: Issuer TestSuite.md
+      - Online Verifier: Verifier Test Suite.md
       - Verifier Application: eudi-app-android-wallet-ui/wiki/verifier_proximity.md
   - About:
-      - Introduction: intro-about.md
+      - Introduction: About.md

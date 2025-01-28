@@ -159,6 +159,8 @@ nav:
           - Licensing: 
               - Libraries and Tools: License Lib.md
               - UI Applications: License UI.md
+      - Regulation: Regulation.md
+      - Large-Scale Pilots: Large-Scale Pilots.md
   - How TOs:
       - Introduction: HowTo.md
       - How to for Wallet:

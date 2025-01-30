@@ -145,9 +145,9 @@ plugins:
 nav:
   - Getting started:
       - Introduction: Getting Started.md
-      - Wallet: Build Wallet.md
-      - Issuer: Build Issuer.md
-      - Verifier: Build Verifier.md
+      - Build Wallet: Build Wallet.md
+      - Build Issuer: Build Issuer.md
+      - Build Verifier: Build Verifier.md
       - Demo: Demo.md
   - Specifications:
       - Introduction: Specifications.md

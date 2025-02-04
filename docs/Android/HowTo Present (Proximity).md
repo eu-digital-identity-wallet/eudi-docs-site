@@ -8,6 +8,7 @@
     1. The distinction between mandatory and optional data elements is depicted.
     2. The requestor (i.e. relying party) of the data is depicted.
     3. EUDI Wallet User may select additional optional attributes to be shared.
+
 5. EUDI Wallet User selects the option to share the attributes.
 6. EUDI Wallet authenticates to share data (quick PIN).
 7. User authorization is accepted - a corresponding message is displayed to the  EUDI Wallet User.

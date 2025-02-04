@@ -187,7 +187,12 @@ nav:
               - Issue (Credential Offer): Android/HowTo Issue (Credential Offer).md
               - Present (Same Device): Android/HowTo Present (Same Device).md
               - Present (Proximity): Android/HowTo Present (Proximity).md
-          - iOS: eudi-app-ios-wallet-ui/how-to-use-app.md
+          - iOS: 
+              - Install:  iOS/HowTo Install.md
+              - Issue (Scoped): iOS/HowTo Issue (Scoped).md
+              - Issue (Credential Offer): iOS/HowTo Issue (Credential Offer).md
+              - Present (Same Device): iOS/HowTo Present (Same Device).md
+              - Present (Proximity): iOS/HowTo Present (Proximity).md
       - Issuer: Issuer Test Suite.md
       - Online Verifier: Verifier Test Suite.md
       - Verifier Application: eudi-app-android-wallet-ui/wiki/verifier_proximity.md

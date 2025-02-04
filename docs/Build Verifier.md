@@ -8,7 +8,7 @@ Let’s get started!
 
 ### Remote Verifier
 
-The reference implementation includes a test online Verifier that you can use to familiarise yourself with the functionalities. [Learn more](../tools-verifier)
+The reference implementation includes a test online Verifier that you can use to familiarise yourself with the functionalities. [Learn more](../Verifier Test Suite)
 
 ### Proximity Verifier
 

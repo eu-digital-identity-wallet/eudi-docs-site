@@ -6,7 +6,7 @@ The reference implementation provides tools, libraries, and test services to sup
 
 ## Try the Reference Implementation Wallet Application
 
-A reference application for the Wallet is available for both Android and iOS. This allows you to familiarise yourself with the application and test the Wallet functionalities before starting the development of your own Wallet. [Set up the application by following the installation steps](../test-suite-wallet).
+A reference application for the Wallet is available for both Android and iOS. This allows you to familiarise yourself with the application and test the Wallet functionalities before starting the development of your own Wallet. [Set up the application by following the installation steps](../Wallet Test Suite).
 
 ## Use the libraries to build your own Wallet
 
@@ -20,6 +20,6 @@ Leverage the reference implementation libraries tailored to your platform:
 
 The Test Suite offers comprehensive tools to test your own Wallet implementation. It includes both an Issuer and a Verifier, so you don’t need to build them yourself. With the Test Suite you can
 
-- [Issue credentials to your Wallet](../tools-issuer)
-- [Test your Wallet in an online service](../tools-verifier/)
+- [Issue credentials to your Wallet](../Issuer Test Suite)
+- [Test your Wallet in an online service](../Verifier Test Suite/)
 - [Test your Wallet with the Verifier application](../eudi-app-android-wallet-ui/wiki/verifier_proximity/)

@@ -6,7 +6,7 @@ If you are responsible for providing the PID or Qualified or Non-Qualified Elect
 
 The reference implementation includes a test Issuer that you can use to familiarise yourself with the functionalities of the Issuer. The test Issuer is available online or you can install it locally. 
 
-[Learn more about the test Issuer](../tools-issuer)
+[Learn more about the test Issuer](../Issuer Test Suite)
 
 ## Use the libraries to build your own Issuer
 
@@ -16,6 +16,6 @@ Start developing your Issuer using the libraries included in the reference imple
 
 The Test Suite offers comprehensive tools to test your own Issuer implementation. With the Test Suite you can
 
-- [Issue credentials to the EUDI Wallet Reference Implementation](../test-suite-wallet)
-- [Verify the credentials issued by your solution with an online Verifier](../tools-verifier)
+- [Issue credentials to the EUDI Wallet Reference Implementation](../Wallet Test Suite)
+- [Verify the credentials issued by your solution with an online Verifier](../Verifier Test Suite)
 

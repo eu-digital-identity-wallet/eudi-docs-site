@@ -8,7 +8,7 @@ Test service supports both mdoc and sd-jwt formats.
 
 There are two options available:
 
-- [https://verifier.eudiw.dev/](https://verifier.eudiw.dev/)  
-- [https://tester.relyingparty.eudiw.dev/](https://tester.relyingparty.eudiw.dev/)
+- [https://verifier.eudiw.dev/](https://verifier.eudiw.dev/){:target="_blank"}  
+- [https://tester.relyingparty.eudiw.dev/](https://tester.relyingparty.eudiw.dev/){:target="_blank"}
 
 

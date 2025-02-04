@@ -6,8 +6,12 @@ The Pilots aim to validate the wallet's functionality in real-life scenarios, ga
 
 |  Pilot  | Focus |
 | -------- | ------- |
-| [EUDI Wallet Consortium (EWC)](https://eudiwalletconsortium.org/)  | Focuses on Digital Travel Credentials, building on the reference wallet application to streamline cross-border travel.   |
-| [POTENTIAL](https://www.digital-identity-wallet.eu/) | Explores innovations across six digital identity sectors, including governmental services, banking, telecommunications, and healthcare.    |
-| [NOBID](https://www.nobidconsortium.com/)   | Led by Nordic and Baltic countries with Germany and Italy, testing EUDI Wallet in payments.   | 
-| [DC4EU](https://www.dc4eu.eu/)|Targets education and social security, supporting integration of cross-border digital service infrastructures within a trust framework. |
+| [EUDI Wallet Consortium (EWC)](https://eudiwalletconsortium.org/){:target="_blank"}
+  | Focuses on Digital Travel Credentials, building on the reference wallet application to streamline cross-border travel.   |
+| [POTENTIAL](https://www.digital-identity-wallet.eu/){:target="_blank"}
+ | Explores innovations across six digital identity sectors, including governmental services, banking, telecommunications, and healthcare.    |
+| [NOBID](https://www.nobidconsortium.com/){:target="_blank"}
+   | Led by Nordic and Baltic countries with Germany and Italy, testing EUDI Wallet in payments.   | 
+| [DC4EU](https://www.dc4eu.eu/){:target="_blank"}
+ |Targets education and social security, supporting integration of cross-border digital service infrastructures within a trust framework. |
 

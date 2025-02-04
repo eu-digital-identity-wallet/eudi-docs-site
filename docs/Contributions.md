@@ -10,12 +10,12 @@ Before making any changes, it's a good practice to create an issue to describe t
 you plan to make and the reasoning behind them.
 
 You can
-read [Finding ways to contribute to open source on GitHub](https://docs.github.com/en/get-started/exploring-projects-on-github/finding-ways-to-contribute-to-open-source-on-github)
+read [Finding ways to contribute to open source on GitHub](https://docs.github.com/en/get-started/exploring-projects-on-github/finding-ways-to-contribute-to-open-source-on-github){:target="_blank"}
 for more information.
 
 ## GitHub Flow
 
-We use the [GitHub Flow](https://guides.github.com/introduction/flow/) workflow for making
+We use the [GitHub Flow](https://guides.github.com/introduction/flow/){:target="_blank"} workflow for making
 contributions to this project. This means that:
 
 1. Fork the repository and create a new branch from `main` for your changes.
@@ -104,10 +104,10 @@ chore/update-dependencies
   on which content is expected to process the issue most efficiently. If no template applies, you
   can of course also create an issue from scratch.
 
-* Please apply one or more applicable [labels](/../../labels) to your issue so that all community
+* Please apply one or more applicable labels to your issue so that all community
   members are able to cluster the issues better.
 
 ## Code of Conduct
 
-Please note that this project is released with a [Contributor Code of Conduct](code-of-conduct.md).
+Please note that this project is released with a [Contributor Code of Conduct](Code of Conduct).
 By participating in this project, you agree to abide by its terms.

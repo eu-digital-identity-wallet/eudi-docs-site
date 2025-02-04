@@ -13,9 +13,11 @@ The Reference Implementation includes the travel use case implementation to show
 
 ## Test online or run locally
 
-1. Download the [EUDI Wallet Reference Implementation application](../test-suite-wallet/).
-2. Access the [demo booking service](https://dev.booking.demo.eudiw.dev).
+1. Download the [EUDI Wallet Reference Implementation application](../Wallet Test Suite/).
+2. Access the [demo booking service](https://dev.booking.demo.eudiw.dev){:target="_blank"}
+.
 
-You can also run the booking service locally. [Instructions for this available in Github](https://github.com/eu-digital-identity-wallet/eudi-web-booking-service-demo).
+You can also run the booking service locally. [Instructions for this available in Github](https://github.com/eu-digital-identity-wallet/eudi-web-booking-service-demo){:target="_blank"}
+.
 
 

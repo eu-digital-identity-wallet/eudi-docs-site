@@ -24,4 +24,4 @@ Discover the open-source code libraries that provide the foundation for building
 
 Four large-scale pilot projects are currently underway to test the EU Digital Identity Wallet, involving over 360 entities across 26 Member States, Norway, Iceland, and Ukraine. Gain valuable real-world insight by exploring these projects.
 
-[Explore the pilots](../Pilots)
+[Explore the pilots](../Large-Scale Pilots)

@@ -17,16 +17,16 @@ For the proximity flow (see below), you will also need to download the Android V
 
 ## Issuance flow (Scoped)
 
-Proceed to [issue an attestation](./HowTo Issue (Scoped)) beginning within the wallet. 
+Proceed to [issue an attestation](../HowTo Issue (Scoped)) beginning within the wallet. 
 
 ## Issuance flow (Credential Offer)
 
-Proceed to [issue an attestation](./HowTo Issue (Credential Offer)) beginning from the issuer. 
+Proceed to [issue an attestation](../HowTo Issue (Credential Offer)) beginning from the issuer. 
 
 ## Presentation (Online authentication/Same device) flow.
 
-Proceed to [present an attestation](./HowTo Present (Same Device)) using the same device.
+Proceed to [present an attestation](../HowTo Present (Same Device)) using the same device.
 
 ## Proximity flow
 
-Proceed to [present an attestation](./HowTo Present (Proximity)) using different devices.
+Proceed to [present an attestation](../HowTo Present (Proximity)) using different devices.

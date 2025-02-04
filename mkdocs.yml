@@ -183,10 +183,10 @@ nav:
           - Introduction: Wallet Test Suite.md
           - Android:
               - Install:  Android/HowTo Install.md
-              - Issue (Scoped): HowTo Issue (Scoped).md
-              - Issue (Credential Offer): HowTo Issue (Credential Offer).md
-              - Present (Same Device): HowTo Present (Same Device).md
-              - Present (Proximity): HowTo Present (Proximity).md
+              - Issue (Scoped): Android/HowTo Issue (Scoped).md
+              - Issue (Credential Offer): Android/HowTo Issue (Credential Offer).md
+              - Present (Same Device): Android/HowTo Present (Same Device).md
+              - Present (Proximity): Android/HowTo Present (Proximity).md
           - iOS: eudi-app-ios-wallet-ui/how-to-use-app.md
       - Issuer: Issuer Test Suite.md
       - Online Verifier: Verifier Test Suite.md

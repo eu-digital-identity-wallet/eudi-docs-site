@@ -1,0 +1,3 @@
+# Wallet Application
+
+The Reference Implementation Wallet application is available for download to your phone. The app is available for both [Android](../eudi-app-android-wallet-ui/how-to-use-app) and [iOS](../eudi-app-ios-wallet-ui/how-to-use-app) devices.

@@ -35,6 +35,6 @@ This guide aims to assist developers to build the iOS application.
     1. To run remotely, please follow the instructions [here](../running with Remote Services)
     2. To run locally, please follow the instructions [here](../running with Local Services)
 
-7. (Optional) In case serlf-signed certificates are required, please follow the instructions [here](../Self-signed Certificates)
+7. (Optional) In case self-signed certificates are required, please follow the instructions [here](../Self-signed Certificates)
 
 For a complete list of all configuration options please refer to [this document](https://github.com/eu-digital-identity-wallet/eudi-app-ios-wallet-ui/blob/main/wiki/configuration.md){:target="_blank"}

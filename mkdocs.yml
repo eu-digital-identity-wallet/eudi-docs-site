@@ -166,7 +166,10 @@ nav:
       - How to for Wallet:
           - Introduction: HowTo Wallet.md
           - Android:
-              - Android wallet UI: eudi-app-android-wallet-ui/wiki/how_to_build.md
+              - Build the App: Android/Build the App.md
+              - Running with Remote Services: Android/Running with Remote Services.md
+              - Running with Local Services: Android/Running with Local Services.md
+              - Self-signed Cerificates: Android/Self-signed Certificates.md
               - Android core: eudi-lib-android-wallet-core/README.md
           - iOS:
               - iOS wallet UI: eudi-app-ios-wallet-ui/wiki/how_to_build.md
@@ -195,6 +198,6 @@ nav:
               - Present (Proximity): iOS/HowTo Present (Proximity).md
       - Issuer: Issuer Test Suite.md
       - Online Verifier: Verifier Test Suite.md
-      - Verifier Application: eudi-app-android-wallet-ui/wiki/verifier_proximity.md
+      - Verifier Application: Verifier Application.md
   - About:
       - Introduction: About.md

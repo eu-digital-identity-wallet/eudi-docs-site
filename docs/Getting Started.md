@@ -15,6 +15,7 @@ Its goal is to showcase a robust and interoperable platform for digital identifi
 Reference Implementation can be used by wallet providers, issuers and verifiers as a basis for the own solution. It also includes a comprehensive test suite, which contains tools to support testing and ensure that your implementation meets the functional requirements.
 
 Leverage the EUDI Wallet Reference Implementation to build and test your solution:
+
 	- [Discover EUDI Wallet Resources](../Resources)
-	- [Build your Solution](./Build Introduction)
-	- [Test your Solution](./Test Suite)
+	- [Build your Solution](../Build Introduction)
+	- [Test your Solution](../Test Suite)

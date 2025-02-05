@@ -158,9 +158,7 @@ nav:
           - Introduction: RI Roadmap.md
           - Code Contributions: Contributions.md
           - Code of Conduct: Code of Conduct.md
-          - Licensing: 
-              - Libraries and Tools: License Lib.md
-              - UI Applications: License UI.md
+          - Licensing: Licenses.md
       - Regulation: Regulation.md
       - Large-Scale Pilots: Large-Scale Pilots.md
   - Build:

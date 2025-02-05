@@ -143,12 +143,14 @@ plugins:
             - '**/*.png'
 
 nav:
-  - Getting started:
+  - Getting Started:
       - Introduction: Getting Started.md
       - Build Wallet: Build Wallet.md
       - Build Issuer: Build Issuer.md
       - Build Verifier: Build Verifier.md
-      - Demo: Demo.md
+      - Demos:
+           - Introduction: Demos.md
+           - Travel Scenario: Travel Scenario.md
   - Specifications:
       - Introduction: Specifications.md
       - Architecture Reference Framework: ARF.md
@@ -161,11 +163,11 @@ nav:
               - UI Applications: License UI.md
       - Regulation: Regulation.md
       - Large-Scale Pilots: Large-Scale Pilots.md
-  - How TOs:
+  - How Tos:
       - Introduction: HowTo.md
       - How to for Wallet:
           - Introduction: HowTo Wallet.md
-          - UI Level:
+          - Application Level:
               - Android:
                   - Build the App: Android/Build the App.md
                   - Running with Remote Services: Android/Running with Remote Services.md
@@ -176,11 +178,11 @@ nav:
                   - Running with Remote Services: iOS/Running with Remote Services.md
                   - Running with Local Services: iOS/Running with Local Services.md
                   - Self-signed Cerificates: iOS/Self-signed Certificates.md
-#         - Library Level:
-#              - Android:
-#                  - Core: eudi-lib-android-wallet-core/README.md
-#              - iOS:
-#                  - Core: eudi-lib-ios-wallet-kit/README.md
+         - Library Level:
+              - Android:
+                  - Core: eudi-lib-android-wallet-core/README.md
+              - iOS:
+                  - Core: eudi-lib-ios-wallet-kit/README.md
       - How to for Issuer:
           - Introduction: eudi-srv-web-issuing-eudiw-py/README.md
           - New Attestations: eudi-srv-web-issuing-eudiw-py/api_docs/add_credential.md

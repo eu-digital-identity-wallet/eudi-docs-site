@@ -1,8 +1,8 @@
 # How to work with self signed certificates on iOS
 
-In addition to the change below, in order for the app to interact with locally running service a small code change is required to do this successfully.
+In order for the app to interact with locally running service the following changes need to be done:
 
-Before running the app in the simulator add these lines of code to the top of the file WalletKitController just below the import statements. 
+1. Before running the app in the simulator add these lines of code to the top of the file WalletKitController just below the import statements. 
 
 ```swift
 class SelfSignedDelegate: NSObject, URLSessionDelegate {
@@ -36,10 +36,8 @@ let walletSession: URLSession = {
 }()
 ```
 
-Once the above is in place add:
+2. Once the above is in place add, in order for the app to interact with web services that rely on self signed certificates, add the following line in the initializer:
 
 ```swift
 wallet.urlSession = walletSession
 ```
-
-in the initializer. This change will allow the app to interact with web services that rely on self signed certificates.

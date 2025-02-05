@@ -190,23 +190,23 @@ nav:
           - Introduction: eudi-web-verifier/README.md
 
   - Test: 
-      - Introduction: Test Suite.md
+      - Introduction: Test.md
       - Wallet Application:
-          - Introduction: Wallet Test Suite.md
+          - Introduction: Wallet Test.md
           - Android:
               - Install:  Android/HowTo Install.md
-              - Issue (Scoped): Android/HowTo Issue (Scoped).md
+              - Issue (Wallet Initiated): Android/HowTo Issue (Wallet Initiated).md
               - Issue (Credential Offer): Android/HowTo Issue (Credential Offer).md
               - Present (Same Device): Android/HowTo Present (Same Device).md
               - Present (Proximity): Android/HowTo Present (Proximity).md
           - iOS: 
               - Install:  iOS/HowTo Install.md
-              - Issue (Scoped): iOS/HowTo Issue (Scoped).md
+              - Issue (Wallet Initiated): iOS/HowTo Issue (Wallet Initiated).md
               - Issue (Credential Offer): iOS/HowTo Issue (Credential Offer).md
               - Present (Same Device): iOS/HowTo Present (Same Device).md
               - Present (Proximity): iOS/HowTo Present (Proximity).md
-      - Issuer: Issuer Test Suite.md
-      - Online Verifier: Verifier Test Suite.md
+      - Issuer: Issuer Test.md
+      - Online Verifier: Verifier Test.md
       - Verifier Application: Verifier Application.md
   - About:
       - Introduction: About.md

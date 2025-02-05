@@ -167,7 +167,7 @@ nav:
       - Introduction: Build Introduction.md
       - Build your Wallet:
           - Introduction: Build Wallet.md
-          - Wallet Application:
+          - Wallet Application Level:
               - Android:
                   - Build the App: Android/Build the App.md
                   - Running with Remote Services: Android/Running with Remote Services.md
@@ -178,13 +178,15 @@ nav:
                   - Running with Remote Services: iOS/Running with Remote Services.md
                   - Running with Local Services: iOS/Running with Local Services.md
                   - Self-signed Cerificates: iOS/Self-signed Certificates.md
-         - Library Level:
+          - Library Level:
               - Android:
                   - Core: eudi-lib-android-wallet-core/README.md
               - iOS:
                   - Core: eudi-lib-ios-wallet-kit/README.md
-      - How to for Issuer:
-          - Introduction: eudi-srv-web-issuing-eudiw-py/README.md
+      - Build your Issuer:
+          - Introduction: Issuer Introduction.md
+          - Build the Issuer: Build Issuer.md
+          - FAQ: Issuer FAQ.md
           - New Attestations: eudi-srv-web-issuing-eudiw-py/api_docs/add_credential.md
       - How to for Verifier:
           - Introduction: eudi-web-verifier/README.md

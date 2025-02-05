@@ -171,8 +171,10 @@ nav:
               - Running with Local Services: Android/Running with Local Services.md
               - Self-signed Cerificates: Android/Self-signed Certificates.md
           - iOS:
-              - iOS wallet UI: eudi-app-ios-wallet-ui/wiki/how_to_build.md
-              - iOS core: eudi-lib-ios-wallet-kit/README.md
+              - Build the App: Android/Build the App.md
+              - Running with Remote Services: Android/Running with Remote Services.md
+              - Running with Local Services: Android/Running with Local Services.md
+              - Self-signed Cerificates: Android/Self-signed Certificates.md
 #      - How to for Wallet core:
 #          - Introduction: HowTo Core.md
 #          - Android:

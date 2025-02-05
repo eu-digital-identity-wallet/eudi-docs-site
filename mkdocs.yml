@@ -1,4 +1,4 @@
-site_name: DEVELOPERS HUB
+site_name: EUDI WALLET HUB
 theme:
   name: material
   font:
@@ -145,14 +145,14 @@ plugins:
 nav:
   - Getting Started:
       - Introduction: Getting Started.md
-      - Build Wallet: Build Wallet.md
-      - Build Issuer: Build Issuer.md
-      - Build Verifier: Build Verifier.md
-      - Demos:
-           - Introduction: Demos.md
-           - Travel Scenario: Travel Scenario.md
-  - Specifications:
-      - Introduction: Specifications.md
+#      - Build Wallet: Build Wallet.md
+#      - Build Issuer: Build Issuer.md
+#      - Build Verifier: Build Verifier.md
+#      - Demos:
+#           - Introduction: Demos.md
+#           - Travel Scenario: Travel Scenario.md
+  - Resources:
+      - Introduction: Resources.md
       - Architecture Reference Framework: ARF.md
       - Reference Implementation: 
           - Introduction: RI Roadmap.md
@@ -163,11 +163,11 @@ nav:
               - UI Applications: License UI.md
       - Regulation: Regulation.md
       - Large-Scale Pilots: Large-Scale Pilots.md
-  - How Tos:
-      - Introduction: HowTo.md
-      - How to for Wallet:
-          - Introduction: HowTo Wallet.md
-          - Application Level:
+  - Build:
+      - Introduction: Build Introduction.md
+      - Build your Wallet:
+          - Introduction: Build Wallet.md
+          - Wallet Application:
               - Android:
                   - Build the App: Android/Build the App.md
                   - Running with Remote Services: Android/Running with Remote Services.md
@@ -189,7 +189,7 @@ nav:
       - How to for Verifier:
           - Introduction: eudi-web-verifier/README.md
 
-  - Test Suite: 
+  - Test: 
       - Introduction: Test Suite.md
       - Wallet Application:
           - Introduction: Wallet Test Suite.md

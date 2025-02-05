@@ -163,17 +163,22 @@ nav:
       - Large-Scale Pilots: Large-Scale Pilots.md
   - How TOs:
       - Introduction: HowTo.md
-      - How to for Wallet:
+      - How to for Wallet UI:
           - Introduction: HowTo Wallet.md
           - Android:
               - Build the App: Android/Build the App.md
               - Running with Remote Services: Android/Running with Remote Services.md
               - Running with Local Services: Android/Running with Local Services.md
               - Self-signed Cerificates: Android/Self-signed Certificates.md
-              - Android core: eudi-lib-android-wallet-core/README.md
           - iOS:
               - iOS wallet UI: eudi-app-ios-wallet-ui/wiki/how_to_build.md
               - iOS core: eudi-lib-ios-wallet-kit/README.md
+#      - How to for Wallet core:
+#          - Introduction: HowTo Core.md
+#          - Android:
+#              - Android core: eudi-lib-android-wallet-core/README.md
+#          - iOS:
+#              - iOS core: eudi-lib-ios-wallet-kit/README.md
       - How to for Issuer:
           - Introduction: eudi-srv-web-issuing-eudiw-py/README.md
           - New Attestations: eudi-srv-web-issuing-eudiw-py/api_docs/add_credential.md

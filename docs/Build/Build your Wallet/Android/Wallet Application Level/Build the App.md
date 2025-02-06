@@ -3,7 +3,7 @@
 ## Overview
 This guide aims to assist developers build the EUDI Wallet application on Android.
 
-## Setup EUDI Wallet applicationon Android
+## Setup EUDI Wallet application on Android
 
 To build the application using the source code and connect it with the issuer and verifier, please follow the next steps:
 
@@ -33,9 +33,9 @@ To build the application using the source code and connect it with the issuer an
     2. To run the App on an emulator, simply go to Run -> Run 'app'.
 
 6. Finally, the App needs to be connected with an Issuer and a Verifier either locally, or remotely.
-    1. To run remotely, please follow the instructions [here](../Running with Remote Services)
-    2. To run locally, please follow the instructions [here](../Running with Local Services)
+    1. [Follow the instructions](../Running with Remote Services) to run remotely.
+    2. [Follow the instructions](../Running with Local Services) to run locally.
 
-7. (Optional) In case serlf-signed certificates are required, please follow the instructions [here](../Self-signed Certificates)
+7. (Optional) [Follow the instructions](../Self-signed Certificates) if self-signed certificates are required.
 
-For a complete list of all configuration options please refer to [this document](https://github.com/eu-digital-identity-wallet/eudi-app-android-wallet-ui/blob/main/wiki/configuration.md){:target="_blank"}
+[Check the full list of configuration options](https://github.com/eu-digital-identity-wallet/eudi-app-android-wallet-ui/blob/main/wiki/configuration.md){:target="_blank"}.

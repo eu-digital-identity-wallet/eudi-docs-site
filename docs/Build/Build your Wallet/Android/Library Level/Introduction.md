@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains the EUDI Wallet Core library for Android. The library is a part
+This [repository](https://github.com/eu-digital-identity-wallet/eudi-lib-android-wallet-core){:target="_blank"} contains the EUDI Wallet Core library for Android. The library is a part
 of the EUDI Wallet Reference Implementation project.
 
 This library acts as a coordinator by orchestrating the various components that are

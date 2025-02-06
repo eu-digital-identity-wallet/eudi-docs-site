@@ -96,7 +96,9 @@ plugins:
       exclude_paths:
         - "docs/mkdocs/**"
         - "docs/mkdocs"   # avoid generating index.md
-      generate_home_index: false
+      additional_index_folders:
+        - temp_dir
+      generate_home_index: true
   - multirepo:
       cleanup: true
       keep_docs_dir: false
@@ -151,7 +153,7 @@ nav:
 #      - Demos:
 #           - Introduction: Demos.md
 #           - Travel Scenario: Travel Scenario.md
-  - Get Started: https://mgiakkou.github.io/devhub/
+  - Get Started: index.html
   - Resources:
       - Introduction: Resources/Introduction.md
       - Regulation: Resources/Regulation.md

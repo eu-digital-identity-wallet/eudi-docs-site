@@ -6,7 +6,7 @@ Its goal is to showcase a robust and interoperable platform for digital identifi
 
 Reference Implementation can be used by wallet providers, issuers and verifiers as a basis for their own solution. It also includes a set of testing tools to support testing and ensure that your implementation meets the functional requirements.
 
-[See GitHub for more details on the Reference Implementation, including a list of all repositories](https://github.com/eu-digital-identity-wallet/.github/blob/main/profile/reference-implementation.md){:target="_blank"}
+[Check GitHub for more details and repositories](https://github.com/eu-digital-identity-wallet/.github/blob/main/profile/reference-implementation.md){:target="_blank"}.
 
 ## Check out the roadmap to discover upcoming features
 

@@ -143,24 +143,30 @@ plugins:
             - '**/*.png'
 
 nav:
-  - Getting Started:
-      - Introduction: Getting Started.md
+#  - Getting Started:
+#      - Introduction: Getting Started.md
 #      - Build Wallet: Build Wallet.md
 #      - Build Issuer: Build Issuer.md
 #      - Build Verifier: Build Verifier.md
 #      - Demos:
 #           - Introduction: Demos.md
 #           - Travel Scenario: Travel Scenario.md
+  - Reference Implementation: 
+      - Introduction: RI Roadmap.md
+      - Code Contributions: Contributions.md
+      - Code of Conduct: Code of Conduct.md
+      - Licensing: Licenses.md
+      - Demos:
+           - Introduction: Demos.md
+           - Travel Scenario: Travel Scenario.md
   - Resources:
       - Introduction: Resources.md
       - Architecture Reference Framework: ARF.md
-      - Reference Implementation: 
-          - Introduction: RI Roadmap.md
-          - Code Contributions: Contributions.md
-          - Code of Conduct: Code of Conduct.md
-          - Licensing: Licenses.md
       - Regulation: Regulation.md
       - Large-Scale Pilots: Large-Scale Pilots.md
+      - Demos:
+           - Introduction: Demos.md
+           - Travel Scenario: Travel Scenario.md
   - Build:
       - Introduction: Build.md
       - Build your Wallet:

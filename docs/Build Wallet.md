@@ -6,7 +6,7 @@ Let's start with your implementation!
 
 | Operating System    | Description | Get Started |
 | -------- | ------- |------- |
-| Android | Reference Implementation Wallet Application |[Android Wallet](../eudi-app-android-wallet-ui/wiki/how_to_build)|
+| Android | Reference Implementation Wallet Application |[Android Wallet](../Android/Build the App)|
 | Android | Reference Implementation Core | [Android Core](../eudi-lib-android-wallet-core) |
-| iOS  | Reference Implementation Wallet Application |[iOS Wallet](../eudi-app-ios-wallet-ui/wiki/how_to_build) |
+| iOS  | Reference Implementation Wallet Application |[iOS Wallet](../iOS/Build the App) |
 | iOS  | Reference Implementation Core |[iOS Core](../eudi-lib-ios-wallet-kit) |

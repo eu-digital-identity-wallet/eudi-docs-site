@@ -10,11 +10,9 @@ The service provides, by default, support for `mso_mdoc` and `SD-JWT-VC`formats,
 | Credential/Attestation | Format    |
 |------------------------|-----------|
 | PID                    | mso_mdoc  |
-| PID                    | SD-JWT-VC |
+| PID(sample)            | SD-JWT-VC |
 | mDL                    | mso_mdoc  | 
 | mDL                    | SD-JWT-VC  | 
-| (Q)EAA age-over-18 pseudonym | mso_mdoc |
-| (Q)EAA loyalty card | mso_mdoc |
 
 For authenticating the user, it requires the use of eIDAS node, OAUTH2 server or a simple form (for testing purposes).
 
@@ -26,23 +24,23 @@ This version of the EUDIW Issuer supports the [OpenId for Verifiable Credential 
 
 | Feature                                                   | Coverage                                                        |
 |-------------------------------------------------------------------|-----------------------------------------------------------------|
-| [Authorization Code flow](api_docs/authorization.md)              | ✅ Support for PAR, PKCE, credential configuration id, scope    |
-| [Pre-authorized code flow](api_docs/pre-authorized.md)            | ✅                                                              |
+| [Authorization Code flow](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/api_docs/authorization.md){:target="_blank"}              | ✅ Support for PAR, PKCE, credential configuration id, scope    |
+| [Pre-authorized code flow](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/api_docs/pre-authorized.md){:target="_blank"}            | ✅                                                              |
 | Dynamic Credential Request                                        | ✅                                                              |
 | mso_mdoc format                                                   | ✅                                                              |
 | SD-JWT-VC format                                                  | ✅                                                              |
 | W3C VC DM                                                         | ❌                                                              |
-| [Token Endpoint](api_docs/token.md)                               | ✅                                                              |
-| [Credential Offer](api_docs/credential_offer.md)                  | ✅ `authorization_code` , ✅ `pre-authorized_code`              |
-| [Credential Endpoint](api_docs/credential.md)                     | ✅ Including proofs and repeatable invocations                  |
+| [Token Endpoint](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/api_docs/token.md){:target="_blank"}                               | ✅                                                              |
+| [Credential Offer](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/api_docs/credential_offer.md){:target="_blank"}                  | ✅ `authorization_code` , ✅ `pre-authorized_code`              |
+| [Credential Endpoint](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/api_docs/credential.md){:target="_blank"}                     | ✅ Including proofs and repeatable invocations                  |
 | Credential Issuer MetaData                                        | ✅                                                              | 
-| [Batch Endpoint](api_docs/batch_credential.md)                     | ✅                                                              | 
-| [Deferred Endpoint](api_docs/deferred.md)                         | ✅                                                              |
+| [Batch Endpoint](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/api_docs/batch_credential.md){:target="_blank"}                     | ✅                                                              | 
+| [Deferred Endpoint](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/api_docs/deferred.md){:target="_blank"}                         | ✅                                                              |
 | Proof                                                             | ✅ JWT, ✅ CWT                                                  |
-| [Notification Endpoint](api_docs/notification.md)                 | ✅                                                              |
+| [Notification Endpoint](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/api_docs/notification.md){:target="_blank"}                 | ✅                                                              |
 
 
-You can use the EUDIW Issuer at https://issuer.eudiw.dev/, or install it locally.
+You can use the EUDIW Issuer at [https://issuer.eudiw.dev/](https://issuer.eudiw.dev/){:target="_blank"}, or install it locally.
 
 
 ## Disclaimer

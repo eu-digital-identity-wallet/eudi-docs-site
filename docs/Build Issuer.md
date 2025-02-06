@@ -40,18 +40,17 @@ To run the EUDIW Issuer, please follow these simple steps (some of which may hav
 
 3. Activate the environment:
 
-Linux/macOS
+	Linux/macOS
 
-   ```shell
-   . .venv/bin/activate
-   ```
+	   ```shell
+	   . .venv/bin/activate
+	   ```
 
-Windows
+	Windows
 
-   ```shell
-   . .venv\Scripts\Activate
-   ```
-
+	   ```shell
+	   . .venv\Scripts\Activate
+	   ```
 
 4. Install or upgrade _pip_
 

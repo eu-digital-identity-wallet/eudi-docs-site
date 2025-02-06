@@ -38,6 +38,6 @@ In order for the app to interact with locally running service the following chan
 
 2. Once the above is in place add, in order for the app to interact with web services that rely on self signed certificates, add the following line in the initializer:
 
-```swift
-wallet.urlSession = walletSession
-```
+	```swift
+	wallet.urlSession = walletSession
+	```

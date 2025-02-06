@@ -43,6 +43,7 @@ The library is written in Swift and is compatible with iOS 14 or higher. It is d
 and can be included in any iOS project.
 
 It is based on the following specifications:
+
 - ISO/IEC 18013-5 – Published
 - Presentation Exchange v2.0.0 - Published
 - OpenID4VP – Draft 18

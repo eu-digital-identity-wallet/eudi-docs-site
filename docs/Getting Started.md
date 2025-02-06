@@ -1,6 +1,6 @@
 # Getting Started 
 
-Welcome to the EUDI Wallet Hub
+Welcome to the EUDI Wallet Hub!
 
 Developers Hub is designed to help you build and test your project, offering clear instructions and support at every step. Our goal is to empower you with the knowledge and tools necessary to harness the potential of EUDI Wallet and leverage its capabilities for your specific use case.
 
@@ -17,5 +17,5 @@ Reference Implementation can be used by wallet providers, issuers and verifiers 
 Leverage the EUDI Wallet Reference Implementation to build and test your solution:
 
 - Discover EUDI Wallet [Resources](../Resources/)
-- [Build](../Build Introduction/) your Solution
+- [Build](../Build/) your Solution
 - [Test](../Test/) your Solution

@@ -162,7 +162,7 @@ nav:
       - Regulation: Regulation.md
       - Large-Scale Pilots: Large-Scale Pilots.md
   - Build:
-      - Introduction: Build Introduction.md
+      - Introduction: Build.md
       - Build your Wallet:
           - Introduction: Build Wallet.md
           - Wallet Application Level:

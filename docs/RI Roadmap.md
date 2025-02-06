@@ -14,4 +14,4 @@ New features are regularly added to the reference implementation. Roadmap of the
 
 [View the roadmap of the EUDI Wallet reference implementation](https://github.com/orgs/eu-digital-identity-wallet/projects/24){:target="_blank"}.
 
-Engage in discussions about the roadmap in the [Discussions section](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/discussions){:target="_blank"}.
+You are also welcome to join the [discussion on Reference Implementation Roadmap](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/discussions){:target="_blank"}.

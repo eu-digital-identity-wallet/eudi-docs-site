@@ -16,6 +16,6 @@ Reference Implementation can be used by wallet providers, issuers and verifiers 
 
 Leverage the EUDI Wallet Reference Implementation to build and test your solution:
 
-  - Discover EUDI Wallet [Resources](../Resources/)
-  - [Build](../Build Introduction/) your Solution
-  - [Test](../Test/) your Solution
+- Discover EUDI Wallet [Resources](../Resources/)
+- [Build](../Build Introduction/) your Solution
+- [Test](../Test/) your Solution

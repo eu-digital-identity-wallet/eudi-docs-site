@@ -1,4 +1,4 @@
-# Installation
+# Build the Issuer
 
 ## 1. Python
 
@@ -40,13 +40,13 @@ To run the EUDIW Issuer, please follow these simple steps (some of which may hav
 
 3. Activate the environment:
 
-   Linux/macOS
+Linux/macOS
 
    ```shell
    . .venv/bin/activate
    ```
 
-   Windows
+Windows
 
    ```shell
    . .venv\Scripts\Activate

@@ -1,4 +1,4 @@
-# Issuance flow (Scoped)
+# Issuance flow (Wallet Initiated)
 
 1. Open the "Add document" screen or if it's the first time you open the app, you will be redirected there after you enter or set up your PIN.
 2. Pick "National ID".

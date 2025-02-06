@@ -178,16 +178,21 @@ nav:
                   - Self-signed Cerificates: iOS/Self-signed Certificates.md
           - Library Level:
               - Android:
-                  - Core: eudi-lib-android-wallet-core/README.md
+                  - Introduction: Android/Core Introduction.md
+                  - Build the Core: Android/Build the Core.md
+                  - Manage Documents: Android/Manage Documents.md
               - iOS:
-                  - Core: eudi-lib-ios-wallet-kit/README.md
+                  - Introduction: iOS/Core Introduction.md
+                  - Build the Core: iOS/Build the Core.md
+                  - Manage Documents: iOS/Manage Documents.md
       - Build your Issuer:
           - Introduction: Issuer Introduction.md
           - Build the Issuer: Build Issuer.md
           - FAQ: Issuer FAQ.md
           - New Attestations: eudi-srv-web-issuing-eudiw-py/api_docs/add_credential.md
       - Build your Verifier:
-          - Introduction: eudi-web-verifier/README.md
+          - Introduction: Build Verifier.md
+          - Running Tests: Running Tests.md
 
   - Test: 
       - Introduction: Test.md

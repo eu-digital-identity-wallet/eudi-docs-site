@@ -12,7 +12,7 @@ EUDI Wallet Test Suite is a comprehensive toolkit that includes pre-built tools 
 
 ## Test the online Verifier
 
-[Test](../Verifier/) how your wallet implementation responds to a credential request from a verifier. 
+[Test](../Online Verifier/) how your wallet implementation responds to a credential request from a verifier. 
 
 ## Test the local Verifier
 

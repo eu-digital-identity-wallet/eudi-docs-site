@@ -201,19 +201,19 @@ nav:
   - Test: 
       - Introduction: Test/Introduction.md
       - Wallet Application:
-          - Introduction: Wallet Application/Introduction.md
+          - Introduction: Test/Wallet Application/Introduction.md
           - Android:
-              - Install:  Wallet Application/Android/Install.md
-              - Issue (Wallet Initiated): Wallet Application/Android/Issue (Wallet Initiated).md
-              - Issue (Credential Offer): Wallet Application/Android/Issue (Credential Offer).md
-              - Present (Same Device): Wallet Application/Android/Present (Same Device).md
-              - Present (Proximity): Wallet Application/Android/Present (Proximity).md
+              - Install:  Test/Wallet Application/Android/Install.md
+              - Issue (Wallet Initiated): Test/Wallet Application/Android/Issue (Wallet Initiated).md
+              - Issue (Credential Offer): Test/Wallet Application/Android/Issue (Credential Offer).md
+              - Present (Same Device): Test/Wallet Application/Android/Present (Same Device).md
+              - Present (Proximity): Test/Wallet Application/Android/Present (Proximity).md
           - iOS: 
-              - Install:  Wallet Application/iOS/Install.md
-              - Issue (Wallet Initiated): Wallet Application/iOS/Issue (Wallet Initiated).md
-              - Issue (Credential Offer): Wallet Application/iOS/Issue (Credential Offer).md
-              - Present (Same Device): Wallet Application/iOS/Present (Same Device).md
-              - Present (Proximity): Wallet Application/iOS/Present (Proximity).md
+              - Install: Test/Wallet Application/iOS/Install.md
+              - Issue (Wallet Initiated): Test/Wallet Application/iOS/Issue (Wallet Initiated).md
+              - Issue (Credential Offer): Test/Wallet Application/iOS/Issue (Credential Offer).md
+              - Present (Same Device): Test/Wallet Application/iOS/Present (Same Device).md
+              - Present (Proximity): Test/Wallet Application/iOS/Present (Proximity).md
       - Issuer: Test/Issuer.md
       - Online Verifier: Test/Online Verifier.md
       - Verifier Application: Test/Verifier Application.md

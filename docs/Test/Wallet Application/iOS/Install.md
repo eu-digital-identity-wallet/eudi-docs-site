@@ -31,16 +31,16 @@ You will also need to download the Android Verifier app. More information can be
 
 ## Issuance flow (Scoped)
 
-Proceed to [issue an attestation](../HowTo Issue (Scoped)) beginning within the wallet. 
+Proceed to [issue an attestation](../Issue (Scoped)) beginning within the wallet. 
 
 ## Issuance flow (Credential Offer)
 
-Proceed to [issue an attestation](../HowTo Issue (Credential Offer)) beginning from the issuer. 
+Proceed to [issue an attestation](../Issue (Credential Offer)) beginning from the issuer. 
 
 ## Presentation (Online authentication/Same device) flow.
 
-Proceed to [present an attestation](../HowTo Present (Same Device)) using the same device.
+Proceed to [present an attestation](../Present (Same Device)) using the same device.
 
 ## Proximity flow
 
-Proceed to [present an attestation](../HowTo Present (Proximity)) using different devices.
+Proceed to [present an attestation](../Present (Proximity)) using different devices.

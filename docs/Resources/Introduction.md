@@ -6,15 +6,15 @@ To support your introduction to the EUDI Wallet, we’ve gathered essential reso
 
 Understand the regulatory framework that underpins the development and deployment of the EU Digital Identity Wallet. This regulation outlines the legal requirements necessary to guarantee the wallet’s secure, interoperable, and cross-border functionality.
 
-[Explore the regulation](../Regulation)
+[Explore the Regulation](../Regulation)
 
-## Build your expertise with the Architecture and Reference Framework
+## Master the Architecture and Reference Framework
 
 Discover the key specifications and guidelines needed to develop an interoperable EUDI Wallet solution. This framework provides a solid foundation based on common standards and best practices to ensure seamless integration and functionality. 
 
 [Explore the Architecture and Reference Framework](../Architecture Reference Implementation)
 
-## Build your understanding of practical implementations with EUDI Wallet large-scale pilots
+## Explore the Large-Scale Pilots Shaping the EUDI Wallet
 
 Four large-scale pilot projects are currently underway to test the EU Digital Identity Wallet, involving over 360 entities across 26 Member States, Norway, Iceland, and Ukraine. Gain valuable real-world insight by exploring these projects.
 

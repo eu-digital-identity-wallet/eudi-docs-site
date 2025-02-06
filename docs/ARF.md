@@ -4,7 +4,7 @@ The Architecture and Reference Framework (ARF) outlines the specifications requi
 
 The Architecture and Reference Framework (ARF) is a work in progress that is continuously updated. It is reflecting collaborative efforts among the 27 Member States, the European Commission, and, where relevant, private sector operators.
 
-[Please review the latest version of the ARF](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/arf.md){:target="_blank"}.
+[Please review the latest version of the ARF](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/docs/architecture-and-reference-framework-main.md){:target="_blank"}.
 
 **Contributions and discussion**
 

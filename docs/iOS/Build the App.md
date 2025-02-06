@@ -7,7 +7,7 @@ This guide aims to assist developers to build the iOS application.
 # Setup EUDI iOS Wallet reference application
 
 1. You need [xcode](https://xcodereleases.com/){:target="_blank"} and its associated tools installed on your machine. We recommend the latest non-beta version. 
-2. Clone the [iOS repository](https://github.com/eu-digital-identity-wallet/eudi-app-ios-wallet-ui) using the following command:
+2. Clone the [iOS repository](https://github.com/eu-digital-identity-wallet/eudi-app-ios-wallet-ui){:target="_blank"} using the following command:
 	```git clone git@github.com:eu-digital-identity-wallet/eudi-app-ios-wallet-ui.git ```
 3. Open the project file in Xcode.
 4. The application has two schemes: "EUDI Wallet Dev" and "EUDI Wallet Demo" that can be configured in the xcconfig files located under the Config folder in the project.
@@ -26,7 +26,7 @@ This guide aims to assist developers to build the iOS application.
 
         - "devDebug", "devRelease", "demoDebug", "demoRelease"
 
-5. The aApp can be executed both on a device or on an emulator:
+5. The App can be executed both on a device or on an emulator:
 
 	1. To run the app on the simulator, select your app schema and press Run.
 	2. To run the app on a device, follow similar steps to running it on the simulator. Additionally, you need to supply your own provisioning profile and signing certificate in the Signing & Capabilities tab of your app target.

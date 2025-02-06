@@ -16,3 +16,9 @@ New features are regularly added to the reference implementation. Roadmap of the
 
 You are also welcome to join the [discussion on Reference Implementation Roadmap](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/discussions){:target="_blank"}.
 
+## Start your solution
+
+Leverage the EUDI Wallet Reference Implementation to build and test your solution:
+
+- [Build](../Build/) your Solution
+- [Test](../Test/) your Solution

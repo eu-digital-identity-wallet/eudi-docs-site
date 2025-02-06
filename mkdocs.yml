@@ -196,7 +196,7 @@ nav:
           - New Attestations: eudi-srv-web-issuing-eudiw-py/api_docs/add_credential.md
       - Build your Verifier:
           - Introduction: Build/Build your Verifier/Introduction.md
-          - Running Tests: Build/Build your Verifier/Running Tests.md
+          - Running Tests: Build/Build your Verifier/Steps to Build.md
 
   - Test: 
       - Introduction: Test/Introduction.md

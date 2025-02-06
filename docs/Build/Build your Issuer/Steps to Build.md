@@ -1,5 +1,7 @@
 # Build the Issuer
 
+This section includes a thorough description of the steps to build your own Issuer.
+
 ## 1. Python
 
 The EUDIW Issuer was tested with

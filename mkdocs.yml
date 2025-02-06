@@ -151,7 +151,7 @@ nav:
 #      - Demos:
 #           - Introduction: Demos.md
 #           - Travel Scenario: Travel Scenario.md
-  - Home: https://mgiakkou.github.io/devhub/
+  - Get Started: https://mgiakkou.github.io/devhub/
   - Reference Implementation: 
       - Introduction: RI Roadmap.md
       - Code Contributions: Contributions.md

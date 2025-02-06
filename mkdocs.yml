@@ -165,23 +165,23 @@ nav:
       - Introduction: Build.md
       - Build your Wallet:
           - Introduction: Build Wallet.md
-          - Wallet Application Level:
-              - Android:
+          - Android:
+              - Wallet Application Level:
                   - Build the App: Android/Build the App.md
                   - Running with Remote Services: Android/Running with Remote Services.md
                   - Running with Local Services: Android/Running with Local Services.md
                   - Self-signed Cerificates: Android/Self-signed Certificates.md
-              - iOS:
+              - Library Level:
+                  - Introduction: Android/Core Introduction.md
+                  - Build the Core: Android/Build the Core.md
+                  - Manage Documents: Android/Manage Documents.md
+          - iOS:
+              - Wallet Application Level:
                   - Build the App: iOS/Build the App.md
                   - Running with Remote Services: iOS/Running with Remote Services.md
                   - Running with Local Services: iOS/Running with Local Services.md
                   - Self-signed Cerificates: iOS/Self-signed Certificates.md
-          - Library Level:
-              - Android:
-                  - Introduction: Android/Core Introduction.md
-                  - Build the Core: Android/Build the Core.md
-                  - Manage Documents: Android/Manage Documents.md
-              - iOS:
+              - Library Level:
                   - Introduction: iOS/Core Introduction.md
                   - Build the Core: iOS/Build the Core.md
                   - Manage Documents: iOS/Manage Documents.md

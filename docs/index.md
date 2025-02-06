@@ -4,7 +4,7 @@ This is the developer's hub for the European Digital Identity Wallet, a key refe
 
 Everything you need to start your development project is gathered here. You will find technical guidelines and tools as well as directions for how to get started defining, designing and building an EUDI Wallet project.
 
-## Getting Started
+## Reference Implementation
 Begin your EUDI Wallet journey with structured and practical guidance. This section offers step-by-step instructions tailored to Wallet Providers, Issuers, and Relying Parties, enabling you to evaluate and effectively utilize the EUDI Wallet Reference Implementation in your project.
 
 [Explore the Reference Implementation](./RI Roadmap/)

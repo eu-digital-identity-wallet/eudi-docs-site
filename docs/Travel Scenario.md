@@ -1,5 +1,7 @@
 # Travel Scenario
 
+The Reference Implementation includes the travel use case implementation to showcase the utilization of the EUDI Wallet in a ‘Travel’ scenario, where the EUDI Wallet is used for several purposes, such as presenting attestations (remotely and in proximity) as well as digitally signing documents.
+
 ## Use case
 
 1. **Jane is preparing for her next trip** with the help of her EUDI Wallet. Jane starts by securing her essential travel documents. She issues her Digital Identity, Mobile Driving License, and Photo-ID directly into her EUDI Wallet. Each document is safely stored, ready to be accessed whenever she needs them.

@@ -10,7 +10,7 @@ required to implement the EUDI Wallet functionality. On top of that, it provides
 that can be used by the application to implement the EUDI Wallet functionality.
 
 <figure>
-<img src="../assets/android_core.png"
+<img src="../../assets/android_core.png"
 style="width:5.02083in;height:6.36458in"
 alt="Android core liraries" />
 </figure>

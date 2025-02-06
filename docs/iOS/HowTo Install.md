@@ -22,7 +22,7 @@
 
 4. To run the app on a device, select your app schema and press Run. Additionally, you need to supply your own provisioning profile and signing certificate in the Signing & Capabilities tab of your app target.
 
-You will also need to download the Android Verifier app. More information can be found [here](../Verifier Application)
+You will also need to download the Android Verifier app. More information can be found [here](../../Verifier Application)
 
 ## App launch
 

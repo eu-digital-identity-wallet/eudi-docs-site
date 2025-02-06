@@ -1,6 +1,6 @@
 # mDoc Verifier (Testing)
 
-The mDoc Verifier (Testing) is an Android application based on the `appverifier` from the [Google Identity Credential library](https://github.com/openwallet-foundation-labs/identity-credential), implementing ISO/IEC 18013-5:2021.
+The mDoc Verifier (Testing) is an Android application based on the `appverifier` from the [Google Identity Credential library](https://github.com/openwallet-foundation-labs/identity-credential){:target="_blank"}, implementing ISO/IEC 18013-5:2021.
 
 ## Purpose
 
@@ -8,7 +8,7 @@ The mDoc Verifier (Testing) app is provided to help developers test and validate
 
 ## Modifications
 
-Starting from the original code of the `appverifier` [here](https://github.com/openwallet-foundation-labs/identity-credential/commit/0b9b31ef63047762e10300e23a22f6d7dcfb6d15), the following modifications have been made:
+Starting from the original code of the `appverifier` [here](https://github.com/openwallet-foundation-labs/identity-credential/commit/0b9b31ef63047762e10300e23a22f6d7dcfb6d15){:target="_blank"}, the following modifications have been made:
 
  - Support for requesting EU Documents:
    - Personal Identification Data (PID) document, according to the ARF PID RuleBook.

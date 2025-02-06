@@ -186,7 +186,7 @@ nav:
           - Build the Issuer: Build Issuer.md
           - FAQ: Issuer FAQ.md
           - New Attestations: eudi-srv-web-issuing-eudiw-py/api_docs/add_credential.md
-      - How to for Verifier:
+      - Build your Verifier:
           - Introduction: eudi-web-verifier/README.md
 
   - Test: 

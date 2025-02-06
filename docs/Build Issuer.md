@@ -42,15 +42,15 @@ To run the EUDIW Issuer, please follow these simple steps (some of which may hav
 
    Linux/macOS
 
-    ```shell
-    . .venv/bin/activate
-    ```
+   ```shell
+   . .venv/bin/activate
+   ```
 
-    Windows
+   Windows
 
-    ```shell
-    . .venv\Scripts\Activate
-    ```
+   ```shell
+   . .venv\Scripts\Activate
+   ```
 
 
 4. Install or upgrade _pip_
@@ -72,7 +72,7 @@ To run the EUDIW Issuer, please follow these simple steps (some of which may hav
 
 7. Service Configuration
 
-   - Configure the service according to [documentation](api_docs/configuration.md)  
+   - Configure the service according to [documentation](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/api_docs/configuration.md){:target="_blank"}
 
 8. Run the EUDIW Issuer 
 

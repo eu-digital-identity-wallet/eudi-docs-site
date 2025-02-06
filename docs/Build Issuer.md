@@ -155,32 +155,32 @@ If you want to make your local EUDIW Issuer available on the Internet, we recomm
 
 2. Configure your local EUDIW Issuer. For example, use the following Nginx configuration file (for a Linux installation):
 
-```nginx
-server {
-    server_name FQDN; # Change to the FQDN you want to use
+	```nginx
+	server {
+		server_name FQDN; # Change to the FQDN you want to use
 
-    listen 80;
-    access_log /var/log/nginx/issuer.eudiw.access.log;
-    error_log /var/log/nginx/issuer.eudiw.error.log;
-    root /var/www/html;
+		listen 80;
+		access_log /var/log/nginx/issuer.eudiw.access.log;
+		error_log /var/log/nginx/issuer.eudiw.error.log;
+		root /var/www/html;
 
-# Recommended
-    proxy_busy_buffers_size   512k;
-    proxy_buffers   4 512k;
-    proxy_buffer_size   256k;
+	# Recommended
+		proxy_busy_buffers_size   512k;
+		proxy_buffers   4 512k;
+		proxy_buffer_size   256k;
 
-# Provider backend
-    location / {
-        # The proxy_pass directive assumes that your local EUDIW Issuer is running at http://127.0.0.1:5000/. 
-        # If not, please adjust it accordingly.
-        proxy_pass                              http://127.0.0.1:5000/;
-        proxy_set_header Host                   $http_host;
-        proxy_set_header X-Real-IP              $remote_addr;
-        proxy_set_header X-Forwarded-For        $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto      $scheme;
-    }
-}
-```
+	# Provider backend
+		location / {
+			# The proxy_pass directive assumes that your local EUDIW Issuer is running at http://127.0.0.1:5000/. 
+			# If not, please adjust it accordingly.
+			proxy_pass                              http://127.0.0.1:5000/;
+			proxy_set_header Host                   $http_host;
+			proxy_set_header X-Real-IP              $remote_addr;
+			proxy_set_header X-Forwarded-For        $proxy_add_x_forwarded_for;
+			proxy_set_header X-Forwarded-Proto      $scheme;
+		}
+	}
+	```
 
 3. Restart the Nginx server
 

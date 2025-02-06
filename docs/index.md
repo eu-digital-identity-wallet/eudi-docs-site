@@ -10,16 +10,16 @@ Gain a deeper understanding of the foundational standards and frameworks for the
 [Learn more about the specifications](./Resources/Introduction/)
 
 ## Reference Implementation
-Begin your EUDI Wallet journey with structured and practical guidance. This section offers step-by-step instructions tailored to Wallet Providers, Issuers, and Relying Parties, enabling you to evaluate and effectively utilize the EUDI Wallet Reference Implementation in your project.
+Explore the open-source EUDI Wallet Reference Implementation, designed to help developers build secure and interoperable solutions. Discover how to use it, follow the development roadmap, and learn how to contribute. Additionally, find demos showcasing implemented business scenarios to guide your integration efforts.
 
 [Explore the Reference Implementation](./Reference Implementation/Introduction/)
 
 ## Build
 Access comprehensive resources to guide your development efforts. This section provides detailed instructions, open-source libraries, and tools to support the creation of Wallet, Issuer, or Verifier solutions that meet the highest standards of security and interoperability.
 
-[Develop your solutions with confidence](./Build/Introduction/)
+[Get ready to build your solutions](./Build/Introduction/)
 
 ## Test
-Validate your EUDI Wallet implementation with the EUDI Wallet Test Suite. This advanced toolkit includes pre-built testing tools designed to ensure your solution meets all specified functional requirements, guaranteeing quality and compliance.
+Validate your EUDI Wallet implementation with the EUDI Wallet Testing tools. This advanced toolkit includes pre-built testing tools designed to ensure your solution meets all specified functional requirements, guaranteeing quality and compliance.
 
-[Ensure the reliability of your implementation](./Test/Introduction/)
+[Get ready to test your solution](./Test/Introduction/)

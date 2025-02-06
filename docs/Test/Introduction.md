@@ -1,14 +1,14 @@
 # Test
 
-EUDI Wallet Testing tools contain a set of pre-built tools to support you in testing your EUDI Wallet solution. It is designed to ensure that the solution meets all specified functional requirements.
+The EUDI Wallet Testing tools contain a set of pre-built tools to support you in testing your EUDI Wallet solution. It is designed to ensure that the solution meets all specified functional requirements.
 
 ## Test the Wallet Application
 
-[Instructions](../Wallet Application/Introduction/) are provided on how to install the EUDI Wallet Application on your mobile phone (Android or iOS) and initialise it through issuing and presenting attestations
+[Instructions](../Wallet Application/Introduction/) are provided on how to install the EUDI Wallet Application on your mobile phone (Android or iOS) and initialise it through issuing and presenting attestations.
 
 ## Test the Issuer
 
-[Test](../Issuer/) various issuance flows of OpenID4VCI with your wallet
+[Test](../Issuer/) various issuance flows of OpenID4VCI with your wallet.
 
 ## Test the online Verifier
 

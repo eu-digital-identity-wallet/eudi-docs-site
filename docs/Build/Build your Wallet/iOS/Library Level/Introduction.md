@@ -10,7 +10,7 @@ required to implement the EUDI Wallet functionality. On top of that, it provides
 that can be used by the application to implement the EUDI Wallet functionality.
 
 <figure>
-<img src="../../assets/ios_core.png"
+<img src="../../../../../assets/ios_core.png"
 alt="iOS core liraries" />
 </figure>
 

@@ -11,7 +11,6 @@ that can be used by the application to implement the EUDI Wallet functionality.
 
 <figure>
 <img src="../../assets/android_core.png"
-style="width:5.02083in;height:6.36458in"
 alt="Android core liraries" />
 </figure>
 

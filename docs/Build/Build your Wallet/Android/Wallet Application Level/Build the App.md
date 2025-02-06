@@ -27,7 +27,7 @@ To build the application using the source code and connect it with the issuer an
 
         - "devDebug", "devRelease", "demoDebug", "demoRelease"
 
-5. The aApp can be executed both on a device or on an emulator:
+5. The App can be executed both on a device or on an emulator:
 
     1. To run the App on a device, firstly you must connect your device with the Android Studio, and then go to Run -> Run 'app'.
     2. To run the App on an emulator, simply go to Run -> Run 'app'.

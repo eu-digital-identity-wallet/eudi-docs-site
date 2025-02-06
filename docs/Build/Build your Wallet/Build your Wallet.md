@@ -6,7 +6,7 @@ Let's start with your implementation!
 
 | Operating System    | Description | Get Started |
 | -------- | ------- |------- |
-| Android | Reference Implementation Wallet Application |[Android Wallet](../Android/Build the App)|
-| Android | Reference Implementation Core | [Android Core](../Android/Core Introduction) |
-| iOS  | Reference Implementation Wallet Application |[iOS Wallet](../iOS/Build the App) |
-| iOS  | Reference Implementation Core |[iOS Core](../iOS/Core Introduction) |
+| Android | Reference Implementation Wallet Application |[Android Wallet](../Android/Wallet Application Level/Build the App)|
+| Android | Reference Implementation Core | [Android Core](../Android/Library Level/Introduction) |
+| iOS  | Reference Implementation Wallet Application |[iOS Wallet](../iOS/Wallet Application Level/Build the App) |
+| iOS  | Reference Implementation Core |[iOS Core](../iOS/Library Level/Introduction) |

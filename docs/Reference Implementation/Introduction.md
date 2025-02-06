@@ -20,5 +20,5 @@ You are also welcome to join the [discussion on Reference Implementation Roadmap
 
 Leverage the EUDI Wallet Reference Implementation to build and test your solution:
 
-- [Build](../Build/) your Solution
-- [Test](../Test/) your Solution
+- [Build](../Build/Introduction/) your Solution
+- [Test](../Test/Introduction/) your Solution

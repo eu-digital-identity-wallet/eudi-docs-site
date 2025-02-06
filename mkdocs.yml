@@ -153,67 +153,67 @@ nav:
 #           - Travel Scenario: Travel Scenario.md
   - Get Started: https://mgiakkou.github.io/devhub/
   - Resources:
-      - Introduction: Resources.md
-      - Regulation: Regulation.md
-      - Architecture Reference Framework: ARF.md
-      - Large-Scale Pilots: Large-Scale Pilots.md
+      - Introduction: Resources/Introduction.md
+      - Regulation: Resources/Regulation.md
+      - Architecture Reference Framework: Resources/Architecture Reference Implementation.md
+      - Large-Scale Pilots: Resources/Large-Scale Pilots.md
   - Reference Implementation: 
-      - Introduction: Reference Implementation.md
-      - Code Contributions: Code Contributions.md
-      - Code of Conduct: Code of Conduct.md
-      - Licensing: Licenses.md
+      - Introduction: Reference Implementation/Introduction.md
+      - Code Contributions: Reference Implementation/Code Contributions.md
+      - Code of Conduct: Reference Implementation/Code of Conduct.md
+      - Licensing: Reference Implementation/Licensing.md
+      - Disclaimer: Reference Implementation/Disclaimer.md
       - Demos:
-           - Introduction: Demos.md
-           - Travel Scenario: Travel Scenario.md
+           - Introduction: Reference Implementation/Demos/Introduction.md
+           - Travel Scenario: Reference Implementation/Demos/Travel Scenario.md
   - Build:
-      - Introduction: Build.md
+      - Introduction: Build/Introduction.md
       - Build your Wallet:
-          - Introduction: Build Wallet.md
+          - Introduction: Build/Build your Wallet/Introduction.md
           - Android:
               - Wallet Application Level:
-                  - Build the App: Android/Build the App.md
-                  - Running with Remote Services: Android/Running with Remote Services.md
-                  - Running with Local Services: Android/Running with Local Services.md
-                  - Self-signed Cerificates: Android/Self-signed Certificates.md
+                  - Build the App: Build/Build your Wallet/Android/Wallet Application Level/Build the App.md
+                  - Running with Remote Services: Build/Build your Wallet/Android/Wallet Application Level/Running with Remote Services.md
+                  - Running with Local Services: Build/Build your Wallet/Android/Wallet Application Level/Running with Local Services.md
+                  - Self-signed Certificates: Build/Build your Wallet/Android/Wallet Application Level/Self-signed Certificates.md
               - Library Level:
-                  - Introduction: Android/Core Introduction.md
-                  - Build the Core: Android/Build the Core.md
-                  - Manage Documents: Android/Manage Documents.md
+                  - Introduction: Build/Build your Wallet/Android/Library Level/Introduction.md
+                  - Build the Core: Build/Build your Wallet/Android/Library Level/Build the Core.md
+                  - Manage Documents: Build/Build your Wallet/Android/Library Level/Manage Documents.md
           - iOS:
               - Wallet Application Level:
-                  - Build the App: iOS/Build the App.md
-                  - Running with Remote Services: iOS/Running with Remote Services.md
-                  - Running with Local Services: iOS/Running with Local Services.md
-                  - Self-signed Cerificates: iOS/Self-signed Certificates.md
+                  - Build the App: Build/Build your Wallet/iOS/Wallet Application Level/Build the App.md
+                  - Running with Remote Services: Build/Build your Wallet/iOS/Wallet Application Level/Running with Remote Services.md
+                  - Running with Local Services: Build/Build your Wallet/iOS/Wallet Application Level/Running with Local Services.md
+                  - Self-signed Certificates: Build/Build your Wallet/iOS/Wallet Application Level/Self-signed Certificates.md
               - Library Level:
-                  - Introduction: iOS/Core Introduction.md
-                  - Build the Core: iOS/Build the Core.md
-                  - Manage Documents: iOS/Manage Documents.md
+                  - Introduction: Build/Build your Wallet/iOS/Library Level/Introduction.md
+                  - Build the Core: Build/Build your Wallet/iOS/Library Level/Build the Core.md
+                  - Manage Documents: Build/Build your Wallet/iOS/Library Level/Manage Documents.md
       - Build your Issuer:
-          - Introduction: Issuer Introduction.md
-          - Build the Issuer: Build Issuer.md
-          - FAQ: Issuer FAQ.md
+          - Introduction: Build/Build your Issuer/Introduction.md
+          - Steps to Build: Build/Build your Issuer/Steps to Build.md
           - New Attestations: eudi-srv-web-issuing-eudiw-py/api_docs/add_credential.md
       - Build your Verifier:
-          - Introduction: Build Verifier.md
-          - Running Tests: Running Tests.md
+          - Introduction: Build/Build your Verifier/Introduction.md
+          - Running Tests: Build/Build your Verifier/Running Tests.md
 
   - Test: 
-      - Introduction: Test.md
+      - Introduction: Test/Introduction.md
       - Wallet Application:
-          - Introduction: Wallet Test.md
+          - Introduction: Wallet Application/Introduction.md
           - Android:
-              - Install:  Android/HowTo Install.md
-              - Issue (Wallet Initiated): Android/HowTo Issue (Wallet Initiated).md
-              - Issue (Credential Offer): Android/HowTo Issue (Credential Offer).md
-              - Present (Same Device): Android/HowTo Present (Same Device).md
-              - Present (Proximity): Android/HowTo Present (Proximity).md
+              - Install:  Wallet Application/Android/Install.md
+              - Issue (Wallet Initiated): Wallet Application/Android/Issue (Wallet Initiated).md
+              - Issue (Credential Offer): Wallet Application/Android/Issue (Credential Offer).md
+              - Present (Same Device): Wallet Application/Android/Present (Same Device).md
+              - Present (Proximity): Wallet Application/Android/Present (Proximity).md
           - iOS: 
-              - Install:  iOS/HowTo Install.md
-              - Issue (Wallet Initiated): iOS/HowTo Issue (Wallet Initiated).md
-              - Issue (Credential Offer): iOS/HowTo Issue (Credential Offer).md
-              - Present (Same Device): iOS/HowTo Present (Same Device).md
-              - Present (Proximity): iOS/HowTo Present (Proximity).md
-      - Issuer: Issuer Test.md
-      - Online Verifier: Verifier Test.md
-      - Verifier Application: Verifier Application.md
+              - Install:  Wallet Application/iOS/Install.md
+              - Issue (Wallet Initiated): Wallet Application/iOS/Issue (Wallet Initiated).md
+              - Issue (Credential Offer): Wallet Application/iOS/Issue (Credential Offer).md
+              - Present (Same Device): Wallet Application/iOS/Present (Same Device).md
+              - Present (Proximity): Wallet Application/iOS/Present (Proximity).md
+      - Issuer: Test/Issuer.md
+      - Online Verifier: Test/Online Verifier.md
+      - Verifier Application: Test/Verifier Application.md

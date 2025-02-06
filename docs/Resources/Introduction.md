@@ -12,7 +12,7 @@ Understand the regulatory framework that underpins the development and deploymen
 
 Discover the key specifications and guidelines needed to develop an interoperable EUDI Wallet solution. This framework provides a solid foundation based on common standards and best practices to ensure seamless integration and functionality. 
 
-[Explore the Architecture and Reference Framework](../ARF)
+[Explore the Architecture and Reference Framework](../Architecture Reference Implementation)
 
 ## Build your understanding of practical implementations with EUDI Wallet large-scale pilots
 
@@ -24,6 +24,6 @@ Four large-scale pilot projects are currently underway to test the EU Digital Id
 
 Leverage the EUDI Wallet Reference Implementation to build and test your solution:
 
-- Discover EUDI Wallet [Reference Implementation](../Reference Implementation/)
-- [Build](../Build/) your Solution
-- [Test](../Test/) your Solution
+- Discover EUDI Wallet [Reference Implementation](../Reference Implementation/Introduction/)
+- [Build](../Build/Introduction/) your Solution
+- [Test](../Test/Introduction/) your Solution

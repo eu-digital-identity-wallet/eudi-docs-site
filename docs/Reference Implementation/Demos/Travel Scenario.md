@@ -15,7 +15,7 @@ In this section a video will be added to demonstrate the usage of the Wallet for
 
 ## Test online or run locally
 
-1. Download the [EUDI Wallet Reference Implementation application](../Wallet Test Suite/).
+1. Download the [EUDI Wallet Reference Implementation application](../../../Test/Wallet Application/Introduction/).
 2. Access the [demo booking service](https://dev.booking.demo.eudiw.dev){:target="_blank"}.
 
 ## User journey

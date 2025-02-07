@@ -22,10 +22,10 @@ In order to run Verifier UI run the following commands:
 npm install
 ng serve --proxy-config src/proxy.conf.json
 ```
-The above command utilizes [proxy.conf.json](src/proxy.conf.json){:target="_blank"} that proxies the calls to the expected verifier backend service.
+The above command utilizes [proxy.conf.json](https://github.com/eu-digital-identity-wallet/eudi-web-verifier/blob/main/src/proxy.conf.json){:target="_blank"} that proxies the calls to the expected verifier backend service.
 Update this file if you want your Verifier UI to point to a locally running verifier backend service.
 
-You can access the application at [http://localhost:4200](http://localhost:4200){:target="_blank"} 
+You can access the application at `http://localhost:4200`. 
 
 
 ## Running tests

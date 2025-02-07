@@ -14,7 +14,7 @@
 	- [iso18013-data-model](https://github.com/eu-digital-identity-wallet/eudi-lib-ios-iso18013-data-model.git){:target="_blank"}
 	- [iso18013-data-transfer](https://github.com/eu-digital-identity-wallet/eudi-lib-ios-iso18013-data-transfer.git){:target="_blank"}
 	- [iso18013-security](https://github.com/eu-digital-identity-wallet/eudi-lib-ios-iso18013-security.git){:target="_blank"}
-	- [wallet-storage.](https://github.com/eu-digital-identity-wallet/eudi-lib-ios-wallet-storage.git){:target="_blank"}
+	- [wallet-storage](https://github.com/eu-digital-identity-wallet/eudi-lib-ios-wallet-storage.git){:target="_blank"}
 	- [wallet-kit](https://github.com/eu-digital-identity-wallet/eudi-lib-ios-wallet-kit){:target="_blank"}
 	- [openid4vp-swift](https://github.com/eu-digital-identity-wallet/eudi-lib-ios-siop-openid4vp-swift.git){:target="_blank"}
 	- [presentation-exchange-swift](https://github.com/eu-digital-identity-wallet/eudi-lib-ios-presentation-exchange-swift.git){:target="_blank"}

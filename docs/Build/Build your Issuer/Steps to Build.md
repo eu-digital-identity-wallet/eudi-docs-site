@@ -73,19 +73,19 @@ To run the EUDIW Issuer, please follow these simple steps (some of which may hav
 
 7. Service Configuration
 
-   - Configure the service according to [documentation](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/api_docs/configuration.md){:target="_blank"}
+   - Configure the service according to [documentation](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/blob/main/api_docs/configuration.md){:target="_blank"}
 
 8. Run the EUDIW Issuer 
 
     On the root directory of the clone repository, insert one of the following command lines to run the EUDIW Issuer.
 
-    + Linux/macOS/Windows (on <http://127.0.0.1:5000> or <http://localhost:5000>)
+    + Linux/macOS/Windows (on `http://127.0.0.1:5000` or `http://localhost:5000`)
 
     ```
     flask --app app run
     ```
 
-    + Linux/macOS/Windows (on <http://127.0.0.1:5000> or <http://localhost:5000> with flag debug)
+    + Linux/macOS/Windows (on `http://127.0.0.1:5000` or `http://localhost:5000` with flag debug)
 
     ```
     flask --app app run --debug

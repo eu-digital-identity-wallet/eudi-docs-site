@@ -157,6 +157,7 @@ nav:
   - Resources:
       - Introduction: Resources/Introduction.md
       - Regulation: Resources/Regulation.md
+      - Standards: Resources/Standards.md
       - Architecture Reference Framework: Resources/Architecture Reference Implementation.md
       - Large-Scale Pilots: Resources/Large-Scale Pilots.md
   - Reference Implementation: 

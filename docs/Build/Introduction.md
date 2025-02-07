@@ -1,4 +1,4 @@
-# Build Introduction
+# Build your Solution
 
 In this section, you'll find comprehensive guidance on how to leverage the [EUDI Wallet Reference Implementation](../RI Roadmap) to build your own EUDI Wallet, Issuer, or Verifier. The reference implementation provides open-source code libraries, tools, and sample applications to help you get started quickly and efficiently.
 

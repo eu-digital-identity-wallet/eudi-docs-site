@@ -7,7 +7,7 @@ Everything you need to start your development project is gathered here. You will
 ## Resources
 Gain a deeper understanding of the regulatory framework, architecture, and Large-Scale Pilots shaping the EUDI Wallet. Ensure your solutions are secure, interoperable, and compliant with European standards.
 
-[Discover essential EUDI resources](./Resources/Introduction/)
+[Discover essential resources](./Resources/Introduction/)
 
 ## Reference Implementation
 Explore the open-source EUDI Wallet Reference Implementation, designed to help developers build secure and interoperable solutions. Discover how to use it, follow the development roadmap, and learn how to contribute. Additionally, find demos showcasing implemented business scenarios to guide your integration efforts.
@@ -15,9 +15,9 @@ Explore the open-source EUDI Wallet Reference Implementation, designed to help d
 [Explore the Reference Implementation](./Reference Implementation/Introduction/)
 
 ## Build
-Access comprehensive resources to guide your development efforts. This section provides detailed instructions, open-source libraries, and tools to support the creation of Wallet, Issuer, or Verifier solutions that meet the highest standards of security and interoperability.
+Access comprehensive resources to guide your development efforts. This section provides detailed instructions, open-source libraries, and tools to support the creation of Wallet, Issuer, or Relying Party solutions that meet the highest standards of security and interoperability.
 
-[Get ready to build your solutions](./Build/Introduction/)
+[Get ready to build your solution](./Build/Introduction/)
 
 ## Test
 Validate your solution with the EUDI Wallet testing toolkit. This includes pre-built testing tools designed to ensure your solution meets all specified functional requirements, guaranteeing quality and compliance.

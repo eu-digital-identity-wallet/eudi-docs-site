@@ -1,6 +1,6 @@
 # Demos
 
-EUDI Wallets will simplify the lives of citizens and businesses in many ways; making data more secure and private. It will also improve security and flexibility for governments and businesses when carrying out transactions online.
+EUDI Wallets or simply Wallets simplify the lives of citizens and businesses in many ways; making data more secure and private. It will also improve security and flexibility for governments and businesses when carrying out transactions online.
 
 Available use cases:
 

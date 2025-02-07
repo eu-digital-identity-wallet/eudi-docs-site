@@ -48,4 +48,4 @@ In this section a video will be added to demonstrate the usage of the Wallet for
 	3. User receives the presentation request for the ‘Photo-ID’ and the ‘Reservation’ attestations
 	4. User consents to present the attestations, which are successfully received by the proximity verifier
 	
-You can also run the booking service locally. [Instructions for this available in Github](https://github.com/eu-digital-identity-wallet/eudi-web-booking-service-demo){:target="_blank"}.
+You can also run the booking service locally. [Instructions for this available in GitHub](https://github.com/eu-digital-identity-wallet/eudi-web-booking-service-demo){:target="_blank"}.

@@ -1,6 +1,6 @@
 # Build your Wallet
 
-In this section, you will find all the resources you need to build your own EUDI Wallet application using the tools and libraries provided by the EUDI Wallet Reference Implementation. These resources include the Wallet UI app for Android/iOS, the Wallet Core for Android and Wallet Kit for iOS that serves as a coordinator layer between the UI app and the Wallet libraries, all designed to help you create a secure, user-friendly, and interoperable digital wallet solution.
+In this section, you will find all the resources you need to build your own Wallet application using the tools and libraries provided by the EUDI Wallet Reference Implementation. These resources include the Wallet UI app for Android/iOS, the Wallet Core for Android and Wallet Kit for iOS that serves as a coordinator layer between the UI app and the Wallet libraries, all designed to help you create a secure, user-friendly, and interoperable digital wallet solution.
 
 Let's start with your implementation!
 

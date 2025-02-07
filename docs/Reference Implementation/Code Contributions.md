@@ -3,7 +3,7 @@
 We welcome contributions to this project. To ensure that the process is smooth for everyone
 involved, please follow the guidelines below.
 
-If you encounter a bug in the project, check if the bug has already been reported. If the
+If you encounter a bug in the project, check whether the bug has already been reported. If the
 bug has not been reported, you can open an issue to report the bug.
 
 Before making any changes, it's a good practice to create an issue to describe the changes
@@ -18,7 +18,7 @@ for more information.
 We use the [GitHub Flow](https://guides.github.com/introduction/flow/){:target="_blank"} workflow for making
 contributions to this project. This means that:
 
-1. Fork the repository and create a new branch from `main` for your changes.
+1. Fork the repository and create a new branch from `main` branch for your changes.
 
    ```bash
    git checkout main
@@ -45,20 +45,20 @@ contributions to this project. This means that:
 * Commits should be as small as possible while ensuring that each commit is correct independently (
   i.e., each commit should compile and pass tests).
 
-* Test your changes as thoroughly as possible before you commit them. Preferably, automate your test
+* Test your changes as thoroughly as possible before committing them. Preferably, automate your test
   by unit/integration tests. If tested manually, provide information about the test scope in the PR
   description (e.g. “Test passed: Upgrade version from 0.42 to 0.42.23.”).
 
 * Create _Work In Progress [WIP]_ pull requests only if you need clarification or an explicit review
   before you can continue your work item.
 
-* If your patch is not getting reviewed or you need a specific person to review it, you can @-reply
+* If your patch is not getting reviewed or you need a specific person to review it, you can @-mention
   a reviewer asking for a review in the pull request or a comment.
 
 * Post review:
     * If a review requires you to change your commit(s), please test the changes again.
     * Amend the affected commit(s) and force push onto your branch.
-    * Set respective comments in your GitHub review to resolved.
+    * Set the respective comments in your GitHub review as resolved.
     * Create a general PR comment to notify the reviewers that your amendments are ready for another
       round of review.
 
@@ -96,7 +96,7 @@ chore/update-dependencies
 
 * We use GitHub issues to track bugs and enhancement requests.
 
-* Please provide as much context as possible when you open an issue. The information you provide
+* Please provide as much context as possible when openning an issue. The information you provide
   must be comprehensive enough to reproduce that issue for the assignee. Therefore, contributors may
   use but aren't restricted to the issue template provided by the project maintainers.
 
@@ -109,5 +109,5 @@ chore/update-dependencies
 
 ## Code of Conduct
 
-Please note that this project is released with a [Contributor Code of Conduct](../Code of Conduct).
+Please note that this project is released under a [Contributor Code of Conduct](../Code of Conduct).
 By participating in this project, you agree to abide by its terms.

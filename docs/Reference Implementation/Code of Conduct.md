@@ -14,7 +14,7 @@ diverse, inclusive, and healthy community.
 
 ## Our Standards
 
-Examples of behavior that contributes to a positive environment for our
+Examples of behavior that contribute to a positive environment for our
 community include:
 
 * Demonstrating empathy and kindness toward other people
@@ -44,8 +44,7 @@ response to any behavior that they deem inappropriate, threatening, offensive,
 or harmful.
 
 Community leaders have the right and responsibility to remove, edit, or reject
-comments, commits, code, wiki edits, issues, and other contributions that are
-not aligned to this Code of Conduct, and will communicate reasons for moderation
+comments, commits, code, wiki edits, issues, and other contributions that are not aligned with this Code of Conduct, and will communicate reasons for moderation
 decisions when appropriate.
 
 ## Scope
@@ -59,7 +58,7 @@ representative at an online or offline event.
 ## Enforcement
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
-reported at [cnect-eudiw-development@ec.europa.eu](mailto:cnect-eudiw-development@ec.europa.eu).
+reported at [cnect-eudiw-development@ec.europa.eu](mailto:cnect-eudiw-development@ec.europa.eu)
 to the community leaders responsible for enforcement.
 
 All complaints will be reviewed and investigated promptly and fairly.

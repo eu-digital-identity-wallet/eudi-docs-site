@@ -6,15 +6,15 @@ Its goal is to showcase a robust and interoperable platform for digital identifi
 
 Reference Implementation can be used by wallet providers, issuers and verifiers as a basis for their own solution. It also includes a set of testing tools to support testing and ensure that your implementation meets the functional requirements.
 
-[Check GitHub for more details and repositories](https://github.com/eu-digital-identity-wallet/.github/blob/main/profile/reference-implementation.md){:target="_blank"}.
+[Check GitHub for more details and repositories](https://github.com/eu-digital-identity-wallet/.github/blob/main/profile/reference-implementation.md){:target="_blank"}
 
 ## Check out the roadmap to discover upcoming features
 
 New features are regularly added to the reference implementation. Roadmap of the EUDI Wallet reference implementation provides a transparent view of the features and enhancements that are currently being developed or planned for the future. Its purpose is to promote open communication and collaboration in our community.
 
-[View the roadmap of the EUDI Wallet reference implementation](https://github.com/orgs/eu-digital-identity-wallet/projects/24){:target="_blank"}.
+[View the roadmap of the EUDI Wallet reference implementation](https://github.com/orgs/eu-digital-identity-wallet/projects/24){:target="_blank"}
 
-You are also welcome to join the [discussion on Reference Implementation Roadmap](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/discussions){:target="_blank"}.
+[Join the discussion on Reference Implementation Roadmap](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/discussions){:target="_blank"}
 
 ## Start your solution
 

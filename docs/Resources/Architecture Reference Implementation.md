@@ -18,4 +18,4 @@ New epics are analyzed in ARF. Roadmap of the ARF provides a transparent view of
 
 We welcome contributions to the ARF. Whether it's fixing a bug, proposing a new feature, or improving documentation, we appreciate any and all contributions that can help make the ARF better. Please read [instructions for contributions](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/CONTRIBUTING.md){:target="_blank"}. 
 
-You are also welcome to join the [discussion on ARF](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions){:target="_blank"}.
+[Join the discussion on ARF](https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/discussions){:target="_blank"}

@@ -8,7 +8,7 @@ This guide aims to assist developers build the EUDI Wallet application on Androi
 To build the application using the source code and connect it with the issuer and verifier, please follow the next steps:
 
 1. Download and install Android Studio and its associated tools following the instuctions that can be found [here](https://developer.android.com/studio){:target="_blank"}. We recommend the latest stable version.
-2. Clone the [Android repository](https://github.com/eu-digital-identity-wallet/eudi-app-android-wallet-ui) using the following command:
+2. Clone the [Android repository](https://github.com/eu-digital-identity-wallet/eudi-app-android-wallet-ui){:target="_blank"} using the following command:
 	```git clone git@github.com:eu-digital-identity-wallet/eudi-app-android-wallet-ui.git ```
 3. Open the project in Android Studio.
 4. Configure the Build Variant by navigating to Build -> Select Build Variant and from the tool window you can click on the "Active Build Variant" of the module ":app" and select the one you prefer. It will automatically apply it for the other modules as well.
@@ -38,4 +38,4 @@ To build the application using the source code and connect it with the issuer an
 
 7. (Optional) [Follow the instructions](../Self-signed Certificates) if self-signed certificates are required.
 
-[Check the full list of configuration options](https://github.com/eu-digital-identity-wallet/eudi-app-android-wallet-ui/blob/main/wiki/configuration.md){:target="_blank"}.
+[Check the full list of configuration options](https://github.com/eu-digital-identity-wallet/eudi-app-android-wallet-ui/blob/main/wiki/configuration.md){:target="_blank"}

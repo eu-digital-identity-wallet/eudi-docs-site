@@ -142,5 +142,5 @@ val wallet = EudiWallet(context, config) {
 }
 ```
 
-See the [CustomizeSecureArea.md](https://github.com/eu-digital-identity-wallet/eudi-lib-android-wallet-core/CustomizeSecureArea.md){:target="_blank"} for more information on how to use the
+See the [CustomizeSecureArea.md](https://github.com/eu-digital-identity-wallet/eudi-lib-android-wallet-core/blob/main/CustomizeSecureArea.md){:target="_blank"} for more information on how to use the
 wallet-core library with custom SecureArea implementations.

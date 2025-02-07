@@ -1,4 +1,4 @@
-# Test your solution
+# Test your Solution
 
 In this section, you will find a set of pre-built testing tools to support you in validating your EUDI Wallet solution. These tools include an issuer, a verifier, and a wallet application, enabling you to assess interoperability and compliance with functional requirements. Whether you are developing a wallet, an issuer, or a verifier, you can test your solution against the corresponding tools to ensure seamless integration within the EUDI ecosystem.
 

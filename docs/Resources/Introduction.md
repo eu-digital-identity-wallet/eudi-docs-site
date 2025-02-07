@@ -18,9 +18,9 @@ Discover the key specifications and guidelines needed to develop an interoperabl
 
 Four large-scale pilot projects are currently underway to test the EU Digital Identity Wallet, involving over 360 entities across 26 Member States, Norway, Iceland, and Ukraine. Gain valuable real-world insight by exploring these projects.
 
-[Explore the Large Scale Pilots](../Large-Scale Pilots)
+[Explore the Large-Scale Pilots](../Large-Scale Pilots)
 
-## What is next?
+## What's next?
 
 Leverage the EUDI Wallet Reference Implementation to build and test your solution:
 

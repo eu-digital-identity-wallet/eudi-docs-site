@@ -10,12 +10,12 @@ Gain a deeper understanding of the regulatory framework, architecture, and Large
 [Discover essential resources](./Resources/Introduction/)
 
 ## Reference Implementation
-Explore the open-source EUDI Wallet Reference Implementation, designed to help developers build secure and interoperable solutions. Discover how to use it, follow the development roadmap, and learn how to contribute. Additionally, find demos showcasing implemented business scenarios to guide your integration efforts.
+Explore the open-source EUDI Wallet Reference Implementation, designed to help developers build secure and interoperable solutions. Discover how to use it, follow the development roadmap, and learn how to contribute. 
 
 [Explore the Reference Implementation](./Reference Implementation/Introduction/)
 
 ## Build
-Access comprehensive resources to guide your development efforts. This section provides detailed instructions, open-source libraries, and tools to support the creation of Wallet, Issuer, or Relying Party solutions that meet the highest standards of security and interoperability.
+Access comprehensive resources to guide your development efforts. This section provides detailed instructions, open-source libraries, and tools to support the development of Wallet, Issuer, or Relying Party solutions that meet the EU technical specifications to ensure interoperability.
 
 [Get ready to build your solution](./Build/Introduction/)
 

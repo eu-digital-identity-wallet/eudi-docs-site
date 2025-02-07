@@ -208,37 +208,37 @@ To run the EUDIW issuer in Docker please follow these steps:
 
 4. Create 2 directories to be mounted:
 
-   1. First directory named `config_secrets`
-      
-      This directory will have the cert.pem and key.pem generated in [Section 4](#4-running-your-local-eudiw-issuer-over-https)
-   
-      As well as the config_secrets.py based on this [example](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/app/app_config/__config_secrets.py){:target="_blank"}
+	   1. First directory named `config_secrets`
+		  
+		  This directory will have the cert.pem and key.pem generated in [Section 4](#4-running-your-local-eudiw-issuer-over-https)
+	   
+		  As well as the config_secrets.py based on this [example](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/blob/main/app/app_config/__config_secrets.py){:target="_blank"}
 
 
-   2. Second directory named `pid-issuer`, inside will be a directory `cert` and `privKey`
-      
-      The `cert` directory has the certificates of the trusted CAs in PEM format as well as the Document/Credential signer (DS) certificates in DER format
+	   2. Second directory named `pid-issuer`, inside will be a directory `cert` and `privKey`
+		  
+		  The `cert` directory has the certificates of the trusted CAs in PEM format as well as the Document/Credential signer (DS) certificates in DER format
 
-      The `privKey` directory has the Document/Credential signer (DS) private keys
+		  The `privKey` directory has the Document/Credential signer (DS) private keys
 
 
-    Example:
-   
+		Example:
+	   
 
-    ```bash
-    docker-issuer
-    ├── Dockerfile
-    ├── config_secrets
-    │   ├── config_secrets.py
-    │   ├── cert.pem
-    │   └── key.pem
-    └── pid-issuer
-        ├── cert
-        │   ├── PID-DS-0001_UT_cert.der
-        │   └── PIDIssuerCAUT01.pem
-        └── privKey
-            └── PID-DS-0001_UT.pem
-    ```
+		```bash
+		docker-issuer
+		├── Dockerfile
+		├── config_secrets
+		│   ├── config_secrets.py
+		│   ├── cert.pem
+		│   └── key.pem
+		└── pid-issuer
+			├── cert
+			│   ├── PID-DS-0001_UT_cert.der
+			│   └── PIDIssuerCAUT01.pem
+			└── privKey
+				└── PID-DS-0001_UT.pem
+		```
 
 5. Run Docker
 
@@ -256,10 +256,10 @@ To run the EUDIW issuer in Docker please follow these steps:
     eudiw-issuer
     ```
 
-5. Docker logs
+6. Docker logs
 
     Issuer logs in real time: `sudo docker logs -f eudiw-issuer`
     All logs: `sudo docker logs eudiw-issuer`
 
-6. Stopping Docker Issuer
+7. Stopping Docker Issuer
    `sudo docker stop eudiw-issuer`

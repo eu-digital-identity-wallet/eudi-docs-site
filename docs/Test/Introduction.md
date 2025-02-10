@@ -16,4 +16,4 @@ In this section, you will find a set of pre-built testing tools to support you i
 
 ## Test with the Proximity Verifier
 
-[Use](../Verifier Application/) the Proximity Verifier (Testing) app to test and validate your wallet implementation.
+[Use](../Proximity Verifier/) the Proximity Verifier app to test and validate your wallet implementation.

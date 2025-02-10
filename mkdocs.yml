@@ -196,7 +196,7 @@ nav:
       - Build your Issuer:
           - Introduction: Build/Build your Issuer/Introduction.md
           - Steps to Build: Build/Build your Issuer/Steps to Build.md
-          - New Attestations: eudi-srv-web-issuing-eudiw-py/api_docs/add_credential.md
+          - New Attestations: Build/Build your Issuer/New Attestation.md
       - Build your Verifier:
           - Introduction: Build/Build your Verifier/Introduction.md
           - Steps to Build: Build/Build your Verifier/Steps to Build.md

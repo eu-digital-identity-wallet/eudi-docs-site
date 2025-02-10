@@ -22,7 +22,7 @@ and should only be used with Flask v. 2.3 or higher.
 
 To install [Flask](https://flask.palletsprojects.com/en/2.3.x/){:target="_blank"}, please follow the [Installation Guide](https://flask.palletsprojects.com/en/2.3.x/installation/){:target="_blank"}.
 
-## 3. How to run the EUDI WalletIssuer?
+## 3. How to run the EUDI Wallet Issuer?
 
 To run the EUDIW Issuer, please follow these simple steps (some of which may have already been completed when installing Flask) for Linux/macOS or Windows.
 

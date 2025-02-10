@@ -1,8 +1,8 @@
-# EUDIW Issuer
+# Build your Issuer
 
 ## Overview
 
-The EUDIW Issuer is an implementation of  the PID and (Q)EAA Provider service, supporting the OpenId4VCI (draft 13) protocol.
+The EUDIW Issuer is an implementation of  the PID and (Q)EAA Provider service, supporting the OpenID4VCI (draft 13) protocol.
 
 The service provides, by default, support for `mso_mdoc` and `SD-JWT-VC`formats, for the following credentials:
 
@@ -14,12 +14,12 @@ The service provides, by default, support for `mso_mdoc` and `SD-JWT-VC`formats,
 | mDL                    | mso_mdoc  | 
 | mDL                    | SD-JWT-VC  | 
 
-For authenticating the user, it requires the use of eIDAS node, OAUTH2 server or a simple form (for testing purposes).
+For authenticating the user, it requires the use of an eIDAS node, an OAUTH2 server or a simple form (for testing purposes).
 
 
 ## OpenId4VCI coverage
 
-This version of the EUDIW Issuer supports the [OpenId for Verifiable Credential Issuance (draft 13)](https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0.html){:target="_blank"} protocol with the following coverage:
+This version of the EUDIW Issuer supports the [OpenId for Verifiable Credential Issuance (draft 13)](https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0-13.html){:target="_blank"} protocol with the following coverage:
 
 
 | Feature                                                   | Coverage                                                        |
@@ -40,4 +40,4 @@ This version of the EUDIW Issuer supports the [OpenId for Verifiable Credential 
 | [Notification Endpoint](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/tree/main/api_docs/notification.md){:target="_blank"}                 | ✅                                                              |
 
 
-You can use the EUDIW Issuer at [https://issuer.eudiw.dev/](https://issuer.eudiw.dev/){:target="_blank"}, or install it locally.
+You can use the EUDIW Issuer at [https://issuer.eudiw.dev/](https://issuer.eudiw.dev/){:target="_blank"}, or [install it locally](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py){:target="_blank"}.

@@ -1,4 +1,4 @@
-# Manage documents
+# Manage Documents
 
 The library provides a set of methods to work with documents.
 
@@ -100,8 +100,8 @@ fun sendToIssuer(publicKeyCoseBytes: ByteArray, signatureCoseBytes: ByteArray): 
 }
 ```
 
-**Important!:** In the case of `DocumentFormat.MsoMdoc`, `DocumentManager.storeIssuedDocument()`
-method expects document's data to be in CBOR bytes and have the IssuerSigned structure according to
+**Important!:** In the case of `DocumentFormat.MsoMdoc`, the `DocumentManager.storeIssuedDocument()` 
+method expects the document's data to be in CBOR bytes and have the IssuerSigned structure according to
 ISO 23220-4.
 
 Currently, the library does not support IssuerSigned structure without the `nameSpaces` field.

@@ -191,7 +191,7 @@ nav:
                   - Self-signed Certificates: Build/Build your Wallet/iOS/Wallet Application Level/Self-signed Certificates.md
               - Library Level:
                   - Introduction: Build/Build your Wallet/iOS/Library Level/Introduction.md
-                  - Build the Core: Build/Build your Wallet/iOS/Library Level/Build the Core.md
+                  - Build the Kit: Build/Build your Wallet/iOS/Library Level/Build the Kit.md
                   - Manage Documents: Build/Build your Wallet/iOS/Library Level/Manage Documents.md
       - Build your Issuer:
           - Introduction: Build/Build your Issuer/Introduction.md
@@ -217,4 +217,4 @@ nav:
 #              - Present (Proximity): Test/Wallet Application/iOS/Present (Proximity).md
       - Issuer: Test/Issuer.md
       - Online Verifier: Test/Online Verifier.md
-      - Verifier Application: Test/Verifier Application.md
+      - Proximity Verifier: Test/Proximity Verifier.md

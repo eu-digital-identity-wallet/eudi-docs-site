@@ -41,7 +41,7 @@ dependencies {
 To instantiate a `EudiWallet` use the `EudiWallet.Builder` class or the `EudiWallet.invoke` method,
 from the EudiWallet companion object.
 
-The minimum requirements to initialize the library is to provide a `EudiWalletConfit` object that
+The minimum requirements to initialize the library are to provide a `EudiWalletConfit` object that
 will be used to configure the library's built-in components.
 
 The built-in components are:
@@ -123,7 +123,7 @@ val config = EudiWalletConfig()
 val wallet = EudiWallet(context, config)
 ```
 
-`EuidWallet.Builder` allows to configure the library with custom implementations of the built-in
+`EudiWallet.Builder` allows you to configure the library with custom implementations of the built-in
 components.
 
 The following example demonstrates how to initialize the library with custom implementations for

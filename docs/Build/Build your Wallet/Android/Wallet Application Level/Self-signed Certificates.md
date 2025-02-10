@@ -1,6 +1,6 @@
-# How to work with self-signed certificates
+# How to work with self-signed certificates on Android
 
-This section describes configuring the application to interact with services utilizing self-signed certificates.
+This section describes how to configure the application to interact with services utilizing self-signed certificates.
 
 1. Open the build.gradle.kts file of the "core-logic" module.
 2. In the 'dependencies' block add the following two:
@@ -8,8 +8,8 @@ This section describes configuring the application to interact with services uti
     implementation(libs.ktor.android)
     implementation(libs.ktor.logging)
     ```
-3. Now, you need to create a new kotlin file *ProvideKtorHttpClient* and place it into the *src\main\java\eu\europa\ec\corelogic\config* package.
-4. Copy and paste the following into your newly created *ProvideKtorHttpClient* kotlin file.
+3. Now, you need to create a new Kotlin file *ProvideKtorHttpClient.kt* and place it into the `src\main\java\eu\europa\ec\corelogic\config` package.
+4. Copy and paste the following code into your newly created *ProvideKtorHttpClient.kt* file.
     ```Kotlin
     import android.annotation.SuppressLint
     import io.ktor.client.HttpClient
@@ -64,7 +64,7 @@ This section describes configuring the application to interact with services uti
 
     }
     ```
-5. Finally, add this custom HttpClient to the EudiWallet provider function *provideEudiWallet* located in *LogicCoreModule.kt*
+5. Finally, add this custom HttpClient to the EUDI Wallet provider function *provideEudiWallet* located in *LogicCoreModule.kt*
     ```Kotlin
     @Single
     fun provideEudiWallet(

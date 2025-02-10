@@ -6,7 +6,7 @@ This guide aims to assist developers to build the EUDI Wallet application on iOS
 
 # Setup EUDI Wallet application on iOS
 
-1. You need [xcode](https://xcodereleases.com/){:target="_blank"} and its associated tools installed on your machine. We recommend the latest non-beta version. 
+1. Download and install Xcode and its associated tools by following the official [setup guide](https://xcodereleases.com){:target="_blank"}. Using the latest stable version is recommended.
 2. Clone the [iOS repository](https://github.com/eu-digital-identity-wallet/eudi-app-ios-wallet-ui){:target="_blank"} using the following command:
 	```git clone git@github.com:eu-digital-identity-wallet/eudi-app-ios-wallet-ui.git ```
 3. Open the project file in Xcode.
@@ -32,9 +32,9 @@ This guide aims to assist developers to build the EUDI Wallet application on iOS
 	2. To run the app on a device, follow similar steps to running it on the simulator. Additionally, you need to supply your own provisioning profile and signing certificate in the Signing & Capabilities tab of your app target.
 
 6. Finally, the App needs to be connected with an Issuer and a Verifier either locally, or remotely.
-    1. To run remotely, please follow the instructions [here](../Running with Remote Services)
-    2. To run locally, please follow the instructions [here](../Running with Local Services)
+    1. [Follow the instructions](../Running with Remote Services) to run remotely.
+    2. [Follow the instructions](../Running with Local Services) to run locally.
 
-7. (Optional) In case self-signed certificates are required, please follow the instructions [here](../Self-signed Certificates)
+7. (Optional) [Follow the instructions](../Self-signed Certificates) if self-signed certificates are required.
 
 For a complete list of all configuration options please refer to [this document](https://github.com/eu-digital-identity-wallet/eudi-app-ios-wallet-ui/blob/main/wiki/configuration.md){:target="_blank"}

@@ -1,5 +1,5 @@
 # Running with local services
-The first step here is to have all three services running locally on your machine,
+The first step is to ensure all three services are running locally on your machine,
 you can follow these Repositories for further instructions:
 
 * [Issuer](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py){:target="_blank"}
@@ -7,8 +7,7 @@ you can follow these Repositories for further instructions:
 * [Web Verifier Endpoint](https://github.com/eu-digital-identity-wallet/eudi-srv-web-verifier-endpoint-23220-4-kt){:target="_blank"}
 
 
-After this, and assuming you are now running everything locally,
-you need to change the contents of the ConfigWalletCoreImpl file, from:
+After this, assuming you have everything running locally, you need to change the contents of the ConfigWalletCoreImpl file from:
 ```Kotlin
 private companion object {
         const val VCI_ISSUER_URL = "https://dev.issuer.eudiw.dev"
@@ -34,7 +33,7 @@ private companion object {
 }
 ```
 
-Finally, you have to also change the content of ***network_security_config.xml*** file and allow HTTP traffic, to this:
+Finally, you also have to change the content of the network_security_config.xml file and allow HTTP traffic to this:
 ```Xml
 <network-security-config>
     <base-config cleartextTrafficPermitted="true" />

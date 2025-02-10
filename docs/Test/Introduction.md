@@ -10,10 +10,10 @@ In this section, you will find a set of pre-built testing tools to support you i
 
 [Test](../Issuer/) various issuance flows of OpenID4VCI with your wallet.
 
-## Test with the online Verifier
+## Test with the Online Verifier
 
 [Test](../Online Verifier/) how your wallet implementation responds to a credential request from a verifier. 
 
-## Test with the proximity Verifier
+## Test with the Proximity Verifier
 
-[Use](../Verifier Application/) the mDoc Verifier (Testing) app to test and validate your wallet implementation.
+[Use](../Verifier Application/) the Proximity Verifier (Testing) app to test and validate your wallet implementation.

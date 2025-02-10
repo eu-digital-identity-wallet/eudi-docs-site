@@ -1,4 +1,4 @@
-# Build the Issuer
+# Steps to Build your Issuer
 
 This section includes a thorough description of the steps to build your own Issuer.
 
@@ -6,7 +6,7 @@ This section includes a thorough description of the steps to build your own Issu
 
 The EUDIW Issuer was tested with
 
-+ Python version 3.9.2
++ Python v. 3.9.2
 
 and should only be used with Python 3.9 or 3.10.
 
@@ -22,7 +22,7 @@ and should only be used with Flask v. 2.3 or higher.
 
 To install [Flask](https://flask.palletsprojects.com/en/2.3.x/){:target="_blank"}, please follow the [Installation Guide](https://flask.palletsprojects.com/en/2.3.x/installation/){:target="_blank"}.
 
-## 3. How to run the EUDIW Issuer?
+## 3. How to run the EUDI WalletIssuer?
 
 To run the EUDIW Issuer, please follow these simple steps (some of which may have already been completed when installing Flask) for Linux/macOS or Windows.
 
@@ -77,7 +77,7 @@ To run the EUDIW Issuer, please follow these simple steps (some of which may hav
 
 8. Run the EUDIW Issuer 
 
-    On the root directory of the clone repository, insert one of the following command lines to run the EUDIW Issuer.
+    In the root directory of the clone repository, insert one of the following command lines to run the EUDIW Issuer.
 
     + Linux/macOS/Windows (on `http://127.0.0.1:5000` or `http://localhost:5000`)
 
@@ -187,7 +187,7 @@ If you want to make your local EUDIW Issuer available on the Internet, we recomm
 3. Restart the Nginx server
 
 
-### 5.2 Install and run certbot to gef a free HTTPS certificate
+### 5.2 Install and run certbot to get a free HTTPS certificate
 
 1. Follow the [installation guide](https://certbot.eff.org){:target="_blank"}
 

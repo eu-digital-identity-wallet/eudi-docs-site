@@ -1,4 +1,4 @@
-# Steps to Build the Online Verifier
+# Steps to Build your Online Verifier
 
 ## Development server
 
@@ -16,7 +16,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 You need npm (node version 18.15.0) and [Angular CLI](https://github.com/angular/angular-cli){:target="_blank"} installed on your machine.
 
-In order to run Verifier UI run the following commands:
+To run Verifier UI run the following commands:
 
 ```bash
 npm install

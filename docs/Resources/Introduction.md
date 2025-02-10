@@ -16,7 +16,7 @@ Discover the key specifications and guidelines needed to develop an interoperabl
 
 ## Align with Applicable Technical Standards
 
-Compliance with established standards is essential for the security, interoperability, and reliability of the EUDI Wallet. By adhering to these and other relevant standards, developers can ensure compliance, enhance security, and promote interoperability within the EU’s digital identity ecosystem.
+Compliance with established standards is essential for the security, interoperability, and reliability of the EUDI Wallet. By adhering to these, developers can ensure compliance, enhance security, and promote interoperability within the EU’s digital identity ecosystem.
 
 [Explore the Standards](../Standards)
 

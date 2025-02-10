@@ -1,6 +1,6 @@
 # New Attestation
 
-This document specifies the changes needed to add a new attestation/credential to the EUDIW Issuer.
+This document specifies the changes needed to add a new attestation/credential to the EUDI Wallet Issuer.
 We will use a generic loyalty card credential as an example for this configuration.
 
 ## 1. Metadata Configuration

@@ -1,4 +1,4 @@
-## Build the Kit
+# Build the Kit
 
 To use EUDI Wallet Kit, add the following dependency to your Package.swift:
 ```swift

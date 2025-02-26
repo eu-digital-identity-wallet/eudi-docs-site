@@ -1,4 +1,5 @@
 site_name: EUDI Wallet Dev Hub
+#site_url: https://example.com
 theme:
   name: material
   font:
@@ -99,6 +100,8 @@ plugins:
       additional_index_folders:
         - temp_dir
       generate_home_index: true
+      use_page_titles: true
+      home_text: "&#127968;"
   - multirepo:
       cleanup: true
       keep_docs_dir: false
@@ -153,7 +156,7 @@ nav:
 #      - Demos:
 #           - Introduction: Demos.md
 #           - Travel Scenario: Travel Scenario.md
-  - Get Started: index.html
+  - Get Started: Get Started/index.html
   - Resources:
       - Introduction: Resources/Introduction.md
       - Regulation: Resources/Regulation.md
@@ -201,7 +204,7 @@ nav:
           - Introduction: Build/Build your Verifier/Introduction.md
           - Steps to Build: Build/Build your Verifier/Steps to Build.md
 
-  - Test: 
+  - Test:
       - Introduction: Test/Introduction.md
       - Wallet Application:
           - Introduction: Test/Wallet Application/Introduction.md

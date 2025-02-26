@@ -6,11 +6,18 @@
 .md-tabs__item--active {
   border-bottom: 3px solid #FFFFFF;
   padding-bottom: 3px;
-  background: rgb(0 0 0 / 25%);
   padding-left: 0;
   padding-right: 0;
   a.md-tabs__link {
     padding: .8rem .6rem;
     margin: 0;
   }
+}
+
+.md-tabs__item:hover {
+  background: rgb(0 0 0 / 10%);
+}
+
+.md-tabs__item--active {
+  background: rgb(0 0 0 / 25%);
 }

@@ -202,10 +202,12 @@ nav:
       - Build your Issuer:
           - Introduction: Build/Build your Issuer/index.md
           - Steps to Build: Build/Build your Issuer/Steps to Build.md
+          - Configure: Build/Build your Issuer/Configure.md
           - New Attestations: Build/Build your Issuer/New Attestation.md
       - Build your Verifier:
           - Introduction: Build/Build your Verifier/index.md
           - Steps to Build: Build/Build your Verifier/Steps to Build.md
+          - Configure: Build/Build your Verifier/Configure.md 
 
   - Test:
       - Introduction: Test/index.md

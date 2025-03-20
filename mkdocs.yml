@@ -33,7 +33,6 @@ theme:
     - navigation.expand
     - navigation.tabs
     - navigation.tabs.sticky
-#    - navigation.indexes
     - navigation.top
     - navigation.footer
     - navigation.instant
@@ -103,8 +102,8 @@ plugins:
       additional_index_folders:
         - temp_dir
       generate_home_index: false
-      use_page_titles: false
-      home_text: "Get Started"
+      use_page_titles: true
+      home_text: "Home"
   - multirepo:
       cleanup: true
       keep_docs_dir: false
@@ -152,7 +151,7 @@ plugins:
 
 nav:
 
-  - Get Started: index.md
+  - Home: index.md
 #  - Getting Started:
 #      - Introduction: Getting Started.md
 #      - Build Wallet: Build Wallet.md

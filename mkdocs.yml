@@ -1,4 +1,5 @@
 site_name: EUDI Wallet Dev Hub
+#site_url: https://example.com
 theme:
   name: material
   font:
@@ -28,10 +29,11 @@ theme:
 
   features:
     - search.highlight
+    - search.suggest
+    - navigation.expand
     - navigation.tabs
     - navigation.tabs.sticky
-    - navigation.path
-    - navigation.prune
+#    - navigation.indexes
     - navigation.top
     - navigation.footer
     - navigation.instant
@@ -95,10 +97,13 @@ plugins:
       log_level: "WARNING"  # "DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"
       exclude_paths:
         - "docs/mkdocs/**"
-        - "docs/mkdocs"   # avoid generating index.md
+        - "docs/mkdocs"
+        - "docs"
       additional_index_folders:
         - temp_dir
-      generate_home_index: true
+      generate_home_index: false
+      use_page_titles: false
+      home_text: "Get Started"
   - multirepo:
       cleanup: true
       keep_docs_dir: false
@@ -145,15 +150,7 @@ plugins:
             - '**/*.png'
 
 nav:
-#  - Getting Started:
-#      - Introduction: Getting Started.md
-#      - Build Wallet: Build Wallet.md
-#      - Build Issuer: Build Issuer.md
-#      - Build Verifier: Build Verifier.md
-#      - Demos:
-#           - Introduction: Demos.md
-#           - Travel Scenario: Travel Scenario.md
-  - Get Started: index.html
+  - Get Started: index.md
   - Resources:
       - Introduction: Resources/Introduction.md
       - Regulation: Resources/Regulation.md

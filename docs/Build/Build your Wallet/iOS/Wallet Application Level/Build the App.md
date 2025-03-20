@@ -4,7 +4,7 @@
 
 This guide aims to assist developers to build the EUDI Wallet application on iOS.
 
-# Setup EUDI Wallet application on iOS
+## Setup EUDI Wallet application on iOS
 
 1. Download and install Xcode and its associated tools by following the official [setup guide](https://xcodereleases.com){:target="_blank"}. Using the latest stable version is recommended.
 2. Clone the [iOS repository](https://github.com/eu-digital-identity-wallet/eudi-app-ios-wallet-ui){:target="_blank"} using the following command:

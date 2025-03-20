@@ -19,22 +19,18 @@ We use the [GitHub Flow](https://guides.github.com/introduction/flow/){:target="
 contributions to this project. This means that:
 
 1. Fork the repository and create a new branch from `main` branch for your changes.
-
    ```bash
    git checkout main
    git pull
    git checkout -b my-branch
    ```
-
 2. Make changes to the code, documentation, or any other relevant files.
 3. Commit your changes and push them to your forked repository.
-
    ```bash
    git add .
    git commit -m "Add a new feature"
    git push origin my-branch
    ```
-
 4. Create a pull request from your branch to the `main` branch of this repository.
 
 ## Pull Request Checklist

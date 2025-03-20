@@ -29,13 +29,14 @@ theme:
 
   features:
     - search.highlight
+    - navigation.expand
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.path
-    - navigation.prune
     - navigation.top
     - navigation.footer
     - navigation.instant
+    - navigation.indexes
 
 extra_css:
   - css/extra.css
@@ -158,24 +159,24 @@ nav:
 #           - Travel Scenario: Travel Scenario.md
   - Get Started: Get Started/index.html
   - Resources:
-      - Introduction: Resources/Introduction.md
+      - Introduction: Resources/index.md
       - Regulation: Resources/Regulation.md
       - Architecture Reference Framework: Resources/Architecture Reference Implementation.md
       - Standards: Resources/Standards.md
       - Large-Scale Pilots: Resources/Large-Scale Pilots.md
   - Reference Implementation: 
-      - Introduction: Reference Implementation/Introduction.md
+      - Introduction: Reference Implementation/index.md
       - Code Contributions: Reference Implementation/Code Contributions.md
       - Code of Conduct: Reference Implementation/Code of Conduct.md
       - Licensing: Reference Implementation/Licensing.md
       - Disclaimer: Reference Implementation/Disclaimer.md
       - Demos:
-           - Introduction: Reference Implementation/Demos/Introduction.md
+           - Introduction: Reference Implementation/Demos/index.md
            - Travel Scenario: Reference Implementation/Demos/Travel Scenario.md
   - Build:
-      - Introduction: Build/Introduction.md
+      - Introduction: Build/index.md
       - Build your Wallet:
-          - Introduction: Build/Build your Wallet/Introduction.md
+          - Introduction: Build/Build your Wallet/index.md
           - Android:
               - Wallet Application Level:
                   - Build the App: Build/Build your Wallet/Android/Wallet Application Level/Build the App.md
@@ -183,7 +184,7 @@ nav:
                   - Running with Local Services: Build/Build your Wallet/Android/Wallet Application Level/Running with Local Services.md
                   - Self-signed Certificates: Build/Build your Wallet/Android/Wallet Application Level/Self-signed Certificates.md
               - Library Level:
-                  - Introduction: Build/Build your Wallet/Android/Library Level/Introduction.md
+                  - Introduction: Build/Build your Wallet/Android/Library Level/index.md
                   - Build the Core: Build/Build your Wallet/Android/Library Level/Build the Core.md
                   - Manage Documents: Build/Build your Wallet/Android/Library Level/Manage Documents.md
           - iOS:
@@ -193,21 +194,21 @@ nav:
                   - Running with Local Services: Build/Build your Wallet/iOS/Wallet Application Level/Running with Local Services.md
                   - Self-signed Certificates: Build/Build your Wallet/iOS/Wallet Application Level/Self-signed Certificates.md
               - Library Level:
-                  - Introduction: Build/Build your Wallet/iOS/Library Level/Introduction.md
+                  - Introduction: Build/Build your Wallet/iOS/Library Level/index.md
                   - Build the Kit: Build/Build your Wallet/iOS/Library Level/Build the Kit.md
                   - Manage Documents: Build/Build your Wallet/iOS/Library Level/Manage Documents.md
       - Build your Issuer:
-          - Introduction: Build/Build your Issuer/Introduction.md
+          - Introduction: Build/Build your Issuer/index.md
           - Steps to Build: Build/Build your Issuer/Steps to Build.md
           - New Attestations: Build/Build your Issuer/New Attestation.md
       - Build your Verifier:
-          - Introduction: Build/Build your Verifier/Introduction.md
+          - Introduction: Build/Build your Verifier/index.md
           - Steps to Build: Build/Build your Verifier/Steps to Build.md
 
   - Test:
-      - Introduction: Test/Introduction.md
+      - Introduction: Test/index.md
       - Wallet Application:
-          - Introduction: Test/Wallet Application/Introduction.md
+          - Introduction: Test/Wallet Application/index.md
           - Android: Test/Wallet Application/Android.md
 #              - Issue (Wallet Initiated): Test/Wallet Application/Android/Issue (Wallet Initiated).md
 #              - Issue (Credential Offer): Test/Wallet Application/Android/Issue (Credential Offer).md

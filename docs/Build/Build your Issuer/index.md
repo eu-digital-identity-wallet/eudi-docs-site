@@ -40,4 +40,4 @@ This version of the EUDIW Issuer supports the [OpenId for Verifiable Credential 
 | [Notification Endpoint](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/tree/main/api_docs/notification.md){:target="_blank"}                 | ✅                                                              |
 
 
-You can use the EUDIW Issuer at [https://issuer.eudiw.dev/](https://issuer.eudiw.dev/){:target="_blank"}, or [install it locally](../Steps to Build).
+You can use the EUDIW Issuer at [https://issuer.eudiw.dev/](https://issuer.eudiw.dev/){:target="_blank"}, or [install it locally](./Steps to Build).

@@ -1,3 +1,8 @@
+---
+hide:
+  - navigation
+---
+
 # Welcome to the EUDI Wallet Dev Hub!
 
 This is the developer's hub for the European Digital Identity Wallet—a key reference point for those building and testing EUDI Wallet solutions, whether for Wallet Providers, Issuers, or Relying Parties.

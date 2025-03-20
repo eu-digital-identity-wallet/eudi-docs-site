@@ -29,10 +29,11 @@ theme:
 
   features:
     - search.highlight
+    - search.suggest
     - navigation.expand
     - navigation.tabs
     - navigation.tabs.sticky
-    - navigation.path
+#    - navigation.indexes
     - navigation.top
     - navigation.footer
     - navigation.instant
@@ -97,12 +98,13 @@ plugins:
       log_level: "WARNING"  # "DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"
       exclude_paths:
         - "docs/mkdocs/**"
-        - "docs/mkdocs"   # avoid generating index.md
+        - "docs/mkdocs"
+        - "docs"
       additional_index_folders:
         - temp_dir
-      generate_home_index: true
-      use_page_titles: true
-      home_text: "&#127968;"
+      generate_home_index: false
+      use_page_titles: false
+      home_text: "Get Started"
   - multirepo:
       cleanup: true
       keep_docs_dir: false
@@ -149,6 +151,8 @@ plugins:
             - '**/*.png'
 
 nav:
+
+  - Get Started: index.md
 #  - Getting Started:
 #      - Introduction: Getting Started.md
 #      - Build Wallet: Build Wallet.md
@@ -157,7 +161,6 @@ nav:
 #      - Demos:
 #           - Introduction: Demos.md
 #           - Travel Scenario: Travel Scenario.md
-  - Get Started: Get Started/index.html
   - Resources:
       - Introduction: Resources/index.md
       - Regulation: Resources/Regulation.md

@@ -4,16 +4,16 @@ In this section, you will find a set of pre-built testing tools to support you i
 
 ## Test with the Wallet Application
 
-[Instructions](../Wallet Application/Introduction/) are provided on how to install the EUDI Wallet Application on your mobile phone (Android or iOS) and initialise it through issuing and presenting attestations.
+[Instructions](./Wallet Application/Introduction/) are provided on how to install the EUDI Wallet Application on your mobile phone (Android or iOS) and initialise it through issuing and presenting attestations.
 
 ## Test with the Issuer
 
-[Test](../Issuer/) various issuance flows of OpenID4VCI with your wallet.
+[Test](./Issuer/) various issuance flows of OpenID4VCI with your wallet.
 
 ## Test with the Online Verifier
 
-[Test](../Online Verifier/) how your wallet implementation responds to a credential request from a verifier. 
+[Test](./Online Verifier/) how your wallet implementation responds to a credential request from a verifier. 
 
 ## Test with the Proximity Verifier
 
-[Use](../Proximity Verifier/) the Proximity Verifier app to test and validate your wallet implementation.
+[Use](./Proximity Verifier/) the Proximity Verifier app to test and validate your wallet implementation.

@@ -4,5 +4,5 @@ EUDI Wallets or simply Wallets simplify the lives of citizens and businesses in 
 
 Available use cases:
 
-1. [Travel Scenario](../Travel Scenario)
+1. [Travel Scenario](./Travel Scenario)
 2. More to come shortly. Stay tuned...

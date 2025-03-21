@@ -20,5 +20,5 @@ New features are regularly added to the reference implementation. The roadmap of
 
 Leverage the EUDI Wallet Reference Implementation to build and test your solution:
 
-- [Build](../../Build/Introduction/) your Solution
-- [Test](../../Test/Introduction/) your Solution
+- [Build](../Build/Introduction/) your Solution
+- [Test](../Test/Introduction/) your Solution

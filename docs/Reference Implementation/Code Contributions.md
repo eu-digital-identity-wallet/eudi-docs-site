@@ -1,4 +1,4 @@
-# Contribution Guidelines
+# Code Contributions
 
 We welcome contributions to this project. To ensure that the process is smooth for everyone
 involved, please follow the guidelines below.

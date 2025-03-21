@@ -30,6 +30,6 @@ Four large-scale pilot projects are currently underway to test the EU Digital Id
 
 Leverage the EUDI Wallet Reference Implementation to build and test your solution:
 
-- Discover EUDI Wallet [Reference Implementation](../Reference Implementation/Introduction/)
-- [Build](../Build/Introduction/) your Solution
-- [Test](../Test/Introduction/) your Solution
+- Discover EUDI Wallet [Reference Implementation](../Reference Implementation/)
+- [Build](../Build/) your Solution
+- [Test](../Test/) your Solution

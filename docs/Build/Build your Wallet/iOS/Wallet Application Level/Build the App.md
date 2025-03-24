@@ -1,4 +1,4 @@
-# Building the Reference apps to interact with issuing and verifying services.
+# Building the App
 
 ## Overview
 

@@ -1,4 +1,4 @@
-# Steps to Build your Online Verifier
+# Steps to Build your Verifier
 
 ## Development server
 

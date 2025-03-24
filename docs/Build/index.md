@@ -16,4 +16,4 @@ Let’s get started with building your secure and interoperable EUDI solutions!
 
 Congratulations on building your solution. Time to test it!
 
-- [Test](../Test/Introduction/) your Solution
+- [Test](../Test/) your Solution

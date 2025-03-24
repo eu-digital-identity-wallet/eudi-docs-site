@@ -1,4 +1,4 @@
-# Running with remote services
+# Running with Remote Services
 
 The app is configured to use some configuration in the two ***ConfigWalletCoreImpl.kt*** files (located in the "**core-logic**" module, in either
 

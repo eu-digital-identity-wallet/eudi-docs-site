@@ -1,4 +1,4 @@
-# Running with remote services
+# Running with Remote Services
 
 The app is configured to the type (debug/release) and variant (dev/demo) in the four xcconfig files. These are the contents of the xcconfig file and you don't need to change anything if you don't want to:
 

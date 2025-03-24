@@ -163,7 +163,7 @@ nav:
   - Resources:
       - Introduction: Resources/index.md
       - Regulation: Resources/Regulation.md
-      - Architecture Reference Framework: Resources/Architecture Reference Implementation.md
+      - Architecture and Reference Framework: Resources/Architecture and Reference Implementation.md
       - Standards: Resources/Standards.md
       - Large-Scale Pilots: Resources/Large-Scale Pilots.md
   - Reference Implementation: 
@@ -203,7 +203,7 @@ nav:
           - Introduction: Build/Build your Issuer/index.md
           - Steps to Build: Build/Build your Issuer/Steps to Build.md
           - Configure: Build/Build your Issuer/Configure.md
-          - New Attestations: Build/Build your Issuer/New Attestation.md
+          - New Attestation: Build/Build your Issuer/New Attestation.md
       - Build your Verifier:
           - Introduction: Build/Build your Verifier/index.md
           - Steps to Build: Build/Build your Verifier/Steps to Build.md

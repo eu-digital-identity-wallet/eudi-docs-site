@@ -1,4 +1,4 @@
-# How to work with self-signed certificates on Android
+# Self-signed Certificates
 
 This section describes how to configure the application to interact with services utilizing self-signed certificates.
 

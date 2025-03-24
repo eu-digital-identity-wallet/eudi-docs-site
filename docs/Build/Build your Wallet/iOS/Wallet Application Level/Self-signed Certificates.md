@@ -1,4 +1,4 @@
-# How to work with self signed certificates on iOS
+# Self-signed Certificates
 
 In order for the app to interact with locally running service the following changes need to be done:
 

@@ -2,7 +2,7 @@
 
 The Reference Implementation includes the travel use case implementation to showcase the utilization of the EUDI Wallet in a ‘Travel’ scenario, where the EUDI Wallet is used for several purposes, such as presenting attestations (remotely and in proximity) as well as digitally signing documents.
 
-## Use case
+## Use Case
 
 1. **Jane is preparing for her next trip** with the help of her EUDI Wallet. Jane starts by securing her essential travel documents. She issues her Digital Identity, Mobile Driving License, and Photo-ID directly into her EUDI Wallet. Each document is safely stored, ready to be accessed whenever she needs them.
 2. **Booking**: With her documents in place, Jane navigates to the travel booking portal. Here, she effortlessly presents her Digital ID and other necessary documents requested by the booking portal from her EUDI Wallet to book her car rental and hotel.
@@ -18,7 +18,7 @@ In this section a video will be added to demonstrate the usage of the Wallet for
 1. Download the [EUDI Wallet Reference Implementation application](../../../Test/Wallet Application/Introduction/).
 2. Access the [demo booking service](https://dev.booking.demo.eudiw.dev){:target="_blank"}.
 
-## User journey
+## User Journey
 
 1. **User is preparing for a trip with the help of her EUDI Wallet.**
 	1. User issues the necessary identification documents, i.e. Digital Identity, Mobile Driving License and Photo-ID

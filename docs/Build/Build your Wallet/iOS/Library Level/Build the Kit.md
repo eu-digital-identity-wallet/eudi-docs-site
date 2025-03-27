@@ -14,9 +14,9 @@ dependencies: [
 ]
 ```
 ## Reference
- For detailed documentation, please refer to the [DocC documentation](https://eu-digital-identity-wallet.github.io/eudi-lib-ios-wallet-kit/documentation/eudiwalletkit/){:target="_blank"} available in the project's repository.
+ For detailed documentation, refer to the [DocC documentation](https://eu-digital-identity-wallet.github.io/eudi-lib-ios-wallet-kit/documentation/eudiwalletkit/){:target="_blank"} available in the project's repository.
 
-## Initialization
+## Initialisation
 The [library](https://eu-digital-identity-wallet.github.io/eudi-lib-ios-wallet-kit/documentation/eudiwalletkit/eudiwallet){:target="_blank"} provides a unified API for the two user attestation presentation flows. It is initialized with a document storage manager instance. For SwiftUI apps, the wallet instance can be added as an ``environmentObject`` to be accessible from all views. A KeyChain implementation of document storage is available.
 
 The wallet developer can customize cryptographic key operations by passing `SecureArea` instances to the wallet, otherwise the wallet-kit creates 'SecureEnclave' (default) and 'Software' secure areas. The wallet developer can specify key creation options per doc-type such as curve type, secure area name, and key unlock policy.

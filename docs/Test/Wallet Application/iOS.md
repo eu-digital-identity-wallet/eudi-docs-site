@@ -1,6 +1,6 @@
-# How to install the application
+# Install the Wallet Application
 
-## Minimum device requirements
+## Minimum Device Requirements
 
 - Any device that supports iOS 16.0
 
@@ -24,7 +24,7 @@
 
 You will also need to download the Android Verifier app. More information can be found [here](../../Verifier Application)
 
-## App launch
+## App Launch
 
 1. Launch the application
 2. You will be presented with a welcome screen where you will be asked to create a PIN for future logins.

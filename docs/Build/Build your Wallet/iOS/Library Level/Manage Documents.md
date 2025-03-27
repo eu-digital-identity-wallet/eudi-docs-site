@@ -2,7 +2,7 @@
 
 The [library](https://eu-digital-identity-wallet.github.io/eudi-lib-ios-wallet-kit/documentation/eudiwalletkit/eudiwallet){:target="_blank"} provides a set of methods to work with documents.
 
-## Loading documents
+## Load Documents
 
 The `loadDocuments` method returns documents with a specific status from storage.
 
@@ -28,7 +28,7 @@ The following example shows how to retrieve a document:
 let document = try await wallet.loadDocument(id: documentId, status: .issued)
 ```
 
-## Storage manager
+## Storage Manager
 The read-only property ``storage`` is an instance of a [StorageManager](https://eu-digital-identity-wallet.github.io/eudi-lib-ios-wallet-kit/documentation/eudiwalletkit/storagemanager){:target="_blank"} class.
 Currently the keychain implementation is used. It provides document management functionality using the iOS KeyChain.
 
@@ -46,7 +46,7 @@ The loading functions automatically update the members of the ``StorageManager``
 For other document types the [GenericMdocModel](https://eu-digital-identity-wallet.github.io/eudi-lib-ios-iso18013-data-model/documentation/mdocdatamodel18013/genericmdocmodel){:target="_blank"} is provided.
 
 
-## Deleting a document
+## Delete Documents
 
 The `deleteDocument(id:)` method that deletes a document with the given id.
 

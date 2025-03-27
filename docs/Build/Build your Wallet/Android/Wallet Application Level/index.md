@@ -1,11 +1,11 @@
-# Building the App
+# Build the App
 
 ## Overview
 This guide assists developers in building the EUDI Wallet application on Android.
 
 ## Setup EUDI Wallet application on Android
 
-To build the application using the source code and connect it with the issuer and verifier, please follow the next steps:
+To build the application using the source code and connect it with the issuer and verifier, follow the next steps:
 
 1. Download and install Android Studio and its associated tools by following the official [setup guide](https://developer.android.com/studio){:target="_blank"}. Using the latest stable version is recommended.
 2. Clone the [Android repository](https://github.com/eu-digital-identity-wallet/eudi-app-android-wallet-ui){:target="_blank"} using the following command:

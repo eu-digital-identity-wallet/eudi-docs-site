@@ -2,7 +2,7 @@
 
 ## Overview
 
-The EUDIW Issuer is an implementation of  the PID and (Q)EAA Provider service, supporting the OpenID4VCI (draft 13) protocol.
+The Issuer is an implementation of  the PID and (Q)EAA Provider service, supporting the OpenID4VCI (draft 13) protocol.
 
 The service provides, by default, support for `mso_mdoc` and `SD-JWT-VC`formats, for the following credentials:
 
@@ -17,9 +17,9 @@ The service provides, by default, support for `mso_mdoc` and `SD-JWT-VC`formats,
 For authenticating the user, it requires the use of an eIDAS node, an OAUTH2 server or a simple form (for testing purposes).
 
 
-## OpenId4VCI coverage
+## OpenId4VCI Coverage
 
-This version of the EUDIW Issuer supports the [OpenId for Verifiable Credential Issuance (draft 13)](https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0-13.html){:target="_blank"} protocol with the following coverage:
+This version of the Issuer supports the [OpenId for Verifiable Credential Issuance (draft 13)](https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0-13.html){:target="_blank"} protocol with the following coverage:
 
 
 | Feature                                                   | Coverage                                                        |
@@ -31,7 +31,7 @@ This version of the EUDIW Issuer supports the [OpenId for Verifiable Credential 
 | SD-JWT-VC format                                                  | ✅                                                              |
 | W3C VC DM                                                         | ❌                                                              |
 | [Token Endpoint](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/tree/main/api_docs/token.md){:target="_blank"}                               | ✅                                                              |
-| [Credential Offer](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/tree/main/api_docs/credential_offer.md){:target="_blank"}                  | ✅ `authorization_code` , ✅ `pre-authorized_code`              |
+| [Credential Offer](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/tree/main/api_docs/credential_offer.md){:target="_blank"}                  | ✅ `authorization_code`, ✅ `pre-authorized_code`              |
 | [Credential Endpoint](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/tree/main/api_docs/credential.md){:target="_blank"}                     | ✅ Including proofs and repeatable invocations                  |
 | Credential Issuer MetaData                                        | ✅                                                              | 
 | [Batch Endpoint](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/tree/main/api_docs/batch_credential.md){:target="_blank"}                     | ✅                                                              | 
@@ -40,4 +40,4 @@ This version of the EUDIW Issuer supports the [OpenId for Verifiable Credential 
 | [Notification Endpoint](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/tree/main/api_docs/notification.md){:target="_blank"}                 | ✅                                                              |
 
 
-You can use the EUDIW Issuer at [https://issuer.eudiw.dev/](https://issuer.eudiw.dev/){:target="_blank"}, or [install it locally](./Steps to Build).
+You can use the Issuer at [https://issuer.eudiw.dev/](https://issuer.eudiw.dev/){:target="_blank"}, or [install it locally](./Steps to Build).

@@ -1,4 +1,4 @@
-# Running with Local Services
+# Run with Local Services
 The first step is to ensure all three services are running locally on your machine,
 you can follow these Repositories for further instructions:
 

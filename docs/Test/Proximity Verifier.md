@@ -16,7 +16,7 @@ Starting from the original code of the `appverifier` [here](https://github.com/o
  - IACA Certificates: Updated to support EUDI Wallet IACAs as trusted certificates.
  - Reader Authentication Certificate.
 
-## How to install
+## Install the Verifier
 
 The app is available for download from the App Center, [here](https://install.appcenter.ms/orgs/eu-digital-identity-wallet/apps/mdoc-verifier-testing/distribution_groups/eudi%20verifier%20(testing)%20public){:target="_blank"}.
 

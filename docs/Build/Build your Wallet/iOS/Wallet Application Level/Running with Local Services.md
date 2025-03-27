@@ -1,4 +1,4 @@
-# Running with Local Services
+# Run with Local Services
 
 1. In order for the application to interact with locally running services; these must first be running on your machine. Please follow the instructions in the links below in order to have these services running locally:
 	* [Issuer](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py){:target="_blank"}

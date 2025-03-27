@@ -1,6 +1,6 @@
-# How to install the application
+# Install the Wallet Application
 
-## Minimum device requirements
+## Minimum Device Requirements
 
 - API level 26.
 
@@ -10,7 +10,7 @@ You can download the application [here](https://install.appcenter.ms/orgs/eu-dig
 
 For the proximity flow, you will also need to download the Android Verifier app. More information can be found [here](../../Proximity Verifier)
 
-## App launch
+## App Launch
 
 1. Launch the application
 2. You will be presented with a welcome screen where you will be asked to create a PIN for future logins.

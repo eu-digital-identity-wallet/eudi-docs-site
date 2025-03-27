@@ -161,58 +161,58 @@ nav:
 #           - Introduction: Demos.md
 #           - Travel Scenario: Travel Scenario.md
   - Resources:
-      - Introduction: Resources/index.md
+      - Resources: Resources/index.md
       - Regulation: Resources/Regulation.md
       - Architecture and Reference Framework: Resources/Architecture and Reference Implementation.md
       - Standards: Resources/Standards.md
       - Large-Scale Pilots: Resources/Large-Scale Pilots.md
   - Reference Implementation: 
-      - Introduction: Reference Implementation/index.md
+      - Reference Implementation: Reference Implementation/index.md
       - Code Contributions: Reference Implementation/Code Contributions.md
       - Code of Conduct: Reference Implementation/Code of Conduct.md
       - Licensing: Reference Implementation/Licensing.md
       - Disclaimer: Reference Implementation/Disclaimer.md
       - Demos:
-           - Introduction: Reference Implementation/Demos/index.md
+           - Demos: Reference Implementation/Demos/index.md
            - Travel Scenario: Reference Implementation/Demos/Travel Scenario.md
   - Build:
-      - Introduction: Build/index.md
+      - Build: Build/index.md
       - Build your Wallet:
-          - Introduction: Build/Build your Wallet/index.md
+          - Build your Wallet: Build/Build your Wallet/index.md
           - Android:
               - Wallet Application Level:
-                  - Build the App: Build/Build your Wallet/Android/Wallet Application Level/Build the App.md
-                  - Running with Remote Services: Build/Build your Wallet/Android/Wallet Application Level/Running with Remote Services.md
-                  - Running with Local Services: Build/Build your Wallet/Android/Wallet Application Level/Running with Local Services.md
+                  - Build the App: Build/Build your Wallet/Android/Wallet Application Level/index.md
+                  - Run with Remote Services: Build/Build your Wallet/Android/Wallet Application Level/Running with Remote Services.md
+                  - Run with Local Services: Build/Build your Wallet/Android/Wallet Application Level/Running with Local Services.md
                   - Self-signed Certificates: Build/Build your Wallet/Android/Wallet Application Level/Self-signed Certificates.md
               - Library Level:
-                  - Introduction: Build/Build your Wallet/Android/Library Level/index.md
+                  - Library Level: Build/Build your Wallet/Android/Library Level/index.md
                   - Build the Core: Build/Build your Wallet/Android/Library Level/Build the Core.md
                   - Manage Documents: Build/Build your Wallet/Android/Library Level/Manage Documents.md
           - iOS:
               - Wallet Application Level:
-                  - Build the App: Build/Build your Wallet/iOS/Wallet Application Level/Build the App.md
-                  - Running with Remote Services: Build/Build your Wallet/iOS/Wallet Application Level/Running with Remote Services.md
-                  - Running with Local Services: Build/Build your Wallet/iOS/Wallet Application Level/Running with Local Services.md
+                  - Build the App: Build/Build your Wallet/iOS/Wallet Application Level/index.md
+                  - Run with Remote Services: Build/Build your Wallet/iOS/Wallet Application Level/Running with Remote Services.md
+                  - Run with Local Services: Build/Build your Wallet/iOS/Wallet Application Level/Running with Local Services.md
                   - Self-signed Certificates: Build/Build your Wallet/iOS/Wallet Application Level/Self-signed Certificates.md
               - Library Level:
-                  - Introduction: Build/Build your Wallet/iOS/Library Level/index.md
+                  - Library Level: Build/Build your Wallet/iOS/Library Level/index.md
                   - Build the Kit: Build/Build your Wallet/iOS/Library Level/Build the Kit.md
                   - Manage Documents: Build/Build your Wallet/iOS/Library Level/Manage Documents.md
       - Build your Issuer:
-          - Introduction: Build/Build your Issuer/index.md
+          - Build your Issuer: Build/Build your Issuer/index.md
           - Steps to Build: Build/Build your Issuer/Steps to Build.md
-          - Configure: Build/Build your Issuer/Configure.md
-          - New Attestation: Build/Build your Issuer/New Attestation.md
+          - Configure your Issuer: Build/Build your Issuer/Configure.md
+          - Add Attestations: Build/Build your Issuer/New Attestation.md
       - Build your Verifier:
-          - Introduction: Build/Build your Verifier/index.md
+          - Build your Verifier: Build/Build your Verifier/index.md
           - Steps to Build: Build/Build your Verifier/Steps to Build.md
-          - Configure: Build/Build your Verifier/Configure.md 
+          - Configure your Verifier: Build/Build your Verifier/Configure.md 
 
   - Test:
-      - Introduction: Test/index.md
+      - Test: Test/index.md
       - Wallet Application:
-          - Introduction: Test/Wallet Application/index.md
+          - Wallet Application: Test/Wallet Application/index.md
           - Android: Test/Wallet Application/Android.md
 #              - Issue (Wallet Initiated): Test/Wallet Application/Android/Issue (Wallet Initiated).md
 #              - Issue (Credential Offer): Test/Wallet Application/Android/Issue (Credential Offer).md

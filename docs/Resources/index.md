@@ -14,13 +14,13 @@ Discover the key specifications and guidelines needed to develop an interoperabl
 
 [Explore the Architecture and Reference Framework](./Architecture Reference Implementation)
 
-## Align with Applicable Technical Standards
+## Align with applicable Technical Standards
 
 Compliance with established standards is essential for the security, interoperability, and reliability of the EUDI Wallet. By adhering to these, developers can ensure compliance, enhance security, and promote interoperability within the EU’s digital identity ecosystem.
 
 [Explore the Standards](./Standards)
 
-## Explore the Large-Scale Pilots Shaping the EUDI Wallet
+## Explore the Large-Scale Pilots shaping the EUDI Wallet
 
 Four large-scale pilot projects are currently underway to test the EU Digital Identity Wallet, involving over 360 entities across 26 Member States, Norway, Iceland, and Ukraine. Gain valuable real-world insight by exploring these projects.
 

@@ -34,7 +34,7 @@ dependencies {
 }
 ```
 
-## How to Use
+## How to use
 
 ### Initialize the library
 

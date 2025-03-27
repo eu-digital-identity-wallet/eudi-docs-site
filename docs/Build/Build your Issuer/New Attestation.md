@@ -1,4 +1,4 @@
-# New Attestation
+# Add Attestations
 
 This document specifies the changes needed to add a new attestation/credential to the EUDI Wallet Issuer.
 We will use a generic loyalty card credential as an example for this configuration.
@@ -120,9 +120,9 @@ Example loyalty card metadata for mso_mdoc format (ISO 18013-5), with namespace 
   }
 ```
 
-If you want to issue a different attestation/credential using this example as a template, please choose a different namespace, doctype, and scope, and modify the claims to include the required attributes.
+If you want to issue a different attestation/credential using this example as a template, choose a different namespace, doctype, and scope, and modify the claims to include the required attributes.
 
-For more information on the metadata parameters, please refer to https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0.html#name-metadata.
+For more information on the metadata parameters, refer to https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0.html#name-metadata.
 
 **Extra Parameters** 
 - source: Where the attribute is sourced from. Either the user or issuer (Example: Issuance Date is filled in by the issuer while given_name is filled in by the user on the form)
@@ -183,7 +183,7 @@ dynamic_issuing = {
 }
 ```
 
-## 3. Configuration of Countries supported by the EUDIW Issuer
+## 3. Configuration of Countries
 
 Located in ```app/app_config/config_countries.py```, this configuration file contains configuration data related to the countries supported by the PID Issuer, and the credentials supported by each country.
 

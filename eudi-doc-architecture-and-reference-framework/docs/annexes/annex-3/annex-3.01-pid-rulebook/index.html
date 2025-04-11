@@ -1,0 +1,3491 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://mgiakkou.github.io/eudi-doc-architecture-and-reference-framework/docs/annexes/annex-3/annex-3.01-pid-rulebook/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../../../assets/normal-reproduction-low-resolution.jpg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.11">
+    
+    
+      
+        <title>European Digital Identity Wallet - EUDI Wallet Dev Hub</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../css/extra.css">
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#annex-301-pid-rulebook" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../../.." title="EUDI Wallet Dev Hub" class="md-header__button md-logo" aria-label="EUDI Wallet Dev Hub" data-md-component="logo">
+      
+  <img src="../../../../../assets/normal-reproduction-low-resolution.jpg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            EUDI Wallet Dev Hub
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              European Digital Identity Wallet
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../Resources/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Resources
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../Reference%20Implementation/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Reference Implementation
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../Build/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Build
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../../Test/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Test
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="EUDI Wallet Dev Hub" class="md-nav__button md-logo" aria-label="EUDI Wallet Dev Hub" data-md-component="logo">
+      
+  <img src="../../../../../assets/normal-reproduction-low-resolution.jpg" alt="logo">
+
+    </a>
+    EUDI Wallet Dev Hub
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../Resources/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Resources
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Resources
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Resources/Regulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Regulation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Resources/Architecture%20and%20Reference%20Implementation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Architecture and Reference Framework
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Resources/Standards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Standards
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Resources/Large-Scale%20Pilots/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Large-Scale Pilots
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../Reference%20Implementation/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Reference Implementation
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Reference Implementation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Reference%20Implementation/Code%20Contributions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Code Contributions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Reference%20Implementation/Code%20of%20Conduct/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Code of Conduct
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Reference%20Implementation/Licensing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Licensing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Reference%20Implementation/Disclaimer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Disclaimer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../Reference%20Implementation/Demos/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Demos
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            Demos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Reference%20Implementation/Demos/Travel%20Scenario/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Travel Scenario
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../Build/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Build
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Build
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../Build/Build%20your%20Wallet/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Build your Wallet
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Build your Wallet
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2_2" id="__nav_4_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Android
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Android
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2_2_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../Build/Build%20your%20Wallet/Android/Wallet%20Application%20Level/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Wallet Application Level
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_2_2_1" id="__nav_4_2_2_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_2_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Wallet Application Level
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Build/Build%20your%20Wallet/Android/Wallet%20Application%20Level/Running%20with%20Remote%20Services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Run with Remote Services
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Build/Build%20your%20Wallet/Android/Wallet%20Application%20Level/Running%20with%20Local%20Services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Run with Local Services
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Build/Build%20your%20Wallet/Android/Wallet%20Application%20Level/Self-signed%20Certificates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Self-signed Certificates
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2_2_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../Build/Build%20your%20Wallet/Android/Library%20Level/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Library Level
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_2_2_2" id="__nav_4_2_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_2_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Library Level
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Build/Build%20your%20Wallet/Android/Library%20Level/Build%20the%20Core/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Build the Core
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Build/Build%20your%20Wallet/Android/Library%20Level/Manage%20Documents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Manage Documents
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2_3" id="__nav_4_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    iOS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            iOS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2_3_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../Build/Build%20your%20Wallet/iOS/Wallet%20Application%20Level/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Wallet Application Level
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_2_3_1" id="__nav_4_2_3_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_2_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Wallet Application Level
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Build/Build%20your%20Wallet/iOS/Wallet%20Application%20Level/Running%20with%20Remote%20Services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Run with Remote Services
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Build/Build%20your%20Wallet/iOS/Wallet%20Application%20Level/Running%20with%20Local%20Services/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Run with Local Services
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Build/Build%20your%20Wallet/iOS/Wallet%20Application%20Level/Self-signed%20Certificates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Self-signed Certificates
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2_3_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../Build/Build%20your%20Wallet/iOS/Library%20Level/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Library Level
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_2_3_2" id="__nav_4_2_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_4_2_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Library Level
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Build/Build%20your%20Wallet/iOS/Library%20Level/Build%20the%20Kit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Build the Kit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Build/Build%20your%20Wallet/iOS/Library%20Level/Manage%20Documents/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Manage Documents
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../Build/Build%20your%20Issuer/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Build your Issuer
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Build your Issuer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Build/Build%20your%20Issuer/Steps%20to%20Build/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Steps to Build
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Build/Build%20your%20Issuer/Configure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Configure your Issuer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Build/Build%20your%20Issuer/New%20Attestation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Add Attestations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../Build/Build%20your%20Verifier/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Build your Verifier
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Build your Verifier
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Build/Build%20your%20Verifier/Steps%20to%20Build/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Steps to Build
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Build/Build%20your%20Verifier/Configure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Configure your Verifier
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../Test/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Test
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Test
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../../../Test/Wallet%20Application/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    Wallet Application
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Wallet Application
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Test/Wallet%20Application/Android/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Android
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Test/Wallet%20Application/iOS/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    iOS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Test/Issuer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Issuer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Test/Online%20Verifier/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Online Verifier
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../Test/Proximity%20Verifier/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Proximity Verifier
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      1 Introduction
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1 Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-document-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 Document scope
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-document-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 Document structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-key-words" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 Key words
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-terminology" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4 Terminology
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-generic-high-level-requirements-for-pids" class="md-nav__link">
+    <span class="md-ellipsis">
+      2 Generic High-Level Requirements for PIDs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-pid-attributes-and-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      3 PID attributes and metadata
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3 PID attributes and metadata">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Introduction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-mandatory-attributes-specified-in-cir-20242977" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Mandatory attributes specified in CIR 2024/2977
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-optional-attributes-specified-in-cir-20242977" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 Optional attributes specified in CIR 2024/2977
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-mandatory-metadata-specified-in-cir-20242977" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 Mandatory metadata specified in CIR 2024/2977
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-optional-metadata-specified-in-cir-20242977" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5 Optional metadata specified in CIR 2024/2977
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-additional-optional-attributes-specified-in-this-rulebook" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.6 Additional optional attributes specified in this Rulebook
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-isoiec-18013-5-compliant-encoding-of-pid" class="md-nav__link">
+    <span class="md-ellipsis">
+      4 ISO/IEC 18013-5-compliant encoding of PID
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4 ISO/IEC 18013-5-compliant encoding of PID">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-high-level-requirements-for-isoiec-18013-5-compliant-pids" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 High-Level Requirements for ISO/IEC 18013-5-compliant PIDs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-encoding-of-pid-attributes-and-metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 Encoding of PID attributes and metadata
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.2 Encoding of PID attributes and metadata">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#421-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2.1 Overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#422-attribute-nationality" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2.2 Attribute nationality
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#423-attribute-location_status" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2.3 Attribute location_status
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#424-attribute-birth_date" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2.4 Attribute birth_date
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-sd-jwt-vc-based-encoding-of-pid" class="md-nav__link">
+    <span class="md-ellipsis">
+      5 SD-JWT VC-based encoding of PID
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5 SD-JWT VC-based encoding of PID">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51-high-level-requirements-for-sd-jwt-vc-based-pids" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 High-Level Requirements for SD-JWT VC-based PIDs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52-encoding-of-pid-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 Encoding of PID attributes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5.2 Encoding of PID attributes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#522-attribute-location_status" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2.2 Attribute location_status
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53-note-on-vct" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3 Note on VCT
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.4 Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-further-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      6 Further requirements
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6 Further requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-embedded-disclosure-policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.1 Embedded disclosure policies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-displaying-the-pid-to-the-user" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.2 Displaying the PID to the User
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      7 References
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<p><a href="/">Home</a></p>
+<h1 id="annex-301-pid-rulebook">ANNEX 3.01 - PID Rulebook</h1>
+<h2 id="1-introduction">1 Introduction</h2>
+<h3 id="11-document-scope">1.1 Document scope</h3>
+<p>This document is the natural-person Person Identification Data (PID) Rulebook
+and is part of the Architecture Reference Framework (ARF). It specifies
+how the mandatory and optional person identification data for the natural
+person, as defined in Tables 1 and 2 in the Annex of the Commission Implementing
+Regulation on PID and EAA [CIR 2024/2977], as well as the metadata specified in
+Table 5 of that CIR, will be encoded within the EUDI Wallet ecosystem.
+Additionally, this document specifies further optional PID attributes that are
+not included in the CIR.</p>
+<p>This document also specifies how a PID and all attributes in it are encoded if
+the PID complies with [ISO/IEC 18013-5] and if it complies with [SD-JWT VC].</p>
+<p>Person identification data for the legal person is out of scope of this document.</p>
+<p>This PID Rulebook complies with all applicable requirements in Topic 12
+(Attestation Rulebooks) in Annex 2 of the Architecture Reference Framework.</p>
+<h3 id="12-document-structure">1.2 Document structure</h3>
+<p>This PID Rulebook is structured as follows:</p>
+<ul>
+<li><a href="#2-generic-high-level-requirements-for-pids">Chapter 2</a> contains generic
+high-level requirements, which are valid for all PIDs regardless of the encoding
+used.</li>
+<li><a href="#3-pid-attributes-and-metadata">Chapter 3</a> describes the PID attributes and
+metadata on a generic level, regardless of the encoding used for the PID. Most
+of the content of this chapter is a direct copy of the Annex of Commission
+Implementing Regulation 2024/2977 on PID and EAA. However, a few additional
+attributes are specified in this chapter.</li>
+<li><a href="#4-isoiec-18013-5-compliant-encoding-of-pid">Chapter 4</a> specifies how the PID
+attributes and metadata are encoded in case the PID complies with [ISO/IEC
+18013-5].</li>
+<li><a href="#5-sd-jwt-vc-based-encoding-of-pid">Chapter 5</a> specifies how the PID
+attributes and metadata are encoded in case the PID complies with [SD-JWT VC].</li>
+</ul>
+<h3 id="13-key-words">1.3 Key words</h3>
+<p>This document uses the capitalised key words 'SHALL', 'SHOULD' and 'MAY' as
+specified in [RFC 2119], i.e., to indicate requirements, recommendations and
+options specified in this document.</p>
+<p>In addition, 'must' (non-capitalised) is used to indicate an external
+constraint, i.e., a requirement that is not mandated by this document, but, for
+instance, by an external document. The word 'can' indicates a capability,
+whereas other words, such as 'will', and 'is' or 'are' are intended as
+statements of fact.</p>
+<h3 id="14-terminology">1.4 Terminology</h3>
+<p>This document uses the terminology specified in Annex 1 of the ARF.</p>
+<h2 id="2-generic-high-level-requirements-for-pids">2 Generic High-Level Requirements for PIDs</h2>
+<p>The requirements in the table below are valid for all PIDs in the EUDI Wallet
+ecosystem, regardless of the encoding used.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Requirement specification</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PID_01</td>
+<td>A PID Provider SHALL issue any PID in both the format specified in ISO/IEC 18013-5 [ISO/IEC 18013-5] and the format specified in [SD-JWT VC]. <em>Note: CIR 2024/2977 mentions the W3C Verifiable Credentials Data Model v1.1 [W3C VCDM v1.1] instead of [SD-JWT VC]. However, W3C VCDM is not a complete specification of an attestation format. In particular, it does not specify a specific proof method to be used. Without additional specification, it is therefore impossible to implement a PID based on [W3C VCDM v1.1]. This Rulebook considers [SD-JWT VC] to essentially be such an additional specification.</em></td>
+</tr>
+<tr>
+<td>PID_02</td>
+<td>PID Providers SHALL use “eu.europa.ec.eudi.pid.1” as the attestation type for ISO/IEC 18013-5-compliant PIDs. <em>Notes: - This identifier uses the general format [Reverse Domain].[Domain Specific Extension]. Since the European Commission controls the domain ec.europa.eu, this attestation type identifier will not collide with any attestation type identifiers defined by other organisations in other Attestation Rulebooks. - The Commission may use the version number “1” in this identifier to distinguish between the first version of the PID, defined in this document, and any future version, which will then have an incremented version number.</em></td>
+</tr>
+<tr>
+<td>PID_03</td>
+<td>A PID Provider SHALL ensure that all of the mandatory attributes listed in <a href="#32-mandatory-attributes-specified-in-cir-20242977">Section 3.2</a> are present in any PID it issues to a Wallet Unit. <em>Notes: - When requesting PID attributes from a Wallet Unit, a Relying Party is not necessarily required to request all mandatory attributes. - A User is allowed to refuse to present a mandatory attribute, if it is requested by a Relying Party.</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-pid-attributes-and-metadata">3 PID attributes and metadata</h2>
+<h3 id="31-introduction">3.1 Introduction</h3>
+<p>Sections 3.2, 3.3, 3.4 and 3.5 of this chapter list the mandatory and optional
+PID attributes and PID metadata defined in CIR 2024/2977, respectively. Section
+3.6 lists the optional PID attributes additionally defined in this PID Rulebook.</p>
+<p>The data identifiers and definitions given in Sections 3.2, 3.3, 3.4, and 3.5
+are identical to those in CIR 2024/2977, except where explicitly indicated that
+some further explanations have been added in this Rulebook.</p>
+<p>All data identifiers and definitions in this chapter are independent of any
+encoding used. Consequently,</p>
+<ul>
+<li>the data identifiers in these tables are not necessarily the same as the
+attribute identifiers used for PIDs complying with [ISO/IEC 18013-5]. <a href="#4-isoiec-18013-5-compliant-encoding-of-pid">Chapter
+4</a> specifies the data element
+identifiers to be used for PIDs in [ISO/IEC 18013-5] format</li>
+<li>the data identifiers in these tables are not necessarily the same as the claim
+names used for PIDs complying with [SD-JWT VC]. <a href="#5-sd-jwt-vc-based-encoding-of-pid">Chapter
+5</a> specifies the attribute identifiers to be
+used for such PIDs.</li>
+</ul>
+<h3 id="32-mandatory-attributes-specified-in-cir-20242977">3.2 Mandatory attributes specified in CIR 2024/2977</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Data Identifier</strong></th>
+<th><strong>Definition</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>family_name</td>
+<td>Current last name(s) or surname(s) of the user to whom the person identification data relates.</td>
+</tr>
+<tr>
+<td>given_name</td>
+<td>Current first name(s), including middle name(s) where applicable, of the user to whom the person identification data relates.</td>
+</tr>
+<tr>
+<td>birth_date</td>
+<td>Day, month, and year on which the user to whom the person identification data relates was born.</td>
+</tr>
+<tr>
+<td>birth_place</td>
+<td>The country as an alpha-2 country code as specified in ISO 3166-1, or the state, province, district, or local area or the municipality, city, town, or village where the user to whom the person identification data relates was born.</td>
+</tr>
+<tr>
+<td>nationality</td>
+<td>One or more alpha-2 country codes as specified in ISO 3166-1, representing the nationality of the user to whom the person identification data relates.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="33-optional-attributes-specified-in-cir-20242977">3.3 Optional attributes specified in CIR 2024/2977</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Data Identifier</strong></th>
+<th><strong>Definition</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>resident_address</td>
+<td>The full address of the place where the user to whom the person identification data relates currently resides or can be contacted (street name, house number, city etc.).</td>
+</tr>
+<tr>
+<td>resident_country</td>
+<td>The country where the user to whom the person identification data relates currently resides, as an alpha-2 country code as specified in ISO 3166-1.</td>
+</tr>
+<tr>
+<td>resident_state</td>
+<td>The state, province, district, or local area where the user to whom the person identification data relates currently resides.</td>
+</tr>
+<tr>
+<td>resident_city</td>
+<td>The municipality, city, town, or village where the user to whom the person identification data relates currently resides.</td>
+</tr>
+<tr>
+<td>resident_postal_code</td>
+<td>The postal code of the place where the user to whom the person identification data relates currently resides.</td>
+</tr>
+<tr>
+<td>resident_street</td>
+<td>The name of the street where the user to whom the person identification data relates currently resides.</td>
+</tr>
+<tr>
+<td>resident_house_number</td>
+<td>The house number where the user to whom the person identification data relates currently resides, including any affix or suffix.</td>
+</tr>
+<tr>
+<td>personal_administrative_number</td>
+<td>A value assigned to the natural person that is unique among all personal administrative numbers issued by the provider of person identification data. Where Member States opt to include this attribute, they shall describe in their electronic identification schemes under which the person identification data is issued, the policy that they apply to the values of this attribute, including, where applicable, specific conditions for the processing of this value.</td>
+</tr>
+<tr>
+<td>portrait</td>
+<td>Facial image of the wallet user compliant with ISO 19794-5 or ISO 39794 specifications. <strong>Further clarification added in this PID Rulebook:</strong> See requirement PID_04 below.</td>
+</tr>
+<tr>
+<td>family_name_birth</td>
+<td>Last name(s) or surname(s) of the User to whom the person identification data relates at the time of birth.</td>
+</tr>
+<tr>
+<td>given_name_birth</td>
+<td>First name(s), including middle name(s), of the User to whom the person identification data relates at the time of birth.</td>
+</tr>
+<tr>
+<td>sex</td>
+<td>Values shall be one of the following: 0 = not known; 1 = male; 2 = female; 3 = other; 4 = inter; 5 = diverse; 6 = open; 9 = not applicable. For values 0, 1, 2 and 9, ISO/IEC 5218 applies.</td>
+</tr>
+<tr>
+<td>email_address</td>
+<td>Electronic mail address of the user to whom the person identification data relates, in conformance with [RFC 5322].</td>
+</tr>
+<tr>
+<td>mobile_phone_number</td>
+<td>Mobile telephone number of the User to whom the person identification data relates, starting with the '+' symbol as the international code prefix and the country code, followed by numbers only.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Requirement specification</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PID_04</td>
+<td>The attribute portrait SHALL consist of a single portrait image in JPEG format. The portrait image SHALL comply with the quality requirements for a Full Frontal Image Type in ISO/IEC 19794-5 clauses 8.2, 8.3, and 8.4. However, the attribute portrait SHALL NOT comply with the format requirements in ISO/IEC 19794-5 clauses 8.1 and 8.5, meaning it SHALL NOT contain any of the headers or blocks specified in clause 5 except for the image data itself (a JPEG).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="34-mandatory-metadata-specified-in-cir-20242977">3.4 Mandatory metadata specified in CIR 2024/2977</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Data Identifier</strong></th>
+<th><strong>Definition</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>expiry_date</td>
+<td>Date (and if possible time) when the person identification data will expire. <strong>Further clarification added in this PID Rulebook:</strong> This attribute, as well as the optional issuance_date attribute specified in <a href="#36-additional-optional-attributes-specified-in-this-rulebook">Section 3.6</a>, pertains to the administrative validity period of the PID. It is up to the PID Provider to decide whether a PID has an administrative validity period. However, if present, it in general is different from the technical validity period of a PID. The technical validity period is a mandatory element of all PIDs (and also attestations) in the EUDI Wallet ecosystem. It typically is short, a few days or weeks at most, if not shorter, to mitigate challenges regarding tracking of Users by malicious Relying Parties based on the repeated presentation of the same PID. On the other hand, the administrative validity period is typically at least a few years long. During the administrative validity period of a PID, the PID Provider will therefore provide multiple successive PIDs to a User, typically without any actions being expected from the User. However, when the administrative validity period of a PID ends, typically the User has to apply for an entirely new PID.</td>
+</tr>
+<tr>
+<td>issuing_authority</td>
+<td>Name of the administrative authority that issued the person identification data, or the ISO 3166 alpha-2 country code of the respective Member State if there is no separate authority entitled to issue person identification data.</td>
+</tr>
+<tr>
+<td>issuing_country</td>
+<td>Alpha-2 country code, as specified in ISO 3166-1, of the country or territory of the provider of the person identification data.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="35-optional-metadata-specified-in-cir-20242977">3.5 Optional metadata specified in CIR 2024/2977</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Data Identifier</strong></th>
+<th><strong>Definition</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>document_number</td>
+<td>A number for the person identification data, assigned by the provider of person identification data.</td>
+</tr>
+<tr>
+<td>issuing_jurisdiction</td>
+<td>Country subdivision code of the jurisdiction that issued the person identification data, as specified in ISO 3166-2:2020, Clause 8. The first part of the code shall be the same as the value for the issuing country.</td>
+</tr>
+<tr>
+<td>location_status</td>
+<td>The location of validity status information on the person identification data where the providers of person identification data revoke person identification data.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="36-additional-optional-attributes-specified-in-this-rulebook">3.6 Additional optional attributes specified in this Rulebook</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Data Identifier</strong></th>
+<th><strong>Definition</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>issuance_date</td>
+<td>Date (and if possible time) when the person identification data was issued and/or the administrative validity period of the person identification data began. See also the clarification for expiry_date in <a href="#34-mandatory-metadata-specified-in-cir-20242977">Section 3.4</a>.</td>
+</tr>
+<tr>
+<td>age_over_18</td>
+<td>Attesting whether the User to whom the person identification data relates is currently an adult (true) or a minor (false). If present, the requirements in clause 7.2.5 of ISO/IEC 18013-5 are applicable for this attribute.</td>
+</tr>
+<tr>
+<td>age_over_NN</td>
+<td>Attesting whether the User to whom the person identification data relates is at least NN years old. N &lt;&gt; 18. Multiple instances of this attribute may be present, provided the value of NN is different in each of them. If present, the requirements in clause 7.2.5 of ISO/IEC 18013-5 are applicable for these attributes.</td>
+</tr>
+<tr>
+<td>age_in_years</td>
+<td>The current age of the User to whom the person identification data relates in years.</td>
+</tr>
+<tr>
+<td>age_birth_year</td>
+<td>The year when the User to whom the person identification data relates was born.</td>
+</tr>
+<tr>
+<td>trust_anchor</td>
+<td>This attribute indicates at least the URL at which a machine-readable version of the trust anchor to be used for verifying the PID can be found or looked up. <em>Note: This attribute corresponds to the location meant in Annex V point h) or Annex VII point h) of the [European Digital Identity Regulation], which is mandatory for QEAAs. This PID Rulebook adds this as an optional attribute for PIDs as well, so PID Providers are able to ensure that PIDs can be validated by Relying Parties in the same manner as QEAAs.</em></td>
+</tr>
+</tbody>
+</table>
+<h2 id="4-isoiec-18013-5-compliant-encoding-of-pid">4 ISO/IEC 18013-5-compliant encoding of PID</h2>
+<h3 id="41-high-level-requirements-for-isoiec-18013-5-compliant-pids">4.1 High-Level Requirements for ISO/IEC 18013-5-compliant PIDs</h3>
+<p>The requirements in the table below are valid for PIDs in the EUDI Wallet
+ecosystem that are compliant with [ISO/IEC 18013-5].</p>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Requirement specification</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PID_ISO_01</td>
+<td>When issuing a PID compliant with [ISO/IEC 18013-5], a PID Provider SHALL use the value “eu.europa.ec.eudi.pid.1” for the identifier of the namespace for the PID attributes specified in <a href="#42-encoding-of-pid-attributes-and-metadata">Section 4.2</a>. <em>Notes: - The version number “1” allows for future extension(s) or change(s) of the ISO/IEC 18013-5-compliant PID attributes. - This namespace has the same value as the attestation type specified in requirement PID_02. This is allowed according to ISO/IEC 18013-5.</em></td>
+</tr>
+<tr>
+<td>PID_ISO_02</td>
+<td>When issuing a PID compliant with [ISO/IEC 18013-5], a PID Provider MAY include attributes that are not defined in this document. If so, these attributes SHALL be defined within a domestic PID namespace as meant in requirement ARB_10 in Annex 2. The PID Provider SHALL generate the identifier for this domestic PID namespace by appending the applicable ISO 3166-1 alpha-2 country code or the ISO 3166-2 region code, separated by a period, to the PID namespace specified in PID_ISO_01, excluding the version number. The PID Provider MAY include a version number in the domestic PID namespace identifier. <em>Note: For example, the identifier of the first domestic PID namespace for Germany could be “eu.europa.ec.eudi.pid.de.1”.</em></td>
+</tr>
+<tr>
+<td>PID_ISO_03</td>
+<td>A PID Provider that defines a domestic namespace SHALL publish the namespace, including all attribute identifiers, their definition, presence and encoding format, in an Attestation Rulebook complying with all applicable requirements in Annex 2 [Topic 12].</td>
+</tr>
+<tr>
+<td>PID_ISO_04</td>
+<td>When issuing a PID compliant with [ISO/IEC 18013-5], a PID Provider SHALL include both the attributes and the metadata specified in CIR 2024/2977 in the PID as (issuer-signed or device-signed) data elements. <em>Note: This implies that technically speaking, there is no difference between these attributes and metadata.</em></td>
+</tr>
+<tr>
+<td>PID_ISO_05</td>
+<td>When issuing a PID compliant with [ISO/IEC 18013-5], a PID Provider SHALL encode each attribute or metadata in the PID as specified in the third column of the tables in <a href="#421-overview">Section 4.2.1</a>.</td>
+</tr>
+<tr>
+<td>PID_ISO_06</td>
+<td>When issuing a PID compliant with [ISO/IEC 18013-5], a PID Provider SHALL encode each attribute or metadata in the PID in Concise Binary Object Representation (CBOR) according to [RFC 8949].</td>
+</tr>
+<tr>
+<td>PID_ISO_07</td>
+<td>When issuing a PID compliant with [ISO/IEC 18013-5], a PID Provider SHALL ensure that each PID contains at most one attribute with the same attribute identifier.</td>
+</tr>
+<tr>
+<td>PID_ISO_08</td>
+<td>When issuing a PID compliant with [ISO/IEC 18013-5], a PID Provider SHALL ensure that the value of all attributes and metadata in the PID is valid at the value of the timestamp in the validFrom element in the MSO, see [ISO/IEC 18013-5] clause 9.1.2.4. <em>Note: The value of the age_over_18, age_over_NN, or age_in_years attributes, if present, changes whenever the User to whom the person identification data relates has a relevant birthday. The value of many other attributes will also change over time.</em></td>
+</tr>
+<tr>
+<td>PID_ISO_09</td>
+<td>When issuing a PID compliant with [ISO/IEC 18013-5], a PID Provider SHALL ensure that the issuance_date attribute, if present, is not later than the validFrom element in the MSO, see [ISO/IEC 18013-5] clause 9.1.2.4.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="42-encoding-of-pid-attributes-and-metadata">4.2 Encoding of PID attributes and metadata</h3>
+<h4 id="421-overview">4.2.1 Overview</h4>
+<p>The ISO/IEC 18013-5-compliant encoding of PID attributes and metadata is
+specified in the table below. The table contains the following information for
+all attributes:</p>
+<ul>
+<li>The first column lists the data identifier specified in
+<a href="#3-pid-attributes-and-metadata">Chapter 3</a> above.</li>
+<li>The second column lists the corresponding attribute identifier to be used in
+presentation requests and responses according to [ISO/IEC 18013-5].</li>
+<li>The third column indicates the encoding of each attribute. This column uses
+CDDL representation types defined in [RFC 8610]. The following notes and
+requirements apply:<ul>
+<li>tstr, uint, bstr, bool and tdate are CDDL representation types defined in
+  [RFC 8610].</li>
+<li>Regarding type tstr: this document confirms that, as specified in RFC
+8949, a tstr SHALL be encoded in UTF-8 and SHALL support the full Unicode
+range.</li>
+<li>All attributes having encoding type tstr SHALL have a maximum length of
+150 characters.</li>
+<li>This document specifies full-date as full-date = #6.1004(tstr), where tag
+1004 is specified in [RFC 8943].</li>
+<li>In accordance with [RFC 8949], section 3.4.1, a tdate attribute SHALL
+contain a date-time string as specified in [RFC 3339]. In accordance with
+[RFC 8943], a full-date attribute SHALL contain a full-date string as
+specified in [RFC 3339].</li>
+<li>The following requirements apply to the representation of dates in
+attributes, unless otherwise indicated:<ul>
+<li>Fractions of seconds SHALL NOT be used;</li>
+<li>A local offset from UTC SHALL NOT be used; the time-offset defined in
+[RFC 3339] SHALL be to "Z".</li>
+</ul>
+</li>
+<li>RFC 8949, section 4.2, describes four rules for canonical CBOR. Three of
+those rules SHALL be implemented for all CBOR structures in PIDs, as
+follows:<ul>
+<li>integers (major types 0 and 1) SHALL be as small as possible;</li>
+<li>the expression of the length in a bstr, tstr, array or map SHALL be as
+short as possible;</li>
+<li>indefinite-length items SHALL be made into definite-length items.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th><strong>Data Identifier</strong></th>
+<th><strong>Attribute identifier</strong></th>
+<th><strong>Encoding format</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>family_name</td>
+<td>family_name</td>
+<td>tstr</td>
+</tr>
+<tr>
+<td>given_name</td>
+<td>given_name</td>
+<td>tstr</td>
+</tr>
+<tr>
+<td>birth_date</td>
+<td>birth_date</td>
+<td>full-date, see <a href="#424-attribute-birth_date">Section 4.2.4</a>.</td>
+</tr>
+<tr>
+<td>birth_place</td>
+<td>birth_place</td>
+<td>tstr</td>
+</tr>
+<tr>
+<td>nationality</td>
+<td>nationality</td>
+<td>nationalities, see <a href="#422-attribute-nationality">Section 4.2.2</a>.</td>
+</tr>
+<tr>
+<td>resident_address</td>
+<td>resident_address</td>
+<td>tstr</td>
+</tr>
+<tr>
+<td>resident_country</td>
+<td>resident_country</td>
+<td>tstr</td>
+</tr>
+<tr>
+<td>resident_state</td>
+<td>resident_state</td>
+<td>tstr</td>
+</tr>
+<tr>
+<td>resident_city</td>
+<td>resident_city</td>
+<td>tstr</td>
+</tr>
+<tr>
+<td>resident_postal_code</td>
+<td>resident_postal_code</td>
+<td>tstr</td>
+</tr>
+<tr>
+<td>resident_street</td>
+<td>resident_street</td>
+<td>tstr</td>
+</tr>
+<tr>
+<td>resident_house_number</td>
+<td>resident_house_number</td>
+<td>tstr</td>
+</tr>
+<tr>
+<td>personal_administrative_number</td>
+<td>personal_administrative_number</td>
+<td>tstr</td>
+</tr>
+<tr>
+<td>portrait</td>
+<td>portrait</td>
+<td>bstr</td>
+</tr>
+<tr>
+<td>family_name_birth</td>
+<td>family_name_birth</td>
+<td>tstr</td>
+</tr>
+<tr>
+<td>given_name_birth</td>
+<td>given_name_birth</td>
+<td>tstr</td>
+</tr>
+<tr>
+<td>sex</td>
+<td>sex</td>
+<td>uint</td>
+</tr>
+<tr>
+<td>email_address</td>
+<td>email_address</td>
+<td>tstr</td>
+</tr>
+<tr>
+<td>mobile_phone_number</td>
+<td>mobile_phone_number</td>
+<td>tstr</td>
+</tr>
+<tr>
+<td>expiry_date</td>
+<td>expiry_date</td>
+<td>tdate or full-date</td>
+</tr>
+<tr>
+<td>issuing_authority</td>
+<td>issuing_authority</td>
+<td>tstr</td>
+</tr>
+<tr>
+<td>issuing_country</td>
+<td>issuing_country</td>
+<td>tstr</td>
+</tr>
+<tr>
+<td>document_number</td>
+<td>document_number</td>
+<td>tstr</td>
+</tr>
+<tr>
+<td>issuing_jurisdiction</td>
+<td>issuing_jurisdiction</td>
+<td>tstr</td>
+</tr>
+<tr>
+<td>location_status</td>
+<td>-</td>
+<td>See <a href="#423-attribute-location_status">Section 4.2.3</a>.</td>
+</tr>
+<tr>
+<td>issuance_date</td>
+<td>issuance_date</td>
+<td>tdate or full-date</td>
+</tr>
+<tr>
+<td>age_over_18</td>
+<td>age_over_18</td>
+<td>bool</td>
+</tr>
+<tr>
+<td>age_over_NN</td>
+<td>age_over_NN</td>
+<td>bool</td>
+</tr>
+<tr>
+<td>age_in_years</td>
+<td>age_in_years</td>
+<td>uint</td>
+</tr>
+<tr>
+<td>age_birth_year</td>
+<td>age_birth_year</td>
+<td>uint</td>
+</tr>
+<tr>
+<td>trust_anchor</td>
+<td>trust_anchor</td>
+<td>tstr</td>
+</tr>
+</tbody>
+</table>
+<h4 id="422-attribute-nationality">4.2.2 Attribute nationality</h4>
+<p>The attribute nationality takes as its value an array of Alpha-2 country codes
+as specified in ISO 3166-1. Using CDDL notation as specified in RFC 8610, the
+encoding of this data element is:</p>
+<p>nationalities = [
++ CountryCode
+]</p>
+<p>CountryCode = tstr ; Alpha-2 country code specified in ISO 3166-1</p>
+<p>Note: If the User to whom the person identification data relates has multiple
+nationalities (and the PID Provider is willing to attest to these multiple
+nationalities), the PID Provider can include all of the nationalities in the
+nationalities array. A potential drawback of this solution is that the User
+cannot selectively disclose only one of these nationalities, since for ISO/IEC
+18013-5-compliant attestations, always the entire array will be presented if the
+User approves the presentation of the nationality attribute. A potential
+solution to this challenge is for the PID Provider to include only one
+nationality in the nationality attribute, and for the remaining nationalities
+to use one or more domestic data attributes specified according to requirement
+PID_ISO_02.</p>
+<h4 id="423-attribute-location_status">4.2.3 Attribute location_status</h4>
+<p>For ISO/IEC 18013-5-compliant PIDs, the attribute location_status SHALL be
+absent, since revocation information will be added to the MSO.</p>
+<h4 id="424-attribute-birth_date">4.2.4 Attribute birth_date</h4>
+<p>For PIDs compliant with ISO/IEC 18013-5, dates are encoded as specified in RFC
+8943. This encoding does not contain provisions for encoding partial dates. This
+may cause challenges in case the birth date of a User is not (fully) known. To
+deal with such cases, a PID Provider could adopt a policy to choose appropriate
+values for the unknown date elements. However, mandating such a policy is out of
+scope of this document.</p>
+<h2 id="5-sd-jwt-vc-based-encoding-of-pid">5 SD-JWT VC-based encoding of PID</h2>
+<h3 id="51-high-level-requirements-for-sd-jwt-vc-based-pids">5.1 High-Level Requirements for SD-JWT VC-based PIDs</h3>
+<p>The requirements in the table below are valid for PIDs in the EUDI Wallet
+ecosystem that are compliant with [SD-JWT VC].</p>
+<table>
+<thead>
+<tr>
+<th><strong>Index</strong></th>
+<th><strong>Requirement specification</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PID_SVC_01</td>
+<td>A PID Provider issuing [SD-JWT VC]-compliant PIDs SHALL include the vct claim in their PIDs, where the vct claim SHALL be a URN within the <code>urn:eudi:pid:</code> namespace. The type indicated by the vct claim SHALL be <code>urn:eudi:pid:1</code> for the type defined in this document or a domestic type that extends it.</td>
+</tr>
+<tr>
+<td>PID_SVC_02</td>
+<td>A catalog linked in the PID Rulebook SHALL associate all SD-JWT VC types for PIDs with SD-JWT VC type metadata which will include the same information as the PID Rulebook applicable to the type.</td>
+</tr>
+<tr>
+<td>PID_SVC_03</td>
+<td>A PID Provider that defines a domestic type SHALL publish information about the type, including all claim identifiers, their definition, presence and encoding format, in an Attestation Rulebook complying with all applicable requirements in Annex 2 [Topic 12].</td>
+</tr>
+<tr>
+<td>PID_SVC_04</td>
+<td>When issuing a PID compliant with [SD-JWT VC], a PID Provider SHALL include both the attributes and the metadata specified in CIR 2024/2977 in the PID as claims. <em>Note: This implies that technically speaking, there is no difference between these attributes and metadata.</em></td>
+</tr>
+<tr>
+<td>PID_SVC_05</td>
+<td>When issuing a PID compliant with [SD-JWT VC], a PID Provider SHALL encode each attribute or metadata in the PID as specified in the tables in <a href="#52-encoding-of-pid-attributes">Section 5.2</a>.</td>
+</tr>
+<tr>
+<td>PID_SVC_06</td>
+<td>When issuing a PID compliant with [SD-JWT VC], a PID Provider SHALL ensure that the value of all attributes and metadata in the PID is valid at the value of the timestamp in the nbf claim, if present. <em>Note: The value of the age-related claims, if present, changes whenever the User to whom the person identification data relates has a relevant birthday. The value of many other attributes will also change over time.</em></td>
+</tr>
+<tr>
+<td>PID_SVC_07</td>
+<td>When issuing a PID compliant with [SD-JWT VC], a PID Provider SHALL ensure that the date_of_issuance claim, if present, is not later than the value of the timestamp in the nbf claim, if present.</td>
+</tr>
+<tr>
+<td>PID_SVC_08</td>
+<td>When issuing a PID compliant with [SD-JWT VC], a PID Provider SHALL make all claims (i.e., all top-level properties, all nested properties, and all array entries) selectively disclosable individually, except those claims defined as non-selectively disclosable in [SD-JWT VC].</td>
+</tr>
+</tbody>
+</table>
+<h3 id="52-encoding-of-pid-attributes">5.2 Encoding of PID attributes</h3>
+<p>Following Requirement ARB_06b, SD-JWT VC-encoded PID attestations use claim names that are either registered in the JSON Web
+Token Claims Registry [IANA-JWT-Claims], are Public Names as defined in [RFC 7519], or are Private Names specific
+to the attestation type. The tables below maps the data
+identifiers defined above to the corresponding claim names.</p>
+<p>Note that a hierarchical claim name structure can be used in SD-JWT VC encoded
+PIDs as SD-JWT allows for individual selective disclosure of objects
+and their properties. A hierarchical claim name structure is indicated by the
+notation <code>parent.child</code> in the tables below.</p>
+<p>The following IANA registered claim names are to be used for PIDs:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Data Identifier</strong></th>
+<th><strong>Attribute identifier</strong></th>
+<th><strong>Encoding format</strong></th>
+<th><strong>Reference/Notes</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>family_name</td>
+<td>family_name</td>
+<td>string</td>
+<td>Section 5.1 of [OIDC]</td>
+</tr>
+<tr>
+<td>given_name</td>
+<td>given_name</td>
+<td>string</td>
+<td>Section 5.1 of [OIDC]</td>
+</tr>
+<tr>
+<td>birth_date</td>
+<td>birthdate</td>
+<td>string, ISO 8601-1 [ISO8601‑1] YYYY-MM-DD format</td>
+<td>Section 5.1 of [OIDC]</td>
+</tr>
+<tr>
+<td>birth_place</td>
+<td>place_of_birth.country</td>
+<td>string</td>
+<td>Section 4.1 of [EKYC]; for the country</td>
+</tr>
+<tr>
+<td>birth_place</td>
+<td>place_of_birth.region</td>
+<td>string</td>
+<td>Section 4.1 of [EKYC]; for the state, province or other region</td>
+</tr>
+<tr>
+<td>birth_place</td>
+<td>place_of_birth.locality</td>
+<td>string</td>
+<td>Section 4.1 of [EKYC]; for the city or other locality</td>
+</tr>
+<tr>
+<td>nationality</td>
+<td>nationalities</td>
+<td>array of strings</td>
+<td>Section 4.1 of [EKYC]; using alpha-2 country codes as defined in <a href="#32-mandatory-attributes-specified-in-cir-20242977">Section 3.2</a></td>
+</tr>
+<tr>
+<td>resident_address</td>
+<td>address.formatted</td>
+<td>string</td>
+<td>Section 5.1 of [OIDC]</td>
+</tr>
+<tr>
+<td>resident_country</td>
+<td>address.country</td>
+<td>string</td>
+<td>Section 5.1 of [OIDC]</td>
+</tr>
+<tr>
+<td>resident_state</td>
+<td>address.region</td>
+<td>string</td>
+<td>Section 5.1 of [OIDC]</td>
+</tr>
+<tr>
+<td>resident_city</td>
+<td>address.locality</td>
+<td>string</td>
+<td>Section 5.1 of [OIDC]</td>
+</tr>
+<tr>
+<td>resident_postal_code</td>
+<td>address.postal_code</td>
+<td>string</td>
+<td>Section 5.1 of [OIDC]</td>
+</tr>
+<tr>
+<td>resident_street</td>
+<td>address.street_address</td>
+<td>string</td>
+<td>Section 5.1 of [OIDC]</td>
+</tr>
+<tr>
+<td>resident_house_number</td>
+<td>address.house_number</td>
+<td>string</td>
+<td>Section 5.1 of [OIDC]</td>
+</tr>
+<tr>
+<td>family_name_birth</td>
+<td>birth_family_name</td>
+<td>string</td>
+<td>Section 4.1 of [EKYC]</td>
+</tr>
+<tr>
+<td>given_name_birth</td>
+<td>birth_given_name</td>
+<td>string</td>
+<td>Section 4.1 of [EKYC]</td>
+</tr>
+<tr>
+<td>email_address</td>
+<td>email</td>
+<td>string</td>
+<td>Section 5.1 of [OIDC]</td>
+</tr>
+<tr>
+<td>mobile_phone_number</td>
+<td>phone_number</td>
+<td>string</td>
+<td>Section 5.1 of [OIDC]</td>
+</tr>
+<tr>
+<td>portrait</td>
+<td>picture</td>
+<td>string; data URL containing the base64-encoded portrait in JPEG format according to PID_04</td>
+<td>Section 5.1 of [OIDC]</td>
+</tr>
+</tbody>
+</table>
+<p>Note: The standard JWT claims nbf and exp are used to express the technical validity of the SD-JWT VC PID.</p>
+<p>The following Private Names specific to the attestation type defined here are to be used for PIDs:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Data Identifier</strong></th>
+<th><strong>Attribute identifier</strong></th>
+<th><strong>Encoding format</strong></th>
+<th><strong>Notes</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>expiry_date</td>
+<td>date_of_expiry</td>
+<td>string</td>
+<td>ISO 8601-1 [ISO8601‑1] YYYY-MM-DD format, as defined in Section 5.4.4.2 of [EKYC Schema]</td>
+</tr>
+<tr>
+<td>issuance_date</td>
+<td>date_of_issuance</td>
+<td>string</td>
+<td>ISO 8601-1 [ISO8601‑1] YYYY-MM-DD format, as defined in Section 5.4.4.2 of [EKYC Schema]</td>
+</tr>
+<tr>
+<td>personal_administrative_number</td>
+<td>personal_administrative_number</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>sex</td>
+<td>sex</td>
+<td>number</td>
+<td>numeric encoding as described in <a href="#33-optional-attributes-specified-in-cir-20242977">Section 3.3</a>; gender from [OIDC] uses a different value range and is therefore not used</td>
+</tr>
+<tr>
+<td>issuing_authority</td>
+<td>issuing_authority</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>issuing_country</td>
+<td>issuing_country</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>document_number</td>
+<td>document_number</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>issuing_jurisdiction</td>
+<td>issuing_jurisdiction</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>location_status</td>
+<td>-</td>
+<td>See <a href="#522-attribute-location_status">Section 5.2.2</a></td>
+<td></td>
+</tr>
+<tr>
+<td>age_over_18</td>
+<td>age_equal_or_over.18</td>
+<td>boolean (see note below)</td>
+<td></td>
+</tr>
+<tr>
+<td>age_over_NN</td>
+<td>age_equal_or_over.NN</td>
+<td>boolean (see note below)</td>
+<td></td>
+</tr>
+<tr>
+<td>age_in_years</td>
+<td>age_in_years</td>
+<td>number</td>
+<td></td>
+</tr>
+<tr>
+<td>age_birth_year</td>
+<td>age_birth_year</td>
+<td>number</td>
+<td></td>
+</tr>
+<tr>
+<td>trust_anchor</td>
+<td>trust_anchor</td>
+<td>string</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Note: Instead of separate claims for (for example) age_over_16, age_over_18, age_over_65, etc., a single claim age_equal_or_over is used. This claim is an object with properties for each age as follows:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&quot;age_equal_or_over&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;16&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;18&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;65&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="p">}</span>
+</code></pre></div>
+<h4 id="522-attribute-location_status">5.2.2 Attribute location_status</h4>
+<p>For SD-JWT VC-compliant PIDs, the PID issuer will add validity status
+information, if needed, as specified in [SD-JWT VC]. This PID Rulebook does not
+specify a separate attribute for including the location of validity status
+information.</p>
+<h3 id="53-note-on-vct">5.3 Note on VCT</h3>
+<p>SD-JWT VC defines the Verifiable Credential Type (<code>vct</code>). A type comes
+with associated metadata that, for instance, provides information about
+the type itself, outlines a schema detailing the claims that are
+optional or mandatory in the SD-JWT VC, and specifies their display
+methods. Additionally, a type can extend another type, enabling
+the creation of domestic types based on a common EU-wide type, while preserving
+the mandatory claims from the base type. Domestic
+types MAY however define additional claims and display information. Details
+are defined in [SD-JWT VC].</p>
+<p>This document defines the base type to be "urn:eudi:pid:1". As a convention, all
+PIDs must use types in the namespace "urn:eudi:pid:".</p>
+<p>SD-JWT VC specifies Type Metadata as a machine-readable format for information
+regarding a type, including the information on claims such as what is contained
+in this document. Requirement PID_SVC_02 requires that the information on the
+common EU-wide type as well as on any domestic types is published and
+accessible in a catalog.</p>
+<h3 id="54-example">5.4 Example</h3>
+<p>EXAMPLE: The following example shows the payload of a PID in SD-JWT VC format before the encoding into the SD-JWT format.</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;vct&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;urn:eudi:pid:de:1&quot;</span><span class="p">,</span>
+
+<span class="w">    </span><span class="nt">&quot;given_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Jean&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;family_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Dupont&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;birthdate&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1980-05-23&quot;</span><span class="p">,</span>
+
+<span class="w">    </span><span class="nt">&quot;age_equal_or_over&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;12&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;14&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;16&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;18&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;21&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;65&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;age_in_years&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">44</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;age_birth_year&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1980</span><span class="p">,</span>
+
+<span class="w">    </span><span class="nt">&quot;address&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;street_address&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;123 Via Appia&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;locality&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Rome&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;region&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Lazio&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;postal_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;00100&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;country&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;IT&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+
+<span class="w">    </span><span class="nt">&quot;nationalities&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;FR&quot;</span><span class="p">],</span>
+
+<span class="w">    </span><span class="nt">&quot;sex&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
+
+<span class="w">    </span><span class="nt">&quot;place_of_birth&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;country&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DD&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+
+<span class="w">    </span><span class="nt">&quot;cnf&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;jwk&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;kty&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EC&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;crv&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;P-256&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;52aDI_ur05n1f_p3jiYGUU82oKZr3m4LsAErM536crQ&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ckhZ-KQ5aXNL91R8Eufg1aOf8Z5pZJnIvuCzNGfdnzo&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span>
+
+<span class="w">    </span><span class="nt">&quot;issuing_authority&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DE&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;issuing_country&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;DE&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Note: The <code>cnf</code> claim is used for expressing key binding in SD-JWT VCs.
+The example above shows a public key in JWK format.</p>
+<p>Note: Additional technical claims are not shown here, including
+references to the issuer, validity status information, and more.</p>
+<h2 id="6-further-requirements">6 Further requirements</h2>
+<h3 id="61-embedded-disclosure-policies">6.1 Embedded disclosure policies</h3>
+<p>Requirements regarding the inclusion of an embedded disclosure policy into a
+PID, if any, will be added in a future version of this PID Rulebook.</p>
+<h3 id="62-displaying-the-pid-to-the-user">6.2 Displaying the PID to the User</h3>
+<p>Requirements regarding how a Wallet Unit should display the PID and the PID
+attributes to the User, if any, will be added in a future version of this PID
+Rulebook.</p>
+<h2 id="7-references">7 References</h2>
+<p>See <a href="../../../architecture-and-reference-framework-main/#9-references">Chapter 9</a> of the ARF main document.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+  
+
+
+<h4>Cookie consent</h4>
+<p>We use cookies to recognize your repeated visits and preferences, as well as to measure the effectiveness of our documentation and whether users find what they're searching for. With your consent, you're helping us to make our documentation better.</p>
+<input class="md-toggle" type="checkbox" id="__settings" >
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+    
+      
+    
+    
+      
+    
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Accept</button>
+    
+    
+    
+  
+    
+    
+    
+      <label class="md-button" for="__settings">Manage settings</label>
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../../../..", "features": ["search.highlight", "search.suggest", "navigation.expand", "navigation.tabs", "navigation.tabs.sticky", "navigation.top", "navigation.footer", "navigation.instant", "navigation.indexes"], "search": "../../../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>

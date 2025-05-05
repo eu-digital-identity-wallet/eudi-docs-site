@@ -6,7 +6,7 @@ theme:
   font:
     text: Roboto
   logo: assets/normal-reproduction-low-resolution.jpg
-  favicon: assets/normal-reproduction-low-resolution.jpg
+  favicon: assets/favicon.ico
   palette:
     # Palette toggle for automatic mode
     - media: "(prefers-color-scheme)"

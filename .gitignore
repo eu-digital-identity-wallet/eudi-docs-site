@@ -1,2 +1,12 @@
 .idea
 /site/
+/docs/eudi-app-android-wallet-ui/
+/docs/eudi-app-ios-wallet-ui/
+/docs/eudi-doc-architecture-and-reference-framework/
+/docs/eudi-lib-android-wallet-core/
+/docs/eudi-lib-ios-wallet-kit/
+/docs/eudi-srv-web-issuing-eudiw-py/
+/docs/eudi-web-booking-service-demo/
+/docs/eudi-web-verifier/
+/docs/assets/index.md
+/docs/css/index.md

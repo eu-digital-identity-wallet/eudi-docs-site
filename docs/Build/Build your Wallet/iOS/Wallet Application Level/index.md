@@ -32,9 +32,9 @@ This guide aims to assist developers to build the EUDI Wallet application on iOS
 	2. To run the app on a device, follow similar steps to running it on the simulator. Additionally, you need to supply your own provisioning profile and signing certificate in the Signing & Capabilities tab of your app target.
 
 6. Finally, the App needs to be connected with an Issuer and a Verifier either locally, or remotely.
-    1. [Follow the instructions](../Running with Remote Services) to run remotely.
-    2. [Follow the instructions](../Running with Local Services) to run locally.
+    1. [Follow the instructions](./Running with Remote Services) to run remotely.
+    2. [Follow the instructions](./Running with Local Services) to run locally.
 
-7. (Optional) [Follow the instructions](../Self-signed Certificates) if self-signed certificates are required.
+7. (Optional) [Follow the instructions](./Self-signed Certificates) if self-signed certificates are required.
 
 For a complete list of all configuration options, refer to [this document](https://github.com/eu-digital-identity-wallet/eudi-app-ios-wallet-ui/blob/main/wiki/configuration.md){:target="_blank"}

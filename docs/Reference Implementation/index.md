@@ -10,7 +10,7 @@ The Reference Implementation can be used by wallet providers, issuers and Relyin
 
 ## Check out the roadmap to discover upcoming features
 
-New features are regularly added to the reference implementation. The roadmap of the EUDI Wallet reference implementation provides a transparent view of the features and enhancements that are currently being developed or planned for the future. Its purpose is to promote open communication and collaboration within our community.
+New features are regularly added to the reference implementation. The roadmap of the EUDI Wallet Reference Implementation provides a transparent view of the features and enhancements that are currently being developed or planned for the future. Its purpose is to promote open communication and collaboration within our community.
 
 [View the roadmap of the EUDI Wallet reference implementation](https://github.com/orgs/eu-digital-identity-wallet/projects/24){:target="_blank"}
 

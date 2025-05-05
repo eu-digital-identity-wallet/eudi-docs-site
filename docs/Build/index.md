@@ -12,7 +12,7 @@ Let’s get started with building your secure and interoperable EUDI solutions!
 | Issuer |   An issuer is a PID Provider or a Qualified or Non-Qualified Electronic Attestation of Attributes Provider. They are responsible for issuing the PID or the Electronic Attestation to the Wallet and providing information that can be used to enquire about the validity status of the PID or Attestation. | [Build your Issuer](./Build your Issuer/) |
 | Relying Party  | A relying party requires a verifier to accept and verify Attestations presented by wallet user. Verifiers can be used in both online and proximity use cases.|[Build your Verifier](./Build your Verifier/) |
 
-## Test your solution
+## Test your Solution
 
 Congratulations on building your solution. Time to test it!
 

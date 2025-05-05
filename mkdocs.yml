@@ -1,5 +1,6 @@
 site_name: EUDI Wallet Dev Hub
-site_url: https://mgiakkou.github.io/
+site_url: https://eu-digital-identity-wallet.github.io/
+remote_branch: devhub
 theme:
   name: material
   font:

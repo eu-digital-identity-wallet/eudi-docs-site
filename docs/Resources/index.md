@@ -12,7 +12,7 @@ Understand the regulatory framework that underpins the development and deploymen
 
 Discover the key specifications and guidelines needed to develop an interoperable EUDI Wallet solution. This framework provides a solid foundation based on common standards and best practices to ensure seamless integration and functionality. 
 
-[Explore the Architecture and Reference Framework](./Architecture Reference Implementation)
+[Explore the Architecture and Reference Framework](./Architecture and Reference Implementation)
 
 ## Align with applicable Technical Standards
 

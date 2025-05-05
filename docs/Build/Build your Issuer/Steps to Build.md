@@ -191,7 +191,7 @@ If you want to make your local Issuer available on the Internet, we recommend to
 
 1. Follow the [installation guide](https://certbot.eff.org){:target="_blank"}
 
-2. Run `certbot` to get a free HTTPS certificate. The `certbot` will also configure the Issuer Nginx configuration file with the HTTPS certificate.
+2. Run `certbot` to get a free HTTPS certificate. The `certbot` will also configure the Issuer Nginx configuration file with the HTTPS certificate
 
 3. Restart the Nginx server and goto `https:\\FQDN\` (FQDN configured in the Nginx configuration file)
 
@@ -210,7 +210,7 @@ To run the Issuer in Docker, follow these steps:
 
 	   1. First directory named `config_secrets`
 		  
-		  This directory will have the cert.pem and key.pem generated in [Section 4](#4-running-your-local-eudiw-issuer-over-https)
+		  This directory will have the cert.pem and key.pem generated in Section 4 above
 	   
 		  As well as the config_secrets.py based on this [example](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/blob/main/app/app_config/__config_secrets.py){:target="_blank"}
 

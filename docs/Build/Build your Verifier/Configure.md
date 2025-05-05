@@ -7,7 +7,7 @@ In order to use your own certificate with the verifier, the `VERIFIER_JAR_SIGNIN
 Variable: `VERIFIER_JAR_SIGNING_ALGORITHM`  
 Description: Algorithm used to sign Authorization Request   
 Possible values: Any `Algorithm Name` of an IANA registered asymmetric signature algorithm (i.e. Usage is `alg`):
-https://www.iana.org/assignments/jose/jose.xhtml#web-signature-encryption-algorithms   
+[Signature Encryption Algorithm](https://www.iana.org/assignments/jose/jose.xhtml#web-signature-encryption-algorithms){:target="_blank"}
 Note: The configured signing algorithm must be compatible with the configured signing key  
 Default value: `ES256`
 

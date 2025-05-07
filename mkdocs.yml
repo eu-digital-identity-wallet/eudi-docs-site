@@ -127,7 +127,7 @@ plugins:
         - name: eudi-app-android-wallet-ui
           import_url: 'https://github.com/eu-digital-identity-wallet/eudi-app-android-wallet-ui?multi_docs=True&branch=main'
           imports:
-           - '**/*.md'
+            - '**/*.md'
             - '**/*.png'
         - name: eudi-lib-ios-wallet-kit
           import_url: 'https://github.com/eu-digital-identity-wallet/eudi-lib-ios-wallet-kit?multi_docs=True&branch=main'

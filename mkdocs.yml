@@ -228,3 +228,5 @@ nav:
       - Proximity Verifier: Test/Proximity Verifier.md
   - Resources: 
       - Resources: Resources/index.md
+  - Use Cases:
+      - mDL: Use Cases/Mobile Driving License.md

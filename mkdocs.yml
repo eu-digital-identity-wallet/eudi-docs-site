@@ -108,47 +108,48 @@ plugins:
   - multirepo:
       cleanup: true
       keep_docs_dir: false
-      nav_repos:
-        - name: eudi-doc-architecture-and-reference-framework
-          import_url: 'https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework?multi_docs=True&branch=main'
-          imports:
-            - '**/*.md'
-            - '**/*.png'
-        - name: eudi-web-booking-service-demo
-          import_url: 'https://github.com/eu-digital-identity-wallet/eudi-web-booking-service-demo?multi_docs=True&branch=main'
-          imports:
-            - '**/*.md'
-            - '**/*.png'
-        - name: eudi-lib-android-wallet-core
-          import_url: 'https://github.com/eu-digital-identity-wallet/eudi-lib-android-wallet-core?multi_docs=True&branch=main'
-          imports:
-            - '**/*.md'
-            - '**/*.png'
-        - name: eudi-app-android-wallet-ui
-          import_url: 'https://github.com/eu-digital-identity-wallet/eudi-app-android-wallet-ui?multi_docs=True&branch=main'
-          imports:
-            - '**/*.md'
-            - '**/*.png'
-        - name: eudi-lib-ios-wallet-kit
-          import_url: 'https://github.com/eu-digital-identity-wallet/eudi-lib-ios-wallet-kit?multi_docs=True&branch=main'
-          imports:
-            - '**/*.md'
-            - '**/*.png'
-        - name: eudi-app-ios-wallet-ui
-          import_url: 'https://github.com/eu-digital-identity-wallet/eudi-app-ios-wallet-ui?multi_docs=True&branch=main'
-          imports:
-            - '**/*.md'
-            - '**/*.png'
-        - name: eudi-srv-web-issuing-eudiw-py
-          import_url: 'https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py?multi_docs=True&branch=main'
-          imports:
-            - '**/*.md'
-            - '**/*.png'
-        - name: eudi-web-verifier
-          import_url: 'https://github.com/eu-digital-identity-wallet/eudi-web-verifier?multi_docs=True&branch=main'
-          imports:
-            - '**/*.md'
-            - '**/*.png'
+#      nav_repos:
+#        - name: eudi-doc-architecture-and-reference-framework
+#          import_url: 'https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework?multi_docs=True&branch=main'
+#          imports:
+#            - '**/*.md'
+#            - '**/*.png'
+#        - name: eudi-web-booking-service-demo
+#          import_url: 'https://github.com/eu-digital-identity-wallet/eudi-web-booking-service-demo?multi_docs=True&branch=main'
+#          imports:
+#            - '**/*.md'
+#            - '**/*.png'
+#        - name: eudi-lib-android-wallet-core
+#          import_url: 'https://github.com/eu-digital-identity-wallet/eudi-lib-android-wallet-core?multi_docs=True&branch=main'
+#          imports:
+#            - '**/*.md'
+#
+#            - '**/*.png'
+#        - name: eudi-app-android-wallet-ui
+#          import_url: 'https://github.com/eu-digital-identity-wallet/eudi-app-android-wallet-ui?multi_docs=True&branch=main'
+#          imports:
+#            - '**/*.md'
+#            - '**/*.png'
+#        - name: eudi-lib-ios-wallet-kit
+#          import_url: 'https://github.com/eu-digital-identity-wallet/eudi-lib-ios-wallet-kit?multi_docs=True&branch=main'
+#          imports:
+#            - '**/*.md'
+#            - '**/*.png'
+#        - name: eudi-app-ios-wallet-ui
+#          import_url: 'https://github.com/eu-digital-identity-wallet/eudi-app-ios-wallet-ui?multi_docs=True&branch=main'
+#          imports:
+#            - '**/*.md'
+#            - '**/*.png'
+#        - name: eudi-srv-web-issuing-eudiw-py
+#          import_url: 'https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py?multi_docs=True&branch=main'
+#          imports:
+#            - '**/*.md'
+#            - '**/*.png'
+#        - name: eudi-web-verifier
+#          import_url: 'https://github.com/eu-digital-identity-wallet/eudi-web-verifier?multi_docs=True&branch=main'
+#          imports:
+#            - '**/*.md'
+#            - '**/*.png'
 
 nav:
 
@@ -161,8 +162,6 @@ nav:
 #      - Demos:
 #           - Introduction: Demos.md
 #           - Travel Scenario: Travel Scenario.md
-  - Resources: 
-      - Resources: Resources/index.md
 #      - Regulation: Resources/Regulation.md
 #      - Architecture and Reference Framework: Resources/Architecture and Reference Implementation.md
 #      - Standards: Resources/Standards.md
@@ -227,3 +226,5 @@ nav:
       - Issuer: Test/Issuer.md
       - Online Verifier: Test/Online Verifier.md
       - Proximity Verifier: Test/Proximity Verifier.md
+  - Resources: 
+      - Resources: Resources/index.md

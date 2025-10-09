@@ -11,13 +11,42 @@ Releases undergo full verification and validation through a combination of **man
 All testing artefacts are managed in GitHub under:  
 [eu-digital-identity-wallet/eudi-doc-testing-application-internal](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application-internal)
 
+## Table of contents
+
+| Section | Description |
+| -------- | ------- |
+| [Test Levels and Types](#test-levels-and-types) | | 
+| [Test Environments](#test-environments) | |
+| [Test Management and Tools](#test-management-and-tools) | |
+| [Reporting](#reporting) | |
+
+## Test Levels and Types
+
+Testing is organised across multiple levels to validate functionality, performance, and security, ensuring comprehensive coverage throughout the development lifecycle
+
+| Test Type | Objective | Frequency | Tooling |
+| -------- | ------- | -------- | ------- |
+| [**Unit**](#unit-testing) | Component-level verification | Continuous | SonarCloud |
+| [Functional](#functional-testing) | End-to-end behaviour validation | Per release | Manual, Serenity BDD |
+| [Security](#security-testing) | Confidentiality, integrity, and compliance | Ad hoc per major release | OWASP MASVS/MASTG |
+| [Performance](#performance-testing) | Response time, and App Stability, CPU and Memory Usage | Ad hoc per major release | CI / Device tests |
+| [Regression](#regression-testing) | Automated End to end behaviour validation | Continuous | CI pipelines |
+
+### Unit Testing
+
+Unit testing verifies the correctness of individual software components and is the first quality gate in the CI pipeline.
+
+Unit tests run automatically on every commit through GitHub Actions.
+
+Unit testing supports early defect detection and continuous integration by ensuring each new change maintains baseline quality.
+
 ## Test Scope and Test Cases
 
 The scope of testing covers all features and functionalities defined for each release of the **EUDI Wallet** application.
 
 #### Structure of Test Cases &lt;Can be a link&gt;
 
-Test cases are defined, version-controlled, and executed within the project's dedicated testing repository:[eu-digital-identity-wallet/eudi-doc-testing-application-internal](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application-internal).
+Test cases are defined, version-controlled, and executed within the project's dedicated testing repository: [eu-digital-identity-wallet/eudi-doc-testing-application-internal](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application-internal).
 
 The repository follows a hierarchical structure:
 
@@ -38,31 +67,11 @@ Every test case is linked to:
     - In each Epic Folder there is a readme file including the respective links of the EPIC and the User Stories
     - Each Feature file (Test cases file) starts with the description of the requirement including the respective link
 
-## Test Levels and Types
-
-Testing is organised across multiple levels to validate functionality, performance, and security, ensuring comprehensive coverage throughout the development lifecycle
-
-| Test Type | Objective | Frequency | Tooling |
-| -------- | ------- | -------- | ------- |
-| [**Unit**](#_Unit_Testing) | Component-level verification | Continuous | SonarCloud |
-| [Functional](#_Functional_Testing) | End-to-end behaviour validation | Per release | Manual, Serenity BDD |
-| [Security](#_Security_Testing) | Confidentiality, integrity, and compliance | Ad hoc per major release | OWASP MASVS/MASTG |
-| [Performance](#_Performance_Testing) | Response time, and App Stability, CPU and Memory Usage | Ad hoc per major release | CI / Device tests |
-| [Regression](#_Regression_Testing) | Automated End to end behaviour validation | Continuous | CI pipelines |
-
-### Unit Testing
-
-Unit testing verifies the correctness of individual software components and is the first quality gate in the CI pipeline.
-
-Unit tests run automatically on every commit through GitHub Actions.
-
-Unit testing supports early defect detection and continuous integration by ensuring each new change maintains baseline quality.
-
 ### Functional Testing
 
 Functional and end-to-end (E2E) testing ensures that each release behaves as expected according to defined epics and user stories.
 
-The Functional Requirements can be found at &lt; <https://github.com/eu-digital-identity-wallet/eudi-wallet-product-roadmap/blob/main/EUDI%20Wallet%20Reference%20Implementation%20-%20Feature%20Map.md> &gt;
+The Functional Requirements can be found [here](https://github.com/eu-digital-identity-wallet/eudi-wallet-product-roadmap/blob/main/EUDI%20Wallet%20Reference%20Implementation%20-%20Feature%20Map.md).
 
 - **Scope:** Manual and automated tests (written in Gherkin) executed on both Android and iOS.
 - **Coverage:** Functional Requirements, UI, and usability aspects of the mobile application based and mapped to the respective user stories.
@@ -102,15 +111,13 @@ A multi-layered verification process is applied, combining both manual and autom
 - **Manual Source Code Review**: Targeted reviews of the application's source code to identify logic flaws, insecure data handling, cryptographic weaknesses, and other vulnerabilities that may not be identified through automation;
 - **Dynamic Testing and Penetration Testing**: The compiled application is analysed in a runtime environment to validate its behaviour, data flow, and communication security;
 
-#### Security Requirements & Controls
+#### Mobile Security Testing based on MΑSTG
 
 The **Security Requirements and Controls** defined by the relevant protocols and specifications (e.g., OpenID4VC, OpenID4VP, ISO/IEC 18013-5) are identified and documented as part of the secure design process. These requirements establish the baseline for the protection mechanisms implemented within the EUDI Wallet application, ensuring alignment with recognized standards and best practices.
 
 Verification of the security requirements is conducted through testing activities based on the Mobile Application Security Testing Guide (MASTG). Each defined control is validated using the corresponding MASTG test cases to confirm that the implementation effectively enforces the intended security objectives.
 
 The Security Requirements can be found at &lt;link&gt;
-
-#### Mobile Security Testing based on MΑSTG
 
 The **OWASP Mobile Application Security Testing Guide (MASTG)** complements MASVS by providing the practical techniques and test cases used to verify each MASVS requirement.
 

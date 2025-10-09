@@ -1,5 +1,12 @@
 # Code Quality Assurance Overview
 
+## Table of Contents
+1. [Purpose and Approach](#purpose-and-approach)
+2. [Test Levels and Types](#test-levels-and-types)
+3. [Test Environments](#test-environments)
+4. [Test Management & Tools ](#test-management-and-tools)
+5. [Reporting](#reporting)
+
 ## Purpose and Approach
 
 This page describes the **Code Quality Assurance (QA) activities** for the **EUDI Wallet project**, providing transparency on testing practices, environments, and outcomes across all releases.
@@ -11,14 +18,6 @@ Releases undergo full verification and validation through a combination of **man
 All testing artefacts are managed in GitHub under:  
 [eu-digital-identity-wallet/eudi-doc-testing-application-internal](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application-internal)
 
-## Table of contents
-
-| Section | Description |
-| -------- | ------- |
-| [Test Levels and Types](#test-levels-and-types) | | 
-| [Test Environments](#test-environments) | |
-| [Test Management and Tools](#test-management-and-tools) | |
-| [Reporting](#reporting) | |
 
 ## Test Levels and Types
 
@@ -40,33 +39,7 @@ Unit tests run automatically on every commit through GitHub Actions.
 
 Unit testing supports early defect detection and continuous integration by ensuring each new change maintains baseline quality.
 
-## Test Scope and Test Cases
-
-The scope of testing covers all features and functionalities defined for each release of the **EUDI Wallet** application.
-
-#### Structure of Test Cases &lt;Can be a link&gt;
-
-Test cases are defined, version-controlled, and executed within the project's dedicated testing repository: [eu-digital-identity-wallet/eudi-doc-testing-application-internal](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application-internal).
-
-The repository follows a hierarchical structure:
-
-- **Features:**
-    - Two main OS folders android and ios to cover both platform-specific tests.
-    - Under each OS main folder, **epic folders** contain **user story subfolders**.
-    - Each user story subfolder includes .feature files written in **Gherkin syntax**, describing the respective test scenarios .
-- Test cases are enriched with:
-    - Execution status (@passed, @failed, @pending etc)
-    - Type (manual or automated)
-    - Direct links to related GitHub issues and user stories.
-
-#### Traceability and Coverage &lt;Can be a link&gt;
-
-Every test case is linked to:
-
-- A **user story** in GitHub (functional or non-functional requirement).
-    - In each Epic Folder there is a readme file including the respective links of the EPIC and the User Stories
-    - Each Feature file (Test cases file) starts with the description of the requirement including the respective link
-
+---
 ### Functional Testing
 
 Functional and end-to-end (E2E) testing ensures that each release behaves as expected according to defined epics and user stories.
@@ -80,21 +53,7 @@ The Functional Requirements can be found [here](https://github.com/eu-digital-id
 
 Functional testing results are published automatically through GitHub Actions and are visible in the reports.
 
-### Regression Testing (Automated)
-
-Regression testing ensures that previous functionality remains stable after new features are added. Automated regression tests are planned to be part of the CI workflow.
-
-### Performance Testing
-
-Performance tests validate responsiveness, stability, and resource usage under expected conditions.
-
-- **Scope**: CPU, memory, and network activity under realistic workloads.
-- **Test Devices:** Android POCO X5 Pro 5G and iPhone 14 Plus.
-- **Approach**: Measurement of resource consumption and response time per feature.
-- **Reporting**: The Performance Test Report include the Performance Test Strategy, the scope and the results. are provided in a separate report  
-    **_&lt; link&gt;_**
-
-Performance testing outcomes confirm that the application remains stable and responsive under normal operating conditions.
+---
 
 ### Security Testing
 
@@ -140,6 +99,25 @@ Through this process, vulnerabilities detected by automated tools and manual tes
 - **DefectDojo**: Serves as a centralized vulnerability management platform, aggregating findings from all tools and assessments for triage, remediation, and reporting.
 
 This integrated approach promotes consistent vulnerability tracking and continuous improvement of the overall security posture.
+
+---
+
+### Performance Testing
+
+Performance tests validate responsiveness, stability, and resource usage under expected conditions.
+
+- **Scope**: CPU, memory, and network activity under realistic workloads.
+- **Test Devices:** Android POCO X5 Pro 5G and iPhone 14 Plus.
+- **Approach**: Measurement of resource consumption and response time per feature.
+- **Reporting**: The Performance Test Report include the Performance Test Strategy, the scope and the results. are provided in a separate report  
+    **_&lt; link&gt;_**
+
+Performance testing outcomes confirm that the application remains stable and responsive under normal operating conditions.
+
+---
+### Regression Testing (Automated)
+
+Regression testing ensures that previous functionality remains stable after new features are added. Automated regression tests are planned to be part of the CI workflow.
 
 ## Test Environments
 

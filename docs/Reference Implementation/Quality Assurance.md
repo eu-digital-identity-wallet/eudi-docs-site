@@ -2,8 +2,8 @@
 
 ## Table of Contents
 1. [Purpose and Approach](#-purpose-and-approach)
-2. [Test Levels and Types](#-test-levels-and-types)
-3. [Test Management and Tools ](#-test-management-and-tools)
+2. [Test Types](#-test-types)
+3. [Test Tools ](#-test-tools)
 4. [Reporting](#-reporting)
 
 ## 🎯 Purpose and Approach
@@ -18,7 +18,7 @@ All testing artefacts are managed in GitHub under:
 [eu-digital-identity-wallet/eudi-doc-testing-application-internal](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application-internal)
 
 
-## 🧩 Test Levels and Types
+## 🧩 Test Types
 
 Testing is organised across multiple levels to validate functionality, performance, and security, ensuring comprehensive coverage throughout the development lifecycle
 

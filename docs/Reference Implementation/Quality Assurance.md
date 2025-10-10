@@ -1,13 +1,13 @@
 # Code Quality Assurance Overview
 
 ## Table of Contents
-1. [Purpose and Approach](#purpose-and-approach)
-2. [Test Levels and Types](#test-levels-and-types)
-3. [Test Environments](#test-environments)
-4. [Test Management & Tools ](#test-management-and-tools)
-5. [Reporting](#reporting)
+1. [Purpose and Approach](#-purpose-and-approach)
+2. [Test Levels and Types](#-test-levels-and-types)
+3. [Test Environments](#-test-environments)
+4. [Test Management and Tools ](#-test-management-and-tools)
+5. [Reporting](#-reporting)
 
-## Purpose and Approach
+## 🎯 Purpose and Approach
 
 This page describes the **Code Quality Assurance (QA) activities** for the **EUDI Wallet project**, providing transparency on testing practices, environments, and outcomes across all releases.
 
@@ -19,7 +19,7 @@ All testing artefacts are managed in GitHub under:
 [eu-digital-identity-wallet/eudi-doc-testing-application-internal](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application-internal)
 
 
-## Test Levels and Types
+## 🧩 Test Levels and Types
 
 Testing is organised across multiple levels to validate functionality, performance, and security, ensuring comprehensive coverage throughout the development lifecycle
 
@@ -115,12 +115,11 @@ Performance tests validate responsiveness, stability, and resource usage under e
 Performance testing outcomes confirm that the application remains stable and responsive under normal operating conditions.
 
 ---
-### Regression Testing (Automated)
+### Regression Testing
 
-Regression testing ensures that previous functionality remains stable after new features are added. Automated regression tests are planned to be part of the CI workflow.
+Regression testing is automated and ensures that previous functionality remains stable after new features are added. Automated regression tests are planned to be part of the CI workflow.
 
-## Test Environments
-
+## 💻 Test Environments
 All testing activities are performed within two controlled environments - Development (DEV) and Production (PROD) - that together support continuous integration, verification, and release readiness activities for the EUDI Wallet.
 
 Main components:
@@ -134,7 +133,7 @@ Main components:
 - **Verifier Portal:**  
     <https://verifier.eudiw.dev/home> - used to validate credentials during presentation flows.
 
-## Test Management and Tools
+## 💼 Test Management and Tools
 
 Testing activities are planned and tracked in **GitHub Issues** and **Projects.**
 
@@ -148,7 +147,7 @@ Details about the Test Management and the Testing tools can be found [here](http
 - _SQLCipher_ and _Android Keystore_ for data protection.
 - _Burp Suite_ and _MobSF_ for dynamic testing and static analysis.
 
-## Reporting
+## 📊 Reporting
 
 The QA process is continuously refined based on findings, coverage metrics, and stakeholder feedback.
 

@@ -4,8 +4,7 @@
 1. [Purpose and Approach](#-purpose-and-approach)
 2. [Test Levels and Types](#-test-levels-and-types)
 3. [Test Management and Tools ](#-test-management-and-tools)
-4. [Test Environments](#-test-environments)
-5. [Reporting](#-reporting)
+4. [Reporting](#-reporting)
 
 ## 🎯 Purpose and Approach
 
@@ -80,20 +79,6 @@ The following table summarises the key tools utilised in the applicable test typ
 | Security |  _OWASP MASVS/MASTG_ for mobile security verification <br> _OWASP Dependency-Check_ for third-party library analysis <br> _SQLCipher_ and _Android Keystore_ for data protection <br> _Burp Suite_ and _MobSF_ for dynamic testing and static analysis|
 | Performance | CI / Device tests |
 | Regression | CI pipelines |
-
-## 💻 Test Environments
-All testing activities are performed within two controlled environments that support continuous integration, verification, and release readiness activities for the EUDI Wallet:
-- Development (DEV)
-- Production (PROD)
-
-
-| Component | DEV | PROD |
-| -------- | ------- | ------- | 
-| EUDI Wallet App (Android) |TBC |TBC|
-| EUDI Wallet App (iOS) |TBC |TBC|
-| Issuer | [DEV Issuer](https://dev.issuer.eudiw.dev/credential_offer_choice)|[PROD Issuer](https://issuer.eudiw.dev/credential_offer_choice)|
-| Web Verifier |[DEV version](https://dev.verifier.eudiw.dev/home) |[PROD version](https://verifier.eudiw.dev/home)|
-
 
 
 ## 📊 Reporting

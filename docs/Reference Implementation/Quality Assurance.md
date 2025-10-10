@@ -35,7 +35,7 @@ Testing is organised across multiple levels to validate functionality, performan
 ### Unit Testing
 
 - **Objectives:** Unit testing verifies the correctness of individual software components and is the first quality gate in the CI pipeline.
-- **Requirements:** The requirements of the Unit testing can be found [here]().
+- **Requirements:** The Unit Testing Requirements can be found [here]().
 - **Scope:** Unit testing supports early defect detection and continuous integration by ensuring each new change maintains baseline quality.
 - **Tools:** [Unit testing tools](#-test-management-and-tools).
 
@@ -45,7 +45,7 @@ Testing is organised across multiple levels to validate functionality, performan
 
 - **Objectives:** Functional and end-to-end (E2E) testing ensures that each release behaves as expected according to defined epics and user stories.
 - **Requirements:** The Functional Requirements can be found [here](https://github.com/eu-digital-identity-wallet/eudi-wallet-product-roadmap/blob/main/EUDI%20Wallet%20Reference%20Implementation%20-%20Feature%20Map.md).
-- **Scecifications:** Functional Requirements, UI, and usability aspects of the mobile application based and mapped to the respective user stories.
+- **Specifications:** Functional Requirements, UI, and usability aspects of the mobile application based and mapped to the respective user stories.
 - **Tools:** [Functional testing tools](#-test-management-and-tools).
 
 Functional testing results are published automatically through GitHub Actions and are visible in the reports.
@@ -56,7 +56,7 @@ Functional testing results are published automatically through GitHub Actions an
 
 - **Objectives:** Security testing ensures the continuous security, integrity, and resilience of the EUDI Wallet applications throughout their lifecycle. By integrating automated and manual security testing within a Secure Software Development Life Cycle (SDLC) and aligning with OWASP MASVS and MASTG standards, the framework enables early detection and remediation of vulnerabilities. It combines code analysis, penetration testing, and vulnerability management using tools such as SonarQube, OWASP Dependency-Check, and DefectDojo to maintain compliance with recognized security standards and safeguard user trust in the EUDI Wallet ecosystem.
 - **Requirements:** The Security Requirements can be found [here](https://github.com/eu-digital-identity-wallet/eudi-doc-reference-implementation-architecture/blob/main/security-requirements.md).
-- **Specifications:** The security test specifications can be found [here]().
+- **Specifications:** The Security Test Specifications can be found [here]().
 - **Tools:** [Security testing tools](#-test-management-and-tools).
 
 ---
@@ -64,8 +64,8 @@ Functional testing results are published automatically through GitHub Actions an
 ### Performance Testing
 
 - **Objectives:** Performance tests validate responsiveness, stability, and resource usage under expected conditions. Measurement of resource consumption and response time per feature in order to confirm that the application remains stable and responsive under normal operating conditions.
-- **Requirements:** The Performance Requirements can be found here.
-- **Specifications**: The performance test specifications can be found [here]()
+- **Requirements:** The Performance Requirements can be found [here]().
+- **Specifications**: The Performance Test Specifications can be found [here]()
 - **Tools:** [Performance testing tools](#-test-management-and-tools).
 
 ## 💼 Test Management and Tools

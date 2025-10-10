@@ -44,7 +44,7 @@ Unit testing supports early defect detection and continuous integration by ensur
 
 Functional and end-to-end (E2E) testing ensures that each release behaves as expected according to defined epics and user stories.
 
-- **Objectives:**
+- **Objectives:** Functional testing is used to verify that the application performs according to the defined functional requirements. It ensures that all features operate correctly, inputs produce the expected outputs, and data is handled accurately.
 - **Requirements:** The Functional Requirements can be found [here](https://github.com/eu-digital-identity-wallet/eudi-wallet-product-roadmap/blob/main/EUDI%20Wallet%20Reference%20Implementation%20-%20Feature%20Map.md).
 - **Scope:** Functional Requirements, UI, and usability aspects of the mobile application based and mapped to the respective user stories.
 - **Tools:** [Functional testing tools](#test-management-and-tools).
@@ -117,7 +117,7 @@ Performance tests validate responsiveness, stability, and resource usage under e
 
 - **Objectives:** Regression testing is automated and ensures that previous functionality remains stable after new features are added. Automated regression tests are planned to be part of the CI workflow.
 - **Requirements:**
-- **Scope**: CPU, memory, and network activity under realistic workloads.
+- **Scope**: 
 - **Tools:** [Regression testing tools](#test-management-and-tools).
 
 

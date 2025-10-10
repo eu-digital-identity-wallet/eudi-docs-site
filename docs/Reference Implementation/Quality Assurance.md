@@ -44,12 +44,10 @@ Unit testing supports early defect detection and continuous integration by ensur
 
 Functional and end-to-end (E2E) testing ensures that each release behaves as expected according to defined epics and user stories.
 
-The Functional Requirements can be found [here](https://github.com/eu-digital-identity-wallet/eudi-wallet-product-roadmap/blob/main/EUDI%20Wallet%20Reference%20Implementation%20-%20Feature%20Map.md).
-
-- **Scope:** Manual and automated tests (written in Gherkin) executed on both Android and iOS.
-- **Coverage:** Functional Requirements, UI, and usability aspects of the mobile application based and mapped to the respective user stories.
-- **Traceability:** All test artefacts are linked to the respective GitHub issues (User Stories).
-- **Tools:** Serenity BDD for structured reports and coverage indicators.
+- **Objectives:**
+- **Requirements:** The Functional Requirements can be found [here](https://github.com/eu-digital-identity-wallet/eudi-wallet-product-roadmap/blob/main/EUDI%20Wallet%20Reference%20Implementation%20-%20Feature%20Map.md).
+- **Scope:** Functional Requirements, UI, and usability aspects of the mobile application based and mapped to the respective user stories.
+- **Tools:** [Functional testing tools](#test-management-and-tools).
 
 Functional testing results are published automatically through GitHub Actions and are visible in the reports.
 
@@ -57,7 +55,10 @@ Functional testing results are published automatically through GitHub Actions an
 
 ### Security Testing
 
-Ensuring the security and integrity of the EUDI Wallet applications requires a continuous, lifecycle-wide testing approach. The framework combines **automated verification** within the SDLC (Software Development Life Cycle) with **periodic manual security assessments**, ensuring that vulnerabilities are identified early, while complex logic and implementation flaws are addressed through in-depth manual analysis. The following subsections describe how standardized methodologies, defined security requirements, and integrated tooling work together to maintain assurance and resilience across all stages of the EUDI Wallet's lifecycle
+- **Objectives:** Ensuring the security and integrity of the EUDI Wallet applications requires a continuous, lifecycle-wide testing approach. The framework combines **automated verification** within the SDLC (Software Development Life Cycle) with **periodic manual security assessments**, ensuring that vulnerabilities are identified early, while complex logic and implementation flaws are addressed through in-depth manual analysis. The following subsections describe how standardized methodologies, defined security requirements, and integrated tooling work together to maintain assurance and resilience across all stages of the EUDI Wallet's lifecycle
+- **Requirements:** The Security Requirements can be found [here](https://github.com/eu-digital-identity-wallet/eudi-doc-reference-implementation-architecture/blob/main/security-requirements.md).
+- **Scope:** .
+- **Tools:** [Security testing tools](#test-management-and-tools).
 
 #### OWASP Mobile Application Security Verification Standard (MASVS)
 
@@ -106,18 +107,19 @@ This integrated approach promotes consistent vulnerability tracking and continuo
 
 Performance tests validate responsiveness, stability, and resource usage under expected conditions.
 
+- **Objectives:** Measurement of resource consumption and response time per feature in order to confirm that the application remains stable and responsive under normal operating conditions.
+- **Requirements:**
 - **Scope**: CPU, memory, and network activity under realistic workloads.
-- **Test Devices:** Android POCO X5 Pro 5G and iPhone 14 Plus.
-- **Approach**: Measurement of resource consumption and response time per feature.
-- **Reporting**: The Performance Test Report include the Performance Test Strategy, the scope and the results. are provided in a separate report  
-    **_&lt; link&gt;_**
-
-Performance testing outcomes confirm that the application remains stable and responsive under normal operating conditions.
+- **Tools:** [Performance testing tools](#test-management-and-tools).
 
 ---
 ### Regression Testing
 
-Regression testing is automated and ensures that previous functionality remains stable after new features are added. Automated regression tests are planned to be part of the CI workflow.
+- **Objectives:** Regression testing is automated and ensures that previous functionality remains stable after new features are added. Automated regression tests are planned to be part of the CI workflow.
+- **Requirements:**
+- **Scope**: CPU, memory, and network activity under realistic workloads.
+- **Tools:** [Regression testing tools](#test-management-and-tools).
+
 
 ## 💻 Test Environments
 All testing activities are performed within two controlled environments - Development (DEV) and Production (PROD) - that together support continuous integration, verification, and release readiness activities for the EUDI Wallet.
@@ -141,7 +143,7 @@ The following table summarises the key tools utilised in the applicable test typ
 | Test Type | Tools | 
 | -------- | ------- | 
 | Unit|  _SonarCloud_ |
-| Functional |  _Manual_, _Serenity BDD_ for structured reporting and visual coverage |
+| Functional |  _Manual_, _Serenity BDD_ for structured reporting and visual coverage, _Android Studio_ for Android wallet application testing |
 | Security |  _OWASP MASVS/MASTG_ for mobile security verification <br> _OWASP Dependency-Check_ for third-party library analysis <br> _SQLCipher_ and _Android Keystore_ for data protection <br> _Burp Suite_ and _MobSF_ for dynamic testing and static analysis|
 | Performance | CI / Device tests |
 | Regression | CI pipelines |

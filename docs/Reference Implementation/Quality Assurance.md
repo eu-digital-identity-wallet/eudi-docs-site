@@ -42,10 +42,10 @@ Testing is organised across multiple levels to validate functionality, performan
 
 - **Objectives:** Functional and end-to-end (E2E) testing ensures that each release behaves as expected according to defined epics and user stories.
 - **Requirements:** The Functional Requirements can be found [here](https://github.com/eu-digital-identity-wallet/eudi-wallet-product-roadmap/blob/main/EUDI%20Wallet%20Reference%20Implementation%20-%20Feature%20Map.md).
-- **Specifications:** Functional Requirements, UI, and usability aspects of the mobile application based and mapped to the respective user stories.
+- **Specifications:** The Functional Testing Specifications can be found here:
+        - [Manual Testing]().
+        - [Automated Testing]().
 - **Tools:** [Functional testing tools](#-test-management-and-tools).
-
-Functional testing results are published automatically through GitHub Actions and are visible in the reports.
 
 ---
 

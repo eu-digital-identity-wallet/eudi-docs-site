@@ -91,5 +91,5 @@ Each release is accompanied with serenity-generated reports summarising test exe
 | 2025.10.31 - Demo | GitHub Action Report | 🔄 In progress |
 | 2025.12.xx - xxx | (to be added) | ⏳ Planned |
 
-Older releases remain available in the /reports directory of the [testing repository](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application-internal/actions).
+Older releases remain available in the reports directory of the [testing repository](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application-internal/actions).
 

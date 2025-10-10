@@ -35,7 +35,7 @@ Testing is organised across multiple levels to validate functionality, performan
 ### Unit Testing
 
 - **Objectives:** Unit testing verifies the correctness of individual software components and is the first quality gate in the CI pipeline.
-- **Requirements:** WIP
+- **Requirements:** The requirements of the Unit testing can be found [here]().
 - **Scope:** Unit testing supports early defect detection and continuous integration by ensuring each new change maintains baseline quality.
 - **Tools:** [Unit testing tools](#-test-management-and-tools).
 
@@ -56,7 +56,7 @@ Functional testing results are published automatically through GitHub Actions an
 
 - **Objectives:** Security testing ensures the continuous security, integrity, and resilience of the EUDI Wallet applications throughout their lifecycle. By integrating automated and manual security testing within a Secure Software Development Life Cycle (SDLC) and aligning with OWASP MASVS and MASTG standards, the framework enables early detection and remediation of vulnerabilities. It combines code analysis, penetration testing, and vulnerability management using tools such as SonarQube, OWASP Dependency-Check, and DefectDojo to maintain compliance with recognized security standards and safeguard user trust in the EUDI Wallet ecosystem.
 - **Requirements:** The Security Requirements can be found [here](https://github.com/eu-digital-identity-wallet/eudi-doc-reference-implementation-architecture/blob/main/security-requirements.md).
-- **Scope:** WIP
+- **Scope:** The scope of the security testing can be found [here]().
 - **Tools:** [Security testing tools](#-test-management-and-tools).
 
 ---
@@ -72,8 +72,7 @@ Functional testing results are published automatically through GitHub Actions an
 ### Regression Testing
 
 - **Objectives:** Regression testing is automated and ensures that previous functionality remains stable after new features are added. Automated regression tests are planned to be part of the CI workflow.
-- **Requirements:** WIP
-- **Scope**: WIP
+- **Scope**: The scope of the regressions testing can be found [here]().
 - **Tools:** [Regression testing tools](#-test-management-and-tools).
 
 ## 💼 Test Management and Tools

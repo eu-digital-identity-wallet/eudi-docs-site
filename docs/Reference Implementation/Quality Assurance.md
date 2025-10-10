@@ -33,11 +33,10 @@ Testing is organised across multiple levels to validate functionality, performan
 
 ### Unit Testing
 
-Unit testing verifies the correctness of individual software components and is the first quality gate in the CI pipeline.
-
-Unit tests run automatically on every commit through GitHub Actions.
-
-Unit testing supports early defect detection and continuous integration by ensuring each new change maintains baseline quality.
+- **Objectives:** Unit testing verifies the correctness of individual software components and is the first quality gate in the CI pipeline.
+- **Requirements:**
+- **Scope:** Unit testing supports early defect detection and continuous integration by ensuring each new change maintains baseline quality.
+- **Tools:** [Unit testing tools](#test-management-and-tools).
 
 ---
 ### Functional Testing

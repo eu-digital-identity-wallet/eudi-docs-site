@@ -81,8 +81,6 @@ The following table summarises the key tools utilised in the applicable test typ
 | Performance | CI / Device tests |
 | Regression | CI pipelines |
 
-Further details about the Test Management and the Testing tools can be found [here](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application-internal/blob/main/README.md).
-
 ## 💻 Test Environments
 All testing activities are performed within two controlled environments that support continuous integration, verification, and release readiness activities for the EUDI Wallet:
 - Development (DEV)

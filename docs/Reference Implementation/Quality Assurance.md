@@ -60,7 +60,7 @@ Testing is organised across multiple levels to validate functionality, performan
 
 ### Performance Testing
 
-- **Objectives:** Performance tests validate responsiveness, stability, and resource usage under expected conditions. Measurement of resource consumption and response time per feature in order to confirm that the application remains stable and responsive under normal operating conditions.
+- **Objectives:** Performance tests measure resource consumption and response time per feature in order to confirm that the application remains stable and responsive under normal operating conditions.
 - **Requirements:** The Performance Requirements can be found [here]().
 - **Specifications**: The Performance Test Specifications can be found [here]()
 - **Tools:** [Performance testing tools](#-test-management-and-tools).

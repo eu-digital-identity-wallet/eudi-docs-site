@@ -3,8 +3,8 @@
 ## Table of Contents
 1. [Purpose and Approach](#-purpose-and-approach)
 2. [Test Levels and Types](#-test-levels-and-types)
-3. [Test Environments](#-test-environments)
-4. [Test Management and Tools ](#-test-management-and-tools)
+3. [Test Management and Tools ](#-test-management-and-tools)
+4. [Test Environments](#-test-environments)
 5. [Reporting](#-reporting)
 
 ## 🎯 Purpose and Approach
@@ -31,12 +31,13 @@ Testing is organised across multiple levels to validate functionality, performan
 | [Performance](#performance-testing) | Response time, and App Stability, CPU and Memory Usage | Ad hoc per major release | 
 | [Regression](#regression-testing) | Automated End to end behaviour validation | Continuous | 
 
+
 ### Unit Testing
 
 - **Objectives:** Unit testing verifies the correctness of individual software components and is the first quality gate in the CI pipeline.
-- **Requirements:**
+- **Requirements:** WIP
 - **Scope:** Unit testing supports early defect detection and continuous integration by ensuring each new change maintains baseline quality.
-- **Tools:** [Unit testing tools](#test-management-and-tools).
+- **Tools:** [Unit testing tools](#-test-management-and-tools).
 
 ---
 ### Functional Testing
@@ -45,7 +46,7 @@ Testing is organised across multiple levels to validate functionality, performan
 - **Objectives:** Functional and end-to-end (E2E) testing ensures that each release behaves as expected according to defined epics and user stories.
 - **Requirements:** The Functional Requirements can be found [here](https://github.com/eu-digital-identity-wallet/eudi-wallet-product-roadmap/blob/main/EUDI%20Wallet%20Reference%20Implementation%20-%20Feature%20Map.md).
 - **Scope:** Functional Requirements, UI, and usability aspects of the mobile application based and mapped to the respective user stories.
-- **Tools:** [Functional testing tools](#test-management-and-tools).
+- **Tools:** [Functional testing tools](#-test-management-and-tools).
 
 Functional testing results are published automatically through GitHub Actions and are visible in the reports.
 
@@ -55,40 +56,25 @@ Functional testing results are published automatically through GitHub Actions an
 
 - **Objectives:** Security testing ensures the continuous security, integrity, and resilience of the EUDI Wallet applications throughout their lifecycle. By integrating automated and manual security testing within a Secure Software Development Life Cycle (SDLC) and aligning with OWASP MASVS and MASTG standards, the framework enables early detection and remediation of vulnerabilities. It combines code analysis, penetration testing, and vulnerability management using tools such as SonarQube, OWASP Dependency-Check, and DefectDojo to maintain compliance with recognized security standards and safeguard user trust in the EUDI Wallet ecosystem.
 - **Requirements:** The Security Requirements can be found [here](https://github.com/eu-digital-identity-wallet/eudi-doc-reference-implementation-architecture/blob/main/security-requirements.md).
-- **Scope:** .
-- **Tools:** [Security testing tools](#test-management-and-tools).
+- **Scope:** WIP
+- **Tools:** [Security testing tools](#-test-management-and-tools).
 
 ---
 
 ### Performance Testing
 
 - **Objectives:** Performance tests validate responsiveness, stability, and resource usage under expected conditions. Measurement of resource consumption and response time per feature in order to confirm that the application remains stable and responsive under normal operating conditions.
-- **Requirements:**
+- **Requirements:** WIP
 - **Scope**: CPU, memory, and network activity under realistic workloads.
-- **Tools:** [Performance testing tools](#test-management-and-tools).
+- **Tools:** [Performance testing tools](#-test-management-and-tools).
 
 ---
 ### Regression Testing
 
 - **Objectives:** Regression testing is automated and ensures that previous functionality remains stable after new features are added. Automated regression tests are planned to be part of the CI workflow.
-- **Requirements:**
-- **Scope**: 
-- **Tools:** [Regression testing tools](#test-management-and-tools).
-
-
-## 💻 Test Environments
-All testing activities are performed within two controlled environments - Development (DEV) and Production (PROD) - that together support continuous integration, verification, and release readiness activities for the EUDI Wallet.
-
-Main components:
-
-- **EUDI Wallet Application:** Android and iOS test builds configured to interact with DEV services. &lt;links&gt;
-- **Issuer Services:**  
-    Used for issuing test credentials to the Wallet.  
-    Example endpoints:  
-  -  <https://issuer.eudiw.dev/credential_offer_choice>  
-  -  <https://issuer-backend.eudiw.dev/issuer/credentialsOffer/generate>
-- **Verifier Portal:**  
-  -  <https://verifier.eudiw.dev/home> - used to validate credentials during presentation flows.
+- **Requirements:** WIP
+- **Scope**: WIP
+- **Tools:** [Regression testing tools](#-test-management-and-tools).
 
 ## 💼 Test Management and Tools
 
@@ -97,13 +83,26 @@ Testing activities are planned and tracked in **GitHub Issues** and **Projects.*
 The following table summarises the key tools utilised in the applicable test types:
 | Test Type | Tools | 
 | -------- | ------- | 
-| Unit|  _SonarCloud_ |
+| Unit |  _SonarCloud_ |
 | Functional |  _Manual_, _Serenity BDD_ for structured reporting and visual coverage, _Android Studio_ for Android wallet application testing |
 | Security |  _OWASP MASVS/MASTG_ for mobile security verification <br> _OWASP Dependency-Check_ for third-party library analysis <br> _SQLCipher_ and _Android Keystore_ for data protection <br> _Burp Suite_ and _MobSF_ for dynamic testing and static analysis|
 | Performance | CI / Device tests |
 | Regression | CI pipelines |
 
 Further details about the Test Management and the Testing tools can be found [here](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application-internal/blob/main/README.md).
+
+## 💻 Test Environments
+All testing activities are performed within two controlled environments that support continuous integration, verification, and release readiness activities for the EUDI Wallet:
+- Development (DEV)
+- Production (PROD)
+
+
+| Component | DEV | PROD |
+| -------- | ------- | ------- | 
+| EUDI Wallet App (Android) |TBC |TBC|
+| EUDI Wallet App (iOS) |TBC |TBC|
+| Issuer | [DEV Issuer](https://dev.issuer.eudiw.dev/credential_offer_choice)|[PROD Issuer](https://issuer.eudiw.dev/credential_offer_choice)|
+| Web Verifier |[DEV version](https://dev.verifier.eudiw.dev/home) |[PROD version](https://verifier.eudiw.dev/home)|
 
 
 

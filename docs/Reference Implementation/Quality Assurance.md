@@ -85,15 +85,7 @@ The following table summarises the key tools utilised in the applicable test typ
 
 The QA process is continuously refined based on findings, coverage metrics, and stakeholder feedback.
 
-**Reporting**:
-
-- Serenity-generated reports summarising test execution and coverage.
-- Per-release links to reports and workflows (see below).
-
-**Metrics monitored**:
-
-- Pass/fail ratio per story and epic.
-- Test coverage percentage.
+Each release is accompanied with serenity-generated reports summarising test execution and coverage.
 
 ### Release Test Reports
 
@@ -102,9 +94,8 @@ Each release includes detailed artefacts and automated reports accessible via Gi
 | Release | Report Links | Status |
 | --- | --- | --- |
 | 2025.07.28 - Demo | GitHub Action Report | ✅ Released |
-| 2025.09.30 - xxx | GitHub Action Report | 🔄 In progress |
+| 2025.10.31 - Demo | GitHub Action Report | 🔄 In progress |
 | 2025.12.xx - xxx | (to be added) | ⏳ Planned |
 
 Older releases remain available in the /reports directory of the testing repository.
 
-At present, reports cover manual testing, while automation and performance reporting are being implemented.

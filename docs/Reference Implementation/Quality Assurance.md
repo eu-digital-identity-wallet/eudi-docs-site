@@ -83,9 +83,7 @@ The following table summarises the key tools utilised in the applicable test typ
 
 ## 📊 Reporting
 
-The QA process is continuously refined based on findings, coverage metrics, and stakeholder feedback.
-
-Each release is accompanied with serenity-generated reports summarising test execution and coverage.
+Each release is accompanied with serenity-generated reports summarising test execution results and coverage.
 
 ### Release Test Reports
 

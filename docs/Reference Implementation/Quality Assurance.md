@@ -65,9 +65,9 @@ Testing is organised across multiple levels to validate functionality, performan
 - **Specifications**: The Performance Test Specifications can be found [here]()
 - **Tools:** [Performance testing tools](#-test-management-and-tools).
 
-## 💼 Test Management and Tools
+## 💼 Test Tools
 
-The following table summarises the key tools utilised in the applicable test types:
+The following table summarises the tools utilised in the applicable test types:
 | Test Type | Tools | 
 | -------- | ------- | 
 | Unit |  _SonarCloud_ |

@@ -26,9 +26,8 @@ Testing is organised across multiple levels to validate functionality, performan
 | -------- | ------- | -------- | 
 | [Unit](#unit-testing) | Component-level verification | Continuous | 
 | [Functional](#functional-testing) | End-to-end behaviour validation | Per release |
-| [Security](#security-testing) | Confidentiality, integrity, and compliance | Ad hoc per major release |
-| [Performance](#performance-testing) | Response time, and App Stability, CPU and Memory Usage | Ad hoc per major release | 
-| [Regression](#regression-testing) | Automated End to end behaviour validation | Continuous | 
+| [Security](#security-testing) | Confidentiality, integrity, and compliance | Per release |
+| [Performance](#performance-testing) | Response time, and App Stability, CPU and Memory Usage | Per release | 
 
 
 ### Unit Testing

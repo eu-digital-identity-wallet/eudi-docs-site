@@ -25,7 +25,7 @@ Testing is organised across multiple levels to validate functionality, performan
 
 | Test Type | Objective | Frequency | Tooling |
 | -------- | ------- | -------- | ------- |
-| [**Unit**](#unit-testing) | Component-level verification | Continuous | SonarCloud |
+| [Unit](#unit-testing) | Component-level verification | Continuous | SonarCloud |
 | [Functional](#functional-testing) | End-to-end behaviour validation | Per release | Manual, Serenity BDD |
 | [Security](#security-testing) | Confidentiality, integrity, and compliance | Ad hoc per major release | OWASP MASVS/MASTG |
 | [Performance](#performance-testing) | Response time, and App Stability, CPU and Memory Usage | Ad hoc per major release | CI / Device tests |
@@ -137,13 +137,17 @@ Main components:
 
 Testing activities are planned and tracked in **GitHub Issues** and **Projects.**
 
-Details about the Test Management and the Testing tools can be found [here](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application-internal/blob/main/README.md)
+The following table summarises the key tools utilised in the applicable test types:
+| Test Type | Tools | 
+| -------- | ------- | 
+| Unit|  _SonarCloud_ |
+| Functional |  _Manual_, _Serenity BDD_ for structured reporting and visual coverage |
+| Security |  _OWASP MASVS/MASTG_ for mobile security verification, _OWASP Dependency-Check_ for third-party library analysis |
+| Performance | CI / Device tests |
+| Regression | CI pipelines |
 
-**Main tools and frameworks:**
+Further details about the Test Management and the Testing tools can be found [here](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application-internal/blob/main/README.md)
 
-- _Serenity BDD_ for structured reporting and visual coverage.
-- _OWASP Dependency-Check_ for third-party library analysis.
-- _OWASP MASVS/MASTG_ for mobile security verification.
 - _SQLCipher_ and _Android Keystore_ for data protection.
 - _Burp Suite_ and _MobSF_ for dynamic testing and static analysis.
 

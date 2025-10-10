@@ -45,7 +45,7 @@ Testing is organised across multiple levels to validate functionality, performan
 
 - **Objectives:** Functional and end-to-end (E2E) testing ensures that each release behaves as expected according to defined epics and user stories.
 - **Requirements:** The Functional Requirements can be found [here](https://github.com/eu-digital-identity-wallet/eudi-wallet-product-roadmap/blob/main/EUDI%20Wallet%20Reference%20Implementation%20-%20Feature%20Map.md).
-- **Scope:** Functional Requirements, UI, and usability aspects of the mobile application based and mapped to the respective user stories.
+- **Scecifications:** Functional Requirements, UI, and usability aspects of the mobile application based and mapped to the respective user stories.
 - **Tools:** [Functional testing tools](#-test-management-and-tools).
 
 Functional testing results are published automatically through GitHub Actions and are visible in the reports.
@@ -67,13 +67,6 @@ Functional testing results are published automatically through GitHub Actions an
 - **Requirements:** WIP
 - **Specifications**: The performance test specifications can be found [here]()
 - **Tools:** [Performance testing tools](#-test-management-and-tools).
-
----
-### Regression Testing
-
-- **Objectives:** Regression testing is automated and ensures that previous functionality remains stable after new features are added. Automated regression tests are planned to be part of the CI workflow.
-- **Scope**: The scope of the regressions testing can be found [here]().
-- **Tools:** [Regression testing tools](#-test-management-and-tools).
 
 ## 💼 Test Management and Tools
 

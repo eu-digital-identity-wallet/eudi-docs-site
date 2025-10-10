@@ -54,51 +54,10 @@ Functional testing results are published automatically through GitHub Actions an
 
 ### Security Testing
 
-- **Objectives:** Ensuring the security and integrity of the EUDI Wallet applications requires a continuous, lifecycle-wide testing approach. The framework combines **automated verification** within the SDLC (Software Development Life Cycle) with **periodic manual security assessments**, ensuring that vulnerabilities are identified early, while complex logic and implementation flaws are addressed through in-depth manual analysis. The following subsections describe how standardized methodologies, defined security requirements, and integrated tooling work together to maintain assurance and resilience across all stages of the EUDI Wallet's lifecycle
+- **Objectives:** Security testing ensures the continuous security, integrity, and resilience of the EUDI Wallet applications throughout their lifecycle. By integrating automated and manual security testing within a Secure Software Development Life Cycle (SDLC) and aligning with OWASP MASVS and MASTG standards, the framework enables early detection and remediation of vulnerabilities. It combines code analysis, penetration testing, and vulnerability management using tools such as SonarQube, OWASP Dependency-Check, and DefectDojo to maintain compliance with recognized security standards and safeguard user trust in the EUDI Wallet ecosystem.
 - **Requirements:** The Security Requirements can be found [here](https://github.com/eu-digital-identity-wallet/eudi-doc-reference-implementation-architecture/blob/main/security-requirements.md).
 - **Scope:** .
 - **Tools:** [Security testing tools](#test-management-and-tools).
-
-#### OWASP Mobile Application Security Verification Standard (MASVS)
-
-The **OWASP Mobile Application Security Verification Standard (MASVS)** defines a structured set of security requirements that serve as the foundation for the secure design, development, and verification of mobile applications.
-
-Alignment with the MASVS ensures that EUDI Wallet applications consistently meets recognized security standards, thereby reducing the likelihood of vulnerabilities.
-
-A multi-layered verification process is applied, combining both manual and automated techniques to ensure depth and coverage:
-
-- **Manual Source Code Review**: Targeted reviews of the application's source code to identify logic flaws, insecure data handling, cryptographic weaknesses, and other vulnerabilities that may not be identified through automation;
-- **Dynamic Testing and Penetration Testing**: The compiled application is analysed in a runtime environment to validate its behaviour, data flow, and communication security;
-
-#### Mobile Security Testing based on MΑSTG
-
-The **Security Requirements and Controls** defined by the relevant protocols and specifications (e.g., OpenID4VC, OpenID4VP, ISO/IEC 18013-5) are identified and documented as part of the secure design process. These requirements establish the baseline for the protection mechanisms implemented within the EUDI Wallet application, ensuring alignment with recognized standards and best practices.
-
-Verification of the security requirements is conducted through testing activities based on the Mobile Application Security Testing Guide (MASTG). Each defined control is validated using the corresponding MASTG test cases to confirm that the implementation effectively enforces the intended security objectives.
-
-The Security Requirements can be found at &lt;link&gt;
-
-The **OWASP Mobile Application Security Testing Guide (MASTG)** complements MASVS by providing the practical techniques and test cases used to verify each MASVS requirement.
-
-While MASVS defines "_what"_ must be secure", MASTG defines "_how"_ to test and validate it through structured, and repeatable techniques.
-
-Mobile security testing activities are guided by MASTG principles and are structured to address both MASVS verification requirements and organization-specific security objectives. This approach ensures that each test confirms compliance with recognized industry standards while also validating that the EUDI Wallet application satisfies unique technical and business security needs.
-
-MASTG-based testing establishes a consistent and evidence-driven process that enables the identification of vulnerabilities and maintains continuous assurance throughout the EUDI Wallet application's lifecycle.
-
-#### Secure SDLC (Software Development Life Cycle)
-
-An effective **Secure SDLC process** is essential for maintaining the integrity and resilience of the EUDI Wallet applications.
-
-Through this process, vulnerabilities detected by automated tools and manual testing are identified, prioritized, and remediated. The vulnerability management process integrates both automated tools and centralized coordination to provide complete visibility across the development and security lifecycle:
-
-- **SonarQube (SAST)**: Performs static code analysis to identify potential security and quality issues early in development.
-- **OWASP Dependency-Check**: Detects known vulnerabilities in open-source libraries and third-party dependencies.
-- **GitLeaks**: Scans repositories for hardcoded secrets or exposed credentials
-- **Legitify**: Audits GitHub repositories and organizational configurations to detect potential misconfigurations.
-- **DefectDojo**: Serves as a centralized vulnerability management platform, aggregating findings from all tools and assessments for triage, remediation, and reporting.
-
-This integrated approach promotes consistent vulnerability tracking and continuous improvement of the overall security posture.
 
 ---
 

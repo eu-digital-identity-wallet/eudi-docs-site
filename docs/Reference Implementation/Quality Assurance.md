@@ -87,8 +87,6 @@ Each release is accompanied with serenity-generated reports summarising test exe
 
 ### Release Test Reports
 
-Each release includes detailed artefacts and automated reports accessible via GitHub Actions.
-
 | Release | Report Links | Status |
 | --- | --- | --- |
 | 2025.07.28 - Demo | GitHub Action Report | ✅ Released |

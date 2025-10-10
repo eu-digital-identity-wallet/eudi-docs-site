@@ -16,7 +16,6 @@ A consolidated overview of the user functionality provided by the EUDI Wallet Re
 
 The EUDI Wallet Reference Implementation, developed under the Architecture Reference Framework, showcases how citizens can securely identify, authenticate, and sign electronically using common EU standards. It is built on a modular design with reusable components that evolve over time and can support multiple projects. Below you can find an overview of the features and functionalities delivered by the EUDI Wallet Reference Implementation. 
 
-@skounis The point regarding improving clarity on the supported standards and formats is well taken. To address this, we propose adding a dedicated column indicating whether each item is supported by the Reference Implementation. Since the intent is not to provide an exhaustive catalogue of all applicable standards, we suggest limiting the list to the key ones, while directing readers to the Standards and Technical Specifications workstream for further details. Additionally, the descriptions have been updated for greater consistency and clarity.
 
 ## 📐 Standards, Protocols and Formats
 

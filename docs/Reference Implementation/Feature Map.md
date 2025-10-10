@@ -127,7 +127,7 @@ _The 'Presentation' functionality is aligned with the OpenID4VCP protocol (for r
 | [Wallet-Driven rQES (external SCA)](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/15)       | Remote qualified signatures in a Wallet-driven model, utilising an external 'Signature Creation Application'          | Completed       |
 | [Wallet-Driven rQES (internal SCA)](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/27)        | Remote qualified signatures in a Wallet-driven model, utilising an internal (i.e. wallet component) 'Signature Creation Application'              | Completed       |
 | [RP-Driven rQES (internal SCA)](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/16)       | Remote qualified signatures in a RP-driven model              | Completed      |
-| [Document Retrieval (Wallet-Driven flows)](https://github.com/eu-digital-identity-wallet/eudi-doc-reference-implementation-architecture/issues/45)        | In a 'wallet-centric' model for rQES, a foreseen scenario includes the retrieval of the document to be signed from the corresponding Relying Party, instead of retrieving the document from the device's file system.             | Completed      |
+| [Document Retrieval (Wallet-Driven flows)](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/80)        | In a 'wallet-centric' model for rQES, a foreseen scenario includes the retrieval of the document to be signed from the corresponding Relying Party, instead of retrieving the document from the device's file system.             | Completed      |
 
 </details>
 

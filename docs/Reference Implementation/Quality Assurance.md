@@ -64,7 +64,7 @@ Functional testing results are published automatically through GitHub Actions an
 ### Performance Testing
 
 - **Objectives:** Performance tests validate responsiveness, stability, and resource usage under expected conditions. Measurement of resource consumption and response time per feature in order to confirm that the application remains stable and responsive under normal operating conditions.
-- **Requirements:** WIP
+- **Requirements:** The Performance Requirements can be found here.
 - **Specifications**: The performance test specifications can be found [here]()
 - **Tools:** [Performance testing tools](#-test-management-and-tools).
 

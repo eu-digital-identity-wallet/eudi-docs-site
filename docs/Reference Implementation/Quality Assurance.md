@@ -23,13 +23,13 @@ All testing artefacts are managed in GitHub under:
 
 Testing is organised across multiple levels to validate functionality, performance, and security, ensuring comprehensive coverage throughout the development lifecycle
 
-| Test Type | Objective | Frequency | Tooling |
-| -------- | ------- | -------- | ------- |
-| [Unit](#unit-testing) | Component-level verification | Continuous | SonarCloud |
-| [Functional](#functional-testing) | End-to-end behaviour validation | Per release | Manual, Serenity BDD |
-| [Security](#security-testing) | Confidentiality, integrity, and compliance | Ad hoc per major release | OWASP MASVS/MASTG |
-| [Performance](#performance-testing) | Response time, and App Stability, CPU and Memory Usage | Ad hoc per major release | CI / Device tests |
-| [Regression](#regression-testing) | Automated End to end behaviour validation | Continuous | CI pipelines |
+| Test Type | Objective | Frequency |
+| -------- | ------- | -------- | 
+| [Unit](#unit-testing) | Component-level verification | Continuous | 
+| [Functional](#functional-testing) | End-to-end behaviour validation | Per release |
+| [Security](#security-testing) | Confidentiality, integrity, and compliance | Ad hoc per major release |
+| [Performance](#performance-testing) | Response time, and App Stability, CPU and Memory Usage | Ad hoc per major release | 
+| [Regression](#regression-testing) | Automated End to end behaviour validation | Continuous | 
 
 ### Unit Testing
 
@@ -128,10 +128,10 @@ Main components:
 - **Issuer Services:**  
     Used for issuing test credentials to the Wallet.  
     Example endpoints:  
-    <https://issuer.eudiw.dev/credential_offer_choice>  
-    <https://issuer-backend.eudiw.dev/issuer/credentialsOffer/generate>
+  -  <https://issuer.eudiw.dev/credential_offer_choice>  
+  -  <https://issuer-backend.eudiw.dev/issuer/credentialsOffer/generate>
 - **Verifier Portal:**  
-    <https://verifier.eudiw.dev/home> - used to validate credentials during presentation flows.
+  -  <https://verifier.eudiw.dev/home> - used to validate credentials during presentation flows.
 
 ## 💼 Test Management and Tools
 
@@ -142,14 +142,13 @@ The following table summarises the key tools utilised in the applicable test typ
 | -------- | ------- | 
 | Unit|  _SonarCloud_ |
 | Functional |  _Manual_, _Serenity BDD_ for structured reporting and visual coverage |
-| Security |  _OWASP MASVS/MASTG_ for mobile security verification, _OWASP Dependency-Check_ for third-party library analysis |
+| Security |  _OWASP MASVS/MASTG_ for mobile security verification <br> _OWASP Dependency-Check_ for third-party library analysis <br> _SQLCipher_ and _Android Keystore_ for data protection <br> _Burp Suite_ and _MobSF_ for dynamic testing and static analysis|
 | Performance | CI / Device tests |
 | Regression | CI pipelines |
 
-Further details about the Test Management and the Testing tools can be found [here](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application-internal/blob/main/README.md)
+Further details about the Test Management and the Testing tools can be found [here](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application-internal/blob/main/README.md).
 
-- _SQLCipher_ and _Android Keystore_ for data protection.
-- _Burp Suite_ and _MobSF_ for dynamic testing and static analysis.
+
 
 ## 📊 Reporting
 

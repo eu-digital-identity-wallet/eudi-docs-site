@@ -20,7 +20,7 @@ All testing artefacts are managed in GitHub under:
 
 ## 🧩 Test Types
 
-Testing is organised across multiple levels to validate functionality, performance, and security, ensuring comprehensive coverage throughout the development lifecycle
+Testing is organised across multiple levels to validate functionality, performance, and security, ensuring comprehensive coverage throughout the development lifecycle:
 
 | Test Type | Objective | Frequency |
 | -------- | ------- | -------- | 

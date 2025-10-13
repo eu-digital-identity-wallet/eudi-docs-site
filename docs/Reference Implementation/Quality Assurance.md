@@ -53,7 +53,7 @@ Testing is organised across multiple levels to validate functionality, performan
 
 - **Objectives:** Security testing ensures the continuous security, integrity, and resilience of the EUDI Wallet applications throughout their lifecycle. By integrating automated and manual security testing within a Secure Software Development Life Cycle (SDLC) and aligning with OWASP MASVS and MASTG standards, the framework enables early detection and remediation of vulnerabilities. It combines code analysis, penetration testing, and vulnerability management using tools such as SonarQube, OWASP Dependency-Check, and DefectDojo to maintain compliance with recognized security standards and safeguard user trust in the EUDI Wallet ecosystem.
 - **Requirements:** The Security Requirements can be found [here](https://github.com/eu-digital-identity-wallet/eudi-doc-reference-implementation-architecture/blob/main/security-requirements.md).
-- **Specifications:** The Security Test Specifications can be found [here]().
+- **Specifications:** The Security Test Specifications can be found [here](./).
 - **Tools:** [Security Testing Tools](#-test-management-and-tools).
 
 ---
@@ -61,8 +61,8 @@ Testing is organised across multiple levels to validate functionality, performan
 ### Performance Testing
 
 - **Objectives:** Performance tests measure resource consumption and response time per feature in order to confirm that the application remains stable and responsive under normal operating conditions.
-- **Requirements:** The Performance Requirements can be found [here]().
-- **Specifications**: The Performance Test Specifications can be found [here]()
+- **Requirements:** The Performance Requirements can be found [here](./).
+- **Specifications**: The Performance Test Specifications can be found [here](./)
 - **Tools:** [Performance Testing Tools](#-test-management-and-tools).
 
 ## 💼 Test Tools

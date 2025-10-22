@@ -60,7 +60,7 @@ Testing is organised across multiple levels to validate functionality, performan
 
 ### Performance Testing
 
-- **Objectives:** Performance tests measure resource consumption and response time per feature in order to confirm that the application remains stable and responsive under normal operating conditions.
+- **Objectives:** Performance tests to evaluate the performance of the EUDI Wallet application under average user load across various mobile devices. This testing will focus on CPU and memory usage, as well as network activity during common scenarios.
 - **Requirements:** The Performance Requirements can be found [here](#).
 - **Specifications**: The Performance Test Specifications can be found [here](#)
 - **Tools:** [Performance Testing Tools](#-test-management-and-tools).
@@ -71,9 +71,9 @@ The following table summarises the tools utilised in the applicable test types:
 | Test Type | Tools | 
 | -------- | ------- | 
 | Unit |  _SonarCloud_ |
-| Functional |  _Manual_, _Serenity BDD_ for structured reporting and visual coverage, Automation: Appium (for mobile automation on Android and iOS), Java (test scripting language), JUnit (test framework), IntelliJ IDEA (development and execution environment), Maven (dependency and build management), BrowserStack Device Farm (cloud execution on real devices) or locally connected real devices via USB, Appium Inspector (for element inspection and locator validation), Xcode (for building and exporting iOS .ipa files and Android .apk packages retrieved manually from Firebase for testing). |
+| Functional |  _Manual_, _Serenity BDD_ for structured reporting and visual coverage, Automation: Appium (for mobile automation on Android and iOS), Java (test scripting language), JUnit (test framework), IntelliJ IDEA (development and execution environment), Maven (dependency and build management), Appium Inspector (for element inspection and locator validation), Xcode (for building and exporting iOS .ipa files and Android .apk packages retrieved manually from Firebase for testing). |
 | Security |  _OWASP MASVS/MASTG_ for mobile security verification <br> _OWASP Dependency-Check_ for third-party library analysis <br> _SQLCipher_ and _Android Keystore_ for data protection <br> _Burp Suite_ and _MobSF_ for dynamic testing and static analysis|
-| Performance | CI / Device tests |
+| Performance | Android: Android Studio Profiler and App Inspection, iOS: Xcode Instruments for performance monitoring, memory usage, and CPU/network profiling and BrowserStack Device Farm for executing performance validation on multiple real devices. |
 
 
 ## 📊 Reporting

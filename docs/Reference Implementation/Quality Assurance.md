@@ -44,7 +44,7 @@ Testing is organised across multiple levels to validate functionality, performan
 - **Requirements:** The Functional Requirements can be found [here](https://github.com/eu-digital-identity-wallet/eudi-wallet-product-roadmap/blob/main/EUDI%20Wallet%20Reference%20Implementation%20-%20Feature%20Map.md).
 - **Specifications:** The Functional Testing Specifications can be found here:
     - [Manual Testing](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application-internal/tree/main/src/test/resources/features).
-    - [Automated Testing](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application-internal/tree/main/src/test/java/eu/europa/eudi).
+    - [Automated Testing](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application-internal/tree/main).
 - **Tools:** [Functional Testing Tools](#-test-tools).
 
 ---
@@ -71,7 +71,7 @@ The following table summarises the tools utilised in the applicable test types:
 | Test Type | Tools | 
 | -------- | ------- | 
 | Unit |  _SonarCloud_ |
-| Functional |  _Manual_, _Serenity BDD_ for structured reporting and visual coverage, _Android Studio_ for Android wallet application testing |
+| Functional |  _Manual_, _Serenity BDD_ for structured reporting and visual coverage, Automation: Appium (for mobile automation on Android and iOS), Java (test scripting language), JUnit (test framework), IntelliJ IDEA (development and execution environment), Maven (dependency and build management), BrowserStack Device Farm (cloud execution on real devices) or locally connected real devices via USB, Appium Inspector (for element inspection and locator validation), Xcode (for building and exporting iOS .ipa files and Android .apk packages retrieved manually from Firebase for testing). |
 | Security |  _OWASP MASVS/MASTG_ for mobile security verification <br> _OWASP Dependency-Check_ for third-party library analysis <br> _SQLCipher_ and _Android Keystore_ for data protection <br> _Burp Suite_ and _MobSF_ for dynamic testing and static analysis|
 | Performance | CI / Device tests |
 

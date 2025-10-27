@@ -61,8 +61,8 @@ Testing is organised across multiple levels to validate functionality, performan
 ### Performance Testing
 
 - **Objectives:** Performance tests to evaluate the performance of the EUDI Wallet application under average user load across various mobile devices. This testing focuses on CPU and memory usage, as well as network activity during common scenarios.
-- **Requirements:** The Performance Requirements can be found [here](#).
-- **Specifications**: The Performance Test Specifications can be found [here](#)
+- **Requirements:** The Performance Requirements can be found [here](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application/blob/milestone/2025.Q4/doc/performance/performance_requirements.md).
+- **Specifications**: The Performance Test Specifications can be found [here](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application/blob/milestone/2025.Q4/doc/performance/performance_specifications.md)
 - **Tools:** [Performance Testing Tools](#-test-management-and-tools).
 
 ## 💼 Test Tools

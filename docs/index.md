@@ -5,6 +5,9 @@ hide:
 
 # Welcome to the EUDI Wallet Dev Hub!
 
+## Overview
+The EUDI Wallet Reference Implementation aims at showcasing a robust and interoperable platform for digital identification, authentication and electronic signatures based on common standards across the European Union.
+
 EU Digital Identity Wallets will enable users to access online services, store and share digital documents, and create binding signatures.
 
 [Learn more about the EUDI Wallet project](https://ec.europa.eu/digital-building-blocks/sites/display/EUDIGITALIDENTITYWALLET/What+is+the+wallet){:target="_blank"}
@@ -14,7 +17,7 @@ This is the developer's hub for the European Digital Identity Wallet—a key ref
 Everything you need to start your development project is gathered here. You will find technical guidelines and tools as well as directions for how to get started defining, designing and building an EUDI Wallet project.
 
 ## Build
-Access comprehensive resources to guide your development efforts. This section provides detailed instructions, open-source libraries, and tools to support the development of Wallet, Issuer, or Relying Party solutions that meet the EU technical specifications to ensure interoperability.
+Access comprehensive guidance on how to leverage the [EUDI Wallet Reference Implementation](https://github.com/eu-digital-identity-wallet/.github/blob/main/profile/reference-implementation.md){:target="_blank"} to build your own EUDI Wallet, Issuer, or Verifier. The reference implementation provides open-source code libraries, tools, and sample applications to help you get started quickly and efficiently.
 
 [Get ready to build your solution](./Build/)
 

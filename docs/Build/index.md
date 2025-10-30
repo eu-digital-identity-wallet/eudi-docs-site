@@ -1,6 +1,6 @@
 # Build your Solution
 
-In this section, you'll find comprehensive guidance on how to leverage the [EUDI Wallet Reference Implementation](../Reference Implementation/) to build your own EUDI Wallet, Issuer, or Verifier. The reference implementation provides open-source code libraries, tools, and sample applications to help you get started quickly and efficiently.
+In this section, you'll find comprehensive guidance on how to leverage the [EUDI Wallet Reference Implementation](https://github.com/eu-digital-identity-wallet/.github/blob/main/profile/reference-implementation.md){:target="_blank"} to build your own EUDI Wallet, Issuer, or Verifier. The reference implementation provides open-source code libraries, tools, and sample applications to help you get started quickly and efficiently.
 
 Whether you are a Wallet Provider, an Issuer, or a Relying Party, the guide provides clear, step-by-step instructions and examples to help you get started. It also assists you in evaluating how you can leverage the EUDI Wallet reference implementation in your development project and how to make the most of it.
 

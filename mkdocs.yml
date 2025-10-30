@@ -183,11 +183,19 @@ nav:
           - Steps to Build: Build/Build your Issuer/Steps to Build.md
           - Configure your Issuer: Build/Build your Issuer/Configure.md
           - Add Attestations: Build/Build your Issuer/New Attestation.md
-      - Build your Verifier:
-          - Build your Verifier: Build/Build your Verifier/index.md
-          - Steps to Build: Build/Build your Verifier/Steps to Build.md
-          - Configure your Verifier: Build/Build your Verifier/Configure.md 
-
+      - Build your Remote Verifier:
+          - Build your Remote Verifier: Build/Build your Remote Verifier/index.md
+          - Steps to Build: Build/Build your Remote Verifier/Steps to Build.md
+          - Configure your Verifier: Build/Build your Remote Verifier/Configure.md 
+      - Build your Proximity Verifier:
+          - Build your Proximity Verifier: Build/Build your Proximity Verifier/index.md
+          - Steps to build: Build/Build your Proximity Verifier/Steps to Build.md
+      - Build your rQES:
+          - Build your RSSP: Build/Build your rQES/index.md
+          - Build your rQES Core for Android: Build/Build your rQES/Build your rQES Core for Android.md
+          - Build your rQES Kit for iOS:  Build/Build your rQES/Build your rQES Kit for iOS.md
+      - Build your Revocation Service:
+          - Build your Revocation Service: Build/Build your Revocation Service/index.md
   - Test:
       - Test: Test/index.md
       - Wallet Application:

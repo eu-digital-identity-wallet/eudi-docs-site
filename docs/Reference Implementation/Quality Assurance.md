@@ -52,8 +52,7 @@ Testing is organised across multiple levels to validate functionality, performan
 ### Security Testing
 
 - **Objectives:** Security testing ensures the continuous security, integrity, and resilience of the EUDI Wallet applications throughout their lifecycle. By integrating automated and manual security testing within a Secure Software Development Life Cycle (SDLC) and aligning with OWASP MASVS and MASTG standards, the framework enables early detection and remediation of vulnerabilities. It combines code analysis, penetration testing, and vulnerability management using tools such as SonarQube, OWASP Dependency-Check, and DefectDojo to maintain compliance with recognized security standards and safeguard user trust in the EUDI Wallet ecosystem.
-- **Requirements:** The Security Requirements can be found [here](https://github.com/eu-digital-identity-wallet/eudi-doc-reference-implementation-architecture/blob/main/security-requirements.md).
-- **Specifications:** The Security Test Specifications can be found [here](#).
+- **Requirements and Specifications:** The Security Requirements and Specifications can be found [here](https://github.com/eu-digital-identity-wallet/eudi-doc-reference-implementation-architecture/blob/main/security-requirements.md).
 - **Tools:** [Security Testing Tools](#-test-tools).
 
 ---
@@ -82,11 +81,11 @@ Each release is accompanied with serenity-generated reports summarising test exe
 
 ### Release Test Reports
 
-| Release | Report Links | Status |
-| --- | --- | --- |
-| 2025.07.28 - Demo | GitHub Action Report | ✅ Released |
-| 2025.10.31 - Demo | GitHub Action Report | 🔄 In progress |
-| 2025.12.xx - xxx | (to be added) | ⏳ Planned |
+| Release | Test Types | Report Links | Status |
+| --- | --- | --- | --- |
+| 2025.07.28 - Demo | Functional <br/> Security <br/> Performance | GitHub Action Report | ✅ Released |
+| 2025.10.31 - Demo | Functional | GitHub Action Report | 🔄 In progress |
+| 2025.12.xx - xxx |  | (to be added) | ⏳ Planned |
 
 Older releases remain available in the reports directory of the [testing repository](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application-internal/actions).
 

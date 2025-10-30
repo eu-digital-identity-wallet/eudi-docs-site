@@ -215,7 +215,8 @@ nav:
           - Build your Proximity Verifier: Build/Build your Proximity Verifier/index.md
           - Steps to build: Build/Build your Proximity Verifier/Steps to Build.md
       - Build your rQES:
-          - Build your RSSP: Build/Build your rQES/index.md
+          - Build your rQES: Build/Build your rQES/index.md
+          - Build your RSSP: Build/Build your rQES/Build your RSSP.md
           - Build your rQES Core for Android: Build/Build your rQES/Build your rQES Core for Android.md
           - Build your rQES Kit for iOS:  Build/Build your rQES/Build your rQES Kit for iOS.md
       - Build your Revocation Service:

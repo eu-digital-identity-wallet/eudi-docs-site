@@ -208,3 +208,32 @@ nav:
       - Proximity Verifier: Test/Proximity Verifier.md
   - Resources: 
       - Resources: Resources/index.md
+  - Use Cases:
+      - Mobile Driving License:
+          - Mobile Driving License: Use Cases/Mobile Driving License/index.md
+          - mDL Architecture:
+              - mDL Architecture: Use Cases/Mobile Driving License/mDL Architecture/index.md
+              - EUDI Wallet: Use Cases/Mobile Driving License/mDL Architecture/EUDI Wallet.md
+              - Proximity Verifier: Use Cases/Mobile Driving License/mDL Architecture/Proximity Verifier.md
+              - Remote Verifier Web: Use Cases/Mobile Driving License/mDL Architecture/Remote Verifier Web.md
+              - mDL Issuing Authority: Use Cases/Mobile Driving License/mDL Architecture/mDL Issuing Authority.md
+          - mDL Feedback: Use Cases/Mobile Driving License/mDL Feedback/index.md
+          - mDL Guides:
+              - mDL Guides: Use Cases/Mobile Driving License/mDL Guides/index.md
+              - Wallet Provider:
+                  - Wallet Provider: Use Cases/Mobile Driving License/mDL Guides/Wallet Provider/index.md
+                  - Wallet Provider Specs: Use Cases/Mobile Driving License/mDL Guides/Wallet Provider/Wallet Provider Specs.md
+              - mDL Issuer:
+                  - mDL Issuer: Use Cases/Mobile Driving License/mDL Guides/mDL Issuer/index.md
+                  - mDL Issuer Devs Workflow: Use Cases/Mobile Driving License/mDL Guides/mDL Issuer/mDL Issuer Devs Workflow.md
+                  - mDL Issuer Specs: Use Cases/Mobile Driving License/mDL Guides/mDL Issuer/mDL Issuer Specs.md
+                  - mDL Revocation Specs: Use Cases/Mobile Driving License/mDL Guides/mDL Issuer/mDL Revocation Specs.md
+              - mDL Verifier: 
+                  - mDL Verifier: Use Cases/Mobile Driving License/mDL Guides/mDL Verifier/index.md
+                  - mDL Reader Specs: Use Cases/Mobile Driving License/mDL Guides/mDL Verifier/mDL Reader Specs.md
+                  - mDL Remote Verifier Specs: Use Cases/Mobile Driving License/mDL Guides/mDL Verifier/mDL Remote Verifier Specs.md
+          - mDL Overview:
+              - mDL Overview: Use Cases/Mobile Driving License/mDL Overview/index.md
+              - Legal Basis: Use Cases/Mobile Driving License/mDL Overview/Legal Basis.md
+              - Standards and Protocols: Use Cases/Mobile Driving License/mDL Overview/Standards and Protocols.md
+          - mDL Roadmap: Use Cases/Mobile Driving License/mDL Roadmap/index.md

@@ -1,0 +1,2 @@
+# Feedback
+This toolkit is a living document that will be regularly updated based on feedback from the community of implementers. We encourage you to contribute your thoughts, suggestions, or concerns to help us improve the quality and relevance of this guide. Please visit our GitHub repository to submit issues, propose changes, or engage in discussions. Your participation is essential for the success of the EUDI Wallet ecosystem

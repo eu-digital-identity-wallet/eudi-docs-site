@@ -24,7 +24,7 @@ SonarCloud works on a set of code quality checks and analyzes code for multiple 
 - Security (protecting software from threats, attacks, and unauthorized access):
     - Security Vulnerabilities: Flaws in code or configuration that attackers can exploit to compromise the system (e.g., SQL injection, cross-site scripting).
     - Security Hotspots: Sections of code that aren’t necessarily vulnerable but deserve security review (e.g., cryptography use, authentication logic).
-    - OWASP Top 10 / CWE Mappings: OWASP Top 10 refers to a list of the ten most critical web application security risks (e.g., injection, broken authentication) that can be found [here](owasp.org/www-project-top-ten/). CWE (Common Weakness Enumeration) refers to a standardized catalog of software weakness types. Vulnerabilities and hotspots can be mapped to these categories for classification. The relevant information can be found [here](https://cwe.mitre.org/top25/).
+    - OWASP Top 10 / CWE Mappings: OWASP Top 10 refers to a list of the ten most critical web application security risks (e.g., injection, broken authentication) that can be found [here](https://owasp.org/www-project-top-ten/). CWE (Common Weakness Enumeration) refers to a standardized catalog of software weakness types. Vulnerabilities and hotspots can be mapped to these categories for classification. The relevant information can be found [here](https://cwe.mitre.org/top25/).
 
 - Maintainability (measures how easily code can be understood, modified, and extended):
     - Code Smells: Patterns in code that indicate potential design or implementation issues (e.g., long methods, duplicated logic, large classes). They aren’t bugs but suggest future maintenance challenges.

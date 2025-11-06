@@ -17,6 +17,23 @@ Releases undergo full verification and validation through a combination of **man
 All testing artefacts are managed in GitHub under:  
 [eu-digital-identity-wallet/eudi-doc-testing-application-internal](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application-internal)
 
+## 💎 Code Quality Controls
+
+SonarCloud works on a set of code quality checks and analyzes code for multiple quality dimensions, across all stacks (Swift, Kotlin, Java, Python). The checks conducted can be further grouped into the following categories:
+
+- Security (protecting software from threats, attacks, and unauthorized access):
+    - Security Vulnerabilities: Flaws in code or configuration that attackers can exploit to compromise the system (e.g., SQL injection, cross-site scripting).
+    - Security Hotspots: Sections of code that aren’t necessarily vulnerable but deserve security review (e.g., cryptography use, authentication logic).
+    - OWASP Top 10 / CWE Mappings: OWASP Top 10 refers to a list of the ten most critical web application security risks (e.g., injection, broken authentication) that can be found [here](owasp.org/www-project-top-ten/). CWE (Common Weakness Enumeration) refers to a standardized catalog of software weakness types. Vulnerabilities and hotspots can be mapped to these categories for classification. The relevant information can be found [here](https://cwe.mitre.org/top25/)
+
+- Maintainability (measures how easily code can be understood, modified, and extended):
+    - Code Smells: Patterns in code that indicate potential design or implementation issues (e.g., long methods, duplicated logic, large classes). They aren’t bugs but suggest future maintenance challenges.
+    - Cognitive Complexity: A metric indicating how difficult code is to understand. It increases with nested logic, branching, and poor readability.
+    - Duplications: Repeated blocks of code. High duplication leads to more effort in applying changes and increases the risk of inconsistency.
+
+- Reliability (reflects how consistently software functions without failures):
+    - Bugs: Errors or flaws in code that cause incorrect or unexpected behavior during execution.
+    - Unit Test Coverage: A measure of how much of the code is exercised by automated tests. Higher coverage generally increases confidence in reliability but doesn’t guarantee the absence of bugs.
 
 ## 🧩 Test Types
 
@@ -52,7 +69,7 @@ Testing is organised across multiple levels to validate functionality, performan
 ### Security Testing
 
 - **Objectives:** Security testing ensures the continuous security, integrity, and resilience of the EUDI Wallet applications throughout their lifecycle. By integrating automated and manual security testing within a Secure Software Development Life Cycle (SDLC) and aligning with OWASP MASVS and MASTG standards, the framework enables early detection and remediation of vulnerabilities. It combines code analysis, penetration testing, and vulnerability management using tools such as SonarQube, OWASP Dependency-Check, and DefectDojo to maintain compliance with recognized security standards and safeguard user trust in the EUDI Wallet ecosystem.
-- **Requirements and Specifications:** The Security Requirements and Specifications can be found [here](https://github.com/eu-digital-identity-wallet/eudi-doc-reference-implementation-architecture/blob/main/security-requirements.md).
+- **Requirements and Specifications:** The Security Requirements and Specifications can be found [here](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application/blob/milestone/2025.Q4/doc/security/EUDI-Wallet-NiScy_Security_Requirements_and_Controls_Documentation.md).
 - **Tools:** [Security Testing Tools](#-test-tools).
 
 ---
@@ -83,9 +100,9 @@ Each release is accompanied with serenity-generated reports summarising test exe
 
 | Release | Test Types | Report Links | Status |
 | --- | --- | --- | --- |
-| 2025.07.28 - Demo | Functional <br/> Security <br/> Performance | GitHub Action Report | ✅ Released |
-| 2025.10.31 - Demo | Functional | GitHub Action Report | 🔄 In progress |
-| 2025.12.xx - xxx |  | (to be added) | ⏳ Planned |
+| 2025.07.28 - Demo | Functional <br/> Security <br/> Performance | [Functional test results]() <br/> [Security test results](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application/raw/refs/heads/milestone/2025.Q4/doc/security/EUDI-Wallet-NiScy_Security%20Testing%20Results-Version_2025.07.28-Demo.xlsx) <br/> [Performance test results](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application/blob/milestone/2025.Q4/doc/performance/preformance_test_results.md)| ✅ Released |
+| 2025.10.31 - Demo | Functional | GitHub Action Report | ✅ Released |
+| 2025.12.xx - xxx | (to be added) | (to be added) | 🔄 In progress |
 
 Older releases remain available in the reports directory of the [testing repository](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application-internal/actions).
 

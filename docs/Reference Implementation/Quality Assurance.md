@@ -22,17 +22,16 @@ All testing artefacts are managed in GitHub under:
 SonarCloud works on a set of code quality checks and analyzes code for multiple quality dimensions, across all stacks (Swift, Kotlin, Java, Python). The checks conducted can be further grouped into the following categories:
 
 - Security (protecting software from threats, attacks, and unauthorized access):
-    - Security Vulnerabilities: Flaws in code or configuration that attackers can exploit to compromise the system (e.g., SQL injection, cross-site scripting).
-    - Security Hotspots: Sections of code that aren’t necessarily vulnerable but deserve security review (e.g., cryptography use, authentication logic).
-    - OWASP Top 10 / CWE Mappings: OWASP Top 10 refers to a list of the ten most critical web application security risks (e.g., injection, broken authentication) that can be found [here](https://owasp.org/www-project-top-ten/). CWE (Common Weakness Enumeration) refers to a standardized catalog of software weakness types. Vulnerabilities and hotspots can be mapped to these categories for classification. The relevant information can be found [here](https://cwe.mitre.org/top25/).
+    - Security Vulnerabilities: Flaws in code or configuration that attackers can exploit to compromise the system. Through SonarCloud the following security vulnerabilities are identified: SQL Injection, Deserialization, and Command Injection vulnerabilities.
+    - Security Hotspots based on OWASP Top 10 / CWE Mappings: OWASP Top 10 refers to a list of the ten most critical web application security risks (e.g., injection, broken authentication) that can be found [here](https://owasp.org/www-project-top-ten/). CWE (Common Weakness Enumeration) refers to a standardized catalog of software weakness types. Vulnerabilities and hotspots can be mapped to these categories for classification. The relevant information can be found [here](https://cwe.mitre.org/top25/).
 
 - Maintainability (measures how easily code can be understood, modified, and extended):
-    - Code Smells: Patterns in code that indicate potential design or implementation issues (e.g., long methods, duplicated logic, large classes). They aren’t bugs but suggest future maintenance challenges.
+    - Code Smells: Patterns in code that indicate potential design or implementation issues. They are warning indicators that arise due to potential bad coding practices.
     - Cognitive Complexity: A metric indicating how difficult code is to understand. It increases with nested logic, branching, and poor readability.
     - Duplications: Repeated blocks of code. High duplication leads to more effort in applying changes and increases the risk of inconsistency.
 
 - Reliability (reflects how consistently software functions without failures):
-    - Bugs: Errors or flaws in code that cause incorrect or unexpected behavior during execution.
+    - Bugs: Using static code analysis, it detects actual bugs that can cause runtime errors or incorrect behavior.
     - Unit Test Coverage: A measure of how much of the code is exercised by automated tests. Higher coverage generally increases confidence in reliability but doesn’t guarantee the absence of bugs.
 
 ## 🧩 Test Types

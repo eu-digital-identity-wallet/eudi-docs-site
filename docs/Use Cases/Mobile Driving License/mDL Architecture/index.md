@@ -1,4 +1,4 @@
-# :bricks: High-level Architecture of the mDL Target Solution
+# High-level Architecture of the mDL Target Solution
 
 The design options form the mDL Use Case target solution are implemented by the software components presented in the following figure. The components of the target solution are presented by role of the EUDI Wallet ecosystem as laid out by chapter 3 of the [ARF]. 
 

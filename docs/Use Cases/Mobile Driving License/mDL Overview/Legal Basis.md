@@ -1,4 +1,4 @@
-# :balance_scale: The Legal Basis
+# The Legal Basis
 The following legal documents serve as the exclusive source of requirements for the mDL Use Case target solution:
 - [[eIDAS](https://eur-lex.europa.eu/eli/reg/2024/1183/oj/eng)]: This EU regulation establishes a legal framework for electronic identification and trust services used across the Union to enable secure digital interactions. It outlines the requirements for Member States to recognize electronic identification schemes from other countries and to provide European Digital Identity Wallets.The eIDAS relevant Implementing Acts  are also considered as source of requirements on this document.
 - [[4th Driving License Directive](https://www.europarl.europa.eu/RegData/commissions/tran/lpag/2025/05-14/TRAN_LA(2025)773299_EN.pdf)].: The Council and the European Parliament proposal for a directive on driving licences (Article 5 and Annex I “Part C: Specifications for the mobile driving licence”)

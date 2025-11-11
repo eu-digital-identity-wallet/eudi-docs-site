@@ -1,16 +1,5 @@
-# Wallet Provider Getting Started
-## Who is this guide for
-## How to use this guide
-## Links to essential resources
+# Index of Use Cases/Mobile Driving License/mDL Guides/Wallet Provider
 
-The specifications of the Wallet Provider are listed in [here](./Wallet Provider Specs.md).
-
-# Technical Deep Dive - Wallet Provider Developers Workflow
-## Development pre-requisites
-## Issuance of an mDL
-## Storage and management of mDL
-## Presentation of an mDL
-## Verifying of an mDL
-## Wallet Certification
-## Libraries & SDKs
-## Testing tool
+- [Getting started](/Use Cases/Mobile Driving License/mDL Guides/Wallet Provider/Getting started/)
+- [Wallet Developers Workflow](/Use Cases/Mobile Driving License/mDL Guides/Wallet Provider/Wallet Developers Workflow/)
+- [Wallet Provider Specs](/Use Cases/Mobile Driving License/mDL Guides/Wallet Provider/Wallet Provider Specs/)

@@ -143,4 +143,4 @@ let controller = await UIApplication.shared.topViewController()
 ```
 
 ----
-The source code is available [here](https://github.com/eu-digital-identity-wallet/eudi-lib-ios-rqes-ui).
+The source code is available [here](https://github.com/eu-digital-identity-wallet/eudi-lib-ios-rqes-ui){:target="_blank"}.

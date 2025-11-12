@@ -17,7 +17,7 @@ They are marked in the GitHub tracker with both the `essential` and `Wallet` lab
 This document provides a non-technical overview of the essential standards underpinning the EUDI Wallet.
 It is intended for decision-makers, implementers, and stakeholders who need to understand why these specific standards matter and how they support the Wallet’s functionality.
 
-The essentials standards are organised by high-level categories that align with the main actors and concerns across the EUDI Wallet ecosystem. Each section groups the essential standards accordingly.
+The essential standards are organised by high-level categories that align with the main actors and concerns across the EUDI Wallet ecosystem. Each section groups the essential standards accordingly.
 
 ## Categories
 

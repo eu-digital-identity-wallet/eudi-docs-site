@@ -2,7 +2,7 @@
 
 The EUDI Verifier Core Library for Android is designed to enable Android applications to act as conformant verifiers of mobile identity documents (mDocs), in alignment with the ISO 18013‑5 specification. It provides a streamlined API to orchestrate device engagement, transfer management and document status resolution, making it possible for developers to integrate proximity and remote-based verification workflows within their Android apps.
  
-This guide will walk you through the essential steps to configure and integrate the library into your development environment.
+This guide walks you through the essential steps to configure and integrate the library into your development environment.
 
 
 ## Prerequisites
@@ -48,7 +48,7 @@ dependencies {
 
 ### Library Initialization
 
-To create an instance of `EudiVerifier`, use the `EudiVerifier.Builder` class or invoke the `EudiVerifier.invoke` method from the companion object requires providing an `EudiVerifierConfig` object that specifies the verifier’s configuration.
+To create an instance of `EudiVerifier`, use the `EudiVerifier.Builder` class or invoke the `EudiVerifier.invoke` method from the companion object. This requires providing an `EudiVerifierConfig` object that specifies the verifier’s configuration.
 
 ### Document Transfer
 

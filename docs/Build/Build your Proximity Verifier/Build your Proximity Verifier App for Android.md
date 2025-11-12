@@ -56,4 +56,4 @@ git clone https://github.com/eu-digital-identity-wallet/eudi-app-multiplatform-v
 - You can test the UI and navigation flows on emulators.  
   For actual proximity verification, use **physical hardware**.
 
-For a complete list of the configuration options, [see the main project README](https://github.com/eu-digital-identity-wallet/eudi-app-multiplatform-verifier-ui/blob/main/README.md).
+For a complete list of the configuration options, [see the main project README](https://github.com/eu-digital-identity-wallet/eudi-app-multiplatform-verifier-ui/blob/main/README.md){:target="_blank"}.

@@ -15,7 +15,7 @@ Nevertheless, this section outlines essential integration dependencies and pre-r
 Your EUDI Wallet implementation must support the following platform specifications:
 
 **Android Implementation**
-- Target Operating Systems: Android 8.0+ (API 26+)
+- Target Operating Systems: Android 10.0+ (API 29+)
 - Programming Language: Kotlin
 - Development Framework: Native Android
 

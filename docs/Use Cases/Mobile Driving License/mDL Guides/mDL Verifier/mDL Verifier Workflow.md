@@ -70,4 +70,5 @@ The interface of the mDL reader and the issuing authority infrastructure (online
 
 ## Libraries & SDKs
 
-The EUDI Wallet Reference Implementation provides key reusable components to accelerate deployment. Please refer to the relevant section in the implementers' hub for detailed instructions on how to build and test the mDL Verifier components.
+The EUDI Wallet Reference Implementation provides key reusable components to accelerate deployment. Please refer to the relevant section for detailed instructions on how to [build](https://eu-digital-identity-wallet.github.io/Build/Build%20your%20Verifier/) and [test](https://eu-digital-identity-wallet.github.io/Test/Online%20Verifier/) the mDL Issuer and Revocation List Manager and Publisher.
+

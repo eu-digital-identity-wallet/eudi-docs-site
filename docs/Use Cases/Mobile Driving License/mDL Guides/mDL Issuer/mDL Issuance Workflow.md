@@ -1,7 +1,7 @@
 # Technical Deep Dive - mDL Issuance Workflow
 ## Development pre-requisites
 
-The reference implementation's preconditions listed in the relevant [section](./TBD) on the implementer's hub do apply to the mDL Issuer.
+The reference implementation's preconditions listed in the relevant section on the dev hub do apply to the mDL Issuer.
 
 Nevertheless, this section outlines essential integration dependencies and pre-requisites procedures for a national authority or organization (acting as the mDL Issuer) to successfully launch its mDL issuance solution using the EUDI Wallet Reference Implementation.
 

@@ -1,5 +1,5 @@
 # Remote Verifier web application
-The components required by the mDL (remote) Verifier Organization are described below. The mDL Verifier Organization needs to integrate in its infrastructure and IT systems the mDL Verifier component that offers the main remote mDL verification functionality. The specific components that comprise the mDL target solution are the following: 
+The components required by the (Remote) mDL Verifier Organization are described below. The mDL Verifier Organization needs to integrate in its infrastructure and IT systems the mDL Verifier component that offers the main remote mDL verification functionality. The specific components that comprise the mDL target solution are the following: 
 
 ## (Remote) mDL Verifier Client: 
 - runs in the web browser and provides the user interface for initiating and managing the presentation flow. 

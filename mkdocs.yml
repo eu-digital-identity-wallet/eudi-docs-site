@@ -154,6 +154,27 @@ plugins:
 nav:
 
   - Home: index.md
+#  - Getting Started:
+#      - Introduction: Getting Started.md
+#      - Build Wallet: Build Wallet.md
+#      - Build Issuer: Build Issuer.md
+#      - Build Verifier: Build Verifier.md
+#      - Demos:
+#           - Introduction: Demos.md
+#           - Travel Scenario: Travel Scenario.md
+#      - Regulation: Resources/Regulation.md
+#      - Architecture and Reference Framework: Resources/Architecture and Reference Implementation.md
+#      - Standards: Resources/Standards.md
+#      - Large-Scale Pilots: Resources/Large-Scale Pilots.md
+#  - Reference Implementation: 
+#      - Reference Implementation: Reference Implementation/index.md
+#      - Code Contributions: Reference Implementation/Code Contributions.md
+#      - Code of Conduct: Reference Implementation/Code of Conduct.md
+#      - Licensing: Reference Implementation/Licensing.md
+#      - Disclaimer: Reference Implementation/Disclaimer.md
+#      - Demos:
+#           - Demos: Reference Implementation/Demos/index.md
+#           - Travel Scenario: Reference Implementation/Demos/Travel Scenario.md
   - Build:
       - Build: Build/index.md
       - Build your Wallet:
@@ -183,62 +204,30 @@ nav:
           - Steps to Build: Build/Build your Issuer/Steps to Build.md
           - Configure your Issuer: Build/Build your Issuer/Configure.md
           - Add Attestations: Build/Build your Issuer/New Attestation.md
-      - Build your Remote Verifier:
-          - Build your Remote Verifier: Build/Build your Remote Verifier/index.md
-          - Steps to Build: Build/Build your Remote Verifier/Steps to Build.md
-          - Configure your Verifier: Build/Build your Remote Verifier/Configure.md 
-      - Build your Proximity Verifier:
-          - Build your Proximity Verifier App: Build/Build your Proximity Verifier/index.md
-          - Build your Proximity Verifier App for Android: Build/Build your Proximity Verifier/Build your Proximity Verifier App for Android.md
-          - Build your Proximity Verifier Core for Android: Build/Build your Proximity Verifier/Build your Proximity Verifier Core for Android.md
-      - Build your rQES:
-          - Build your rQES: Build/Build your rQES/index.md
-          - Build your rQES SDK UI for Android: Build/Build your rQES/Build your rQES SDK UI for Android.md
-          - Build your rQES Core for Android: Build/Build your rQES/Build your rQES Core for Android.md
-          - Build your rQES SDK UI for iOS: Build/Build your rQES/Build your rQES SDK UI for iOS.md
-          - Build your rQES Kit for iOS:  Build/Build your rQES/Build your rQES Kit for iOS.md
-      - Supporting Ecosystem Services:
-          - Supporting Ecosystem Services: Build/Supporting Ecosystem Services/index.md
-          - Trust List Service: Build/Supporting Ecosystem Services/Trust List Service.md
-          - RSSP: Build/Supporting Ecosystem Services/RSSP.md
-          - Revocation Service: Build/Supporting Ecosystem Services/Revocation Service.md
-          - RP Registration Service: Build/Supporting Ecosystem Services/RP Registration Service.md
+      - Build your Verifier:
+          - Build your Verifier: Build/Build your Verifier/index.md
+          - Steps to Build: Build/Build your Verifier/Steps to Build.md
+          - Configure your Verifier: Build/Build your Verifier/Configure.md 
+
   - Test:
       - Test: Test/index.md
       - Wallet Application:
           - Wallet Application: Test/Wallet Application/index.md
           - Android: Test/Wallet Application/Android.md
+#              - Issue (Wallet Initiated): Test/Wallet Application/Android/Issue (Wallet Initiated).md
+#              - Issue (Credential Offer): Test/Wallet Application/Android/Issue (Credential Offer).md
+#              - Present (Same Device): Test/Wallet Application/Android/Present (Same Device).md
+#              - Present (Proximity): Test/Wallet Application/Android/Present (Proximity).md
           - iOS: Test/Wallet Application/iOS.md
+#              - Issue (Wallet Initiated): Test/Wallet Application/iOS/Issue (Wallet Initiated).md
+#              - Issue (Credential Offer): Test/Wallet Application/iOS/Issue (Credential Offer).md
+#              - Present (Same Device): Test/Wallet Application/iOS/Present (Same Device).md
+#              - Present (Proximity): Test/Wallet Application/iOS/Present (Proximity).md
       - Issuer: Test/Issuer.md
       - Online Verifier: Test/Online Verifier.md
       - Proximity Verifier: Test/Proximity Verifier.md
   - Resources: 
       - Resources: Resources/index.md
   - Use Cases:
-      - Mobile Driving License:
-          - Mobile Driving License: Use Cases/Mobile Driving License/index.md
-          - mDL Overview:
-              - mDL Overview: Use Cases/Mobile Driving License/mDL Overview/index.md
-              - Legal Basis: Use Cases/Mobile Driving License/mDL Overview/Legal Basis.md
-              - Standards and Protocols: Use Cases/Mobile Driving License/mDL Overview/Standards and Protocols.md
-          - mDL Architecture:
-              - mDL Architecture: Use Cases/Mobile Driving License/mDL Architecture/index.md
-              - EUDI Wallet: Use Cases/Mobile Driving License/mDL Architecture/EUDI Wallet.md
-              - Proximity Verifier: Use Cases/Mobile Driving License/mDL Architecture/Proximity Verifier.md
-              - Remote Verifier Web: Use Cases/Mobile Driving License/mDL Architecture/Remote Verifier Web.md
-              - mDL Issuing Authority: Use Cases/Mobile Driving License/mDL Architecture/mDL Issuing Authority.md
-          - mDL Guides:
-              - Wallet Provider:
-                  - Getting Started: Use Cases/Mobile Driving License/mDL Guides/Wallet Provider/Getting Started.md
-                  - Wallet Developers Workflow: Use Cases/Mobile Driving License/mDL Guides/Wallet Provider/Wallet Developers Workflow.md
-                  - Wallet Provider Specs: Use Cases/Mobile Driving License/mDL Guides/Wallet Provider/Wallet Provider Specs.md
-              - mDL Issuer:
-                  - Getting Started: Use Cases/Mobile Driving License/mDL Guides/mDL Issuer/Getting Started.md
-                  - mDL Issuance Workflow: Use Cases/Mobile Driving License/mDL Guides/mDL Issuer/mDL Issuance Workflow.md
-                  - mDL Issuer Specs: Use Cases/Mobile Driving License/mDL Guides/mDL Issuer/mDL Issuer Specs.md
-                  - mDL Revocation Specs: Use Cases/Mobile Driving License/mDL Guides/mDL Issuer/mDL Revocation Specs.md
-              - mDL Verifier: 
-                  - Getting Started: Use Cases/Mobile Driving License/mDL Guides/mDL Verifier/Getting Started.md
-                  - mDL Verifier Workflow: Use Cases/Mobile Driving License/mDL Guides/mDL Verifier/mDL Verifier Workflow.md
-                  - mDL Reader Specs: Use Cases/Mobile Driving License/mDL Guides/mDL Verifier/mDL Reader Specs.md
-                  - mDL Remote Verifier Specs: Use Cases/Mobile Driving License/mDL Guides/mDL Verifier/mDL Remote Verifier Specs.md
+      - mDL: Use Cases/Mobile Driving License.md
+

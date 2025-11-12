@@ -25,7 +25,7 @@ The main design options of the mDL target solution backed by the Legal and Compl
 For remote presentation flows for ISO/IEC 18013-5-compliant attestations the Wallet Instance and the Remote verifier web application implement the OpenID for Verifiable Presentation protocol [OpenID4VP] in combination with the [ISO/IEC 18013-7] profile ([ARF] “5.6.2 Secure data exchange using ISO/IEC 18013-5 and ISO/IEC 18013-7 ”). This flow has the following distinct variations/mechanisms supported by different standards and specifications:
 
 - For the remote presentation flow that does not use the user agent (Digital Credentials API) mechanism, the Wallet Instance and the Remote verifier web application shall comply with Annex B (Use of OID4VP to retrieve an mdoc) of ISO/IEC 18013-7.
-- For the remote presentation flow that uses the data retrieval mechanism of the user agent (Digital Credentials API), the Wallet Instance and the Remote verifier web application
+- For the remote presentation flow that uses the data retrieval mechanism of the user agent (Digital Credentials API), the Wallet Instance and the Remote verifier web application:
     - Shall comply with the Annex C (Digital credentials API retrieval) of ISO/IEC 18013-7.
     - Implement OpenID4VP in combination with Digital Credentials API (Appendix A. OpenID4VP over the Digital Credentials API).
 

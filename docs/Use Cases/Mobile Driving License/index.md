@@ -28,10 +28,10 @@ This section offers practical, step-by-step guides and technical specifications 
 ## Reference Implementation Roadmap for mDL
 The EUDI Wallet and the mDL solution are continuously evolving. This section provides insights into the future development roadmap, including planned updates and the integration of new features.
 
-:link: [Find more about the mDL roadmap](./mDL Roadmap/)
+:link: [Find more about the mDL roadmap]\(TBD)
 
 ## Feedback
 This toolkit is a living document that will be regularly updated based on feedback from the community of implementers. 
 
-:link: [Provide your feedback](./mDL Feedback/) 
+:link: [Provide your feedback]\(TBD) 
 

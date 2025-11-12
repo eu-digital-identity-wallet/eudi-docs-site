@@ -21,7 +21,7 @@ The Architecture and Reference Framework (ARF) is a work in progress that is con
 
 The European Digital Identity Wallet initiative is supported by ongoing work to define and align relevant standards and technical specifications with the relevant Implementing Acts establishing the European Digital Identity Framework. For more information, please refer to the following resources:
 
-[List of Standards and Technical Specifications](./Technical Specifications and Standards){:target="_blank"}
+[List of Standards and Technical Specifications](https://github.com/eu-digital-identity-wallet/eudi-doc-developers-hub-site/blob/doc_update/docs/Resources/Technical%20Specifications%20and%20Standards.md){:target="_blank"}
 
 ## Discover the EUDI Wallet Reference Implementation
 

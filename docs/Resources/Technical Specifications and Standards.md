@@ -48,7 +48,7 @@ These requirements are the responsibility of the entities building and managing 
 | 19 | [EC TS08 V.095 2025-07 Specification of common interface for lodging complaints to DPAs #19](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/19){:target="_blank"} | ✅ Done | Art 5a(23) ICF, Art 5a(23) P&I |  | EC |
 | 20 | [EC TS09 V 1.0 (2025-07) - Specification of Wallet-to-Wallet interactions #22](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/22){:target="_blank"} | ✅ Done | Art 5a(23) P&I |  | EC |
 | 21 | [EC TS10 v 1.0 (2025-08) - Data Portability and Download (export) #24](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/24){:target="_blank"} | ✅ Done | Art 5a(4)(f), Art 5a(4)(g) |  | EC |
-| 22 | [ENISA EUCC Guidelines Cryptography v.2 (2025-05) #415](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/415){:target="_blank"} | ✅ Done |  | [CIR (EU) 2024/2981](https://data.europa.eu/eli/reg_impl/2024/2981/oj){:target="_blank"}, [CIR (EU) 2024/482](https://eur-lex.europa.eu/eli/reg_impl/2024/482/oj/eng):target="_blank"} | ENISA |
+| 22 | [ENISA EUCC Guidelines Cryptography v.2 (2025-05) #415](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/415){:target="_blank"} | ✅ Done |  | [CIR (EU) 2024/2981](https://data.europa.eu/eli/reg_impl/2024/2981/oj){:target="_blank"}, [CIR (EU) 2024/482](https://eur-lex.europa.eu/eli/reg_impl/2024/482/oj/eng){target="_blank"} | ENISA |
 
 
 ### Member States & Registrars
@@ -62,7 +62,7 @@ These requirements are for the public bodies that establish the legal and trust 
 | 3 | [EC TS02 v0.9 (2025-04) Specification of systems enabling the notification and subsequent publication of Provider information #23](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/23){:target="_blank"} | Nov, 2025 | Art 5a(23) We |  | EC |
 | 4 | [EC TS05 V1.0 (2025-06) Common Formats and API for Relying Party Registration Information #14](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/14){:target="_blank"} | ✅ Done | Art 5b.11 |  | EC |
 | 5 | [EC TS06 v1.0 (2025-06) Common set of Relying Party information to be registered #16](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/16){:target="_blank"} | ✅ Done | Art 5b(2)(c) |  | EC |
-| 6 | [ENISA EUCC Guidelines Cryptography v.2 (2025-05) #415](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/415){:target="_blank"} | ✅ Done |  | [CIR (EU) 2024/2981](https://data.europa.eu/eli/reg_impl/2024/2981/oj){:target="_blank"}, [CIR (EU) 2024/482(https://eur-lex.europa.eu/eli/reg_impl/2024/482/oj/eng):target="_blank"} | ENISA |
+| 6 | [ENISA EUCC Guidelines Cryptography v.2 (2025-05) #415](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/415){:target="_blank"} | ✅ Done |  | [CIR (EU) 2024/2981](https://data.europa.eu/eli/reg_impl/2024/2981/oj){:target="_blank"}, [CIR (EU) 2024/482](https://eur-lex.europa.eu/eli/reg_impl/2024/482/oj/eng){target="_blank"} | ENISA |
 
 
 ### Attestation & PID Providers
@@ -86,7 +86,7 @@ These requirements are for the organizations that issue digital credentials to t
 | 13 | [IETF Token Status List (TSL) draft-ietf-oauth-status-list-12 #11](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/11){:target="_blank"} | Dec, 2025 | Art 5a(23) ICF |  | IETF |
 | 14 | [EC TS03 V1.0 (2025-08) Specification of Wallet Unit Attestations (WUA) used in issuance of PID and Attestations #17](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/17){:target="_blank"} | ✅ Done | Art 5a(23) ICF |  | EC |
 | 15 | [EC TS11 Specification of interfaces and formats for the catalogue of Attestation Rulebooks and attributes #21](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/21){:target="_blank"} | Oct, 2025 | Art 45e(2) |  | EC |
-| 16 | [ENISA EUCC Guidelines Cryptography v.2 (2025-05) #415](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/415){:target="_blank"} | ✅ Done |  | [CIR (EU) 2024/2981](https://data.europa.eu/eli/reg_impl/2024/2981/oj){:target="_blank"}, [CIR (EU) 2024/482(https://eur-lex.europa.eu/eli/reg_impl/2024/482/oj/eng):target="_blank"} | ENISA |
+| 16 | [ENISA EUCC Guidelines Cryptography v.2 (2025-05) #415](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/415){:target="_blank"} | ✅ Done |  | [CIR (EU) 2024/2981](https://data.europa.eu/eli/reg_impl/2024/2981/oj){:target="_blank"}, [CIR (EU) 2024/482(https://eur-lex.europa.eu/eli/reg_impl/2024/482/oj/eng){target="_blank"} | ENISA |
 
 
 ### Relying Parties
@@ -112,7 +112,7 @@ These requirements are for the services and entities that accept and use the EUD
 | 15 | [CSC - Architectures and protocols for remote signature applications version 2.1.0.1 #29](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/29){:target="_blank"} | Nov, 2025 | Art 5a(23) P&I |  | CSC |
 | 16 | [EC TS05 V1.0 (2025-06) Common Formats and API for Relying Party Registration Information #14](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/14){:target="_blank"} | ✅ Done | Art 5b.11 |  | EC |
 | 17 | [EC TS06 v1.0 (2025-06) Common set of Relying Party information to be registered #16](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/16){:target="_blank"} | ✅ Done | Art 5b(2)(c) |  | EC |
-| 18 | [ENISA EUCC Guidelines Cryptography v.2 (2025-05) #415](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/415){:target="_blank"} | ✅ Done |  | [CIR (EU) 2024/2981](https://data.europa.eu/eli/reg_impl/2024/2981/oj){:target="_blank"}, [CIR (EU) 2024/482(https://eur-lex.europa.eu/eli/reg_impl/2024/482/oj/eng):target="_blank"} | ENISA |
+| 18 | [ENISA EUCC Guidelines Cryptography v.2 (2025-05) #415](https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/issues/415){:target="_blank"} | ✅ Done |  | [CIR (EU) 2024/2981](https://data.europa.eu/eli/reg_impl/2024/2981/oj){:target="_blank"}, [CIR (EU) 2024/482(https://eur-lex.europa.eu/eli/reg_impl/2024/482/oj/eng){target="_blank"} | ENISA |
 
 
 ### Protocols & Interoperability

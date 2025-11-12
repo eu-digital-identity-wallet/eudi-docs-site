@@ -1,4 +1,4 @@
-# Build your Verifier
+# Build your Remote Verifier
 
 ## Overview
 

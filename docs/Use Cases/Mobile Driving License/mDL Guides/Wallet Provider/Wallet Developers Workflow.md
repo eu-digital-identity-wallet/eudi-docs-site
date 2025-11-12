@@ -80,7 +80,7 @@ Register your organisation as a Wallet Provider with the national authorities in
 
 **Notification and Publication**
 
-The EUDI Wallet Reference Implementation provides key reusable components to accelerate deployment. Please refer to the relevant section for detailed instructions on how to [build](https://eu-digital-identity-wallet.github.io/Build/Build%20your%20Wallet/) and [test]([https://mgiakkou.github.io/Test/Wallet%20Application/](https://eu-digital-identity-wallet.github.io/Test/Wallet%20Application/)) the mDL Issuer and Revocation List Manager and Publisher.
+The Member State is responsible for notifying the Wallet Provider to the European Commission, enabling cross-border recognition and interoperability within the EUDI Wallet ecosystem.
 
 ## Libraries & SDKs
 

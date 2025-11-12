@@ -105,4 +105,4 @@ The inclusion of your trust anchors in the Trusted List/VICAL enables Relying Pa
  
 ## Libraries & SDKs
 
-The EUDI Wallet Reference Implementation provides key reusable components to accelerate deployment. Please refer to the relevant section for detailed instructions on how to [build](https://mgiakkou.github.io/Build/Build%20your%20Wallet/) and [test](https://mgiakkou.github.io/Test/Wallet%20Application/) the mDL Issuer and Revocation List Manager and Publisher.
+The EUDI Wallet Reference Implementation provides key reusable components to accelerate deployment. Please refer to the relevant section for detailed instructions on how to [build](https://eu-digital-identity-wallet.github.io/Build/Build%20your%20Issuer/) and [test](https://eu-digital-identity-wallet.github.io/Test/Issuer/) the mDL Issuer and Revocation List Manager and Publisher.

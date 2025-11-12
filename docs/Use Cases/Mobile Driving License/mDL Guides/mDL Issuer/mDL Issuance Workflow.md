@@ -28,7 +28,7 @@ You must establish the procedures for obtaining and integrating this certificate
 
 For successful cross-border operation, your national mDL Issuance Authority must be recognized as a trusted entity within the EUDI ecosystem. This status is achieved by registering with a national Registrar (Trusted List Provider). Upon successful registration, the Issuing Authority's trust anchors (public keys) are included in the relevant Trusted List/VICAL(Verified Issuer Certificate Authority List). Wallet Units across the EU use these published trust anchors to validate the authenticity of the mDLs you issue
 
- You shall complete the registration and notification process to establish the Issuer's identity and trust anchors within the EUDI framework. This is described in [Becoming trust issuer](./mDL Issuer Devs Workflow.md#Becoming trust issuer) section.
+ You shall complete the registration and notification process to establish the Issuer's identity and trust anchors within the EUDI framework. This is described in [Becoming trust issuer](#becoming_trust_issuer) section.
  
 
 ## Issuance of an mDL

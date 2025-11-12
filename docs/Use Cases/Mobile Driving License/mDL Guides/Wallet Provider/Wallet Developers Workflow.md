@@ -84,4 +84,4 @@ The EUDI Wallet Reference Implementation provides key reusable components to acc
 
 ## Libraries & SDKs
 
-The EUDI Wallet Reference Implementation provides key reusable components to accelerate deployment. Please refer to the relevant section for detailed instructions on how to [build](https://eu-digital-identity-wallet.github.io/Build/Build%20your%20Issuer/) and [test](https://eu-digital-identity-wallet.github.io/Test/Issuer/) the mDL Issuer and Revocation List Manager and Publisher.
+The EUDI Wallet Reference Implementation provides key reusable components to accelerate deployment. Please refer to the relevant section for detailed instructions on how to [build](https://eu-digital-identity-wallet.github.io/Build/Build%20your%20Wallet/) and [test](https://eu-digital-identity-wallet.github.io/Test/Wallet%20Application/) the Wallet Provider.

@@ -198,6 +198,7 @@ nav:
           - Build your rQES SDK UI for iOS: Build/Build your rQES/Build your rQES SDK UI for iOS.md
           - Build your rQES Kit for iOS:  Build/Build your rQES/Build your rQES Kit for iOS.md
       - Supporting Ecosystem Services:
+          - Supporting Ecosystem Services: Build/Supporting Ecosystem Services/index.md
           - Trust List Service: Build/Supporting Ecosystem Services/Trust List Service.md
           - RSSP: Build/Supporting Ecosystem Services/RSSP.md
           - Revocation Service: Build/Supporting Ecosystem Services/Revocation Service.md

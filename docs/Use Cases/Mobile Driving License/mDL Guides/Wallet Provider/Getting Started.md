@@ -15,6 +15,7 @@ The target audience could also expand to other stakeholders who require a deep t
 ## How to use this guide
 
 No new requirements are imposed by the mDL use case to EUDI wallets. However, for an overview, this guide is structured to mirror the implementers' hub sections providing similar navigation. The main body of this guide focuses on the lifecycle and technical implementation details relevant to EUDI Wallet Provider operations for mDL support, by including:
+
 - the foundational technical and organizational steps required before beginning implementation
 - mDL support implementation including attestation issuance and presentation flows
 - the process of registering and notifying your entity as a Wallet Provider

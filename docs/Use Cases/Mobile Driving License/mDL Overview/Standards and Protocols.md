@@ -2,7 +2,9 @@
 The [4th Driving License Directive] clarifies that the mDL Use Case target solution shall comply with the ISO/IEC 18013-5 standard on mobile driving licences and since mDL can only be issued to EUDI wallets provided in accordance with Regulation (EU) 910/2014, some of the requirements applicable to EUDI wallets are also applicable to mDL providers. The latter requirements are further detailed by the Regulation (EU) 910/2014, including its implementing acts, in some cases, further detailed by the technical Architecture and Reference Framework (ARF).
 
 ## Standards and Specifications references
+
 The mDL Use Case target solution is based on the following standards and specifications:
+
 - [ISO/IEC 18013-5:2021(E)] is the international standard focused on implementing a Mobile Driving Licence (mDL) application on mobile devices. The provisional second version of this standard is referenced regarding the mDL revocation capabilities.
 - [ISO/IEC 18013-7] This document augments the capabilities of the mobile driving licence (mDL) standardized in ISO/IEC 18013-5 with the presentation of a mobile driving licence to a reader over the internet.
 - [OpenID for Verifiable Credential Issuance (OID4VCI)](https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0-final.html): is a standardized protocol defining an API for issuing Verifiable Credentials. The protocol is built on top of the OAuth 2.0 framework, where the Wallet acts as an OAuth 2.0 Client to obtain authorization to receive credentials from a Credential Issuer, which acts as a Resource Server
@@ -10,14 +12,18 @@ The mDL Use Case target solution is based on the following standards and specifi
 - [Architecture and Reference Framework (ARF)](https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/latest/architecture-and-reference-framework-main/): An informal document that describes the architecture of the EUDI Wallet ecosystem and all of its components, as well as how these components will interact to ensure the security of the ecosystem and data protection of its Users. It also specifies the high-level requirements established in Annex 2 related to the EUDI Wallet ecosystem. While ARF is not a legal document, the Commission uses the ARF specifications for its reference implementation.
 
 ## Main Design Options
+
 The main design options of the mDL target solution backed by the Legal and Compliance Framework are summarised as follows:
+
 - Wallet Reference Implementation accepts attestations only via the Attestation Issuance Interface (AII), which complies with the [OpenID4VCI] standard ([ARF] “4.3.3 Wallet Unit interfaces and protocols”). The latest OpenID4VCI is v1.0.
 - mDL can only be issued to EUDI Wallet ([4th Driving License Directive] Article 5.2 and Annex I, Part C (2))
 - mDL shall comply with the ISO/IEC 18013-5 standard ([4th Driving License Directive] Annex I, Part C (2), [ARF] ANNEX 3.02 - mDL Rulebook ch2.1)
 - mDL can only be presented using the Presentation Interface (PI), which accommodates both remote and proximity interactions ([ARF] “4.3.3 Wallet Unit interfaces and protocols” ).
 
 ### Remote Presentation Flows
+
 For remote presentation flows for ISO/IEC 18013-5-compliant attestations the Wallet Instance and the Remote verifier web application implement the OpenID for Verifiable Presentation protocol [OpenID4VP] in combination with the [ISO/IEC 18013-7] profile ([ARF] “5.6.2 Secure data exchange using ISO/IEC 18013-5 and ISO/IEC 18013-7 ”). This flow has the following distinct variations/mechanisms supported by different standards and specifications:
+
 - For the remote presentation flow that does not use the user agent (Digital Credentials API) mechanism, the Wallet Instance and the Remote verifier web application shall comply with Annex B (Use of OID4VP to retrieve an mdoc) of ISO/IEC 18013-7.
 - For the remote presentation flow that uses the data retrieval mechanism of the user agent (Digital Credentials API), the Wallet Instance and the Remote verifier web application
     - Shall comply with the Annex C (Digital credentials API retrieval) of ISO/IEC 18013-7.

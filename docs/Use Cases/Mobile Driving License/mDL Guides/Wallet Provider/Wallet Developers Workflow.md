@@ -15,11 +15,13 @@ Nevertheless, this section outlines essential integration dependencies and pre-r
 Your EUDI Wallet implementation must support the following platform specifications:
 
 **Android Implementation**
+
 - Target Operating Systems: Android 10.0+ (API 29+)
 - Programming Language: Kotlin
 - Development Framework: Native Android
 
 **iOS Implementation**
+
 - Target Operating Systems: iOS 17+
 - Programming Language: Swift
 - Development Framework: Native iOS
@@ -37,9 +39,11 @@ Your EUDI Wallet implementation must support issuance of the mDL according to th
 Your EUDI Wallet must support remote presentation flow with requirements as follows:
 
 **Data retrieval not based on user agent (Digital Credentials API)**
+
 - Shall be according to ISO/IEC 18013-5 (CBOR), OpenID4VP v1.0 specification instead of ISO/IEC 18013-7 (Annex B) where Draft 18 of OpenID4VP is used
 
 **Data retrieval based on user agent (Digital Credentials API) - Optional**
+
 - According to ISO/IEC 18013-5 (CBOR), ISO/IEC 18013-7 (Annex C – Digital credentials API retrieval)
 - According to OpenID4VP (Appendix A. OpenID4VP over the Digital Credentials API)
 
@@ -53,12 +57,14 @@ Your EUDI Wallet must support proximity presentation flow of the mDL according t
 Your EUDI Wallet implementation must include the following trust and security mechanisms:
 
 **Trust Relationships**
+
 - Authenticate mDL Issuer using the access certificate (IACA)
 - Verify authenticity of mDL attestations
 - Download mDL Issuer Access CA Trusted Lists from relevant Trusted List Providers
 - Check registration certificates or online services of Registrars
 
 **Security Mechanisms**
+
 - Implement session encryption (mandatory for proximity flows)
 - Support mDL issuer data authentication
 - Enable mdoc authentication (device binding) to prevent cloning of the mDL

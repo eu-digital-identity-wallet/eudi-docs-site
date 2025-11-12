@@ -2,6 +2,7 @@
 The mDL Reader is a mobile application that can request, receive, and verify the integrity and authenticity of an mDL for proximity presentation flows. It is controlled by an mDL Verifier, which is a person or organization.
 
 The mDL reader implements the proximity presentation flow with the EUDI Wallet. ISO/IEC 18013-5 specifies the interfaces between:
+
 - :heavy_check_mark: the mDL (wallet) and mDL reader and
 - :heavy_multiplication_x: the mDL reader and the issuing authority infrastructure. 
 

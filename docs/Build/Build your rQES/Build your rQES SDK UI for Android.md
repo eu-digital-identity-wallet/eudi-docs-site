@@ -1,9 +1,6 @@
 # Build your rQES SDK UI for Android
 
-The **EUDI RQES UI SDK** provides user interface components and integration logic for enabling **Remote Qualified Electronic Signatures (RQES)** in Android applications.  
-It is part of the **EUDI Wallet ecosystem**, allowing integrators to embed RQES flows — including
-document signing and Qualified Trust Service Provider (QTSP) communication — within their own
-applications.
+The **EUDI RQES UI SDK** provides user interface components and integration logic for enabling **Remote Qualified Electronic Signatures (RQES)** in Android applications. It is part of the **EUDI Wallet ecosystem**, allowing integrators to embed RQES flows — including document signing and Qualified Trust Service Provider (QTSP) communication — within their own applications.
 
 This document focuses on **how to integrate and use** the SDK in your Android project.
 

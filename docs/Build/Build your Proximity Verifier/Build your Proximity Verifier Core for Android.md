@@ -1,13 +1,15 @@
+# Build your Proximity Verifier Core for Android
+
 The EUDI Verifier Core Library for Android is designed to enable Android applications to act as conformant verifiers of mobile identity documents (mDocs), in alignment with the ISO 18013‑5 specification. It provides a streamlined API to orchestrate device engagement, transfer management and document status resolution, making it possible for developers to integrate proximity and remote-based verification workflows within their Android apps.
  
 This guide will walk you through the essential steps to configure and integrate the library into your development environment.
 
 
-**Prerequisites**
+## Prerequisites
 
 - Android version 8 or higher (API level 26+).
 
-**Permissions**
+## Permissions
 
 The following permissions must be declared in the AndroidManifest file and requested at runtime:
 
@@ -19,7 +21,7 @@ The following permissions must be declared in the AndroidManifest file and reque
 <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE" />
 ```
 
-**Dependencies**
+## Dependencies
 
 To utilize snapshot versions, include the Sonatype Snapshots repository in the `settings.gradle` file as follows:
 
@@ -42,13 +44,13 @@ dependencies {
 }
 ```
 
-**Setup**
+## Setup
 
-*Library Initialization*
+### Library Initialization
 
 To create an instance of `EudiVerifier`, use the `EudiVerifier.Builder` class or invoke the `EudiVerifier.invoke` method from the companion object requires providing an `EudiVerifierConfig` object that specifies the verifier’s configuration.
 
-*Document Transfer*
+### Document Transfer
 
 Currently, the library supports document transfer via:
 
@@ -57,7 +59,7 @@ Currently, the library supports document transfer via:
 
 To instantiate a `TransferManager`, use the method `EudiVerifier.createTransferManager`.
 
-*Event Handling*
+### Event Handling
 
 The transfer process operates asynchronously, emitting events that reflect the current state of the transfer. These events are encapsulated in the sealed class `TransferEvent`. To receive these events, a `TransferEvent.Listener` must be attached to the `TransferManager`, with appropriate handling implemented.
 

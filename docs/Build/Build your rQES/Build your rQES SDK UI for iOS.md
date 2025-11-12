@@ -2,11 +2,9 @@
 
 ## Overview
 
-The **EUDI RQES UI SDK for iOS** provides user interface components and integration logic for enabling **Remote Qualified Electronic Signatures (RQES)** in iOS applications.  
-It is part of the **EUDI Wallet ecosystem**, allowing integrators to embed RQES flows — including document signing and Qualified Trust Service Provider (QTSP) communication — within their own apps.
+The **EUDI RQES UI SDK for iOS** provides user interface components and integration logic for enabling **Remote Qualified Electronic Signatures (RQES)** in iOS applications. It is part of the **EUDI Wallet ecosystem**, allowing integrators to embed RQES flows — including document signing and Qualified Trust Service Provider (QTSP) communication — within their own apps.
 
-The entry point is the `EudiRQESUi` actor, which defines methods for configuring, initializing, and using the SDK.  
-Runtime and visual behavior can be customized through the `EudiRQESUiConfig` protocol.
+The entry point is the `EudiRQESUi` actor, which defines methods for configuring, initializing, and using the SDK. Runtime and visual behavior can be customized through the `EudiRQESUiConfig` protocol.
 
 ## Requirements
 

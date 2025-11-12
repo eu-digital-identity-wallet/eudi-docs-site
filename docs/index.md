@@ -22,7 +22,7 @@ EUDI Wallet open source code is available online!
 Embark on the journey by exploring more about the [EUDI Wallet Reference Implementation](https://github.com/eu-digital-identity-wallet/.github/blob/main/profile/reference-implementation.md){:target="_blank"}.
 
 ## Build
-Access comprehensive guidance on how to leverage the [EUDI Wallet Reference Implementation](https://github.com/eu-digital-identity-wallet/.github/blob/main/profile/reference-implementation.md){:target="_blank"} to build your own EUDI Wallet, Issuer, or Verifier. The reference implementation provides open-source code libraries, tools, and sample applications to help you get started quickly and efficiently.
+Access comprehensive guidance on how to leverage the [EUDI Wallet Reference Implementation](https://github.com/eu-digital-identity-wallet/.github/blob/main/profile/reference-implementation.md){:target="_blank"} to build your own EUDI Wallet, Issuer, or Verifier. The Reference Implementation provides open-source code libraries, tools, and sample applications to help you get started quickly and efficiently.
 
 [Get ready to build your solution](./Build/)
 

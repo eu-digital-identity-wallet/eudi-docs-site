@@ -183,7 +183,6 @@ nav:
           - Steps to Build: Build/Build your Issuer/Steps to Build.md
           - Configure your Issuer: Build/Build your Issuer/Configure.md
           - Add Attestations: Build/Build your Issuer/New Attestation.md
-          - Build your Trust List Service: Build/Build your Issuer/Build your Trust List Service.md
       - Build your Remote Verifier:
           - Build your Remote Verifier: Build/Build your Remote Verifier/index.md
           - Steps to Build: Build/Build your Remote Verifier/Steps to Build.md
@@ -194,13 +193,15 @@ nav:
           - Build your Proximity Verifier Core for Android: Build/Build your Proximity Verifier/Build your Proximity Verifier Core for Android.md
       - Build your rQES:
           - Build your rQES: Build/Build your rQES/index.md
-          - Build your RSSP: Build/Build your rQES/Build your RSSP.md
           - Build your rQES SDK UI for Android: Build/Build your rQES/Build your rQES SDK UI for Android.md
           - Build your rQES Core for Android: Build/Build your rQES/Build your rQES Core for Android.md
           - Build your rQES SDK UI for iOS: Build/Build your rQES/Build your rQES SDK UI for iOS.md
           - Build your rQES Kit for iOS:  Build/Build your rQES/Build your rQES Kit for iOS.md
-      - Build your Revocation Service:
-          - Build your Revocation Service: Build/Build your Revocation Service/index.md
+      - Supporting Ecosystem Services:
+          - Trust List Service: Build/Supporting Ecosystem Services/Trust List Service.md
+          - RSSP: Build/Supporting Ecosystem Services/RSSP.md
+          - Revocation Service: Build/Supporting Ecosystem Services/Revocation Service.md
+          - RP Registration Service: Build/Supporting Ecosystem Services/RP Registration Service.md
   - Test:
       - Test: Test/index.md
       - Wallet Application:

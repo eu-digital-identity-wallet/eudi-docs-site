@@ -10,7 +10,7 @@ Let’s get started with building your secure and interoperable EUDI solutions!
 | -------- | ------- |------- |
 | Wallet Provider | A Wallet Provider is responsible for developing, maintaining, and operating a secure and interoperable wallet application. EUDI Wallet Providers are Member States or organisations either mandated or recognized by Member States making the EUDI Wallet available for end users. The Wallet Provider ensures compliance with EU regulations while delivering an intuitive, user-friendly, and accessible solution for all users, including those with disabilities or varying levels of digital literacy. |[Build your Wallet](./Build your Wallet/)|
 | Issuer |   An issuer is a PID Provider or a Qualified or Non-Qualified Electronic Attestation of Attributes Provider. They are responsible for issuing the PID or the Electronic Attestation to the Wallet and providing information that can be used to enquire about the validity status of the PID or Attestation. | [Build your Issuer](./Build your Issuer/) |
-| Relying Party  | A relying party requires a verifier to accept and verify Attestations presented by wallet user. Verifiers can be used in both online and proximity use cases.|[Build your Verifier](./Build your Verifier/) |
+| Relying Party  | A relying party requires a verifier to accept and verify Attestations presented by wallet user. Verifiers can be used in both remote and proximity use cases.|[Build your Remote Verifier](./Build your Remote Verifier/) <br/> Build your Proximity Verifier](./Build your Proximity Verifier/) |
 
 ## Test your Solution
 

@@ -1,6 +1,6 @@
 # Run with Remote Services
 
-The app is configured to the type (debug/release) and variant (dev/demo) in the four xcconfig files. These are the contents of the xcconfig file and you don't need to change anything if you don't want to:
+The app is configured to the type (debug/release) and variant (dev/demo) in the four xcconfig files. These are the contents of the xcconfig file, and you don't need to change anything if you don't want to:
 
 ```
 BUILD_TYPE = RELEASE
@@ -28,22 +28,36 @@ Using this parsed information, instances such as `WalletKitConfig` and `RQESConf
 For instance, here's how `WalletKitConfig` resolves its configuration for OpenID4VCI remote services based on the build variant:
 
 ```swift
-var vciConfig: VciConfig {
+var vciConfig: [String: OpenId4VciConfiguration] {
+  let openId4VciConfigurations: [OpenId4VciConfiguration] = {
     switch configLogic.appBuildVariant {
     case .DEMO:
-        return .init(
-            issuerUrl: "https://issuer.eudiw.dev",
-            clientId: "wallet-dev",
-            redirectUri: URL(string: "eu.europa.ec.euidi://authorization")!
+      return [
+        .init(
+          credentialIssuerURL: "https://ec.issuer.eudiw.dev",
+          client: .public(id: "wallet-dev"),
+          authFlowRedirectionURI: URL(string: "eu.europa.ec.euidi://authorization")!,
+          usePAR: true,
+          useDpopIfSupported: true,
+          cacheIssuerMetadata: true
         )
     case .DEV:
-        return .init(
-            issuerUrl: "https://dev.issuer.eudiw.dev",
-            clientId: "wallet-dev",
-            redirectUri: URL(string: "eu.europa.ec.euidi://authorization")!
+      return [
+        .init(
+          credentialIssuerURL: "https://ec.dev.issuer.eudiw.dev",
+          client: .public(id: "wallet-dev"),
+          authFlowRedirectionURI: URL(string: "eu.europa.ec.euidi://authorization")!,
+          usePAR: true,
+          useDpopIfSupported: true,
+          cacheIssuerMetadata: true
         )
+      ]
     }
+  }()
+
+  // ...
 }
 ```
 
-In this example, the `vciConfig` property dynamically assigns configurations such as `issuerUrl`, `clientId`, and `redirectUri` based on the current appBuildVariant. This ensures that the appropriate settings are applied for each variant (e.g., .`DEMO` or `.DEV`).
+In this example, the `vciConfig` property dynamically assigns configurations, such as `issuerUrl`, `clientId`, `redirectUri`, `usePAR`, `useDPoP`, and `metadataCache`, based on the current `appBuildVariant`. This ensures that the appropriate settings are applied for each variant (e.g., `.DEMO` or `.DEV`).
+

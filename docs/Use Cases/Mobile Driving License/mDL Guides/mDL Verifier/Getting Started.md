@@ -24,4 +24,4 @@ This guide is structured to mirror the implementers' hub sections providing simi
 
 ## Links to essential resources
 
-To ensure seamless operation and mutual recognition across the Union, all compliant mDL verification solutions implemented using this guide SHALL support the [mDL Reader](./mDL Reader Specs.md) and [mDL Remote Verifier](./mDL Remote Verifier Specs.md)  core technical specifications.
+To ensure seamless operation and mutual recognition across the Union, all compliant mDL verification solutions implemented using this guide SHALL support the [mDL Verifier](./mDL Reader Specs.md) and [mDL Verifier](./mDL Remote Verifier Specs.md)  core technical specifications.

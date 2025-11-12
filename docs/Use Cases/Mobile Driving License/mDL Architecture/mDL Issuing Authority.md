@@ -22,15 +22,15 @@ The components required by the mDL Issuing Authority are described below. The mD
 - Authentic Sources are public or private repositories or systems, recognised or required by law, containing attributes about natural or legal persons (ARF 3.10). The Driving Licence Authentic Source component represents these repositories or systems for the mDL Use Case.
 
 ## Issuing Authority CA (IACA)
-- Issuing Authority CA is the certificate authority operated by or on behalf of an issuing authority ([ISO/IEC 18013-5] section 3.14)
-- The IACA issues the IACA root certificate, IACA link certificate, and mDL document signer certificate
-- It serves as the root of trust for all mDL verifiers to securely validate the integrity and authenticity of mDLs issued by the respective Issuing Authority (IA)
+- Issuing Authority CA is the certificate authority operated by or on behalf of an issuing authority ([ISO/IEC 18013-5] section 3.14).
+- The IACA issues the IACA root certificate, IACA link certificate, and mDL document signer certificate.
+- It serves as the root of trust for all mDL verifiers to securely validate the integrity and authenticity of mDLs issued by the respective Issuing Authority (IA).
 
 ## Revocation Lists Manager
-- The mDL Issuer Organisation uses this component to manage (create and update) the revocation status list or revocation identifier list of the mDLs
-- It creates a status list and identifier list. The Manager component supports both revocation list types (status and identifier)
+- The mDL Issuer Organisation uses this component to manage (create and update) the revocation status list or revocation identifier list of the mDLs.
+- It creates a status list and identifier list. The Manager component supports both revocation list types (status and identifier).
 - When an mDL is issued, then mDL Issuer component must register it in the status list using this component’s API. It shall register its unique identifier (e.g., a serial number, a unique hash, or an index) and position in the list and then initialize it (e.g. set to “VALID” or “0”).
-- When an mDL is revoked then the mDL Issuer shall invoke this component’s API to either add the unique identifier in the identifier list or set the status to “INVALID” or “1” in the status list
+- When an mDL is revoked then the mDL Issuer shall invoke this component’s API to either add the unique identifier in the identifier list or set the status to “INVALID” or “1” in the status list.
 
 ## Revocation Lists Publisher
 - The mDL Issuer Organisation uses this component to generate, sign, publish by making available to the public the revocation status list and/or revocation identifier list of the mDLs.

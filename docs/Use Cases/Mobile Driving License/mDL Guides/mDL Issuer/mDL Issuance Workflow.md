@@ -63,11 +63,11 @@ Revocation is an essential component of the trust model. The mDL Issuing Authori
 
 **- Revocation Mechanism Implementation** 
 
-Since mDLs are attestations valid for longer than 24 hours, the Issuer SHALL use either a  Status List or a Revocation Identifier List mechanism. You can use the provided Revocation Lists Manager component to manage (create and update) the revocation status list or revocation identifier list. Please refer to the [Libraries & SDKs](./mDL%20Issuer%20Devs%20Workflow.md#libraries--sdks) section on how to build and test the Revocation components.
+Since mDLs are attestations valid for longer than 24 hours, the Issuer SHALL use either a  Status List or a Revocation Identifier List mechanism. You can use the provided Revocation Lists Manager component to manage (create and update) the revocation status list or revocation identifier list.
 
 If you decide to implement the Status List mechanism then when an mDL is issued, the mDL Issuer component must register it in the status list using this component’s API. It shall register its unique identifier (e.g., a serial number, a unique hash, or an index) and position in the list and then initialize it (e.g. set to “VALID” or “0”). 
 
-If you decide to implement either mechanism then when an mDL is revoked the mDL Issuer shall invoke this component’s API to either add the unique identifier in the identifier list or set the status to “INVALID” or “1” in the status list
+If you decide to implement either mechanism then when an mDL is revoked the mDL Issuer shall invoke this component’s API to either add the unique identifier in the identifier list or set the status to “INVALID” or “1” in the status list.
 
 **- Embedding Revocation Information** 
 
@@ -105,4 +105,4 @@ The inclusion of your trust anchors in the Trusted List/VICAL enables Relying Pa
  
 ## Libraries & SDKs
 
-The EUDI Wallet Reference Implementation provides key reusable components to accelerate deployment. Please refer to the relevant section in the implementers' hub for detailed instructions on how to [build](https://eu-digital-identity-wallet.github.io/Build/Build%20your%20Issuer/) and [test](https://eu-digital-identity-wallet.github.io/Test/Issuer/) the mDL Issuer and Revocation List Manager and Publisher.
+The EUDI Wallet Reference Implementation provides key reusable components to accelerate deployment. Please refer to the relevant section for detailed instructions on how to [build](https://eu-digital-identity-wallet.github.io/Build/Build%20your%20Issuer/) and [test](https://eu-digital-identity-wallet.github.io/Test/Issuer/) the mDL Issuer and Revocation List Manager and Publisher.

@@ -24,4 +24,4 @@ No new requirements are imposed by the mDL use case on EUDI wallets. However, fo
 
 ## Links to essential resources
 
-To ensure seamless operation and mutual recognition across the Union, all compliant Wallet Providers implemented using this guide SHALL support the Wallet Provider specifications.
+To ensure seamless operation and mutual recognition across the Union, all compliant Wallet Providers implemented using this guide SHALL support the [Wallet Provider](https://github.com/eu-digital-identity-wallet/eudi-doc-developers-hub-site/blob/doc_update/docs/Use%20Cases/Mobile%20Driving%20License/mDL%20Guides/Wallet%20Provider/Wallet%20Provider%20Specs.md)specifications.

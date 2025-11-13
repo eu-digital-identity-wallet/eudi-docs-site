@@ -14,7 +14,10 @@ The entry point is the `EudiRQESUi` actor, which defines methods for configuring
 
 ### Swift Package Manager
 
-Open `Xcode`, go to `File -> Swift Packages -> Add Package Dependency`, and enter `https://github.com/eu-digital-identity-wallet/eudi-lib-ios-rqes-ui.git`
+Open `Xcode`, go to `File -> Swift Packages -> Add Package Dependency`, and enter 
+```
+https://github.com/eu-digital-identity-wallet/eudi-lib-ios-rqes-ui.git
+```
 
 You can also add `EudiRQESUi` as a dependency to your `Package.swift`:
 ```swift
@@ -86,7 +89,7 @@ final class RQESConfigImpl: EudiRQESUiConfig {
 Register the `authFlowRedirectionURI` in your application's plist to ensure the RQES Service can trigger your application.
 It is the application's responsibility to retrieve the `code` query parameter from the deep link and pass it to the SDK to continue the flow.
 
-```Xml
+```xml
 <array>
     <dict>
         <key>CFBundleTypeRole</key>
@@ -143,4 +146,4 @@ let controller = await UIApplication.shared.topViewController()
 ```
 
 ----
-The source code is available [here](https://github.com/eu-digital-identity-wallet/eudi-lib-ios-rqes-ui){:target="_blank"}.
+The source code is available [in the EUDI RQES UI for iOS SDK repository](https://github.com/eu-digital-identity-wallet/eudi-lib-ios-rqes-ui){:target="_blank"}.

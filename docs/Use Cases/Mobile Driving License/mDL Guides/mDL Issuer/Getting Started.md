@@ -12,7 +12,7 @@ This guide is primarily targeted at technical professionals responsible for desi
 The target audience could also expand to other stakeholders who require a deep technical understanding of the mDL solution within the EUDI Wallet ecosystem. Specifically, anyone wishing to understand how the requirements for mDL issuance align with real-world mDL use cases will find this information relevant.
 
 ## How to use this guide
-This guide is structured to mirror the implementers' hub sections providing similar navigation. The main body of this guide focuses on the lifecycle and technical implementation details relevant to the Mobile Driving Licence (mDL) Issuance, by including 
+This guide is structured to mirror the implementers' hub sections providing similar navigation. The main body of this guide focuses on the lifecycle and technical implementation details relevant to the Mobile Driving Licence (mDL) Issuance, by including:
 
 - the foundational technical and organizational steps required before beginning implementation
 - the detail implementation guide on how to issue an mDL to a Wallet Unit

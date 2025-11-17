@@ -39,7 +39,7 @@ It should be noted that ARF in section 5.6.2 states explicitly that __“Within 
 The table below provides the summary of the issuance and presentation transaction flows as specified in ARF that apply explicitly to the target mDL Use Case solution:
 
 | Operation    | 	Flow     | 	Credential Format Profiles | 	Protocol                                                                                                               | 	Optionality |
-|--------------|-----------|-----------------------------|-------------------------------------------------------------------------------------------------------------------------|--------------|
+|---|---|---|---|---|
 | Issuance     | Remote    | ISO/IEC 18013-5 (CBOR)      | OpenID4VCI, v1.0                                                                                                        | Mandatory    |
 | Presentation | Remote    | ISO/IEC 18013-5 (CBOR)      | OpenID4VP v1.0 instead of OpenID4VP Draft 18 as defined in ISO/IEC 18013-7 (Annex B: Use of OID4VP to retrieve an mdoc) | Mandatory    |
 | Presentation | Remote    | ISO/IEC 18013-5 (CBOR)      | ISO/IEC 18013-7 (Annex C: Digital credentials API retrieval)                                                            | Optional     |

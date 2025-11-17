@@ -1,6 +1,6 @@
 # Index of Use Cases/Mobile Driving License/mDL Guides/mDL Verifier
 
-- [Getting Started](/Use Cases/Mobile Driving License/mDL Guides/mDL Verifier/Getting Started/)
-- [mDL Reader Specs](/Use Cases/Mobile Driving License/mDL Guides/mDL Verifier/mDL Reader Specs/)
-- [mDL Remote Verifier Specs](/Use Cases/Mobile Driving License/mDL Guides/mDL Verifier/mDL Remote Verifier Specs/)
-- [mDL Verifier Workflow](/Use Cases/Mobile Driving License/mDL Guides/mDL Verifier/mDL Verifier Workflow/)
+- [Getting Started](./getting-started.md/)
+- [mDL Reader Specs](./mdl-reader-specs.md/)
+- [mDL Remote Verifier Specs](./mdl-remote-verifier-specs.md/)
+- [mDL Verifier Workflow](./mdl-verifier-workflow.md/)

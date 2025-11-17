@@ -1,35 +1,16 @@
 # Build your rQES Core for Android
 
-The EUDI RQES Core SDK provides the foundational service logic for enabling Remote Qualified Electronic Signatures (RQES) in Android applications, including support for Document Retrieval. This document explains how to integrate and use the Core SDK in your project.
+The EUDI RQES Core SDK provides the foundational service logic for enabling Remote Qualified Electronic Signatures (RQES) in Android applications. This document explains how to integrate and use the Core SDK in your project.
 
 ## Overview
 
-This module provides the core functionality for the EUDI Wallet related to the Remote Qualified Electronic Signature (RQES) service. 
-
-- Core functionality for the Remote Qualified Electronic Signature (RQES) service, including service authorization, credential authorization and document signing.
-- Document Retrieval functionality, enabling the retrieval of documents from a Relying Party (RP) and the dispatch of signed documents or signatures back to the RP.
-
-It is designed to ensure secure and compliant electronic signatures by interacting with authorized credentials and handling document signing process end to end.
+This module provides the core functionality for the EUDI Wallet related to the Remote Qualified Electronic Signature (RQES) service including service authorization, credential authorization and document signing.
 
 ## Requirements
 
-- Android 8 (API level 29) or higher
+Android 8 (API level 29) or higher
 
-### Dependencies
-
-To use snapshot versions add the following to your project's settings.gradle file:
-
-```kotlin
-dependencyResolutionManagement {
-    repositories {
-        // .. other repositories
-        maven {
-            url = uri("https://central.sonatype.com/repository/maven-snapshots/")
-            mavenContent { snapshotsOnly() }
-        }
-    }
-}
-```
+## Dependencies
 
 To include the library in your project, add the following dependencies to your app's build.gradle
 file.
@@ -42,8 +23,6 @@ dependencies {
 ```
 
 ## Integration guide
-
-### Document Signing Flow
 
 The following diagram illustrates the high-level steps of the RQES document signing flow, from service authorization to obtaining the final signed documents.
 
@@ -69,7 +48,7 @@ sequenceDiagram
     RQESService.CredentialAuthorized -->>- Client: SignedDocuments
 ```
 
-#### 1. Create an RQESService instance
+### 1. Create an RQESService instance
 
 ```kotlin
 val rqesService = RQESService(
@@ -100,7 +79,7 @@ You can fetch the RQES service metadata:
 val metadata = rqesService.getRSSPMetadata().getOrThrow()
 ``` 
 
-#### 2. Authorize the RQES service
+### 2. Authorize the RQES service
 
 First, obtain the service authorization URL and open it in a browser:
 
@@ -117,7 +96,7 @@ When the redirect happens, extract the authorization code and authorize the serv
 val authorizationCode = AuthorizationCode("code")
 val authorizedService = rqesService.authorizeService(authorizationCode).getOrThrow()
 ```
-#### 3. Select a credential and prepare documents
+### 3. Select a credential and prepare documents
    
 List available credentials:
 
@@ -142,7 +121,7 @@ val unsignedDocuments = UnsignedDocuments(
     )
 )
 ```
-#### 4. Authorize the credential and sign
+### 4. Authorize the credential and sign
 
 Obtain the credential authorizationURL to open a browser and let the user authorize the credential
 
@@ -176,109 +155,9 @@ signedDocuments.forEach { (label, file) ->
 }
 ```
 
-**Shortcut: sign directly from authorizedService**
-
 You can also sign without explicitly calling authorizeCredential:
 ```kotlin
 val signedDocumentsAlt = authorizedService.signDocuments(credentialAuthorizationCode).getOrThrow()
 ```
-
-### Document Retrieval
-
-This library is also implements a Document Retrieval functionality, that allows to 
-- retrieve the documents to be signed from a Relying Party (RP)
-- return signed documents or signatures.
-
-The interactions with the RP are handled via DocumentRetrievalService, which is separate from the RQES service.
-
-#### 1. Configure X509 trust
-
-The library provides a default X509CertificateTrust implementation that:
-- validates the certificate chain
-- checks the trust anchor against a list of trusted certificates
-
-```kotlin 
-val x509CertificateTrust = X509CertificateTrust(
-    trustedCertificates = listOf(
-        // Add the trusted certificates
-    ),
-    // Optional logging
-    logException = { th: Throwable -> th.printStackTrace() }
-)
-// Alternatively, provide your own X509CertificateTrust implementation.
-```
-#### 2. Instantiate DocumentRetrievalService
-
-```kotlin 
-val documentRetrievalService = DocumentRetrievalService(
-    downloadTempDir = File(context.cacheDir, "downloads"),
-    config = DocumentRetrievalConfig(
-        jarConfiguration = JarConfiguration.Default,
-        supportedClientIdSchemes = listOf(
-            SupportedClientIdScheme.X509SanUri(x509CertificateTrust),
-            SupportedClientIdScheme.X509SanDns(x509CertificateTrust),
-        ),
-    )
-)
-```
-
-#### 3. Resolve documents
-
-Given a request URI:
-
-```kotlin 
-val requestUri = Uri.parse("mdoc-openid4vp://...?request_uri=...&client_id=...")
-val resolutionOutcome = documentRetrievalService.resolveDocument(requestUri).getOrThrow()
-
-val resolvedDocuments = resolutionOutcome.resolvedDocuments
-
-val unsignedDocuments = resolvedDocuments.toUnsignedDocuments(
-    signingConfig = UnsignedDocument.Config.DEFAULT
-)
-```
-
-Then follow the same signing steps as in the RQES flow. Once you have signedDocuments, dispatch them back to the RP:
-
-```kotlin 
-val dispatchOutcome = resolutionOutcome.dispatch(signedDocuments)
-when (dispatchOutcome) {
-    is DispatchOutcome.Accepted -> {
-        val redirectUri = dispatchOutcome.redirectURI
-        // redirect the user to the redirectUri
-    }
-
-    DispatchOutcome.Rejected -> {
-        // handle the rejection
-    }
-}
-```
-
-#### Notes
-
-- `SignedDocuments` implements the `Map` interface, with document labels as keys and corresponding signed document `File` objects as values. This allows for easy access to the signed files using their labels.
-
-   Example:
-
-  ```kotlin
-  signedDocuments.forEach { (label, file) ->
-      // Use the signed file
-      val fileContent = file.readBytes()
-  }
-  ```
-- If you want to use the `X509CertificateTrust` implementation provided by the library with
-  BouncyCastle you must add the following dependencies to your project's build.gradle file:
-    ```kotlin
-    dependencies {
-        // BouncyCastle
-        implementation("org.bouncycastle:bcprov-jdk15on:1.78.1")
-        implementation("org.bouncycastle:bcpkix-jdk15on:1.78.1")
-    }
-    ```
-    
-    Also, you need to add the BouncyCastle provider to the Security providers list:
-    
-    ```kotlin
-    Security.addProvider(BouncyCastleProvider())
-    ```
-
+## Source code
 The source code is available [here](https://github.com/eu-digital-identity-wallet/eudi-lib-android-rqes-core/).

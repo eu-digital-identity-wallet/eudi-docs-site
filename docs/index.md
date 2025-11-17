@@ -1,8 +1,3 @@
----
-hide:
-  - navigation
----
-
 # Welcome to the EUDI Wallet Dev Hub!
 
 EU Digital Identity Wallets will enable users to access online services, store and share digital documents, and create binding signatures.

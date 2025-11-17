@@ -11,7 +11,7 @@ The following are considered necessary capabilities of the Revocation Lists comp
 | Search mDL                                                                     | Excluded / not supported | The system does not store mDL claims (data elements) and therefore cannot support the search and view mDL status operations. This is responsibility of the Authentic Source. |
 | View mDL Status                                                                | Excluded / not supported | As above |
 | Audit Logging                                                                  | Mandatory | The system shall keep logging of all status changes, API requester and when initiated them. |
-| :open_file_folder: **Revocation List Generation/Publication**                  |
+| :open_file_folder: **Revocation List Generation/Publication**                  | | |
 | Generate revocation list                                                       | Mandatory | Periodically or upon changes, the system aggregates the status of all issued mDLs into the status list format (e.g., a bitstring) or identifier list. |
 | Encode MSO revocation list as status list                                      | Mandatory | According to ISO 18013-5 2<sup>nd</sup> version section 9.1.2.6: “Two mechanisms can be used to encode the revocation information: as an identifier list or as a status list” |
 | Encode MSO revocation list as identifier list                                  | Mandatory | As above |

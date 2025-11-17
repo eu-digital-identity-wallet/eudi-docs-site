@@ -88,11 +88,11 @@ val authorizationUrl = rqesService.getServiceAuthorizationUrl().getOrThrow()
 
 // Open the authorizationUrl in a browser
 // After the user has authorized the service, the browser will be redirected to the authFlowRedirectionURI that
-is configured in the `CSCClientConfig`
+// is configured in the `CSCClientConfig`
 // with a query parameter named "code" containing the authorization code
-
+```
 When the redirect happens, extract the authorization code and authorize the service:
-
+```kotlin
 val authorizationCode = AuthorizationCode("code")
 val authorizedService = rqesService.authorizeService(authorizationCode).getOrThrow()
 ```

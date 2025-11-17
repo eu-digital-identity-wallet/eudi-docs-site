@@ -73,9 +73,9 @@ Ensure that the issued mDL includes revocation information (a URL pointing to th
 
 - **The mDL Issuer SHALL revoke an mDL when**
 
-- [ ] The security of the mDL or the mDL Issuing Authority infrastructure has been compromised.
-- [ ] The value of one or more attributes in the mDL changes (triggering re-issuance and revocation of the old mDL).
-- [ ] Upon explicit request from the mDL subject (recommended action).
+ - The security of the mDL or the mDL Issuing Authority infrastructure has been compromised.
+ - The value of one or more attributes in the mDL changes (triggering re-issuance and revocation of the old mDL).
+ - Upon explicit request from the mDL subject (recommended action).
  
 - **Revocation Publication**
 

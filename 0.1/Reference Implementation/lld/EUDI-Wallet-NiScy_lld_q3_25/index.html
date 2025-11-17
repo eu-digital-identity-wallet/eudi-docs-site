@@ -1,0 +1,4531 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://eu-digital-identity-wallet.github.io/0.1/Reference%20Implementation/lld/EUDI-Wallet-NiScy_lld_q3_25/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
+    
+    
+      
+        <title>Low-Level design of the EUDI Wallet Reference Implementation - European Digital Identity</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="../../../assets/external/fonts.googleapis.com/css.49ea35f2.css">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="Low-Level design of the EUDI Wallet Reference Implementation - European Digital Identity" >
+      
+        <meta  property="og:description"  content="None" >
+      
+        <meta  property="og:image"  content="https://eu-digital-identity-wallet.github.io/0.1/assets/images/social/Reference Implementation/lld/EUDI-Wallet-NiScy_lld_q3_25.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://eu-digital-identity-wallet.github.io/0.1/Reference%20Implementation/lld/EUDI-Wallet-NiScy_lld_q3_25/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="Low-Level design of the EUDI Wallet Reference Implementation - European Digital Identity" >
+      
+        <meta  name="twitter:description"  content="None" >
+      
+        <meta  name="twitter:image"  content="https://eu-digital-identity-wallet.github.io/0.1/assets/images/social/Reference Implementation/lld/EUDI-Wallet-NiScy_lld_q3_25.png" >
+      
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#low-level-design-of-the-eudi-wallet-reference-implementation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="European Digital Identity" class="md-header__button md-logo" aria-label="European Digital Identity" data-md-component="logo">
+      
+  <img src="../../../assets/logo_eudi_white.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            European Digital Identity
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Low-Level design of the EUDI Wallet Reference Implementation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-developers-hub-site" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    eu-digital-identity-wallet/eudi-doc-developers-hub-site
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://eudi.dev/latest/" class="md-tabs__link">
+        
+  
+    
+  
+  European Digital Identity Wallet
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://eudi.dev/latest/architecture-and-reference-framework-main/" class="md-tabs__link">
+        
+  
+    
+  
+  Architecture and reference framework
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://eudi.dev/latest/discussion-topics/" class="md-tabs__link">
+        
+  
+    
+  
+  Discussion topics
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://eudi.dev/latest/technical-specifications/" class="md-tabs__link">
+        
+  
+    
+  
+  Technical specifications
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+  Reference Implementation
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="European Digital Identity" class="md-nav__button md-logo" aria-label="European Digital Identity" data-md-component="logo">
+      
+  <img src="../../../assets/logo_eudi_white.svg" alt="logo">
+
+    </a>
+    European Digital Identity
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-developers-hub-site" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    eu-digital-identity-wallet/eudi-doc-developers-hub-site
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://eudi.dev/latest/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    European Digital Identity Wallet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://eudi.dev/latest/architecture-and-reference-framework-main/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Architecture and reference framework
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://eudi.dev/latest/discussion-topics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Discussion topics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://eudi.dev/latest/technical-specifications/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Technical specifications
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Reference Implementation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Reference Implementation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Build
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Build
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Build/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_2" id="__nav_5_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Build your Wallet
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Build your Wallet
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Build/Build%20your%20Wallet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Build your Wallet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_2_2" id="__nav_5_2_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Android
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_5_2_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Android
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_2_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_2_2_1" id="__nav_5_2_2_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Wallet Application Level
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_5_2_2_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_2_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Wallet Application Level
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Build/Build%20your%20Wallet/Android/Wallet%20Application%20Level/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Build the App
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Build/Build%20your%20Wallet/Android/Wallet%20Application%20Level/Running%20with%20Remote%20Services/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Run with Remote Services
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Build/Build%20your%20Wallet/Android/Wallet%20Application%20Level/Running%20with%20Local%20Services/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Run with Local Services
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Build/Build%20your%20Wallet/Android/Wallet%20Application%20Level/Self-signed%20Certificates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Self-signed Certificates
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_2_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_2_2_2" id="__nav_5_2_2_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Library Level
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_5_2_2_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_2_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Library Level
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Build/Build%20your%20Wallet/Android/Library%20Level/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Library Level
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Build/Build%20your%20Wallet/Android/Library%20Level/Build%20the%20Core/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Build the Core
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Build/Build%20your%20Wallet/Android/Library%20Level/Manage%20Documents/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Manage Documents
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_2_3" id="__nav_5_2_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    iOS
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_5_2_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            iOS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_2_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_2_3_1" id="__nav_5_2_2_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Wallet Application Level
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_5_2_2_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_2_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Wallet Application Level
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Build/Build%20your%20Wallet/iOS/Wallet%20Application%20Level/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Build the App
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Build/Build%20your%20Wallet/iOS/Wallet%20Application%20Level/Running%20with%20Remote%20Services/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Run with Remote Services
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Build/Build%20your%20Wallet/iOS/Wallet%20Application%20Level/Running%20with%20Local%20Services/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Run with Local Services
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Build/Build%20your%20Wallet/iOS/Wallet%20Application%20Level/Self-signed%20Certificates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Self-signed Certificates
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_2_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_2_3_2" id="__nav_5_2_2_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Library Level
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_5_2_2_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_2_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Library Level
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Build/Build%20your%20Wallet/iOS/Library%20Level/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Library Level
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Build/Build%20your%20Wallet/iOS/Library%20Level/Build%20the%20Kit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Build the Kit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Build/Build%20your%20Wallet/iOS/Library%20Level/Manage%20Documents/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Manage Documents
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_3" id="__nav_5_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Build your Issuer
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Build your Issuer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Build/Build%20your%20Issuer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Build/Build%20your%20Issuer/Steps%20to%20Build/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Steps to Build
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Build/Build%20your%20Issuer/Configure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configure your Issuer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Build/Build%20your%20Issuer/New%20Attestation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add Attestations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_4" id="__nav_5_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Build your Remote Verifier
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Build your Remote Verifier
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Build/Build%20your%20Remote%20Verifier/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Build/Build%20your%20Remote%20Verifier/Steps%20to%20Build/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Steps to Build
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Build/Build%20your%20Remote%20Verifier/Configure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configure your Verifier
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_5" id="__nav_5_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Build your Proximity Verifier
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Build your Proximity Verifier
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Build/Build%20your%20Proximity%20Verifier/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Build/Build%20your%20Proximity%20Verifier/Build%20your%20Proximity%20Verifier%20App%20for%20Android/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Build your Proximity Verifier App for Android
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Build/Build%20your%20Proximity%20Verifier/Build%20your%20Proximity%20Verifier%20Core%20for%20Android/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Build your Proximity Verifier Core for Android
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_6" id="__nav_5_2_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Build your rQES
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Build your rQES
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Build/Build%20your%20rQES/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Build/Build%20your%20rQES/Build%20your%20rQES%20SDK%20UI%20for%20Android/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Build your rQES SDK UI for Android
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Build/Build%20your%20rQES/Build%20your%20rQES%20Core%20for%20Android/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Build your rQES Core for Android
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Build/Build%20your%20rQES/Build%20your%20rQES%20SDK%20UI%20for%20iOS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Build your rQES SDK UI for iOS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Build/Build%20your%20rQES/Build%20your%20rQES%20Kit%20for%20iOS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Build your rQES Kit for iOS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2_7" id="__nav_5_2_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Supporting Ecosystem Services
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            Supporting Ecosystem Services
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Build/Supporting%20Ecosystem%20Services/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Build/Supporting%20Ecosystem%20Services/Trust%20List%20Service/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Trust List Service
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Build/Supporting%20Ecosystem%20Services/RSSP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RSSP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Build/Supporting%20Ecosystem%20Services/Revocation%20Service/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Revocation Service
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Build/Supporting%20Ecosystem%20Services/RP%20Registration%20Service/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RP Registration Service
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Test
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Test
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Test/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3_2" id="__nav_5_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Wallet Application
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Wallet Application
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Test/Wallet%20Application/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wallet Application
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Test/Wallet%20Application/Android/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Android
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Test/Wallet%20Application/iOS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    iOS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Test/Issuer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Issuer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Test/Online%20Verifier/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Online Verifier
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Test/Proximity%20Verifier/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Proximity Verifier
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Use Cases
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            Use Cases
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4_1" id="__nav_5_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Mobile Driving License
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Mobile Driving License
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Use Cases/Mobile Driving License/index.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4_1_2" id="__nav_5_4_1_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    mDL Overview
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_5_4_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            mDL Overview
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Use Cases/Mobile Driving License/mDL Overview/index.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    mDL Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Use Cases/Mobile Driving License/mDL Overview/Legal Basis.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Legal Basis
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Use Cases/Mobile Driving License/mDL Overview/Standards and Protocols.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Standards and Protocols
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4_1_3" id="__nav_5_4_1_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    mDL Architecture
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_5_4_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            mDL Architecture
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Use Cases/Mobile Driving License/mDL Architecture/index.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    mDL Architecture
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Use Cases/Mobile Driving License/mDL Architecture/EUDI Wallet.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    EUDI Wallet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Use Cases/Mobile Driving License/mDL Architecture/Proximity Verifier.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Proximity Verifier
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Use Cases/Mobile Driving License/mDL Architecture/Remote Verifier Web.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Remote Verifier Web
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Use Cases/Mobile Driving License/mDL Architecture/mDL Issuing Authority.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    mDL Issuing Authority
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4_1_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4_1_4" id="__nav_5_4_1_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    mDL Guides
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_5_4_1_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            mDL Guides
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4_1_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4_1_4_1" id="__nav_5_4_1_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Wallet Provider
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_5_4_1_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4_1_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Wallet Provider
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Use Cases/Mobile Driving License/mDL Guides/Wallet Provider/Getting Started.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Use Cases/Mobile Driving License/mDL Guides/Wallet Provider/Wallet Developers Workflow.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wallet Developers Workflow
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Use Cases/Mobile Driving License/mDL Guides/Wallet Provider/Wallet Provider Specs.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wallet Provider Specs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4_1_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4_1_4_2" id="__nav_5_4_1_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    mDL Issuer
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_5_4_1_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4_1_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            mDL Issuer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Use Cases/Mobile Driving License/mDL Guides/mDL Issuer/Getting Started.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Use Cases/Mobile Driving License/mDL Guides/mDL Issuer/mDL Issuance Workflow.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    mDL Issuance Workflow
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Use Cases/Mobile Driving License/mDL Guides/mDL Issuer/mDL Issuer Specs.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    mDL Issuer Specs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Use Cases/Mobile Driving License/mDL Guides/mDL Issuer/mDL Revocation Specs.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    mDL Revocation Specs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4_1_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4_1_4_3" id="__nav_5_4_1_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    mDL Verifier
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_5_4_1_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4_1_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            mDL Verifier
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Use Cases/Mobile Driving License/mDL Guides/mDL Verifier/Getting Started.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Use Cases/Mobile Driving License/mDL Guides/mDL Verifier/mDL Verifier Workflow.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    mDL Verifier Workflow
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Use Cases/Mobile Driving License/mDL Guides/mDL Verifier/mDL Reader Specs.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    mDL Reader Specs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Use Cases/Mobile Driving License/mDL Guides/mDL Verifier/mDL Remote Verifier Specs.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    mDL Remote Verifier Specs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="low-level-design-of-the-eudi-wallet-reference-implementation">Low-Level design of the EUDI Wallet Reference Implementation</h1>
+<h2 id="purpose-of-this-document">Purpose of this document</h2>
+<p>The purpose of the Comprehensive Low-Level Design document is to detail
+the implementation of the high-level design. This document provides a
+thorough description of individual software components, such as classes,
+modules, functions, and methods, including their roles,
+responsibilities, and interactions. It covers the logical architecture,
+data structures, data processing procedures, and error handling
+mechanisms. Additionally, the document includes API specifications,
+integration details, and information on software configuration settings
+and deployment requirements, supplemented by deployment diagrams
+illustrating the software's deployment architecture.</p>
+<h2 id="glossary-acronyms-and-reference-documents">Glossary, Acronyms and Reference Documents</h2>
+<p>This section provides a comprehensive list of the technical terms,
+abbreviations, or acronyms used throughout this document, along with
+their definitions or explanations.</p>
+<h3 id="abbreviations-and-acronyms">Abbreviations and acronyms</h3>
+<table>
+<thead>
+<tr>
+<th><strong>ACRONYM</strong></th>
+<th><strong>DEFINITION</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ARF</td>
+<td>Architecture and Reference Framework document [R01]</td>
+</tr>
+<tr>
+<td>EAA</td>
+<td>Electronic Attestation of Attributes</td>
+</tr>
+<tr>
+<td>EUDI</td>
+<td>European Union Digital Identity</td>
+</tr>
+<tr>
+<td>EUDIW</td>
+<td>EUDI Wallet</td>
+</tr>
+<tr>
+<td>MS</td>
+<td>Member State</td>
+</tr>
+<tr>
+<td>PID</td>
+<td>Person Identification Data</td>
+</tr>
+<tr>
+<td>QEAA</td>
+<td>Qualified Electronic Attestation of Attributes</td>
+</tr>
+<tr>
+<td>VC</td>
+<td>Verifiable Credentials</td>
+</tr>
+<tr>
+<td>W3C</td>
+<td>World Wide Web Consortium</td>
+</tr>
+</tbody>
+</table>
+<p>[]{#_Toc212641577 .anchor}Table 1: List of Abbreviations and Acronyms</p>
+<h2 id="definitions">Definitions</h2>
+<p>The following definitions are listed to provide clarity on important
+terms used throughout the document. It shall be noted that the listed
+definitions are in alignment with the terminology used in [R01] EUDI
+Architecture and Reference Framework.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Term</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PID</td>
+<td>A set of data, issued in accordance with Union or national law, enabling the identity of a natural or legal person, or of a natural person representing a natural or legal person, to be established. - eIDAS 2.0.</td>
+</tr>
+<tr>
+<td>PID Provider</td>
+<td>A Member State or legal entity providing Person Identification Data to Users. [R01]</td>
+</tr>
+<tr>
+<td>Issuer</td>
+<td>A Person Identification Data Provider issuing PID or a (Qualified) Trust Service Provider issuing (Q)EAA. In the case of the EUDI Wallet there may be multiple Issuers for PID and (Q)EAA. [R01]</td>
+</tr>
+<tr>
+<td>Attestation</td>
+<td>A set of one or more claims made by an issuer. [VC11]</td>
+</tr>
+<tr>
+<td>Verifiable Credential</td>
+<td>A verifiable credential is a tamper-evident credential that has authorship that can be cryptographically verified. Verifiable attestations can be used to build verifiable presentations, which can also be cryptographically verified. [VC11]</td>
+</tr>
+<tr>
+<td>Presentation</td>
+<td>Data derived from one or more verifiable attestations, issued by one or more issuers, that is shared with a specific verifier. [VC11]</td>
+</tr>
+<tr>
+<td>Verifiable Presentation</td>
+<td>Tamper-evident presentation encoded in such a way that authorship of the data can be trusted after a process of cryptographic verification. Certain types of verifiable presentations might contain data that is synthesized from, but do not contain, the original verifiable attestations (for example, zero-knowledge proofs). [VC11]</td>
+</tr>
+</tbody>
+</table>
+<p>[]{#_Toc212641578 .anchor}Table 2: Definitions</p>
+<h2 id="reference-and-applicable-documents">Reference and Applicable Documents</h2>
+<table>
+<thead>
+<tr>
+<th><strong>ID</strong></th>
+<th><strong>Document</strong></th>
+<th><strong>Version</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R01</td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework.git">EUDI Architecture and Reference Framework</a></td>
+<td>2.6.0</td>
+</tr>
+<tr>
+<td>VC11</td>
+<td><a href="https://www.w3.org/TR/vc-data-model/">Verifiable Credentials Data Model</a></td>
+<td>2.0</td>
+</tr>
+<tr>
+<td>HLD</td>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-reference-implementation-architecture/blob/main/eudi-wallet-hld.md">EUDIW High Level Design Document</a></td>
+<td>2.0</td>
+</tr>
+<tr>
+<td>DIF_PEX</td>
+<td><a href="https://identity.foundation/presentation-exchange/spec/v2.0.0/">DIF Presentation Exchange Specification</a></td>
+<td>2.0.0</td>
+</tr>
+</tbody>
+</table>
+<p>[]{#_Toc212641579 .anchor}Table 3: Reference Documents</p>
+<h2 id="introduction">Introduction</h2>
+<p>This document provides a detailed design and plan on how the EUDI Wallet
+will be built, and how it will ensure that the final product meets the
+intended design specifications.</p>
+<p>The context for this document has been set by the <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework/blob/main/README.md">Architecture and
+Reference Framework document
+(ARF)</a>
+and the high-level design view by the <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-reference-implementation-architecture/blob/main/eudi-wallet-hld.md">[EUDI Wallet HLD
+document](https://github.com/eu-digital-identity-wallet/eudi-doc-reference-implementation-architecture/blob/main/eudi-wallet-hld.md)</a>.</p>
+<p>The target audience of this document is the community of the EUDI Wallet
+developers, including the developers of the EUDI Wallet reference
+implementation. This document, along with the reference implementation,
+will be part of the deliverables to be shared with the Member States
+(MS) for supporting the development of their own solutions.</p>
+<p>The EUDI Wallet Reference Implementation is built based on the
+Architecture Reference Framework and aims at showcasing a robust and
+interoperable platform for digital identification, authentication and
+electronic signatures based on common standards across the European
+Union.</p>
+<p>This section:</p>
+<ul>
+<li>Translates the high-level architecture and requirements into a
+  detailed and comprehensive design of individual software components,
+  modules, and functions. It focuses on the technical aspects of the
+  software design and provides a blueprint of how the software system
+  will be implemented.</li>
+<li>Defines the detailed specifications of the individual software
+  components, including data structures, algorithms, the interfaces
+  between components, their dependencies, and the error handling and
+  exception handling procedures.</li>
+<li>Considers the constraints and requirements of the software system,
+  such as performance, scalability, and maintainability. It also
+  considers factors such as security, reliability, and robustness.</li>
+</ul>
+<p>The use cases in the scope for this document are those defined by the
+ARF and its annexes.</p>
+<h2 id="reusable-building-blocks">Reusable Building Blocks</h2>
+<p>This section presents a set of building blocks and patterns used or to
+be used by the LLD of the EUDI Wallet components implementing the
+relevant VC protocols. The current set includes building blocks and
+patterns classified under the following categories.</p>
+<h2 id="enablers-and-facilitators">Enablers and Facilitators</h2>
+<p>This section lists the enabling technologies, standards and patterns
+that collectively constitute a reusable toolbox for specifying,
+understanding and implementing the protocols in the VC domain.</p>
+<p>End-user focused technologies, creative ideas and standards:</p>
+<ol>
+<li>The internet and the capabilities of the browser (e.g. universality,
+    security, redirection, exchanges by value or by reference, post for
+    secrecy, deep links for launching native apps, etc.) as well as the
+    browser usage for security reasons by Native Apps as described by
+    RFC-8252.</li>
+<li>Cryptography, verifiable claims/credentials, Selective Disclosure,
+    Zero Knowledge Proofs, Derived Claims.</li>
+<li>Mobile, other portable devices, micro-devices (IoT).</li>
+<li>Flexible transport layers/protocols (NFC, BLE, WiFi, QR Code, etc.)</li>
+<li>Focused standards (IETF, OpenID and W3C specs, JWT, LD-JWT, VC-JWT,
+    CBOR, etc.).</li>
+<li>Business Drivers for Digitizing Physical Credentials (e.g. security
+    and privacy by default and huge costs savings for society).</li>
+<li>Trusted Execution Environments (TEE) for assuring data
+    confidentiality during processing.</li>
+</ol>
+<p>The outstanding enabler for establishing a real trusted operational
+environment for the VC domain is the Trusted Execution Environment
+(TEE). The role and the need for the TEE enabler is clearly understood
+by the community and a lot of work is focused on this direction. This is
+the core element for enabling a real trusted operational environment.
+Once TEEs become broadly available on mobiles, the cloud and portables,
+the impact on the community is expected to be comparable to that of
+cryptography. TEEs will assure the confidentiality of the data during
+processing (currently data can remain confidential at rest using
+encryption and at transit using TLS but not during processing).</p>
+<h3 id="message-exchange-patterns-in-the-context-of-vc-protocols">Message Exchange Patterns in the Context of VC Protocols</h3>
+<p>The specifications and the implementations of the VC and identity
+related protocols are based on message exchanges. The available message
+exchange patterns include:</p>
+<ul>
+<li>Message exchanges over HTTP (request/response/redirect) on top of
+  various physical and transport layers (TCP/IP, NFC, BLE). Redirects
+  can indirectly deliver a received message from one party to the next
+  (a party responding to a request can redirect to any next), a
+  capability that is critical for the implementation of some VC
+  protocols or use-cases.</li>
+<li>An HTTP response may contain a message, or a URI in which case a
+  second call is required to retrieve the message (indirect message
+  exchange, that is, by reference, not by value).</li>
+<li>QR Codes provides a simple and powerful mechanism for exchanging
+  messages between parties and between networks for proximity flows.</li>
+</ul>
+<p>The messages exchanged in the VC domain are typically structured as
+JSON, include attestations/claims along with their metadata, and are
+signed and encrypted constructing an opaque token. The data elements
+included in the exchanges (mandatory and optional) are defined by the
+relevant case specifications (e.g., PID, mDL, Diploma).</p>
+<p>All the messages exchanged in the VC domain are typically encoded,
+signed and encrypted by the sender and verified by the receiver.
+Typically, both the sender and the receiver need access to trusted
+registries for verifying signatures.</p>
+<h3 id="vc-relevant-protocols-and-specifications">VC Relevant Protocols and Specifications</h3>
+<p>VC Relevant Protocols and Specifications in the scope of this release:</p>
+<ul>
+<li><a href="https://datatracker.ietf.org/doc/draft-ietf-oauth-v2-1/">OAuth2</a></li>
+<li><a href="https://openid.net/specs/openid-4-verifiable-presentations-1_0.html">OpenID4VP</a></li>
+<li><a href="https://identity.foundation/presentation-exchange/spec/v2.0.0/">DIF Presentation Exchange
+  v2</a></li>
+<li><a href="https://datatracker.ietf.org/doc/draft-ietf-oauth-selective-disclosure-jwt/">SD-JWT</a></li>
+<li><a href="https://datatracker.ietf.org/doc/draft-ietf-oauth-sd-jwt-vc/">SD-JWT-VC</a></li>
+<li><a href="https://datatracker.ietf.org/doc/rfc9101/">JAR</a></li>
+<li><a href="https://openid.net/specs/openid-financial-api-jarm.html">JARM</a></li>
+<li><a href="https://www.iso.org/standard/69084.html">ISO-18013-5</a></li>
+<li><a href="https://www.iso.org/standard/86785.html">[ISO-23220-4](https://www.iso.org/standard/86785.html)</a></li>
+</ul>
+<h3 id="vc-relevant-data-models-specifications">VC Relevant Data Models Specifications</h3>
+<p>VC Relevant Data Models in the scope of this release:</p>
+<ul>
+<li><a href="https://www.iso.org/standard/69084.html">ISO-18013-5-DM</a></li>
+<li><a href="https://www.w3.org/TR/vc-data-model-2.0/">W3C-VC-DM</a></li>
+</ul>
+<h3 id="security-best-practices">Security Best Practices</h3>
+<p>Beyond the trust framework that must be in place for the VC domain,
+additional measures are required. For this domain, most of the security
+related concerns/measures should be based-on and refer-to the relevant
+<a href="https://www.ietf.org/">IETF</a> standards.</p>
+<p>Examples of relevant IETF standards are:</p>
+<ul>
+<li><a href="https://datatracker.ietf.org/doc/html/rfc6819">RFC-6819</a>: OAuth 2.0
+  Threat Model and Security Considerations, January 2013</li>
+<li><a href="https://www.rfc-editor.org/rfc/rfc7636">RFC-7636</a>: Proof Key for Code
+  Exchange by OAuth Public Clients, September 2015</li>
+<li><a href="https://www.rfc-editor.org/rfc/rfc7800.html">RFC-7800</a>:
+  Proof-of-Possession Key Semantics for JSON Web Tokens (JWTs), April
+  2016</li>
+<li><a href="https://datatracker.ietf.org/doc/draft-ietf-oauth-security-topics/">draft-ietf-oauth-security-topics</a>:
+  OAuth 2.0 Security Best Current Practice.</li>
+</ul>
+<p>These IETF standards constitute the baseline on the Security Best
+Practices since they reflect the status of the internet and hence are
+based on universal knowledge and experience in this domain. Of course,
+some security related concerns may additionally require actions from
+governments and other organizations.</p>
+<p><a href="https://www.rfc-editor.org/rfc/rfc9396.html">RFC 9396</a>, "OAuth 2.0 Rich
+Authorization Requests_, Published May 2023" introduces standardized
+transactions with banks, health centers, etc. using a new authorization
+details object (in addition to the access and ID tokens). This will lead
+far beyond the authentication/authorization (which will still be needed
+of course). The security of such transactions must follow the same
+approach.</p>
+<h3 id="proposed-design-approach-of-eudi-wallet-app-components">Proposed design approach of EUDI Wallet App Components</h3>
+<p>The proposed architectural style/pattern for new App Components (not
+libraries) is the one described by the <em>Hexagonal Architecture</em>, known
+also as the <a href="https://alistair.cockburn.us/hexagonal-architecture/"><em>Ports and Adapters
+Pattern</em></a>.</p>
+<p>At high level this architecture defines again layers, like the
+traditional architecture (persistence/domain/presentation), but the
+layers do not sit one over the other, but one wraps and protects the
+other:</p>
+<ul>
+<li><strong>environment</strong>: initiates some process for a purpose or provides some
+  external functionality (e.g. persistence) to the application.</li>
+<li><strong>adapters</strong>: implement a way to exchange data with the application
+  via its ports/interfaces (typically by implementing the exposed
+  ports/interfaces). Adapters that provide input/stimulus are called
+  <strong>driving adapters</strong> whereas those triggered by the application are
+  called <strong>driven adapters</strong> (e.g. for persistence)</li>
+<li><strong>ports</strong>: the incoming/outgoing or driving/driven <strong>interfaces</strong> of
+  the application.</li>
+<li><strong>business domain</strong>: data models, business rules, services and
+  processes (i.e. use cases) in a particular business context
+  (e.g. verifiable credentials). Data exchanges happen only via ports.</li>
+</ul>
+<p>The purpose/emphasis of this architectural style is to make the
+application's business domain more stable, more easily testable and
+long-lived. The interactions with the business domain occur only via
+clearly defined ports/interfaces (actually a universal principle).</p>
+<p>For the proposed design approach for Lib Components see section 4.8
+Proposed design approach of EUDI Lib Components.</p>
+<h3 id="proposed-implementation-approach-of-eudi-wallet-app-components">Proposed implementation approach of EUDI Wallet App Components</h3>
+<p>As an example, the App Component
+<a href="https://github.com/eu-digital-identity-wallet/eudi-srv-web-verifier-endpoint-23220-4-kt">https://github.com/eu-digital-identity-wallet/eudi-srv-web-verifier-endpoint-23220-4-kt</a>
+uses Spring Boot with WebFlux which simplifies building reactive Restful
+web services.</p>
+<p>The implementation of the referenced application shows the above
+simplification statement and therefore, the same approach is proposed
+for the implementation of all new App Components that need reactive
+Restful web services (practically all for the VC domain).</p>
+<p>For low-end devices (e.g. for IoT) the above approach could be used for
+building a prototype for the App Component. The actual App Component
+could keep only the essential parts or use the <a href="https://vertx.io/">Vert-x
+library</a> or be re-implemented under the guidance of
+the prototype.</p>
+<h3 id="proposed-design-approach-of-eudi-lib-components">Proposed design approach of EUDI Lib Components</h3>
+<p>The hexagonal architectural style described by the previous two sections
+for App Components makes little sense for library components. Libraries
+provide functions implementing simple or complex algorithms.</p>
+<p>The App Components implement use cases and hence also any flow
+activities and processes. Thanks to the asynchronous reactive
+frameworks/libs described by the previous sections, the implementation
+of flows/processes has been simplified.</p>
+<p>The libraries are responsible for implementing the functions used by the
+App Components. Libraries, or library partitions/packages, are typically
+structured within two layers:</p>
+<ul>
+<li>A Library API layer describing the function definitions and the data
+  model used by these function definitions;</li>
+<li>An internal implementation layer that implements the algorithms and
+  any additional data elements used by the internal function
+  definitions.</li>
+</ul>
+<p>The algorithms to be implemented by the libraries in the VC domain
+are/must-have-been specified by approved standards/specifications. These
+standards/specifications include the difficult part of the design. Any
+remaining design activities depend on the type of algorithm to be
+implemented. Identifying and factoring out into a shared library
+reusable patterns and approaches is one. Approaches for improving
+performance is a second.</p>
+<p>It is proposed to factor out from App Components any non-flow and
+non-trivial functions into libraries. There are benefits
+(e.g. separation of concerns, potential for re-usability, improved
+understandability) even if a library is used originally by only one App
+Component.</p>
+<p>For conceptual integrity each library must solve/simplify a cohesive set
+of problems in a semantic context. Hence, the proposal is one library
+per semantic context.</p>
+<h2 id="eudi-wallet-components-lld">EUDI Wallet Components LLD</h2>
+<p>The LLD of each component will be described in this chapter. Please note
+that the naming convention used for the EUDI Wallet Components is
+documented by the <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-reference-implementation-architecture/blob/main/decisions/0011-library-naming-conventions.md">[architecture decision record,
+ADR-11](https://github.com/eu-digital-identity-wallet/eudi-doc-reference-implementation-architecture/blob/main/decisions/0011-library-naming-conventions.md)</a>.</p>
+<p>In this section an initial view of each component directly from its
+developers is provided. The reader may also find links to the GitHub
+repositories in the following section where additional detailed
+information for each module can be found.</p>
+<h3 id="eudi-wallet-core-android-and-wallet-kit-ios-libraries">EUDI Wallet Core (Android) and Wallet Kit (iOS) Libraries</h3>
+<p>The EUDI Wallet Core (Android) and Wallet Kit (iOS) Coordinator
+Libraries constitute an integral element within the <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-reference-implementation-architecture/blob/main/eudi-wallet-hld.md#62-wallet-coordinator">Wallet Coordinator
+Component</a>,
+as detailed in the High-Level Architecture documentation. The library
+serves the purpose of:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Feature</strong></th>
+<th><strong>Coverage</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Document management</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Documents\' Key creation and management with Android Keystore by default</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Support for custom SecureArea implementations</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Support for multiple SecureArea implementations</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Support for multiple credentials for the same document</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><strong>Document issuance</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Support for <a href="https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0-15.html">OpenId4VCI (draft 15)</a> document issuance</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Authorization Code Flow</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Pre-authorization Code Flow</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Support for mso_mdoc format</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Support for sd-jwt-vc format</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Support credential offer</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Support for DPoP JWT in authorization</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Support for JWT proof types</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Support for deferred issuing</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Support for batch issuing</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><strong>Proximity document presentation</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>Support for ISO-18013-5 device retrieval</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>QR device engagement</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>NFC device engagement</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>BLE data transfer</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>NFC data transfer</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>Wifi-Aware data transfer</td>
+<td>❌</td>
+</tr>
+<tr>
+<td><strong>Remote document presentation</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://openid.net/specs/openid-4-verifiable-presentations-1_0-24.html">OpenId4VP (draft 24)</a> document transfer</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>ClienID scheme: preregistered, x509_san_uri, x509_san_dns, redirect_uri</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>PresentationDefinition, DCQL</td>
+<td>✅</td>
+</tr>
+</tbody>
+</table>
+<p>The EUDI Wallet Core (Android) and Wallet Kit (iOS) Coordinator
+Libraries serve as a coordinator layer between the UI app and the Wallet
+libraries. Currently, coordinates issuing, proximity and remote
+presentation libraries. The library is a part of the EUDI Wallet
+Reference Implementation project.</p>
+<p>The initial implementation provides Proximity and Remote Flows for the
+EUDI Wallet. It is based on the following specifications:</p>
+<ul>
+<li>ISO/IEC 18013-5 -- Published</li>
+<li>Presentation Exchange v2.0.0 - Published</li>
+<li>OpenID4VP -- Draft 24</li>
+<li>ISO 18013-7 - Draft</li>
+<li>SIOPv2 -- Draft</li>
+</ul>
+<p>The primary programming languages employed for the development of the
+libraries are Native Kotlin for Android and native Swift for iOS (as
+specified in the ADR decisions, namely
+<a href="https://github.com/eu-digital-identity-wallet/eudi-doc-reference-implementation-architecture/blob/main/decisions/0004-prioritize-native-kotlin-for-android.md">ADR-0004</a>
+and
+<a href="https://github.com/eu-digital-identity-wallet/eudi-doc-reference-implementation-architecture/blob/main/decisions/0005-prioritize-native-swift-for-ios.md">ADR-0005</a>).</p>
+<p>The latest Wallet core and Wallet kit release also include a logger
+method that allows one to specify the logger. If the logger is not
+provided, the default logger will be used. It is also possible to set
+logLevels.</p>
+<h2 id="proximity-sharing-libraries">Proximity Sharing Libraries</h2>
+<p>The EUDI ISO/IEC 18013-5 Data Transfer Library is mainly part of the
+<a href="https://github.com/eu-digital-identity-wallet/eudi-doc-reference-implementation-architecture/blob/main/eudi-wallet-hld.md#47-proximity-presentation-service">[Proximity Presentation
+Service](https://github.com/eu-digital-identity-wallet/eudi-doc-reference-implementation-architecture/blob/main/eudi-wallet-hld.md#67-proximity-presentation-service)</a>
+component, as detailed in the High-Level Architecture documentation, but
+also covers a part of the remote presentation through RestAPI.</p>
+<p>This library provides a set of classes to manage the transfer of
+documents in an EUDI ISO/IEC 18013-5 Wallet.</p>
+<p>The library supports the following devices engagement methods for
+proximity presentation:</p>
+<ul>
+<li><a href="https://www.qrcode.com/en/about/standards.html">QR code</a></li>
+<li>NFC tag (Android)</li>
+</ul>
+<p>and the Reverse engagement with app link for the remote presentation.</p>
+<p>Data transfer of the documents is done using
+<a href="https://www.bluetooth.com/learn-about-bluetooth/tech-overview/">BLE</a>
+(Bluetooth low energy) for the proximity case and via HTTP protocol for
+the remote case.</p>
+<p>Additionally, Transfer Manager incorporates reader authentication,
+ensuring the trustworthiness of the verifier (reader) device.</p>
+<p>Reader authentication is accomplished by verifying the following:</p>
+<ul>
+<li>Certificate path validation: Verifying the certificate path from the
+  device's certificate to a trusted root certificate</li>
+<li>Certificate's profile validation: Examines the attributes and
+  constraints defined in the certificate profile to ensure that they
+  meet the predefined criteria for a trusted certificate</li>
+<li>CRL validation: Checking the Certificate Revocation List to verify
+  that the certificate has not been revoked or compromised.</li>
+</ul>
+<p>The above verification tasks can be accomplished by the <a href="https://github.com/eu-digital-identity-wallet/eudi-lib-jvm-trust-manager-kt">Trust
+Management
+Libraries</a>.</p>
+<h2 id="remote-presentation-libraries">Remote Presentation Libraries</h2>
+<h3 id="eudi-siopv2-openid4vp-library">EUDI SIOPv2 OpenId4VP Library</h3>
+<p>The EUDI SIOPv2 OpenId4VP Library is part of the <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-reference-implementation-architecture/blob/main/eudi-wallet-hld.md#48-remote-presentation-service">[Remote Presentation
+Service](https://github.com/eu-digital-identity-wallet/eudi-doc-reference-implementation-architecture/blob/main/eudi-wallet-hld.md#68-remote-presentation-service)</a>
+component, as detailed in the High-Level Architecture documentation.</p>
+<p>The library supports OpenId4VP (draft 24) protocols. In particular, the
+library focuses on the wallet's role using those two protocols with the
+profile constraints included in ISO 23220-4 and ISO-18013-7.</p>
+<p>This library depends on
+<a href="#presentation-exchange-library"><code>eudi``-lib-``jvm``-presentation-exchange-kt</code></a><code>.</code></p>
+<p>For the exchanges the library uses the interfaces of Self Issued OpenID
+Provider v2 (SIOPv2 - draft 13). SIOPv2 remains the only method
+currently available for exchanges. There are no alternative approaches
+currently. Should a new method become available in the future, an update
+will be provided accordingly.</p>
+<h3 id="presentation-exchange-library">Presentation Exchange Library</h3>
+<p>The Presentation Exchange Library
+(<a href="https://github.com/eu-digital-identity-wallet/eudi-lib-jvm-presentation-exchange-kt"><em>eudi-lib-jvm-presentation-exchange-kt</em></a>)
+implements the functionality described by the DIF Presentation Exchange
+v2 specification
+<a href="https://identity.foundation/presentation-exchange/spec/v2.0.0/"><strong>DIF_PEX</strong></a>.</p>
+<p>The [<strong>DIF_PEX</strong>] spec defines a generic and flexible Json based API
+for requesting and receiving claims. Overall, the [<strong>DIF_PEX</strong>] spec
+defines a concrete approach that enables <strong>Verifiers</strong> to describe proof
+requirements (in their Presentation Definition requests), and
+<strong>Holders</strong> to provide submissions of proof (in their Presentation
+Submission responses) that are aligned with the respective requirements
+submitted by the Verifiers. The acceptance decision is on the verifiers.</p>
+<p>The <strong>OpenID4VP</strong>
+(https://openid.net/specs/openid-4-verifiable-presentations-1_0-24.html<a href="https://openid.net/specs/openid-4-verifiable-presentations-1_0.html">https://openid.net/specs/openid-4-verifiable-presentations-1_0.html</a>)
+protocol relies on [<strong>DIF_PEX</strong>] for constructing the VC presentation
+requests and responses.</p>
+<p>The [<strong>DIF_PEX</strong>] specification defines the Json Schema of the
+exchanges and their parts:</p>
+<ul>
+<li><strong>presentation-definition.json</strong><ul>
+<li>presentation-definition-envelope.json</li>
+<li>input-descriptor.json</li>
+<li>submission-requirements.json (array of submission-requirements.json)</li>
+</ul>
+</li>
+<li><strong>presentation-submission.json</strong></li>
+</ul>
+<h3 id="eudi-sd-jwt-library">EUDI SD-JWT library</h3>
+<p>This library implements
+SD-JWT <a href="https://www.ietf.org/archive/id/draft-ietf-oauth-selective-disclosure-jwt-12.html">draft12</a>.
+Use cases supported:</p>
+<ul>
+<li>Issuance: As an Issuer use the library to issue a SD-JWT (in Combined
+  Issuance Format)</li>
+<li>Holder Verification: As Holder verify a SD-JWT (in Combined Issuance
+  Format) issued by an Issuer</li>
+<li>Presentation Verification: As a Verifier verify SD-JWT in Combined
+  Presentation Format or in Envelope Format</li>
+<li>Recreate initial claims: Given a SD-JWT recreate the original claims</li>
+</ul>
+<h3 id="eudi-wallet-data-storage-and-cryptographic-management-libraries">EUDI Wallet Data Storage and Cryptographic Management Libraries</h3>
+<p>The EUDI Document Management library is part of the <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-reference-implementation-architecture/blob/main/eudi-wallet-hld.md#49-cryptographic-management-and-data-storage-services">[Cryptographic
+Management and Data Storage
+Services](https://github.com/eu-digital-identity-wallet/eudi-doc-reference-implementation-architecture/blob/main/eudi-wallet-hld.md#69-cryptographic-management-and-data-storage-services)</a>.
+This library provides a set of classes to manage documents in an EUDI
+Wallet.</p>
+<p>As defined in the <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-reference-implementation-architecture/blob/main/eudi-wallet-hld.md">EUDIW High Level Design
+document</a>,
+the Secure Cryptographic Interface (SCI), which is a Programmable
+interface used to manage cryptographic assets and functions and serves
+the communication between the Cryptographic Keys Management System
+Service and the Wallet Coordinator (<em>part of the <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-reference-implementation-architecture/blob/main/eudi-wallet-hld.md#69-cryptographic-management-and-data-storage-services"><a href="https://github.com/eu-digital-identity-wallet/eudi-doc-reference-implementation-architecture/blob/main/eudi-wallet-hld.md#69-cryptographic-management-and-data-storage-services">Cryptographic
+Management and Data Storage
+Services</a></a>
+component</em>), is enabled through the new wallet core and kit built-in
+components are:</p>
+<ul>
+<li>KeystoreSecureArea for storing and managing the documents\' keys</li>
+<li>StorageEngine for storing the documents\' data</li>
+</ul>
+<p>Creating a new document requires the document format and the create key
+settings. The create key settings can be used to specify the way the
+keys are created.<br />
+When using the built-in KeystoreSecureArea implementation of the
+library, the wallet, getDefaultCreateDocumentSettings() extension can be
+used to create an instance of the appropriate CreateDocumentSettings
+class.<br />
+After the document is created, the user must retrieve the document\'s
+data from the issuer and store it in the wallet using the
+storeIssuedDocument method.</p>
+<p><strong>For the Android Implementation:</strong> It defines the interfaces for
+DocumentManager and Document classes and provides a default standard
+implementation of the DocumentManager interface using Android Identity
+Credential API. It also provides a sample implementation of the
+DocumentManager interface that can be used to load sample documents and
+test the library. It supports:</p>
+<ul>
+<li>Use of AndroidKeyStore for generating documents' keys</li>
+<li>Use of Android StrongBox for storing private/public keys</li>
+<li>Storage encryption for documents</li>
+</ul>
+<p><strong>For the iOS Implementation:</strong> It provides keychain storage for wallet
+documents.</p>
+<p>Currently, Elliptic Curve P-256 is supported for document keys. Support
+for secure enclave storage is also included.</p>
+<p>The libraries include also an interface to extend and build upon in
+order to store documents to external storage cards, UICC, or other
+secure storage.</p>
+<h3 id="eudi-verifier-endpoint">EUDI Verifier Endpoint</h3>
+<p>The EUDI Verifier Endpoint is a Web application (Backend Restful
+service) that acts as a Verifier/RP trusted end-point.</p>
+<p>For the presentation request and response submission it uses the
+Presentation Exchange Library. This component has been designed
+following the hexagonal architectural style (i.e. ports and adapters)
+and uses the Spring WebFlux framework for its implementation.</p>
+<p>This is a Web application (Backend Restful service) that acts as a
+Verifier/RP trusted end-point. This backend service is accompanied by a
+Web UI application implemented
+<a href="https://github.com/eu-digital-identity-wallet/eudi-web-verifier">here</a>.</p>
+<p>In the GitHub section <a href="https://github.com/eu-digital-identity-wallet/eudi-srv-web-verifier-endpoint-23220-4-kt/tree/main?tab=readme-ov-file#run-all-verifier-components-together">Run all verifier components
+together</a>
+a developer may see how to boot both applications together.</p>
+<p>Application exposes two APIs</p>
+<ul>
+<li><a href="https://github.com/eu-digital-identity-wallet/eudi-srv-web-verifier-endpoint-23220-4-kt/blob/main/src/main/kotlin/eu/europa/ec/eudi/verifier/endpoint/adapter/input/web/VerifierApi.kt">Verifier
+  API</a></li>
+<li><a href="https://github.com/eu-digital-identity-wallet/eudi-srv-web-verifier-endpoint-23220-4-kt/blob/main/src/main/kotlin/eu/europa/ec/eudi/verifier/endpoint/adapter/input/web/WalletApi.kt">Wallet
+  API</a></li>
+</ul>
+<p>The Verifier API, supports two operations:</p>
+<ul>
+<li><a href="https://github.com/eu-digital-identity-wallet/eudi-srv-web-verifier-endpoint-23220-4-kt/blob/main/src/main/kotlin/eu/europa/ec/eudi/verifier/endpoint/port/input/InitTransaction.kt">Initialize
+  Transaction</a>,
+  where Verifier may define whether it wants to request a SIOP or
+  OpenID4VP or combined request</li>
+<li><a href="https://github.com/eu-digital-identity-wallet/eudi-srv-web-verifier-endpoint-23220-4-kt/blob/main/src/main/kotlin/eu/europa/ec/eudi/verifier/endpoint/port/input/GetWalletResponse.kt">Get Wallet
+  response</a>,
+  where Verifier receives depending on the request an id_token,
+  vp_token, or an error</li>
+</ul>
+<p>An Open API v3 specification of these operations is available
+<a href="https://github.com/eu-digital-identity-wallet/eudi-srv-web-verifier-endpoint-23220-4-kt/blob/main/src/main/resources/public/openapi.json">here</a>.
+Currently, there is an Open API v3 specification available only for the
+verifier logs.</p>
+<p>The Wallet API, provides the following main operations</p>
+<ul>
+<li><a href="https://github.com/eu-digital-identity-wallet/eudi-srv-web-verifier-endpoint-23220-4-kt/blob/main/src/main/kotlin/eu/europa/ec/eudi/verifier/endpoint/port/input/GetRequestObject.kt">Get Request
+  Object</a>
+  according JWT Secured Authorization Request</li>
+<li><a href="https://github.com/eu-digital-identity-wallet/eudi-srv-web-verifier-endpoint-23220-4-kt/blob/main/src/main/kotlin/eu/europa/ec/eudi/verifier/endpoint/port/input/GetPresentationDefinition.kt">Get Presentation
+  Definition</a>
+  according to OpenId4VP in case of using presentation_definition_uri</li>
+<li><a href="https://github.com/eu-digital-identity-wallet/eudi-srv-web-verifier-endpoint-23220-4-kt/blob/main/src/main/kotlin/eu/europa/ec/eudi/verifier/endpoint/port/input/PostWalletResponse.kt">Direct
+  Post</a>
+  according to OpenID4VP direct_post</li>
+</ul>
+<p>Please note that</p>
+<ul>
+<li>Both APIs need to be exposed over HTTPS.</li>
+<li>Verifier API needs to be protected to allow only authorized access.</li>
+</ul>
+<p>Both of those concerns have not been tackled by the current version of
+the application, since in current version it is merely a development
+tool, rather a production application.</p>
+<p>Additionally, the verifier supports event logging for testing purposes.
+The log of events that occurred throughout the whole process. The
+transaction_id is an identifier assigned to each Transaction (result of
+calling the <a href="https://github.com/eu-digital-identity-wallet/eudi-srv-web-verifier-endpoint-23220-4-kt#initialize-transaction-endpoint">initialization
+endpoint</a>)
+and it is used in
+the <a href="https://github.com/eu-digital-identity-wallet/eudi-srv-web-verifier-endpoint-23220-4-kt/blob/main/src/main/kotlin/eu/europa/ec/eudi/verifier/endpoint/adapter/input/web/VerifierApi.kt">VerifierApi</a> related
+endpoints.</p>
+<p>Developers can also check the source-code for the details. The library
+is implemented in Kotlin and includes examples that help understanding
+the process.</p>
+<h3 id="eudi-android-holder-verifier-demo-applications">EUDI Android Holder - Verifier Demo Applications</h3>
+<p>The Verifier is a Web application (Backend Restful service) that allows
+triggering and managing the presentation use case (cross device, remote
+presentation scenario).</p>
+<p><img alt="OpenID4VP Verifier" src="../LLDFigures/figure1.png" /></p>
+<p>Figure 1: OpenID4VP Verifier</p>
+<p>The purpose of this repository is to demo the flow of communication
+between a verifier mobile application and a wallet mobile application as
+depicted in ISO 23220-4, Appendix B. Towards this purpose two
+applications are built in the context of this repository: a Verifier
+android application and, a Wallet/Holder android application.</p>
+<p>The Verifier application acts as a user agent that integrates with a web
+backend service implemented in eudi-srv-web-verifier-endpoint. The
+Verifier mobile application is used to initialize an authentication
+request and pass it to the Wallet/Holder android application. The wallet
+application integrates with verifier's backend web service to retrieve
+any additional data and finally posts the response with the generated
+payload. The wallet's response is displayed on the verifier's mobile
+application screen.</p>
+<p>The integration of the two apps is based on
+eudi-lib-jvm-siop-openid4vp-kt library that implements the OpenID4VP /
+SIOP v2 authentication protocols.</p>
+<h2 id="eudi-issuing-library">EUDI Issuing Library</h2>
+<p>The EUDI Issuing Library (OpenId4VCI) is part of the <a href="https://github.com/niscy-eudiw/eudi-doc-reference-implementation-architecture/blob/doc/update_docs/eudi-wallet-hld.md#44-issuance-service">[Issuance
+Service](https://github.com/eu-digital-identity-wallet/eudi-doc-reference-implementation-architecture/blob/main/eudi-wallet-hld.md#64-issuance-service)</a>
+and the <a href="https://github.com/niscy-eudiw/eudi-doc-reference-implementation-architecture/blob/doc/update_docs/eudi-wallet-hld.md#45-signatureseal-service">[Signature/Seal
+Service](https://github.com/eu-digital-identity-wallet/eudi-doc-reference-implementation-architecture/blob/main/eudi-wallet-hld.md#65-signatureseal-service)</a>
+component, as detailed in the High-Level Architecture documentation.</p>
+<p>The Android and iOS libraries support the OpenId4VCI (draft 15)
+protocol. In particular, the library focuses on the wallet's role in the
+protocol to:</p>
+<ul>
+<li>Resolve credential issuer metadata</li>
+<li>Resolve metadata of the authorization server protecting issuance
+  services</li>
+<li>Resolve a credential offer presented by an issuer service</li>
+<li>Negotiate authorization of a credential issuance request</li>
+<li>Submit a credential issuance request</li>
+</ul>
+<p>The issuing library underwent testing with internal test issuers in the
+organization.</p>
+<p>The EUDI Wallet Issuer is available online in
+<a href="https://issuer.eudiw.dev/h">h</a>ttps://issuer.eudiw.dev/ and the EUDI
+Wallet Tester Issuer is available in https://tester.issuer.eudiw.dev/.</p>
+<p>The <a href="https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py">EUDIW
+Issuer</a>
+is an implementation of the PID and (Q)EAA Provider service. This
+service is currently undergoing a transition from OpenId4VCI draft 13 to
+draft 15 of the specification. The table below shows which components
+support which draft version.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Feature</strong></th>
+<th><strong>Coverage</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/blob/main/api_docs/authorization.md">[Authorization Code flow draft]{.underline}</a></td>
+<td>✅ Support for credential configuration id, scope, (draft 13)</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/blob/main/api_docs/pre-authorized.md">[Pre-authorized code flow]{.underline}</a></td>
+<td>✅ (draft 13)</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/blob/main/api_docs/credential_offer.md">[Credential Offer]{.underline}</a></td>
+<td>✅ authorization_code , ✅ pre-authorized_code (draft 13)</td>
+</tr>
+<tr>
+<td>Dynamic Credential Request</td>
+<td>✅ (draft 13)</td>
+</tr>
+<tr>
+<td>mso_mdoc format</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>SD-JWT-VC format</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>W3C VC DM</td>
+<td>❌</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/blob/main/api_docs/token.md">[Token Endpoint]{.underline}</a></td>
+<td>✅ (draft 13)</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/blob/main/api_docs/credential.md">[Credential Endpoint]{.underline}</a></td>
+<td>✅ Including proofs and repeatable invocations, (draft 15)</td>
+</tr>
+<tr>
+<td>Credential Issuer MetaData</td>
+<td>✅ Unsigned metadata, (draft 15)</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/blob/main/api_docs/nonce_endpoint.md">[Nonce endpoint]{.underline}</a></td>
+<td>✅ (draft 15)</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/blob/main/api_docs/deferred.md">[Deferred Endpoint]{.underline}</a></td>
+<td>✅ (draft 15)</td>
+</tr>
+<tr>
+<td>Proof</td>
+<td>✅ JWT</td>
+</tr>
+<tr>
+<td>Credential response encryption</td>
+<td>✅ (draft 15)</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/blob/main/api_docs/notification.md">[Notification Endpoint]{.underline}</a></td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Pushed authorization request</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Wallet authentication</td>
+<td>✅ public client</td>
+</tr>
+<tr>
+<td>Demonstrating Proof of Possession (DPoP)</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>PKCE</td>
+<td>✅</td>
+</tr>
+</tbody>
+</table>
+<p>Additionally, the <a href="https://github.com/eu-digital-identity-wallet/eudi-srv-pid-issuer?tab=readme-ov-file">PID
+Issuer</a>
+is an implementation of of a credential issuing service, according to
+OpenId4VCI -
+<a href="https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0-15.html">draft15</a>,
+with the following coverage:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Feature</strong></th>
+<th><strong>Coverage</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authorization Code flow</td>
+<td>✅ Using a suitable OAuth 2.0 server</td>
+</tr>
+<tr>
+<td>Pre-authorized code flow</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>mso_mdoc format</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>SD-JWT-VC format</td>
+<td>✅ Except revocation list &amp; meta</td>
+</tr>
+<tr>
+<td>W3C VC DM</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>Credential Offer</td>
+<td>✅ authorization_code , ❌ pre-authorized_code</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-srv-pid-issuer?tab=readme-ov-file#credential-endpoint">[Credential Endpoint]{.underline}</a></td>
+<td>Yes, including multiple proofs, encryption, repeatable invocations</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-srv-pid-issuer?tab=readme-ov-file#credential-issuer-metadata">[Credential Issuer MetaData]{.underline}</a></td>
+<td>Yes, using scopes, and signed_metadata</td>
+</tr>
+<tr>
+<td>Deferred Endpoint</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Nonce Endpoint</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Notification Endpoint</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Proof</td>
+<td>✅ JWT (jwk, x5c, did:key, did:jwk) - <em>Except Key Attestation</em></td>
+</tr>
+<tr>
+<td></td>
+<td>❌ Data Integrity Proof</td>
+</tr>
+<tr>
+<td></td>
+<td>❌ Key Attestation</td>
+</tr>
+</tbody>
+</table>
+<h3 id="rqes1">rQES[^1]</h3>
+<h4 id="trust-provider-signer-authenticating-and-authorizing-using-remote-presentation-protocol">Trust Provider Signer: authenticating and authorizing using Remote Presentation protocol</h4>
+<p><a href="https://github.com/eu-digital-identity-wallet/eudi-srv-web-trustprovider-signer-java">TrustProvider
+Signer</a>
+is a remote signing service provider and client using authentication
+based on remote presentation by OpenId4VP.</p>
+<p>Currently, it includes the following features:</p>
+<ul>
+<li>Create an Account: Allows users to create new accounts within the
+  program.</li>
+<li>Authentication using OpenId4VP: Enables authentication through
+  OpenId4VP.</li>
+<li>Create Certificates: Enables authenticated users to create new
+  certificates and their associated key pairs.</li>
+<li>Sign Documents: Allows an authenticated user to digitally sign
+  documents.</li>
+</ul>
+<h4 id="rqes-wallet-driven-signing">rQES: Wallet Driven Signing</h4>
+<p><a href="https://github.com/eu-digital-identity-wallet/eudi-srv-web-walletdriven-signer-qtsp-java/blob/main/README.md">EUDIW Wallet driven
+rQES</a>
+is available for the EUDI Wallet ecosystem. A long set of reusable
+modules and libraries have been implemented and are available to enable
+the end-user to start a signing from inside of his EUDI Wallet instance.
+UI components are available to enable this as well as an SDK for rQES
+libraries specifically as a coordinating module namely the Wallet core
+(Android) and Wallet kit (iOS). Furthermore, both low level libraries
+are available for rQES management on the side of the EUDI Wallet and for
+the rQES services that are running on the server side.</p>
+<h4 id="rqes-server-initiated-signing-integrated">rQES: Server initiated signing integrated</h4>
+<p>Server based initiated signing will be also enabled pushing/requesting
+signing authorization from the EUDI Wallet.</p>
+<h3 id="wallet-apps-and-uis">Wallet Apps and UIs</h3>
+<p>There are EUDI Wallet apps available for Android and iOS. The apps
+consume the SDK called EUDIW Wallet core Wallet core and Wallet kit for
+Android and iOS respectively. A list of available libraries to
+facilitate remote presentation, proximity, and issuing test/demo
+functionality following specification of the ARF include ARF protocols
+and details are depicted in the main readme of the repositories.
+Currently they include:</p>
+<ul>
+<li>OpenID4VP - draft 24 (remote presentation), presentation exchange
+  v2.0,</li>
+<li>ISO18013-5 (proximity presentation),</li>
+<li>OpenID4VCI draft 15(issuing)</li>
+<li>Document Signing using OpenID4VP</li>
+</ul>
+<p>The application allows the configuration of multiple analytics
+providers. You can configure the following:</p>
+<ol>
+<li>Initializing the provider (e.g. Firebase, Appcenter, etc...)</li>
+<li>Screen logging</li>
+<li>Event logging</li>
+</ol>
+<p>The apps are end to end compatible to be used with online issuer
+(issuer.eudiw.dev), verifier service (verifier.eudiw.dev), signing
+service and verifier app for Android.</p>
+<h3 id="relying-party-registration-service">Relying Party Registration Service</h3>
+<p>The Relying Party Registration Service provides two main
+functionalities:</p>
+<ul>
+<li>Register a new Relying Party, issuing the Relying Party Instance
+  certificate and keypair in pkcs#12 (P12) format.</li>
+<li>List the certificates issued and enable their revocation.</li>
+</ul>
+<h2 id="list-of-repositories">List of Repositories</h2>
+<h3 id="eudi-wallet-libraries-in-github">EUDI Wallet Libraries in GitHub</h3>
+<h4 id="wallet-core-android-and-wallet-kit-ios-coordinator-libraries">Wallet Core (Android) and Wallet Kit (iOS) Coordinator Libraries</h4>
+<table>
+<thead>
+<tr>
+<th><strong>Repository</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-lib-android-wallet-core">Wallet Core (Android)</a></td>
+<td>Implementation of the EUDI Wallet Core library for Android that serves as a coordinator layer between the UI app and the Wallet libraries. Currently, coordinates issuing, proximity and remote presentation libraries.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-lib-ios-wallet-kit">Wallet Kit (iOS)</a></td>
+<td>Implementation of the EUDI Wallet Kit library for iOS that serves as a coordinator layer between the UI app and the Wallet libraries. Currently coordinates issuing, proximity and remote presentation libraries.</td>
+</tr>
+</tbody>
+</table>
+<p>Visual representations of iOS and Android libraries are showcased,
+providing insights into their interconnections. These graphics offer a
+comprehensive overview of the libraries\' structure and composition. For
+additional exploration and access to in-depth documentation, links to
+the repositories are included in the tables below.</p>
+<p><img alt="Android Wallet Core Libraries Graph" src="../LLDFigures/figure2.png" /></p>
+<p>Figure 2: Android Wallet Core Libraries Graph</p>
+<p><img alt="iOS Wallet Kit Libraries Graph" src="../LLDFigures/figure3.png" /></p>
+<p>Figure 3: iOS Wallet Kit Libraries Graph</p>
+<h4 id="proximity-sharing-ios-libraries">Proximity Sharing iOS Libraries</h4>
+<table>
+<thead>
+<tr>
+<th><strong>Repository</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-lib-ios-iso18013-security">mDoc Security (iOS)</a></td>
+<td>Implementation of mDoc security mechanisms according to ISO/IEC 18013-5.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-lib-ios-iso18013-data-transfer">mDoc Data Transfer (iOS)</a></td>
+<td>Implementation of the mDoc data-transfer library according to ISO/IEC 18013-5.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-lib-ios-iso18013-data-model">mDoc Data Model (iOS)</a></td>
+<td>Implementation of the mDoc data-model according to ISO/IEC 18013-5.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="proximity-sharing-android-libraries">Proximity Sharing Android Libraries</h4>
+<table>
+<thead>
+<tr>
+<th><strong>Repository</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-lib-android-iso18013-data-transfer">mDoc Data Transfer (Android)</a></td>
+<td>This library provides a set of classes to manage the transfer of documents in an EUDI ISO 18013-5 Android Wallet.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="remote-presentation-ios-libraries">Remote Presentation iOS Libraries</h4>
+<table>
+<thead>
+<tr>
+<th><strong>Repository</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-lib-ios-presentation-exchange-swift">Presentation Exchange (iOS)</a></td>
+<td>Implementation of DIF Presentation Exchange v2 specification in Swift.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-lib-ios-siop-openid4vp-swift">SIOPv2 &amp; OpenID4VP protocols (iOS)</a></td>
+<td>Implementation of SIOPv2 and OpenID4VP (draft 24) protocols (wallet\'s role) in Swift.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-lib-sdjwt-swift">SD-JWT (iOS)</a></td>
+<td>SD-JWT library for creating and verifying SD-JWT in JVM Swift.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="remote-presentation-android-libraries">Remote Presentation Android Libraries</h4>
+<table>
+<thead>
+<tr>
+<th><strong>Repository</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-lib-jvm-presentation-exchange-kt">Presentation Exchange (Android)</a></td>
+<td>Implementation of DIF Presentation Exchange v2 specification in Kotlin.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-lib-jvm-siop-openid4vp-kt">SIOPv2 &amp; OpenID4VP protocols (Android)</a></td>
+<td>Implementation of SIOPv2 and OpenID4VP (draft 24) protocols (wallet\'s role) in Kotlin.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-lib-jvm-sdjwt-kt">SD-JWT (Android)</a></td>
+<td>SD-JWT library for creating and verifying SD-JWT in JVM Kotlin.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="issuing-ios-libraries">Issuing iOS Libraries</h4>
+<table>
+<thead>
+<tr>
+<th><strong>Repository</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-lib-ios-openid4vci-swift">OpenId4VCI (iOS)</a></td>
+<td>Implementation of credential management supporting the OpenId4VCI (draft 15) protocol.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="issuing-android-libraries">Issuing Android Libraries</h4>
+<table>
+<thead>
+<tr>
+<th><strong>Repository</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-lib-jvm-openid4vci-kt">OpenId4VCI (Android)</a></td>
+<td>Implementation of credential management supporting the OpenId4VCI (draft 15) protocol.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="eudi-wallet-tester-for-issuer">EUDI Wallet Tester for Issuer</h4>
+<table>
+<thead>
+<tr>
+<th><strong>Repository</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-app-web-wallet-tester-py">EUDI Wallet Tester for Issuer</a></td>
+<td>The EUDIW Wallet Tester (for Issuer) allows to test the OID4VCI (draft 13) flow with an Issuer, in a Web GUI.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="trust-list-provider">Trust List Provider</h4>
+<table>
+<thead>
+<tr>
+<th><strong>Repository</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-srv-web-trustedlist-manager-py">Trust List Provider</a></td>
+<td>A Trusted List Provider (TLP) is a body responsible for maintaining, managing, and publishing a Trusted List. </td>
+</tr>
+</tbody>
+</table>
+<h4 id="podofo">PoDoFo</h4>
+<table>
+<thead>
+<tr>
+<th><strong>Repository</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-lib-podofo">PoDoFo</a></td>
+<td>PoDoFo is a free portable C++ library to work with the PDF file format.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="wallet-data-storage-and-cryptographic-management-ios-libraries">Wallet Data Storage and Cryptographic Management iOS Libraries</h4>
+<table>
+<thead>
+<tr>
+<th><strong>Repository</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-lib-ios-wallet-storage">mDoc Document Storage (iOS)</a></td>
+<td>Storage for keys and wallet documents</td>
+</tr>
+</tbody>
+</table>
+<h4 id="wallet-data-storage-and-cryptographic-management-android-libraries">Wallet Data Storage and Cryptographic Management Android Libraries</h4>
+<table>
+<thead>
+<tr>
+<th><strong>Repository</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-lib-android-wallet-document-manager">mDoc Document Storage (Android)</a></td>
+<td>This library provides a set of classes to manage documents and their cryptographic keys in an EUDI Android Wallet.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="wallet-trust-management-android-libraries">Wallet Trust Management Android Libraries</h4>
+<table>
+<thead>
+<tr>
+<th><strong>Repository</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-lib-jvm-trust-manager-kt">Trust Manager (Android)</a></td>
+<td>This library provides functionality for validation of certificate paths, digital signatures, digest values, DocType consistency, and the ValidityInfo structure.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="token-status-list-specification-for-android">Token Status List Specification for Android</h4>
+<table>
+<thead>
+<tr>
+<th><strong>Repository</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-lib-kmp-statium">Statium Android</a></td>
+<td>A library for checking the status of a credential in Kotlin multiplatform, supporting Token Status List specification</td>
+</tr>
+</tbody>
+</table>
+<h4 id="token-status-list-specification-for-ios">Token Status List Specification for iOS</h4>
+<table>
+<thead>
+<tr>
+<th><strong>Repository</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-lib-kmp-statium">https://github.com/eu-digital-identity-wallet/eudi-lib-kmp-statium</a><a href="https://github.com/eu-digital-identity-wallet/eudi-lib-ios-statium-swift">Statium iOS</a></td>
+<td>A library for checking the status of a credential in swift, supporting Token Status List specification</td>
+</tr>
+</tbody>
+</table>
+<h3 id="wallet-ui-app-and-demo-app-for-android-and-ios">Wallet UI App and demo App for Android and iOS</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Repository</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-app-android-wallet-ui">UI / Demo App (Android)</a></td>
+<td>Implementation of wallet UI app for Android. Currently, it also includes Demo App, demonstrating the following capabilities: Proximity presentation, Remote Presentation and issuing of PID and mDL.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-app-ios-wallet-ui">UI / Demo App (iOS)</a></td>
+<td>Implementation of wallet UI app for iOS. Currently, it also includes Demo App, demonstrating the following capabilities: Proximity presentation, and Remote Presentation and issuing of PID and mDL.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="verifier-apps-and-services">Verifier Apps and Services</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Repository</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-web-verifier">Web Verifier</a></td>
+<td>Demo Web Verifier UI application (Frontend) that acts as a Verifier/RP trusted end-point. Available at <a href="https://verifier.eudiw.dev">https://verifier.eudiw.dev</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-srv-web-verifier-endpoint-23220-4-kt">Restful API (web-services)</a></td>
+<td>Demo Web Verifier application (Backend Restful service) that acts as a Verifier/RP trusted end-point. Available at <a href="https://verifier-backend.eudiw.dev">https://verifier-backend.eudiw.dev</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-lib-android-verifier-core">EUDI Verifier Core</a> (Android)</td>
+<td>EUDI Core Verifier SDK for Android that provides the resources to develop an application to verify an mDoc according to the ISO 18013-5 standard.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="issuing-apps-and-services">Issuing Apps and Services</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Repository</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py">OpenId4VCI issuer (Python)</a></td>
+<td>An implementation of a credential issuing service, according to OpenId4VCI (draft 15), in Python. Available at <a href="https://issuer.eudiw.dev/">https://issuer.eudiw.dev/</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-srv-pid-issuer">OpenId4VCI issuer (Kotlin)</a></td>
+<td>An implementation of a credential issuing service, according to OpenId4VCI (draft 15), in JVM Kotlin. Available at <a href="https://issuer-backend.eudiw.dev/">https://issuer-backend.eudiw.dev/</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-srv-statuslist-py">Attestation Status List and Attestation Revocation List (Python)</a></td>
+<td>Python library designed to issue and manage revocation status using Attestation Status Lists and Attestation Revocation Lists.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="rqes-remote-electronic-signing-application">rQES: Remote Electronic Signing Application</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Repository</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-srv-web-trustprovider-signer-java">Web Trusted Signer Provider</a></td>
+<td>TrustProvider Signer is a remote signing service provider and client. The trustprovider signer can be accessed using the EUDI Wallet through OID4VP presentation of the PID. Available at <a href="https://trustprovider.signer.eudiw.dev/">https://trustprovider.signer.eudiw.dev/</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-srv-web-walletdriven-rpcentric-signer-qtsp-java">EUDI Wallet driven signer QTSP</a></td>
+<td>Implementation of a wallet-driven and rp-centric QTSP for the remote Qualified Electronic Signature component of the EUDI Wallet. The QTSP provides endpoints based on the CSC API v2.0 specification and supports authentication via OpenID4VP.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-srv-web-walletdriven-signer-external-sca-java">EUDI Wallet-driven external SCA</a></td>
+<td>Implementation of a wallet-driven SCA for the remote Qualified Electronic Signature component of the EUDI Wallet. The SCA provides endpoints that allow to calculate the hash value of a document and obtain the signed document given the signature value. Available at <a href="https://walletcentric.signer.eudiw.dev/">https://walletcentric.signer.eudiw.dev/</a></td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-app-web-walletdriven-tester-py">EUDI Wallet-driven rQES web tester</a></td>
+<td>A Wallet Tester Web Service for the Wallet-Driven release of the remote Qualified Electronic Signature (rQES) component.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-srv-web-rpcentric-signer-sca-java">Centric rQES SCA</a></td>
+<td>A REST API server implementing the RP-centric SCA for the remote Qualified Electronic Signature (rQES) component of the EUDI Wallet.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-srv-web-rpcentric-signer-relyingparty-py">rQES RI -- RP centric -- Relying Party test site</a></td>
+<td>A Relying Party (RP) Web Service for the RP-centric release of the remote Qualified Electronic Signature (rQES) component.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-srv-web-walletdriven-signer-relyingparty-py">EUDI Wallet-driven Relying Party</a></td>
+<td>Implementation of Relying Party (RP) Web Service for the Wallet-driven release of the remote Qualified Electronic Signature (rQES) component.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="section-1-unnumbered">{#section-1 .unnumbered}</h3>
+<h3 id="rqes-low-level-libraries">rQES: Low Level Libraries</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Repository</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-lib-jvm-rqes-csc-kt">EUDI rQES CSC library</a> (Kotlin)</td>
+<td>This is a Kotlin library, targeting JVM, that supports the <a href="https://cloudsignatureconsortium.org/wp-content/uploads/2023/04/csc-api-v2.0.0.2.pdf">Cloud Signature Consortium API (version 2)</a> protocol.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-lib-ios-rqes-csc-swift">EUDI rQES CSC library (Swift)</a></td>
+<td>This is a Swift library, targeting JVM, that supports the <a href="https://cloudsignatureconsortium.org/wp-content/uploads/2023/04/csc-api-v2.0.0.2.pdf">Cloud Signature Consortium API (version 2)</a> protocol.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="rqes-core-and-kit-libraries">rQES: Core and Kit Libraries</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Repository</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-lib-android-rqes-core">EUDI Remote Qualified Electronic Signature (RQES) Core library for Android</a></td>
+<td>This module provides the core functionality for the EUDI Wallet for Android, focusing on the Remote Qualified Electronic Signature (RQES) service. </td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-lib-ios-rqes-kit">EUDI Remote Qualified Electronic Signature (RQES) Kit library for iOS</a></td>
+<td>This module provides the core functionality for the EUDI Wallet for iOS, focusing on the Remote Qualified Electronic Signature (RQES) service.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="rqes-ui-libraries">rQES: UI Libraries</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Repository</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-lib-android-rqes-ui">EUDI Remote Qualified Electronic Signature (RQES) UI library for Android</a></td>
+<td>This module provides the core and UI functionality for the EUDI Wallet for Android implementation, focusing on the Remote Qualified Electronic Signature (RQES) service.</td>
+</tr>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-lib-ios-rqes-ui">EUDI Remote Qualified Electronic Signature (RQES) UI library for iOS</a></td>
+<td>This package provides the core and UI functionality for the EUDI Wallet for iOS implementation, focusing on the Remote Qualified Electronic Signature (RQES) service.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="relying-party-registration-service_1">Relying Party Registration Service</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Repository</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/eu-digital-identity-wallet/eudi-srv-web-relyingparty-registration-py">Relying Party registration service</a></td>
+<td>The Relying Party Registration Service registers Relying Parties, issuing certificates and keypairs for authentication with Wallet Instances. It also manages issued certificates, including listing and revocation. Demo Web Relying Party Registration to register a new Relying Party, available at <a href="https://registry.serviceproviders.eudiw.dev">https://registry.serviceproviders.eudiw.dev</a> and Tester Relying Party, available at https://tester.relyingparty.eudiw.dev.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="disclaimer">Disclaimer</h2>
+<p>The released software is a development release version:</p>
+<ul>
+<li>The initial development release is an early endeavor reflecting the
+  efforts of a short timeboxed period, and by no means can be considered
+  as the final product.</li>
+<li>The initial development release may be changed substantially over
+  time, might introduce new features but also may change or remove
+  existing ones, potentially breaking compatibility with your existing
+  code.</li>
+<li>The initial development release is limited in functional scope.</li>
+<li>The initial development release may contain errors or design flaws and
+  other problems that could cause system or other failures and data
+  loss.</li>
+<li>The initial development release has reduced security, privacy,
+  availability, and reliability standards relative to future releases.
+  This could make the software slower, less reliable, or more vulnerable
+  to attacks than mature software.</li>
+<li>The initial development release is not yet comprehensively documented.</li>
+<li>Users of the software must perform sufficient engineering and
+  additional testing in order to properly evaluate their application and
+  determine whether any of the open-sourced components is suitable for
+  use in that application.</li>
+<li>We strongly recommend not putting this version of the software into
+  production use.</li>
+<li>Only the latest version of the software will be supported</li>
+</ul>
+<h2 id="license">License</h2>
+<h3 id="libraries-license">Libraries License</h3>
+<p>All libraries are subject to the Apache License, Version 2.0.</p>
+<p>Copyright (c) 2023 European Commission  </p>
+<p>*Licensed under the Apache License, Version 2.0 (the \"License\");<br />
+you may not use this file except in compliance with the License.<br />
+You may obtain a copy of the License at  </p>
+<p>http://www.apache.org/licenses/LICENSE-2.0  </p>
+<p>Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an \"AS IS\" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.*</p>
+<h3 id="reference-applications-license">Reference Applications License</h3>
+<p>All the reference applications are subject to the EUPL, Version 1.2.</p>
+<p>Copyright (c) 2023 European Commission  </p>
+<p><em>Licensed under the EUPL, Version 1.2 or - as soon they will be approved
+by the European Commission - subsequent versions of the EUPL (the
+\"Licence\"); You may not use this work except in compliance with the
+Licence.</em>  </p>
+<p><em>You may obtain a copy of the Licence at:</em><br />
+<em>https://joinup.ec.europa.eu/software/page/eupl</em>  </p>
+<p><em>Unless required by applicable law or agreed to in writing, software
+distributed under the Licence is distributed on an \"AS IS\" basis,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the Licence for the specific language governing permissions and
+limitations under the Licence</em>.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.top", "toc.integrate", "toc.follow"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>

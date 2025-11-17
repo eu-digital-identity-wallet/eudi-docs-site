@@ -2,7 +2,7 @@
 
 The design options form the mDL Use Case target solution are implemented by the software components presented in the following figure. The components of the target solution are presented by role of the EUDI Wallet ecosystem as laid out by chapter 3 of the [ARF]. 
 
-![img.png](mDLLogicalComonents.png)
+![img.png](mdl-logical-components.png)
 
 The components are distinguished in the following types based on the provider of each component: 
 

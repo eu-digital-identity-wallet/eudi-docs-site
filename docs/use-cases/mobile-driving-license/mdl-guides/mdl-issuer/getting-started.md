@@ -22,5 +22,5 @@ This guide is structured to mirror the implementers' hub sections providing simi
 - tools and procedures necessary for conformance testing and validation of the implemented mDL Issuer solution
 
 ## Links to essential resources
-To ensure seamless operation and mutual recognition across the Union, all compliant mDL issuance solutions implemented using this guide SHALL support the [mDL Issuance](./mDL Issuer Specs.md) and [mDL Revocation](./mDL Revocation Specs.md) core technical specifications.
+To ensure seamless operation and mutual recognition across the Union, all compliant mDL issuance solutions implemented using this guide SHALL support the [mDL Issuance](./mdl-issuer-specs.md/) and [mDL Revocation](./mdl-revocation-specs.md) core technical specifications.
 

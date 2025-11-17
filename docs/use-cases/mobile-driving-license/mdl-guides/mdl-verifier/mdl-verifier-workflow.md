@@ -16,12 +16,18 @@ The mDL Verifier must be configured to access and validate trust anchors from re
 
 Your implementation must ensure the mDL Verifier component can retrieve and validate these trust relationships during the verification process.
 
-**Relying Party Registration and Access Certificate**
+**Relying Party Registration and Authorisation**
 
-To interact with EUDI Wallet Units, your organisation must register as a Relying Party with the national Registrar. Successful registration ensures your organisation's status is reflected in the relevant national/EU Trust Lists. Your organisation then obtains an Access Certificate from the designated Access Certificate Authority. This certificate enables:
+To interact with EUDI Wallet Units, your organisation must register as a Relying Party with the designated national Registrar. This process confirms the RP identity and requires  to formally declare the "intended use": the specific user attributes you are authorised to request.
 
-- Authentication to Wallet Units during presentation requests (the verifier proves its identity).
-- Verification of your organisation's legitimacy by the Wallet Unit (the wallet checks the verifier's certificate chain against the national/EU Trust Lists).
+- RP Registration Certificate: After registering, the RP receives a Registration Certificate (a data object) that specifies the scope of attributes the RP is permitted to request from Wallet Users. The Wallet Unit checks this during presentation to enforce data minimisation.
+
+**Access Certificate and Trust List Inclusion**
+Your organisation needs to obtain an Access Certificate to prove its identity during interactions with Wallet Unit.
+
+- Access Certificate (X.509): this certificate is issued by the designated Access Certificate Authority. It is used to digitally sign presentation requests.
+
+The Trust List inclusion is linked to this mechanism: the public key of the Access Certificate Authority is reflected in the relevant national/EU Trust Lists. This allows every EUDI Wallet Unit across the EU to cryptographically verify that the RP's Access Certificate is legitimate.
 
 **Revocation Status Checking Infrastructure**
 

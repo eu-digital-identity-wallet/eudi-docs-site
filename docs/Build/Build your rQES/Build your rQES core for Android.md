@@ -10,7 +10,7 @@ This module provides the core functionality for the EUDI Wallet related to the R
 
 Android 8 (API level 29) or higher
 
-## Dependencies
+## Installation
 
 To include the library in your project, add the following dependencies to your app's build.gradle
 file.

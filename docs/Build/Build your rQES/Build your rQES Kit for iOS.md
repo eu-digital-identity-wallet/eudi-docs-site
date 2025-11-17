@@ -10,7 +10,7 @@ To use RQES Kit, add the following dependency to your `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/niscy-eudiw/eudi-lib-ios-rqes-kit", branch: "initial")
+    .package(url: "https://github.com/niscy-eudiw/eudi-lib-ios-rqes-kit", exact: "0.6.4")
 ]
 ```
 
@@ -31,8 +31,6 @@ sequenceDiagram
     participant RQESService
     participant RQESServiceAuthorized
     participant RQESServiceCredentialAuthorized
-    Client ->>+ RQESService: getRSSPMetadata()
-    RQESService -->>- Client: RSSPMetadata
     Client ->>+ RQESService: getServiceAuthorizationUrl()
     RQESService -->>- Client: URL
     Client ->>+ RQESService: authorizeService(authorizationCode)
@@ -62,15 +60,7 @@ var rqesService = RQESService(
 )
 ```
 
-### 2. Fetch RQES service metadata
-
-You can get the metadata of the RQES service by calling the `getRSSPMetadata` method:
-
-```swift
-let metadata = try await rqesService.getRSSPMetadata()
-``` 
-
-### 3. Authorize the service
+### 2. Authorize the service
 
 To authorize the service, you need to get the authorization URL and open it in a browser. After the user has authorized the service, the browser will be redirected to the `redirectUri`,
 that is configured in the `CSCClientConfig`, with a query parameter named `code` containing the authorization code. You can then authorize the service by calling the `authorizeService` method:
@@ -86,7 +76,7 @@ let authorizationUrl = try await rqesService.getServiceAuthorizationUrl()
 ```swift
 let authorizedService = try await rqesService.authorizeService(authorizationCode)
 ```
-### 4. Select the credential 
+### 3. Select the credential 
 
 With the authorized service, you can list the available credentials by calling the `getCredentialsList` method and choose the credenrtial you want to use.
 
@@ -96,7 +86,7 @@ let credentials = try await authorizedService.getCredentialsList()
 let credential = credentials.first!
 ```
 
-### 5. Prepare documents to be signed
+### 4. Prepare documents to be signed
 
 ```swift
 let unsignedDocuments = [
@@ -110,7 +100,7 @@ withExtension:"pdf")
 ]
 ```
 
-### 6. Authorize the chosen credential
+### 5. Authorize the chosen credential
 
 1. Get the credential authorization URL:
 ```swift
@@ -124,7 +114,7 @@ let credentialAuthorizationUrl = try await authorizedService.getCredentialAuthor
 ```swift
 let authorizedCredential = try await authorizedService.authorizeCredential(authorizationCode)
 ```
-### 7. Sign the documents
+### 6. Sign the documents
 ```swift
 let signAlgorithm = SigningAlgorithmOID.ECDSA_SHA256
 let signedDocuments = try await authorizedCredential.signDocuments(signAlgorithmOID: signAlgorithm)

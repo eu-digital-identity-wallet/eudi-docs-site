@@ -6,7 +6,7 @@ The European Parliament and the Council reached a provisional agreement on Europ
 ## The Legal Basis
 The legal framework for the mDL within the EUDI Wallet ecosystem is established by several key pieces of EU legislation.
 
-:link: [mdl-overview](./legal-basis.md)
+[mdl-overview](./legal-basis.md)
 
 ## Standards and Protocols
 

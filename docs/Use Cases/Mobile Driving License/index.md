@@ -23,4 +23,4 @@ This section describes the high-level architecture of the EUDI Wallet ecosystem,
 ## Guides
 This section offers practical, step-by-step guides and technical specifications for implementing the mDL. It covers the entire lifecycle of an mDL, from issuance to presentation and verification. 
 
-:link: [Discover the mDL guides](./mDL Guides/)
+:link: [Discover the mDL guides](./mdl-guides/)

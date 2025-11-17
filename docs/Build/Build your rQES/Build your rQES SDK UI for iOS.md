@@ -145,5 +145,5 @@ Please note that if the application is transitioning from the background to the 
 let controller = await UIApplication.shared.topViewController()
 ```
 
-----
+---
 The source code is available [in the EUDI RQES UI for iOS SDK repository](https://github.com/eu-digital-identity-wallet/eudi-lib-ios-rqes-ui){:target="_blank"}.

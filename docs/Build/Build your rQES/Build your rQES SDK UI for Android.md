@@ -174,5 +174,5 @@ EudiRQESUi.resume(
 ```
 This continues the signing flow and completes the RQES transaction with the QTSP.
 
-----
+---
 The source code is available [in the EUDI RQES UI for Android SDK repository](https://github.com/eu-digital-identity-wallet/eudi-lib-android-rqes-ui){:target="_blank"}.

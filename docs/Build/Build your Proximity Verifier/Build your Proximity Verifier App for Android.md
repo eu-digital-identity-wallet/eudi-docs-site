@@ -11,7 +11,7 @@ This guide explains how to set up, build, and run the project on Android.
 You can use emulators or simulators for UI and navigation testing, but completing a **full verification flow** requires a **physical device**.
 
 | Platform   | BLE       | NFC             | Status                                  |
-|------------|-----------|-----------------|-----------------------------------------|
+|---|---|---|---|
 | Android    | Supported | Not implemented | Fully operational with BLE verification |
 
 *Features that are not yet implemented are planned for future releases.*

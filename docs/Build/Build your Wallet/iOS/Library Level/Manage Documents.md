@@ -35,7 +35,7 @@ Currently the keychain implementation is used. It provides document management f
 The storage model provides the following models for the supported well-known document types:
 
 |DocType|Model|
-|-------|-----|
+|---|---|
 |eu.europa.ec.eudiw.pid.1|[EuPidModel](https://eu-digital-identity-wallet.github.io/eudi-lib-ios-iso18013-data-model/documentation/mdocdatamodel18013/eupidmodel){:target="_blank"}|
 |org.iso.18013.5.1.mDL|[IsoMdlModel](https://eu-digital-identity-wallet.github.io/eudi-lib-ios-iso18013-data-model/documentation/mdocdatamodel18013/isomdlmodel){:target="_blank"}|
 

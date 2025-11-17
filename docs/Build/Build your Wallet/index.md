@@ -5,7 +5,7 @@ In this section, you will find all the resources you need to build your own Wall
 Let's start with your implementation!
 
 | Operating System    | Description | Get Started |
-| -------- | ------- |------- |
+| --- | --- |--- |
 | Android | Reference Implementation Wallet Application |[Android Wallet](./Android/Wallet Application Level/)|
 | Android | Reference Implementation Core | [Android Core](./Android/Library Level/) |
 | iOS  | Reference Implementation Wallet Application |[iOS Wallet](./iOS/Wallet Application Level/) |

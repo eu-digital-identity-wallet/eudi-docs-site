@@ -1,7 +1,7 @@
 # Revocation Lists Manager and Publisher Specifications
 The following are considered necessary capabilities of the Revocation Lists components for the mDL Use Case:
 
-| Specification | Optionality | Description and Reference |
+|Specification |Optionality |Description and Reference |
 |---|---|---|
 | :open_file_folder: **Revocation List Management** | | |
 | Set up (create) a status list or identifier list                               | Mandatory | The system sets up a new status list or identifier list to support the mDLs revocation functionality. |

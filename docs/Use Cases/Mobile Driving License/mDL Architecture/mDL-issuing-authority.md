@@ -22,7 +22,7 @@ The components required by the mDL Issuing Authority are described below. The mD
 - Authentic Sources are public or private repositories or systems, recognised or required by law, containing attributes about natural or legal persons (ARF 3.10). The Driving Licence Authentic Source component represents these repositories or systems for the mDL Use Case.
 
 ## Issuing Authority CA (IACA)
-- Issuing Authority CA is the certificate authority operated by or on behalf of an issuing authority ([ISO/IEC 18013-5] section 3.14).
+- Issuing Authority CA is the certificate authority operated by or on behalf of an issuing authority (\[ISO/IEC 18013-5] section 3.14).
 - The IACA issues the IACA root certificate, IACA link certificate, and mDL document signer certificate.
 - It serves as the root of trust for all mDL verifiers to securely validate the integrity and authenticity of mDLs issued by the respective Issuing Authority (IA).
 

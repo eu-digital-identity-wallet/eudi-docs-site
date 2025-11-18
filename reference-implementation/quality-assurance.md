@@ -23,11 +23,11 @@ SonarCloud works on a set of code quality checks and analyzes code for multiple 
 
 - Security (protecting software from threats, attacks, and unauthorized access):
     - Security Vulnerabilities: Flaws in code or configuration that attackers can exploit to compromise the system. Through SonarCloud the following security vulnerabilities are identified: SQL Injection, Deserialization, and Command Injection vulnerabilities.
-    - Security Hotspots based on OWASP Top 10 / CWE Mappings: OWASP Top 10 refers to a list of the ten most critical web application security risks (e.g., injection, broken authentication) that can be found [here](https://owasp.org/www-project-top-ten/). CWE (Common Weakness Enumeration) refers to a standardized catalog of software weakness types. Vulnerabilities and hotspots can be mapped to these categories for classification. The relevant information can be found [here](https://cwe.mitre.org/top25/).
+    - Security Hotspots based on OWASP Top 10 / CWE Mappings: [OWASP Top 10](https://owasp.org/www-project-top-ten/) refers to a list of the ten most critical web application security risks. [CWE (Common Weakness Enumeration)](https://cwe.mitre.org/top25/) refers to a standardized catalog of software weakness types. Vulnerabilities and hotspots can be mapped to these categories for classification.
 
 - Maintainability (measures how easily code can be understood, modified, and extended):
-    - Code Smells: Patterns in code that indicate potential design or implementation issues. They are warning indicators that arise due to potential bad coding practices. The corresponding list that is checked per type of repository is the default provided by SonarCloud and can be found [here](https://rules.sonarsource.com/?_gl=1*7ng3p*_gcl_aw*R0NMLjE3NjMzODYzMTMuRUFJYUlRb2JDaE1Jd29LcTlLWDVrQU1WUEtXREJ4MUdXQ0dHRUFBWUFTQUFFZ0tNaWZEX0J3RQ..*_gcl_au*MTkzNjEwODQ0My4xNzYyNDM4OTc3*_ga*MjEyNzQ5NjI2MS4xNzYyNDM4OTM4*_ga_9JZ0GZ5TC6*czE3NjMzODYyNjYkbzYkZzEkdDE3NjMzODY1NzQkajQ1JGwwJGgw).
-    - Cognitive Complexity: A metric indicating how difficult code is to understand. It increases with nested logic, branching, and poor readability. Details of the corresponding metric can be found [here](https://www.sonarsource.com/resources/cognitive-complexity/)
+    - Code Smells: Patterns in code that indicate potential design or implementation issues. They are warning indicators that arise due to potential bad coding practices. The [default SonarCloud list per language](https://rules.sonarsource.com/?_gl=1*7ng3p*_gcl_aw*R0NMLjE3NjMzODYzMTMuRUFJYUlRb2JDaE1Jd29LcTlLWDVrQU1WUEtXREJ4MUdXQ0dHRUFBWUFTQUFFZ0tNaWZEX0J3RQ..*_gcl_au*MTkzNjEwODQ0My4xNzYyNDM4OTc3*_ga*MjEyNzQ5NjI2MS4xNzYyNDM4OTM4*_ga_9JZ0GZ5TC6*czE3NjMzODYyNjYkbzYkZzEkdDE3NjMzODY1NzQkajQ1JGwwJGgw) is checked in the EUDI Reference Implementation.
+    - Cognitive Complexity: A metric indicating how difficult code is to understand. It increases with nested logic, branching, and poor readability. The [default SonarCloud metric](https://www.sonarsource.com/resources/cognitive-complexity/) is used.
     - Duplications: Repeated blocks of code. High duplication leads to more effort in applying changes and increases the risk of inconsistency.
 
 - Reliability (reflects how consistently software functions without failures):
@@ -57,7 +57,7 @@ Testing is organised across multiple levels to validate functionality, performan
 
 
 - **Objectives:** Functional and end-to-end (E2E) testing ensures that each release behaves as expected according to defined epics and user stories.
-- **Requirements:** The Functional Requirements can be found [here](https://github.com/eu-digital-identity-wallet/eudi-wallet-product-roadmap/blob/main/EUDI%20Wallet%20Reference%20Implementation%20-%20Feature%20Map.md).
+- **Requirements:** [Functional Requirements](https://github.com/eu-digital-identity-wallet/eudi-wallet-product-roadmap/blob/main/EUDI%20Wallet%20Reference%20Implementation%20-%20Feature%20Map.md).
 - **Test Specifications:** The Functional Testing Specifications can be found here:
     - [Manual Testing](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application-internal/tree/main/src/test/resources/features).
     - [Automated Testing](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application-internal/tree/main).
@@ -68,7 +68,7 @@ Testing is organised across multiple levels to validate functionality, performan
 ### Security Testing
 
 - **Objectives:** Security testing ensures the continuous security, integrity, and resilience of the EUDI Wallet applications throughout their lifecycle. By integrating automated and manual security testing within a Secure Software Development Life Cycle (SDLC) and aligning with OWASP MASVS and MASTG standards, the framework enables early detection and remediation of vulnerabilities. It combines code analysis, penetration testing, and vulnerability management using tools such as SonarQube, OWASP Dependency-Check, and DefectDojo to maintain compliance with recognized security standards and safeguard user trust in the EUDI Wallet ecosystem.
-- **Requirements and Test Specifications:** The Security Requirements and Security Test Specifications can be found [here](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application/blob/milestone/2025.Q4/doc/security/EUDI-Wallet-NiScy_Security_Requirements_and_Controls_Documentation.md).
+- **Requirements and Test Specifications:** [Security Requirements and Security Test Specifications](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application/blob/milestone/2025.Q4/doc/security/EUDI-Wallet-NiScy_Security_Requirements_and_Controls_Documentation.md).
 - **Tools:** [Security Testing Tools](#-test-tools).
 
 ---
@@ -76,8 +76,8 @@ Testing is organised across multiple levels to validate functionality, performan
 ### Performance Testing
 
 - **Objectives:** Performance tests to evaluate the performance of the EUDI Wallet application under average user load across various mobile devices. This testing focuses on CPU and memory usage, as well as network activity during common scenarios.
-- **Requirements:** The Performance Requirements can be found [here](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application/blob/milestone/2025.Q4/doc/performance/performance_requirements.md).
-- **Test Specifications**: The Performance Test Specifications can be found [here](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application/blob/milestone/2025.Q4/doc/performance/performance_specifications.md).
+- **Requirements:** [Performance Requirements](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application/blob/milestone/2025.Q4/doc/performance/performance_requirements.md).
+- **Test Specifications**: [Performance Test Specifications](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application/blob/milestone/2025.Q4/doc/performance/performance_specifications.md).
 - **Tools:** [Performance Testing Tools](#-test-tools).
 
 ## 💼 Test Tools

@@ -1,57 +1,55 @@
 # Build your rQES Core for Android
 
-The EUDI RQES Core SDK provides the foundational service logic for enabling Remote Qualified Electronic Signatures (RQES) in Android applications. This document explains how to integrate and use the Core SDK in your project.
+The EUDI rQES Core SDK provides the foundational service logic for enabling Remote Qualified Electronic Signatures (RQES) in Android applications. This document explains how to integrate and use the Core SDK in your project.
 
 ## Overview
 
-This module provides the core functionality for the EUDI Wallet related to the Remote Qualified Electronic Signature (RQES) service including service authorization, credential authorization and document signing.
-
+This SDK provides the core functionality for an EUDI Wallet to interact with a remote Qualified Electronic Signature (rQES) service. It handles service authorisation, credential authorisation, and document signing.
 ## Requirements
 
-Android 8 (API level 29) or higher
+Android 10 (API level 29) or higher
 
 ## Installation
 
-To include the library in your project, add the following dependencies to your app's build.gradle
-file.
+To include the library in your project, add the following dependencies to your app's `build.gradle` file.
 
 ```kotlin
 dependencies {
-    // EUDI Wallet RQES service library
+    // EUDI Wallet rQES service library
     implementation("eu.europa.ec.eudi:eudi-lib-android-rqes-core:0.4.0")
 }
 ```
 
 ## Integration guide
 
-The following diagram illustrates the high-level steps of the RQES document signing flow, from service authorization to obtaining the final signed documents.
+The following diagram illustrates the high-level steps of the rQES document signing flow, from service authorization to obtaining the final signed documents.
 
 ```mermaid
 sequenceDiagram
     participant Client
-    participant RQESService
-    participant RQESService.Authorized
-    participant RQESService.CredentialAuthorized
-    Client ->>+ RQESService: getRSSPMetadata()
-    RQESService -->>- Client: RSSPMetadata
-    Client ->>+ RQESService: getServiceAuthorizationUrl()
-    RQESService -->>- Client: HttpsUrl
-    Client ->>+ RQESService: authorizeService(authorizationCode)
-    RQESService -->>- Client: RQESService.Authorized
-    Client ->>+ RQESService.Authorized: listCredentials(request)
-    RQESService.Authorized -->>- Client: List<CredentialInfo>
-    Client ->>+ RQESService.Authorized: getCredentialAuthorizationUrl(credential, UnsignedDocuments)
-    RQESService.Authorized -->>- Client: HttpsUrl
-    Client ->>+ RQESService.Authorized: authorizeCredential(authorizationCode)
-    RQESService.Authorized -->>- Client: RQESService.CredentialAuthorized
-    Client ->>+ RQESService.CredentialAuthorized: signDocuments()
-    RQESService.CredentialAuthorized -->>- Client: SignedDocuments
+    participant rQESService
+    participant rQESService.Authorized
+    participant rQESService.CredentialAuthorized
+    Client ->>+ rQESService: getRSSPMetadata()
+    rQESService -->>- Client: RSSPMetadata
+    Client ->>+ rQESService: getServiceAuthorizationUrl()
+    rQESService -->>- Client: HttpsUrl
+    Client ->>+ rQESService: authorizeService(authorizationCode)
+    rQESService -->>- Client: RQESService.Authorized
+    Client ->>+ rQESService.Authorized: listCredentials(request)
+    rQESService.Authorized -->>- Client: List<CredentialInfo>
+    Client ->>+ rQESService.Authorized: getCredentialAuthorizationUrl(credential, UnsignedDocuments)
+    rQESService.Authorized -->>- Client: HttpsUrl
+    Client ->>+ rQESService.Authorized: authorizeCredential(authorizationCode)
+    rQESService.Authorized -->>- Client: RQESService.CredentialAuthorized
+    Client ->>+ rQESService.CredentialAuthorized: signDocuments()
+    rQESService.CredentialAuthorized -->>- Client: SignedDocuments
 ```
 
-### 1. Create an RQESService instance
+### 1. Create an rQESService instance
 
 ```kotlin
-val rqesService = RQESService(
+val rqesService = rQESService(
     serviceEndpointUrl = "https://example.com/csc/v2",
     config = CSCClientConfig(
         client = OAuth2Client.Confidential.ClientSecretBasic(
@@ -73,15 +71,17 @@ val rqesService = RQESService(
 )
 ```
 
-You can fetch the RQES service metadata:
+You can fetch the rQES service metadata:
 
 ```kotlin
 val metadata = rqesService.getRSSPMetadata().getOrThrow()
 ``` 
 
-### 2. Authorize the RQES service
+### 2. Authorize the rQES service
 
-First, obtain the service authorization URL and open it in a browser:
+To begin the signing process, the user must authorise your application to use the rQES service.
+
+First, obtain the service authorization URL and open it in a custom tab or browser:
 
 ```kotlin
 val authorizationUrl = rqesService.getServiceAuthorizationUrl().getOrThrow()
@@ -91,20 +91,23 @@ val authorizationUrl = rqesService.getServiceAuthorizationUrl().getOrThrow()
 // is configured in the `CSCClientConfig`
 // with a query parameter named "code" containing the authorization code
 ```
-When the redirect happens, extract the authorization code and authorize the service:
+
+After the user grants authorisation, the service will redirect to the authFlowRedirectionURI you configured, appending an authorisation code as a query parameter. Your app must capture this redirect, extract the code, and exchange it for an access token.
+
 ```kotlin
 val authorizationCode = AuthorizationCode("code")
 val authorizedService = rqesService.authorizeService(authorizationCode).getOrThrow()
 ```
 ### 3. Select a credential and prepare documents
    
-List available credentials:
+Once the service is authorised, you can list the user's available signing credentials.
 
 ```kotlin
 val credentials = authorizedService.listCredentials().getOrThrow()
 val credential = credentials.first() // choose whichever credential you want
 ```
-Prepare documents to sign
+
+Next, prepare the documents that need to be signed.
 
 ```kotlin
 val unsignedDocuments = UnsignedDocuments(
@@ -123,7 +126,9 @@ val unsignedDocuments = UnsignedDocuments(
 ```
 ### 4. Authorize the credential and sign
 
-Obtain the credential authorizationURL to open a browser and let the user authorize the credential
+The user must now authorise the use of their selected credential for this specific transaction. 
+
+Obtain the credential authorizationURL to open a browser and let the user authorize the credential.
 
 ```kotlin
 val credentialAuthorizationUrl = authorizedService.getCredentialAuthorizationUrl(
@@ -138,7 +143,9 @@ val credentialAuthorizationUrl = authorizedService.getCredentialAuthorizationUrl
 // with a query parameter "code" containing the credential authorization code.
 ```
 
-Authorize the credential and sign the documents:
+Similar to service authorisation, the user will be redirected back to your authFlowRedirectionURI with a new code.
+
+Use this code to complete the signing process:
 
 ```kotlin
 val credentialAuthorizationCode = AuthorizationCode("credential-code")
@@ -160,4 +167,4 @@ You can also sign without explicitly calling authorizeCredential:
 val signedDocumentsAlt = authorizedService.signDocuments(credentialAuthorizationCode).getOrThrow()
 ```
 ## Source code
-The source code is available [here](https://github.com/eu-digital-identity-wallet/eudi-lib-android-rqes-core/).
+The source code is available on GitHub: [eudi-lib-android-rqes-core](https://github.com/eu-digital-identity-wallet/eudi-lib-android-rqes-core/).

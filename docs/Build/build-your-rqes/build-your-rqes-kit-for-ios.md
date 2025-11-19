@@ -2,11 +2,17 @@
 
 ## Overview
 
-The EUDI RQES Kit for iOS provides the essential functionality needed to enable Remote Qualified Electronic Signatures (RQES) within iOS applications. It offers a unified interface for retrieving authorization URLs, authorizing both the service and user credentials, and performing secure document signing operations. 
+The EUDI rQES Kit for iOS provides the essential functionality needed to enable Remote Qualified Electronic Signatures (rQES) within iOS applications. It offers a unified interface for retrieving authorization URLs, authorizing both the service and user credentials, and performing secure document signing operations. 
+
+## Requirements
+
+- iOS 16 or higher
 
 ## Installation
 
-To use RQES Kit, add the following dependency to your `Package.swift`:
+To integrate RQES Kit using Swift Package Manager, add the following to your Package.swift file.
+
+First, add the package repository to your dependencies:
 
 ```swift
 dependencies: [
@@ -14,7 +20,8 @@ dependencies: [
 ]
 ```
 
-Then add the `eudi-lib-ios-rqes-kit` package to your target's dependencies:
+Then add the `RqesKit` product to your app target's dependencies:
+
 ```swift
 dependencies: [
     .product(name: "RqesKit", package: "eudi-lib-ios-rqes-kit"),
@@ -28,24 +35,24 @@ dependencies: [
 ```mermaid
 sequenceDiagram
     participant Client
-    participant RQESService
-    participant RQESServiceAuthorized
-    participant RQESServiceCredentialAuthorized
-    Client ->>+ RQESService: getServiceAuthorizationUrl()
-    RQESService -->>- Client: URL
-    Client ->>+ RQESService: authorizeService(authorizationCode)
-    RQESService -->>- Client: RQESServiceAuthorized
-    Client ->>+ RQESServiceAuthorized: getCredentialsList(request)
-    RQESServiceAuthorized -->>- Client: List<CredentialInfo>
-    Client ->>+ RQESServiceAuthorized: getCredentialAuthorizationUrl(credential, documents)
-    RQESServiceAuthorized -->>- Client: URL
-    Client ->>+ RQESServiceAuthorized: authorizeCredential(authorizationCode)
-    RQESServiceAuthorized -->>- Client: RQESServiceCredentialAuthorized
-    Client ->>+ RQESServiceCredentialAuthorized: signDocuments(algorithmOID)
-    RQESServiceCredentialAuthorized -->>- Client: SignedDocuments
+    participant rQESService
+    participant rQESServiceAuthorized
+    participant rQESServiceCredentialAuthorized
+    Client ->>+ rQESService: getServiceAuthorizationUrl()
+    rQESService -->>- Client: URL
+    Client ->>+ rQESService: authorizeService(authorizationCode)
+    rQESService -->>- Client: RQESServiceAuthorized
+    Client ->>+ rQESServiceAuthorized: getCredentialsList(request)
+    rQESServiceAuthorized -->>- Client: List<CredentialInfo>
+    Client ->>+ rQESServiceAuthorized: getCredentialAuthorizationUrl(credential, documents)
+    rQESServiceAuthorized -->>- Client: URL
+    Client ->>+ rQESServiceAuthorized: authorizeCredential(authorizationCode)
+    rQESServiceAuthorized -->>- Client: RQESServiceCredentialAuthorized
+    Client ->>+ rQESServiceCredentialAuthorized: signDocuments(algorithmOID)
+    rQESServiceCredentialAuthorized -->>- Client: SignedDocuments
 ```
 
-### 1. Create an RQES Service instance
+### 1. Create an rQES Service instance
 
 ```swift
 let cscClientConfig = CSCClientConfig(
@@ -54,7 +61,7 @@ let cscClientConfig = CSCClientConfig(
                 clientSecret: "somesecret2"
         ),
         authFlowRedirectionURI: "https://oauthdebugger.com/debug", rsspId: "")
-var rqesService = RQESService(
+var rqesService = rQESService(
     clientConfig: cscClientConfig,
     defaultHashAlgorithmOID: .SHA256
 )
@@ -88,6 +95,8 @@ let credential = credentials.first!
 
 ### 4. Prepare documents to be signed
 
+Create an array of Document objects pointing to the local files you wish to have signed.
+
 ```swift
 let unsignedDocuments = [
 Document(
@@ -101,6 +110,8 @@ withExtension:"pdf")
 ```
 
 ### 5. Authorize the chosen credential
+
+Next step is to get user consent to use the credential for this specific transaction, which also involves a browser redirect.
 
 1. Get the credential authorization URL:
 ```swift
@@ -120,5 +131,5 @@ let signAlgorithm = SigningAlgorithmOID.ECDSA_SHA256
 let signedDocuments = try await authorizedCredential.signDocuments(signAlgorithmOID: signAlgorithm)
 ```
 ## Source code
-The source code is available [here](https://github.com/eu-digital-identity-wallet/eudi-lib-ios-rqes-kit).
+The source code is available on GitHub [eudi-lib-ios-rqes-kit](https://github.com/eu-digital-identity-wallet/eudi-lib-ios-rqes-kit).
 

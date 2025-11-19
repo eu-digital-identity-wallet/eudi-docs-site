@@ -82,7 +82,7 @@ The following table summarises the tools utilised in the applicable test types:
 | Unit |  _SonarCloud_ |
 | Functional |  **Manual Testing** <br/> - _Serenity BDD_ for structured reporting and visual coverage <br/> **Automation Testing** <br/> - _Appium_ (for mobile automation on Android and iOS), <br/> - _Java_ (test scripting language), <br/> - _JUnit_ (test framework), <br/> **Other Tools** <br/> - _IntelliJ IDEA_ (development and execution environment), <br/> - _Maven_ (dependency and build management), <br/> - _Appium Inspector_ (for element inspection and locator validation), <br/> - _Xcode_ (for building and exporting iOS .ipa files and Android .apk packages retrieved manually from Firebase for testing). |
 | Security |  - _OWASP MASVS/MASTG_ for mobile security verification <br/> - _OWASP Dependency-Check_ for third-party library analysis <br/> - _SQLCipher_ and _Android Keystore_ for data protection <br/> - _Burp Suite_ and _MobSF_ for dynamic testing and static analysis|
-| Performance | **Android** - _Android Studio Profiler_ and  _App Inspection_ or performance monitoring, memory usage, and CPU/network profiling <br/> **iOS** <br/> - _Xcode Instruments_ for performance monitoring, memory usage, and CPU/network profiling |
+| Performance | **Android** <br/> - _Android Studio Profiler_ and  _App Inspection_ or performance monitoring, memory usage, and CPU/network profiling <br/> **iOS** <br/> - _Xcode Instruments_ for performance monitoring, memory usage, and CPU/network profiling |
 
 
 ## 📊 Reporting

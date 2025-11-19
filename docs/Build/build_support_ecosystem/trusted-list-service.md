@@ -22,7 +22,7 @@ The Reference Implementation Trusted List Provider (TLP) is designed solely to s
 
 ### Reference Implementation TLP service
 
-For testing purposes, a hosted instance of the Reference Implementation TLP is available at https://trustedlist.serviceproviders.eudiw.dev/.
+For testing purposes, a hosted instance of the Reference Implementation TLP is available at <https://trustedlist.serviceproviders.eudiw.dev/>.
 
 It provides:
 
@@ -103,7 +103,7 @@ The current Reference Implementation of the Trusted List Provider (TLP) focuses 
 
 ### Reference Implementation TLP deployment and configuration
 
-The complete source code, deployment instructions and configuration details for the Trusted List Provider (TLP) Reference Implementation are publicly available in the GitHub repository at https://github.com/eu-digital-identity-wallet/eudi-srv-web-trustedlist-manager-py/
+The complete source code, deployment instructions and configuration details for the Trusted List Provider (TLP) Reference Implementation are publicly available in the GitHub repository at <https://github.com/eu-digital-identity-wallet/eudi-srv-web-trustedlist-manager-py/>
 
 The TLP can be run:
 

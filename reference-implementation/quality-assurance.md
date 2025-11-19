@@ -19,11 +19,11 @@ All testing artefacts are managed in GitHub under:
 
 ## 💎 Code Quality Controls
 
-SonarCloud works on a set of code quality checks and analyzes code for multiple quality dimensions, across all stacks (Swift, Kotlin, Java, Python). The checks conducted can be further grouped into the following categories:
+SonarCloud works on a set of code quality checks and analyses code for multiple quality dimensions, across all stacks (Swift, Kotlin, Java, Python). The checks conducted can be further grouped into the following categories:
 
-- Security (protecting software from threats, attacks, and unauthorized access):
-    - Security Vulnerabilities: Flaws in code or configuration that attackers can exploit to compromise the system. Through SonarCloud the following security vulnerabilities are identified: SQL Injection, Deserialization, and Command Injection vulnerabilities.
-    - Security Hotspots based on OWASP Top 10 / CWE Mappings: [OWASP Top 10](https://owasp.org/www-project-top-ten/) refers to a list of the ten most critical web application security risks. [CWE (Common Weakness Enumeration)](https://cwe.mitre.org/top25/) refers to a standardized catalog of software weakness types. Vulnerabilities and hotspots can be mapped to these categories for classification.
+- Security (protecting software from threats, attacks, and unauthorised access):
+    - Security Vulnerabilities: Flaws in code or configuration that attackers can exploit to compromise the system. SonarCloud identifies the following security vulnerabilities are identified: SQL Injection, Deserialization, and Command Injection vulnerabilities.
+    - Security Hotspots based on OWASP Top 10 / CWE Mappings: [The OWASP Top 10](https://owasp.org/www-project-top-ten/) lists the ten most critical web application security risks. [CWE (Common Weakness Enumeration)](https://cwe.mitre.org/top25/) refers to a standardised catalogue of software weakness types. Vulnerabilities and hotspots can be mapped to these categories for classification.
 
 - Maintainability (measures how easily code can be understood, modified, and extended):
     - Code Smells: Patterns in code that indicate potential design or implementation issues. They are warning indicators that arise due to potential bad coding practices. The [default SonarCloud list per language](https://rules.sonarsource.com/?_gl=1*7ng3p*_gcl_aw*R0NMLjE3NjMzODYzMTMuRUFJYUlRb2JDaE1Jd29LcTlLWDVrQU1WUEtXREJ4MUdXQ0dHRUFBWUFTQUFFZ0tNaWZEX0J3RQ..*_gcl_au*MTkzNjEwODQ0My4xNzYyNDM4OTc3*_ga*MjEyNzQ5NjI2MS4xNzYyNDM4OTM4*_ga_9JZ0GZ5TC6*czE3NjMzODYyNjYkbzYkZzEkdDE3NjMzODY1NzQkajQ1JGwwJGgw) is checked in the EUDI Reference Implementation.
@@ -31,7 +31,7 @@ SonarCloud works on a set of code quality checks and analyzes code for multiple 
     - Duplications: Repeated blocks of code. High duplication leads to more effort in applying changes and increases the risk of inconsistency.
 
 - Reliability (reflects how consistently software functions without failures):
-    - Bugs: Using static code analysis, it detects actual bugs that can cause runtime errors or incorrect behavior.
+    - Bugs: Using static code analysis, it detects actual bugs that can cause runtime errors or incorrect behaviour.
     - Unit Test Coverage: A measure of how much of the code is exercised by automated tests. Higher coverage generally increases confidence in reliability but doesn’t guarantee the absence of bugs.
 
 ## 🧩 Test Types
@@ -51,27 +51,21 @@ Testing is organised across multiple levels to validate functionality, performan
 - **Objectives:** Unit testing verifies the correctness of individual software components and is the first quality gate in the CI pipeline. Unit testing supports early defect detection and continuous integration by ensuring each new change maintains baseline quality.
 - **Tools:** [Unit Testing Tools](#-test-tools).
 
----
-
 ### Functional Testing
 
 
 - **Objectives:** Functional and end-to-end (E2E) testing ensures that each release behaves as expected according to defined epics and user stories.
 - **Requirements:** [Functional Requirements](https://github.com/eu-digital-identity-wallet/eudi-wallet-product-roadmap/blob/main/EUDI%20Wallet%20Reference%20Implementation%20-%20Feature%20Map.md).
 - **Test Specifications:** The Functional Testing Specifications can be found here:
-    - [Manual Testing](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application-internal/tree/main/src/test/resources/features).
-    - [Automated Testing](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application-internal/tree/main).
+    - [Manual Testing](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application/tree/milestone/2025.Q4/src/test/resources/features).
+    - [Automated Testing](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application/tree/milestone/2025.Q4).
 - **Tools:** [Functional Testing Tools](#-test-tools).
-
----
 
 ### Security Testing
 
-- **Objectives:** Security testing ensures the continuous security, integrity, and resilience of the EUDI Wallet applications throughout their lifecycle. By integrating automated and manual security testing within a Secure Software Development Life Cycle (SDLC) and aligning with OWASP MASVS and MASTG standards, the framework enables early detection and remediation of vulnerabilities. It combines code analysis, penetration testing, and vulnerability management using tools such as SonarQube, OWASP Dependency-Check, and DefectDojo to maintain compliance with recognized security standards and safeguard user trust in the EUDI Wallet ecosystem.
+- **Objectives:** Security testing ensures the continuous security, integrity, and resilience of the EUDI Wallet applications throughout their lifecycle. By integrating automated and manual security testing within a Secure Software Development Life Cycle (SDLC) and aligning with OWASP MASVS and MASTG standards, the framework enables early detection and remediation of vulnerabilities. It combines code analysis, penetration testing, and vulnerability management using tools such as SonarQube, OWASP Dependency-Check, and DefectDojo to maintain compliance with recognised security standards and safeguard user trust in the EUDI Wallet ecosystem.
 - **Requirements and Test Specifications:** [Security Requirements and Security Test Specifications](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application/blob/milestone/2025.Q4/doc/security/EUDI-Wallet-NiScy_Security_Requirements_and_Controls_Documentation.md).
 - **Tools:** [Security Testing Tools](#-test-tools).
-
----
 
 ### Performance Testing
 
@@ -86,9 +80,9 @@ The following table summarises the tools utilised in the applicable test types:
 | Test Type | Tools | 
 | -------- | ------- | 
 | Unit |  _SonarCloud_ |
-| Functional |  _Manual_, _Serenity BDD_ for structured reporting and visual coverage, Automation: Appium (for mobile automation on Android and iOS), Java (test scripting language), JUnit (test framework), IntelliJ IDEA (development and execution environment), Maven (dependency and build management), Appium Inspector (for element inspection and locator validation), Xcode (for building and exporting iOS .ipa files and Android .apk packages retrieved manually from Firebase for testing). |
-| Security |  _OWASP MASVS/MASTG_ for mobile security verification <br> _OWASP Dependency-Check_ for third-party library analysis <br> _SQLCipher_ and _Android Keystore_ for data protection <br> _Burp Suite_ and _MobSF_ for dynamic testing and static analysis|
-| Performance | Android: Android Studio Profiler and App Inspection and iOS: Xcode Instruments for performance monitoring, memory usage, and CPU/network profiling |
+| Functional |  **Manual Testing** <br/> - _Serenity BDD_ for structured reporting and visual coverage <br/> **Automation Testing** <br/> - _Appium_ (for mobile automation on Android and iOS), <br/> - _Java_ (test scripting language), <br/> - _JUnit_ (test framework), <br/> **Other Tools** <br/> - _IntelliJ IDEA_ (development and execution environment), <br/> - _Maven_ (dependency and build management), <br/> - _Appium Inspector_ (for element inspection and locator validation), <br/> - _Xcode_ (for building and exporting iOS .ipa files and Android .apk packages retrieved manually from Firebase for testing). |
+| Security |  - _OWASP MASVS/MASTG_ for mobile security verification <br/> - _OWASP Dependency-Check_ for third-party library analysis <br/> - _SQLCipher_ and _Android Keystore_ for data protection <br/> - _Burp Suite_ and _MobSF_ for dynamic testing and static analysis|
+| Performance | **Android** - _Android Studio Profiler_ and  _App Inspection_ or performance monitoring, memory usage, and CPU/network profiling <br/> **iOS** <br/> - _Xcode Instruments_ for performance monitoring, memory usage, and CPU/network profiling |
 
 
 ## 📊 Reporting
@@ -99,8 +93,8 @@ Each release is accompanied with serenity-generated reports summarising test exe
 
 | Release | Test Types | Report Links | Status |
 | --- | --- | --- | --- |
-| 2025.07.28 - Demo | Functional <br/> Security <br/> Performance | [Functional test results](https://mgiakkou.github.io/testing/2025_q3/) <br/> [Security test results](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application/raw/refs/heads/milestone/2025.Q4/doc/security/EUDI-Wallet-NiScy_Security%20Testing%20Results-Version_2025.07.28-Demo.xlsx) <br/> [Performance test results](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application/blob/milestone/2025.Q4/doc/performance/preformance_test_results.md)| ✅ Released |
-| 2025.10.31 - Demo | Functional | [Functional test results](https://mgiakkou.github.io/testing/2025_q4/) | ✅ Released |
+| 2025.07.28 - Demo | Functional <br/> Security <br/> Performance | - [Functional test results](https://mgiakkou.github.io/testing/2025_q3/) <br/> - [Security test results](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application/raw/refs/heads/milestone/2025.Q4/doc/security/EUDI-Wallet-NiScy_Security%20Testing%20Results-Version_2025.07.28-Demo.xlsx) <br/> - [Performance test results](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application/blob/milestone/2025.Q4/doc/performance/preformance_test_results.md#test-execution-and-results)| ✅ Released |
+| 2025.10.31 - Demo | Functional | - [Functional test results](https://mgiakkou.github.io/testing/2025_q4/) | ✅ Released |
 | 2025.12.xx - xxx | (to be added) | (to be added) | 🔄 In progress |
 
 Older releases remain available in the reports directory of the [testing repository](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application-internal/actions).

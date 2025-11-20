@@ -39,15 +39,15 @@ Your mDL Verifier must be capable of checking the revocation status of presented
 
 The verification process supports both proximity and remote presentation flows, implementing the protocols specified in ISO/IEC 18013-5 and OpenID4VP respectively.
 
-**Remote Verification Architecture:**
+**Remote Verification Architecture**
 
-**(Remote) mDL Verifier Client:**
+**(Remote) mDL Verifier Client**
 
 - runs in the web browser and provides the user interface for initiating and managing the presentation flow. 
 - renders and submits the presentation requests to the wallet. 
 - interacts with the Digital Credential API of the web browser to manage the presentation requests and responses. 
 
-**(Remote) mDL Verifier Backend:**
+**(Remote) mDL Verifier Backend**
 
 - is the server-side component of the mDL Verifier application that directly interacts with the Wallet via the frontend. 
 - sends presentation requests, compliant with the OpenID4VP specification, to the Wallet via the browser's Digital Credentials API 
@@ -55,24 +55,24 @@ The verification process supports both proximity and remote presentation flows, 
 - performs the trust relationships checks. 
 - integrates with the mDL Verifier Organisation backend systems to inform about the requested mDLs claims and verification checks. 
 
-**mDL Verifier organisation backend systems:** 
+**mDL Verifier organisation backend systems** 
 
 - It requests from the mDL Verifier Backend to initiate the mDL remote presentation flow, 
 - It receives from the mDL Verifier Backend the requested mDL attributes and validation and verification checks. 
 
-**Data Retrieval Methods:**
+**Data Retrieval Methods**
 
 - **Non-Digital Credentials API**: Uses ISO/IEC 18013-5 (CBOR) and OpenID4VP v1.0 specification
 - **Digital Credentials API based**: Uses ISO/IEC 18013-5 (CBOR) with ISO/IEC 18013-7 Annex C, or OpenID4VP in combination with Digital Credentials API
 
-**Proximity Verification Flow (mDL Reader):**
+**Proximity Verification Flow (mDL Reader)**
 The mDL Reader is a mobile application that can request, receive, and verify the integrity and authenticity of an mDL for proximity presentation flows. It is controlled by an mDL Verifier, which is a person or organisation. This section focuses explicitly on the mDL Reader.
 The mDL reader implements the proximity presentation flow with the EUDI Wallet. ISO/IEC 18013-5 specifies the interfaces between:
 
 - the mDL (wallet) and mDL reader
 - the mDL reader and the issuing authority infrastructure.
 
-The interface of the mDL reader and the issuing authority infrastructure (online/server data retrieval) is excluded (not supported) from the mDL target solution since it allows the issuing authority to have knowledge when the mDL holder presents the mDL to a specific mDL verifier. This is prohibited explicitly by articles 5a.16 and 5a.5(b) of [eIDAS] and [ARF] Annex 2 High level requirement “ProxId_02” that states explicitly “Wallet Solutions, PID Providers, Attestation Providers, Wallet Providers, and Relying Parties SHALL NOT support server retrieval as specified in ISO/IEC 18013-5 for requesting and presenting PID or attestation attributes”. Therefore, this method is excluded (not supported) from the mDL target solution.
+The interface of the mDL reader and the issuing authority infrastructure (online/server data retrieval) is excluded (not supported) from the mDL target solution since it allows the issuing authority to have knowledge when the mDL holder presents the mDL to a specific mDL verifier. This is prohibited explicitly by articles 5a.16 and 5a.5(b) of [eIDAS] and [ARF] Annex 2 High level requirement "ProxId_02” that states explicitly "Wallet Solutions, PID Providers, Attestation Providers, Wallet Providers, and Relying Parties SHALL NOT support server retrieval as specified in ISO/IEC 18013-5 for requesting and presenting PID or attestation attributes”. Therefore, this method is excluded (not supported) from the mDL target solution.
 
 ## Libraries & SDKs
 

@@ -40,7 +40,7 @@ Your EUDI Wallet must support remote presentation flow with requirements as foll
 
 **Data retrieval not based on user agent (Digital Credentials API)**
 
-- Shall be according to ISO/IEC 18013-5 (CBOR), OpenID4VP v1.0 specification instead of ISO/IEC 18013-7 (Annex B) where Draft 18 of OpenID4VP is used
+- Shall be according to ISO/IEC 18013-5 (CBOR), OpenID4VP v1.0 specification instead of ISO/IEC 18013-7 (Annex B) where OpenID4VP is used
 
 **Data retrieval based on user agent (Digital Credentials API) - Optional**
 

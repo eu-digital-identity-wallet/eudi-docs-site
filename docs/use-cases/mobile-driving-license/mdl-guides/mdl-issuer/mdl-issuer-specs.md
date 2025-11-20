@@ -9,7 +9,6 @@ The following are considered necessary capabilities of the reference implementat
 | mDL Data Model | Mandatory | As above |
 | :open_file_folder: **mDL Issuance Profile**  |  |  |
 | Profile of OpenID4VCI to issue mDL  | Mandatory | ARF in High Level Requirements ISSU_01 specify HAIP as the profile for the OpenID4VCI protocol. HAIP profiles issuance only for SD-JWT VC but not for ISO mdoc. Therefore, an mDL profile for OpenID4VCI protocol needs to be specified to set the requirements for the existing specifications to enable interoperability among Issuers and Wallets of mDLs where a high level of security and data protection is required. |
-
 | :open_file_folder: **Attestation Issuance Interface (AII)**  |  |  |
 | Credential Issuance API according to OpenID4VCI v1.0 specification  | Mandatory | [ARF] "4.3.3 Wallet Unit interfaces and protocols" mentions that the "Attestation Issuance Interface (AII) complies with the [OpenID4VCI] standard". The version 1.0 of OpenID4VCI shall be implemented. |
 | :open_file_folder: **Initiation**  |  |  |

@@ -26,22 +26,22 @@ For remote presentation flows for ISO/IEC 18013-5-compliant attestations the Wal
 
 - For the remote presentation flow that does not use the user agent (Digital Credentials API) mechanism, the Wallet Instance and the Remote verifier web application shall comply with Annex B (Use of OID4VP to retrieve an mdoc) of ISO/IEC 18013-7.
 - For the remote presentation flow that uses the data retrieval mechanism of the user agent (Digital Credentials API), the Wallet Instance and the Remote verifier web application:
-    - Shall comply with the Annex C (Digital credentials API retrieval) of ISO/IEC 18013-7.
-    - Implement OpenID4VP in combination with Digital Credentials API (Appendix A. OpenID4VP over the Digital Credentials API).
+ - Shall comply with the Annex C (Digital credentials API retrieval) of ISO/IEC 18013-7.
+ - Implement OpenID4VP in combination with Digital Credentials API (Appendix A. OpenID4VP over the Digital Credentials API).
 
 ### Proximity Presentation Flows 
 For the proximity presentation flow, the Wallet Instance and the proximity verifier mobile application (mDL Reader) implement the [ISO/IEC 18013-5] standard.
 
-##  Digital Credentials API Optionality
+## Digital Credentials API Optionality
 It should be noted that ARF in section 5.6.2 states explicitly that __"Within the EUDI Wallet ecosystem, the second option above will be used for requesting and presenting ISO/IEC 18013-5-compliant attestations in remote transaction flows"__. This second option referenced in ARF is: __"Using [OpenID4VP], …. [ISO/IEC 18013-7] specifies a profile for this standard,"__ and it refers to "Annex B Use of OID4VP to retrieve an mdoc" of ISO 18013-7. ARF also in section 4.4.3.1 states that __"The use of this [Digital Credentials] API by Wallet Units and Relying Parties is optional"__. Therefore, the remote presentation flows using the Digital Credentials API is considered as optional for the target solution.
 
 ## Transaction Flows Summary
 The table below provides the summary of the issuance and presentation transaction flows as specified in ARF that apply explicitly to the target mDL Use Case solution:
 
-| Operation    | 	Flow   | Credential Format Profiles  | 	Protocol                                                                                                               | Optionality  |
+| Operation | 	Flow | Credential Format Profiles | 	Protocol | Optionality |
 |--------------|-----------|-----------------------------|-------------------------------------------------------------------------------------------------------------------------|--------------|
-| Issuance     | Remote    | ISO/IEC 18013-5 (CBOR)      | OpenID4VCI, v1.0                                                                                                        | Mandatory    |
-| Presentation | Remote    | ISO/IEC 18013-5 (CBOR)      | OpenID4VP v1.0 instead of OpenID4VP Draft 18 as defined in ISO/IEC 18013-7 (Annex B: Use of OID4VP to retrieve an mdoc) | Mandatory    |
-| Presentation | Remote    | ISO/IEC 18013-5 (CBOR)      | ISO/IEC 18013-7 (Annex C: Digital credentials API retrieval)                                                            | Optional     |
-| Presentation | Remote    | ISO/IEC 18013-5 (CBOR)      | OID4VP in combination with Digital Credentials API (OID4VP Appendix A. OpenID4VP over the Digital Credentials API)      | Optional     |
-| Presentation | Proximity | ISO/IEC 18013-5 (CBOR)      | ISO/IEC 18013-5 (device retrieval)                                                                                      | Mandatory    |
+| Issuance | Remote | ISO/IEC 18013-5 (CBOR) | OpenID4VCI, v1.0 | Mandatory |
+| Presentation | Remote | ISO/IEC 18013-5 (CBOR) | OpenID4VP v1.0 instead of OpenID4VP Draft 18 as defined in ISO/IEC 18013-7 (Annex B: Use of OID4VP to retrieve an mdoc) | Mandatory |
+| Presentation | Remote | ISO/IEC 18013-5 (CBOR) | ISO/IEC 18013-7 (Annex C: Digital credentials API retrieval) | Optional |
+| Presentation | Remote | ISO/IEC 18013-5 (CBOR) | OID4VP in combination with Digital Credentials API (OID4VP Appendix A. OpenID4VP over the Digital Credentials API) | Optional |
+| Presentation | Proximity | ISO/IEC 18013-5 (CBOR) | ISO/IEC 18013-5 (device retrieval) | Mandatory |

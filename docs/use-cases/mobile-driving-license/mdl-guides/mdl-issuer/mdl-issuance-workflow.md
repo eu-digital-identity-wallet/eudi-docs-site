@@ -6,7 +6,7 @@
 For the technical team to successfully deploy the mDL Issuer, integration with the following external national infrastructure components is required: 
 
 - **Authentic Source Integration for Claims Acquisition**
-  
+ 
 The mDL Issuing Authority is required to issue mDLs containing accurate claims about the subject. The ability to verify attributes typically relies on establishing an interface with the relevant Authentic Sources (public or private repositories containing person mDL attributes).
 
 Your implementation must ensure the mDL Issuer component is configured to retrieve authenticated data needed for the mDL claims from your designated Authentic Source. 
@@ -61,7 +61,7 @@ Revocation is an essential component of the trust model. The mDL Issuing Authori
 
 - **Revocation Mechanism Implementation** 
 
-Since mDLs are attestations valid for longer than 24 hours, the Issuer SHALL use either a  Status List or a Revocation Identifier List mechanism. You can use the provided Revocation Lists Manager component to manage (create and update) the revocation status list or revocation identifier list.
+Since mDLs are attestations valid for longer than 24 hours, the Issuer SHALL use either a Status List or a Revocation Identifier List mechanism. You can use the provided Revocation Lists Manager component to manage (create and update) the revocation status list or revocation identifier list.
 
 If you decide to implement the Status List mechanism then when an mDL is issued, the mDL Issuer component must register it in the status list using this component’s API. It shall register its unique identifier (e.g., a serial number, a unique hash, or an index) and position in the list and then initialize it (e.g. set to “VALID” or “0”). 
 
@@ -73,9 +73,9 @@ Ensure that the issued mDL includes revocation information (a URL pointing to th
 
 - **The mDL Issuer SHALL revoke an mDL when**
 
-  - The security of the mDL or the mDL Issuing Authority infrastructure has been compromised.
-  - The value of one or more attributes in the mDL changes (triggering re-issuance and revocation of the old mDL).
-  - Upon explicit request from the mDL subject (recommended action).
+ - The security of the mDL or the mDL Issuing Authority infrastructure has been compromised.
+ - The value of one or more attributes in the mDL changes (triggering re-issuance and revocation of the old mDL).
+ - Upon explicit request from the mDL subject (recommended action).
  
 - **Revocation Publication**
 

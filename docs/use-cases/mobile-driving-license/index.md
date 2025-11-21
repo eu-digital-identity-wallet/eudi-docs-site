@@ -11,7 +11,7 @@ This toolkit aligns with the EUDI Wallet Architecture and Reference Framework (A
 The mDL is a significant use case for the EUDI Wallet, allowing users to request, store, and present a mobile Driving Licence to prove their driving privileges in both online and offline scenarios. This toolkit will guide you through the process of building and integrating a compliant and interoperable mDL solution.
 
 ## Solution Overview
-This section provides a high-level overview of the mDL solution within the broader EUDI Wallet ecosystem.  It introduces the use case and outlines the legal and technical foundations.
+This section provides a high-level overview of the mDL solution within the broader EUDI Wallet ecosystem. It introduces the use case and outlines the legal and technical foundations.
 
 :link: [Learn more about the mDL solution](./mdl-overview/)
 

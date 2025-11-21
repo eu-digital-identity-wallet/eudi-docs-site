@@ -18,7 +18,7 @@ Your implementation must ensure the mDL Verifier component can retrieve and vali
 
 **Relying Party Registration and Authorisation**
 
-To interact with EUDI Wallet Units, your organisation must register as a Relying Party with the designated national Registrar. This process confirms the RP identity and requires  to formally declare the "intended use": the specific user attributes you are authorised to request.
+To interact with EUDI Wallet Units, your organisation must register as a Relying Party with the designated national Registrar. This process confirms the RP identity and requires to formally declare the "intended use": the specific user attributes you are authorised to request.
 
 - RP Registration Certificate: After registering, the RP receives a Registration Certificate (a data object) that specifies the scope of attributes the RP is permitted to request from Wallet Users. The Wallet Unit checks this during presentation to enforce data minimisation.
 

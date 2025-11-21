@@ -8,7 +8,7 @@ The service provides, by default, support for `mso_mdoc` and `SD-JWT-VC`formats,
 
 
 | Credential/Attestation | Format    |
-|------------------------|-----------|
+|---|---|
 | PID                    | mso_mdoc  |
 | PID(sample)            | SD-JWT-VC |
 | mDL                    | mso_mdoc  | 
@@ -23,7 +23,7 @@ This version of the Issuer supports the [OpenId for Verifiable Credential Issuan
 
 
 | Feature                                                   | Coverage                                                        |
-|-------------------------------------------------------------------|-----------------------------------------------------------------|
+|---|---|
 | [Authorization Code flow draft](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/tree/main/api_docs/authorization.md)              | ✅ Support for credential configuration id, scope, (draft 13)               |
 | [Pre-authorized code flow](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/tree/main/api_docs/pre-authorized.md)            | ✅ (draft 13)                                                       |
 | [Credential Offer](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/tree/main/api_docs/credential_offer.md)                  | ✅ `authorization_code` , ✅ `pre-authorized_code`    (draft 13)          |

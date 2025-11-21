@@ -11,7 +11,7 @@ This guide walks you through the essential steps to configure and integrate the 
 
 ## Permissions
 
-The following permissions must be declared in the AndroidManifest file and requested at runtime:
+The following permissions must be declared in the `AndroidManifest.md` file and requested at runtime:
 
 ```xml
 <uses-permission android:name="android.permission.CAMERA" />

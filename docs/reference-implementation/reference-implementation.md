@@ -6,13 +6,13 @@ The EUDI Wallet Reference Implementation is built based on the [Architecture Ref
 
 The EUDI Wallet Reference Implementation is based on a modular architecture composed of a set of business agnostic, re-usable components which are evolved in incremental steps and can be re-used across multiple projects.
 
-### 🔑 Quick Links
+### Quick Links
 | Section | Purpose |
-|--------|--------|
+|---|---|
 | 🧭 [Feature Map](./feature-map.md) | Overview of delivered and planned features |
 | 🗺️ [Roadmap](#roadmap) | Timeline and upcoming milestones |
 | 📂 [Repositories](./repositories-list.md) | All component and library repos |
-| 🏗️ [Designs](https://github.com/eu-digital-identity-wallet/eudi-doc-reference-implementation-architecture/tree/main/policies) | [High-Level](./hld/eudi-wallet-hld-q3-25.md){:target="_blank"} and [Low-Level](./lld/eudi-wallet-lld-q3-25.md){:target="_blank"} design of the EUDI Wallet Reference Implementation|
+| 🏗️ [Designs](https://github.com/eu-digital-identity-wallet/eudi-doc-developers-hub-site/tree/doc_update/documentation){:target="_blank"} | [High-Level](https://github.com/eu-digital-identity-wallet/eudi-doc-developers-hub-site/tree/doc_update/documentation/eudi-wallet-hld-q3-25.md){:target="_blank"} and [Low-Level](https://github.com/eu-digital-identity-wallet/eudi-doc-developers-hub-site/tree/doc_update/documentation/eudi-wallet-lld-q3-25.md){:target="_blank"} design of the EUDI Wallet Reference Implementation|
 | ✅ [Code Quality Assurance](./quality-assurance.md) | Tools and processes to confirm quality assurance of the provided code |
 
 
@@ -67,7 +67,7 @@ A designated mailbox <a href="CNECT-EUDIW-SUPPORT@ec.europa.eu">CNECT-EUDIW-SUPP
 
 The released software is a initial development release version: 
 
-- The initial development release is an early endeavor reflecting the efforts of a short timeboxed period, and by no means can be considered as the final product.  
+- The initial development release is an early endeavor reflecting the efforts of a short timeboxed period, and by no means can be considered as the final product. 
 - The initial development release may be changed substantially over time, might introduce new features but also may change or remove existing ones, potentially breaking compatibility with your existing code.
 - The initial development release is limited in functional scope.
 - The initial development release may contain errors or design flaws and other problems that could cause system or other failures and data loss.

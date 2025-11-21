@@ -25,7 +25,7 @@ It enables Wallet implementers to test non-qualified remote signing workflows.
 
 For testing purposes, a hosted instance of the Reference Implementation TrustProvider Signer service is available at <https://trustprovider.signer.eudiw.dev/login>.
 
-The complete source code, deployment instructions and configuration details for the TrustProvider Signer Reference Implementation are publicly available in the GitHub repository at <https://github.com/eu-digital-identity-wallet/eudi-srv-web-trustprovider-signer-java>
+The complete source code, deployment instructions and configuration details for the TrustProvider Signer Reference Implementation are publicly available in the GitHub repository at [eudi-srv-web-trustprovider-signer-java](https://github.com/eu-digital-identity-wallet/eudi-srv-web-trustprovider-signer-java).
 
 ### Wallet-Driven Signer
 
@@ -33,9 +33,9 @@ The Wallet-Driven signature flow supports an rQES flow initiated and processed w
 
 1. Service (QTSP) Authentication.
 
-    Before initiating the credential listing or signing operation, the Wallet must authenticate itself to the QTSP. In this signature flow, it is assumed that the wallet has been previously registered with the QTSP.
+    Before initiating the credential listing or signing operation, the Wallet must authenticate itself to the QTSP. In this signature flow, it is assumed that the Wallet has been previously registered with the QTSP.
 
-    To initiate user authentication with the QTSP (Service Authentication process), the SIC (Signature Activation Component) will send a request to the QTSP Authorization Server. The authentication is carried out using the OAuth2 protocol, complemented by the OpenId4VP protocol
+    To initiate user authentication with the QTSP (Service Authentication process), the SIC (Signature Activation Component) will send a request to the QTSP Authorization Server. The authentication is carried out using the OAuth2 protocol, complemented by the OpenId4VP protocol.
 
 ```mermaid
 sequenceDiagram
@@ -163,9 +163,9 @@ For testing purposes, a hosted instance of the Reference Implementation Wallet-D
 
 The complete source code, deployment instructions and configuration details for the Wallet-Driven Signer Reference Implementation are publicly available in the GitHub repositories at:
 
-+ <https://github.com/eu-digital-identity-wallet/eudi-srv-web-walletdriven-rpcentric-signer-qtsp-java> - RESTful API server that implements a Wallet-Driven and RP-Centric QTSP.
-+ <https://github.com/eu-digital-identity-wallet/eudi-srv-web-walletdriven-signer-external-sca-java> - REST API server implementing the Wallet-driven external SCA component. It integrates with the Wallet-Driven QTSP.
-+ <https://github.com/eu-digital-identity-wallet/eudi-srv-web-walletdriven-signer-relyingparty-py> - Relying Party (RP) Web Service that enables testing and validation of the Wallet-driven remote signature flow. This service implements an RP that interacts with the Wallet in Wallet-Driven rQES flows. It allows the user to select a sample document, triggers the Wallet signature flow, and receives the resulting signed document.
++ [eudi-srv-web-walletdriven-rpcentric-signer-qtsp-java](https://github.com/eu-digital-identity-wallet/eudi-srv-web-walletdriven-rpcentric-signer-qtsp-java) - RESTful API server that implements a Wallet-Driven and RP-Centric QTSP.
++ [eudi-srv-web-walletdriven-signer-external-sca-java](https://github.com/eu-digital-identity-wallet/eudi-srv-web-walletdriven-signer-external-sca-java) - REST API server implementing the Wallet-driven external SCA component. It integrates with the Wallet-Driven QTSP.
++ [eudi-srv-web-walletdriven-signer-relyingparty-py](https://github.com/eu-digital-identity-wallet/eudi-srv-web-walletdriven-signer-relyingparty-py) - Relying Party (RP) Web Service that enables testing and validation of the Wallet-driven remote signature flow. This service implements an RP that interacts with the Wallet in Wallet-Driven rQES flows. It allows the user to select a sample document, triggers the Wallet signature flow, and receives the resulting signed document.
 
 ### Relying Party Centric Signer
 
@@ -288,6 +288,6 @@ For testing purposes, a hosted instance of the Reference Implementation RP-Centr
 
 The complete source code, deployment instructions and configuration details for the RP-Centric Signer Reference Implementation are publicly available in the GitHub repositories at:
 
-+ <https://github.com/eu-digital-identity-wallet/eudi-srv-web-walletdriven-rpcentric-signer-qtsp-java> - RESTful API server that implements a Wallet-Driven and RP-Centric QTSP.
-+ <https://github.com/eu-digital-identity-wallet/eudi-srv-web-rpcentric-signer-sca-java> - REST API server implementing the RP-Centric SCA component. This implementation of the SCA serves as a component of a Relying Party (RP) web service and is used to sign documents.
-+ <https://github.com/eu-digital-identity-wallet/eudi-srv-web-rpcentric-signer-relyingparty-py> - Relying Party (RP) Web Service that enables testing and validation of the RP-Centric remote signature flow. This service relies on the RP-Centric QTSP Service and on the RP-Centric SCA component, both operating within the RP environment. It implements an RP capable of interacting with the Wallet in RP-Centric rQES flows: it allows the user to select a sample document, initiates the Wallet’s signature process, and receives the resulting signed document.
++ [eudi-srv-web-walletdriven-rpcentric-signer-qtsp-java](https://github.com/eu-digital-identity-wallet/eudi-srv-web-walletdriven-rpcentric-signer-qtsp-java) - RESTful API server that implements a Wallet-Driven and RP-Centric QTSP.
++ [eudi-srv-web-rpcentric-signer-sca-java](https://github.com/eu-digital-identity-wallet/eudi-srv-web-rpcentric-signer-sca-java) - REST API server implementing the RP-Centric SCA component. This implementation of the SCA serves as a component of a Relying Party (RP) web service and is used to sign documents.
++ [eudi-srv-web-rpcentric-signer-relyingparty-py](https://github.com/eu-digital-identity-wallet/eudi-srv-web-rpcentric-signer-relyingparty-py) - Relying Party (RP) Web Service that enables testing and validation of the RP-Centric remote signature flow. This service relies on the RP-Centric QTSP Service and on the RP-Centric SCA component, both operating within the RP environment. It implements an RP capable of interacting with the Wallet in RP-Centric rQES flows: it allows the user to select a sample document, initiates the Wallet’s signature process, and receives the resulting signed document.

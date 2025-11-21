@@ -1,6 +1,6 @@
 # Trusted List Provider (TLP)
 
-The Trusted List Provider (TLP) is a supporting ecosystem service responsible for creating, maintaining, signing, and publishing the national Trusted Lists (TLs) and the EU List of Trusted Lists (LoTL), which contain the trust anchors and status information of Wallet Providers, PID Providers, QEAA Providers, PuB-EAA Providers, Access Certificate Providers, and Registration Certificate Providers. By providing authenticated, machine-readable Trust Lists, the TLP enables Wallets, Relying Parties, and ecosystem components to verify that an entity is supervised and trusted, ensuring cross-border trust, interoperability, and the integrity of cryptographic verification processes within the EUDI Wallet ecosystem.
+The Trusted List Provider (TLP) is a supporting ecosystem service responsible for creating, maintaining, signing, and publishing the national Trusted Lists (TLs) and the EU List of Trusted Lists (LoTL), which contain the trust anchors and status information of Wallet Providers, PID Providers, QEAA Providers, PuB-EAA Providers, Access Certificate Providers, and Registration Certificate Providers. By providing authenticated, machine-readable Trusted Lists, the TLP enables Wallets, Relying Parties, and ecosystem components to verify that an entity is supervised and trusted, ensuring cross-border trust, interoperability, and the integrity of cryptographic verification processes within the EUDI Wallet ecosystem.
 
 ## TLP Role in the EUDI Wallet Ecosystem
 
@@ -103,7 +103,7 @@ The current Reference Implementation of the Trusted List Provider (TLP) focuses 
 
 ### Reference Implementation TLP deployment and configuration
 
-The complete source code, deployment instructions and configuration details for the Trusted List Provider (TLP) Reference Implementation are publicly available in the GitHub repository at <https://github.com/eu-digital-identity-wallet/eudi-srv-web-trustedlist-manager-py/>
+The complete source code, deployment instructions and configuration details for the Trusted List Provider (TLP) Reference Implementation are publicly available in the GitHub repository at [eudi-srv-web-trustedlist-manager-py](https://github.com/eu-digital-identity-wallet/eudi-srv-web-trustedlist-manager-py/).
 
 The TLP can be run:
 

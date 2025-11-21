@@ -4,7 +4,7 @@ The Revocation Status Provider (RSP) is a supporting ecosystem service responsib
 
 ## RSP role in the EUDI Wallet Ecosystem
 
-In the EUDI Wallet ecosystem, the Revocation Status Provider (RSP) plays a pivotal and indispensable role in maintaining trust and integrity across the entire digital identity framework. As the authoritative source of revocation information, the RSP ensures that verifiers — whether public authorities, service providers, or relying parties — can reliably determine the current validity of any credential (PID or EAA) presented by a wallet holder. Without such a mechanism, verifiers would be unable to distinguish between credentials that are legitimately valid and those that have been withdrawn, compromised, or invalidated for any reason, potentially undermining the security and trust of the ecosystem.
+In the EUDI Wallet ecosystem, the Revocation Status Provider (RSP) plays a pivotal and indispensable role in maintaining trust and integrity across the entire digital identity framework. As the authoritative source of revocation information, the RSP ensures that verifiers — whether public authorities, service providers, or relying parties — can reliably determine the current validity of any credential (PID or EAA) presented by a Wallet holder. Without such a mechanism, verifiers would be unable to distinguish between credentials that are legitimately valid and those that have been withdrawn, compromised, or invalidated for any reason, potentially undermining the security and trust of the ecosystem.
 
 ## Reference Implementation RSP
 
@@ -33,4 +33,4 @@ The following status lists are supported:
 
 ### Reference Implementation RSP deployment and configuration
 
-The complete source code, deployment instructions and configuration details for the Revocation Status Provider (RSP)Reference Implementation are publicly available in the GitHub repository at <https://github.com/eu-digital-identity-wallet/eudi-srv-statuslist-py>
+The complete source code, deployment instructions, and configuration details for the Revocation Status Provider (RSP) Reference Implementation are publicly available in the GitHub repository at [eudi-srv-statuslist-py](https://github.com/eu-digital-identity-wallet/eudi-srv-statuslist-py).

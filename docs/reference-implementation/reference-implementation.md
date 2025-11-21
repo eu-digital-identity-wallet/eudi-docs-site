@@ -1,0 +1,87 @@
+# EUDI Wallet Reference Implementation 
+
+## Overview
+
+The EUDI Wallet Reference Implementation is built based on the [Architecture Reference Framework](https://github.com/eu-digital-identity-wallet/architecture-and-reference-framework) and aims at showcasing a robust and interoperable platform for digital identification, authentication and electronic signatures based on common standards across the European Union.
+
+The EUDI Wallet Reference Implementation is based on a modular architecture composed of a set of business agnostic, re-usable components which are evolved in incremental steps and can be re-used across multiple projects.
+
+### 🔑 Quick Links
+| Section | Purpose |
+|--------|--------|
+| 🧭 [Feature Map](./feature-map.md) | Overview of delivered and planned features |
+| 🗺️ [Roadmap](#roadmap) | Timeline and upcoming milestones |
+| 📂 [Repositories](./repositories-list.md) | All component and library repos |
+| 🏗️ [Designs](https://github.com/eu-digital-identity-wallet/eudi-doc-reference-implementation-architecture/tree/main/policies) | [High-Level](./hld/eudi-wallet-hld-q3-25.md){:target="_blank"} and [Low-Level](./lld/eudi-wallet-lld-q3-25.md){:target="_blank"} design of the EUDI Wallet Reference Implementation|
+| ✅ [Code Quality Assurance](./quality-assurance.md) | Tools and processes to confirm quality assurance of the provided code |
+
+
+Please check further listed in the following sections for more detailed information on how to get started, contribute, and engage with the EUDI Wallet Reference Implementation.
+
+## Functional Scope
+
+The scope of the EUDI Wallet Reference Implementation is released in an iterative approach focusing on key functionalities which enable the support for a broad set of Use Cases, indicatively:
+- Mobile Driving License
+- Accessing online public and private services
+- Opening a bank account
+- SIM registration
+- Payment authorisation
+- Etc.
+ 
+
+🧩For a detailed view of the delivered functionalities, please check the EUDI Wallet Reference Implementation's [Feature Map](./feature-map.md).
+
+
+## Roadmap
+The roadmap of the EUDI Wallet reference implementation provides a transparent view of the features and enhancements that are currently being developed or planned to the future. Its purpose is to promote open communication and collaboration in our community.
+
+🧭 You can view further details in [EUDI Wallet Reference Implementation Roadmap](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap). 
+
+
+## Repositories
+The EUDI Wallet Reference Implementation consists of a set of open-source repositories. 
+
+📂 Browse through our [Repositories](./repositories-list.md) to find the information you need.
+
+
+ 
+## Contributions and Feedback
+
+We encourage you to contribute or provide your feedback/suggestion for the EUDI Wallet Reference Implementation. Depending on the type of feedback you wish to provide, you may utilise one of the following channels:
+<Details>
+ <summary>Code contributions</summary> 
+Comments and contributions on the codebase of the EUDI Wallet Reference Implementation are welcomed through the corresponding <a href="https://github.com/eu-digital-identity-wallet/architecture-and-reference-framework">Github space</a>. 
+</Details>
+
+<Details>
+<summary>Roadmap suggestions</summary> 
+If you have any questions or comments about the features listed on the roadmap or wish to suggest new features, please reach out via the <a href="https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/discussions">Discussions forum</a>.
+</Details>
+
+<Details>
+ <summary>Other feedback</summary> 
+A designated mailbox <a href="CNECT-EUDIW-SUPPORT@ec.europa.eu">CNECT-EUDIW-SUPPORT@ec.europa.eu</a> is available where any queries related to the Wallet Reference Implementation can be addressed.
+</Details>
+
+# Disclaimer
+
+The released software is a initial development release version: 
+
+- The initial development release is an early endeavor reflecting the efforts of a short timeboxed period, and by no means can be considered as the final product.  
+- The initial development release may be changed substantially over time, might introduce new features but also may change or remove existing ones, potentially breaking compatibility with your existing code.
+- The initial development release is limited in functional scope.
+- The initial development release may contain errors or design flaws and other problems that could cause system or other failures and data loss.
+- The initial development release has reduced security, privacy, availability, and reliability standards relative to future releases. This could make the software slower, less reliable, or more vulnerable to attacks than mature software.
+- The initial development release is not yet comprehensively documented. 
+- Users of the software must perform sufficient engineering and additional testing in order to properly evaluate their application and determine whether any of the open-sourced components is suitable for use in that application.
+- We strongly recommend not putting this version of the software into production use.
+- Only the latest version of the software will be supported
+
+# About the project
+
+[EU Digital Identity Wallet
+](https://ec.europa.eu/digital-building-blocks/sites/display/EUDIGITALIDENTITYWALLET/)
+
+
+
+

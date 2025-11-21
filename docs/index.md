@@ -4,5 +4,5 @@ The EUDI Wallet Reference Implementation aims at showcasing a robust and interop
 
 EUDI Wallet open source code is available online!
 
-Embark on the journey by exploring more about the [EUDI Wallet Reference Implementation](https://github.com/eu-digital-identity-wallet/.github/blob/main/profile/reference-implementation.md){:target="_blank"}.
+Embark on the journey by exploring more about the [EUDI Wallet Reference Implementation](./reference-implementation/reference-implementation.md).
 

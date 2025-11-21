@@ -1,23 +1,15 @@
 # Code Quality Assurance Overview
 
-## Table of Contents
-1. [Purpose and Approach](#-purpose-and-approach)
-2. [Test Types](#-test-types)
-3. [Test Tools ](#-test-tools)
-4. [Reporting](#-reporting)
+Below you can find all **Code Quality Assurance (QA) activities** for the **EUDI Wallet project**, which ensure that the EUDI Wallet meets functional, non-functional, performance, and security requirements on both **Android** and **iOS** platforms.
 
-## 🎯 Purpose and Approach
-
-This page describes the **Code Quality Assurance (QA) activities** for the **EUDI Wallet project**, providing transparency on testing practices, environments, and outcomes across all releases.
-
-The QA process ensures that the EUDI Wallet meets functional, non-functional, performance, and security requirements on both **Android** and **iOS** platforms. Each release is planned and validated according to the agreed [roadmap milestones](https://github.com/orgs/eu-digital-identity-wallet/projects/24), ensuring traceability between development deliverables and test execution.
+Each release is planned and validated according to the agreed [roadmap milestones](https://github.com/orgs/eu-digital-identity-wallet/projects/24), ensuring traceability between development deliverables and test execution.
 
 Releases undergo full verification and validation through a combination of **manual and automated testing**, with QA activities integrated across all development phases to detect and prevent defects early.
 
 All testing artefacts are managed in GitHub under: 
 [eu-digital-identity-wallet/eudi-doc-testing-application-internal](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application-internal)
 
-## 💎 Code Quality Controls
+## Code Quality Controls
 
 SonarCloud works on a set of code quality checks and analyzes code for multiple quality dimensions, across all stacks (Swift, Kotlin, Java, Python). The checks conducted can be further grouped into the following categories:
 
@@ -34,7 +26,7 @@ SonarCloud works on a set of code quality checks and analyzes code for multiple 
  - Bugs: Using static code analysis, it detects actual bugs that can cause runtime errors or incorrect behavior.
  - Unit Test Coverage: A measure of how much of the code is exercised by automated tests. Higher coverage generally increases confidence in reliability but doesn’t guarantee the absence of bugs.
 
-## 🧩 Test Types
+## Test Types
 
 Testing is organised across multiple levels to validate functionality, performance, and security, ensuring comprehensive coverage throughout the development lifecycle:
 
@@ -49,7 +41,7 @@ Testing is organised across multiple levels to validate functionality, performan
 ### Unit Testing
 
 - **Objectives:** Unit testing verifies the correctness of individual software components and is the first quality gate in the CI pipeline. Unit testing supports early defect detection and continuous integration by ensuring each new change maintains baseline quality.
-- **Tools:** [Unit Testing Tools](#-test-tools).
+- **Tools:** [Unit Testing Tools](#test-tools).
 
 ---
 
@@ -61,7 +53,7 @@ Testing is organised across multiple levels to validate functionality, performan
 - **Test Specifications:** The Functional Testing Specifications can be found here:
  - [Manual Testing](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application-internal/tree/main/src/test/resources/features).
  - [Automated Testing](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application-internal/tree/main).
-- **Tools:** [Functional Testing Tools](#-test-tools).
+- **Tools:** [Functional Testing Tools](#test-tools).
 
 ---
 
@@ -69,7 +61,7 @@ Testing is organised across multiple levels to validate functionality, performan
 
 - **Objectives:** Security testing ensures the continuous security, integrity, and resilience of the EUDI Wallet applications throughout their lifecycle. By integrating automated and manual security testing within a Secure Software Development Life Cycle (SDLC) and aligning with OWASP MASVS and MASTG standards, the framework enables early detection and remediation of vulnerabilities. It combines code analysis, penetration testing, and vulnerability management using tools such as SonarQube, OWASP Dependency-Check, and DefectDojo to maintain compliance with recognized security standards and safeguard user trust in the EUDI Wallet ecosystem.
 - **Requirements and Test Specifications:** The Security Requirements and Security Test Specifications can be found [here](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application/blob/milestone/2025.Q4/doc/security/EUDI-Wallet-NiScy_Security_Requirements_and_Controls_Documentation.md).
-- **Tools:** [Security Testing Tools](#-test-tools).
+- **Tools:** [Security Testing Tools](#test-tools).
 
 ---
 
@@ -78,9 +70,9 @@ Testing is organised across multiple levels to validate functionality, performan
 - **Objectives:** Performance tests to evaluate the performance of the EUDI Wallet application under average user load across various mobile devices. This testing focuses on CPU and memory usage, as well as network activity during common scenarios.
 - **Requirements:** The Performance Requirements can be found [here](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application/blob/milestone/2025.Q4/doc/performance/performance_requirements.md).
 - **Test Specifications**: The Performance Test Specifications can be found [here](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application/blob/milestone/2025.Q4/doc/performance/performance_specifications.md).
-- **Tools:** [Performance Testing Tools](#-test-tools).
+- **Tools:** [Performance Testing Tools](#test-tools).
 
-## 💼 Test Tools
+## Test Tools
 
 The following table summarises the tools utilised in the applicable test types:
 | Test Type | Tools | 
@@ -91,7 +83,7 @@ The following table summarises the tools utilised in the applicable test types:
 | Performance | Android: Android Studio Profiler and App Inspection and iOS: Xcode Instruments for performance monitoring, memory usage, and CPU/network profiling |
 
 
-## 📊 Reporting
+## Reporting
 
 Each release is accompanied with serenity-generated reports summarising test execution results and coverage.
 

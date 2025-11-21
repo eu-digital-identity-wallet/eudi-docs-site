@@ -24,20 +24,25 @@ This version of the Issuer supports the [OpenId for Verifiable Credential Issuan
 
 | Feature                                                   | Coverage                                                        |
 |-------------------------------------------------------------------|-----------------------------------------------------------------|
-| [Authorization Code flow](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/tree/main/api_docs/authorization.md){:target="_blank"}              | ✅ Support for PAR, PKCE, credential configuration id, scope    |
-| [Pre-authorized code flow](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/tree/main/api_docs/pre-authorized.md){:target="_blank"}            | ✅                                                              |
-| Dynamic Credential Request                                        | ✅                                                              |
+| [Authorization Code flow draft](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/tree/main/api_docs/authorization.md)              | ✅ Support for credential configuration id, scope, (draft 13)               |
+| [Pre-authorized code flow](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/tree/main/api_docs/pre-authorized.md)            | ✅ (draft 13)                                                       |
+| [Credential Offer](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/tree/main/api_docs/credential_offer.md)                  | ✅ `authorization_code` , ✅ `pre-authorized_code`    (draft 13)          |
+| Dynamic Credential Request                                        | ✅ (draft 13)                                                             |
 | mso_mdoc format                                                   | ✅                                                              |
 | SD-JWT-VC format                                                  | ✅                                                              |
 | W3C VC DM                                                         | ❌                                                              |
-| [Token Endpoint](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/tree/main/api_docs/token.md){:target="_blank"}                               | ✅                                                              |
-| [Credential Offer](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/tree/main/api_docs/credential_offer.md){:target="_blank"}                  | ✅ `authorization_code`, ✅ `pre-authorized_code`              |
-| [Credential Endpoint](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/tree/main/api_docs/credential.md){:target="_blank"}                     | ✅ Including proofs and repeatable invocations                  |
-| Credential Issuer MetaData                                        | ✅                                                              | 
-| [Batch Endpoint](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/tree/main/api_docs/batch_credential.md){:target="_blank"}                     | ✅                                                              | 
-| [Deferred Endpoint](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/tree/main/api_docs/deferred.md){:target="_blank"}                         | ✅                                                              |
-| Proof                                                             | ✅ JWT, ✅ CWT                                                  |
-| [Notification Endpoint](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/tree/main/api_docs/notification.md){:target="_blank"}                 | ✅                                                              |
+| [Token Endpoint](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/tree/main/api_docs/token.md)                               | ✅ (draft 13)                                                             |
+| [Credential Endpoint](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/tree/main/api_docs/credential.md)                     | ✅ Including proofs and repeatable invocations, (draft 15)               |
+| Credential Issuer MetaData                                        | ✅ Unsigned metadata, (draft 15)                                            | 
+| [Nonce endpoint](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/tree/main/api_docs/nonce_endpoint.md)                    | ✅ (draft 15)                                                             | 
+| [Deferred Endpoint](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/tree/main/api_docs/deferred.md)                         | ✅ (draft 15)                                                              |
+| Proof                                                             | ✅ JWT                                                 |
+| Credential response encryption                                    | ✅ (draft 15)                                                             |
+| [Notification Endpoint](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/tree/main/api_docs/notification.md)                 | ✅                                                              |
+| Pushed authorization request                                      | ✅                                                              |
+| Wallet authentication                                             | ✅ public client                                                |
+| Demonstrating Proof of Possession (DPoP)                          | ❌                                                              |
+| PKCE                                                              | ✅                                                              |
 
 
 You can use the Issuer at [https://issuer.eudiw.dev/](https://issuer.eudiw.dev/){:target="_blank"}, or [install it locally](./Steps to Build).

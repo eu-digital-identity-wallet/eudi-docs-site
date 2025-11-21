@@ -64,7 +64,7 @@ This section describes how to configure the application to interact with service
 
     }
     ```
-5. Finally, add this custom HttpClient to the EUDI Wallet provider function *provideEudiWallet* located in *LogicCoreModule.kt*
+5. Also, add this custom HttpClient to the EUDI Wallet provider function *provideEudiWallet* located in *LogicCoreModule.kt*
     ```Kotlin
     @Single
     fun provideEudiWallet(
@@ -79,3 +79,29 @@ This section describes how to configure the application to interact with service
         }
     }
     ```
+6. Finally, you need to use the preregistered clientId scheme instead of X509.
+   
+   Change this:
+   ```Kotlin
+   withClientIdSchemes(
+    listOf(ClientIdScheme.X509SanDns)
+   )
+    ```
+   
+   into something like this:
+   ```Kotlin
+   withClientIdSchemes(
+    listOf(
+        ClientIdScheme.Preregistered(
+            preregisteredVerifiers =
+                listOf(
+                    PreregisteredVerifier(
+                        clientId = "Verifier",
+                        legalName = "Verifier",
+                        verifierApi = "https://10.0.2.2"
+                    )
+                )
+            )
+        )
+   )
+   ```

@@ -40,7 +40,11 @@ nav:
   - Discussion topics: https://eudi.dev/latest/discussion-topics/
   - Technical specifications: https://eudi.dev/latest/technical-specifications/
   - Reference Implementation:
-      - Overview: index.md
+      - Overview: 
+          - Introduction: index.md
+          - Feature Map: feature-map.md
+          - Repositories: repositories-list.md
+          - Quality Assurance: quality-assurance.md
       - Build:
           - Introduction: Build/index.md
           - Build your Wallet:

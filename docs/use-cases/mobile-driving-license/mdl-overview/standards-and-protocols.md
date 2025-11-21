@@ -32,7 +32,7 @@ For remote presentation flows for ISO/IEC 18013-5-compliant attestations the Wal
 ### Proximity Presentation Flows 
 For the proximity presentation flow, the Wallet Instance and the proximity verifier mobile application (mDL Reader) implement the [ISO/IEC 18013-5] standard.
 
-##  Digital Credentials API Optionality
+## Digital Credentials API Optionality
 It should be noted that ARF in section 5.6.2 states explicitly that __"Within the EUDI Wallet ecosystem, the second option above will be used for requesting and presenting ISO/IEC 18013-5-compliant attestations in remote transaction flows"__. This second option referenced in ARF is: __"Using [OpenID4VP], …. [ISO/IEC 18013-7] specifies a profile for this standard,"__ and it refers to "Annex B Use of OID4VP to retrieve an mdoc" of ISO 18013-7. ARF also in section 4.4.3.1 states that __"The use of this [Digital Credentials] API by Wallet Units and Relying Parties is optional"__. Therefore, the remote presentation flows using the Digital Credentials API is considered as optional for the target solution.
 
 ## Transaction Flows Summary

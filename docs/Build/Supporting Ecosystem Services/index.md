@@ -1,3 +1,0 @@
-# Supporting Ecosystem Services
-
-## Overview

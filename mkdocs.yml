@@ -47,63 +47,63 @@ nav:
           - Repositories: reference-implementation/repositories-list.md
           - Quality Assurance: reference-implementation/quality-assurance.md
       - Build:
-          - Introduction: Build/index.md
+          - Introduction: build/index.md
           - Build your Wallet:
-              - Build your Wallet: Build/Build your Wallet/index.md
+              - Introduction: build/build-your-wallet/index.md
               - Android:
                   - Wallet Application Level:
-                      - Build the App: Build/Build your Wallet/Android/Wallet Application Level/index.md
-                      - Run with Remote Services: Build/Build your Wallet/Android/Wallet Application Level/Running with Remote Services.md
-                      - Run with Local Services: Build/Build your Wallet/Android/Wallet Application Level/Running with Local Services.md
-                      - Self-signed Certificates: Build/Build your Wallet/Android/Wallet Application Level/Self-signed Certificates.md
+                      - Build the App: build/build-your-wallet/android/wallet-application-level/index.md
+                      - Run with Remote Services: build/build-your-wallet/android/wallet-application-level/running-with-remote-services.md
+                      - Run with Local Services: build/build-your-wallet/android/wallet-application-level/running-with-local-services.md
+                      - Self-signed Certificates: build/build-your-wallet/android/wallet-application-level/self-signed-certificates.md
                   - Library Level:
-                      - Library Level: Build/Build your Wallet/Android/Library Level/index.md
-                      - Build the Core: Build/Build your Wallet/Android/Library Level/Build the Core.md
-                      - Manage Documents: Build/Build your Wallet/Android/Library Level/Manage Documents.md
+                      - Introduction: build/build-your-wallet/android/library-level/index.md
+                      - Build the Core: build/build-your-wallet/android/library-level/build-the-core.md
+                      - Manage Documents: build/build-your-wallet/android/library-level/manage-documents.md
               - iOS:
                   - Wallet Application Level:
-                      - Build the App: Build/Build your Wallet/iOS/Wallet Application Level/index.md
-                      - Run with Remote Services: Build/Build your Wallet/iOS/Wallet Application Level/Running with Remote Services.md
-                      - Run with Local Services: Build/Build your Wallet/iOS/Wallet Application Level/Running with Local Services.md
-                      - Self-signed Certificates: Build/Build your Wallet/iOS/Wallet Application Level/Self-signed Certificates.md
+                      - Build the App: build/build-your-wallet/ios/wallet-application-level/index.md
+                      - Run with Remote Services: build/build-your-wallet/ios/wallet-application-level/running-with-remote-services.md
+                      - Run with Local Services: build/build-your-wallet/ios/wallet-application-level/running-with-local-services.md
+                      - Self-signed Certificates: build/build-your-wallet/ios/wallet-application-level/self-signed-certificates.md
                   - Library Level:
-                      - Library Level: Build/Build your Wallet/iOS/Library Level/index.md
-                      - Build the Kit: Build/Build your Wallet/iOS/Library Level/Build the Kit.md
-                      - Manage Documents: Build/Build your Wallet/iOS/Library Level/Manage Documents.md
+                      - Introduction: build/build-your-wallet/ios/library-level/index.md
+                      - Build the Kit: build/build-your-wallet/ios/library-level/build-the-kit.md
+                      - Manage Documents: build/build-your-wallet/ios/library-level/manage-documents.md
           - Build your Issuer:
-              - Overview: Build/Build your Issuer/index.md
-              - Steps to Build: Build/Build your Issuer/Steps to Build.md
-              - Configure your Issuer: Build/Build your Issuer/Configure.md
-              - Add Attestations: Build/Build your Issuer/New Attestation.md
+              - Overview: build/build-your-issuer/index.md
+              - Steps to Build: build/build-your-issuer/steps-to-build.md
+              - Configure your Issuer: build/build-your-issuer/configure.md
+              - Add Attestations: build/build-your-issuer/new-attestation.md
           - Build your Remote Verifier:
-              - Overview: Build/Build your Remote Verifier/index.md
-              - Steps to Build: Build/Build your Remote Verifier/Steps to Build.md
-              - Configure your Verifier: Build/Build your Remote Verifier/Configure.md 
+              - Overview: build/build-your-remote-verifier/index.md
+              - Steps to Build: build/build-your-remote-verifier/steps-to-build.md
+              - Configure your Verifier: build/build-your-remote-verifier/configure.md 
           - Build your Proximity Verifier:
-              - Overview: Build/Build your Proximity Verifier/index.md
-              - Build your Proximity Verifier App for Android: Build/Build your Proximity Verifier/Build your Proximity Verifier App for Android.md
-              - Build your Proximity Verifier Core for Android: Build/Build your Proximity Verifier/Build your Proximity Verifier Core for Android.md
+              - Overview: build/build-your-proximity-verifier/index.md
+              - Build your Proximity Verifier App for Android: build/build-your-proximity-verifier/build-your-proximity-verifier-app-for-android.md
+              - Build your Proximity Verifier Core for Android: build/build-your-proximity-verifier/build-your-proximity-verifier-core-for-android.md
           - Build your rQES:
-              - Overview: Build/Build your rQES/index.md
-              - Build your rQES SDK UI for Android: Build/Build your rQES/Build your rQES SDK UI for Android.md
-              - Build your rQES Core for Android: Build/Build your rQES/Build your rQES Core for Android.md
-              - Build your rQES SDK UI for iOS: Build/Build your rQES/Build your rQES SDK UI for iOS.md
-              - Build your rQES Kit for iOS:  Build/Build your rQES/Build your rQES Kit for iOS.md
+              - Overview: build/build-your-rqes/index.md
+              - Build your rQES SDK UI for Android: build/build-your-rqes/build-your-rqes-sdk-ui-for-android.md
+              - Build your rQES Core for Android: build/build-your-rqes/build-your-rqes-core-for-android.md
+              - Build your rQES SDK UI for iOS: build/build-your-rqes/build-your-rqes-sdk-ui-for-ios.md
+              - Build your rQES Kit for iOS:  build/build-your-rqes/build-your-rqes-kit-for-ios.md
           - Supporting Ecosystem Services:
-              - Overview: Build/Supporting Ecosystem Services/index.md
-              - Trust List Service: Build/Supporting Ecosystem Services/Trust List Service.md
-              - RSSP: Build/Supporting Ecosystem Services/RSSP.md
-              - Revocation Service: Build/Supporting Ecosystem Services/Revocation Service.md
-              - RP Registration Service: Build/Supporting Ecosystem Services/RP Registration Service.md
+              - Overview: build/supporting-ecosystem-services/index.md
+              - Trust List Service: build/supporting-ecosystem-services/trusted-list-service.md
+              - RSSP: build/supporting-ecosystem-services/rssp.md
+              - Revocation Service: build/supporting-ecosystem-services/revocation-service.md
+              - RP Registration Service: build/supporting-ecosystem-services/rp-registration-service.md
       - Test:
-          - Introduction: Test/index.md
+          - Introduction: test/index.md
           - Wallet Application:
-              - Wallet Application: Test/Wallet Application/index.md
-              - Android: Test/Wallet Application/Android.md
-              - iOS: Test/Wallet Application/iOS.md
-          - Issuer: Test/Issuer.md
-          - Online Verifier: Test/Online Verifier.md
-          - Proximity Verifier: Test/Proximity Verifier.md
+              - Wallet Application: test/wallet-application/index.md
+              - Android: test/wallet-application/android.md
+              - iOS: test/wallet-application/ios.md
+          - Issuer: test/issuer.md
+          - Online Verifier: test/online-verifier.md
+          - Proximity Verifier: test/proximity-verifier.md
       - Use Cases:
           - Mobile Driving License:
               - Mobile Driving License: use-cases/mobile-driving-license/index.md

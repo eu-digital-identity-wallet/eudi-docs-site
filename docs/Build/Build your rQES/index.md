@@ -1,3 +1,0 @@
-# Build your rQES
-
-## Overview

@@ -1,0 +1,37 @@
+.md-sidebar--secondary{
+  display: none !important;
+}
+
+.md-tabs__item:hover,
+.md-tabs__item--active {
+  border-bottom: 3px solid #FFFFFF;
+  padding-bottom: 3px;
+  padding-left: 0;
+  padding-right: 0;
+  a.md-tabs__link {
+    padding: .8rem .6rem;
+    margin: 0;
+  }
+}
+
+.md-tabs__item:hover {
+  background: rgb(0 0 0 / 10%);
+}
+
+.md-tabs__item--active {
+  background: rgb(0 0 0 / 25%);
+}
+
+tr:hover {
+  background-color: ;
+  box-shadow: ;
+}
+
+.md-header__button.md-logo {
+    margin: 0;
+    padding: 0;
+}
+
+.md-header__button.md-logo img, .md-header__button.md-logo svg {
+    height: 2.7rem;
+}

@@ -1,19 +1,19 @@
 # Build your Solution
 
-In this section, you'll find comprehensive guidance on how to leverage the [EUDI Wallet Reference Implementation](https://github.com/eu-digital-identity-wallet/.github/blob/main/profile/reference-implementation.md){:target="_blank"} to build your own EUDI Wallet, Issuer, or Verifier. The reference implementation provides open-source code libraries, tools, and sample applications to help you get started quickly and efficiently.
+In this section, you will find comprehensive guidance on leveraging the [EUDI Wallet Reference Implementation](https://github.com/eu-digital-identity-wallet/.github/blob/main/profile/reference-implementation.md){:target="_blank"} to build your own EUDI Wallet, Issuer or Verifier. The reference implementation provides open-source code libraries, tools and sample applications to help you get started quickly and efficiently.
 
-Whether you are a Wallet Provider, an Issuer, or a Relying Party, the guide provides clear, step-by-step instructions and examples to help you get started. It also assists you in evaluating how you can leverage the EUDI Wallet reference implementation in your development project and how to make the most of it.
+Whether you are a Wallet Provider, an Issuer or a Relying Party, this guide provides clear, step-by-step instructions and examples. It also helps you evaluate how you can leverage the EUDI Wallet Reference Implementation in your development project and maximise its potential.
 
-Let’s get started with building your secure and interoperable EUDI solutions!
+Let’s get started building your secure and interoperable EUDI solutions!
 
 | Role    | Description | Get Started |
 | --- | --- |--- |
-| Wallet Provider | A Wallet Provider is responsible for developing, maintaining, and operating a secure and interoperable wallet application. EUDI Wallet Providers are Member States or organisations either mandated or recognized by Member States making the EUDI Wallet available for end users. The Wallet Provider ensures compliance with EU regulations while delivering an intuitive, user-friendly, and accessible solution for all users, including those with disabilities or varying levels of digital literacy. |[Build your Wallet](./build-your-wallet/)|
-| Issuer |   An issuer is a PID Provider or a Qualified or Non-Qualified Electronic Attestation of Attributes Provider. They are responsible for issuing the PID or the Electronic Attestation to the Wallet and providing information that can be used to enquire about the validity status of the PID or Attestation. | [Build your Issuer](./build-your-issuer/) |
-| Relying Party  | A relying party requires a verifier to accept and verify Attestations presented by wallet user. Verifiers can be used in both remote and proximity use cases.|[Build your Remote Verifier](./build-your-remote-verifier/) <br/> Build your Proximity Verifier](./build-your-proximity-verifier/) |
+| Wallet Provider | A Wallet Provider is responsible for developing, maintaining and operating a secure and interoperable wallet application. EUDI Wallet Providers are Member States or organisations either mandated or recognised by Member States that make the EUDI Wallet available to end users. The Wallet Provider ensures compliance with EU regulations while delivering an intuitive, user-friendly and accessible solution for all users, including those with disabilities or varying levels of digital literacy. |[Build your Wallet](./Build your Wallet/)|
+| Issuer |   An issuer is a PID Provider or a Qualified or Non-Qualified Electronic Attestation of Attributes Provider. They are responsible for issuing the PID or the Electronic Attestation to the Wallet and providing information that can be used to enquire about the validity status of the PID or Attestation. | [Build your Issuer](./Build your Issuer/) |
+| Relying Party  | A relying party requires a verifier to accept and verify Attestations presented by wallet users. Verifiers can be used in both remote and proximity use cases.|[Build your Remote Verifier](./Build your Remote Verifier/) <br/> Build your Proximity Verifier](./Build your Proximity Verifier/) |
 
 ## Test your Solution
 
 Congratulations on building your solution. Time to test it!
 
-- [Test](../test/) your Solution
+- [Test](../Test/) your solution.

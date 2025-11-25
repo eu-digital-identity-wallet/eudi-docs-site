@@ -119,7 +119,7 @@ The EUDI Wallet Reference Implementation includes the following components:
 
 | Repository | Description |
 |---|---|
-| [Web Verifier](https://github.com/eu-digital-identity-wallet/eudi-web-verifier){:target="_blank"} | Demo Web Verifier UI application (Frontend) that acts as a Verifier/RP trusted endpoint. Available at: [https://verifier.eudiw.dev](https://verifier.eudiw.dev) | 
+| [Web Verifier](https://github.com/eu-digital-identity-wallet/eudi-web-verifier){:target="_blank"} | Demo Web Verifier UI application (Frontend) that acts as a Verifier/RP trusted endpoint. Available at: [https://verifier.eudiw.dev](https://verifier.eudiw.dev){:target="_blank"} | 
 | [RESTful API (web-services)](https://github.com/eu-digital-identity-wallet/eudi-srv-web-verifier-endpoint-23220-4-kt){:target="_blank"} | Demo Web Verifier application (Backend RESTful service) that acts as a Verifier/RP trusted endpoint.| 
 
 
@@ -135,7 +135,7 @@ The EUDI Wallet Reference Implementation includes the following components:
 
 | Repository | Description |
 |---|---|
-| [TrustProvider Signer](https://github.com/eu-digital-identity-wallet/eudi-srv-web-trustprovider-signer-java){:target="_blank"} | The TrustProvider Signer is a remote signing service provider and client. The TrustProvider Signer can be accessed using the EUDI Wallet through OID4VP presentation of the PID. Available [here](https://trustprovider.signer.eudiw.dev/tester). | 
+| [TrustProvider Signer](https://github.com/eu-digital-identity-wallet/eudi-srv-web-trustprovider-signer-java){:target="_blank"} | The TrustProvider Signer is a remote signing service provider and client. The TrustProvider Signer can be accessed using the EUDI Wallet through OID4VP presentation of the PID. Available [here](https://trustprovider.signer.eudiw.dev/tester){:target="_blank"}. | 
 | [EUDI Wallet-driven signer QTSP](https://github.com/eu-digital-identity-wallet/eudi-srv-web-walletdriven-rpcentric-signer-qtsp-java){:target="_blank"} | Implementation of a wallet-driven QTSP for the remote Qualified Electronic Signature component of the EUDI Wallet. The QTSP provides endpoints based on the CSC API v2.0 specification and supports authentication via OpenID4VP.| 
 | [EUDI Wallet-driven external SCA](https://github.com/eu-digital-identity-wallet/eudi-srv-web-walletdriven-signer-external-sca-java){:target="_blank"} | Implementation of a wallet-driven SCA for the remote Qualified Electronic Signature component of the EUDI Wallet. The SCA provides endpoints that allow the calculation of the hash value of a document and obtain the signed document given the signature value.| 
 | [RP Centric rQES SCA](https://github.com/eu-digital-identity-wallet/eudi-srv-web-rpcentric-signer-sca-java){:target="_blank"} | This is a REST API server implementing the RP-centric SCA for the remote Qualified Electronic Signature (rQES) component of the EUDI Wallet.| 

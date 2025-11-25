@@ -19,9 +19,9 @@ Embark on the journey by exploring more about the EUDI Wallet Reference Implemen
 
 We encourage you to contribute or provide your feedback/suggestion for the EUDI Wallet Reference Implementation. Depending on the type of feedback you wish to provide, you may utilise one of the following channels:
 
-Comments and contributions on the codebase of the EUDI Wallet Reference Implementation are welcomed through the corresponding <a href="https://github.com/eu-digital-identity-wallet/architecture-and-reference-framework">Github space</a>. 
+Comments and contributions on the codebase of the EUDI Wallet Reference Implementation are welcomed through the corresponding [Github space](https://github.com/eu-digital-identity-wallet/architecture-and-reference-framework){:target="_blank"}. 
 
-If you have any questions or comments about the features listed on the roadmap or wish to suggest new features, please reach out via the <a href="https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/discussions">Discussions forum</a>.
+If you have any questions or comments about the features listed on the roadmap or wish to suggest new features, please reach out via the [Discussions forum](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/discussions){:target="_blank"}.
 
-A designated mailbox <a href="CNECT-EUDIW-SUPPORT@ec.europa.eu">CNECT-EUDIW-SUPPORT@ec.europa.eu</a> is available where any queries related to the Wallet Reference Implementation can be addressed.
+A designated mailbox [CNECT-EUDIW-SUPPORT@ec.europa.eu](mailto:CNECT-EUDIW-SUPPORT@ec.europa.eu) is available where any queries related to the Wallet Reference Implementation can be addressed.
 

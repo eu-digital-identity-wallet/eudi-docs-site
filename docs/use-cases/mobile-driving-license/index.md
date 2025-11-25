@@ -13,14 +13,14 @@ The mDL is a significant use case for the EUDI Wallet, allowing users to request
 ## Solution Overview
 This section provides a high-level overview of the mDL solution within the broader EUDI Wallet ecosystem. It introduces the use case and outlines the legal and technical foundations.
 
-:link: [Learn more about the mDL solution](./mdl-overview/)
+  [Learn more about the mDL solution](./mdl-overview/)
 
 ## Architecture Overview
 This section describes the high-level architecture of the EUDI Wallet ecosystem, detailing its core components and how they interact to enable the mobile Driving License (mDL) use case. It provides the technical foundation to ensure interoperability, security, and privacy for all actors involved.
 
-:link: [Learn more about the mDL architecture](./mdl-architecture/)
+  [Learn more about the mDL architecture](./mdl-architecture/)
 
 ## Guides
 This section offers practical, step-by-step guides and technical specifications for implementing the mDL. It covers the entire lifecycle of an mDL, from issuance to presentation and verification. 
 
-:link: [Discover the mDL guides](./mdl-guides/)
+  [Discover the mDL guides](./mdl-guides/)

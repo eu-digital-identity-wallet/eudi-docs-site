@@ -19,7 +19,11 @@ SonarCloud works on a set of code quality checks and analyses code for multiple 
 
 - Maintainability (measures how easily code can be understood, modified and extended):
  - Code Smells: Patterns in code that indicate potential design or implementation issues. They are warnings that indicate potential bad coding practices. The corresponding list that is checked per type of repository is the default provided by SonarCloud and can be found [here](https://rules.sonarsource.com/?_gl=1*7ng3p*_gcl_aw*R0NMLjE3NjMzODYzMTMuRUFJYUlRb2JDaE1Jd29LcTlLWDVrQU1WUEtXREJ4MUdXQ0dHRUFBWUFTQUFFZ0tNaWZEX0J3RQ..*_gcl_au*MTkzNjEwODQ0My4xNzYyNDM4OTc3*_ga*MjEyNzQ5NjI2MS4xNzYyNDM4OTM4*_ga_9JZ0GZ5TC6*czE3NjMzODYyNjYkbzYkZzEkdDE3NjMzODY1NzQkajQ1JGwwJGgw){:target="_blank"}.
+<<<<<<< HEAD
  - Cognitive Complexity: A metric indicating how difficult code is to understand. It increases with nested logic, branching and poor readability. Details of the corresponding metric can be found [here](https://www.sonarsource.com/resources/cognitive-complexity/){:target="_blank"}
+=======
+ - Cognitive Complexity: A metric indicating how difficult code is to understand. It increases with nested logic, branching and poor readability. Details of the corresponding metric can be found [here](https://www.sonarsource.com/resources/cognitive-complexity/){:target="_blank"}.
+>>>>>>> eb429c8 (Update quality-assurance.md)
  - Duplications: Repeated blocks of code. High duplication leads to more effort in applying changes and increases the risk of inconsistency.
 
 - Reliability (reflects how consistently software functions without failures):

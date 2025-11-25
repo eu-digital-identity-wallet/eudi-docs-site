@@ -1,4 +1,4 @@
-# eudi-doc-developers-hub-site
+# eudi-docs-site
 
 This guide will help you quickly get started with MkDocs.
 

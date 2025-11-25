@@ -16,4 +16,4 @@ Let’s get started building your secure and interoperable EUDI solutions!
 
 Congratulations on building your solution. Time to test it!
 
-- [Test](../test/index.md) your solution.
+- [Test](../test/index.md) your solution

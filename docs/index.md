@@ -1,29 +1,27 @@
----
-hide:
-  - navigation
----
+# Welcome to the EUDI Wallet Reference Implementation!
 
-# Welcome to the EUDI Wallet Dev Hub!
+The EUDI Wallet Reference Implementation is built based on the [Architecture Reference Framework](https://eudi.dev/latest/architecture-and-reference-framework-main/) and aims at showcasing a robust and interoperable platform for digital identification, authentication and electronic signatures based on common standards across the European Union.
 
-EU Digital Identity Wallets will enable users to access online services, store and share digital documents, and create binding signatures.
+The EUDI Wallet Reference Implementation provides for a modular architecture composed of a set of business agnostic, re-usable components, which are evolved in incremental steps and can be re-used across multiple projects.
 
-[Learn more about the EUDI Wallet project](https://ec.europa.eu/digital-building-blocks/sites/display/EUDIGITALIDENTITYWALLET/What+is+the+wallet){:target="_blank"}
+Embark on the journey by exploring more about the EUDI Wallet Reference Implementation!
 
-This is the developer's hub for the European Digital Identity Wallet—a key reference point for those building and testing EUDI Wallet solutions, whether for Wallet Providers, Issuers, or Relying Parties.
+| Section | Purpose |
+|---|---|
+| 🧭 [Feature Map](./reference-implementation/feature-map.md) | Overview of delivered and planned features |
+| 🗺️ [Roadmap](./reference-implementation/roadmap.md) | Timeline and upcoming milestones |
+| 📂 [Repositories](./reference-implementation/repositories-list.md) | All component and library repos |
+| 🏗️ [Designs](https://github.com/eu-digital-identity-wallet/eudi-doc-developers-hub-site/tree/doc_update/documentation){:target="_blank"} | [High-Level](https://github.com/eu-digital-identity-wallet/eudi-doc-developers-hub-site/tree/doc_update/documentation/eudi-wallet-hld-q3-25.md){:target="_blank"} and [Low-Level](https://github.com/eu-digital-identity-wallet/eudi-doc-developers-hub-site/tree/doc_update/documentation/eudi-wallet-lld-q3-25.md){:target="_blank"} design of the EUDI Wallet Reference Implementation|
+| ✅ [Code Quality Assurance](./reference-implementation/quality-assurance.md) | Tools and processes to confirm quality assurance of the provided code |
 
-Everything you need to start your development project is gathered here. You will find technical guidelines and tools as well as directions for how to get started defining, designing and building an EUDI Wallet project.
 
-## Build
-Access comprehensive resources to guide your development efforts. This section provides detailed instructions, open-source libraries, and tools to support the development of Wallet, Issuer, or Relying Party solutions that meet the EU technical specifications to ensure interoperability.
+**Contributions and Feedback**
 
-[Get ready to build your solution](./Build/)
+We encourage you to contribute or provide your feedback/suggestion for the EUDI Wallet Reference Implementation. Depending on the type of feedback you wish to provide, you may utilise one of the following channels:
 
-## Test
-Validate your solution with the EUDI Wallet testing toolkit. This includes pre-built testing tools designed to ensure your solution meets all specified functional requirements, guaranteeing quality and compliance.
+Comments and contributions on the codebase of the EUDI Wallet Reference Implementation are welcomed through the corresponding [Github space](https://github.com/eu-digital-identity-wallet/architecture-and-reference-framework){:target="_blank"}. 
 
-[Get ready to test your solution](./Test/)
+If you have any questions or comments about the features listed on the roadmap or wish to suggest new features, please reach out via the [Discussions forum](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/discussions){:target="_blank"}.
 
-## Resources
-Compliance with the established set of technical specifications is essential for the security, interoperability and reliability of the EUDI Wallet.
+A designated mailbox [CNECT-EUDIW-SUPPORT@ec.europa.eu](mailto:CNECT-EUDIW-SUPPORT@ec.europa.eu) is available where any queries related to the Wallet Reference Implementation can be addressed.
 
-[Discover essential resources](./Resources/)

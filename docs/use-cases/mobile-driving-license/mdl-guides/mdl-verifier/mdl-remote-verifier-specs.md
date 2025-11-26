@@ -1,0 +1,40 @@
+# mDL Remote Verifier Specifications
+The following are considered necessary capabilities of the reference implementation of the remote verifier web application for the mDL Use Case:
+
+|Specification |Optionality |Description and Reference |
+|---|---|---|
+| :open_file_folder: **mDL Verifiable Credentials** | | |
+| ISO/IEC 18013-5 (CBOR) | Mandatory | - [4<sup>th</sup> Driving License Directive] Annex I, Part C [ARF], High Level Requirement:  mDL_01 <br/>- [ARF] “Annex 3.02 - mDL Rulebook” |
+| mDL Data Model | Mandatory | As above |
+| :open_file_folder: **Presentation Interface (PI)** | | |
+| Remote Flow: Presentation Request (of verifiable credentials) according to ISO 18013 -7 Annex B (OpenID4VP specification) | Mandatory | [ARF] “4.3.3 Wallet Unit interfaces and protocols” mentions that “For remote presentation flows (…) the Wallet Instance implements the OpenID for Verifiable Presentation protocol [OpenID4VP] in combination with the [W3C Digital Credentials API]”. |
+| Presentation in combination with the Digital Credentials API using ISO 18013-7 Annex C | Optional | As above and ISO 18013-7 Annex C ARF in section 4.4.3.1 states that “The use of this API by Wallet Units and Relying Parties is optional” |
+| Presentation in combination with the Digital Credentials API using OpenID4VP, HAIP | Optional | As aboveOpenID4VP version 1.0 will be supported instead of Draft 18 which is specified in ISO 18013-5 Annex B <br/>ARF in section 4.4.3.1 states that “The use of this API by Wallet Units and Relying Parties is optional” |
+| :open_file_folder: **Topology** | | |
+| Cross device | Mandatory | ARF section 4.4.1 defines Remote Same-Device Flow and Remote Cross-Device Flow |
+| Same device | Mandatory | As above |
+| :open_file_folder: **Presentation Flows** | | |
+| Remote | Mandatory | ARF section 4.4.1 defines the remote flows for Same-Device and Cross-Device Flow |
+| Proximity | N/A | The proximity flow is implemented by the mDL Reader and it is not applicable in the remote flow. |
+| :open_file_folder: **Initiation** | | |
+| Verifier initiated flow | Mandatory | ARF section 4.4.1 defines the remote flows where in both remote scenarios, the Verifier sends a presentation request to the Wallet. OpenID4VP in section 3.1 and 3.1 specifies that for same and cross device flow the verifier initiates the flow by sending the Authorization Request to the wallet. |
+| :open_file_folder: **Authorization Request** | | |
+| Selective Disclosure | Mandatory | ARF in High Level Requirements OIA_07 specify the support of selective disclosure of attributes from PIDs and attestations |
+| Digital Credentials Query Language (DCQL) | Mandatory | OpenID4VP v1.0 chapter 6 specifies a JSON-encoded query language that allows the Verifier to request Presentations that match the query. 
+ OpenID4VP introduced DCQL in Draft 22. Therefore, DCQL is not supported in Draft 18. |
+| :open_file_folder: **Authorization Response** | | |
+| Support encrypted Authorization Response | Mandatory | OpenID4VP section 5.10 specifies that the Wallet could require the Verifier to encrypt the Request Object |
+| End-User authentication using SIOP v2 | Excluded / Not Supported | OpenID4VP Appendix C specifies the presentation of Credentials combined with the End-User authentication using [SIOPv2]. It has already been removed from HAIP (editor's copy, draft 4, not yet published)  via [https://github.com/openid/oid4vc-haip/pull/186](https://github.com/openid/oid4vc-haip/pull/186 "https://github.com/openid/oid4vc-haip/pull/186") |
+| :open_file_folder: **Digital credentials API retrieval** |
+| Device Request | Optional | DC API is optional according to ARF section 4.4.3.1 According to Annex C.2 in ISO/IEC 18013-7, the Request is a javascript object which contains the CBOR encoded DeviceRequest and EncryptionInfo |
+| Device Response | Optional | Refer above for optionality <br/>According to Annex C.3 in ISO/IEC 18013-7, the Response is a javascript object which contains the CBOR encoded EncryptedResponse |
+| HPKE single shot encryption /decryption | Optional | Refer above for optionality <br/>According to Annex C.4 in ISO/IEC 18013-7, HPKE (Hybrid Public Key Encryption) single-shot API is defined in RFC 9180 |
+| Session Transcript | Optional | Refer above for optionality <br/>According to Annex C.5 in ISO/IEC 18013-7, the session transcript shall be used for encryption, mdoc authentication and mdoc reader authentication and it is structured as a CBOR array |
+| :open_file_folder: **Trust Relationships** | | |
+| The verifier shall verify the signature of the mDL (Issuer data authentication) | Mandatory | ARF section 6.6.3.1 point 5 specifies that “The Relying Party Instance verifies the signature of the PID or attestation. This ensures that the Relying Party can trust that the PID or attestation it receives is issued by an authentic Provider and has not been changed” |
+| The verifier shall verify that the mDL Issuer did not revoke the mDL (Revocation of mDL) | Mandatory | ARF section 6.6.3.1, point 6 (and 6.3.6.7) The specification for mDL revocation via a status list or reference list is expected to be introduced in a future version of ISO/IEC 18013-5. Consequently, mDL Verifiers shall be capable to verify the validity status of the mDL by retrieving the status list or identifier list, based on status info element of the mso. <br/>ARF section 6.6.3.7 specifies that “Attestation Provider includes revocation information in the PID or attestation, if it is valid for longer than 24 hours.” |
+| The verifier shall verify mDL device binding (mdoc authentication) | Mandatory | ARF section 6.6.3.1 point 7 (and 6.3.6.8) and Annex 2 OIA_02 specifies that “The Relying Party verifies that the PID Provider or Attestation Provider issued this PID or attestation to the same Wallet Unit that presented it to the Relying Party” |
+| :open_file_folder: **Policy-based Checks** | | |
+| Certificate Revocation list | Mandatory | Section 9.3.3 in ISO/IEC 18013-5 specifies that “mdoc reader shall have access to certificate revocation information”. A remote mDL verifier needs access to the issuing authority’s certificate authority (IACA) root certificate to verify issuer data authentication. It checks the status of the Document Signing certificate and the IACA certificate against the published CRLs. <br/>Confirm that the issuer’s IACA certificate is present, and that it is listed as an issuer of the doctype “org.iso.18013.5.1.mDL”. |
+| ETSI LOTL support | Mandatory | The Reference Implementation supports ETSI trusted lists because of other use cases, see e.g. ARF Annex 2 requirement PuBPNot_03 “The format of the PuB-EAA Provider Trusted List SHALL comply with ETSI TS 119 612 v2.1.1 or with a suitable profile similarly derived from ETSI TS 102 231” |
+| IACA retrieval via VICAL | Mandatory | [4<sup>th</sup> Driving License Directive] in Article 5.7 mandates that the Commission shall adopt implementing acts [among others] for recognition of those driving licences by third country authorities. Annex C in ISO/IEC 18013-5 specifies the VICAL mechanism. It does not explicitly specify this mechanism as mandatory and therefore it is considered optional. This mechanism applies to the third countries |

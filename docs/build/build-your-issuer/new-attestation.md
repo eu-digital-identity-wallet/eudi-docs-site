@@ -1,13 +1,13 @@
 # Add Attestations
 
-This document specifies the changes needed to add a new attestation/credential to the EUDI Wallet Issuer.
+This document outlines the changes needed to add a new attestation/credential to the EUDI Wallet Issuer.
 We will use a generic loyalty card credential as an example for this configuration.
 
 ## 1. Metadata Configuration
 
-Add a new json file with the credential metadata to ```app/metadata_config/credentials_supported```
+Add a new JSON file with the credential metadata to ```app/metadata_config/credentials_supported```
 
-For this example we will use ```app/metadata_config/credentials_supported/loyalty_mdoc.json```
+For this example, we will use ```app/metadata_config/credentials_supported/loyalty_mdoc.json```
 
 Example loyalty card metadata for mso_mdoc format (ISO 18013-5), with namespace `eu.europa.ec.eudi.loyalty_mdoc`:
 
@@ -131,7 +131,7 @@ For more information on the metadata parameters, refer to https://openid.net/spe
 
 ## 2. Service Configuration
 
-In the service configuration file (```app/app_config/config_service.py```), you need to configure the issuing authority, organization and validity of the credential.
+In the service configuration file (```app/app_config/config_service.py```), you need to configure the issuing authority, organisation and validity of the credential.
 
 - Add a new entry to config_doctype (using the doctype of the credential as key)
 
@@ -152,7 +152,7 @@ In the service configuration file (```app/app_config/config_service.py```), you 
     In the following examples the authentication allowed for the loyalty credential is through country selection.
 
 ```python
-auth_method_supported_credencials = {
+auth_method_supported_credentials = {
     "PID_login": [
     ],
     "country_selection": [

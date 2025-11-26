@@ -45,4 +45,4 @@ This version of the Issuer supports the [OpenId for Verifiable Credential Issuan
 | PKCE                                                              | ✅                                                              |
 
 
-You can use the Issuer at [https://issuer.eudiw.dev/](https://issuer.eudiw.dev/){:target="_blank"}, or [install it locally](./Steps to Build).
+You can use the Issuer at [https://issuer.eudiw.dev/](https://issuer.eudiw.dev/){:target="_blank"}, or [install it locally](./steps-to-build.md).

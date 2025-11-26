@@ -1,6 +1,6 @@
 # Self-signed Certificates
 
-This section describes how to configure the application to interact with services utilizing self-signed certificates.
+This section describes how to configure the application to interact with services utilising self-signed certificates.
 
 1. Open the build.gradle.kts file of the "core-logic" module.
 2. In the 'dependencies' block add the following two:

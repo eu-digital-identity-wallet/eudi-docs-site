@@ -1,0 +1,3 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Deleting a PID document","User deletes the document","SUCCESS","2025-07-25T14:40:18.881787+03:00[Europe/Athens]","0.0","103.38"
+"Deleting a PID document","User deletes the document","SUCCESS","2025-07-25T12:37:50.730441+03:00[Europe/Athens]","0.0","248.48"

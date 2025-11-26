@@ -1,0 +1,1778 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>Features</title>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="bootstrap-icons/bootstrap-icons.css">
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.13.1/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.13.1/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.13.1/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/>
+<!--CHART.JS-->
+<script src="chartjs/chart.js"></script>
+<script src="chartjs/chartjs-plugin-datalabels@2.0.0"></script>
+<script src="chartjs/patternomaly.min.js"></script>
+<script>
+    // Register the plugin to all charts:
+    Chart.register(ChartDataLabels);
+</script>
+<!-- JQuery-UI -->
+<link type="text/css" href="jqueryui/1.11.2-start/jquery-ui.min.css" rel="Stylesheet" />
+<script type="text/javascript" src="jqueryui/1.11.2-start/jquery-ui.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.13.1/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.13.1/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.13.1/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+
+
+
+
+    <script>
+
+        $(document).ready(function () {
+
+            $("#scenario-results").DataTable({
+                "order": [[0, "asc",], [3, "asc",]],
+                "language": {
+                    searchPlaceholder: "Filter",
+                    search: ""
+                },
+                columnDefs: [
+                    {type: 'time-elapsed-dhms', targets: 4}
+                ]
+            })
+            $("#manual-scenario-results").DataTable({
+                "order": [[0, "asc",], [1, "asc",]],
+                "language": {
+                    searchPlaceholder: "Filter",
+                    search: ""
+                },
+            })
+
+            $('.example-table table').DataTable({
+                searching: false,
+                ordering: false,
+                paging: false,
+                info: false
+            });
+
+            $('.example-table-in-scenario table').DataTable({
+                searching: false,
+                ordering: false,
+                paging: false,
+                info: false
+            });
+
+            $('#evidence-table').DataTable(
+                {
+                    searching: false,
+                    ordering: false,
+                    paging: false,
+                    info: false
+                }
+            );
+
+
+            $(".scenario-docs .card-body table").wrap("<div class='table-responsive'></div>");
+
+            $("#requirements-tabs").tabs();
+            $("#test-tabs").tabs();
+
+            var requirementsTree = [{"text":"Signing a document with EUDI Wallet","type":"feature","href":"f572e8793a4da34fac415e056c8aa2d7f8d657a42242acc955f046e0519ef4d1.html","nodes":[],"selectable":false,"tags":["\u003ca href\u003d\u0027##beforetable\u0027\u003e\u003ci class\u003d\u0027bi bi-hourglass-top pending-icon \u0027 title\u003d\u0027PENDING\u0027\u003e\u003c/i\u003e\u003c/a\u003e","\u003cspan class\u003d\u0027feature-count\u0027\u003e9 scenarios\u003c/span\u003e, \u003cspan class\u003d\u0027feature-count\u0027\u003e9 test cases\u003c/span\u003e"]}];
+
+            $('#tree').treeview({
+                data: requirementsTree,
+                enableLinks: true,
+                levels: 10,
+                showTags: true,
+                expandIcon: "bi bi-journal-plus",
+                collapseIcon: "bi bi-journal-minus",
+                emptyIcon: "bi bi-journal"
+            });
+
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $(".scenario-docs > div > p").html(function () {
+                var text = $(this).text().trim().split(" ");
+                var first = text.shift();
+                return (text.length > 0 ? "<strong>" + first + "</strong> " : first) + text.join(" ");
+            });
+        });
+    </script>
+</head>
+
+
+<body class="results-page">
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">EUDI Wallet Test Report</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+            <a href='index.html'>Home</a> > <a href="capabilities.html">Requirements</a>
+
+                > <a href="87c4c3e593281afac507c5e77e86b292acf482d87ae382b8893c555498c1599e.html">Ios</a>
+                > <a href="7175c183938101499a3b4ef2c94fa87ac74d3dab85e78d49735e38185fb9f14d.html">Rqes R5 wallet-driven model with internal signature creation application 29</a>
+                > <a href="596f0d1b5f8113e21ad3f8c99d74cb1357429f8759062a3bf79f57dd56415c90.html">Sign document R5 120</a>
+
+
+                    > <span class="truncate-40">Signing a document with EUDI wallet</span>
+
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li >
+            <a href="index.html"><i class="bi bi-journal-check"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="bi bi-journal-text"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="dd7750c6dc86be28f39572a355a41442ba81daa3e70b6c781cfbc96e905bd672.html"><i class="bi bi-chat-text"></i> Platforms</a>
+        </li>
+        <li >
+            <a href="bf2946e24fd72447464f583d97d4f9006680caa0fc520443de6470185bd4ceb2.html"><i class="bi bi-chat-text"></i> Features</a>
+        </li>
+        <li >
+            <a href="0272dadd83d6e6ac748d9a947522ca78b8873f5156f9bd38d6a0eb735ee5993b.html"><i class="bi bi-chat-text"></i> Epics</a>
+        </li>
+        <li >
+            <a href="2a4631d87648e59c428d4cf0e9247f9d286e4679f436ca2ce872e931eb4dfd58.html"><i class="bi bi-chat-text"></i> Stories</a>
+        </li>
+        <li class="active">
+            <a href="#"><i class="bi bi-chat-text"></i> Features</a>
+        </li>
+        <li >
+            <a href="f00f76a04d2d99822f342e19edfb456d954ef898f485c501f324bafd9ade930f.html"><i class="bi bi-chat-text"></i> ##s</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 14-10-2025 11:25</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+    <div id="beforetable"></div>
+    <div id="results-dashboard">
+        <div class="table">
+            <div class=row">
+                <div class="col-sm-12">
+                    <div>
+                        <div clas="table">
+                            <div class="row">
+
+                                <div class="col-sm-8">
+                                        <span>
+                                            <h2><i class="bi bi-book"></i> Feature: Signing a document with EUDI wallet</h2>
+                                        </span>
+                                    </div>
+                                        <div class="col-sm-4">
+                                        <span class="feature-tags">
+                                            <p class="tag">
+                                                <span class="badge feature-tag tag-badge" style="background:default;">
+                                                        <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink"
+                                                                                               style="background:default;"
+                                                                                               href="86df08ad9bd892f625247783b4569d0868d16170bad753dd903264823803242a.html">US_SD (tag)</a>
+                                                    </span>
+                                                <span class="badge feature-tag tag-badge" style="background:default;">
+                                                        <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink"
+                                                                                               style="background:default;"
+                                                                                               href="4792dcae5afc1e7dec221409fc3126fd5f8608b9b5418e97f152c85a7f439b23.html">Q3_2025 (tag)</a>
+                                                    </span>
+                                                <span class="badge feature-tag tag-badge" style="background:default;">
+                                                        <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink"
+                                                                                               style="background:default;"
+                                                                                               href="6f8a5d68a7c6ca6142be6d100bb7953e91690ce198c99ea44c1bf7804e9f3b13.html">IOS (tag)</a>
+                                                    </span>
+                                            </p>
+                                        </span>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="requirementNarrativeTitle">
+                                As a EUDI Wallet User<br />
+I want to provide my explicit consent on signing a document through my EUDI Wallet<br />
+So that I can ensure I sign the document as the sole signer of the specific document
+                            </div>
+
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-sm-12">
+
+                        <!-- Requirements result tabs -->
+                        <ul class="nav nav-tabs">
+                            <li class="active">
+                                <a data-toggle="tab" href="#specs"><i class="bi bi-journal-text"></i> Specifications</a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#results"><i class="bi bi-speedometer"></i> Test Results</a>
+                            </li>
+                        </ul>
+
+                        <!-- Specifications and Results tabs -->
+                        <div class="card border">
+                            <div class="tab-content" id="pills-tabContent">
+                                <div id="specs" class="tab-pane fade in active">
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <h3>Feature Coverage By Scenario</h3>
+
+                                                <!-- REQUIREMENTS PIE CHART -->
+                                                    <div class="chart-container" style="position: relative; width:30vw">
+                                                        <canvas id="requirementChart" width="300" height="300"></canvas>
+                                                    </div>
+
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <!--- TOC --->
+                                                <div id="toc">
+                                                    <h3>Overview</h3>
+                                                    <table class="table" id="toc-table">
+                                                                    <tr>
+                                                                        <td style="width:95%;" class="toc-title">
+                                                                            <span class="orphan-scenario-toc-entry">
+                                                                                    <a href="#abdb3549834eabd6aa9243dcef6a273e0eaea35f14ec0a7b7ca9d054396f59a2"
+                                                                                       title="View scenario details">
+                                                                                        <i class="bi bi-chat-dots"></i> Scenario: Single Credential ID Available
+                                                                                    </a>
+                                                                                </span>
+                                                                        </td>
+                                                                        <td>
+
+                                                                        </td>
+                                                                        <td style="width:5%;">
+                                                                            <table>
+                                                                                <tr>
+                                                                                    <td class="icons-bar">
+                                                                                        <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                           href="00c60a521a75ceb448808ea783cecd44347cbab1e4cb877925e1d459b19dc06a.html"
+                                                                                           title="View test results">
+                                                                                            <a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                                            </a>
+
+                                                                                            <i class="bi bi-person manual"
+                                                                                               title="Manual test"></i>
+                                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                               href="00c60a521a75ceb448808ea783cecd44347cbab1e4cb877925e1d459b19dc06a.html"
+                                                                                               title="View test results">
+                                                                                                <i class="bi bi-eyeglasses"></i>
+                                                                                            </a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="width:95%;" class="toc-title">
+                                                                            <span class="orphan-scenario-toc-entry">
+                                                                                    <a href="#b231fbfa9de1e9d81ee7459b91bf1ac678635acfd1de3b14fbceec5333b31da4"
+                                                                                       title="View scenario details">
+                                                                                        <i class="bi bi-chat-dots"></i> Scenario: Multiple Credential IDs available
+                                                                                    </a>
+                                                                                </span>
+                                                                        </td>
+                                                                        <td>
+
+                                                                        </td>
+                                                                        <td style="width:5%;">
+                                                                            <table>
+                                                                                <tr>
+                                                                                    <td class="icons-bar">
+                                                                                        <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                           href="f8ad5a0db7af18acedcd9f7e4791446a4e20d2ea9a21609540c5c36feb34cb98.html"
+                                                                                           title="View test results">
+                                                                                            <a href='##beforetable'><i class='bi bi-hourglass-top pending-icon ' title='PENDING'></i></a>
+                                                                                            </a>
+
+                                                                                            <i class="bi bi-person manual"
+                                                                                               title="Manual test"></i>
+                                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                               href="f8ad5a0db7af18acedcd9f7e4791446a4e20d2ea9a21609540c5c36feb34cb98.html"
+                                                                                               title="View test results">
+                                                                                                <i class="bi bi-eyeglasses"></i>
+                                                                                            </a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="width:95%;" class="toc-title">
+                                                                            <span class="orphan-scenario-toc-entry">
+                                                                                    <a href="#f4a66b09230e9cb6f1b5982e769bbdc8894879b484f01bb1d4647dc3841830ea"
+                                                                                       title="View scenario details">
+                                                                                        <i class="bi bi-chat-dots"></i> Scenario: No Credential IDs enrolled for user in QTSP
+                                                                                    </a>
+                                                                                </span>
+                                                                        </td>
+                                                                        <td>
+
+                                                                        </td>
+                                                                        <td style="width:5%;">
+                                                                            <table>
+                                                                                <tr>
+                                                                                    <td class="icons-bar">
+                                                                                        <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                           href="28145fab306b94dd1c32da917c738025fb0c335945e7dfa909d94089a9ba03c6.html"
+                                                                                           title="View test results">
+                                                                                            <a href='##beforetable'><i class='bi bi-hourglass-top pending-icon ' title='PENDING'></i></a>
+                                                                                            </a>
+
+                                                                                            <i class="bi bi-person manual"
+                                                                                               title="Manual test"></i>
+                                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                               href="28145fab306b94dd1c32da917c738025fb0c335945e7dfa909d94089a9ba03c6.html"
+                                                                                               title="View test results">
+                                                                                                <i class="bi bi-eyeglasses"></i>
+                                                                                            </a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="width:95%;" class="toc-title">
+                                                                            <span class="orphan-scenario-toc-entry">
+                                                                                    <a href="#33b6e310d9d35ab9273ea21a276baa28759b7a4b4bbc0884327020b18dc3ff4b"
+                                                                                       title="View scenario details">
+                                                                                        <i class="bi bi-chat-dots"></i> Scenario: QTSP redirects user to attestation request
+                                                                                    </a>
+                                                                                </span>
+                                                                        </td>
+                                                                        <td>
+
+                                                                        </td>
+                                                                        <td style="width:5%;">
+                                                                            <table>
+                                                                                <tr>
+                                                                                    <td class="icons-bar">
+                                                                                        <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                           href="6c2b745dc40825ce58c6aeadda133df07ada86114f52021efffc17533ed588c3.html"
+                                                                                           title="View test results">
+                                                                                            <a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                                            </a>
+
+                                                                                            <i class="bi bi-person manual"
+                                                                                               title="Manual test"></i>
+                                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                               href="6c2b745dc40825ce58c6aeadda133df07ada86114f52021efffc17533ed588c3.html"
+                                                                                               title="View test results">
+                                                                                                <i class="bi bi-eyeglasses"></i>
+                                                                                            </a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="width:95%;" class="toc-title">
+                                                                            <span class="orphan-scenario-toc-entry">
+                                                                                    <a href="#7ffee20d47ff5f0c5ce0513cb85539fd192def440c4b64377aa75030e9ae89b1"
+                                                                                       title="View scenario details">
+                                                                                        <i class="bi bi-chat-dots"></i> Scenario: No matching attestations available
+                                                                                    </a>
+                                                                                </span>
+                                                                        </td>
+                                                                        <td>
+
+                                                                        </td>
+                                                                        <td style="width:5%;">
+                                                                            <table>
+                                                                                <tr>
+                                                                                    <td class="icons-bar">
+                                                                                        <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                           href="57a0df932ce1669669316343673f1905139aa572000140bc0c62cbb5ac059f8d.html"
+                                                                                           title="View test results">
+                                                                                            <a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                                            </a>
+
+                                                                                            <i class="bi bi-person manual"
+                                                                                               title="Manual test"></i>
+                                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                               href="57a0df932ce1669669316343673f1905139aa572000140bc0c62cbb5ac059f8d.html"
+                                                                                               title="View test results">
+                                                                                                <i class="bi bi-eyeglasses"></i>
+                                                                                            </a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="width:95%;" class="toc-title">
+                                                                            <span class="orphan-scenario-toc-entry">
+                                                                                    <a href="#25f19540d1c53cfcc95bc2f416fa78520a11e9f9db35d3d752c32609fe12c627"
+                                                                                       title="View scenario details">
+                                                                                        <i class="bi bi-chat-dots"></i> Scenario: User consents to release attestation
+                                                                                    </a>
+                                                                                </span>
+                                                                        </td>
+                                                                        <td>
+
+                                                                        </td>
+                                                                        <td style="width:5%;">
+                                                                            <table>
+                                                                                <tr>
+                                                                                    <td class="icons-bar">
+                                                                                        <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                           href="c3f97c8b26b3d3b43c60c3bd97ad63eadf4391c2ae827c9ced1a6365768959df.html"
+                                                                                           title="View test results">
+                                                                                            <a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                                            </a>
+
+                                                                                            <i class="bi bi-person manual"
+                                                                                               title="Manual test"></i>
+                                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                               href="c3f97c8b26b3d3b43c60c3bd97ad63eadf4391c2ae827c9ced1a6365768959df.html"
+                                                                                               title="View test results">
+                                                                                                <i class="bi bi-eyeglasses"></i>
+                                                                                            </a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="width:95%;" class="toc-title">
+                                                                            <span class="orphan-scenario-toc-entry">
+                                                                                    <a href="#e738fb0a7545a0f4e0bf6b18f8f983b67db91c778a3d9adee42f03ad2bedfd99"
+                                                                                       title="View scenario details">
+                                                                                        <i class="bi bi-chat-dots"></i> Scenario: User authentication fails
+                                                                                    </a>
+                                                                                </span>
+                                                                        </td>
+                                                                        <td>
+
+                                                                        </td>
+                                                                        <td style="width:5%;">
+                                                                            <table>
+                                                                                <tr>
+                                                                                    <td class="icons-bar">
+                                                                                        <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                           href="7ebcb956805863078f5315b92f4dc6adec6a80fc96afc5793f04ac303bc7f5b8.html"
+                                                                                           title="View test results">
+                                                                                            <a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                                            </a>
+
+                                                                                            <i class="bi bi-person manual"
+                                                                                               title="Manual test"></i>
+                                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                               href="7ebcb956805863078f5315b92f4dc6adec6a80fc96afc5793f04ac303bc7f5b8.html"
+                                                                                               title="View test results">
+                                                                                                <i class="bi bi-eyeglasses"></i>
+                                                                                            </a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="width:95%;" class="toc-title">
+                                                                            <span class="orphan-scenario-toc-entry">
+                                                                                    <a href="#5701ae3f9ce67e07258a56dc9a14a29015fef3600456ff330805cf48fc31c836"
+                                                                                       title="View scenario details">
+                                                                                        <i class="bi bi-chat-dots"></i> Scenario: User cancels attestation release
+                                                                                    </a>
+                                                                                </span>
+                                                                        </td>
+                                                                        <td>
+
+                                                                        </td>
+                                                                        <td style="width:5%;">
+                                                                            <table>
+                                                                                <tr>
+                                                                                    <td class="icons-bar">
+                                                                                        <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                           href="3e9987f6c8979ad5c5cf3877619ea8b3a15217aeafb2c31f3ae8a64cb9add4bf.html"
+                                                                                           title="View test results">
+                                                                                            <a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                                            </a>
+
+                                                                                            <i class="bi bi-person manual"
+                                                                                               title="Manual test"></i>
+                                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                               href="3e9987f6c8979ad5c5cf3877619ea8b3a15217aeafb2c31f3ae8a64cb9add4bf.html"
+                                                                                               title="View test results">
+                                                                                                <i class="bi bi-eyeglasses"></i>
+                                                                                            </a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="width:95%;" class="toc-title">
+                                                                            <span class="orphan-scenario-toc-entry">
+                                                                                    <a href="#46dd85d1e004090e7081a9f1ce120e776b52013437010092085b8d4b38c7d660"
+                                                                                       title="View scenario details">
+                                                                                        <i class="bi bi-chat-dots"></i> Scenario: QTSP signs the document successfully
+                                                                                    </a>
+                                                                                </span>
+                                                                        </td>
+                                                                        <td>
+
+                                                                        </td>
+                                                                        <td style="width:5%;">
+                                                                            <table>
+                                                                                <tr>
+                                                                                    <td class="icons-bar">
+                                                                                        <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                           href="e3888fb796ee9c941790e6a6e0a930adfdaaf68fb0b162038c404dff284da8e0.html"
+                                                                                           title="View test results">
+                                                                                            <a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                                            </a>
+
+                                                                                            <i class="bi bi-person manual"
+                                                                                               title="Manual test"></i>
+                                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                               href="e3888fb796ee9c941790e6a6e0a930adfdaaf68fb0b162038c404dff284da8e0.html"
+                                                                                               title="View test results">
+                                                                                                <i class="bi bi-eyeglasses"></i>
+                                                                                            </a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                    </table>
+                                                </div>
+                                                <!--- END OF TOC --->
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <h3>Scenarios</h3>
+
+                                                    <a name="96b2271d-e0f5-48c3-a76d-16cdf7a0b345"></a>
+                                                    <p class="rule-tags inline-tag">
+                                                    </p>
+
+
+                                                        <div class="scenario-docs card" id="abdb3549834eabd6aa9243dcef6a273e0eaea35f14ec0a7b7ca9d054396f59a2">
+                                                            <div class="scenario-docs card-header success"
+                                                                 style="min-height:1.5em;">
+                                                                <div>
+                                                                        <span class="scenario-heading">
+                                                                            <a href="00c60a521a75ceb448808ea783cecd44347cbab1e4cb877925e1d459b19dc06a.html"
+                                                                               title="View test results">Scenario: Single Credential ID Available</a>
+                                                                        </span>
+
+                                                                        <span class="example-tags inline-tag">
+                                                                                <span class="badge tag-badge"
+                                                                                      style="background:default;">
+                                                                                    <i class="bi bi-tag-fill"></i>&nbsp;
+                                                                                    <a class="tagLink"
+                                                                                       style="background:default;"
+                                                                                       href="220d8ef6080eb8a7746b6ccaff3b44ac3c1f123a09790bb9a8ff31e7b07c9746.html">Passed (manual)</a>
+                                                                                </span>
+                                                                                <span class="badge tag-badge"
+                                                                                      style="background:default;">
+                                                                                    <i class="bi bi-tag-fill"></i>&nbsp;
+                                                                                    <a class="tagLink"
+                                                                                       style="background:default;"
+                                                                                       href="05c57e0bc917302928917b81c9d2d448e402f1b579e3bd7171fb1efd756e4dd4.html">US_SD_TC_01 (tag)</a>
+                                                                                </span>
+                                                                        </span>
+
+                                                                    <span class="scenario-result-icon">
+                                                                     <i
+                                                                            class="bi bi-person manual"
+                                                                            title="Manual test"></i>
+
+                                                                            <a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                        </span>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="scenario-docs card-body">
+                                                                    <p>Given the user has uploaded a document and selected a QTSP</p>
+                                                                    <p>When the EUDI Wallet retrieves the Credential ID details from the QTSP</p>
+                                                                    <p>Then the EUDI Wallet presents the Credential ID details to the user</p>
+                                                                    <p>And user confirms to proceed with the signing operation</p>
+                                                                <div class="examples">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="scenario-docs card" id="b231fbfa9de1e9d81ee7459b91bf1ac678635acfd1de3b14fbceec5333b31da4">
+                                                            <div class="scenario-docs card-header pending"
+                                                                 style="min-height:1.5em;">
+                                                                <div>
+                                                                        <span class="scenario-heading">
+                                                                            <a href="f8ad5a0db7af18acedcd9f7e4791446a4e20d2ea9a21609540c5c36feb34cb98.html"
+                                                                               title="View test results">Scenario: Multiple Credential IDs available</a>
+                                                                        </span>
+
+                                                                        <span class="example-tags inline-tag">
+                                                                                <span class="badge tag-badge"
+                                                                                      style="background:default;">
+                                                                                    <i class="bi bi-tag-fill"></i>&nbsp;
+                                                                                    <a class="tagLink"
+                                                                                       style="background:default;"
+                                                                                       href="08b9c9cafd959097c83344f962137fc8798fd240d81c9e11f763cf9841d0a2ce.html">US_SD_TC_02 (tag)</a>
+                                                                                </span>
+                                                                                <span class="badge tag-badge"
+                                                                                      style="background:default;">
+                                                                                    <i class="bi bi-tag-fill"></i>&nbsp;
+                                                                                    <a class="tagLink"
+                                                                                       style="background:default;"
+                                                                                       href="c211605d4f9a5668440a20cdbb7ea638c22b924e59857a8242889044717367ae.html">Ignored (manual)</a>
+                                                                                </span>
+                                                                        </span>
+
+                                                                    <span class="scenario-result-icon">
+                                                                     <i
+                                                                            class="bi bi-person manual"
+                                                                            title="Manual test"></i>
+
+                                                                            <a href='##beforetable'><i class='bi bi-hourglass-top pending-icon ' title='PENDING'></i></a>
+                                                                        </span>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="scenario-docs card-body">
+                                                                    <p>Given the QTSP has multiple Credential IDs enrolled for the user</p>
+                                                                    <p>When the EUDI Wallet requests available Credential IDs from the QTSP</p>
+                                                                    <p>Then the EUDI Wallet asks the user to select a preferred Credential ID</p>
+                                                                <div class="examples">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="scenario-docs card" id="f4a66b09230e9cb6f1b5982e769bbdc8894879b484f01bb1d4647dc3841830ea">
+                                                            <div class="scenario-docs card-header pending"
+                                                                 style="min-height:1.5em;">
+                                                                <div>
+                                                                        <span class="scenario-heading">
+                                                                            <a href="28145fab306b94dd1c32da917c738025fb0c335945e7dfa909d94089a9ba03c6.html"
+                                                                               title="View test results">Scenario: No Credential IDs enrolled for user in QTSP</a>
+                                                                        </span>
+
+                                                                        <span class="example-tags inline-tag">
+                                                                                <span class="badge tag-badge"
+                                                                                      style="background:default;">
+                                                                                    <i class="bi bi-tag-fill"></i>&nbsp;
+                                                                                    <a class="tagLink"
+                                                                                       style="background:default;"
+                                                                                       href="c211605d4f9a5668440a20cdbb7ea638c22b924e59857a8242889044717367ae.html">Ignored (manual)</a>
+                                                                                </span>
+                                                                                <span class="badge tag-badge"
+                                                                                      style="background:default;">
+                                                                                    <i class="bi bi-tag-fill"></i>&nbsp;
+                                                                                    <a class="tagLink"
+                                                                                       style="background:default;"
+                                                                                       href="ee8a2a4bec7c3d76a1429c6ad02f7d71452671d21caf42472d47b74577642762.html">US_SD_TC_03 (tag)</a>
+                                                                                </span>
+                                                                        </span>
+
+                                                                    <span class="scenario-result-icon">
+                                                                     <i
+                                                                            class="bi bi-person manual"
+                                                                            title="Manual test"></i>
+
+                                                                            <a href='##beforetable'><i class='bi bi-hourglass-top pending-icon ' title='PENDING'></i></a>
+                                                                        </span>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="scenario-docs card-body">
+                                                                    <p>Given the Relying Party has retrieved available Credential IDs from the QTSP</p>
+                                                                    <p>When there are no available Credential IDs for the user in the QTSP</p>
+                                                                    <p>Then the Relying Party should inform the user to enroll a Qualified Certificate in the QTSP</p>
+                                                                    <p>And the document signing process should stop</p>
+                                                                <div class="examples">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="scenario-docs card" id="33b6e310d9d35ab9273ea21a276baa28759b7a4b4bbc0884327020b18dc3ff4b">
+                                                            <div class="scenario-docs card-header success"
+                                                                 style="min-height:1.5em;">
+                                                                <div>
+                                                                        <span class="scenario-heading">
+                                                                            <a href="6c2b745dc40825ce58c6aeadda133df07ada86114f52021efffc17533ed588c3.html"
+                                                                               title="View test results">Scenario: QTSP redirects user to attestation request</a>
+                                                                        </span>
+
+                                                                        <span class="example-tags inline-tag">
+                                                                                <span class="badge tag-badge"
+                                                                                      style="background:default;">
+                                                                                    <i class="bi bi-tag-fill"></i>&nbsp;
+                                                                                    <a class="tagLink"
+                                                                                       style="background:default;"
+                                                                                       href="220d8ef6080eb8a7746b6ccaff3b44ac3c1f123a09790bb9a8ff31e7b07c9746.html">Passed (manual)</a>
+                                                                                </span>
+                                                                                <span class="badge tag-badge"
+                                                                                      style="background:default;">
+                                                                                    <i class="bi bi-tag-fill"></i>&nbsp;
+                                                                                    <a class="tagLink"
+                                                                                       style="background:default;"
+                                                                                       href="7242b328c3d7cd25764e90a828a20252038a4e56bc05bf2ff329200fb62d9d61.html">US_SD_TC_04 (tag)</a>
+                                                                                </span>
+                                                                        </span>
+
+                                                                    <span class="scenario-result-icon">
+                                                                     <i
+                                                                            class="bi bi-person manual"
+                                                                            title="Manual test"></i>
+
+                                                                            <a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                        </span>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="scenario-docs card-body">
+                                                                    <p>Given the EUDI Wallet has redirected the user to the QTSP authentication page</p>
+                                                                    <p>When the QTSP provides a deep link for attestation presentation</p>
+                                                                    <p>Then the EUDI Wallet opens and displays the request for PID attestation and transaction data</p>
+                                                                <div class="examples">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="scenario-docs card" id="7ffee20d47ff5f0c5ce0513cb85539fd192def440c4b64377aa75030e9ae89b1">
+                                                            <div class="scenario-docs card-header success"
+                                                                 style="min-height:1.5em;">
+                                                                <div>
+                                                                        <span class="scenario-heading">
+                                                                            <a href="57a0df932ce1669669316343673f1905139aa572000140bc0c62cbb5ac059f8d.html"
+                                                                               title="View test results">Scenario: No matching attestations available</a>
+                                                                        </span>
+
+                                                                        <span class="example-tags inline-tag">
+                                                                                <span class="badge tag-badge"
+                                                                                      style="background:default;">
+                                                                                    <i class="bi bi-tag-fill"></i>&nbsp;
+                                                                                    <a class="tagLink"
+                                                                                       style="background:default;"
+                                                                                       href="220d8ef6080eb8a7746b6ccaff3b44ac3c1f123a09790bb9a8ff31e7b07c9746.html">Passed (manual)</a>
+                                                                                </span>
+                                                                                <span class="badge tag-badge"
+                                                                                      style="background:default;">
+                                                                                    <i class="bi bi-tag-fill"></i>&nbsp;
+                                                                                    <a class="tagLink"
+                                                                                       style="background:default;"
+                                                                                       href="8e80c56a7ee7db5cdc6a2a84414b5fcd9be9462fdf177647c96e757877f25493.html">US_SD_TC_05 (tag)</a>
+                                                                                </span>
+                                                                        </span>
+
+                                                                    <span class="scenario-result-icon">
+                                                                     <i
+                                                                            class="bi bi-person manual"
+                                                                            title="Manual test"></i>
+
+                                                                            <a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                        </span>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="scenario-docs card-body">
+                                                                    <p>Given the QTSP requests a PID attestation from the EUDI Wallet</p>
+                                                                    <p>When the EUDI Wallet checks available attestations</p>
+                                                                    <p>Then the EUDI Wallet informs the user that no matching attestations are available and returns to the main page</p>
+                                                                <div class="examples">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="scenario-docs card" id="25f19540d1c53cfcc95bc2f416fa78520a11e9f9db35d3d752c32609fe12c627">
+                                                            <div class="scenario-docs card-header success"
+                                                                 style="min-height:1.5em;">
+                                                                <div>
+                                                                        <span class="scenario-heading">
+                                                                            <a href="c3f97c8b26b3d3b43c60c3bd97ad63eadf4391c2ae827c9ced1a6365768959df.html"
+                                                                               title="View test results">Scenario: User consents to release attestation</a>
+                                                                        </span>
+
+                                                                        <span class="example-tags inline-tag">
+                                                                                <span class="badge tag-badge"
+                                                                                      style="background:default;">
+                                                                                    <i class="bi bi-tag-fill"></i>&nbsp;
+                                                                                    <a class="tagLink"
+                                                                                       style="background:default;"
+                                                                                       href="220d8ef6080eb8a7746b6ccaff3b44ac3c1f123a09790bb9a8ff31e7b07c9746.html">Passed (manual)</a>
+                                                                                </span>
+                                                                                <span class="badge tag-badge"
+                                                                                      style="background:default;">
+                                                                                    <i class="bi bi-tag-fill"></i>&nbsp;
+                                                                                    <a class="tagLink"
+                                                                                       style="background:default;"
+                                                                                       href="6285bae3153af06230f082907a3ecda57997f192dfa721dc1bb22f702c6b9754.html">US_SD_TC_06 (tag)</a>
+                                                                                </span>
+                                                                        </span>
+
+                                                                    <span class="scenario-result-icon">
+                                                                     <i
+                                                                            class="bi bi-person manual"
+                                                                            title="Manual test"></i>
+
+                                                                            <a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                        </span>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="scenario-docs card-body">
+                                                                    <p>Given the user is reviewing the Credential ID details in the EUDI Wallet</p>
+                                                                    <p>When the EUDI Wallet requests the user to consent to the release of the requested attestation</p>
+                                                                    <p>And the user authenticates successfully in the Wallet, e.x. Share and PIN</p>
+                                                                    <p>Then the EUDI Wallet presents the requested attestation to the QTSP</p>
+                                                                    <p>And a success screen is displayed with the signed document</p>
+                                                                <div class="examples">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="scenario-docs card" id="e738fb0a7545a0f4e0bf6b18f8f983b67db91c778a3d9adee42f03ad2bedfd99">
+                                                            <div class="scenario-docs card-header success"
+                                                                 style="min-height:1.5em;">
+                                                                <div>
+                                                                        <span class="scenario-heading">
+                                                                            <a href="7ebcb956805863078f5315b92f4dc6adec6a80fc96afc5793f04ac303bc7f5b8.html"
+                                                                               title="View test results">Scenario: User authentication fails</a>
+                                                                        </span>
+
+                                                                        <span class="example-tags inline-tag">
+                                                                                <span class="badge tag-badge"
+                                                                                      style="background:default;">
+                                                                                    <i class="bi bi-tag-fill"></i>&nbsp;
+                                                                                    <a class="tagLink"
+                                                                                       style="background:default;"
+                                                                                       href="e27f9f2e3d4fb36a3359e25158fab895dedc20319b180535679eb5fa150af7de.html">US_SD_TC_07 (tag)</a>
+                                                                                </span>
+                                                                                <span class="badge tag-badge"
+                                                                                      style="background:default;">
+                                                                                    <i class="bi bi-tag-fill"></i>&nbsp;
+                                                                                    <a class="tagLink"
+                                                                                       style="background:default;"
+                                                                                       href="220d8ef6080eb8a7746b6ccaff3b44ac3c1f123a09790bb9a8ff31e7b07c9746.html">Passed (manual)</a>
+                                                                                </span>
+                                                                        </span>
+
+                                                                    <span class="scenario-result-icon">
+                                                                     <i
+                                                                            class="bi bi-person manual"
+                                                                            title="Manual test"></i>
+
+                                                                            <a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                        </span>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="scenario-docs card-body">
+                                                                    <p>Given the EUDI Wallet requests the user to authenticate with a six-digit PIN</p>
+                                                                    <p>When the user enters an incorrect PIN</p>
+                                                                    <p>Then the EUDI Wallet asks the user to retry authentication</p>
+                                                                <div class="examples">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="scenario-docs card" id="5701ae3f9ce67e07258a56dc9a14a29015fef3600456ff330805cf48fc31c836">
+                                                            <div class="scenario-docs card-header success"
+                                                                 style="min-height:1.5em;">
+                                                                <div>
+                                                                        <span class="scenario-heading">
+                                                                            <a href="3e9987f6c8979ad5c5cf3877619ea8b3a15217aeafb2c31f3ae8a64cb9add4bf.html"
+                                                                               title="View test results">Scenario: User cancels attestation release</a>
+                                                                        </span>
+
+                                                                        <span class="example-tags inline-tag">
+                                                                                <span class="badge tag-badge"
+                                                                                      style="background:default;">
+                                                                                    <i class="bi bi-tag-fill"></i>&nbsp;
+                                                                                    <a class="tagLink"
+                                                                                       style="background:default;"
+                                                                                       href="0010542ebff0d0d2b01c6d43bdcbdc0f25f4633a342397ee1fe46983138a9ae5.html">US_SD_TC_08 (tag)</a>
+                                                                                </span>
+                                                                                <span class="badge tag-badge"
+                                                                                      style="background:default;">
+                                                                                    <i class="bi bi-tag-fill"></i>&nbsp;
+                                                                                    <a class="tagLink"
+                                                                                       style="background:default;"
+                                                                                       href="220d8ef6080eb8a7746b6ccaff3b44ac3c1f123a09790bb9a8ff31e7b07c9746.html">Passed (manual)</a>
+                                                                                </span>
+                                                                        </span>
+
+                                                                    <span class="scenario-result-icon">
+                                                                     <i
+                                                                            class="bi bi-person manual"
+                                                                            title="Manual test"></i>
+
+                                                                            <a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                        </span>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="scenario-docs card-body">
+                                                                    <p>Given the EUDI Wallet requests the user to authenticate with a six-digit PIN</p>
+                                                                    <p>When the user chooses not to proceed</p>
+                                                                    <p>Then the EUDI Wallet returns to the main page without releasing the attestation</p>
+                                                                <div class="examples">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="scenario-docs card" id="46dd85d1e004090e7081a9f1ce120e776b52013437010092085b8d4b38c7d660">
+                                                            <div class="scenario-docs card-header success"
+                                                                 style="min-height:1.5em;">
+                                                                <div>
+                                                                        <span class="scenario-heading">
+                                                                            <a href="e3888fb796ee9c941790e6a6e0a930adfdaaf68fb0b162038c404dff284da8e0.html"
+                                                                               title="View test results">Scenario: QTSP signs the document successfully</a>
+                                                                        </span>
+
+                                                                        <span class="example-tags inline-tag">
+                                                                                <span class="badge tag-badge"
+                                                                                      style="background:default;">
+                                                                                    <i class="bi bi-tag-fill"></i>&nbsp;
+                                                                                    <a class="tagLink"
+                                                                                       style="background:default;"
+                                                                                       href="8b8620f67a9bb5a5c4150b5bc73f3af7f73b733ba300659c2f7a0aba4a99b408.html">US_SD_TC_09 (tag)</a>
+                                                                                </span>
+                                                                                <span class="badge tag-badge"
+                                                                                      style="background:default;">
+                                                                                    <i class="bi bi-tag-fill"></i>&nbsp;
+                                                                                    <a class="tagLink"
+                                                                                       style="background:default;"
+                                                                                       href="220d8ef6080eb8a7746b6ccaff3b44ac3c1f123a09790bb9a8ff31e7b07c9746.html">Passed (manual)</a>
+                                                                                </span>
+                                                                        </span>
+
+                                                                    <span class="scenario-result-icon">
+                                                                     <i
+                                                                            class="bi bi-person manual"
+                                                                            title="Manual test"></i>
+
+                                                                            <a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                        </span>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="scenario-docs card-body">
+                                                                    <p>Given the QTSP has successfully verified the PID attestation</p>
+                                                                    <p>When the QTSP signs the document</p>
+                                                                    <p>Then the QTSP returns the signed document to the EUDI Wallet where the user can view it</p>
+                                                                <div class="examples">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="results" class="tab-pane fade">
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <h3>Feature Coverage By Scenario</h3>
+                                                <!-- TEST RESULT PIE CHART -->
+                                                    <div class="chart-container" style="position: relative; width:30vw">
+                                                        <canvas id="resultChart" width="300" height="300"></canvas>
+                                                    </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <h4><i class="bi bi-check-square"></i> Test Outcomes</h4>
+                                                <!-- Severity bar chart -->
+                                                <div class="chart-container" style="position: relative; width:30vw">
+                                                    <canvas id="severityChart" width="300" height="300"></canvas>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-4">
+                                                <h4><i class="bi bi-graph-up"></i> Test Performance</h4>
+
+                                                <!-- Duration bar chart -->
+                                                <div class="chart-container" style="position: relative; width:30vw">
+                                                    <canvas id="durationChart" width="300" height="300"></canvas>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+    <div>
+        <h3><i class="bi bi-speedometer2"></i> Key Statistics</h3>
+        <div>
+            <table class="table table-striped table-hover">
+                <tbody>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-card-checklist"></i> Number of Scenarios
+                    </td>
+                    <td>9</td>
+                    <td>
+                        <i class="bi bi-stopwatch"></i> Total
+                        Duration
+                    </td>
+                    <td> 1m 6s</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-caret-right"></i> Total Number of Test Cases
+                    </td>
+                    <td>9</td>
+                    <td>
+                        <i class="bi bi-trophy"></i> Fastest Test
+                    </td>
+                    <td>7s</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-person"></i> Number of Manual Test Cases
+                    </td>
+                    <td>9</td>
+                    <td>
+                        <i class="bi bi-skip-start"></i> Slowest
+                        Test
+                    </td>
+                    <td>7s</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-flag-fill"></i> Tests Started
+                    </td>
+                    <td>Oct 14, 2025 11:25:38</td>
+                    <td>
+                        <i class="bi bi-stopwatch"></i> Average
+                        Execution Time
+                    </td>
+                    <td>7s</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-stop-circle"></i> Tests
+                        Finished
+                    </td>
+                    <td>Oct 14, 2025 11:26:44</td>
+                    <td>
+                        <i class="bi bi-stopwatch-fill"></i> Total
+                        Execution Time
+                    </td>
+                    <td> 1m 5s</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+                                                <h3><i class="bi bi-gear"></i> Automated Tests</h3>
+
+                                                    No automated tests were executed
+
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <h3><i class="bi bi-hand-index-thumb"></i> Manual Tests</h3>
+
+                                                    <table class="scenario-result-table table"
+                                                           id="manual-scenario-results">
+                                                        <thead>
+                                                        <tr>
+                                                            <th>##</th>
+                                                            <th class="test-name-column">Scenario</th>
+                                                            <th>Context</th>
+                                                            <th>Steps</th>
+                                                            <th>Result</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                                <tr class="scenario-result SUCCESS">
+                                                                    <td>
+                                                                            <a href="#">Signing a document with EUDI Wallet</a>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="00c60a521a75ceb448808ea783cecd44347cbab1e4cb877925e1d459b19dc06a.html">Single Credential ID Available</a>
+                                                                    </td>
+                                                                    <td><i class="bi bi-person"></i></td>
+                                                                    <td>4</td>
+                                                                    <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                        <span style="display:none">SUCCESS</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="scenario-result PENDING">
+                                                                    <td>
+                                                                            <a href="#">Signing a document with EUDI Wallet</a>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="f8ad5a0db7af18acedcd9f7e4791446a4e20d2ea9a21609540c5c36feb34cb98.html">Multiple Credential IDs available</a>
+                                                                    </td>
+                                                                    <td><i class="bi bi-person"></i></td>
+                                                                    <td>3</td>
+                                                                    <td><a href='##beforetable'><i class='bi bi-hourglass-top pending-icon ' title='PENDING'></i></a>
+                                                                        <span style="display:none">PENDING</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="scenario-result PENDING">
+                                                                    <td>
+                                                                            <a href="#">Signing a document with EUDI Wallet</a>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="28145fab306b94dd1c32da917c738025fb0c335945e7dfa909d94089a9ba03c6.html">No Credential IDs enrolled for user in QTSP</a>
+                                                                    </td>
+                                                                    <td><i class="bi bi-person"></i></td>
+                                                                    <td>4</td>
+                                                                    <td><a href='##beforetable'><i class='bi bi-hourglass-top pending-icon ' title='PENDING'></i></a>
+                                                                        <span style="display:none">PENDING</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="scenario-result SUCCESS">
+                                                                    <td>
+                                                                            <a href="#">Signing a document with EUDI Wallet</a>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="6c2b745dc40825ce58c6aeadda133df07ada86114f52021efffc17533ed588c3.html">QTSP redirects user to attestation request</a>
+                                                                    </td>
+                                                                    <td><i class="bi bi-person"></i></td>
+                                                                    <td>3</td>
+                                                                    <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                        <span style="display:none">SUCCESS</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="scenario-result SUCCESS">
+                                                                    <td>
+                                                                            <a href="#">Signing a document with EUDI Wallet</a>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="57a0df932ce1669669316343673f1905139aa572000140bc0c62cbb5ac059f8d.html">No matching attestations available</a>
+                                                                    </td>
+                                                                    <td><i class="bi bi-person"></i></td>
+                                                                    <td>3</td>
+                                                                    <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                        <span style="display:none">SUCCESS</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="scenario-result SUCCESS">
+                                                                    <td>
+                                                                            <a href="#">Signing a document with EUDI Wallet</a>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="c3f97c8b26b3d3b43c60c3bd97ad63eadf4391c2ae827c9ced1a6365768959df.html">User consents to release attestation</a>
+                                                                    </td>
+                                                                    <td><i class="bi bi-person"></i></td>
+                                                                    <td>5</td>
+                                                                    <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                        <span style="display:none">SUCCESS</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="scenario-result SUCCESS">
+                                                                    <td>
+                                                                            <a href="#">Signing a document with EUDI Wallet</a>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="7ebcb956805863078f5315b92f4dc6adec6a80fc96afc5793f04ac303bc7f5b8.html">User authentication fails</a>
+                                                                    </td>
+                                                                    <td><i class="bi bi-person"></i></td>
+                                                                    <td>3</td>
+                                                                    <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                        <span style="display:none">SUCCESS</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="scenario-result SUCCESS">
+                                                                    <td>
+                                                                            <a href="#">Signing a document with EUDI Wallet</a>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="3e9987f6c8979ad5c5cf3877619ea8b3a15217aeafb2c31f3ae8a64cb9add4bf.html">User cancels attestation release</a>
+                                                                    </td>
+                                                                    <td><i class="bi bi-person"></i></td>
+                                                                    <td>3</td>
+                                                                    <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                        <span style="display:none">SUCCESS</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="scenario-result SUCCESS">
+                                                                    <td>
+                                                                            <a href="#">Signing a document with EUDI Wallet</a>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="e3888fb796ee9c941790e6a6e0a930adfdaaf68fb0b162038c404dff284da8e0.html">QTSP signs the document successfully</a>
+                                                                    </td>
+                                                                    <td><i class="bi bi-person"></i></td>
+                                                                    <td>3</td>
+                                                                    <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                        <span style="display:none">SUCCESS</span>
+                                                                    </td>
+                                                                </tr>
+                                                        </tbody>
+                                                    </table>
+
+                                            </div>
+                                        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <h3>Tags</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <div>
+                                    <a href="8b8620f67a9bb5a5c4150b5bc73f3af7f73b733ba300659c2f7a0aba4a99b408.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US SD TC 09&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="0010542ebff0d0d2b01c6d43bdcbdc0f25f4633a342397ee1fe46983138a9ae5.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US SD TC 08&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="e27f9f2e3d4fb36a3359e25158fab895dedc20319b180535679eb5fa150af7de.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US SD TC 07&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="9a26bd101adfda745f743db04eb3269922eb1ff4d86d9997efeca1ebfe995ac4.html">
+                                    <span class="tag-badge badge" style="background-color:#a5c7ed; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> Manual&nbsp;&nbsp;&nbsp;9
+                                    </span>
+                                    </a>
+                                    <a href="86df08ad9bd892f625247783b4569d0868d16170bad753dd903264823803242a.html">
+                                    <span class="tag-badge badge" style="background-color:#a5c7ed; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US SD&nbsp;&nbsp;&nbsp;9
+                                    </span>
+                                    </a>
+                                    <a href="4792dcae5afc1e7dec221409fc3126fd5f8608b9b5418e97f152c85a7f439b23.html">
+                                    <span class="tag-badge badge" style="background-color:#a5c7ed; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> Q3 2025&nbsp;&nbsp;&nbsp;9
+                                    </span>
+                                    </a>
+                                    <a href="08b9c9cafd959097c83344f962137fc8798fd240d81c9e11f763cf9841d0a2ce.html">
+                                    <span class="tag-badge badge" style="background-color:#a5c7ed; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US SD TC 02&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="05c57e0bc917302928917b81c9d2d448e402f1b579e3bd7171fb1efd756e4dd4.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US SD TC 01&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="6285bae3153af06230f082907a3ecda57997f192dfa721dc1bb22f702c6b9754.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US SD TC 06&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="8e80c56a7ee7db5cdc6a2a84414b5fcd9be9462fdf177647c96e757877f25493.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US SD TC 05&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="6f8a5d68a7c6ca6142be6d100bb7953e91690ce198c99ea44c1bf7804e9f3b13.html">
+                                    <span class="tag-badge badge" style="background-color:#a5c7ed; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> Ios&nbsp;&nbsp;&nbsp;9
+                                    </span>
+                                    </a>
+                                    <a href="7242b328c3d7cd25764e90a828a20252038a4e56bc05bf2ff329200fb62d9d61.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US SD TC 04&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="ee8a2a4bec7c3d76a1429c6ad02f7d71452671d21caf42472d47b74577642762.html">
+                                    <span class="tag-badge badge" style="background-color:#a5c7ed; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US SD TC 03&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                                <h5 class="card-title">Context</h5>
+                            <div>
+                                    <a href="d7d055c3a782deac55af5fa0b3adcb8d18e602f046db40a54a53918076ac8a22.html">
+                                    <span class="tag-badge badge" style="background-color:#a5c7ed; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> Mac&nbsp;&nbsp;&nbsp;9
+                                    </span>
+                                    </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                                <h5 class="card-title">Manual</h5>
+                            <div>
+                                    <a href="220d8ef6080eb8a7746b6ccaff3b44ac3c1f123a09790bb9a8ff31e7b07c9746.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> Passed&nbsp;&nbsp;&nbsp;7
+                                    </span>
+                                    </a>
+                                    <a href="c211605d4f9a5668440a20cdbb7ea638c22b924e59857a8242889044717367ae.html">
+                                    <span class="tag-badge badge" style="background-color:#a5c7ed; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> Ignored&nbsp;&nbsp;&nbsp;2
+                                    </span>
+                                    </a>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12">
+                    <span class="version">Serenity BDD version 3.9.2</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Chart data -->
+    <!-- PIE CHART -->
+    <script>
+
+        // The results pie chart
+        const outcomeChartCtx = document.getElementById('resultChart');
+
+        // Options define for display value on top of bars
+        const outcomeDetailsReports = [
+            { title: 'Passing Test Cases', link: "5f842586e272d8668820f4353f03962ed6bf0235c36fae4de98be0f71a334f5c.html" },
+            { title: 'Pending Test Cases', link: "e307e6eb4f8168de22b0378d0544e1135f4c0506981caa3cf81e465ee0c44621.html" },
+            { title: 'Ignored Test Cases', link: "d4b506f35a0df6ab89e21e1756d6b0b1ac076541d9a04095d6bc43bb014c9809.html" },
+            { title: 'Skipped Test Cases', link: "ce3fd633df835c1c5adeb35aeb72695090b915b7b7d5c386b5a8952c26015965.html" },
+            { title: 'Aborted Test Cases',  link: "4e453c56afd7c0ca1b3b3b319d3d9e641d3cf3d3d3f21ed97412c35017d0dc3b.html"},
+            { title: 'Failed Test Cases', link: "ce552fda8ccb649ba0efc8390632064d1490cb1e477af1b60963b204ad34e066.html"  },
+            { title: 'Broken Test Cases', link: "936628a3b762ac83f6946ce43539fb0d777caf50e0afb148007e1517919d2059.html"    },
+            { title: 'Compromised Test Cases',  link: "973e434193c04d5319efb39e9f23fe3f6e012dc17a48329fce08d06a88f7f162.html" },
+        ]
+        const outcomeData = {
+            labels: ['Passing Test Cases', 'Pending Test Cases', 'Ignored Test Cases', 'Skipped Test Cases', 'Aborted Test Cases', 'Failed Test Cases', 'Broken Test Cases', 'Compromised Test Cases','Undefined Test Cases'],
+            datasets: [{
+                label: 'Test Results',
+                fill: false,
+                data: [{meta: 'Passing tests', value: 7}, {meta: 'Pending tests', value: 2}, {meta: 'Ignored tests', value: 0}, {meta: 'Skipped tests', value: 0}, {meta: 'Aborted tests', value: 0}, {meta: 'Failing tests', value: 0}, {meta: 'Broken tests', value: 0}, {meta: 'Compromised tests', value: 0}],
+                backgroundColor: ['rgba(153,204,51,0.5)','rgba(165, 199, 238, 0.5)','rgba(168, 168, 168, 0.5)','rgba(238, 224, 152, 0.75)','rgba(255, 153, 102, 0.5)','rgba(255, 22, 49, 0.5)','rgba(255, 97, 8, 0.5)','rgba(255, 104, 255, 0.5)','rgba(83, 50, 168, 0.5)'],
+                borderColor: ['rgba(153,204,51,1)','rgba(165, 199, 238, 1)','rgba(168, 168, 168, 1)','rgba(238, 224, 152, 1)','rgba(255, 153, 102, 1)','rgba(255, 22, 49, 1)','rgba(255, 97, 8, 1)','rgba(255, 104, 255, 1)','rgba(83, 50, 168, 1)'],
+                borderWidth: 1,
+            }]
+        }
+        const outcomeOptions = {
+            responsive: true,
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'bottom'
+                },
+                // Change options for ALL labels of THIS CHART
+                datalabels: {
+                    color: '#444444',
+                    'font.weight': 'bold',
+                    formatter: (value, ctx) => {
+                        let sum = 0;
+                        let dataArr = ctx.chart.data.datasets[0].data;
+                        dataArr.map(data => {
+                            sum += data;
+                        });
+                        let percentage = (value * 100 / sum).toFixed(0) + "%";
+                        if (percentage === '0%' || percentage === 'NaN%') {
+                            return '';
+                        } else {
+                            return percentage;
+                        }
+                    },
+                },
+            }
+        }
+
+        const outcomeChart = new Chart(outcomeChartCtx, {
+            type: 'doughnut',
+            data: outcomeData,
+            options: outcomeOptions,
+            plugins: [
+                {
+                    id: 'text',
+                    beforeDraw: function (chart, a, b) {
+                        var width = chart.width,
+                            height = chart.height,
+                            ctx = chart.ctx;
+
+                        ctx.restore();
+                        var fontSize = (height / 200).toFixed(1);
+                        ctx.font = fontSize + "em sans-serif";
+                        ctx.textBaseline = "middle";
+
+                        var text = "78%"
+                        textX = 10 + Math.round((width - ctx.measureText(text).width) / 2);
+                        textY = (height / 2) - 40;
+
+                        ctx.fillText(text, textX, textY);
+                        ctx.save();
+                    }
+                }]
+        });
+
+        function clickHandler(click) {
+            const points = outcomeChart.getElementsAtEventForMode(click, 'nearest', {intersect: true}, true);
+            if (points.length) {
+                const firstPoint = points[0];
+                window.open(outcomeDetailsReports[firstPoint.index].link, "_self")
+
+            }
+        }
+        outcomeChartCtx.onclick = clickHandler;
+    </script>
+    <!-- END PIE CHART -->
+    <!-- PIE CHART -->
+    <script>
+
+        // The results pie chart
+        const requirementsChartCtx = document.getElementById('requirementChart');
+
+        // Options define for display value on top of bars
+        const requirementsOutcomeDetailsReports = [
+            { title: 'Passing Test Cases', link: "5f842586e272d8668820f4353f03962ed6bf0235c36fae4de98be0f71a334f5c.html" },
+            { title: 'Pending Test Cases', link: "e307e6eb4f8168de22b0378d0544e1135f4c0506981caa3cf81e465ee0c44621.html" },
+            { title: 'Ignored Test Cases', link: "d4b506f35a0df6ab89e21e1756d6b0b1ac076541d9a04095d6bc43bb014c9809.html" },
+            { title: 'Skipped Test Cases', link: "ce3fd633df835c1c5adeb35aeb72695090b915b7b7d5c386b5a8952c26015965.html" },
+            { title: 'Aborted Test Cases',  link: "4e453c56afd7c0ca1b3b3b319d3d9e641d3cf3d3d3f21ed97412c35017d0dc3b.html"},
+            { title: 'Failed Test Cases', link: "ce552fda8ccb649ba0efc8390632064d1490cb1e477af1b60963b204ad34e066.html"  },
+            { title: 'Broken Test Cases', link: "936628a3b762ac83f6946ce43539fb0d777caf50e0afb148007e1517919d2059.html"    },
+            { title: 'Compromised Test Cases',  link: "973e434193c04d5319efb39e9f23fe3f6e012dc17a48329fce08d06a88f7f162.html" },
+            { title: 'Undefined Test Cases',  link: "" },
+        ]
+        const requirementsOutcomeData = {
+            labels: ['Passing Test Cases', 'Pending Test Cases', 'Ignored Test Cases', 'Skipped Test Cases', 'Aborted Test Cases', 'Failed Test Cases', 'Broken Test Cases', 'Compromised Test Cases','Undefined Test Cases'],
+            datasets: [{
+                label: 'Feature Coverage',
+                fill: false,
+                data: [{meta: 'Passing tests', value: 7}, {meta: 'Pending tests', value: 2}, {meta: 'Ignored tests', value: 0}, {meta: 'Skipped tests', value: 0}, {meta: 'Aborted tests', value: 0}, {meta: 'Failing tests', value: 0}, {meta: 'Broken tests', value: 0}, {meta: 'Compromised tests', value: 0}],
+                backgroundColor: ['rgba(153,204,51,0.5)','rgba(165, 199, 238, 0.5)','rgba(168, 168, 168, 0.5)','rgba(238, 224, 152, 0.75)','rgba(255, 153, 102, 0.5)','rgba(255, 22, 49, 0.5)','rgba(255, 97, 8, 0.5)','rgba(255, 104, 255, 0.5)','rgba(83, 50, 168, 0.5)'],
+                borderColor: ['rgba(153,204,51,1)','rgba(165, 199, 238, 1)','rgba(168, 168, 168, 1)','rgba(238, 224, 152, 1)','rgba(255, 153, 102, 1)','rgba(255, 22, 49, 1)','rgba(255, 97, 8, 1)','rgba(255, 104, 255, 1)','rgba(83, 50, 168, 1)'],
+                borderWidth: 1,
+            }]
+        }
+        const requirementsOutcomeOptions = {
+            responsive: true,
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'bottom'
+                },
+                // Change options for ALL labels of THIS CHART
+                datalabels: {
+                    color: '#444444',
+                    'font.weight': 'bold',
+                    formatter: (value, ctx) => {
+                        let sum = 0;
+                        let dataArr = ctx.chart.data.datasets[0].data;
+                        dataArr.map(data => {
+                            sum += data;
+                        });
+                        let percentage = (value * 100 / sum).toFixed(0) + "%";
+                        if (percentage === '0%' || percentage === 'NaN%') {
+                            return '';
+                        } else {
+                            return percentage;
+                        }
+                    },
+                },
+            }
+        }
+
+        const requirementsChart = new Chart(requirementsChartCtx, {
+            type: 'doughnut',
+            data: requirementsOutcomeData,
+            options: requirementsOutcomeOptions,
+            plugins: [
+                {
+                    id: 'text',
+                    beforeDraw: function (chart, a, b) {
+                        var width = chart.width,
+                            height = chart.height,
+                            ctx = chart.ctx;
+
+                        ctx.restore();
+                        var fontSize = (height / 200).toFixed(1);
+                        ctx.font = fontSize + "em sans-serif";
+                        ctx.textBaseline = "middle";
+
+                        var text = "78%"
+                        textX = 10 + Math.round((width - ctx.measureText(text).width) / 2);
+                        textY = (height / 2) - 40;
+
+                        ctx.fillText(text, textX, textY);
+                        ctx.save();
+                    }
+                }]
+        });
+
+        function reqsClickHandler(click) {
+            const points = requirementsChart.getElementsAtEventForMode(click, 'nearest', {intersect: true}, true);
+            if (points.length && requirementsOutcomeDetailsReports[firstPoint.index].link) {
+                const firstPoint = points[0];
+                window.open(requirementsOutcomeDetailsReports[firstPoint.index].link, "_self")
+
+            }
+        }
+        requirementsChartCtx.onclick = reqsClickHandler;
+    </script>
+    <!-- END PIE CHART -->
+
+    <!-- SUMMARY BAR CHART -->
+    <script>
+
+        // The Severity bar chart
+        const severityChartCtx = document.getElementById('severityChart');
+
+        // Options define for display value on top of bars
+
+        const severityDetailsReports = [
+            { title: 'Passing Scenarios', link: "5f842586e272d8668820f4353f03962ed6bf0235c36fae4de98be0f71a334f5c.html" },
+            { title: 'Pending Scenarios', link: "e307e6eb4f8168de22b0378d0544e1135f4c0506981caa3cf81e465ee0c44621.html" },
+            { title: 'Ignored Scenarios', link: "d4b506f35a0df6ab89e21e1756d6b0b1ac076541d9a04095d6bc43bb014c9809.html" },
+            { title: 'Skipped Scenarios', link: "ce3fd633df835c1c5adeb35aeb72695090b915b7b7d5c386b5a8952c26015965.html" },
+            { title: 'Aborted Scenarios',  link: "4e453c56afd7c0ca1b3b3b319d3d9e641d3cf3d3d3f21ed97412c35017d0dc3b.html"},
+            { title: 'Failed Scenarios', link: "ce552fda8ccb649ba0efc8390632064d1490cb1e477af1b60963b204ad34e066.html"  },
+            { title: 'Broken Scenarios', link: "936628a3b762ac83f6946ce43539fb0d777caf50e0afb148007e1517919d2059.html"    },
+            { title: 'Compromised Scenarios',  link: "973e434193c04d5319efb39e9f23fe3f6e012dc17a48329fce08d06a88f7f162.html" },
+        ]
+        const severityData = {
+            labels: ['Passing', 'Pending', 'Ignored', 'Skipped', 'Aborted', 'Failed', 'Broken', 'Compromised'],
+            datasets: [
+                {
+                    label: 'Automated',
+                    data: [0,0,0,0,0,0,0,0],
+                    backgroundColor: ['rgba(153,204,51,0.5)','rgba(165, 199, 238, 0.5)','rgba(168, 168, 168, 0.5)','rgba(238, 224, 152, 0.75)','rgba(255, 153, 102, 0.5)','rgba(255, 22, 49, 0.5)','rgba(255, 97, 8, 0.5)','rgba(255, 104, 255, 0.5)','rgba(83, 50, 168, 0.5)'],
+                    borderColor: ['rgba(153,204,51,1)','rgba(165, 199, 238, 1)','rgba(168, 168, 168, 1)','rgba(238, 224, 152, 1)','rgba(255, 153, 102, 1)','rgba(255, 22, 49, 1)','rgba(255, 97, 8, 1)','rgba(255, 104, 255, 1)','rgba(83, 50, 168, 1)'],
+                    borderWidth: 1
+                },
+                {
+                    label: 'Manual',
+                    data: [7,2,0,0,0,0,0,0],
+                    backgroundColor: ['rgba(153,204,51,0.25)','rgba(165, 199, 238, 0.25)','rgba(168, 168, 168, 0.25)','rgba(238, 224, 152, 0.375)','rgba(255, 153, 102, 0.25)','rgba(255, 22, 49, 0.25)','rgba(255, 97, 8, 0.25)','rgba(255, 104, 255, 0.25)','rgba(83, 50, 168, 0.25)'],
+                    borderColor: ['rgba(153,204,51,1)','rgba(165, 199, 238, 1)','rgba(168, 168, 168, 1)','rgba(238, 224, 152, 1)','rgba(255, 153, 102, 1)','rgba(255, 22, 49, 1)','rgba(255, 97, 8, 1)','rgba(255, 104, 255, 1)','rgba(83, 50, 168, 1)'],
+                    borderWidth: 1
+                },
+
+            ]
+        }
+        const severityOptions = {
+            responsive: true,
+            skipNull: true,
+            scales: {
+                x: {
+                    stacked: true,
+                },
+                y: {
+                    stacked: true,
+                }
+            },
+            plugins: {
+                // Change options for ALL labels of THIS CHART
+                datalabels: {
+                    color: '#444444',
+                    'font.weight': 'bold',
+                    formatter: (value, ctx) => {
+                        if (value === 0) {
+                            return '';
+                        } else {
+                            return value;
+                        }
+                    },
+                }
+            }
+        }
+        const severityChart = new Chart(severityChartCtx, {
+            type: 'bar',
+            data: severityData,
+            options: severityOptions
+        });
+
+        function clickHandler(click) {
+            const points = severityChart.getElementsAtEventForMode(click, 'nearest', {intersect: true}, true);
+            if (points.length) {
+                const firstPoint = points[0];
+                window.open(severityDetailsReports[firstPoint.index].link, "_self")
+
+            }
+        }
+        severityChartCtx.onclick = clickHandler;
+    </script>
+    <!-- END SUMMARY CHART -->
+
+    <!-- DURATION CHART -->
+    <script>
+
+        // Options define for display value on top of bars
+        const durationDetailsReports = [
+                {title: "Under 1 second", link: "7064cca1ae6e7d7214b75f96b7c486756b4ffc28f37ff21419c8fcbe2548600f.html"},
+                {title: "1 to 10 seconds", link: "d5be299937fe0796ff7ec39c2c61ad67f0643c26da85a8faf0fde425885518d2.html"},
+                {title: "10 to 30 seconds", link: "3f2bc13f55eaa0949d541ae249c040161871792ba1f2894ed393bcd260bf462e.html"},
+                {title: "30 to 60 seconds", link: "dbad07d008ef8be620949c428afeabcc6bab185c71d826407b41f37047bdc590.html"},
+                {title: "1 to 2 minutes", link: "513538c9d6f4d9cb344f0fa5489f56fd23bb08bb7581c67fc69a15c7b91774cf.html"},
+                {title: "2 to 5 minutes", link: "05a9377f61c90dbdd7c03e000fb0aa8dc46aa299984fd635c428417c1d3307ca.html"},
+                {title: "5 to 10 minutes", link: "8a0bcb3326b97d4a9ae2294b968b38a29395941ba28f55e3d565754572fd0ba4.html"},
+                {title: "10 minutes or over", link: "6ce70cc04b2f14d12086ea94a386dc2a5d2b1c7a720a3b206b4854568913bc69.html"},
+        ]
+        // The Severity bar chart
+        const durationChartCtx = document.getElementById('durationChart');
+
+        // Options define for display value on top of bars
+
+        const durationData = {
+            labels: ['Under 1 second','1 to 10 seconds','10 to 30 seconds','30 to 60 seconds','1 to 2 minutes','2 to 5 minutes','5 to 10 minutes','10 minutes or over'],
+            datasets: [{
+                label: 'Number of tests per duration',
+                fill: false,
+                data: ['0','9','0','0','0','0','0','0'],
+                backgroundColor: 'rgba(83, 146, 255,0.5)',
+                borderColor: 'rgba(83, 146, 255, 1)',
+            }]
+        }
+        const durationOptions = {
+            responsive: true,
+            plugins: {
+                // Change options for ALL labels of THIS CHART
+                datalabels: {
+                    color: '#444444',
+                    'font.weight': 'bold',
+                    formatter: (value, ctx) => {
+                        if (value > 0) {
+                            return value;
+                        } else {
+                            return '';
+                        }
+                    },
+                },
+                tooltip: {
+                    enabled: true,
+                    usePointStyle: true,
+                    callbacks: {
+                        label: (data) => {
+                            return data.parsed.y + ' tests'
+                        }
+                    },
+                },
+            },
+        }
+
+        const durationChart = new Chart(durationChartCtx, {
+            type: 'bar',
+            data: durationData,
+            options: durationOptions
+        });
+
+        function durationClickHandler(click) {
+            const points = durationChart.getElementsAtEventForMode(click, 'nearest', {intersect: true}, true);
+            if (points.length) {
+                const firstPoint = points[0];
+                window.open(durationDetailsReports[firstPoint.index].link, "_self")
+
+            }
+        }
+
+        durationChartCtx.onclick = durationClickHandler;
+    </script>
+    <!-- END DURATION CHART -->
+</body>
+</html>

@@ -1,0 +1,5 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Online Identification & Authentication (same-device)","User successfully logs in and sees the dashboard","SUCCESS","2025-07-25T11:32:11.190783+03:00[Europe/Athens]","0.0","156.75"
+"Deleting a PID document","User deletes the document","SUCCESS","2025-07-25T12:37:50.730441+03:00[Europe/Athens]","0.0","248.48"
+"Selective Disclosure","Expand Verification Section","SUCCESS","2025-07-25T14:50:21.476397+03:00[Europe/Athens]","0.0","382.17"
+"Selective Disclosure","Completion of Process","SUCCESS","2025-07-25T15:23:55.298832+03:00[Europe/Athens]","0.0","386.04"

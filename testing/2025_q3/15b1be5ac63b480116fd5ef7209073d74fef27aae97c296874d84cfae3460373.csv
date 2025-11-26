@@ -1,0 +1,5 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Request/Issue PID","User successfully logs in and sees the dashboard","ERROR","2025-07-28T16:35:12.682242+03:00[Europe/Athens]","0.0","0.0"
+"Request/Issue PID","Add document via national ID","ERROR","2025-07-28T16:35:32.83715+03:00[Europe/Athens]","0.0","0.01"
+"Request/Issue PID","Select authentication method and enter data","ERROR","2025-07-28T16:35:52.984512+03:00[Europe/Athens]","0.0","0.0"
+"Request/Issue PID","Enter data and display national ID","ERROR","2025-07-28T16:36:13.140068+03:00[Europe/Athens]","0.0","0.0"

@@ -1,0 +1,6 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Selective Disclosure","View Requested Data from Verifier","SUCCESS","2025-07-24T15:11:26.858598+03:00[Europe/Athens]","0.0","73.77"
+"Selective Disclosure","Initiate Sharing Process","SUCCESS","2025-07-24T15:15:54.411147+03:00[Europe/Athens]","0.0","78.27"
+"Selective Disclosure","Expand Verification Section","SUCCESS","2025-07-24T15:17:12.697591+03:00[Europe/Athens]","0.0","84.89"
+"Selective Disclosure","Unselect Some Data","SUCCESS","2025-07-25T11:29:44.441179+03:00[Europe/Athens]","0.0","83.11"
+"Selective Disclosure","Completion of Process","SUCCESS","2025-07-25T11:54:34.018213+03:00[Europe/Athens]","0.0","98.82"

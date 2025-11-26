@@ -5,6 +5,7 @@ The EUDI rQES Core SDK provides the foundational service logic for enabling Remo
 ## Overview
 
 This SDK provides the core functionality for an EUDI Wallet to interact with a remote Qualified Electronic Signature (rQES) service. It handles service authorisation, credential authorisation, and document signing.
+
 ## Requirements
 
 Android 10 (API level 29) or higher
@@ -46,7 +47,7 @@ sequenceDiagram
     rQESService.CredentialAuthorized -->>- Client: SignedDocuments
 ```
 
-### 1. Create an rQESService instance
+### 1. Create an rQES Service instance
 
 ```kotlin
 val rqesService = rQESService(
@@ -128,7 +129,7 @@ val unsignedDocuments = UnsignedDocuments(
 
 The user must now authorise the use of their selected credential for this specific transaction. 
 
-Obtain the credential authorizationURL to open a browser and let the user authorize the credential.
+Obtain the credential authorization URL to open a browser and let the user authorize the credential.
 
 ```kotlin
 val credentialAuthorizationUrl = authorizedService.getCredentialAuthorizationUrl(
@@ -155,7 +156,7 @@ val authorizedCredential =
 
 val signedDocuments = authorizedCredential.signDocuments().getOrThrow()
 
-// Manipulate the signed documents
+// Handle the signed documents
 signedDocuments.forEach { (label, file) ->
     // Use the signed file
     val fileContent = file.readBytes()

@@ -85,7 +85,7 @@ let authorizedService = try await rqesService.authorizeService(authorizationCode
 ```
 ### 3. Select the credential 
 
-With the authorized service, you can list the available credentials by calling the `getCredentialsList` method and choose the credenrtial you want to use.
+With the authorized service, you can list the available credentials by calling the `getCredentialsList` method and choose the credential you want to use.
 
 ```swift
 let credentials = try await authorizedService.getCredentialsList()
@@ -104,7 +104,6 @@ label: "Document to sign",
 fileURL: Bundle.main.url(
 forResource: "document",
 withExtension:"pdf")
-)
 )
 ]
 ```

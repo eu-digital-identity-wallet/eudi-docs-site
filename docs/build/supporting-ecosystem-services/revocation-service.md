@@ -16,9 +16,9 @@ By providing this controlled experimentation environment, the Reference Implemen
 
 ### Reference Implementation RSP service
 
-For testing purposes, a hosted instance of the Reference Implementation Revocation Status Provider (RSP) component is included within the [Issuer Provider](https://issuer.eudiw.dev).
+For testing purposes, a hosted instance of the Reference Implementation Revocation Status Provider (RSP) component is included within the [Issuer Provider](https://issuer.eudiw.dev){:target="_blank"}.
 
-It provides the following API endpoints ([Swagger UI](https://dev.issuer.eudiw.dev/tslswagger/swagger)):
+It provides the following API endpoints ([Swagger UI](https://dev.issuer.eudiw.dev/tslswagger/swagger){:target="_blank"}):
 
 - `/token_status_list/get` - Retrieves the status of a token from the revocation list (for debug and testing purposes only).
 - `/token_status_list/set` - Sets or updates the status of a token in the revocation list.
@@ -28,9 +28,9 @@ It provides the following API endpoints ([Swagger UI](https://dev.issuer.eudiw.d
 
 The following status lists are supported:
 
-- Token Status List (TSL) as specified in [IETF Draft](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-status-list-12), in JWT and CWT format;
+- Token Status List (TSL) as specified in [IETF Draft](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-status-list-12){:target="_blank"}, in JWT and CWT format;
 - Token Identifier List (TIL), as specified in ISO/IEC CD 18013-5 (second edition), in JWT and CWT format.
 
 ### Reference Implementation RSP deployment and configuration
 
-The complete source code, deployment instructions, and configuration details for the Revocation Status Provider (RSP) Reference Implementation are publicly available in the GitHub repository at [eudi-srv-statuslist-py](https://github.com/eu-digital-identity-wallet/eudi-srv-statuslist-py).
+The complete source code, deployment instructions, and configuration details for the Revocation Status Provider (RSP) Reference Implementation are publicly available in the GitHub repository at [eudi-srv-statuslist-py](https://github.com/eu-digital-identity-wallet/eudi-srv-statuslist-py){:target="_blank"}.

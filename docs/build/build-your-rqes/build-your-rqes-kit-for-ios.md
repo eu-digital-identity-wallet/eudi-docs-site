@@ -2,7 +2,7 @@
 
 ## Overview
 
-The EUDI rQES Kit for iOS provides the essential functionality needed to enable Remote Qualified Electronic Signatures (rQES) within iOS applications. It offers a unified interface for retrieving authorization URLs, authorizing both the service and user credentials, and performing secure document signing operations. 
+The EUDI rQES Kit for iOS provides the essential functionality needed to enable Remote Qualified Electronic Signatures (rQES) within iOS applications. It offers a unified interface for retrieving authorisation URLs, authorising both the service and user credentials, and performing secure document signing operations. 
 
 ## Requirements
 
@@ -67,25 +67,25 @@ var rqesService = rQESService(
 )
 ```
 
-### 2. Authorize the service
+### 2. Authorise the service
 
-To authorize the service, you need to get the authorization URL and open it in a browser. After the user has authorized the service, the browser will be redirected to the `redirectUri`,
-that is configured in the `CSCClientConfig`, with a query parameter named `code` containing the authorization code. You can then authorize the service by calling the `authorizeService` method:
+To authorise the service, you need to get the authorisation URL and open it in a browser. After the user has authorised the service, the browser will be redirected to the `redirectUri`,
+that is configured in the `CSCClientConfig`, with a query parameter named `code` containing the authorisation code. You can then authorise the service by calling the `authorizeService` method:
 
-1. Get the authorization URL
+1. Get the authorisation URL
 
 ```swift
 let authorizationUrl = try await rqesService.getServiceAuthorizationUrl()
 ``` 
 2. Open the `authorizationUrl` in a browser.
-3. After the user has authorized the service, the browser will be redirected to the `redirectUri` with a query parameter named "code" containing the authorization code
+3. After the user has authorised the service, the browser will be redirected to the `redirectUri` with a query parameter named "code" containing the authorisation code
 
 ```swift
 let authorizedService = try await rqesService.authorizeService(authorizationCode)
 ```
 ### 3. Select the credential 
 
-With the authorized service, you can list the available credentials by calling the `getCredentialsList` method and choose the credenrtial you want to use.
+With the authorised service, you can list the available credentials by calling the `getCredentialsList` method and choose the credential you want to use.
 
 ```swift
 let credentials = try await authorizedService.getCredentialsList()
@@ -109,19 +109,19 @@ withExtension:"pdf")
 ]
 ```
 
-### 5. Authorize the chosen credential
+### 5. Authorise the chosen credential
 
 Next step is to get user consent to use the credential for this specific transaction, which also involves a browser redirect.
 
-1. Get the credential authorization URL:
+1. Get the credential authorisation URL:
 ```swift
 let credentialAuthorizationUrl = try await authorizedService.getCredentialAuthorizationUrl(
     credentialInfo: credential,
     documents: unsignedDocuments,
 )
 ```
-2. Use the `credentialAuthorizationUrl` to open a browser and let the user authorize the credential
-3. After redirect, read the code parameter and authorize the credential.
+2. Use the `credentialAuthorizationUrl` to open a browser and let the user authorise the credential
+3. After redirect, read the code parameter and authorise the credential.
 ```swift
 let authorizedCredential = try await authorizedService.authorizeCredential(authorizationCode)
 ```

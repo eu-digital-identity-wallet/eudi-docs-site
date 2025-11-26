@@ -1,0 +1,4 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Request/Issue mDL","Log in successfully","SUCCESS","2025-10-14T12:01:38.428707+03:00[Europe/Athens]","0.0","90.76"
+"Request/Issue mDL","Select document for issuance","SUCCESS","2025-10-14T12:03:09.233393+03:00[Europe/Athens]","0.0","101.94"
+"Request/Issue mDL","Country and credential provider selection","SUCCESS","2025-10-14T13:08:41.431861+03:00[Europe/Athens]","0.0","106.27"

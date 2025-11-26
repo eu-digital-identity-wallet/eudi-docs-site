@@ -118,6 +118,7 @@ nav:
                   - Remote Verifier Web: use-cases/mobile-driving-license/mdl-architecture/remote-verifier-web.md
                   - mDL Issuing Authority: use-cases/mobile-driving-license/mdl-architecture/mdl-issuing-authority.md
               - mDL Guides:
+                  - Introduction: use-cases/mobile-driving-license/mdl-guides/index.md
                   - Wallet Provider:
                       - Getting Started: use-cases/mobile-driving-license/mdl-guides/wallet-provider/getting-started.md
                       - Wallet Developers Workflow: use-cases/mobile-driving-license/mdl-guides/wallet-provider/wallet-developers-workflow.md

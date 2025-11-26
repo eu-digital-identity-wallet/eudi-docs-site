@@ -22,15 +22,15 @@ The Reference Implementation Trusted List Provider (TLP) is designed solely to s
 
 ### Reference Implementation TLP service
 
-For testing purposes, a hosted instance of the Reference Implementation TLP is available at <https://trustedlist.serviceproviders.eudiw.dev/>.
+For testing purposes, there is a hosted instance of the [Reference Implementation TLP](https://trustedlist.serviceproviders.eudiw.dev/).
 
 It provides:
 
-+ A complete UI for managing TLs, TSPs, trust services, and LoTL.
-+ Integration with EUDI Wallet authentication.
-+ XML generation and signing for TL and LoTL.
-+ A configuration model based on environment variables.
-+ Docker support for rapid deployment.
+- A complete UI for managing TLs, TSPs, trust services, and LoTL.
+- Integration with EUDI Wallet authentication.
+- XML generation and signing for TL and LoTL.
+- A configuration model based on environment variables.
+- Docker support for rapid deployment.
 
 This service demonstrates the operational workflows of a TLP and can be used for creating TLs and LoTL for testing, development, or conformance checks.
 
@@ -40,62 +40,62 @@ This service demonstrates the operational workflows of a TLP and can be used for
 
 The RI TLP service provides capabilities for the Member State (TSL Operator) to:
 
-+ Onboard and manage Trust Service Providers (TSPs) relevant to the EUDI Wallet ecosystem.
-+ Manage trust services associated with each TSP.
-+ Create, update, and electronically sign the National Trusted List (TL).
-+ Publish the TL in a secure and accessible location.
-+ Maintain TL metadata and multilingual information.
+- Onboard and manage Trust Service Providers (TSPs) relevant to the EUDI Wallet ecosystem.
+- Manage trust services associated with each TSP.
+- Create, update, and electronically sign the National Trusted List (TL).
+- Publish the TL in a secure and accessible location.
+- Maintain TL metadata and multilingual information.
 
 ##### LoTL Management (for EC Operators)
 
 For the European Commission, the TLP supports:
 
-+ Aggregating all TLs published by Member States.
-+ Creating and signing the EU List of Trusted Lists (LoTL).
-+ Managing LoTL metadata and multilingual content.
-+ Publishing the LoTL.
+- Aggregating all TLs published by Member States.
+- Creating and signing the EU List of Trusted Lists (LoTL).
+- Managing LoTL metadata and multilingual content.
+- Publishing the LoTL.
 
 ##### Trust Anchor Publication
 
 Each TL contains:
 
-+ The public key (trust anchor) for each recognised entity.
-+ The identifier of the entity.
-+ Status information and service metadata.
+- The public key (trust anchor) for each recognised entity.
+- The identifier of the entity.
+- Status information and service metadata.
 
 Relying Parties and Wallets use these trust anchors to verify:
 
-+ digital signatures,
-+ attestations,
-+ credential issuances,
-+ authentication responses.
+- digital signatures,
+- attestations,
+- credential issuances,
+- authentication responses.
 
 #### Users and Access Model
 
 The TLP supports three user roles:
 
-+ TSL Operator
-+ TSP User
-+ LoTL Operator
+- TSL Operator
+- TSP User
+- LoTL Operator
 
 The TSL Operator manages the national Trusted List:
 
-+ Manage TSPs and trust services.
-+ Create, edit, and sign TLs.
-+ Add multilingual information.
-+ Associate TSPs and services before generating the signed XML TL.
+- Manage TSPs and trust services.
+- Create, edit, and sign TLs.
+- Add multilingual information.
+- Associate TSPs and services before generating the signed XML TL.
 
 The TSP (Trust Service Provider) User manages their own TSP records and trust services:
 
-+ Create and manage Trust Service Provider (TSP) entries.
-+ Create and manage trust services.
-+ Maintain multilingual service information.
+- Create and manage Trust Service Provider (TSP) entries.
+- Create and manage trust services.
+- Maintain multilingual service information.
 
-The LoTL Operator is the only user who may:
+The LoTL Operator is the only role who may:
 
-+ Create, update, and sign the EU List of Trusted Lists.
-+ Manage LoTL metadata and multilingual content.
-+ Aggregate TLs provided by Member States.
+- Create, update, and sign the EU List of Trusted Lists.
+- Manage LoTL metadata and multilingual content.
+- Aggregate TLs provided by Member States.
 
 ### Format of the TL and LoTL
 
@@ -107,14 +107,14 @@ The complete source code, deployment instructions and configuration details for 
 
 The TLP can be run:
 
-+ Locally (Python/Flask environment),
-+ With Docker (via provided docker-compose).
+- Locally (Python/Flask environment),
+- With Docker (via provided docker-compose).
 
 It supports configuration via environment variables covering:
 
-+ Service URLs,
-+ Trust anchor validation paths,
-+ Verifier endpoints,
-+ XML signing certificate paths,
-+ Logging, and
-+ Database configuration.
+- Service URLs,
+- Trust anchor validation paths,
+- Verifier endpoints,
+- XML signing certificate paths,
+- Logging, and
+- Database configuration.

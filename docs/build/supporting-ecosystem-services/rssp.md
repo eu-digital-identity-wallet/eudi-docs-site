@@ -1,9 +1,9 @@
 # Remote Signature Service Provider (RSSP)
 
-An RSSP is the entity that provides the remote electronic signature service. It operates the backend infrastructure that:
+An RSSP is the entity that provides the remote electronic signature service. It operates the back end infrastructure that:
 
-- Stores and protects users’ signature keys.
-- Performs remote signature operations when the user requests a signature.
+- stores and protects users’ signature keys;
+- performs remote signature operations when the user requests a signature.
 
 ## Reference Implementation Signature Services
 
@@ -16,7 +16,7 @@ These RI Signature services are made available exclusively as part of the EUDI W
 The TrustProvider Signer is a CSC-compliant Remote Signature Service Provider (RSSP) and Signature Application. It includes:
 
 - an RSSP backend implementing CSC API behaviours;
-- a Signature Application handling signing orchestration; and
+- a Signature Application handling signing orchestration;
 - a Client interface supporting account creation, OpenID4VP authentication, certificate and key-pair creation, and document signing.
 
 It enables Wallet implementers to test non-qualified remote signing workflows.
@@ -31,7 +31,7 @@ The complete source code, deployment instructions and configuration details for 
 
 The Wallet-Driven signature flow supports an rQES flow initiated and processed within the EUDI Wallet environment. It encompasses the following functional steps:
 
-1. Service (QTSP) Authentication.
+1. Service (QTSP) Authentication
 
     Before initiating the credential listing or signing operation, the Wallet must authenticate itself to the QTSP. In this signature flow, it is assumed that the Wallet has been previously registered with the QTSP.
 
@@ -71,7 +71,7 @@ sequenceDiagram
     AS->>+EW: Return Access Token
 ```
 
-2. Credential Listing,
+2. Credential Listing
 
     After the user has agreed to sign the document and selected which QTSP will be used, the Wallet shall display the available credentials from the chosen QTSP. To achieve this, the Wallet shall request the list of credentials (including certificates and additional information) from the QTSP.
 
@@ -100,11 +100,11 @@ sequenceDiagram
 
 ```
 
-3. Document Signing.
+3. Document Signing
 
-    The signature process is divided into two main operations: credential authorization and document signing.
+    The signature process is divided into two main operations: credential authorisation and document signing.
 
-    In the credential authorization flow, the Wallet sends the document to be signed, along with the certificate and the certificate chain of the credential chosen, and other relevant information required to the SCA. The SCA (Signature Creation Application) then computes the hash of the document to be signed. Following this, the Wallet requests authorization from the QTSP to use the private signing key, initiating an OAuth2 flow with OpenID for Verifiable Presentations.
+    In the credential authorisation flow, the Wallet sends the document to be signed, along with the certificate and the certificate chain of the credential chosen, and other relevant information required to the SCA. The SCA (Signature Creation Application) then computes the hash of the document to be signed. Following this, the Wallet requests authorisation from the QTSP to use the private signing key, initiating an OAuth2 flow with OpenID for Verifiable Presentations.
 
     Once the Wallet receives the token granting access to the chosen credential, the document signing process proceeds. The Wallet uses the QTSP API to obtain the signature for the hash value. Finally, a request is sent to the SCA with the signature value, the document to be signed, the certificate, and any other required data.
 
@@ -171,7 +171,7 @@ The complete source code, deployment instructions and configuration details for 
 
 The Relying Party-Centric (RP-Centric) signature flow supports an rQES process initiated and orchestrated within the Relying Party environment. It encompasses functional steps that mirror those described for the [Wallet-Driven signer](#wallet-driven-signer):
 
-1. Service (QTSP) Authentication.
+1. Service (QTSP) Authentication
 
 ```mermaid
 sequenceDiagram
@@ -209,7 +209,7 @@ sequenceDiagram
     AS-->>-RP: Access Token
 ```
 
-2. Credential Listing,
+2. Credential Listing
 
 ```mermaid
 sequenceDiagram
@@ -231,7 +231,7 @@ sequenceDiagram
    end
 ```
 
-3. Document Signing.
+3. Document Signing
 
 ```mermaid
 sequenceDiagram

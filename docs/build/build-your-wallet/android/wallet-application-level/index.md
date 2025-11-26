@@ -33,9 +33,9 @@ To build the application using the source code and connect it with the issuer an
     2. To run the App on an emulator, simply go to Run -> Run 'app'.
 
 6. Finally, the App needs to be connected with an Issuer and a Verifier either locally, or remotely.
-    1. [Follow the instructions](./running-with-remote-services) to run remotely.
-    2. [Follow the instructions](./running-with-local-services) to run locally.
+    1. [Follow the instructions](./running-with-remote-services.md) to run remotely.
+    2. [Follow the instructions](./running-with-local-services.md) to run locally.
 
-7. (Optional) [Follow the instructions](./self-signed-certificates) if self-signed certificates are required.
+7. (Optional) [Follow the instructions](./self-signed-certificates.md) if self-signed certificates are required.
 
 [Check the full list of configuration options](https://github.com/eu-digital-identity-wallet/eudi-app-android-wallet-ui/blob/main/wiki/configuration.md){:target="_blank"}

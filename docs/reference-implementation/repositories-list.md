@@ -1,8 +1,8 @@
 # EUDI Wallet Reference Implementation - Repositories
 
-The EUDI Wallet Reference Implementation is based on a modular architecture composed of a set of business-agnostic, reusable components which will evolve in incremental steps and can be re-used across multiple projects. This document provides an overview of the key repositories of the EUDI Reference Implementation. 
+The EUDI Wallet Reference Implementation uses a modular architecture with business-agnostic, reusable components that evolve incrementally and can be reused across multiple projects. This document provides an overview of the key repositories of the EUDI Reference Implementation. 
 
-Specifically, as part of the EUDI Wallet Reference Implementation, the following set of components are being delivered:
+The EUDI Wallet Reference Implementation includes the following components:
 
 - 📚 [Libraries and other software components needed by the framework](#libraries)
 - 🛡️ [Verifier mobile native applications and services for proximity and remote flows](#verifier-apps-and-services)
@@ -17,8 +17,8 @@ Specifically, as part of the EUDI Wallet Reference Implementation, the following
 
 | Repository | Description | 
 |---|---|
-| [Wallet Core (Android)](https://github.com/eu-digital-identity-wallet/eudi-lib-android-wallet-core){:target="_blank"} | Implementation of the EUDI Wallet Core library for Android that serves as a coordinator layer between the Wallet UI App and the Wallet libraries. Currently, coordinates issuing, proximity and remote presentation libraries. |
-| [Wallet Kit (iOS)](https://github.com/eu-digital-identity-wallet/eudi-lib-ios-wallet-kit){:target="_blank"} | Implementation of the EUDI Wallet Kit library for iOS that serves as a coordinator layer between the Wallet UI App and the Wallet libraries. Currently coordinates issuing, proximity and remote presentation libraries. |
+| [Wallet Core (Android)](https://github.com/eu-digital-identity-wallet/eudi-lib-android-wallet-core){:target="_blank"} | Implementation of the EUDI Wallet Core library for Android that serves as a coordinator layer between the Wallet UI App and the Wallet libraries. Currently, it coordinates issuing, proximity and remote presentation libraries. |
+| [Wallet Kit (iOS)](https://github.com/eu-digital-identity-wallet/eudi-lib-ios-wallet-kit){:target="_blank"} | Implementation of the EUDI Wallet Kit library for iOS that serves as a coordinator layer between the Wallet UI App and the Wallet libraries. Currently it coordinates issuing, proximity and remote presentation libraries. |
 
 ### Proximity Sharing iOS Libraries
 
@@ -33,7 +33,7 @@ Specifically, as part of the EUDI Wallet Reference Implementation, the following
 
 | Repository | Description |
 |---|---|
-| [mDoc Data Transfer (Android)](https://github.com/eu-digital-identity-wallet/eudi-lib-android-iso18013-data-transfer){:target="_blank"} | This library provides a set of classes to manage the transfer of documents in an EUDI ISO/IEC 18013-5 Android Wallet. |
+| [mDoc Data Transfer (Android)](https://github.com/eu-digital-identity-wallet/eudi-lib-android-iso18013-data-transfer){:target="_blank"} | This library provides a set of classes to manage the transfer of documents in a EUDI ISO/IEC 18013-5 Android Wallet. |
 
 ### Remote Presentation iOS Libraries
 
@@ -74,23 +74,23 @@ Specifically, as part of the EUDI Wallet Reference Implementation, the following
 
 | Repository | Description |
 |---|---|
-| [mDoc Document Storage (Android)](https://github.com/eu-digital-identity-wallet/eudi-lib-android-wallet-document-manager){:target="_blank"} | This library provides a set of classes to manage documents and their cryptographic keys in an EUDI Android Wallet. |
+| [mDoc Document Storage (Android)](https://github.com/eu-digital-identity-wallet/eudi-lib-android-wallet-document-manager){:target="_blank"} | This library provides a set of classes to manage documents and their cryptographic keys in a EUDI Android Wallet. |
 
 
 ### Revocation Libraries
 
 | Repository | Description |
 |---|---|
-| [Token Status List (Kotlin)](https://github.com/eu-digital-identity-wallet/eudi-lib-kmp-statium){:target="_blank"} | Statium is a Kotlin multiplatform library supporting JVM and Android platforms. It implements the Token Status List Specification, and allows callers to check the status of a "Referenced Token" as defined in the specification, effectively enabling applications to verify if tokens are valid, revoked, or in other states. |
-| [Token Status List (Swift)](https://github.com/eu-digital-identity-wallet/eudi-lib-ios-statium-swift){:target="_blank"} | Statium is a Swift library for iOS and macOS. It implements the Token Status List Specification, and allows callers to check the status of a "Referenced Token" as defined in the specification, effectively enabling applications to verify if tokens are valid, revoked, or in other states.|
+| [Token Status List (Kotlin)](https://github.com/eu-digital-identity-wallet/eudi-lib-kmp-statium){:target="_blank"} | Statium is a Kotlin multiplatform library supporting JVM and Android platforms. It implements the Token Status List Specification and allows callers to check the status of a 'Referenced Token' as defined in the specification, effectively enabling applications to verify if tokens are valid, revoked or in other states. |
+| [Token Status List (Swift)](https://github.com/eu-digital-identity-wallet/eudi-lib-ios-statium-swift){:target="_blank"} | Statium is a Swift library for iOS and macOS. It implements the Token Status List Specification and allows callers to check the status of a 'Referenced Token' as defined in the specification, effectively enabling applications to verify if tokens are valid, revoked or in other states.|
 
 
 ### rQES: Low Level Libraries
 
 | Repository | Description |
 |---|---|
-| [EUDI rQES CSC library (Kotlin)](https://github.com/eu-digital-identity-wallet/eudi-lib-jvm-rqes-csc-kt){:target="_blank"} | This is a Kotlin library targeting Android, that supports the Cloud Signature Consortium API (version 2) protocol. |
-| [EUDI rQES CSC library (Swift)](https://github.com/eu-digital-identity-wallet/eudi-lib-ios-rqes-csc-swift){:target="_blank"} | This is a Swift library targeting iOS, that supports the Cloud Signature Consortium API (version 2) protocol. |
+| [EUDI rQES CSC library (Kotlin)](https://github.com/eu-digital-identity-wallet/eudi-lib-jvm-rqes-csc-kt){:target="_blank"} | This is a Kotlin library targeting Android that supports the Cloud Signature Consortium API (version 2) protocol. |
+| [EUDI rQES CSC library (Swift)](https://github.com/eu-digital-identity-wallet/eudi-lib-ios-rqes-csc-swift){:target="_blank"} | This is a Swift library targeting iOS that supports the Cloud Signature Consortium API (version 2) protocol. |
 
 ### rQES: Core and Kit Libraries
 
@@ -111,15 +111,15 @@ Specifically, as part of the EUDI Wallet Reference Implementation, the following
 
 | Repository | Description |
 |---|---|
-| [Wallet UI App (Android)](https://github.com/eu-digital-identity-wallet/eudi-app-android-wallet-ui){:target="_blank"} | Implementation of Wallet UI App for Android. Currently, it also includes a demo App, demonstrating the following capabilities: Proximity presentation, Same-device Online Presentation and Issuance of PID and mDL.	 |
-| [Wallet UI App (iOS)](https://github.com/eu-digital-identity-wallet/eudi-app-ios-wallet-ui){:target="_blank"} | Implementation of Wallet UI App for iOS. Currently, it also includes a demo App, demonstrating the following capabilities: Proximity presentation, and Same-device Online Presentation and Issuance of PID and mDL.| 
+| [Wallet UI App (Android)](https://github.com/eu-digital-identity-wallet/eudi-app-android-wallet-ui){:target="_blank"} | Implementation of Wallet UI App for Android. Currently, it includes a demo App, demonstrating the following capabilities: Proximity presentation, Same-device Online Presentation and Issuance of PID and mDL.	 |
+| [Wallet UI App (iOS)](https://github.com/eu-digital-identity-wallet/eudi-app-ios-wallet-ui){:target="_blank"} | Implementation of Wallet UI App for iOS. Currently, it includes a demo App, demonstrating the following capabilities: Proximity presentation, Same-device Online Presentation and Issuance of PID and mDL.| 
 
 
 ## Verifier Apps and Services
 
 | Repository | Description |
 |---|---|
-| [Web Verifier](https://github.com/eu-digital-identity-wallet/eudi-web-verifier) | Demo Web Verifier UI application (Frontend) that acts as a Verifier/RP trusted endpoint. Available at [https://verifier.eudiw.dev](https://verifier.eudiw.dev){:target="_blank"} | 
+| [Web Verifier](https://github.com/eu-digital-identity-wallet/eudi-web-verifier){:target="_blank"} | Demo Web Verifier UI application (Frontend) that acts as a Verifier/RP trusted endpoint. Available at: [https://verifier.eudiw.dev](https://verifier.eudiw.dev) | 
 | [RESTful API (web-services)](https://github.com/eu-digital-identity-wallet/eudi-srv-web-verifier-endpoint-23220-4-kt){:target="_blank"} | Demo Web Verifier application (Backend RESTful service) that acts as a Verifier/RP trusted endpoint.| 
 
 
@@ -127,15 +127,15 @@ Specifically, as part of the EUDI Wallet Reference Implementation, the following
 
 | Repository | Description |
 |---|---|
-| [OpenID4VCI issuer (Python)](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py){:target="_blank"} | An implementation of a credential issuing service, according to OpenID4VCI, in Python. Available at https://issuer.eudiw.dev/ | 
-| [OpenID4VCI issuer (Kotlin)](https://github.com/eu-digital-identity-wallet/eudi-srv-pid-issuer){:target="_blank"} | An implementation of a credential issuing service, according to OpenID4VCI, in Kotlin. Available at https://issuer-backend.eudiw.dev/ | 
+| [OpenID4VCI issuer (Python)](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py){:target="_blank"} | An implementation of a credential issuing service, according to OpenID4VCI, in Python. Available at: https://issuer.eudiw.dev/ | 
+| [OpenID4VCI issuer (Kotlin)](https://github.com/eu-digital-identity-wallet/eudi-srv-pid-issuer){:target="_blank"} | An implementation of a credential issuing service, according to OpenID4VCI, in Kotlin. Available at: https://issuer-backend.eudiw.dev/ | 
 
 
 ## Signing Apps and Services
 
 | Repository | Description |
 |---|---|
-| [TrustProvider Signer](https://github.com/eu-digital-identity-wallet/eudi-srv-web-trustprovider-signer-java){:target="_blank"} | The TrustProvider Signer is a remote signing service provider and client. The TrustProvider Signer can be accessed using the EUDI Wallet through OID4VP presentation of the PID. Available [here](https://trustprovider.signer.eudiw.dev/tester){:target="_blank"} | 
+| [TrustProvider Signer](https://github.com/eu-digital-identity-wallet/eudi-srv-web-trustprovider-signer-java){:target="_blank"} | The TrustProvider Signer is a remote signing service provider and client. The TrustProvider Signer can be accessed using the EUDI Wallet through OID4VP presentation of the PID. Available [here](https://trustprovider.signer.eudiw.dev/tester). | 
 | [EUDI Wallet-driven signer QTSP](https://github.com/eu-digital-identity-wallet/eudi-srv-web-walletdriven-rpcentric-signer-qtsp-java){:target="_blank"} | Implementation of a wallet-driven QTSP for the remote Qualified Electronic Signature component of the EUDI Wallet. The QTSP provides endpoints based on the CSC API v2.0 specification and supports authentication via OpenID4VP.| 
 | [EUDI Wallet-driven external SCA](https://github.com/eu-digital-identity-wallet/eudi-srv-web-walletdriven-signer-external-sca-java){:target="_blank"} | Implementation of a wallet-driven SCA for the remote Qualified Electronic Signature component of the EUDI Wallet. The SCA provides endpoints that allow the calculation of the hash value of a document and obtain the signed document given the signature value.| 
 | [RP Centric rQES SCA](https://github.com/eu-digital-identity-wallet/eudi-srv-web-rpcentric-signer-sca-java){:target="_blank"} | This is a REST API server implementing the RP-centric SCA for the remote Qualified Electronic Signature (rQES) component of the EUDI Wallet.| 

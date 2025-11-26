@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="0" name="Deleting a mDL document" skipped="0" tests="3" time="477.82" timestamp="2025-10-14 12:55:28"><testcase name="User enters PIN and selects a mDL"/><testcase name="User deletes the document"/><testcase name="User enters PIN and selects a mDL"/></testsuite>

@@ -1,0 +1,2017 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Serenity Reports</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="bootstrap-icons/bootstrap-icons.css">
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.13.1/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.13.1/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.13.1/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/>
+<!--CHART.JS-->
+<script src="chartjs/chart.js"></script>
+<script src="chartjs/chartjs-plugin-datalabels@2.0.0"></script>
+<script src="chartjs/patternomaly.min.js"></script>
+<script>
+    // Register the plugin to all charts:
+    Chart.register(ChartDataLabels);
+</script>
+<!-- JQuery-UI -->
+<link type="text/css" href="jqueryui/1.11.2-start/jquery-ui.min.css" rel="Stylesheet" />
+<script type="text/javascript" src="jqueryui/1.11.2-start/jquery-ui.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.13.1/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.13.1/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.13.1/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+
+
+
+
+    <script class="code" type="text/javascript">$(document).ready(function () {
+
+            $("#scenario-results").DataTable({
+                "order": [[0, "asc",], [1, "asc",], [2, "asc",]],
+                "language": {
+                    searchPlaceholder: "Filter",
+                    search: ""
+                },
+                columnDefs: [
+                    {type: 'time-elapsed-dhms', targets: 4}
+                ]
+            })
+            $("#manual-scenario-results").DataTable({
+                "order": [[0, "asc",], [1, "asc",]],
+                "language": {
+                    searchPlaceholder: "Filter",
+                    search: ""
+                },
+            })
+
+            // Results table
+            $('#test-results-table').DataTable({
+                "order": [[0, "asc",], [3, "asc",]],
+                "pageLength": 10,
+                "lengthMenu": [[10, 25, 50, 100, 200, -1], [10, 25, 50, 100, 200, "All"]]
+            });
+
+            $('#evidence-table').DataTable({
+                searching: false,
+                paging: false,
+                info: false
+            });
+
+            $(".feature-coverage-table").DataTable({
+                searching: true,
+                paging: false,
+                info: false
+            });
+
+            $(".feature-coverage-table-with-pagination").DataTable({
+                searching: true,
+                order: [[0, "asc",]],
+                pageLength: 10,
+                language: {
+                    searchPlaceholder: "Filter",
+                    search: ""
+                }
+            });
+        });
+    </script>
+</head>
+
+<body class="results-page">
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">EUDI Wallet Test Report</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+
+
+    <div id="contenttop">
+        <div class="middlebg">
+        <span class="breadcrumbs"><a href="index.html">Home</a>
+                    > Tag 
+                > <span class="truncate-60">
+                Manual
+            </span>
+        </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+    <!--/* starts second table*/-->
+        <div>
+            <table class="table environment">
+                <tr>
+                        <th class="custom-title">
+                            Application version
+                        </th>
+                </tr>
+                <tr>
+                        <td class="custom-value">
+                            Version 2025.10.31-Demo
+                        </td>
+                </tr>
+            </table>
+        </div>
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="bi bi-journal-check"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="bi bi-journal-text"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="dd7750c6dc86be28f39572a355a41442ba81daa3e70b6c781cfbc96e905bd672.html"><i class="bi bi-chat-text"></i> Platforms</a>
+        </li>
+        <li >
+            <a href="bf2946e24fd72447464f583d97d4f9006680caa0fc520443de6470185bd4ceb2.html"><i class="bi bi-chat-text"></i> Features</a>
+        </li>
+        <li >
+            <a href="0272dadd83d6e6ac748d9a947522ca78b8873f5156f9bd38d6a0eb735ee5993b.html"><i class="bi bi-chat-text"></i> Epics</a>
+        </li>
+        <li >
+            <a href="2a4631d87648e59c428d4cf0e9247f9d286e4679f436ca2ce872e931eb4dfd58.html"><i class="bi bi-chat-text"></i> Stories</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="bi bi-chat-text"></i> Features</a>
+        </li>
+        <li >
+            <a href="f00f76a04d2d99822f342e19edfb456d954ef898f485c501f324bafd9ade930f.html"><i class="bi bi-chat-text"></i> ##s</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 14-10-2025 14:12:51</span>
+    <br style="clear:left"/>
+</div>
+    <div class="clr"></div>
+    <div id="beforetable"></div>
+    <div id="results-dashboard">
+        <div class="middlb">
+            <div class="table">
+
+                <h2><i class='bi bi-tags'></i> Tag: Manual</h2>
+                <table class='overview'>
+                    <tr>
+                        <td width="375px" valign="top">
+                            <div class="test-count-summary">
+                                <div class="test-count-title">
+                                    44 tests
+
+                                     |
+                                        <a href="9a26bd101adfda745f743db04eb3269922eb1ff4d86d9997efeca1ebfe995ac4.csv" title="Download CSV"> <i class="bi bi-cloud-arrow-down" title="Download CSV"></i></a>
+
+
+                                </div>
+                            </div>
+
+                            <div>
+                                <ul class="nav nav-tabs">
+                                    <li class="active">
+                                        <a data-toggle="tab" href="#summary"><i class="bi bi-house-door"></i>
+                                            Summary</a>
+                                    </li>
+                                    <li>
+                                        <a data-toggle="tab" href="#tests"><i class="bi bi-speedometer"></i> Test
+                                            Results</a>
+                                    </li>
+                                </ul>
+
+
+                                <div class="card border">
+                                    <div class="tab-content" id="pills-tabContent">
+                                        <div id="summary" class="tab-pane fade in active">
+                                            <div class="container-fluid">
+                                                <div class="dashboard-charts row">
+                                                    <div class="col-lg-4 col-md-6 col-sm-9">
+                                                        <!-- PIE CHART -->
+                                                        <h4><i class="bi bi-pie-chart"></i> Overview</h4>
+                                                            <div class="chart-container">
+                                                                <canvas id="resultChart" height="200px"></canvas>
+                                                            </div>
+                                                    </div>
+                                                    <div class="col-lg-4 col-md-6 col-sm-9">
+                                                        <h4><i class="bi bi-check-square"></i> Test Outcomes</h4>
+                                                        <!-- Severity bar chart -->
+                                                        <div class="chart-container">
+                                                            <canvas id="severityChart" height="200px"></canvas>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-4 col-md-6 col-sm-9">
+                                                        <h4><i class="bi bi-graph-up"></i> Test Performance</h4>
+
+                                                        <!-- Duration bar chart -->
+                                                        <div class="chart-container">
+                                                            <canvas id="durationChart" height="200px"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                        <div class="col-lg-8 col-md-8 col-sm-9">
+                                                            <!-- High level coverage bar chart -->
+                                                            <div class="chart-container">
+                                                                <h3><i class="bi bi-reception-3"></i> Functional Coverage Overview</h3>
+                                                                <h4>Features</h4>
+                                                                <canvas id="coverageChart"></canvas>
+                                                            </div>
+                                                        </div>
+                                                    <div class="col-lg-4 col-md-4 col-sm-6">
+    <div>
+        <h3><i class="bi bi-speedometer2"></i> Key Statistics</h3>
+        <div>
+            <table class="table table-striped table-hover">
+                <tbody>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-card-checklist"></i> Number of Scenarios
+                    </td>
+                    <td>22</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-caret-right"></i> Total Number of Test Cases
+                    </td>
+                    <td>44</td>
+                </tr>
+                    <tr scope="row">
+                        <td>
+                            <i class="bi bi-person"></i> Number of Manual Test Cases
+                        </td>
+                        <td>44</td>
+                    </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-flag-fill"></i> Tests Started
+                    </td>
+                    <td>Oct 14, 2025 10:21:30</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-stop-circle"></i> Tests
+                        Finished
+                    </td>
+                    <td>Oct 14, 2025 11:26:44</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-stopwatch"></i> Total
+                        Duration
+                    </td>
+                    <td> 1h  5m 14s</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-trophy"></i> Fastest Test
+                    </td>
+                    <td>7s</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-skip-start"></i> Slowest
+                        Test
+                    </td>
+                    <td>10s</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-stopwatch"></i> Average
+                        Execution Time
+                    </td>
+                    <td>8s</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-stopwatch-fill"></i> Total
+                        Execution Time
+                    </td>
+                    <td> 6m 3s</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="container-fluid">
+                                                    <div class="row">
+                                                        <div class="col-sm-11">
+                                                            <h3>Functional Coverage Details</h3>
+
+
+                                                                    <h4>Features</h4>
+
+                                                                    <table class="table feature-coverage-table-with-pagination" id="Feature">
+                                                                        <thead>
+                                                                        <tr>
+                                                                            <th>Feature</th>
+                                                                            <th style="width:1em;">Scenarios</th>
+                                                                            <th style="width:1em;">Test&nbsp;Cases</th>
+                                                                            <th style="width:1em;">%&nbsp;Pass</th>
+                                                                            <th style="width:1em;">Result</th>
+                                                                            <th>Coverage</th>
+                                                                        </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>
+                                                                                        <a href="08a4c7ac1d5893fdbafb2c2ceb98629933e40b956510ba9f577cbc7a7e1d0259.html" > Android > r QES R5 wallet-driven model with internal signature creation application 29 >  select and authenticate to QTSP R5 119 > Authenticate and authorize EUDI Wallet User with QTSP for signing service</a>
+                                                                                </td>
+                                                                                <td>9</td>
+                                                                                <td>9</td>
+                                                                                <td>100%</td>
+                                                                                <td>
+                                                                                        <a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <div class="progress">
+                                                                                            <div class="progress-bar"
+                                                                                                 role="progressbar"
+                                                                                                 style="width: 100%; background-color: #b0cf73"
+                                                                                                 aria-valuenow="9"
+                                                                                                 title="100% success"
+                                                                                                 aria-valuemin="0"
+                                                                                                 aria-valuemax="100">
+                                                                                            </div>
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>
+                                                                                        <a href="33cabfed18f7885b1dd869c89d20646de828a5f3834d39d567354fc27654ada2.html" > Android > r QES R5 wallet-driven model with internal signature creation application 29 >  select document to be signed R3 R5 118 > Select Document to be Signed</a>
+                                                                                </td>
+                                                                                <td>4</td>
+                                                                                <td>4</td>
+                                                                                <td>100%</td>
+                                                                                <td>
+                                                                                        <a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <div class="progress">
+                                                                                            <div class="progress-bar"
+                                                                                                 role="progressbar"
+                                                                                                 style="width: 100%; background-color: #b0cf73"
+                                                                                                 aria-valuenow="4"
+                                                                                                 title="100% success"
+                                                                                                 aria-valuemin="0"
+                                                                                                 aria-valuemax="100">
+                                                                                            </div>
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>
+                                                                                        <a href="5dc1cf0190f794e4235eadab3d07f9a905eb307d65926b4bb2b7dfb0c75e4d3b.html" > Android > r QES R5 wallet-driven model with internal signature creation application 29 >  sign document R5 120 > Signing a document with EUDI Wallet</a>
+                                                                                </td>
+                                                                                <td>9</td>
+                                                                                <td>9</td>
+                                                                                <td>78%</td>
+                                                                                <td>
+                                                                                        <a href='##beforetable'><i class='bi bi-hourglass-top pending-icon ' title='PENDING'></i></a>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <div class="progress">
+                                                                                            <div class="progress-bar"
+                                                                                                 role="progressbar"
+                                                                                                 style="width: 77.777778%; background-color: #b0cf73"
+                                                                                                 aria-valuenow="7"
+                                                                                                 title="78% success"
+                                                                                                 aria-valuemin="0"
+                                                                                                 aria-valuemax="100">
+                                                                                            </div>
+                                                                                            <div class="progress-bar"
+                                                                                                 role="progressbar"
+                                                                                                 style="width: 22.222222%; background-color: #a5c7ed"
+                                                                                                 aria-valuenow="2"
+                                                                                                 title="22% pending"
+                                                                                                 aria-valuemin="0"
+                                                                                                 aria-valuemax="100">
+                                                                                            </div>
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>
+                                                                                        <a href="0ff13a59a480d4679e940203825f0bafccd9e41be4a51b889a6f49b04b62d005.html" > Ios > r QES R5 wallet-driven model with internal signature creation application 29 >  select and authenticate to QTSP R5 119 > Authenticate and authorize EUDI Wallet User with QTSP for signing service</a>
+                                                                                </td>
+                                                                                <td>9</td>
+                                                                                <td>9</td>
+                                                                                <td>100%</td>
+                                                                                <td>
+                                                                                        <a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <div class="progress">
+                                                                                            <div class="progress-bar"
+                                                                                                 role="progressbar"
+                                                                                                 style="width: 100%; background-color: #b0cf73"
+                                                                                                 aria-valuenow="9"
+                                                                                                 title="100% success"
+                                                                                                 aria-valuemin="0"
+                                                                                                 aria-valuemax="100">
+                                                                                            </div>
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>
+                                                                                        <a href="915d83ef40c952ac21ddf03c3ec9e6a22f9143942c40723342f62a1fef2e5509.html" > Ios > r QES R5 wallet-driven model with internal signature creation application 29 >  select document to be signed R3 R5 118 > Select Document to be Signed</a>
+                                                                                </td>
+                                                                                <td>4</td>
+                                                                                <td>4</td>
+                                                                                <td>100%</td>
+                                                                                <td>
+                                                                                        <a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <div class="progress">
+                                                                                            <div class="progress-bar"
+                                                                                                 role="progressbar"
+                                                                                                 style="width: 100%; background-color: #b0cf73"
+                                                                                                 aria-valuenow="4"
+                                                                                                 title="100% success"
+                                                                                                 aria-valuemin="0"
+                                                                                                 aria-valuemax="100">
+                                                                                            </div>
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>
+                                                                                        <a href="f572e8793a4da34fac415e056c8aa2d7f8d657a42242acc955f046e0519ef4d1.html" > Ios > r QES R5 wallet-driven model with internal signature creation application 29 >  sign document R5 120 > Signing a document with EUDI Wallet</a>
+                                                                                </td>
+                                                                                <td>9</td>
+                                                                                <td>9</td>
+                                                                                <td>78%</td>
+                                                                                <td>
+                                                                                        <a href='##beforetable'><i class='bi bi-hourglass-top pending-icon ' title='PENDING'></i></a>
+                                                                                </td>
+                                                                                <td>
+                                                                                    <div class="progress">
+                                                                                            <div class="progress-bar"
+                                                                                                 role="progressbar"
+                                                                                                 style="width: 77.777778%; background-color: #b0cf73"
+                                                                                                 aria-valuenow="7"
+                                                                                                 title="78% success"
+                                                                                                 aria-valuemin="0"
+                                                                                                 aria-valuemax="100">
+                                                                                            </div>
+                                                                                            <div class="progress-bar"
+                                                                                                 role="progressbar"
+                                                                                                 style="width: 22.222222%; background-color: #a5c7ed"
+                                                                                                 aria-valuenow="2"
+                                                                                                 title="22% pending"
+                                                                                                 aria-valuemin="0"
+                                                                                                 aria-valuemax="100">
+                                                                                            </div>
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                        </div>
+                                                    </div>
+
+                                            </div>
+                                            <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <h3>Tags</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <div>
+                                    <a href="0010542ebff0d0d2b01c6d43bdcbdc0f25f4633a342397ee1fe46983138a9ae5.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US SD TC 08&nbsp;&nbsp;&nbsp;2
+                                    </span>
+                                    </a>
+                                    <a href="697f58b12a48a289e55b6649e28482ca1f108c387c7f596f4134aa390df716b9.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US SAATQTSP TC 04&nbsp;&nbsp;&nbsp;2
+                                    </span>
+                                    </a>
+                                    <a href="e8f0afed7b63716ac1546d7ddbb5554ed90a99319175d1056572364fb24bf302.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US SAATQTSP TC 09&nbsp;&nbsp;&nbsp;2
+                                    </span>
+                                    </a>
+                                    <a href="7242b328c3d7cd25764e90a828a20252038a4e56bc05bf2ff329200fb62d9d61.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US SD TC 04&nbsp;&nbsp;&nbsp;2
+                                    </span>
+                                    </a>
+                                    <a href="6f8a5d68a7c6ca6142be6d100bb7953e91690ce198c99ea44c1bf7804e9f3b13.html">
+                                    <span class="tag-badge badge" style="background-color:#a5c7ed; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> Ios&nbsp;&nbsp;&nbsp;22
+                                    </span>
+                                    </a>
+                                    <a href="1a22b2c752b8f53d3292a3d828237c65000b14d5d7d2f432b1f929d177e56833.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US SDTBS TC 03&nbsp;&nbsp;&nbsp;2
+                                    </span>
+                                    </a>
+                                    <a href="8b8620f67a9bb5a5c4150b5bc73f3af7f73b733ba300659c2f7a0aba4a99b408.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US SD TC 09&nbsp;&nbsp;&nbsp;2
+                                    </span>
+                                    </a>
+                                    <a href="b9d1864c4412ed8f2ba551bacc3cdbe1f95329bb7f4de467cac9314016e3ca15.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US SDTBS&nbsp;&nbsp;&nbsp;8
+                                    </span>
+                                    </a>
+                                    <a href="aa32ac3e7128aaa2381517071e7043e25a1f37688ef4ff10b1e514a77e6eb528.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US SAATQTSP TC 03&nbsp;&nbsp;&nbsp;2
+                                    </span>
+                                    </a>
+                                    <a href="f6341f8c80b1808baa4ee3642038c05a35dee78da2d4e3de85acd2b6867e4a94.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US SAATQTSP TC 08&nbsp;&nbsp;&nbsp;2
+                                    </span>
+                                    </a>
+                                    <a href="1a22659964605d4c61d479897bbdee63910d6da36441990a71994677a58a0bd4.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US SDTBS TC 04&nbsp;&nbsp;&nbsp;2
+                                    </span>
+                                    </a>
+                                    <a href="05c57e0bc917302928917b81c9d2d448e402f1b579e3bd7171fb1efd756e4dd4.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US SD TC 01&nbsp;&nbsp;&nbsp;2
+                                    </span>
+                                    </a>
+                                    <a href="2b87e219ce7fbe2fd5a8dc0378b2750b21a165889064bfa9c0daaacf85ef0c5b.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US SAATQTSP&nbsp;&nbsp;&nbsp;18
+                                    </span>
+                                    </a>
+                                    <a href="8e80c56a7ee7db5cdc6a2a84414b5fcd9be9462fdf177647c96e757877f25493.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US SD TC 05&nbsp;&nbsp;&nbsp;2
+                                    </span>
+                                    </a>
+                                    <a href="9a26bd101adfda745f743db04eb3269922eb1ff4d86d9997efeca1ebfe995ac4.html">
+                                    <span class="tag-badge badge" style="background-color:#a5c7ed; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> Manual&nbsp;&nbsp;&nbsp;44
+                                    </span>
+                                    </a>
+                                    <a href="99acb3b5b6c3398b326256712ad6e5fcc197fff44c0e90113898d714c5c9a1a0.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US SAATQTSP TC 02&nbsp;&nbsp;&nbsp;2
+                                    </span>
+                                    </a>
+                                    <a href="4792dcae5afc1e7dec221409fc3126fd5f8608b9b5418e97f152c85a7f439b23.html">
+                                    <span class="tag-badge badge" style="background-color:#a5c7ed; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> Q3 2025&nbsp;&nbsp;&nbsp;44
+                                    </span>
+                                    </a>
+                                    <a href="e0012608e91240ff81cf974a6383029872f9254f69ebf79364fe2383f4ffcab8.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US SAATQTSP TC 06&nbsp;&nbsp;&nbsp;2
+                                    </span>
+                                    </a>
+                                    <a href="d691444e30eb9309ce53e8c3e4cff5f63241fa79c49cd73c41c93be4d1ef2069.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US SAATQTSP TC 07&nbsp;&nbsp;&nbsp;2
+                                    </span>
+                                    </a>
+                                    <a href="08b9c9cafd959097c83344f962137fc8798fd240d81c9e11f763cf9841d0a2ce.html">
+                                    <span class="tag-badge badge" style="background-color:#a5c7ed; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US SD TC 02&nbsp;&nbsp;&nbsp;2
+                                    </span>
+                                    </a>
+                                    <a href="6285bae3153af06230f082907a3ecda57997f192dfa721dc1bb22f702c6b9754.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US SD TC 06&nbsp;&nbsp;&nbsp;2
+                                    </span>
+                                    </a>
+                                    <a href="f6dfcd34b9aa89bd92c6d472afa5be4e1d568f3416f533960c5d78bb6f2b674b.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US SDTBS TC 01&nbsp;&nbsp;&nbsp;2
+                                    </span>
+                                    </a>
+                                    <a href="e27f9f2e3d4fb36a3359e25158fab895dedc20319b180535679eb5fa150af7de.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US SD TC 07&nbsp;&nbsp;&nbsp;2
+                                    </span>
+                                    </a>
+                                    <a href="86df08ad9bd892f625247783b4569d0868d16170bad753dd903264823803242a.html">
+                                    <span class="tag-badge badge" style="background-color:#a5c7ed; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US SD&nbsp;&nbsp;&nbsp;18
+                                    </span>
+                                    </a>
+                                    <a href="a87abd4204ec96c8db74264eb8886fbfe73d8c3e1714488bb853210c21fb4e5a.html">
+                                    <span class="tag-badge badge" style="background-color:#a5c7ed; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> Android&nbsp;&nbsp;&nbsp;22
+                                    </span>
+                                    </a>
+                                    <a href="1b0d472472c224c37b31fb3d7e6e01b615aeb327ab826821c17dc82f419f53c4.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US SAATQTSP TC 01&nbsp;&nbsp;&nbsp;2
+                                    </span>
+                                    </a>
+                                    <a href="0f4ca34e2401dbc9d57d0afd26c3f959f94790cc2b4153bae4e70b2c1f78853c.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US SAATQTSP TC 05&nbsp;&nbsp;&nbsp;2
+                                    </span>
+                                    </a>
+                                    <a href="f41651408235f8c5a6618b0e94fd5428faa90de53372d76309974e9e8f17786b.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US SDTBS TC 02&nbsp;&nbsp;&nbsp;2
+                                    </span>
+                                    </a>
+                                    <a href="ee8a2a4bec7c3d76a1429c6ad02f7d71452671d21caf42472d47b74577642762.html">
+                                    <span class="tag-badge badge" style="background-color:#a5c7ed; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US SD TC 03&nbsp;&nbsp;&nbsp;2
+                                    </span>
+                                    </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                                <h5 class="card-title">Context</h5>
+                            <div>
+                                    <a href="d7d055c3a782deac55af5fa0b3adcb8d18e602f046db40a54a53918076ac8a22.html">
+                                    <span class="tag-badge badge" style="background-color:#a5c7ed; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> Mac&nbsp;&nbsp;&nbsp;44
+                                    </span>
+                                    </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                                <h5 class="card-title">Manual</h5>
+                            <div>
+                                    <a href="220d8ef6080eb8a7746b6ccaff3b44ac3c1f123a09790bb9a8ff31e7b07c9746.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> Passed&nbsp;&nbsp;&nbsp;40
+                                    </span>
+                                    </a>
+                                    <a href="c211605d4f9a5668440a20cdbb7ea638c22b924e59857a8242889044717367ae.html">
+                                    <span class="tag-badge badge" style="background-color:#a5c7ed; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> Ignored&nbsp;&nbsp;&nbsp;4
+                                    </span>
+                                    </a>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+                                            </div>
+                                        </div>
+                                        <div id="tests" class="tab-pane fade">
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+    <div>
+        <h3><i class="bi bi-speedometer2"></i> Key Statistics</h3>
+        <div>
+            <table class="table table-striped table-hover">
+                <tbody>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-card-checklist"></i> Number of Scenarios
+                    </td>
+                    <td>22</td>
+                    <td>
+                        <i class="bi bi-stopwatch"></i> Total
+                        Duration
+                    </td>
+                    <td> 1h  5m 14s</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-caret-right"></i> Total Number of Test Cases
+                    </td>
+                    <td>44</td>
+                    <td>
+                        <i class="bi bi-trophy"></i> Fastest Test
+                    </td>
+                    <td>7s</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-person"></i> Number of Manual Test Cases
+                    </td>
+                    <td>44</td>
+                    <td>
+                        <i class="bi bi-skip-start"></i> Slowest
+                        Test
+                    </td>
+                    <td>10s</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-flag-fill"></i> Tests Started
+                    </td>
+                    <td>Oct 14, 2025 10:21:30</td>
+                    <td>
+                        <i class="bi bi-stopwatch"></i> Average
+                        Execution Time
+                    </td>
+                    <td>8s</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-stop-circle"></i> Tests
+                        Finished
+                    </td>
+                    <td>Oct 14, 2025 11:26:44</td>
+                    <td>
+                        <i class="bi bi-stopwatch-fill"></i> Total
+                        Execution Time
+                    </td>
+                    <td> 6m 3s</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+                                                        <h3><i class="bi bi-gear"></i> Automated Tests</h3>
+
+                                                            No automated tests were executed
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <h3><i class="bi bi-hand-index-thumb"></i> Manual Tests</h3>
+
+                                                            <table class="scenario-result-table table" id="manual-scenario-results">
+                                                                <thead>
+                                                                <tr>
+                                                                    <th>##</th>
+                                                                    <th class="test-name-column">Scenario</th>
+                                                                    <th>Context</th>
+                                                                    <th>Steps</th>
+                                                                    <th>Result</th>
+                                                                </tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                        <tr class="scenario-result SUCCESS">
+                                                                            <td>
+                                                                                    <a href="08a4c7ac1d5893fdbafb2c2ceb98629933e40b956510ba9f577cbc7a7e1d0259.html">Authenticate and authorize EUDI Wallet User with QTSP for signing service</a>
+                                                                            </td>
+                                                                            <td><a href="2aae65e4301410c5f0ade42c7fe4e445903c91e8d0311c94f26c9128579e01e9.html">User initiates signing process</a></td>
+                                                                            <td><i class="bi bi-person"></i></td>
+                                                                            <td>3</td>
+                                                                            <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span style="display:none">SUCCESS</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="scenario-result SUCCESS">
+                                                                            <td>
+                                                                                    <a href="08a4c7ac1d5893fdbafb2c2ceb98629933e40b956510ba9f577cbc7a7e1d0259.html">Authenticate and authorize EUDI Wallet User with QTSP for signing service</a>
+                                                                            </td>
+                                                                            <td><a href="70782bd48d06959c37f8e0b786ed87e9bba0ba14c4fd4c4d1a5ee57e523e6c61.html">User selects QTSP for signing</a></td>
+                                                                            <td><i class="bi bi-person"></i></td>
+                                                                            <td>3</td>
+                                                                            <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span style="display:none">SUCCESS</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="scenario-result SUCCESS">
+                                                                            <td>
+                                                                                    <a href="08a4c7ac1d5893fdbafb2c2ceb98629933e40b956510ba9f577cbc7a7e1d0259.html">Authenticate and authorize EUDI Wallet User with QTSP for signing service</a>
+                                                                            </td>
+                                                                            <td><a href="40ee46f3c84cf5ddcca9fffa0354b4aefe638e0a6f0b051a817d9d16cd304a19.html">User receives attestation presentation request via deep link</a></td>
+                                                                            <td><i class="bi bi-person"></i></td>
+                                                                            <td>3</td>
+                                                                            <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span style="display:none">SUCCESS</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="scenario-result SUCCESS">
+                                                                            <td>
+                                                                                    <a href="08a4c7ac1d5893fdbafb2c2ceb98629933e40b956510ba9f577cbc7a7e1d0259.html">Authenticate and authorize EUDI Wallet User with QTSP for signing service</a>
+                                                                            </td>
+                                                                            <td><a href="bdb6985e4fcfedfca2d63bbd6fecad0eb56320898a72dd003ad1f2052edcfd0b.html">EUDI Wallet prompts for attestation release</a></td>
+                                                                            <td><i class="bi bi-person"></i></td>
+                                                                            <td>3</td>
+                                                                            <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span style="display:none">SUCCESS</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="scenario-result SUCCESS">
+                                                                            <td>
+                                                                                    <a href="08a4c7ac1d5893fdbafb2c2ceb98629933e40b956510ba9f577cbc7a7e1d0259.html">Authenticate and authorize EUDI Wallet User with QTSP for signing service</a>
+                                                                            </td>
+                                                                            <td><a href="a10dc353ce9810a3623900c421271ac856225fefdb62f34f89bcaf93177c6bb1.html">User provides consent and authenticates</a></td>
+                                                                            <td><i class="bi bi-person"></i></td>
+                                                                            <td>3</td>
+                                                                            <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span style="display:none">SUCCESS</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="scenario-result SUCCESS">
+                                                                            <td>
+                                                                                    <a href="08a4c7ac1d5893fdbafb2c2ceb98629933e40b956510ba9f577cbc7a7e1d0259.html">Authenticate and authorize EUDI Wallet User with QTSP for signing service</a>
+                                                                            </td>
+                                                                            <td><a href="8c85669d20a92a4fa64ca78122082d6d9537f5914f055a71acbe6c254e37ece2.html">No matching attestation available</a></td>
+                                                                            <td><i class="bi bi-person"></i></td>
+                                                                            <td>3</td>
+                                                                            <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span style="display:none">SUCCESS</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="scenario-result SUCCESS">
+                                                                            <td>
+                                                                                    <a href="08a4c7ac1d5893fdbafb2c2ceb98629933e40b956510ba9f577cbc7a7e1d0259.html">Authenticate and authorize EUDI Wallet User with QTSP for signing service</a>
+                                                                            </td>
+                                                                            <td><a href="2f7ea7458f74a663e9a5c0b29284cbcec5aec458461c620bae8e238bdc65a68a.html">QTSP verifies attestation successfully</a></td>
+                                                                            <td><i class="bi bi-person"></i></td>
+                                                                            <td>3</td>
+                                                                            <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span style="display:none">SUCCESS</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="scenario-result SUCCESS">
+                                                                            <td>
+                                                                                    <a href="08a4c7ac1d5893fdbafb2c2ceb98629933e40b956510ba9f577cbc7a7e1d0259.html">Authenticate and authorize EUDI Wallet User with QTSP for signing service</a>
+                                                                            </td>
+                                                                            <td><a href="0178fd5817afd5f86398b47b776c4d331ae8da6c9d374d75f26c9b808dad54b5.html">User cancels the process</a></td>
+                                                                            <td><i class="bi bi-person"></i></td>
+                                                                            <td>3</td>
+                                                                            <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span style="display:none">SUCCESS</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="scenario-result SUCCESS">
+                                                                            <td>
+                                                                                    <a href="08a4c7ac1d5893fdbafb2c2ceb98629933e40b956510ba9f577cbc7a7e1d0259.html">Authenticate and authorize EUDI Wallet User with QTSP for signing service</a>
+                                                                            </td>
+                                                                            <td><a href="eefd46c0c2b0b799e557dd9df5b111bca9a184b2b8c465eff52728522e85a9d5.html">User fails authentication and retries</a></td>
+                                                                            <td><i class="bi bi-person"></i></td>
+                                                                            <td>3</td>
+                                                                            <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span style="display:none">SUCCESS</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="scenario-result SUCCESS">
+                                                                            <td>
+                                                                                    <a href="33cabfed18f7885b1dd869c89d20646de828a5f3834d39d567354fc27654ada2.html">Select Document to be Signed</a>
+                                                                            </td>
+                                                                            <td><a href="c5384a0f5d60350ddcd8e8c7e2a64a17837638c4e13a54692db7c3b0dc6965b8.html">Display list of documents for signing</a></td>
+                                                                            <td><i class="bi bi-person"></i></td>
+                                                                            <td>4</td>
+                                                                            <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span style="display:none">SUCCESS</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="scenario-result SUCCESS">
+                                                                            <td>
+                                                                                    <a href="33cabfed18f7885b1dd869c89d20646de828a5f3834d39d567354fc27654ada2.html">Select Document to be Signed</a>
+                                                                            </td>
+                                                                            <td><a href="1c4f6e6ad9fdb023df0f6500ec2dacc8443d651c6bc645b8403ce6dca5119e47.html">Select a document from the list</a></td>
+                                                                            <td><i class="bi bi-person"></i></td>
+                                                                            <td>3</td>
+                                                                            <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span style="display:none">SUCCESS</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="scenario-result SUCCESS">
+                                                                            <td>
+                                                                                    <a href="33cabfed18f7885b1dd869c89d20646de828a5f3834d39d567354fc27654ada2.html">Select Document to be Signed</a>
+                                                                            </td>
+                                                                            <td><a href="d5335a6a64203dd189633771e13cb812c8387306290c09046e646fa017920fd5.html">View the selected document details</a></td>
+                                                                            <td><i class="bi bi-person"></i></td>
+                                                                            <td>4</td>
+                                                                            <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span style="display:none">SUCCESS</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="scenario-result SUCCESS">
+                                                                            <td>
+                                                                                    <a href="33cabfed18f7885b1dd869c89d20646de828a5f3834d39d567354fc27654ada2.html">Select Document to be Signed</a>
+                                                                            </td>
+                                                                            <td><a href="abd13f66fa02b6c109de949125c0c7ccde9e35aece002f62173e4f7c66467d5d.html">View the document's content</a></td>
+                                                                            <td><i class="bi bi-person"></i></td>
+                                                                            <td>3</td>
+                                                                            <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span style="display:none">SUCCESS</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="scenario-result SUCCESS">
+                                                                            <td>
+                                                                                    <a href="5dc1cf0190f794e4235eadab3d07f9a905eb307d65926b4bb2b7dfb0c75e4d3b.html">Signing a document with EUDI Wallet</a>
+                                                                            </td>
+                                                                            <td><a href="56ac31352ef78909185e8fafce064385420a1669aaf12e46306ad29fa6e1e581.html">Single Credential ID Available</a></td>
+                                                                            <td><i class="bi bi-person"></i></td>
+                                                                            <td>4</td>
+                                                                            <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span style="display:none">SUCCESS</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="scenario-result PENDING">
+                                                                            <td>
+                                                                                    <a href="5dc1cf0190f794e4235eadab3d07f9a905eb307d65926b4bb2b7dfb0c75e4d3b.html">Signing a document with EUDI Wallet</a>
+                                                                            </td>
+                                                                            <td><a href="437adba83fc8409fd46fa936a4d4a05e03b272624a82f9b400d0ba720b0dac5b.html">Multiple Credential IDs available</a></td>
+                                                                            <td><i class="bi bi-person"></i></td>
+                                                                            <td>3</td>
+                                                                            <td><a href='##beforetable'><i class='bi bi-hourglass-top pending-icon ' title='PENDING'></i></a> <span style="display:none">PENDING</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="scenario-result PENDING">
+                                                                            <td>
+                                                                                    <a href="5dc1cf0190f794e4235eadab3d07f9a905eb307d65926b4bb2b7dfb0c75e4d3b.html">Signing a document with EUDI Wallet</a>
+                                                                            </td>
+                                                                            <td><a href="fd0bc9a0bad13c696c2d0874142920adda48ed2e7048854165eef45cfe4e416f.html">No Credential IDs enrolled for user in QTSP</a></td>
+                                                                            <td><i class="bi bi-person"></i></td>
+                                                                            <td>4</td>
+                                                                            <td><a href='##beforetable'><i class='bi bi-hourglass-top pending-icon ' title='PENDING'></i></a> <span style="display:none">PENDING</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="scenario-result SUCCESS">
+                                                                            <td>
+                                                                                    <a href="5dc1cf0190f794e4235eadab3d07f9a905eb307d65926b4bb2b7dfb0c75e4d3b.html">Signing a document with EUDI Wallet</a>
+                                                                            </td>
+                                                                            <td><a href="20a9319847720cf1c3b38221ce04f9f35a1b4b3fa83d2025afab09b1146f32a1.html">QTSP redirects user to attestation request</a></td>
+                                                                            <td><i class="bi bi-person"></i></td>
+                                                                            <td>3</td>
+                                                                            <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span style="display:none">SUCCESS</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="scenario-result SUCCESS">
+                                                                            <td>
+                                                                                    <a href="5dc1cf0190f794e4235eadab3d07f9a905eb307d65926b4bb2b7dfb0c75e4d3b.html">Signing a document with EUDI Wallet</a>
+                                                                            </td>
+                                                                            <td><a href="6a5a84584eae43e1b9e58ad096a8ecb283409d288b74bc5aea4fce42d8caf485.html">No matching attestations available</a></td>
+                                                                            <td><i class="bi bi-person"></i></td>
+                                                                            <td>3</td>
+                                                                            <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span style="display:none">SUCCESS</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="scenario-result SUCCESS">
+                                                                            <td>
+                                                                                    <a href="5dc1cf0190f794e4235eadab3d07f9a905eb307d65926b4bb2b7dfb0c75e4d3b.html">Signing a document with EUDI Wallet</a>
+                                                                            </td>
+                                                                            <td><a href="ad736f383dcb1ba3b802ef76c7037624048ebe956b88629f316f8ec95a883d69.html">User consents to release attestation</a></td>
+                                                                            <td><i class="bi bi-person"></i></td>
+                                                                            <td>5</td>
+                                                                            <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span style="display:none">SUCCESS</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="scenario-result SUCCESS">
+                                                                            <td>
+                                                                                    <a href="5dc1cf0190f794e4235eadab3d07f9a905eb307d65926b4bb2b7dfb0c75e4d3b.html">Signing a document with EUDI Wallet</a>
+                                                                            </td>
+                                                                            <td><a href="a8496e76f8c30f4244e95237c3ee33741782333f0f635335767b34f585c1a3d6.html">User authentication fails</a></td>
+                                                                            <td><i class="bi bi-person"></i></td>
+                                                                            <td>3</td>
+                                                                            <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span style="display:none">SUCCESS</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="scenario-result SUCCESS">
+                                                                            <td>
+                                                                                    <a href="5dc1cf0190f794e4235eadab3d07f9a905eb307d65926b4bb2b7dfb0c75e4d3b.html">Signing a document with EUDI Wallet</a>
+                                                                            </td>
+                                                                            <td><a href="31a536a11b248739dd25184c8563dd6415be7386af3ba48951781435cc6efe3e.html">User cancels attestation release</a></td>
+                                                                            <td><i class="bi bi-person"></i></td>
+                                                                            <td>3</td>
+                                                                            <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span style="display:none">SUCCESS</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="scenario-result SUCCESS">
+                                                                            <td>
+                                                                                    <a href="5dc1cf0190f794e4235eadab3d07f9a905eb307d65926b4bb2b7dfb0c75e4d3b.html">Signing a document with EUDI Wallet</a>
+                                                                            </td>
+                                                                            <td><a href="4148f8263b1b04465bf366d1598ba87a3d0cc81986201c64e301a5b91787669d.html">QTSP signs the document successfully</a></td>
+                                                                            <td><i class="bi bi-person"></i></td>
+                                                                            <td>3</td>
+                                                                            <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span style="display:none">SUCCESS</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="scenario-result SUCCESS">
+                                                                            <td>
+                                                                                    <a href="0ff13a59a480d4679e940203825f0bafccd9e41be4a51b889a6f49b04b62d005.html">Authenticate and authorize EUDI Wallet User with QTSP for signing service</a>
+                                                                            </td>
+                                                                            <td><a href="fe8168c09c8729890755fe3387828827f69ba754ea1e63e937622f0453a65617.html">User initiates signing process</a></td>
+                                                                            <td><i class="bi bi-person"></i></td>
+                                                                            <td>3</td>
+                                                                            <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span style="display:none">SUCCESS</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="scenario-result SUCCESS">
+                                                                            <td>
+                                                                                    <a href="0ff13a59a480d4679e940203825f0bafccd9e41be4a51b889a6f49b04b62d005.html">Authenticate and authorize EUDI Wallet User with QTSP for signing service</a>
+                                                                            </td>
+                                                                            <td><a href="f6c8eea8d71d604e279e7a6577261b9211da347fcbc2a67c32367921fc619e59.html">User selects QTSP for signing</a></td>
+                                                                            <td><i class="bi bi-person"></i></td>
+                                                                            <td>3</td>
+                                                                            <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span style="display:none">SUCCESS</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="scenario-result SUCCESS">
+                                                                            <td>
+                                                                                    <a href="0ff13a59a480d4679e940203825f0bafccd9e41be4a51b889a6f49b04b62d005.html">Authenticate and authorize EUDI Wallet User with QTSP for signing service</a>
+                                                                            </td>
+                                                                            <td><a href="3ad5795705afd2a78cf62232c1d16c7951c16d7509ca6e5a5ef30eea68db9497.html">User receives attestation presentation request via deep link</a></td>
+                                                                            <td><i class="bi bi-person"></i></td>
+                                                                            <td>3</td>
+                                                                            <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span style="display:none">SUCCESS</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="scenario-result SUCCESS">
+                                                                            <td>
+                                                                                    <a href="0ff13a59a480d4679e940203825f0bafccd9e41be4a51b889a6f49b04b62d005.html">Authenticate and authorize EUDI Wallet User with QTSP for signing service</a>
+                                                                            </td>
+                                                                            <td><a href="1f50e5594eab0c3af9a4f5172c6b945d23a0ffff7561a9e3fa439405585f5b23.html">EUDI Wallet prompts for attestation release</a></td>
+                                                                            <td><i class="bi bi-person"></i></td>
+                                                                            <td>3</td>
+                                                                            <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span style="display:none">SUCCESS</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="scenario-result SUCCESS">
+                                                                            <td>
+                                                                                    <a href="0ff13a59a480d4679e940203825f0bafccd9e41be4a51b889a6f49b04b62d005.html">Authenticate and authorize EUDI Wallet User with QTSP for signing service</a>
+                                                                            </td>
+                                                                            <td><a href="5f441192cd7d7386234393ce0c72458469d65ae990fe4797ca8d018f17127ee7.html">User provides consent and authenticates</a></td>
+                                                                            <td><i class="bi bi-person"></i></td>
+                                                                            <td>3</td>
+                                                                            <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span style="display:none">SUCCESS</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="scenario-result SUCCESS">
+                                                                            <td>
+                                                                                    <a href="0ff13a59a480d4679e940203825f0bafccd9e41be4a51b889a6f49b04b62d005.html">Authenticate and authorize EUDI Wallet User with QTSP for signing service</a>
+                                                                            </td>
+                                                                            <td><a href="5dc68c7df237b31bc5213029e61ec44fd772c299bcc91d9e4dcf08f1ea86fced.html">No matching attestation available</a></td>
+                                                                            <td><i class="bi bi-person"></i></td>
+                                                                            <td>3</td>
+                                                                            <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span style="display:none">SUCCESS</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="scenario-result SUCCESS">
+                                                                            <td>
+                                                                                    <a href="0ff13a59a480d4679e940203825f0bafccd9e41be4a51b889a6f49b04b62d005.html">Authenticate and authorize EUDI Wallet User with QTSP for signing service</a>
+                                                                            </td>
+                                                                            <td><a href="bd551490432d8f618e7ea97603fdaa867f3b2e94552c4be928fd1755b6527bb3.html">QTSP verifies attestation successfully</a></td>
+                                                                            <td><i class="bi bi-person"></i></td>
+                                                                            <td>3</td>
+                                                                            <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span style="display:none">SUCCESS</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="scenario-result SUCCESS">
+                                                                            <td>
+                                                                                    <a href="0ff13a59a480d4679e940203825f0bafccd9e41be4a51b889a6f49b04b62d005.html">Authenticate and authorize EUDI Wallet User with QTSP for signing service</a>
+                                                                            </td>
+                                                                            <td><a href="a0b010d8a9fd159123517b54a6bf1e1b18841330563efecf11df7ec6282ece1d.html">User cancels the process</a></td>
+                                                                            <td><i class="bi bi-person"></i></td>
+                                                                            <td>3</td>
+                                                                            <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span style="display:none">SUCCESS</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="scenario-result SUCCESS">
+                                                                            <td>
+                                                                                    <a href="0ff13a59a480d4679e940203825f0bafccd9e41be4a51b889a6f49b04b62d005.html">Authenticate and authorize EUDI Wallet User with QTSP for signing service</a>
+                                                                            </td>
+                                                                            <td><a href="6818eb113a78eb8a96b0c9cb17820e79e86c181ac2b04876e334e9bdee73d265.html">User fails authentication and retries</a></td>
+                                                                            <td><i class="bi bi-person"></i></td>
+                                                                            <td>3</td>
+                                                                            <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span style="display:none">SUCCESS</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="scenario-result SUCCESS">
+                                                                            <td>
+                                                                                    <a href="915d83ef40c952ac21ddf03c3ec9e6a22f9143942c40723342f62a1fef2e5509.html">Select Document to be Signed</a>
+                                                                            </td>
+                                                                            <td><a href="7cb33f6a4cd30bee55c573dc8cf22af455f12fecd6f46b600f6b491d43ecaabc.html">Display list of documents for signing</a></td>
+                                                                            <td><i class="bi bi-person"></i></td>
+                                                                            <td>4</td>
+                                                                            <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span style="display:none">SUCCESS</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="scenario-result SUCCESS">
+                                                                            <td>
+                                                                                    <a href="915d83ef40c952ac21ddf03c3ec9e6a22f9143942c40723342f62a1fef2e5509.html">Select Document to be Signed</a>
+                                                                            </td>
+                                                                            <td><a href="74d07bcfca84bae0b8d270321e967740303f2983822a3ce06388f171893a0ac4.html">Select a document from the list</a></td>
+                                                                            <td><i class="bi bi-person"></i></td>
+                                                                            <td>3</td>
+                                                                            <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span style="display:none">SUCCESS</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="scenario-result SUCCESS">
+                                                                            <td>
+                                                                                    <a href="915d83ef40c952ac21ddf03c3ec9e6a22f9143942c40723342f62a1fef2e5509.html">Select Document to be Signed</a>
+                                                                            </td>
+                                                                            <td><a href="97aaf04d7503372cfc97aaab4d89bb756a2cefea28d1896004ef2df3fb302a57.html">View the selected document details</a></td>
+                                                                            <td><i class="bi bi-person"></i></td>
+                                                                            <td>4</td>
+                                                                            <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span style="display:none">SUCCESS</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="scenario-result SUCCESS">
+                                                                            <td>
+                                                                                    <a href="915d83ef40c952ac21ddf03c3ec9e6a22f9143942c40723342f62a1fef2e5509.html">Select Document to be Signed</a>
+                                                                            </td>
+                                                                            <td><a href="eaf6dbb3b318bdea78eb0ab849d39d35d7041a8552374e297f2f2bd10ba94689.html">View the document's content</a></td>
+                                                                            <td><i class="bi bi-person"></i></td>
+                                                                            <td>3</td>
+                                                                            <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span style="display:none">SUCCESS</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="scenario-result SUCCESS">
+                                                                            <td>
+                                                                                    <a href="f572e8793a4da34fac415e056c8aa2d7f8d657a42242acc955f046e0519ef4d1.html">Signing a document with EUDI Wallet</a>
+                                                                            </td>
+                                                                            <td><a href="00c60a521a75ceb448808ea783cecd44347cbab1e4cb877925e1d459b19dc06a.html">Single Credential ID Available</a></td>
+                                                                            <td><i class="bi bi-person"></i></td>
+                                                                            <td>4</td>
+                                                                            <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span style="display:none">SUCCESS</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="scenario-result PENDING">
+                                                                            <td>
+                                                                                    <a href="f572e8793a4da34fac415e056c8aa2d7f8d657a42242acc955f046e0519ef4d1.html">Signing a document with EUDI Wallet</a>
+                                                                            </td>
+                                                                            <td><a href="f8ad5a0db7af18acedcd9f7e4791446a4e20d2ea9a21609540c5c36feb34cb98.html">Multiple Credential IDs available</a></td>
+                                                                            <td><i class="bi bi-person"></i></td>
+                                                                            <td>3</td>
+                                                                            <td><a href='##beforetable'><i class='bi bi-hourglass-top pending-icon ' title='PENDING'></i></a> <span style="display:none">PENDING</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="scenario-result PENDING">
+                                                                            <td>
+                                                                                    <a href="f572e8793a4da34fac415e056c8aa2d7f8d657a42242acc955f046e0519ef4d1.html">Signing a document with EUDI Wallet</a>
+                                                                            </td>
+                                                                            <td><a href="28145fab306b94dd1c32da917c738025fb0c335945e7dfa909d94089a9ba03c6.html">No Credential IDs enrolled for user in QTSP</a></td>
+                                                                            <td><i class="bi bi-person"></i></td>
+                                                                            <td>4</td>
+                                                                            <td><a href='##beforetable'><i class='bi bi-hourglass-top pending-icon ' title='PENDING'></i></a> <span style="display:none">PENDING</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="scenario-result SUCCESS">
+                                                                            <td>
+                                                                                    <a href="f572e8793a4da34fac415e056c8aa2d7f8d657a42242acc955f046e0519ef4d1.html">Signing a document with EUDI Wallet</a>
+                                                                            </td>
+                                                                            <td><a href="6c2b745dc40825ce58c6aeadda133df07ada86114f52021efffc17533ed588c3.html">QTSP redirects user to attestation request</a></td>
+                                                                            <td><i class="bi bi-person"></i></td>
+                                                                            <td>3</td>
+                                                                            <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span style="display:none">SUCCESS</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="scenario-result SUCCESS">
+                                                                            <td>
+                                                                                    <a href="f572e8793a4da34fac415e056c8aa2d7f8d657a42242acc955f046e0519ef4d1.html">Signing a document with EUDI Wallet</a>
+                                                                            </td>
+                                                                            <td><a href="57a0df932ce1669669316343673f1905139aa572000140bc0c62cbb5ac059f8d.html">No matching attestations available</a></td>
+                                                                            <td><i class="bi bi-person"></i></td>
+                                                                            <td>3</td>
+                                                                            <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span style="display:none">SUCCESS</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="scenario-result SUCCESS">
+                                                                            <td>
+                                                                                    <a href="f572e8793a4da34fac415e056c8aa2d7f8d657a42242acc955f046e0519ef4d1.html">Signing a document with EUDI Wallet</a>
+                                                                            </td>
+                                                                            <td><a href="c3f97c8b26b3d3b43c60c3bd97ad63eadf4391c2ae827c9ced1a6365768959df.html">User consents to release attestation</a></td>
+                                                                            <td><i class="bi bi-person"></i></td>
+                                                                            <td>5</td>
+                                                                            <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span style="display:none">SUCCESS</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="scenario-result SUCCESS">
+                                                                            <td>
+                                                                                    <a href="f572e8793a4da34fac415e056c8aa2d7f8d657a42242acc955f046e0519ef4d1.html">Signing a document with EUDI Wallet</a>
+                                                                            </td>
+                                                                            <td><a href="7ebcb956805863078f5315b92f4dc6adec6a80fc96afc5793f04ac303bc7f5b8.html">User authentication fails</a></td>
+                                                                            <td><i class="bi bi-person"></i></td>
+                                                                            <td>3</td>
+                                                                            <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span style="display:none">SUCCESS</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="scenario-result SUCCESS">
+                                                                            <td>
+                                                                                    <a href="f572e8793a4da34fac415e056c8aa2d7f8d657a42242acc955f046e0519ef4d1.html">Signing a document with EUDI Wallet</a>
+                                                                            </td>
+                                                                            <td><a href="3e9987f6c8979ad5c5cf3877619ea8b3a15217aeafb2c31f3ae8a64cb9add4bf.html">User cancels attestation release</a></td>
+                                                                            <td><i class="bi bi-person"></i></td>
+                                                                            <td>3</td>
+                                                                            <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span style="display:none">SUCCESS</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr class="scenario-result SUCCESS">
+                                                                            <td>
+                                                                                    <a href="f572e8793a4da34fac415e056c8aa2d7f8d657a42242acc955f046e0519ef4d1.html">Signing a document with EUDI Wallet</a>
+                                                                            </td>
+                                                                            <td><a href="e3888fb796ee9c941790e6a6e0a930adfdaaf68fb0b162038c404dff284da8e0.html">QTSP signs the document successfully</a></td>
+                                                                            <td><i class="bi bi-person"></i></td>
+                                                                            <td>3</td>
+                                                                            <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span style="display:none">SUCCESS</span>
+                                                                            </td>
+                                                                        </tr>
+                                                                </tbody>
+                                                            </table>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <h3>Tags</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <div>
+                                    <a href="0010542ebff0d0d2b01c6d43bdcbdc0f25f4633a342397ee1fe46983138a9ae5.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US SD TC 08&nbsp;&nbsp;&nbsp;2
+                                    </span>
+                                    </a>
+                                    <a href="697f58b12a48a289e55b6649e28482ca1f108c387c7f596f4134aa390df716b9.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US SAATQTSP TC 04&nbsp;&nbsp;&nbsp;2
+                                    </span>
+                                    </a>
+                                    <a href="e8f0afed7b63716ac1546d7ddbb5554ed90a99319175d1056572364fb24bf302.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US SAATQTSP TC 09&nbsp;&nbsp;&nbsp;2
+                                    </span>
+                                    </a>
+                                    <a href="7242b328c3d7cd25764e90a828a20252038a4e56bc05bf2ff329200fb62d9d61.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US SD TC 04&nbsp;&nbsp;&nbsp;2
+                                    </span>
+                                    </a>
+                                    <a href="6f8a5d68a7c6ca6142be6d100bb7953e91690ce198c99ea44c1bf7804e9f3b13.html">
+                                    <span class="tag-badge badge" style="background-color:#a5c7ed; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> Ios&nbsp;&nbsp;&nbsp;22
+                                    </span>
+                                    </a>
+                                    <a href="1a22b2c752b8f53d3292a3d828237c65000b14d5d7d2f432b1f929d177e56833.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US SDTBS TC 03&nbsp;&nbsp;&nbsp;2
+                                    </span>
+                                    </a>
+                                    <a href="8b8620f67a9bb5a5c4150b5bc73f3af7f73b733ba300659c2f7a0aba4a99b408.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US SD TC 09&nbsp;&nbsp;&nbsp;2
+                                    </span>
+                                    </a>
+                                    <a href="b9d1864c4412ed8f2ba551bacc3cdbe1f95329bb7f4de467cac9314016e3ca15.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US SDTBS&nbsp;&nbsp;&nbsp;8
+                                    </span>
+                                    </a>
+                                    <a href="aa32ac3e7128aaa2381517071e7043e25a1f37688ef4ff10b1e514a77e6eb528.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US SAATQTSP TC 03&nbsp;&nbsp;&nbsp;2
+                                    </span>
+                                    </a>
+                                    <a href="f6341f8c80b1808baa4ee3642038c05a35dee78da2d4e3de85acd2b6867e4a94.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US SAATQTSP TC 08&nbsp;&nbsp;&nbsp;2
+                                    </span>
+                                    </a>
+                                    <a href="1a22659964605d4c61d479897bbdee63910d6da36441990a71994677a58a0bd4.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US SDTBS TC 04&nbsp;&nbsp;&nbsp;2
+                                    </span>
+                                    </a>
+                                    <a href="05c57e0bc917302928917b81c9d2d448e402f1b579e3bd7171fb1efd756e4dd4.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US SD TC 01&nbsp;&nbsp;&nbsp;2
+                                    </span>
+                                    </a>
+                                    <a href="2b87e219ce7fbe2fd5a8dc0378b2750b21a165889064bfa9c0daaacf85ef0c5b.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US SAATQTSP&nbsp;&nbsp;&nbsp;18
+                                    </span>
+                                    </a>
+                                    <a href="8e80c56a7ee7db5cdc6a2a84414b5fcd9be9462fdf177647c96e757877f25493.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US SD TC 05&nbsp;&nbsp;&nbsp;2
+                                    </span>
+                                    </a>
+                                    <a href="9a26bd101adfda745f743db04eb3269922eb1ff4d86d9997efeca1ebfe995ac4.html">
+                                    <span class="tag-badge badge" style="background-color:#a5c7ed; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> Manual&nbsp;&nbsp;&nbsp;44
+                                    </span>
+                                    </a>
+                                    <a href="99acb3b5b6c3398b326256712ad6e5fcc197fff44c0e90113898d714c5c9a1a0.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US SAATQTSP TC 02&nbsp;&nbsp;&nbsp;2
+                                    </span>
+                                    </a>
+                                    <a href="4792dcae5afc1e7dec221409fc3126fd5f8608b9b5418e97f152c85a7f439b23.html">
+                                    <span class="tag-badge badge" style="background-color:#a5c7ed; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> Q3 2025&nbsp;&nbsp;&nbsp;44
+                                    </span>
+                                    </a>
+                                    <a href="e0012608e91240ff81cf974a6383029872f9254f69ebf79364fe2383f4ffcab8.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US SAATQTSP TC 06&nbsp;&nbsp;&nbsp;2
+                                    </span>
+                                    </a>
+                                    <a href="d691444e30eb9309ce53e8c3e4cff5f63241fa79c49cd73c41c93be4d1ef2069.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US SAATQTSP TC 07&nbsp;&nbsp;&nbsp;2
+                                    </span>
+                                    </a>
+                                    <a href="08b9c9cafd959097c83344f962137fc8798fd240d81c9e11f763cf9841d0a2ce.html">
+                                    <span class="tag-badge badge" style="background-color:#a5c7ed; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US SD TC 02&nbsp;&nbsp;&nbsp;2
+                                    </span>
+                                    </a>
+                                    <a href="6285bae3153af06230f082907a3ecda57997f192dfa721dc1bb22f702c6b9754.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US SD TC 06&nbsp;&nbsp;&nbsp;2
+                                    </span>
+                                    </a>
+                                    <a href="f6dfcd34b9aa89bd92c6d472afa5be4e1d568f3416f533960c5d78bb6f2b674b.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US SDTBS TC 01&nbsp;&nbsp;&nbsp;2
+                                    </span>
+                                    </a>
+                                    <a href="e27f9f2e3d4fb36a3359e25158fab895dedc20319b180535679eb5fa150af7de.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US SD TC 07&nbsp;&nbsp;&nbsp;2
+                                    </span>
+                                    </a>
+                                    <a href="86df08ad9bd892f625247783b4569d0868d16170bad753dd903264823803242a.html">
+                                    <span class="tag-badge badge" style="background-color:#a5c7ed; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US SD&nbsp;&nbsp;&nbsp;18
+                                    </span>
+                                    </a>
+                                    <a href="a87abd4204ec96c8db74264eb8886fbfe73d8c3e1714488bb853210c21fb4e5a.html">
+                                    <span class="tag-badge badge" style="background-color:#a5c7ed; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> Android&nbsp;&nbsp;&nbsp;22
+                                    </span>
+                                    </a>
+                                    <a href="1b0d472472c224c37b31fb3d7e6e01b615aeb327ab826821c17dc82f419f53c4.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US SAATQTSP TC 01&nbsp;&nbsp;&nbsp;2
+                                    </span>
+                                    </a>
+                                    <a href="0f4ca34e2401dbc9d57d0afd26c3f959f94790cc2b4153bae4e70b2c1f78853c.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US SAATQTSP TC 05&nbsp;&nbsp;&nbsp;2
+                                    </span>
+                                    </a>
+                                    <a href="f41651408235f8c5a6618b0e94fd5428faa90de53372d76309974e9e8f17786b.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US SDTBS TC 02&nbsp;&nbsp;&nbsp;2
+                                    </span>
+                                    </a>
+                                    <a href="ee8a2a4bec7c3d76a1429c6ad02f7d71452671d21caf42472d47b74577642762.html">
+                                    <span class="tag-badge badge" style="background-color:#a5c7ed; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US SD TC 03&nbsp;&nbsp;&nbsp;2
+                                    </span>
+                                    </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                                <h5 class="card-title">Context</h5>
+                            <div>
+                                    <a href="d7d055c3a782deac55af5fa0b3adcb8d18e602f046db40a54a53918076ac8a22.html">
+                                    <span class="tag-badge badge" style="background-color:#a5c7ed; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> Mac&nbsp;&nbsp;&nbsp;44
+                                    </span>
+                                    </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                                <h5 class="card-title">Manual</h5>
+                            <div>
+                                    <a href="220d8ef6080eb8a7746b6ccaff3b44ac3c1f123a09790bb9a8ff31e7b07c9746.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> Passed&nbsp;&nbsp;&nbsp;40
+                                    </span>
+                                    </a>
+                                    <a href="c211605d4f9a5668440a20cdbb7ea638c22b924e59857a8242889044717367ae.html">
+                                    <span class="tag-badge badge" style="background-color:#a5c7ed; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> Ignored&nbsp;&nbsp;&nbsp;4
+                                    </span>
+                                    </a>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="beforefooter"></div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <span class="version">Serenity BDD version 3.9.2</span>
+        </div>
+    </div>
+</div>
+
+<!-- Chart data -->
+    <!-- PIE CHART -->
+    <script>
+
+        // The results pie chart
+        const outcomeChartCtx = document.getElementById('resultChart');
+
+        // Options define for display value on top of bars
+        const outcomeDetailsReports = [
+            { title: 'Passing Test Cases', link: "b35fdda20a8c67616c4667d053bb9d1cefec0684201b5ec253074ac111715ef9.html" },
+            { title: 'Pending Test Cases', link: "ba556420ab9b5bde0d0716f6be2707fcd1e478df7fddfb6f02e7bf7357873569.html" },
+            { title: 'Ignored Test Cases', link: "c15a73ea177cc3ace1fed67f09562c5383d0e786743ed2cb53a651e8d8e5132e.html" },
+            { title: 'Skipped Test Cases', link: "fa829223963f31b819a8e9a8d94ba814c3cf06bffc805f54e3611121b7fdec6d.html" },
+            { title: 'Aborted Test Cases',  link: "93af1ed8d30083c9032c8e06db02f1631a2d24a8bdd7231d62901e8b3350c5c5.html"},
+            { title: 'Failed Test Cases', link: "e636ba45177e93b10c99e9dd897654c0cc9c344e6fef075acbdceea66cd46064.html"  },
+            { title: 'Broken Test Cases', link: "d1948e3cdd3a3d0ef2b1cf57c4bff3b3d2a4892bcc3bd50fa603978e93a80253.html"    },
+            { title: 'Compromised Test Cases',  link: "b80a16a209b4499e7ab6fadcc6d3abf018321e7d5fe2c0844c686326cfe6f1be.html" },
+        ]
+        const outcomeData = {
+            labels: ['Passing Test Cases', 'Pending Test Cases', 'Ignored Test Cases', 'Skipped Test Cases', 'Aborted Test Cases', 'Failed Test Cases', 'Broken Test Cases', 'Compromised Test Cases','Undefined Test Cases'],
+            datasets: [{
+                label: 'Test Results',
+                fill: false,
+                data: [40,4,0,0,0,0,0,0],
+                backgroundColor: ['rgba(153,204,51,0.5)','rgba(165, 199, 238, 0.5)','rgba(168, 168, 168, 0.5)','rgba(238, 224, 152, 0.75)','rgba(255, 153, 102, 0.5)','rgba(255, 22, 49, 0.5)','rgba(255, 97, 8, 0.5)','rgba(255, 104, 255, 0.5)','rgba(83, 50, 168, 0.5)'],
+                borderColor: ['rgba(153,204,51,1)','rgba(165, 199, 238, 1)','rgba(168, 168, 168, 1)','rgba(238, 224, 152, 1)','rgba(255, 153, 102, 1)','rgba(255, 22, 49, 1)','rgba(255, 97, 8, 1)','rgba(255, 104, 255, 1)','rgba(83, 50, 168, 1)'],
+                borderWidth: 1,
+            }]
+        }
+        const outcomeOptions = {
+            responsive: true,
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'bottom'
+                },
+                // Change options for ALL labels of THIS CHART
+                datalabels: {
+                    color: '#444444',
+                    'font.weight': 'bold',
+                    formatter: (value, ctx) => {
+                        let sum = 0;
+                        let dataArr = ctx.chart.data.datasets[0].data;
+                        dataArr.map(data => {
+                            sum += data;
+                        });
+                        let percentage = (value * 100 / sum).toFixed(0) + "%";
+                        if (percentage === '0%' || percentage === 'NaN%') {
+                            return '';
+                        } else {
+                            return percentage;
+                        }
+                    },
+                },
+            }
+        }
+
+        const outcomeChart = new Chart(outcomeChartCtx, {
+            type: 'doughnut',
+            data: outcomeData,
+            options: outcomeOptions,
+            plugins: [
+                {
+                    id: 'text',
+                    beforeDraw: function (chart, a, b) {
+                        var width = chart.width,
+                            height = chart.height,
+                            ctx = chart.ctx;
+
+                        ctx.restore();
+                        var fontSize = (height / 200).toFixed(1);
+                        ctx.font = fontSize + "em sans-serif";
+                        ctx.textBaseline = "middle";
+
+                        var text = "91%"
+                        textX = 10 + Math.round((width - ctx.measureText(text).width) / 2);
+                        textY = (height / 2) - 40;
+
+                        ctx.fillText(text, textX, textY);
+                        ctx.save();
+                    }
+                }]
+        });
+
+        function clickHandler(click) {
+            const points = outcomeChart.getElementsAtEventForMode(click, 'nearest', {intersect: true}, true);
+            if (points.length) {
+                const firstPoint = points[0];
+                window.open(outcomeDetailsReports[firstPoint.index].link, "_self")
+
+            }
+        }
+        outcomeChartCtx.onclick = clickHandler;
+    </script>
+    <!-- END PIE CHART -->
+
+    <!-- SUMMARY BAR CHART -->
+    <script>
+
+        // The Severity bar chart
+        const severityChartCtx = document.getElementById('severityChart');
+
+        // Options define for display value on top of bars
+
+        const severityDetailsReports = [
+            { title: 'Passing Scenarios', link: "b35fdda20a8c67616c4667d053bb9d1cefec0684201b5ec253074ac111715ef9.html" },
+            { title: 'Pending Scenarios', link: "ba556420ab9b5bde0d0716f6be2707fcd1e478df7fddfb6f02e7bf7357873569.html" },
+            { title: 'Ignored Scenarios', link: "c15a73ea177cc3ace1fed67f09562c5383d0e786743ed2cb53a651e8d8e5132e.html" },
+            { title: 'Skipped Scenarios', link: "fa829223963f31b819a8e9a8d94ba814c3cf06bffc805f54e3611121b7fdec6d.html" },
+            { title: 'Aborted Scenarios',  link: "93af1ed8d30083c9032c8e06db02f1631a2d24a8bdd7231d62901e8b3350c5c5.html"},
+            { title: 'Failed Scenarios', link: "e636ba45177e93b10c99e9dd897654c0cc9c344e6fef075acbdceea66cd46064.html"  },
+            { title: 'Broken Scenarios', link: "d1948e3cdd3a3d0ef2b1cf57c4bff3b3d2a4892bcc3bd50fa603978e93a80253.html"    },
+            { title: 'Compromised Scenarios',  link: "b80a16a209b4499e7ab6fadcc6d3abf018321e7d5fe2c0844c686326cfe6f1be.html" },
+        ]
+        const severityData = {
+            labels: ['Passing', 'Pending', 'Ignored', 'Skipped', 'Aborted', 'Failed', 'Broken', 'Compromised'],
+            datasets: [
+                {
+                    label: 'Automated',
+                    data: [0,0,0,0,0,0,0,0],
+                    backgroundColor: ['rgba(153,204,51,0.5)','rgba(165, 199, 238, 0.5)','rgba(168, 168, 168, 0.5)','rgba(238, 224, 152, 0.75)','rgba(255, 153, 102, 0.5)','rgba(255, 22, 49, 0.5)','rgba(255, 97, 8, 0.5)','rgba(255, 104, 255, 0.5)','rgba(83, 50, 168, 0.5)'],
+                    borderColor: ['rgba(153,204,51,1)','rgba(165, 199, 238, 1)','rgba(168, 168, 168, 1)','rgba(238, 224, 152, 1)','rgba(255, 153, 102, 1)','rgba(255, 22, 49, 1)','rgba(255, 97, 8, 1)','rgba(255, 104, 255, 1)','rgba(83, 50, 168, 1)'],
+                    borderWidth: 1
+                },
+                {
+                    label: 'Manual',
+                    data: [40,4,0,0,0,0,0,0],
+                    backgroundColor: ['rgba(153,204,51,0.25)','rgba(165, 199, 238, 0.25)','rgba(168, 168, 168, 0.25)','rgba(238, 224, 152, 0.375)','rgba(255, 153, 102, 0.25)','rgba(255, 22, 49, 0.25)','rgba(255, 97, 8, 0.25)','rgba(255, 104, 255, 0.25)','rgba(83, 50, 168, 0.25)'],
+                    borderColor: ['rgba(153,204,51,1)','rgba(165, 199, 238, 1)','rgba(168, 168, 168, 1)','rgba(238, 224, 152, 1)','rgba(255, 153, 102, 1)','rgba(255, 22, 49, 1)','rgba(255, 97, 8, 1)','rgba(255, 104, 255, 1)','rgba(83, 50, 168, 1)'],
+                    borderWidth: 1
+                },
+
+            ]
+        }
+        const severityOptions = {
+            responsive: true,
+            skipNull: true,
+            scales: {
+                x: {
+                    stacked: true,
+                },
+                y: {
+                    stacked: true,
+                }
+            },
+            plugins: {
+                // Change options for ALL labels of THIS CHART
+                datalabels: {
+                    color: '#444444',
+                    'font.weight': 'bold',
+                    formatter: (value, ctx) => {
+                        if (value === 0) {
+                            return '';
+                        } else {
+                            return value;
+                        }
+                    },
+                }
+            }
+        }
+        const severityChart = new Chart(severityChartCtx, {
+            type: 'bar',
+            data: severityData,
+            options: severityOptions
+        });
+
+        function clickHandler(click) {
+            const points = severityChart.getElementsAtEventForMode(click, 'nearest', {intersect: true}, true);
+            if (points.length) {
+                const firstPoint = points[0];
+                window.open(severityDetailsReports[firstPoint.index].link, "_self")
+
+            }
+        }
+        severityChartCtx.onclick = clickHandler;
+    </script>
+    <!-- END SUMMARY CHART -->
+
+    <!-- DURATION CHART -->
+    <script>
+
+        // Options define for display value on top of bars
+        const durationDetailsReports = [
+                {title: "Under 1 second", link: "46a11c5a6afeb9b0a001aa08438f26d0d57c1d812427e173e0ab57549df4deb7.html"},
+                {title: "1 to 10 seconds", link: "c3b3d3cea33dcb554989655a8c618dc74cc1d6eec478687fb545d6aad2ab3931.html"},
+                {title: "10 to 30 seconds", link: "defeb5b9b3cd3763755d196d056ef944520dc7434278b6a87d738ed4727ce91f.html"},
+                {title: "30 to 60 seconds", link: "53c55f3b6afa45c384e422391339c84021fa5df039c67d315a628c113a93e6ef.html"},
+                {title: "1 to 2 minutes", link: "17288b0f5eb738f2896bcecc860035d507e2cf436fa463fa0af4824cfa81c842.html"},
+                {title: "2 to 5 minutes", link: "0c660ade18216cc9e64bde76e4c9eadd96cfb8c89806cec202cc2c46bfce2df3.html"},
+                {title: "5 to 10 minutes", link: "bd36db24490cc33a9ebad497aa814806d89f4bf7fc887e854b9971b8af244054.html"},
+                {title: "10 minutes or over", link: "fb14fcf0d160f101f54fa1836ca2b37b5ab762315d4d70567bc5c8d8580aee1a.html"},
+        ]
+        // The Severity bar chart
+        const durationChartCtx = document.getElementById('durationChart');
+
+        // Options define for display value on top of bars
+
+        const durationData = {
+            labels: ['Under 1 second','1 to 10 seconds','10 to 30 seconds','30 to 60 seconds','1 to 2 minutes','2 to 5 minutes','5 to 10 minutes','10 minutes or over'],
+            datasets: [{
+                label: 'Number of tests per duration',
+                fill: false,
+                data: ['0','42','2','0','0','0','0','0'],
+                backgroundColor: 'rgba(83, 146, 255,0.5)',
+                borderColor: 'rgba(83, 146, 255, 1)',
+            }]
+        }
+        const durationOptions = {
+            responsive: true,
+            plugins: {
+                // Change options for ALL labels of THIS CHART
+                datalabels: {
+                    color: '#444444',
+                    'font.weight': 'bold',
+                    formatter: (value, ctx) => {
+                        if (value > 0) {
+                            return value;
+                        } else {
+                            return '';
+                        }
+                    },
+                },
+                tooltip: {
+                    enabled: true,
+                    usePointStyle: true,
+                    callbacks: {
+                        label: (data) => {
+                            return data.parsed.y + ' tests'
+                        }
+                    },
+                },
+            },
+        }
+
+        const durationChart = new Chart(durationChartCtx, {
+            type: 'bar',
+            data: durationData,
+            options: durationOptions
+        });
+
+        function durationClickHandler(click) {
+            const points = durationChart.getElementsAtEventForMode(click, 'nearest', {intersect: true}, true);
+            if (points.length) {
+                const firstPoint = points[0];
+                window.open(durationDetailsReports[firstPoint.index].link, "_self")
+
+            }
+        }
+
+        durationChartCtx.onclick = durationClickHandler;
+    </script>
+    <!-- END DURATION CHART -->
+
+
+
+    <!-- COVERAGE BAR CHART -->
+    <script>
+
+        // The coverage bar chart
+        const coverageChartCtx = document.getElementById('coverageChart');
+
+        // Options define for display value on top of bars
+
+        const coverageReports = [
+            {
+                title: 'Authenticate and authorize EUDI Wallet User with QTSP for signing service',
+                result: 'SUCCESS',
+                link: "08a4c7ac1d5893fdbafb2c2ceb98629933e40b956510ba9f577cbc7a7e1d0259.html"
+            },
+            {
+                title: 'Select Document to be Signed',
+                result: 'SUCCESS',
+                link: "33cabfed18f7885b1dd869c89d20646de828a5f3834d39d567354fc27654ada2.html"
+            },
+            {
+                title: 'Signing a document with EUDI Wallet',
+                result: 'PENDING',
+                link: "5dc1cf0190f794e4235eadab3d07f9a905eb307d65926b4bb2b7dfb0c75e4d3b.html"
+            },
+            {
+                title: 'Authenticate and authorize EUDI Wallet User with QTSP for signing service',
+                result: 'SUCCESS',
+                link: "0ff13a59a480d4679e940203825f0bafccd9e41be4a51b889a6f49b04b62d005.html"
+            },
+            {
+                title: 'Select Document to be Signed',
+                result: 'SUCCESS',
+                link: "915d83ef40c952ac21ddf03c3ec9e6a22f9143942c40723342f62a1fef2e5509.html"
+            },
+            {
+                title: 'Signing a document with EUDI Wallet',
+                result: 'PENDING',
+                link: "f572e8793a4da34fac415e056c8aa2d7f8d657a42242acc955f046e0519ef4d1.html"
+            },
+            {
+                title: 'Issue PID',
+                result: 'SUCCESS',
+                link: "27da1c07f6c1f8b4628dda2688bfac1c7b1002511a852bb899f3fc2fbbc9e7f4.html"
+            },
+            {
+                title: 'Dashboard display',
+                result: 'SUCCESS',
+                link: "13358215ca81dd7dc64c6f86bad8859692d4abac53d0e7ab377e969fdafd4d51.html"
+            },
+            {
+                title: 'Selective Disclosure',
+                result: 'SUCCESS',
+                link: "ad8b238dc8ebc4e4674f6e98bd0a21b55377f62e69f7478e92c25aea12ee22e5.html"
+            },
+            {
+                title: 'Selective Disclosure',
+                result: 'SUCCESS',
+                link: "e6eaff08e8f8b7f79b730acca23cd12587faaaa438c62f04f0a02ad66a983ccb.html"
+            },
+            {
+                title: 'View PID document',
+                result: 'SUCCESS',
+                link: "9e6e7500092c560254e8d4d5680e4fb75bc3b6936d04f61ff6a005c59a27bcc6.html"
+            },
+            {
+                title: 'Credential issuance process for the same device',
+                result: 'SUCCESS',
+                link: "163a171966df1d508f40da39068f302d2e0f48b8baa4b89b81c068c9f97f41ae.html"
+            },
+            {
+                title: 'Issue mDL',
+                result: 'SUCCESS',
+                link: "adfcb231c10944450d97ef0527d638daee7f88a362c02cda5b97d6dc9aaa9c08.html"
+            },
+            {
+                title: 'Deleting a mDL document',
+                result: 'SUCCESS',
+                link: "7923f5516aa97b94a7db44c575b8d1abfdd3f50a975e3f9bef4fc59902e03b9e.html"
+            },
+            {
+                title: 'View mDL document',
+                result: 'SUCCESS',
+                link: "cf54ec15f4d4fa98c31e2ece5dd5cad27f174af42b1c7eba5a13b3917e17aca1.html"
+            },
+            {
+                title: 'Credential issuance process for the same device',
+                result: 'SUCCESS',
+                link: "0592657db358ea54aa9d36c94a07a820be2a911801900d44628db2ca9c494d17.html"
+            },
+            {
+                title: 'Deleting a mDL document',
+                result: 'SUCCESS',
+                link: "80bca9cbd1c00d0ea27c706a2f20fb0fe8508361185186fd142cecb91169aee1.html"
+            },
+            {
+                title: 'Issue mDL',
+                result: 'SUCCESS',
+                link: "808bc310e918a37c3a22d338bf138d19f6a342cfcf05ad6d09fa0a6379c70143.html"
+            },
+            {
+                title: 'Online Identification & Authentication (same-device)',
+                result: 'SUCCESS',
+                link: "f9704052ee9c43d9ea469f29141807ed2e604b7fc6672855fb1281c031c196aa.html"
+            },
+            {
+                title: 'Dashboard display',
+                result: 'SUCCESS',
+                link: "d3afa5d941e3baaf8cb26ad9bd287726e0cb1c585b1358701d82dcbe7243c080.html"
+            },
+            {
+                title: 'View PID document',
+                result: 'SUCCESS',
+                link: "598792af6efc7b560ae2738d4a407e835207d9900b0c6bd204c4a6f3153997d5.html"
+            },
+            {
+                title: 'Deleting a PID document',
+                result: 'SUCCESS',
+                link: "fbc1861d5ef8b78e828fb6e57fb479f15338ee8b6ea3532b4b1c134c72bdd3d4.html"
+            },
+            {
+                title: 'Issue PID',
+                result: 'SUCCESS',
+                link: "0fc572c8bffa313798852a06c2166468a43ad43a861c792b053f15d548cda439.html"
+            },
+            {
+                title: 'Online Identification & Authentication (same-device)',
+                result: 'SUCCESS',
+                link: "51caaa1db625662ea5be88c5ec06e4568a1060b20b16b4550f5dc3cd305f595e.html"
+            },
+            {
+                title: 'View mDL document',
+                result: 'SUCCESS',
+                link: "01feb06c24de3972afafb9c92584bc7502c5f7073c0668fd421fb7b00d73d383.html"
+            },
+            {
+                title: 'Deleting a PID document',
+                result: 'SUCCESS',
+                link: "97c4a5c4cabbc38202ee5610f88e554f6b08f23d05ac9bfebd77c1247c82a4ea.html"
+            },
+        ]
+        const coverageData = {
+            labels: [
+                'Authenticate and authorize EUDI Wallet User with QTSP for signing service',
+                'Select Document to be Signed',
+                'Signing a document with EUDI Wallet',
+                'Authenticate and authorize EUDI Wallet User with QTSP for signing service',
+                'Select Document to be Signed',
+                'Signing a document with EUDI Wallet',
+                'Issue PID',
+                'Dashboard display',
+                'Selective Disclosure',
+                'Selective Disclosure',
+                'View PID document',
+                'Credential issuance process for the same device',
+                'Issue mDL',
+                'Deleting a mDL document',
+                'View mDL document',
+                'Credential issuance process for the same device',
+                'Deleting a mDL document',
+                'Issue mDL',
+                'Online Identification & Authentication (same-device)',
+                'Dashboard display',
+                'View PID document',
+                'Deleting a PID document',
+                'Issue PID',
+                'Online Identification & Authentication (same-device)',
+                'View mDL document',
+                'Deleting a PID document',
+            ],
+            datasets: [
+                {
+                    label: ['Passing Tests'],
+                    data: [9,4,7,9,4,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                    backgroundColor: [ 'rgba(153,204,51,0.5)' ]
+                },
+                {
+                    label: ['Pending Tests'],
+                    data: [0,0,2,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                    backgroundColor: [ 'rgba(165, 199, 238, 0.5)' ]
+                },
+                {
+                    label: ['Ignored Tests'],
+                    data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                    backgroundColor: [ 'rgba(168, 168, 168, 0.5)' ]
+                },
+                {
+                    label: ['Skipped Tests'],
+                    data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                    backgroundColor: [ 'rgba(238, 224, 152, 0.75)' ]
+                },
+                {
+                    label: ['Aborted Tests'],
+                    data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                    backgroundColor: [ 'rgba(255, 153, 102, 0.5)' ]
+                },
+                {
+                    label: ['Failed Tests'],
+                    data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                    backgroundColor: [ 'rgba(255, 22, 49, 0.5)' ]
+                },
+                {
+                    label: ['Errors'],
+                    data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                    backgroundColor: [ 'rgba(255, 97, 8, 0.5)' ]
+                },
+                {
+                    label: ['Compromised Tests'],
+                    data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                    backgroundColor: [ 'rgba(255, 104, 255, 0.5)' ]
+                },
+            ]
+        }
+        const coverageOptions = {
+            responsive: true,
+            indexAxis: 'y',
+            // barPercentage: ,
+            barThickness: 'flex',
+            maxBarThickness: 30,
+            minBarLength: 2,
+            skipNull: true,
+            scales: {
+                x: {
+                    stacked: true,
+                },
+                y: {
+                    stacked: true,
+                }
+            },
+            plugins: {
+                // Change options for ALL labels of THIS CHART
+                datalabels: {
+                    color: '#444444',
+                    'font.weight': 'bold'
+                },
+                tooltip: {
+                    enabled: true,
+                    usePointStyle: true,
+                },
+            },
+        }
+
+        const coverageChart = new Chart(coverageChartCtx, {
+            type: 'bar',
+            data: coverageData,
+            options: coverageOptions
+        });
+
+        function coverageClickHandler(click) {
+            const points = coverageChart.getElementsAtEventForMode(click, 'nearest', {intersect: true}, true);
+            if (points.length) {
+                const firstPoint = points[0];
+                if (coverageReports[firstPoint.index].link) {
+                    window.open(coverageReports[firstPoint.index].link, "_self")
+                }
+            }
+        }
+
+        coverageChartCtx.onclick = coverageClickHandler;
+    </script>
+    <!-- END COVERAGE CHART -->
+
+</body>
+</html>

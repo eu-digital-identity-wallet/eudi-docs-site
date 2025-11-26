@@ -1,0 +1,6 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Deleting a PID document","User enters PIN and selects PID","ERROR","2025-07-28T16:31:36.307121+03:00[Europe/Athens]","0.0","0.0"
+"Deleting a PID document","User deletes the document","ERROR","2025-07-28T16:31:56.478055+03:00[Europe/Athens]","0.0","0.0"
+"Deleting a PID document","User deletes the document and application reboots","ERROR","2025-07-28T16:32:51.114308+03:00[Europe/Athens]","0.0","0.0"
+"Deleting a PID document","User sees the login screen after reboot","ERROR","2025-07-28T16:33:11.601293+03:00[Europe/Athens]","0.0","0.0"
+"Deleting a PID document","User needs to enter a PID again","ERROR","2025-07-28T16:33:31.736723+03:00[Europe/Athens]","0.0","0.0"

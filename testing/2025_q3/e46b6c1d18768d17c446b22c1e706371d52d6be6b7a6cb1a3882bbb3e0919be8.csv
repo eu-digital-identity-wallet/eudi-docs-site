@@ -1,0 +1,5 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Batch Issuance of Attestations in EUDI Wallet","User visits issuer service on a different device","SUCCESS","2025-07-28T15:55:41.751313+03:00[Europe/Athens]","0.0","31.82"
+"Dashboard display","User views issued documents on the dashboard","SUCCESS","2025-07-24T15:22:51.771656+03:00[Europe/Athens]","0.0","54.73"
+"View PID document","User opens the PID document from the dashboard","SUCCESS","2025-07-24T15:35:13.129463+03:00[Europe/Athens]","0.0","53.87"
+"View PID document","Viewing attestation details after selecting the 'eye' icon","SUCCESS","2025-07-24T15:36:07.023247+03:00[Europe/Athens]","0.0","55.3"

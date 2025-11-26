@@ -1,0 +1,5 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"View mDL document","User successfully logs in and sees the dashboard","ERROR","2025-07-28T16:41:45.261738+03:00[Europe/Athens]","0.0","0.0"
+"View mDL document","User opens the mDL document from the dashboard","ERROR","2025-07-28T16:41:45.468891+03:00[Europe/Athens]","0.0","0.0"
+"View mDL document","Viewing attestation details after selecting the 'eye' icon","ERROR","2025-07-28T16:41:45.687302+03:00[Europe/Athens]","0.0","0.0"
+"View mDL document","User closes the mDL document and returns to the dashboard","ERROR","2025-07-28T16:41:45.900789+03:00[Europe/Athens]","0.0","0.0"

@@ -36,7 +36,7 @@ dependencies {
 
 ## How to use
 
-### Initialize the library
+### Initialise the library
 
 To instantiate a `EudiWallet` use the `EudiWallet.Builder` class or the `EudiWallet.invoke` method,
 from the EudiWallet companion object.

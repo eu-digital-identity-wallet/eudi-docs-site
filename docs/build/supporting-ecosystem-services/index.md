@@ -13,7 +13,7 @@ The EUDI Wallet Supporting Ecosystem comprises a set of auxiliary services and r
 
 The Supporting Ecosystem services described in this section are:
 
-+ [Relying Party Registration Service](./registration.md)
++ [Relying Party Registration Service](./rp-registration-service.md)
 + [Remote Signature Service Provider](./rssp.md)
-+ [Revocation Status Provider](./status.md)
++ [Revocation Status Provider](./revocation-service.md)
 + [Trusted List Provider](./trusted-list-service.md)

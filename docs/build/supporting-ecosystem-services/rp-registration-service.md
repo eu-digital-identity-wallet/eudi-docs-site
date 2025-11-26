@@ -19,7 +19,7 @@ The RPAC is used by Wallet instances to authenticate the Relying Party in transa
 
 ### Integration with the RI Verifier
 
-To integrate with the [RI Verifier](../Build%20your%20Verifier/index.md) in order to load from a keystore the key used for JAR-signing authorisation requests ([variable `VERIFIER_JAR_SIGNING_KEY_KEYSTORE`](../Build%20your%20Verifier/Configure.md)), please use the following command line to convert the downloaded PKCS#12 file to a JKS file:
+To integrate with the [RI Verifier](../build-your-remote-verifier/index.md) in order to load from a keystore the key used for JAR-signing authorisation requests ([variable `VERIFIER_JAR_SIGNING_KEY_KEYSTORE`](../build-your-remote-verifier/configure.md)), please use the following command line to convert the downloaded PKCS#12 file to a JKS file:
 
 ```shell
 keytool -importkeystore -srckeystore [FileIn.p12] -srcstoretype pkcs12 -destkeystore [FileOUT.jks] -deststoretype jks -deststorepass [passwordJKS] 

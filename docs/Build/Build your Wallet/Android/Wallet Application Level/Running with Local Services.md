@@ -1,41 +1,50 @@
 # Run with Local Services
-The first step is to ensure all three services are running locally on your machine,
+
+The first step here is to have all three services running locally on your machine,
 you can follow these Repositories for further instructions:
+* [Issuer](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py)
+* [Web Verifier UI](https://github.com/eu-digital-identity-wallet/eudi-web-verifier)
+* [Web Verifier Endpoint](https://github.com/eu-digital-identity-wallet/eudi-srv-web-verifier-endpoint-23220-4-kt)
 
-* [Issuer](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py){:target="_blank"}
-* [Web Verifier UI](https://github.com/eu-digital-identity-wallet/eudi-web-verifier){:target="_blank"}
-* [Web Verifier Endpoint](https://github.com/eu-digital-identity-wallet/eudi-srv-web-verifier-endpoint-23220-4-kt){:target="_blank"}
 
-
-After this, assuming you have everything running locally, you need to change the contents of the ConfigWalletCoreImpl file from:
+After this, and assuming you are now running everything locally,
+you need to change the contents of the ConfigWalletCoreImpl file, from:
 ```Kotlin
-private companion object {
-        const val VCI_ISSUER_URL = "https://dev.issuer.eudiw.dev"
-        const val VCI_CLIENT_ID = "wallet-dev"
-        const val AUTHENTICATION_REQUIRED = false
-}
+override val vciConfig: List<OpenId4VciManager.Config>
+    get() = listOf(
+       OpenId4VciManager.Config.Builder()
+      .withIssuerUrl(issuerUrl = "https://ec.dev.issuer.eudiw.dev")
+      .withClientId(clientId = "wallet-dev")
+      .withAuthFlowRedirectionURI(BuildConfig.ISSUE_AUTHORIZATION_DEEPLINK)
+      .withParUsage(OpenId4VciManager.Config.ParUsage.IF_SUPPORTED)
+      .withDPoPUsage(OpenId4VciManager.Config.DPoPUsage.IfSupported())
+      .build()
+)
 ```
-into something like this:
+with this:
 ```Kotlin
-private companion object {
-        const val VCI_ISSUER_URL = "local_IP_address_of_issuer"
-        const val VCI_CLIENT_ID = "wallet-dev"
-        const val AUTHENTICATION_REQUIRED = false
-}
+override val vciConfig: List<OpenId4VciManager.Config>
+    get() = listOf(
+       OpenId4VciManager.Config.Builder()
+      .withIssuerUrl(issuerUrl = "local_IP_address_of_issuer")
+      .withClientId(clientId = "wallet-dev")
+      .withAuthFlowRedirectionURI(BuildConfig.ISSUE_AUTHORIZATION_DEEPLINK)
+      .withParUsage(OpenId4VciManager.Config.ParUsage.IF_SUPPORTED)
+      .withDPoPUsage(OpenId4VciManager.Config.DPoPUsage.IfSupported())
+      .build()
+)
 ```
 
 for example:
 ```Kotlin
-private companion object {
-        const val VCI_ISSUER_URL = "https://192.168.1.1:5000"
-        const val VCI_CLIENT_ID = "wallet-dev"
-        const val AUTHENTICATION_REQUIRED = false
-}
-```
-
-Finally, you also have to change the content of the network_security_config.xml file and allow HTTP traffic to this:
-```Xml
-<network-security-config>
-    <base-config cleartextTrafficPermitted="true" />
-</network-security-config>
+override val vciConfig: List<OpenId4VciManager.Config>
+    get() = listOf(
+       OpenId4VciManager.Config.Builder()
+      .withIssuerUrl(issuerUrl = "https://10.0.2.2")
+      .withClientId(clientId = "wallet-dev")
+      .withAuthFlowRedirectionURI(BuildConfig.ISSUE_AUTHORIZATION_DEEPLINK)
+      .withParUsage(OpenId4VciManager.Config.ParUsage.IF_SUPPORTED)
+      .withDPoPUsage(OpenId4VciManager.Config.DPoPUsage.IfSupported())
+      .build()
+)
 ```

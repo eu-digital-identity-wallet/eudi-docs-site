@@ -1,4 +1,4 @@
-# EUDI Wallet Reference Implementation - Repositories
+# EUDI Wallet Reference Implementation – Repositories
 
 The EUDI Wallet Reference Implementation uses a modular architecture with business-agnostic, reusable components that evolve incrementally and can be reused across multiple projects. This document provides an overview of the key repositories of the EUDI Reference Implementation. 
 
@@ -33,7 +33,7 @@ The EUDI Wallet Reference Implementation includes the following components:
 
 | Repository | Description |
 |---|---|
-| [mDoc Data Transfer (Android)](https://github.com/eu-digital-identity-wallet/eudi-lib-android-iso18013-data-transfer){:target="_blank"} | This library provides a set of classes to manage the transfer of documents in a EUDI ISO/IEC 18013-5 Android Wallet. |
+| [mDoc Data Transfer (Android)](https://github.com/eu-digital-identity-wallet/eudi-lib-android-iso18013-data-transfer){:target="_blank"} | This library provides a set of classes to manage the transfer of documents in an EUDI ISO/IEC 18013-5 Android Wallet. |
 
 ### Remote Presentation iOS Libraries
 
@@ -74,7 +74,7 @@ The EUDI Wallet Reference Implementation includes the following components:
 
 | Repository | Description |
 |---|---|
-| [mDoc Document Storage (Android)](https://github.com/eu-digital-identity-wallet/eudi-lib-android-wallet-document-manager){:target="_blank"} | This library provides a set of classes to manage documents and their cryptographic keys in a EUDI Android Wallet. |
+| [mDoc Document Storage (Android)](https://github.com/eu-digital-identity-wallet/eudi-lib-android-wallet-document-manager){:target="_blank"} | This library provides a set of classes to manage documents and their cryptographic keys in an EUDI Android Wallet. |
 
 
 ### Revocation Libraries

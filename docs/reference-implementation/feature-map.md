@@ -35,7 +35,7 @@ The following table provides a high-level overview of the key user functionaliti
 | [**Pseudonyms**](#pseudonyms) | Using pseudonyms (i.e. passkeys) for authentication | Planned |
 | [**Wallet Revocation**](#wallet-revocation) | Revoking wallet instance | Planned |
 | [**Wallet to Wallet interaction**](#wallet-to-wallet) | Enabling the exchange of PID/attestations between two EUDI Wallets | Planned|
-| [**Wallet Backup and Restore**](#wallet-backup-and-restore) | Supporting procedures for backing up and restoring attestations of a EUDI Wallet | Planned |
+| [**Wallet Backup and Restore**](#wallet-backup-and-restore) | Supporting procedures for backing up and restoring attestations of an EUDI Wallet | Planned |
 | [**Migrate to a different wallet**](#migrate-to-a-different-wallet) | Supporting procedures for migrating attestations to a different EUDI Wallet |Planned |
 | [**Support for ZKP**](#support-for-zkp) | Supporting Zero-Knowledge Proofs in EUDI Wallet interactions |Planned|
 
@@ -160,18 +160,18 @@ This covers wallet instances revoked by the wallet provider. Expand to explore d
 
 ### _Wallet to Wallet_
 
-A EUDI Wallet User can request that another EUDI Wallet User share an attestation of attributes using their EUDI Wallet Instances when they are in close proximity. Expand to explore detailed functional specifications for 'Wallet to Wallet' interaction capabilities.
+An EUDI Wallet User can request that another EUDI Wallet User share an attestation of attributes using their EUDI Wallet Instances when they are in close proximity. Expand to explore detailed functional specifications for 'Wallet to Wallet' interaction capabilities.
  
 
 | Feature | Description | Status |
 | --- | --- | --- |
-|[Wallet to Wallet](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/30){:target="_blank"}| A EUDI Wallet User can request that another EUDI Wallet User share an attestation of attributes using their EUDI Wallet Instances when they are in close proximity. | Planned |
+|[Wallet to Wallet](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/30){:target="_blank"}| An EUDI Wallet User can request that another EUDI Wallet User share an attestation of attributes using their EUDI Wallet Instances when they are in close proximity. | Planned |
 
 
 ---
 ### _Wallet Backup and Restore_
 
-This covers backing up and restoring attestations of a EUDI Wallet. Expand to explore detailed functional specifications for 'Backup and Restore' interaction capabilities. 
+This covers backing up and restoring attestations of an EUDI Wallet. Expand to explore detailed functional specifications for 'Backup and Restore' interaction capabilities. 
 
 
 | Feature | Description | Status |
@@ -198,7 +198,7 @@ This enables the support of Zero-Knowledge Proofs (ZKP).
 
 | Feature | Description | Status |
 | --- | --- | --- |
-|[Support for Zero Knowledge Proof](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/56){:target="_blank"}| This enables the support of Zero-Knowledge Proofs in EUDI Wallet interactions. | Planned |
+|[Support for Zero-Knowledge Proof](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/56){:target="_blank"}| This enables the support of ZKPs in EUDI Wallet interactions. | Planned |
 
 
 ---

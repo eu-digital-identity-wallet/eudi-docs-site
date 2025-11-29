@@ -6,11 +6,11 @@
 
 ## Installation
 
-You can download the application [here](https://install.appcenter.ms/orgs/eu-digital-identity-wallet/apps/eudi-reference-android/distribution_groups/eudi%20wallet%20(demo)%20public){:target="_blank"}
+You can download the application at the [App Center](https://install.appcenter.ms/orgs/eu-digital-identity-wallet/apps/eudi-reference-android/distribution_groups/eudi%20wallet%20(demo)%20public){:target="_blank"}.
 
-For the proximity flow, you will also need to download the Android Verifier app. More information can be found [here](../proximity-verifier.md)
+For the proximity flow, you will also need to download the Android Verifier app. More information can be found [on the Proximity Verifier page](../proximity-verifier.md).
 
 ## App Launch
 
-1. Launch the application
+1. Launch the application.
 2. You will be presented with a welcome screen where you will be asked to create a PIN for future logins.

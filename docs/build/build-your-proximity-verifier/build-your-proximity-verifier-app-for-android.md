@@ -4,7 +4,7 @@ The EUDI Verifier App is a cross-platform reference implementation for ISO 18013
 Built with Kotlin Multiplatform (KMP/CMP), the app provides a unified codebase for business logic, 
 leveraging platform-native libraries to ensure compliance with the latest standards and security requirements.
 
-This guide explains how to set up, build, and run the project on Android.
+This guide explains how to set up, build and run the project on Android.
 
 ### Platform and Feature Support
 
@@ -14,9 +14,9 @@ You can use emulators or simulators for UI and navigation testing, but completin
 |---|---|---|---|
 | Android    | Supported | Not implemented | Fully operational with BLE verification |
 
-*Features that are not yet implemented are planned for future releases.*
+**Features that are not yet implemented are planned for future releases.**
 
-## Project Setup
+## Project Set-up
 
 To get started:
 
@@ -34,9 +34,9 @@ git clone https://github.com/eu-digital-identity-wallet/eudi-app-multiplatform-v
 - **JDK 17 or newer**
 - **Android SDK 36** installed
 - Device or emulator running **Android 10 (API 29)** or higher  
-  *(verification flow requires a physical device)*
+  **(Verification flow requires a physical device.)**
 
-### Build & Run
+### Build and Run
 
 1. Open the project in **Android Studio** and wait for Gradle sync to complete.
 2. In **Build Variants** (`Build → Select Build Variant`), choose one of:
@@ -44,7 +44,7 @@ git clone https://github.com/eu-digital-identity-wallet/eudi-app-multiplatform-v
     - DevRelease
     - PublicDebug
     - PublicRelease  
-      *(All variants are currently functionally equivalent. Use **DevDebug** unless you have a specific reason to choose another.)*
+      **(All variants are currently functionally equivalent. Use **DevDebug** unless you have a specific reason to choose another.)**
 3. Select a deployment target:
     - **Emulator** for UI-only checks, or
     - **Physical device** (Android 10 or higher) to test the complete verification flow.

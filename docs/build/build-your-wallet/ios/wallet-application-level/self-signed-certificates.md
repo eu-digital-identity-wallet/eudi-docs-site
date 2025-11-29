@@ -36,7 +36,7 @@ let walletSession: URLSession = {
 }()
 ```
 
-Once the above is in place, adjust the initializer:
+Once the above is in place, adjust the initialiser:
 
 ```swift
 guard let walletKit = try? EudiWallet(serviceName: configLogic.documentStorageServiceName, networking: walletSession) else {

@@ -17,6 +17,7 @@ theme:
     - navigation.tabs.sticky
     - navigation.path
     - navigation.top
+    - navigation.footer
     - toc.integrate
     - toc.follow
   logo: assets/logo_eudi_white.svg

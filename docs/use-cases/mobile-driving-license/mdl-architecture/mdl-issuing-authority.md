@@ -3,7 +3,7 @@ The components required by the mDL Issuing Authority are described below. The mD
 
 ## Issuer Client and Backend
 - The mDL Issuing Authority shall offer a service for driving licence holders to request the issuance of an mDL.
-- This service implements the 'issuer-initiated' issuance flow, which is optional (as justified below), and consequently, makes this service optional as well.
+- This service implements the "issuer-initiated" issuance flow, which is optional (as justified below), and consequently, makes this service optional as well.
 - The Issuer Client interacts with the mDL Issuer component to request the Credential Offer, which is delivered to the EUDI Wallet via either a QR code (cross device) or URI (same device).
 
 ## OAuth2 Authorization Server
@@ -29,8 +29,8 @@ The components required by the mDL Issuing Authority are described below. The mD
 ## Revocation Lists Manager
 - The mDL Issuer Organisation uses this component to manage (create and update) the revocation status list or revocation identifier list for mDLs.
 - It creates a status list and identifier list. The Manager component supports both revocation list types (status and identifier).
-- When an mDL is issued, the mDL Issuer must register it in the status list through this component’s API, recording its unique identifier (e.g. serial number, unique hash or index) and position, and initialising its status (e.g. set to 'VALID' or '0').
-- When an mDL is revoked, the mDL Issuer invokes this component’s API to either add the unique identifier to the identifier list or set the status to 'INVALID' or '1' in the status list.
+- When an mDL is issued, the mDL Issuer must register it in the status list through this component's API, recording its unique identifier (e.g. serial number, unique hash or index) and position, and initialising its status (e.g. set to `VALID` or `0`).
+- When an mDL is revoked, the mDL Issuer invokes this component’s API to either add the unique identifier to the identifier list or set the status to `INVALID` or `1` in the status list.
 
 ## Revocation Lists Publisher
 - The mDL Issuer Organisation uses this component to generate, sign and publish the revocation status list and/or revocation identifier list by making them available to the public.

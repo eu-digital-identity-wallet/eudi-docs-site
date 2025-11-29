@@ -2,7 +2,7 @@
 
 The EUDI Wallet Reference Implementation is built on the [Architecture Reference Framework](https://eudi.dev/latest/architecture-and-reference-framework-main/) and demonstrates a robust and interoperable platform for digital identification, authentication and electronic signatures based on common standards across the European Union.
 
-The EUDI Wallet Reference Implementation uses a modular architecture composed of a set of business agnostic, re-usable components that can be developed incrementally and re-used across multiple projects.
+The EUDI Wallet Reference Implementation uses a modular architecture composed of a set of business-agnostic, re-usable components that can be developed incrementally and re-used across multiple projects.
 
 Start exploring the EUDI Wallet Reference Implementation!
 

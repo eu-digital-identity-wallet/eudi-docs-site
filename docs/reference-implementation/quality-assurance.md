@@ -35,7 +35,7 @@ Testing is organised across multiple levels to validate functionality, performan
 | [Unit](#unit-testing) | Component-level verification | Continuous | 
 | [Functional](#functional-testing) | End-to-end behaviour validation | Per release |
 | [Security](#security-testing) | Confidentiality, integrity and compliance | Per release |
-| [Performance](#performance-testing) | Response time, App Stability, CPU and Memory Usage | Per release | 
+| [Performance](#performance-testing) | Response time, app stability, CPU and memory usage | Per release | 
 
 
 ### Unit Testing
@@ -67,7 +67,7 @@ Testing is organised across multiple levels to validate functionality, performan
 
 ### Performance Testing
 
-- **Objectives:** Performance tests are conducted to evaluate the performance of the EUDI Wallet application under average user load across various mobile devices. This testing focuses on central processing unit (CPU) and memory usage, as well as network activity during common scenarios.
+- **Objectives:** Tests are conducted to evaluate the performance of the EUDI Wallet application under average user load across various mobile devices. This testing focuses on central processing unit (CPU) and memory usage, as well as network activity during common scenarios.
 - **Requirements:** The Performance Requirements can be found [here](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application/blob/milestone/2025.Q4/doc/performance/performance_requirements.md){:target="_blank"}.
 - **Test Specifications**: The Performance Test Specifications can be found [here](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application/blob/milestone/2025.Q4/doc/performance/performance_specifications.md){:target="_blank"}.
 - **Tools:** [Performance Testing Tools](#test-tools).

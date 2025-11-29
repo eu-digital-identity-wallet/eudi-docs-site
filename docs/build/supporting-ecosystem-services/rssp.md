@@ -1,6 +1,6 @@
 # Remote Signature Service Provider (RSSP)
 
-An RSSP is the entity that provides the remote electronic signature service. It operates the back end infrastructure that:
+An RSSP is the entity that provides the remote electronic signature service. It operates the backend infrastructure that:
 
 - stores and protects users’ signature keys;
 - performs remote signature operations when the user requests a signature.

@@ -11,8 +11,8 @@ The components required by the (Remote) mDL Verifier Organization are described 
 - It sends presentation requests, compliant with the OpenID4VP specification, to the Wallet via the browser's Digital Credentials API. 
 - It receives the encrypted presentation response containing the requested attributes from the Wallet (forwarded by the browser). 
 - It performs the trust relationship checks. 
-- It integrates with the mDL Verifier Organization back end systems to provide information about the requested mDL claims and verification checks. 
+- It integrates with the mDL Verifier Organization backend systems to provide information about the requested mDL claims and verification checks. 
 
-## mDL Verifier Organization back end systems
+## mDL Verifier Organization backend systems
 - They request the mDL Verifier Backend to initiate the mDL remote presentation flow. 
 - They receive the requested mDL attributes and the results of validation and verification checks from the mDL Verifier Backend. 

@@ -72,7 +72,7 @@ The mDL reader implements the proximity presentation flow with the EUDI Wallet. 
 - the mDL (wallet) and mDL reader
 - the mDL reader and the issuing authority infrastructure.
 
-The interface of the mDL reader and the issuing authority infrastructure (online/server data retrieval) is excluded (not supported) from the mDL target solution since it allows the issuing authority to have knowledge when the mDL holder presents the mDL to a specific mDL verifier. This is prohibited explicitly by articles 5a.16 and 5a.5(b) of [eIDAS] and [ARF] Annex 2 High level requirement "ProxId_02” that states explicitly "Wallet Solutions, PID Providers, Attestation Providers, Wallet Providers, and Relying Parties SHALL NOT support server retrieval as specified in ISO/IEC 18013-5 for requesting and presenting PID or attestation attributes”. Therefore, this method is excluded (not supported) from the mDL target solution.
+The interface of the mDL reader and the issuing authority infrastructure (online/server data retrieval) is excluded (not supported) from the mDL target solution since it allows the issuing authority to have knowledge when the mDL holder presents the mDL to a specific mDL verifier. This is prohibited explicitly by articles 5a.16 and 5a.5(b) of [eIDAS] and [ARF] Annex 2 High level requirement "ProxId_02" that states explicitly "Wallet Solutions, PID Providers, Attestation Providers, Wallet Providers, and Relying Parties SHALL NOT support server retrieval as specified in ISO/IEC 18013-5 for requesting and presenting PID or attestation attributes". Therefore, this method is excluded (not supported) from the mDL target solution.
 
 ## Libraries & SDKs
 

@@ -4,7 +4,7 @@ In this section, you will find comprehensive guidance on leveraging the [EUDI Wa
 
 Whether you are a Wallet Provider, an Issuer or a Relying Party, this guide provides clear, step-by-step instructions and examples. It also helps you evaluate how you can leverage the EUDI Wallet Reference Implementation in your development project and maximise its potential.
 
-Let’s get started building your secure and interoperable EUDI solutions!
+Let's get started building your secure and interoperable EUDI solutions!
 
 | Role    | Description | Get Started |
 | --- | --- |--- |

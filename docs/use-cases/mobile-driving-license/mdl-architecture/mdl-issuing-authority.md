@@ -30,7 +30,7 @@ The components required by the mDL Issuing Authority are described below. The mD
 - The mDL Issuer Organisation uses this component to manage (create and update) the revocation status list or revocation identifier list for mDLs.
 - It creates a status list and identifier list. The Manager component supports both revocation list types (status and identifier).
 - When an mDL is issued, the mDL Issuer must register it in the status list through this component's API, recording its unique identifier (e.g. serial number, unique hash or index) and position, and initialising its status (e.g. set to `VALID` or `0`).
-- When an mDL is revoked, the mDL Issuer invokes this component’s API to either add the unique identifier to the identifier list or set the status to `INVALID` or `1` in the status list.
+- When an mDL is revoked, the mDL Issuer invokes this component's API to either add the unique identifier to the identifier list or set the status to `INVALID` or `1` in the status list.
 
 ## Revocation Lists Publisher
 - The mDL Issuer Organisation uses this component to generate, sign and publish the revocation status list and/or revocation identifier list by making them available to the public.

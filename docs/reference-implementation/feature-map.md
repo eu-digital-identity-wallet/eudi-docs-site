@@ -224,8 +224,8 @@ A set of demo implementations are available that mock business flows in differen
 
 | Business Scenario | Description | Status |
 | --- | --- | --- |
-|[Travel](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/6){:target="_blank"}| A 'Travel Use Case’ implementation for the EUDI Wallet that demonstrates how the EUDI Wallet works in a ‘Travel’ business scenario. The EUDI Wallet is used for several purposes, such as presenting attestations (remotely and in proximity) and digitally signing documents. | Completed |
-|[Cross-border recruitment](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/55){:target="_blank"}| A ‘Cross-Border Recruitment Use Case’ implementation for the EUDI Wallet that demonstrates how the EUDI Wallet works in a ‘Cross-Border Recruitment’ business scenario. The EUDI Wallet is used for several purposes, such as presenting attestations (remotely and in proximity) when applying/on-boarding for a job and digitally signing a job contract. | In Progress |
+|[Travel](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/6){:target="_blank"}| A "Travel Use Case" implementation for the EUDI Wallet that demonstrates how the EUDI Wallet works in a "Travel" business scenario. The EUDI Wallet is used for several purposes, such as presenting attestations (remotely and in proximity) and digitally signing documents. | Completed |
+|[Cross-border recruitment](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/55){:target="_blank"}| A "Cross-Border Recruitment Use Case" implementation for the EUDI Wallet that demonstrates how the EUDI Wallet works in a "Cross-Border Recruitment" business scenario. The EUDI Wallet is used for several purposes, such as presenting attestations (remotely and in proximity) when applying/on-boarding for a job and digitally signing a job contract. | In Progress |
 
 ## Releases
 The latest published versions of the key EUDI Wallet Reference Implementation components are summarised below:

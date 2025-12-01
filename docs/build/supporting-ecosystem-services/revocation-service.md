@@ -1,6 +1,6 @@
 # Revocation Status Provider
 
-The Revocation Status Provider (RSP) is a supporting ecosystem service responsible for providing the current revocation status of a PID and/or EAA. In other words, it’s the “source of truth” that tells verifiers whether a PID or EAA is still valid or has been revoked.
+The Revocation Status Provider (RSP) is a supporting ecosystem service responsible for providing the current revocation status of a PID and/or EAA. In other words, it's the "source of truth" that tells verifiers whether a PID or EAA is still valid or has been revoked.
 
 ## RSP role in the EUDI Wallet Ecosystem
 

@@ -24,7 +24,7 @@ Runtime and visual behaviour are configured via the `EudiRQESUiConfig` interface
 
 ## Installation
 
-Add the SDK dependency to your app’s `build.gradle` file:
+Add the SDK dependency to your app's `build.gradle` file:
 
 ```gradle
 dependencies {
@@ -100,8 +100,8 @@ This allows the RQES Service to redirect the user back to your app after authent
 
 Alternatively, you can use Android App Links [Google Documentation](https://developer.android.com/studio/write/app-link-indexing)
 
-You must extract the `code` query parameter from this redirect and pass it to the SDK (see “Resuming
-a Flow” below).
+You must extract the `code` query parameter from this redirect and pass it to the SDK (see "Resuming
+a Flow" below).
 
 #### Document Retrieval (Same Device Scenario)
 

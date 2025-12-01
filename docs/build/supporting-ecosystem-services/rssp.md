@@ -2,7 +2,7 @@
 
 An RSSP is the entity that provides the remote electronic signature service. It operates the backend infrastructure that:
 
-- stores and protects users’ signature keys;
+- stores and protects users' signature keys;
 - performs remote signature operations when the user requests a signature.
 
 ## Reference Implementation Signature Services
@@ -290,4 +290,4 @@ The complete source code, deployment instructions and configuration details for 
 
 - [eudi-srv-web-walletdriven-rpcentric-signer-qtsp-java](https://github.com/eu-digital-identity-wallet/eudi-srv-web-walletdriven-rpcentric-signer-qtsp-java) - RESTful API server that implements a Wallet-Driven and RP-Centric QTSP.
 - [eudi-srv-web-rpcentric-signer-sca-java](https://github.com/eu-digital-identity-wallet/eudi-srv-web-rpcentric-signer-sca-java) - REST API server implementing the RP-Centric SCA component. This implementation of the SCA serves as a component of a Relying Party (RP) web service and is used to sign documents.
-- [eudi-srv-web-rpcentric-signer-relyingparty-py](https://github.com/eu-digital-identity-wallet/eudi-srv-web-rpcentric-signer-relyingparty-py) - Relying Party (RP) Web Service that enables testing and validation of the RP-Centric remote signature flow. This service relies on the RP-Centric QTSP Service and on the RP-Centric SCA component, both operating within the RP environment. It implements an RP capable of interacting with the Wallet in RP-Centric rQES flows: it allows the user to select a sample document, initiates the Wallet’s signature process, and receives the resulting signed document.
+- [eudi-srv-web-rpcentric-signer-relyingparty-py](https://github.com/eu-digital-identity-wallet/eudi-srv-web-rpcentric-signer-relyingparty-py) - Relying Party (RP) Web Service that enables testing and validation of the RP-Centric remote signature flow. This service relies on the RP-Centric QTSP Service and on the RP-Centric SCA component, both operating within the RP environment. It implements an RP capable of interacting with the Wallet in RP-Centric rQES flows: it allows the user to select a sample document, initiates the Wallet's signature process, and receives the resulting signed document.

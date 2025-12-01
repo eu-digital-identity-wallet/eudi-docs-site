@@ -7,7 +7,7 @@ The TLP is a supporting ecosystem service responsible for creating, maintaining,
 The TLP is a supporting service responsible for the management, maintenance and publication of TLs used across the EUDI Wallet ecosystem. TLs form a critical trust infrastructure: they contain trust anchors (public keys and identifiers) for all entities that must be recognised as trusted by relying parties and other ecosystem components.
 
 A TLP ensures that the Wallet Providers, PID Providers, QEAA Providers, PuB-EAA Providers, Access Certificate Providers, and Registration Certificate Providers can be automatically and reliably verified by any stakeholder in the ecosystem.
-An entity’s trusted status is established by verifying its presence on the relevant TL.
+An entity's trusted status is established by verifying its presence on the relevant TL.
 
 TLPs operate at two levels:
 

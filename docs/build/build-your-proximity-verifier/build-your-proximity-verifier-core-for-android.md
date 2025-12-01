@@ -48,7 +48,7 @@ dependencies {
 
 ### Library Initialisation
 
-To create an instance of `EudiVerifier`, use the `EudiVerifier.Builder` class or invoke the `EudiVerifier.invoke` method from the companion object. This requires providing an `EudiVerifierConfig` object that specifies the verifier’s configuration.
+To create an instance of `EudiVerifier`, use the `EudiVerifier.Builder` class or invoke the `EudiVerifier.invoke` method from the companion object. This requires providing an `EudiVerifierConfig` object that specifies the verifier's configuration.
 
 ### Document Transfer
 

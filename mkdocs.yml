@@ -105,6 +105,7 @@ nav:
           - Online Verifier: test/online-verifier.md
           - Proximity Verifier: test/proximity-verifier.md
       - Use Cases:
+          - Use Cases: use-cases/index.md
           - Mobile Driving License:
               - Mobile Driving License: use-cases/mobile-driving-license/index.md
               - mDL Overview:

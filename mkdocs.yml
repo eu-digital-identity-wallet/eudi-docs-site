@@ -108,8 +108,8 @@ nav:
           - Use Cases: use-cases/index.md
           - Mobile Driving License:
               - Mobile Driving License: use-cases/mobile-driving-license/index.md
-              - mDL Overview:
-                  - mDL Overview: use-cases/mobile-driving-license/mdl-overview/index.md
+              - mDL Solution:
+                  - mDL Solution: use-cases/mobile-driving-license/mdl-overview/index.md
                   - Legal Basis: use-cases/mobile-driving-license/mdl-overview/legal-basis.md
                   - Standards and Protocols: use-cases/mobile-driving-license/mdl-overview/standards-and-protocols.md
               - mDL Architecture:

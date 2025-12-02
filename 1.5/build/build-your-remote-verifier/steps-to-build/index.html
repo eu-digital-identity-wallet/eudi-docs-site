@@ -3367,7 +3367,7 @@ docker-compose down
       VERIFIER_JAR_SIGNING_KEY_KEYSTORE: file:///keystore.jks
 </code></pre>
 <h3 id="mount-external-keystore-to-be-used-with-authorization-request-signing">Mount external keystore to be used with Authorization Request signing</h3>
-<p>When property <code>VERIFIER_JAR_SIGNING_KEY</code> is set to <code>LoadFromKeystore</code> the service can be configured (as described <a href="../configure/#when-verifier_jar_signing_key-is-set-to-loadfromkeystore-the-following-environment-variables-must-also-be-configured">here</a>) to read from a keystore the certificate used for signing authorization requests. 
+<p>When property <code>VERIFIER_JAR_SIGNING_KEY</code> is set to <code>LoadFromKeystore</code> the service can be configured (as described <a href="../configure/#setting-verifier_jar_signing_key-to-loadfromkeystore">here</a>) to read from a keystore the certificate used for signing authorization requests. 
 To provide an external keystore mount it to the path designated by the value of property <code>VERIFIER_JAR_SIGNING_KEY_KEYSTORE</code>.   </p>
 <p><strong>Example:</strong></p>
 <pre><code class="language-yaml">  verifier:

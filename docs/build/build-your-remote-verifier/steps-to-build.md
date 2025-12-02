@@ -50,7 +50,7 @@ The 'verifier' service can be configured by setting its [configuration propertie
 ```
 
 ### Mount external keystore to be used with Authorization Request signing 
-When property `VERIFIER_JAR_SIGNING_KEY` is set to `LoadFromKeystore` the service can be configured (as described [here](./configure.md#when-verifier_jar_signing_key-is-set-to-loadfromkeystore-the-following-environment-variables-must-also-be-configured)) to read from a keystore the certificate used for signing authorization requests. 
+When property `VERIFIER_JAR_SIGNING_KEY` is set to `LoadFromKeystore` the service can be configured (as described [here](./configure.md#setting-verifier_jar_signing_key-to-loadfromkeystore)) to read from a keystore the certificate used for signing authorization requests. 
 To provide an external keystore mount it to the path designated by the value of property `VERIFIER_JAR_SIGNING_KEY_KEYSTORE`.   
 
 **Example:**

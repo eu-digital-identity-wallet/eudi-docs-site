@@ -75,6 +75,7 @@ Testing is organised across multiple levels to validate functionality, performan
 ## Test Tools
 
 The following table summarises the tools used in the applicable test types:
+
 | Test Type | Tools | 
 | --- | --- | 
 | Unit | _SonarCloud_ |

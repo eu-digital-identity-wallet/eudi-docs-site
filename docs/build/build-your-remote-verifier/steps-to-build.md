@@ -1,6 +1,12 @@
 # Steps to Build your Verifier
 
-## How to build and run
+## How to Build Backend
+
+Download the repository locally using:
+
+```bash
+git clone git@github.com:eu-digital-identity-wallet/eudi-srv-web-verifier-endpoint-23220-4-kt.git
+```
 
 To start the service locally you can execute 
 ```bash
@@ -10,6 +16,16 @@ To build a local docker image of the service execute
 ```bash
 ./gradlew bootBuildImage
 ```
+
+## How to Build the UI
+
+Download the repository locally using:
+
+```bash
+git clone git@github.com:eu-digital-identity-wallet/eudi-web-verifier.git
+```
+
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
 ## Run all verifier components together
 

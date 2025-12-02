@@ -1,1 +1,0 @@
-<meta http-equiv="refresh" content="0; url=./Wallet Application Level/Build the App/" />

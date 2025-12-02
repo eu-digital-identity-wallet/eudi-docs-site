@@ -4,16 +4,16 @@
 
 As a Wallet Provider you can find here practical, step-by-step guides and technical specifications for implementing a Wallet supporting the mDL.
 
-:link: [Discover the wallet provider guides](./Wallet Provider/)
+  [Discover the wallet provider guides](./wallet-provider/getting-started.md)
 
 ## mDL Issuer Guide
 
 As an mDL Issuer you can find here practical, step-by-step guides and technical specifications for implementing an mDL Issuing Authority.
 
-:link: [Discover the mDL issuer guides](./mDL Issuer/)
+  [Discover the mDL issuer guides](./mdl-issuer/getting-started.md)
 
 ## mDL Verifier Guide
 
 As an mDL Verifier you can find here practical, step-by-step guides and technical specifications for implementing an mDL Reader and mDL Remote Verifier.
 
-:link: [Discover the mDL verifier guides](./mDL Verifier/)
+  [Discover the mDL verifier guides](./mdl-verifier/getting-started.md)

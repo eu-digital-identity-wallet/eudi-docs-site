@@ -7,7 +7,7 @@ Below you can find an overview of the user functionality provided by the EUDI Wa
 
 The EUDI Wallet uses a set of standards and technical specifications essential for its implementation. These provide the foundation needed to ensure secure issuance, presentation, authentication, signing and certification of digital identity credentials.
 
-For a comprehensive set of standards and technical specifications (STS), visit the [Essential Standards and Technical Specifications (STS)](https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/latest/technical-specifications/){:target="_blank"} section of the Architecture Reference Framework (ARF).
+For a comprehensive set of standards and technical specifications (STS), visit the [Essential Standards and Technical Specifications (STS)](https://eudi.dev/latest/technical-specifications/) section of the Architecture Reference Framework (ARF).
 
 The following table indicates the credential formats supported by the EUDI Wallet Reference Implementation. 
 
@@ -17,38 +17,36 @@ The following table indicates the credential formats supported by the EUDI Walle
 | `SD-JWT-VC` | Draft (IETF / OpenID Foundation) | Credential format extending JSON Web Tokens with selective disclosure for web-native verifiable credentials. | 
 
 
-
-
 ## Features
 
 The following table provides a high-level overview of the key user functionalities supported by the EUDI Wallet Reference Implementation.
 
 | Features | Description | Status | 
 | --- | --- | --- |
-| [**Issuance**](#issuance) | Issuance of verifiable credentials | In Progress|
-| [**Presentation**](#presentation) | Presentation of verifiable credentials | In Progress|
-| [**rQES**](#rqes) | Electronic signing with EUDI Wallet | Completed |
-| [**Transaction Logs**](#transaction-logs) | Log of historic transactions executed by the EUDI Wallet | In Progress|
-| [**Request data deletion from RPs**](#request-data-deletion-from-rps) | Users requesting data deletion from Relying Parties they have previously interacted with |Planned |
-| [**Report unlawful or suspicious requests to DPA(s)**](#report-unlawful-or-suspicious-requests) | Users reporting suspicious data requests to national Data Protection Authorities |Planned |
-| [**Attestation Revocation**](#attestation-revocation) | Revoking issued attestations | Completed |
-| [**Pseudonyms**](#pseudonyms) | Using pseudonyms (i.e. passkeys) for authentication | Planned |
-| [**Wallet Revocation**](#wallet-revocation) | Revoking wallet instance | Planned |
-| [**Wallet to Wallet interaction**](#wallet-to-wallet) | Enabling the exchange of PID/attestations between two EUDI Wallets | Planned|
-| [**Wallet Backup and Restore**](#wallet-backup-and-restore) | Supporting procedures for backing up and restoring attestations of an EUDI Wallet | Planned |
-| [**Migrate to a different wallet**](#migrate-to-a-different-wallet) | Supporting procedures for migrating attestations to a different EUDI Wallet |Planned |
-| [**Support for ZKP**](#support-for-zkp) | Supporting Zero-Knowledge Proofs in EUDI Wallet interactions |Planned|
+| [Issuance](#issuance) | Issuance of verifiable credentials | In Progress|
+| [Presentation](#presentation) | Presentation of verifiable credentials | In Progress|
+| [rQES](#rqes) | Electronic signing with EUDI Wallet | Completed |
+| [Transaction Logs](#transaction-logs) | Log of historic transactions executed by the EUDI Wallet | In Progress|
+| [Request data deletion from RPs](#request-data-deletion-from-rps) | Users requesting data deletion from Relying Parties they have previously interacted with |Planned |
+| [Report unlawful or suspicious requests to DPA(s)](#report-unlawful-or-suspicious-requests) | Users reporting suspicious data requests to national Data Protection Authorities |Planned |
+| [Attestation Revocation](#attestation-revocation) | Revoking issued attestations | Completed |
+| [Pseudonyms](#pseudonyms) | Using pseudonyms (i.e. passkeys) for authentication | Planned |
+| [Wallet Revocation](#wallet-revocation) | Revoking wallet instance | Planned |
+| [Wallet to Wallet](#wallet-to-wallet) | Enabling the exchange of PID/attestations between two EUDI Wallets | Planned|
+| [Wallet Backup and Restore](#wallet-backup-and-restore) | Supporting procedures for backing up and restoring attestations of an EUDI Wallet | Planned |
+| [Migrate to a different wallet](#migrate-to-a-different-wallet) | Supporting procedures for migrating attestations to a different EUDI Wallet |Planned |
+| [Support for ZKP](#support-for-zkp) | Supporting Zero-Knowledge Proofs in EUDI Wallet interactions |Planned|
 
 You can explore the [EUDI Wallet Reference Implementation Roadmap](https://github.com/orgs/eu-digital-identity-wallet/projects/24){:target="_blank"} for more details about features and enhancements that are currently being developed or planned for future implementation.
 
 
 The following sections provide detailed features supported by the EUDI Wallet Reference Implementation, grouped by functional area.
 
-### _Issuance_ 
+### Issuance
 
 This covers applicable issuance flows in alignment with OpenID4VCI. Expand to explore detailed functional specifications for the 'Issuance' capabilities.
 
-The 'Issuance' functionality is aligned with the OpenID4VCI protocol and is continuously updated to align with the [evolving standards and protocols](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/64){:target="_blank"}._
+The 'Issuance' functionality is aligned with the OpenID4VCI protocol and is continuously updated to align with the [evolving standards and protocols](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/77){:target="_blank"}.
 
 
 | Feature | Description | Status |
@@ -58,17 +56,17 @@ The 'Issuance' functionality is aligned with the OpenID4VCI protocol and is cont
 | [Pre-authorisation code flow](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/41){:target="_blank"} | Issuance decoupled from the user's authorisation, as it is performed outside of the issuance flow | Completed|
 | [Batch Issuance](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/18){:target="_blank"} | Issuance of multiple instances of the same credential type | Completed|
 | [Attestation Re-Issuance](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/52){:target="_blank"} | Enabling the re-issuance of Personal Identification Data (PID)/attestation before its expiration | Planned|
-| [Alignment to latest version of the standard](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/64){:target="_blank"} | Enhancements to issuance functionalities as detailed by the latest version of the OpenID4VCI standard | In Progress|
+| [Alignment to latest version of the standard](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/77){:target="_blank"} | Enhancements to issuance functionalities as detailed by the latest version of the OpenID4VCI standard | In Progress|
 | [Alignment to latest version of the HAIP profile](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/69){:target="_blank"} | Enhancements to issuance, remote presentation and trust management as detailed by the HAIP v1.0 profile | Planned|
 
 
 ---
-### _Presentation_
+### Presentation
 
 This covers applicable presentation flows in alignment with OpenID4VP and ISO/IEC 18013-5. Expand to explore detailed functional specifications for the 'Presentation' capabilities.
  
 
-The 'Presentation' functionality is aligned with the OpenID4VCP protocol (for remote presentation flows) and is continuously updated to align with the [evolving standards and protocols](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/64){:target="_blank"}._
+The 'Presentation' functionality is aligned with the OpenID4VCP protocol (for remote presentation flows) and is continuously updated to align with the [evolving standards and protocols](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/64){:target="_blank"}.
 
 | Feature | Description | Status |
 | --- | --- | --- |
@@ -80,7 +78,7 @@ The 'Presentation' functionality is aligned with the OpenID4VCP protocol (for re
 | [Alignment to latest version of the standard](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/64){:target="_blank"} | This provides enhancements to presentation functionalities as detailed by the latest version of the OpenID4VP standard (v1.0). | Completed|
 
 ---
-### _rQES_
+### rQES
 
 This covers scenarios for Remote qualified signatures. Expand to explore detailed functional specifications for the 'rQES' capabilities.
 
@@ -92,7 +90,7 @@ This covers scenarios for Remote qualified signatures. Expand to explore detaile
 | [Document Retrieval (Wallet-Driven flows)](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/80){:target="_blank"} | A planned scenario for retrieving the document to be signed from the corresponding Relying Party, instead of from the device's file system ('wallet-centric' model for rQES) | Completed |
 
 ---
-### _Pseudonyms_
+### Pseudonyms
 
 This covers utilising passkeys through the EUDI Wallet for authentication purposes. Expand to explore detailed functional specifications for the 'Pseudonyms' capabilities.
 
@@ -102,7 +100,7 @@ This covers utilising passkeys through the EUDI Wallet for authentication purpos
 | [Pseudonym functionality](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/26){:target="_blank"} | Pseudonyms allow EUDI Wallet users to be identified by service provider/relying parties without revealing any personal information. | Planned |
 
 ---
-### _Transaction Logs_
+### Transaction Logs
 
 EUDI Wallet Privacy Dashboard provides a record of transactions (i.e. data exchanges) executed through the EUDI Wallet. Expand to explore detailed functional specifications for the 'Transaction Logs (Privacy Dashboard)' capabilities.
 
@@ -114,7 +112,7 @@ EUDI Wallet Privacy Dashboard provides a record of transactions (i.e. data excha
 
 ---
 
-### _Request data deletion from RPs_
+### Request data deletion from RPs
 
 This covers Users requesting data deletion from Relying Parties they have previously interacted with.
 
@@ -126,7 +124,7 @@ This covers Users requesting data deletion from Relying Parties they have previo
 
 ---
 
-### _Report unlawful or suspicious requests_
+### Report unlawful or suspicious requests
 
 Users report a Relying Party to the competent national Data Protection Authority where an allegedly unlawful or suspicious request for data is received.
 
@@ -138,7 +136,7 @@ Users report a Relying Party to the competent national Data Protection Authority
 
 ---
 
-### _Attestation Revocation_
+### Attestation Revocation
 
 This covers attestations revoked by the issuer. Expand to explore detailed functional specifications for the 'Attestation Revocation' capabilities.
 
@@ -147,7 +145,7 @@ This covers attestations revoked by the issuer. Expand to explore detailed funct
 | [Handling attestation revocation](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/4){:target="_blank"}| This provides attestation revocation support for the reference implementation including support from the issuer, verifier and wallet. | Completed |
 
 ---
-### _Wallet Revocation_
+### Wallet Revocation
 
 This covers wallet instances revoked by the wallet provider. Expand to explore detailed functional specifications for the 'Wallet Revocation' capabilities.
 
@@ -158,18 +156,18 @@ This covers wallet instances revoked by the wallet provider. Expand to explore d
 
 ---
 
-### _Wallet to Wallet_
+### Wallet to Wallet
 
 An EUDI Wallet User can request that another EUDI Wallet User share an attestation of attributes using their EUDI Wallet Instances when they are in close proximity. Expand to explore detailed functional specifications for 'Wallet to Wallet' interaction capabilities.
  
 
 | Feature | Description | Status |
 | --- | --- | --- |
-|[Wallet to Wallet](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/30){:target="_blank"}| An EUDI Wallet User can request that another EUDI Wallet User share an attestation of attributes using their EUDI Wallet Instances when they are in close proximity. | Planned |
+|[Wallet to Wallet Communication](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/30){:target="_blank"}| An EUDI Wallet User can request that another EUDI Wallet User share an attestation of attributes using their EUDI Wallet Instances when they are in close proximity. | Planned |
 
 
 ---
-### _Wallet Backup and Restore_
+### Wallet Backup and Restore
 
 This covers backing up and restoring attestations of an EUDI Wallet. Expand to explore detailed functional specifications for 'Backup and Restore' interaction capabilities. 
 
@@ -179,7 +177,7 @@ This covers backing up and restoring attestations of an EUDI Wallet. Expand to e
 |[Wallet Backup & Restore](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/5){:target="_blank"}| This covers procedures for backing up the attestations a wallet unit contains. | Planned |
 
 ---
-### _Migrate to a different wallet_
+### Migrate to a different wallet
 
 This covers migrating attestations to a different EUDI Wallet. Expand to explore detailed functional specifications for 'Migration' capabilities.
 
@@ -191,7 +189,7 @@ This covers migrating attestations to a different EUDI Wallet. Expand to explore
 
 ---
 
-### _Support for ZKP_
+### Support for ZKP
 
 This enables the support of Zero-Knowledge Proofs (ZKP).
 
@@ -218,7 +216,7 @@ For further attestations supported by the EUDI Wallet Reference Implementation y
 
 ## Business Demos
 
-### _Business Demos_
+### Business Demos
 
 A set of demo implementations are available that mock business flows in different contexts and demonstrate the EUDI Wallet functionalities in real-life scenarios. 
 

@@ -45,7 +45,7 @@ nav:
           - Feature Map: reference-implementation/feature-map.md
           - Roadmap: reference-implementation/roadmap.md
           - Repositories: reference-implementation/repositories-list.md
-          - Quality Assurance: reference-implementation/quality-assurance.md
+          - Code Quality Assurance: reference-implementation/quality-assurance.md
       - Build:
           - Build: build/index.md
           - Build your Wallet:

@@ -4,11 +4,11 @@ The EUDI Wallet Reference Implementation uses a modular architecture with busine
 
 The EUDI Wallet Reference Implementation includes the following components:
 
-- 📚 [Libraries and other software components needed by the framework](#libraries)
-- 🛡️ [Verifier mobile native applications and services for proximity and remote flows](#verifier-apps-and-services)
-- 📝 [Issuer applications and services](#issuing-apps-and-services)
-- 📱 [EUDI Wallet mobile native applications for issuing, proximity and remote flows](#eudi-wallet-mobile-native-applications)
-- ✍️ [Remote electronic signing applications and services](#signing-apps-and-services)
+- [Libraries and other software components needed by the framework](#libraries).
+- [Verifier mobile native applications and services for proximity and remote flows](#verifier-apps-and-services).
+- [Issuer applications and services](#issuing-apps-and-services).
+- [EUDI Wallet mobile native applications for issuing, proximity and remote flows](#eudi-wallet-mobile-native-applications).
+- [Remote electronic signing applications and services](#signing-apps-and-services).
 
 
 ## Libraries

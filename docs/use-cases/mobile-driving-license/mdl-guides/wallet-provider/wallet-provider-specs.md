@@ -38,8 +38,8 @@ Number of VCs per issuance request
 ## Time of Issuance
 |Specification |Optionality |Description and Reference |
 |---|---|---|
-| Immediate Issuance | Optional (1) | Refer to Issuer relevant specification |
-| Deferred Issuance | Optional (1) | Refer to Issuer relevant specification |
+| Immediate Issuance | Optional [^1] | Refer to Issuer relevant specification |
+| Deferred Issuance | Optional [^1] | Refer to Issuer relevant specification |
 
 ## Additional issuance flows
 
@@ -103,15 +103,15 @@ Number of VCs per issuance request
 
 |Specification |Optionality |Description and Reference |
 |---|---|---|
-| NFC | Conditional (1) | According to Table 1 in ISO/IEC 18013-5 |
-| QR Code | Conditional (1) | According to Table 1 in ISO/IEC 18013-5 |
+| NFC | Conditional [^1] | According to Table 1 in ISO/IEC 18013-5 |
+| QR Code | Conditional [^1] | According to Table 1 in ISO/IEC 18013-5 |
 
 ## NFC Device engagement technology support for Proximity Presentation Flow
 
 |Specification |Optionality |Description and Reference |
 |---|---|---|
-| Static Handover | Conditional (2) | According to section 6.3.2.3 in ISO/IEC 18013-5, if the EUDI Wallet supports NFC for device engagement then it shall support Static Handover, Negotiated Handover, or both. |
-| Negotiated Handover | Conditional (2) | As above |
+| Static Handover | Conditional [^2] | According to section 6.3.2.3 in ISO/IEC 18013-5, if the EUDI Wallet supports NFC for device engagement then it shall support Static Handover, Negotiated Handover, or both. |
+| Negotiated Handover | Conditional [^2] | As above |
 
 ## Data Retrieval Methods for Proximity Presentation Flow
 
@@ -130,8 +130,8 @@ Number of VCs per issuance request
 
 |Specification |Optionality |Description and Reference |
 |---|---|---|
-| NFC | Conditional (1) | According to Table 2 in ISO/IEC 18013-5 |
-| BLE | Conditional (1) | According to Table 2 in ISO/IEC 18013-5 |
+| NFC | Conditional [^1] | According to Table 2 in ISO/IEC 18013-5 |
+| BLE | Conditional [^1] | According to Table 2 in ISO/IEC 18013-5 |
 | Wi-Fi Aware | Optional | According to Table 2 in ISO/IEC 18013-5 |
 
 ## Data Device Retrieval using BLE for Proximity Presentation Flow
@@ -181,6 +181,6 @@ Number of VCs per issuance request
 | Session Transcript | Optional | Refer to Remote Verifier relevant specification <br/>Refer above for optionality |
 | SerializedOrigin in Session Transcript | Optional | Refer above for optionality <br/>Annex C.5 in ISO/IEC 18013-57 states that the mdoc (wallet) shall use the origin received from the user agent to determine the SerializedOrigin value. If the mdoc (wallet) does not receive the origin from the user agent, it shall abort the transaction. |
 
-<sup>(1) Support for at least one of these methods is mandatory</sup> 
+[^1]: Support for at least one of these methods is mandatory.
 
-<sup>(2) Support for one of the handover methods or both</sup> 
+[^2]: Support for one of the handover methods or both.

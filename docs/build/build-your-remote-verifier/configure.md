@@ -7,7 +7,8 @@ The Verifier Endpoint application can be configured using the following *environ
 Variable: `SPRING_PROFILES_ACTIVE`  
 Description: Comma separated list of Spring Profiles to activate  
 Available profiles:
-* `self-signed`: Configures a Ktor HttpClient that trusts self-signed certificates and performs no hostname verification.
+
+- `self-signed`: Configures a Ktor HttpClient that trusts self-signed certificates and performs no hostname verification.
 
 Variable: `SPRING_WEBFLUX_BASEPATH`  
 Description: Context path for the Verifier Endpoint application.  
@@ -18,11 +19,11 @@ Description: Port for the HTTP listener of the Verifier Endpoint application.
 Default value: `8080`
 
 Variable: `VERIFIER_ORIGINALCLIENTID`  
-Description: Client Id of the Verifier Endpoint application **without** the Client Id prefix.
+Description: Client Id of the Verifier Endpoint application **without** the Client Id prefix.<br>
 Default value: `Verifier`
 
 Variable: `VERIFIER_CLIENTIDPREFIX`  
-Description: Client Id Prefix used by the Verifier Endpoint application.
+Description: Client Id Prefix used by the Verifier Endpoint application.<br>
 Possible values: `pre-registered`, `x509_san_dns`, `x509_hash`  
 Default value: `pre-registered`
 
@@ -138,7 +139,7 @@ Description: Comma separated list of allowed and exposed HTTP Headers for cross-
 Default value: `*`
 
 Variable: `CORS_CREDENTIALS`  
-Description: Whether credentials (i.e. Cookies or Authorization Header) are allowed for cross-origin requests.
+Description: Whether credentials (i.e. Cookies or Authorization Header) are allowed for cross-origin requests.<br>
 Default value: `false`
 
 Variable: `CORS_MAXAGE`  
@@ -173,42 +174,42 @@ Each trust source is associated with a regex pattern, that will be used to match
 Each trust source can be configured with a List of Trusted Lists, a Keystore or both.
 The trust sources are configured using the environment variable `VERIFIER_TRUSTSOURCES` and are indexed starting from `0`. You can define multiple trust sources by incrementing the index (e.g., VERIFIER_TRUSTSOURCES_0_*, VERIFIER_TRUSTSOURCES_1_*, etc.)
 
-Variable: `VERIFIER_TRUSTSOURCES_0_PATTERN`
-Description: The regex pattern used to match the trust source to an issuer, based on a credential's docType/vct.
-Example: `eu.europa.ec.eudi.pid.*|urn:eu.europa.ec.eudi:pid:.*`
+Variable: `VERIFIER_TRUSTSOURCES_0_PATTERN`<br>
+Description: The regex pattern used to match the trust source to an issuer, based on a credential's docType/vct.<br>
+Example: `eu.europa.ec.eudi.pid.*|urn:eu.europa.ec.eudi:pid:.*`<br>
 
-Variable: `VERIFIER_TRUSTSOURCES_0_LOTL_LOCATION`
-Description: If present, the URL of the List of Trusted Lists from which to load the X509 Certificates for this trust source.
+Variable: `VERIFIER_TRUSTSOURCES_0_LOTL_LOCATION`<br>
+Description: If present, the URL of the List of Trusted Lists from which to load the X509 Certificates for this trust source.<br>
 
-Variable: `VERIFIER_TRUSTSOURCES_0_LOTL_REFRESHINTERVAL`
-Description: If present, a cron expression with the refresh interval of the List of Trusted Lists in seconds. If not present, the default value is `0 0 * * * * ` (every hour).
+Variable: `VERIFIER_TRUSTSOURCES_0_LOTL_REFRESHINTERVAL`<br>
+Description: If present, a cron expression with the refresh interval of the List of Trusted Lists in seconds. If not present, the default value is `0 0 * * * * ` (every hour).<br>
 Example: `0 0 */4 * * *`
 
-Variable: `VERIFIER_TRUSTSOURCES_0_LOTL_SERVICETYPEFILTER`
-Description: If present, the service type filter to be used when loading the List of Trusted Lists. If not present, all service types are loaded. Valid values are `PIDProvider`, `QEEAProvider` and `PubEAAProvider`.
+Variable: `VERIFIER_TRUSTSOURCES_0_LOTL_SERVICETYPEFILTER`<br>
+Description: If present, the service type filter to be used when loading the List of Trusted Lists. If not present, all service types are loaded. Valid values are `PIDProvider`, `QEEAProvider` and `PubEAAProvider`.<br>
 Example: `PIDProvider`
 
-Variable: `VERIFIER_TRUSTSOURCES_0_LOTL_KEYSTORE_PATH`
-Description: If present, the URL of the Keystore which contains the public key that was used to sign the List of Trusted Lists.
+Variable: `VERIFIER_TRUSTSOURCES_0_LOTL_KEYSTORE_PATH`<br>
+Description: If present, the URL of the Keystore which contains the public key that was used to sign the List of Trusted Lists.<br>
 Examples: `classpath:lotl-key.jks`, `file:///lotl-key.jks`
 
-Variable: `VERIFIER_TRUSTSOURCES_0_LOTL_KEYSTORE_TYPE`
-Description: Type of the Keystore which contains the public key that was used to sign the List of Trusted Lists.
+Variable: `VERIFIER_TRUSTSOURCES_0_LOTL_KEYSTORE_TYPE`<br>
+Description: Type of the Keystore which contains the public key that was used to sign the List of Trusted Lists.<br>
 Examples: `jks`, `pkcs12`
 
-Variable: `VERIFIER_TRUSTSOURCES_0_LOTL_KEYSTORE_PASSWORD`
-Description: If present and non-blank, the password of the Keystore which contains the public key that was used to sign the List of Trusted Lists.
+Variable: `VERIFIER_TRUSTSOURCES_0_LOTL_KEYSTORE_PASSWORD`<br>
+Description: If present and non-blank, the password of the Keystore which contains the public key that was used to sign the List of Trusted Lists.<br>
 
-Variable: `VERIFIER_TRUSTSOURCES_0_KEYSTORE_PATH`
-Description: If present, the URL of the Keystore from which to load the X509 Certificates for this trust source. 
+Variable: `VERIFIER_TRUSTSOURCES_0_KEYSTORE_PATH`<br>
+Description: If present, the URL of the Keystore from which to load the X509 Certificates for this trust source. <br>
 Examples: `classpath:trusted-issuers.jks`, `file:///trusted-issuers.jks`
 
-Variable: `VERIFIER_TRUSTSOURCES_0_KEYSTORE_TYPE`
-Description: Type of the Keystore from which to load the X509 Certificates for this trust source.
+Variable: `VERIFIER_TRUSTSOURCES_0_KEYSTORE_TYPE`<br>
+Description: Type of the Keystore from which to load the X509 Certificates for this trust source.<br>
 Examples: `jks`, `pkcs12`
 
-Variable: `VERIFIER_TRUSTSOURCES_0_KEYSTORE_PASSWORD`
-Description: If present and non-blank, the password of the Keystore from which to load the X509 Certificates for this trust source.
+Variable: `VERIFIER_TRUSTSOURCES_0_KEYSTORE_PASSWORD`<br>
+Description: If present and non-blank, the password of the Keystore from which to load the X509 Certificates for this trust source.<br>
 
 ### Proxy Configuration  
 

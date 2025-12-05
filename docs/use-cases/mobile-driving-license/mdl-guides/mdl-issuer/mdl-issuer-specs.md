@@ -49,8 +49,8 @@ The following are considered necessary capabilities of the reference implementat
 
 | Specification | Optionality | Description and Reference |
 | --- | --- | --- |
-| Immediate Issuance | Optional (1) | OpenID4VCI in section 8 (and 3.1) defines the Credential Endpoint as mandatory. This endpoint could respond with the requested credential either immediately or in a deferred manner. Therefore, the immediate issuance could be considered as optional. |
-| Deferred Issuance | Optional (1) | OpenID4VCI in section 9 (and 3.1) defines the Deferred Credential endpoint as optional. |
+| Immediate Issuance | Optional [^1] | OpenID4VCI in section 8 (and 3.1) defines the Credential Endpoint as mandatory. This endpoint could respond with the requested credential either immediately or in a deferred manner. Therefore, the immediate issuance could be considered as optional. |
+| Deferred Issuance | Optional [^1] | OpenID4VCI in section 9 (and 3.1) defines the Deferred Credential endpoint as optional. |
 
 ## Additional Issuance Flows
 
@@ -76,8 +76,8 @@ The following are considered necessary capabilities of the reference implementat
 
 | Specification | Optionality | Description and Reference |
 | --- | --- | --- |
-| Include Revocation status list bit position within the mDL structure | Optional (1) | The specification for mDL revocation via a dedicated status list is expected to be introduced in a future version of ISO/IEC 18013-5. Consequently, mDL Issuers for revocable mDLs shall include the necessary status list bit position within the mDL structure, in anticipation of this future standard update. <br/>ARF section 6.6.3.7 specifies that "Attestation Provider includes revocation information in the PID or attestation, if it is valid for longer than 24 hours." |
-| Include Revocation identifier reference within the mDL structure | Optional (1) | The specification for mDL revocation via an identifierlist is expected to be introduced in a future version of ISO/IEC 18013-5. Consequently, mDL Issuers for revocable mDLs shall include the necessary identifier reference     within the mDL structure, in anticipation of this future standard update. ARF section 6.6.3.7 specifies that "Attestation Provider includes revocation information in the PID or attestation, if it is valid for longer than 24 hours." |
+| Include Revocation status list bit position within the mDL structure | Optional [^1] | The specification for mDL revocation via a dedicated status list is expected to be introduced in a future version of ISO/IEC 18013-5. Consequently, mDL Issuers for revocable mDLs shall include the necessary status list bit position within the mDL structure, in anticipation of this future standard update. <br/>ARF section 6.6.3.7 specifies that "Attestation Provider includes revocation information in the PID or attestation, if it is valid for longer than 24 hours." |
+| Include Revocation identifier reference within the mDL structure | Optional [^1] | The specification for mDL revocation via an identifierlist is expected to be introduced in a future version of ISO/IEC 18013-5. Consequently, mDL Issuers for revocable mDLs shall include the necessary identifier reference     within the mDL structure, in anticipation of this future standard update. ARF section 6.6.3.7 specifies that "Attestation Provider includes revocation information in the PID or attestation, if it is valid for longer than 24 hours." |
 
 ## Trust Relationships
 
@@ -103,4 +103,4 @@ The following are considered necessary capabilities of the reference implementat
 | --- | --- | --- |
 | A Member State, other than the one issuing a driving license, imposing a driving disqualification shall immediately notify the Member State which issued the driving license | Excluded / not supported | [4<sup>th</sup> Driving License Directive] in the last sentence of Annex I, Part C mandates the notification obligations of Member States. This requirement is expected to be fulfilled in an out-of-band method and therefore is excluded from the mDL Use Case specifications. |
 
-<sup>(1) Support for one of the methods or both.</sup> 
+[^1]: Support for one of the methods or both.

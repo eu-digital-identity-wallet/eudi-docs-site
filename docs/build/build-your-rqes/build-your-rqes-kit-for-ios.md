@@ -6,7 +6,7 @@ The EUDI rQES Kit for iOS provides the essential functionality needed to enable 
 
 ## Requirements
 
-- iOS 16 or higher
+- iOS 16 or higher.
 
 ## Installation
 
@@ -131,5 +131,5 @@ let signAlgorithm = SigningAlgorithmOID.ECDSA_SHA256
 let signedDocuments = try await authorizedCredential.signDocuments(signAlgorithmOID: signAlgorithm)
 ```
 ## Source code
-The source code is available on GitHub [eudi-lib-ios-rqes-kit](https://github.com/eu-digital-identity-wallet/eudi-lib-ios-rqes-kit).
+[Build your rQES SDK UI for iOS](https://github.com/eu-digital-identity-wallet/eudi-lib-ios-rqes-kit).
 

@@ -23,9 +23,9 @@ It enables Wallet implementers to test non-qualified remote signing workflows.
 
 #### TrustProvider Signer Service
 
-For testing purposes, there is a hosted instance of the [Reference Implementation TrustProvider Signer service](https://trustprovider.signer.eudiw.dev/login).
+For testing purposes, there is a hosted instance of the [Reference Implementation TrustProvider Signer service](https://trustprovider.signer.eudiw.dev/login){:target="_blank"}.
 
-The complete source code, deployment instructions and configuration details for the TrustProvider Signer Reference Implementation are publicly available in the GitHub repository at [eudi-srv-web-trustprovider-signer-java](https://github.com/eu-digital-identity-wallet/eudi-srv-web-trustprovider-signer-java).
+The complete source code, deployment instructions and configuration details for the TrustProvider Signer Reference Implementation are publicly available in the GitHub repository at [eudi-srv-web-trustprovider-signer-java](https://github.com/eu-digital-identity-wallet/eudi-srv-web-trustprovider-signer-java){:target="_blank"}.
 
 ### Wallet-Driven Signer
 
@@ -158,14 +158,14 @@ The Wallet-Driven Signer service provides a reference implementation of a QTSP (
 
 For testing purposes, a hosted instance of the Reference Implementation Wallet-Driven Signer service is available at:
 
-- [Wallet-Driven Signer Service](https://walletcentric.signer.eudiw.dev) - RESTful API server implementing both the SCA and QTSP endpoints, serving as the wallet-centric backend components for the EUDI Wallet (and for any other Wallets wishing to test this flow);
-- [Wallet-Driven Signer Relying Party](https://walletcentric.signer.eudiw.dev/rp/) - Relying Party web interface that allows users to test the Wallet-Driven signature flow by signing PDF, JSON, XML, and TXT documents using the EUDI Wallet (or any other Wallets wishing to test it).
+- [Wallet-Driven Signer Service](https://walletcentric.signer.eudiw.dev){:target="_blank"} - RESTful API server implementing both the SCA and QTSP endpoints, serving as the wallet-centric backend components for the EUDI Wallet (and for any other Wallets wishing to test this flow).
+- [Wallet-Driven Signer Relying Party](https://walletcentric.signer.eudiw.dev/rp/){:target="_blank"} - Relying Party web interface that allows users to test the Wallet-Driven signature flow by signing PDF, JSON, XML, and TXT documents using the EUDI Wallet (or any other Wallets wishing to test it).
 
 The complete source code, deployment instructions and configuration details for the Wallet-Driven Signer Reference Implementation are publicly available in the GitHub repositories at:
 
-- [eudi-srv-web-walletdriven-rpcentric-signer-qtsp-java](https://github.com/eu-digital-identity-wallet/eudi-srv-web-walletdriven-rpcentric-signer-qtsp-java) - RESTful API server that implements a Wallet-Driven and RP-Centric QTSP.
-- [eudi-srv-web-walletdriven-signer-external-sca-java](https://github.com/eu-digital-identity-wallet/eudi-srv-web-walletdriven-signer-external-sca-java) - REST API server implementing the Wallet-driven external SCA component. It integrates with the Wallet-Driven QTSP.
-- [eudi-srv-web-walletdriven-signer-relyingparty-py](https://github.com/eu-digital-identity-wallet/eudi-srv-web-walletdriven-signer-relyingparty-py) - Relying Party (RP) Web Service that enables testing and validation of the Wallet-driven remote signature flow. This service implements an RP that interacts with the Wallet in Wallet-Driven rQES flows. It allows the user to select a sample document, triggers the Wallet signature flow, and receives the resulting signed document.
+- [eudi-srv-web-walletdriven-rpcentric-signer-qtsp-java](https://github.com/eu-digital-identity-wallet/eudi-srv-web-walletdriven-rpcentric-signer-qtsp-java){:target="_blank"} - RESTful API server that implements a Wallet-Driven and RP-Centric QTSP.
+- [eudi-srv-web-walletdriven-signer-external-sca-java](https://github.com/eu-digital-identity-wallet/eudi-srv-web-walletdriven-signer-external-sca-java){:target="_blank"} - REST API server implementing the Wallet-driven external SCA component. It integrates with the Wallet-Driven QTSP.
+- [eudi-srv-web-walletdriven-signer-relyingparty-py](https://github.com/eu-digital-identity-wallet/eudi-srv-web-walletdriven-signer-relyingparty-py){:target="_blank"} - Relying Party (RP) Web Service that enables testing and validation of the Wallet-driven remote signature flow. This service implements an RP that interacts with the Wallet in Wallet-Driven rQES flows. It allows the user to select a sample document, triggers the Wallet signature flow, and receives the resulting signed document.
 
 ### Relying Party Centric Signer
 
@@ -284,10 +284,10 @@ The RP-Centric Signer service provides a reference implementation of a QTSP (Aut
 
 For testing purposes, a hosted instance of the Reference Implementation RP-Centric Signer service is available at:
 
-- [RP-Centric Signer Service](https://rpcentric.signer.eudiw.dev/tester) - Relying Party web interface that allows users to test the RP-Centric signature flow by signing PDF, JSON, XML, and TXT documents using the EUDI Wallet (or any other Wallets wishing to test it).
+- [RP-Centric Signer Service](https://rpcentric.signer.eudiw.dev/tester){:target="_blank"} - Relying Party web interface that allows users to test the RP-Centric signature flow by signing PDF, JSON, XML, and TXT documents using the EUDI Wallet (or any other Wallets wishing to test it).
 
 The complete source code, deployment instructions and configuration details for the RP-Centric Signer Reference Implementation are publicly available in the GitHub repositories at:
 
-- [eudi-srv-web-walletdriven-rpcentric-signer-qtsp-java](https://github.com/eu-digital-identity-wallet/eudi-srv-web-walletdriven-rpcentric-signer-qtsp-java) - RESTful API server that implements a Wallet-Driven and RP-Centric QTSP.
-- [eudi-srv-web-rpcentric-signer-sca-java](https://github.com/eu-digital-identity-wallet/eudi-srv-web-rpcentric-signer-sca-java) - REST API server implementing the RP-Centric SCA component. This implementation of the SCA serves as a component of a Relying Party (RP) web service and is used to sign documents.
-- [eudi-srv-web-rpcentric-signer-relyingparty-py](https://github.com/eu-digital-identity-wallet/eudi-srv-web-rpcentric-signer-relyingparty-py) - Relying Party (RP) Web Service that enables testing and validation of the RP-Centric remote signature flow. This service relies on the RP-Centric QTSP Service and on the RP-Centric SCA component, both operating within the RP environment. It implements an RP capable of interacting with the Wallet in RP-Centric rQES flows: it allows the user to select a sample document, initiates the Wallet's signature process, and receives the resulting signed document.
+- [eudi-srv-web-walletdriven-rpcentric-signer-qtsp-java](https://github.com/eu-digital-identity-wallet/eudi-srv-web-walletdriven-rpcentric-signer-qtsp-java){:target="_blank"} - RESTful API server that implements a Wallet-Driven and RP-Centric QTSP.
+- [eudi-srv-web-rpcentric-signer-sca-java](https://github.com/eu-digital-identity-wallet/eudi-srv-web-rpcentric-signer-sca-java){:target="_blank"} - REST API server implementing the RP-Centric SCA component. This implementation of the SCA serves as a component of a Relying Party (RP) web service and is used to sign documents.
+- [eudi-srv-web-rpcentric-signer-relyingparty-py](https://github.com/eu-digital-identity-wallet/eudi-srv-web-rpcentric-signer-relyingparty-py){:target="_blank"} - Relying Party (RP) Web Service that enables testing and validation of the RP-Centric remote signature flow. This service relies on the RP-Centric QTSP Service and on the RP-Centric SCA component, both operating within the RP environment. It implements an RP capable of interacting with the Wallet in RP-Centric rQES flows: it allows the user to select a sample document, initiates the Wallet's signature process, and receives the resulting signed document.

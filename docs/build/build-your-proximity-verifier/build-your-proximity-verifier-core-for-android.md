@@ -54,7 +54,7 @@ To create an instance of `EudiVerifier`, use the `EudiVerifier.Builder` class or
 
 Currently, the library supports document transfer via:
 
-- offline transfer between devices over Bluetooth Low Energy (BLE), compliant with ISO 18013-5
+- offline transfer between devices over Bluetooth Low Energy (BLE), compliant with ISO 18013-5.
 - device engagement through QR code scanning.
 
 To instantiate a `TransferManager`, use the method `EudiVerifier.createTransferManager`.

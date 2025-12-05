@@ -7,7 +7,7 @@ The EUDI rQES Core SDK provides the foundational service logic for enabling Remo
 This SDK provides the core functionality for an EUDI Wallet to interact with a remote Qualified Electronic Signature (rQES) service. It handles service authorisation, credential authorisation, and document signing.
 ## Requirements
 
-Android 10 (API level 29) or higher
+Android 10 (API level 29) or higher.
 
 ## Installation
 
@@ -167,4 +167,4 @@ You can also sign without explicitly calling authorizeCredential:
 val signedDocumentsAlt = authorizedService.signDocuments(credentialAuthorizationCode).getOrThrow()
 ```
 ## Source code
-The source code is available on GitHub: [eudi-lib-android-rqes-core](https://github.com/eu-digital-identity-wallet/eudi-lib-android-rqes-core/).
+[Build yourrQES SDK UI for Android](https://github.com/eu-digital-identity-wallet/eudi-lib-android-rqes-core/).

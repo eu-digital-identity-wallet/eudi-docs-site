@@ -2,9 +2,9 @@
 
 As part of the testing tools, we offer an issuer that allows you to test various issuance flows of OpenID4VCI with your wallet:
 
-- Credential Offer
-- Credential Offer Pre-Authorisation
-- Credential Offer Deferred
+- Credential Offer.
+- Credential Offer Pre-Authorisation.
+- Credential Offer Deferred.
 - Credential Offer Dynamic.
   
 You can test the issuance of credentials in both mDoc and SD-JWT formats. The test tools include a variety of credential types.

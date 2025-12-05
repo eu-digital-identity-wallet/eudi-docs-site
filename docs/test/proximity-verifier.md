@@ -11,8 +11,8 @@ The Proximity Verifier app is provided to help developers test and validate thei
 Starting from the [original code](https://github.com/openwallet-foundation-labs/identity-credential/commit/0b9b31ef63047762e10300e23a22f6d7dcfb6d15){:target="_blank"} of the `appverifier`, the following modifications have been made (the code is not currently publicly available):
 
  - Support for requesting EU documents:
-   - Personal Identification Data (PID) document, according to the ARF PID RuleBook
-   - Age Verification (Pseudonym) document
+     - Personal Identification Data (PID) document, according to the ARF PID RuleBook
+     - Age Verification (Pseudonym) document
  - IACA Certificates: Updated to support EUDI Wallet IACAs as trusted certificates
  - Reader Authentication Certificate.
 

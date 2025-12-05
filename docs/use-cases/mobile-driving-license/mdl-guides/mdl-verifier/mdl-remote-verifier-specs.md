@@ -4,7 +4,7 @@ The following are considered necessary capabilities of the reference implementat
 ## mDL Verifiable Credentials
 |Specification |Optionality |Description and Reference |
 |---|---|---|
-| ISO/IEC 18013-5 (CBOR) | Mandatory | - [4<sup>th</sup> Driving License Directive] Annex I, Part C [ARF], High Level Requirement:  mDL_01 <br/>- [ARF] "Annex 3.02 - mDL Rulebook" |
+| ISO/IEC 18013-5 (CBOR) | Mandatory | [4<sup>th</sup> Driving License Directive] Annex I, Part C [ARF], High Level Requirement:  mDL_01 <br/>[ARF] "Annex 3.02 - mDL Rulebook" |
 | mDL Data Model | Mandatory | As above |
 
 ## Presentation Interface (PI)
@@ -48,7 +48,7 @@ The following are considered necessary capabilities of the reference implementat
 |Specification |Optionality |Description and Reference |
 |---|---|---|
 | Support encrypted Authorization Response | Mandatory | OpenID4VP section 5.10 specifies that the Wallet could require the Verifier to encrypt the Request Object |
-| End-User authentication using SIOP v2 | Excluded / Not Supported | OpenID4VP Appendix C specifies the presentation of Credentials combined with the End-User authentication using [SIOPv2]. It has already been removed from HAIP (editor's copy, draft 4, not yet published)  via [https://github.com/openid/oid4vc-haip/pull/186](https://github.com/openid/oid4vc-haip/pull/186 "https://github.com/openid/oid4vc-haip/pull/186") |
+| End-User authentication using SIOP v2 | Excluded / Not Supported | OpenID4VP Appendix C specifies the presentation of Credentials combined with the End-User authentication using [SIOPv2]. It has already been removed from HAIP (editor's copy, draft 4, not yet published)  via [https://github.com/openid/oid4vc-haip/pull/186](https://github.com/openid/oid4vc-haip/pull/186 "https://github.com/openid/oid4vc-haip/pull/186"){:target="_blank"} |
 
 ## Digital Credentials API Retrieval
 

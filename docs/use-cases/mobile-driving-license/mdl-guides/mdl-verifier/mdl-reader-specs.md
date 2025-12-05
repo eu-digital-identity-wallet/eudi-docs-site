@@ -13,7 +13,7 @@ The specifications of the mDL reader are summarised in the table below.
 
 |Specification |Optionality |Description and Reference |
 |---|---|---|
-| Presentation Request (of verifiable credentials according to ISO/IEC 18013-5 standard) | Mandatory | [CIR 2024/2982](https://eur-lex.europa.eu/eli/reg_impl/2024/2982/oj) |
+| Presentation Request (of verifiable credentials according to ISO/IEC 18013-5 standard) | Mandatory | [CIR 2024/2982](https://eur-lex.europa.eu/eli/reg_impl/2024/2982/oj){:target="_blank"} |
 
 ## Topology
 

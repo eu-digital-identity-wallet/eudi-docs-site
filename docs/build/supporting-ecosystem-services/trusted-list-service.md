@@ -11,7 +11,7 @@ An entity's trusted status is established by verifying its presence on the relev
 
 TLPs operate at two levels:
 
-1. National TLs – created, signed and managed by Member States;
+1. National TLs – created, signed and managed by Member States,
 2. EU LoTL – a unified list created, signed and managed by the European Commission that aggregates all national TLs.
 
 The source of trust for the LoTL is the *Official Journal of the European Union* (OJEU).
@@ -22,7 +22,7 @@ The Reference Implementation TLP is designed solely to support experimentation, 
 
 ### Reference Implementation TLP service
 
-For testing purposes, there is a hosted instance of the [Reference Implementation TLP](https://trustedlist.serviceproviders.eudiw.dev/).
+For testing purposes, there is a hosted instance of the [Reference Implementation TLP](https://trustedlist.serviceproviders.eudiw.dev/){:target="_blank"}.
 
 It provides:
 
@@ -40,27 +40,27 @@ This service demonstrates the operational workflows of a TLP and can be used for
 
 The RI TLP service provides capabilities for the Member State (TSL Operator) to:
 
-- onboard and manage Trust Service Providers (TSPs) relevant to the EUDI Wallet ecosystem;
-- manage trust services associated with each TSP;
-- create, update and electronically sign the National TL;
-- publish the TL in a secure and accessible location;
+- onboard and manage Trust Service Providers (TSPs) relevant to the EUDI Wallet ecosystem,
+- manage trust services associated with each TSP,
+- create, update and electronically sign the National TL,
+- publish the TL in a secure and accessible location,
 - maintain TL metadata and multilingual information.
 
 ##### LoTL Management (for European Commission Operators)
 
 For the Commission, the TLP supports:
 
-- aggregating all TLs published by Member States;
-- creating and signing the EU LoTL;
-- managing LoTL metadata and multilingual content;
+- aggregating all TLs published by Member States,
+- creating and signing the EU LoTL,
+- managing LoTL metadata and multilingual content,
 - publishing the LoTL.
 
 ##### Trust Anchor Publication
 
 Each TL contains:
 
-- the public key (trust anchor) for each recognised entity;
-- the identifier of the entity;
+- the public key (trust anchor) for each recognised entity,
+- the identifier of the entity,
 - status information and service metadata.
 
 Relying Parties and Wallets use these trust anchors to verify:
@@ -80,21 +80,21 @@ The TLP supports three user roles:
 
 The TSL Operator manages the national TL by:
 
-- overseeing TSPs and trust services;
-- creating, editing, and signing TLs;
-- adding multilingual information;
+- overseeing TSPs and trust services,
+- creating, editing, and signing TLs,
+- adding multilingual information,
 - linking TSPs and services before generating the signed XML TL.
 
 The TSP User manages their own TSP records and trust services by:
 
-- creating and managing TSP entries;
-- creating and managing trust services;
+- creating and managing TSP entries,
+- creating and managing trust services,
 - maintaining multilingual service information. 
 
 The LoTL Operator is the only role who may:
 
-- create, update and sign the EU LoTL;
-- manage LoTL metadata and multilingual content;
+- create, update and sign the EU LoTL,
+- manage LoTL metadata and multilingual content,
 - aggregate TLs provided by Member States.
 
 ### Format of the TL and LoTL
@@ -103,7 +103,7 @@ The current Reference Implementation of the TLP focuses on demonstrating the fun
 
 ### Reference Implementation TLP deployment and configuration
 
-The complete source code, deployment instructions and configuration details for the TLP Reference Implementation are publicly available in the GitHub repository at [eudi-srv-web-trustedlist-manager-py](https://github.com/eu-digital-identity-wallet/eudi-srv-web-trustedlist-manager-py/).
+The complete source code, deployment instructions and configuration details for the TLP Reference Implementation are publicly available in the GitHub repository at [eudi-srv-web-trustedlist-manager-py](https://github.com/eu-digital-identity-wallet/eudi-srv-web-trustedlist-manager-py/){:target="_blank"}.
 
 The TLP can be run:
 

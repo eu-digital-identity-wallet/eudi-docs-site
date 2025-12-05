@@ -29,6 +29,11 @@ markdown_extensions:
   - footnotes
   - sane_lists
   - tables
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
 
 site_url: https://docs.eudi.dev
 repo_url: https://github.com/eu-digital-identity-wallet/eudi-docs-site
@@ -91,10 +96,10 @@ nav:
               - Build your rQES Kit for iOS:  build/build-your-rqes/build-your-rqes-kit-for-ios.md
           - Supporting Ecosystem Services:
               - Overview: build/supporting-ecosystem-services/index.md
-              - Trust List Service: build/supporting-ecosystem-services/trusted-list-service.md
+              - RP Registration Service: build/supporting-ecosystem-services/rp-registration-service.md
               - RSSP: build/supporting-ecosystem-services/rssp.md
               - Revocation Service: build/supporting-ecosystem-services/revocation-service.md
-              - RP Registration Service: build/supporting-ecosystem-services/rp-registration-service.md
+              - Trust List Service: build/supporting-ecosystem-services/trusted-list-service.md
       - Test:
           - Introduction: test/index.md
           - Wallet Application:

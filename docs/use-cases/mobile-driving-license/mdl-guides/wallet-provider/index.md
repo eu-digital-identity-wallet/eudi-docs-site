@@ -20,7 +20,7 @@ No new requirements are imposed by the mDL use case on EUDI wallets. However, fo
 - mDL support implementation, including attestation issuance and presentation flows,
 - the process of registering and notifying your entity as a Wallet Provider,
 - where to obtain the reference implementation libraries and SDKs,
-- tools and procedures necessary for conformance testing and validation of the implemented Wallet Solution
+- tools and procedures necessary for conformance testing and validation of the implemented Wallet Solution.
 
 ## Links to essential resources
 

@@ -4,30 +4,30 @@ This section includes a thorough description of the steps to build your own Issu
 
 ## 1. Python
 
-The Issuer was tested with
+The EUDIW Issuer was tested with
 
-+ Python v. 3.9.2
+- Python version 3.9.2
 
 and should only be used with Python 3.9 or 3.10.
 
-If you don't have it installed, download it from [here](https://www.python.org/downloads/){:target="_blank"} and follow the [Python Developer's Guide](https://devguide.python.org/getting-started/){:target="_blank"}.
+If you don't have it installed, please [download it](https://www.python.org/downloads/){:target="_blank"} and follow the [Python Developer's Guide](https://devguide.python.org/getting-started/){:target="_blank"}.
 
 ## 2. Flask
 
-The Issuer was tested with
+The EUDIW Issuer was tested with
 
-+ Flask v. 2.3
+- Flask v. 2.3
 
 and should only be used with Flask v. 2.3 or higher.
 
-To install [Flask](https://flask.palletsprojects.com/en/2.3.x/){:target="_blank"}, follow the [Installation Guide](https://flask.palletsprojects.com/en/2.3.x/installation/){:target="_blank"}.
+To install [Flask](https://flask.palletsprojects.com/en/2.3.x/){:target="_blank"}, please follow the [Installation Guide](https://flask.palletsprojects.com/en/2.3.x/installation/){:target="_blank"}.
 
-## 3. Run your Issuer
+## 3. How to run the EUDIW Issuer?
 
-To run the Issuer, follow these simple steps (some of which may have already been completed when installing Flask) for Linux/macOS or Windows.
+To run the EUDIW Issuer, please follow these simple steps (some of which may have already been completed when installing Flask) for Linux/macOS or Windows.
 
 
-1. Clone the Issuer repository:
+1. Clone the EUDIW Issuer repository:
 
     ```shell
     git clone git@github.com:eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py.git
@@ -42,17 +42,18 @@ To run the Issuer, follow these simple steps (some of which may have already bee
 
 3. Activate the environment:
 
-	Linux/macOS
+   Linux/macOS
 
-	   ```shell
-	   . .venv/bin/activate
-	   ```
+    ```shell
+    . .venv/bin/activate
+    ```
 
-	Windows
+    Windows
 
-	   ```shell
-	   . .venv\Scripts\Activate
-	   ```
+    ```shell
+    . .venv\Scripts\Activate
+    ```
+
 
 4. Install or upgrade _pip_
 
@@ -67,34 +68,46 @@ To run the Issuer, follow these simple steps (some of which may have already bee
     pip install -r app/requirements.txt
     ```
 
-6. Setup secrets
+6. Setup env
    
-   -  Copy ```app/app_config/__config_secrets.py``` to ```app/app_config/config_secrets.py``` and modify secrets.
+   -  Copy ```app/.env.example``` to ```app/.env``` and modify variables.
+
+   ```shell
+   cp app/.env.example app/.env
+   ```
 
 7. Service Configuration
 
-   - Configure the service according to [documentation](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/blob/main/api_docs/configuration.md){:target="_blank"}
+- Configure the service according to [documentation](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/blob/main/api_docs/configuration.md){:target="_blank"}  
 
-8. Run the Issuer 
+8. Install Authorization Server
 
-    In the root directory of the clone repository, insert one of the following command lines to run the Issuer.
+- Install the service according to [Issuer Authorization Server](https://github.com/eu-digital-identity-wallet/eudi-srv-issuer-oidc-py/blob/main/install.md){:target="_blank"}
 
-    + Linux/macOS/Windows (on `http://127.0.0.1:5000` or `http://localhost:5000`)
+9. Install Issuer Front-End
+
+- Install the service according to [Issuer Front-End](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-frontend-eudiw-py/blob/main/install.md){:target="_blank"}
+
+10. Run the EUDIW Issuer Back-end
+
+    On the root directory of the clone repository, insert one of the following command lines to run the EUDIW Issuer.
+
+    - Linux/macOS/Windows (on <http://127.0.0.1:5000> or <http://localhost:5000>)
 
     ```
     flask --app app run
     ```
 
-    + Linux/macOS/Windows (on `http://127.0.0.1:5000` or `http://localhost:5000` with flag debug)
+    - Linux/macOS/Windows (on <http://127.0.0.1:5000> or <http://localhost:5000> with flag debug)
 
     ```
     flask --app app run --debug
     ```
     
-## 4. Run your local Issuer over HTTPS
+## 4. Running your local EUDIW Issuer over HTTPS
 
 1. Generate a self signed certificate and a private key
-   + Linux/macOS
+   - Linux/macOS
      
        Example: 
         ```
@@ -102,7 +115,7 @@ To run the Issuer, follow these simple steps (some of which may have already bee
        printf "[dn]\nCN=localhost\n[req]\ndistinguished_name = dn\n[EXT]\nsubjectAltName=IP.1:127.0.0.1\nkeyUsage=digitalSignature\nextendedKeyUsage=serverAuth")
         ```
 
-    + Windows
+    - Windows
 
         Create the file localhost.conf using the following as an example:
         ```
@@ -132,134 +145,124 @@ To run the Issuer, follow these simple steps (some of which may have already bee
         ```
         
 2. Add certificate to environment variables
-   + Linux/macOS
+   - Linux/macOS
        ```
         export REQUESTS_CA_BUNDLE="/path/to/certificate"
        ```
   
-   + Windows
+   - Windows
         ```
         set REQUESTS_CA_BUNDLE="\path\to\certificate"
         ```
   
-3. Run the Issuer with certificate and key
+3. Run the EUDIW Issuer with certificate and key
     ```
     flask --app app run --cert=cert.pem --key=key.pem
     ```
     
-## 5. Make your local Issuer available on the Internet (optional)
+## 5. Make your local EUDIW Issuer available on the Internet (optional)
 
-If you want to make your local Issuer available on the Internet, we recommend to use NGINX reverse proxy and certbot (to generate an HTTPS certificate).
+If you want to make your local EUDIW Issuer available on the Internet, we recommend to use NGINX reverse proxy and certbot (to generate an HTTPS certificate).
 
 ### 5.1 Install and configure NGINX
 
-1. Follow the [installation guide](https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/){:target="_blank"}
+1. Follow the [installation guide](https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/){:target="_blank"}.
 
-2. Configure your local Issuer. For example, use the following Nginx configuration file (for a Linux installation):
+2. Configure your local EUDIW Issuer. For example, use the following Nginx configuration file (for a Linux installation):
 
-	```nginx
-	server {
-		server_name FQDN; # Change to the FQDN you want to use
+```nginx
+server {
+    server_name FQDN; # Change to the FQDN you want to use
 
-		listen 80;
-		access_log /var/log/nginx/issuer.eudiw.access.log;
-		error_log /var/log/nginx/issuer.eudiw.error.log;
-		root /var/www/html;
+    listen 80;
+    access_log /var/log/nginx/issuer.eudiw.access.log;
+    error_log /var/log/nginx/issuer.eudiw.error.log;
+    root /var/www/html;
 
-	# Recommended
-		proxy_busy_buffers_size   512k;
-		proxy_buffers   4 512k;
-		proxy_buffer_size   256k;
+# Recommended
+    proxy_busy_buffers_size   512k;
+    proxy_buffers   4 512k;
+    proxy_buffer_size   256k;
 
-	# Provider backend
-		location / {
-			# The proxy_pass directive assumes that your local Issuer is running at http://127.0.0.1:5000/. 
-			# If not, adjust it accordingly.
-			proxy_pass                              http://127.0.0.1:5000/;
-			proxy_set_header Host                   $http_host;
-			proxy_set_header X-Real-IP              $remote_addr;
-			proxy_set_header X-Forwarded-For        $proxy_add_x_forwarded_for;
-			proxy_set_header X-Forwarded-Proto      $scheme;
-		}
-	}
-	```
+# Provider backend
+    location / {
+        # The proxy_pass directive assumes that your local EUDIW Issuer is running at http://127.0.0.1:5000/. 
+        # If not, please adjust it accordingly.
+        proxy_pass                              http://127.0.0.1:5000/;
+        proxy_set_header Host                   $http_host;
+        proxy_set_header X-Real-IP              $remote_addr;
+        proxy_set_header X-Forwarded-For        $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto      $scheme;
+    }
+}
+```
 
 3. Restart the Nginx server
 
 
-### 5.2 Install and run certbot to get a free HTTPS certificate
+### 5.2 Install and run certbot to gef a free HTTPS certificate
 
 1. Follow the [installation guide](https://certbot.eff.org){:target="_blank"}
 
-2. Run `certbot` to get a free HTTPS certificate. The `certbot` will also configure the Issuer Nginx configuration file with the HTTPS certificate
+2. Run `certbot` to get a free HTTPS certificate. The `certbot` will also configure the EUDIW Issuer Nginx configuration file with the HTTPS certificate.
 
 3. Restart the Nginx server and goto `https:\\FQDN\` (FQDN configured in the Nginx configuration file)
 
 
 ## 6. Docker
 
-To run the Issuer in Docker, follow these steps:
+This guide provides step-by-step instructions for deploying the **EUDIW Issuer** service using **Docker Compose v2**.
 
-1. Install Docker following the official [instructions](https://docs.docker.com/engine/install/){:target="_blank"} for your operating system
+1. Install docker
 
-2. Download the [Dockerfile](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/blob/main/Dockerfile){:target="_blank"}
-
-3. Build the Docker: `sudo docker build -t eudiw-issuer .`
-
-4. Create 2 directories to be mounted:
-
-	   1. First directory named `config_secrets`
-		  
-		  This directory will have the cert.pem and key.pem generated in Section 4 above
-	   
-		  As well as the config_secrets.py based on this [example](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/blob/main/app/app_config/__config_secrets.py){:target="_blank"}
+    Ensure you have Docker installed on your system. Follow the **official installation instructions** for your operating system:
+    [https://docs.docker.com/engine/install/](https://docs.docker.com/engine/install/){:target="_blank"}
 
 
-	   2. Second directory named `pid-issuer`, inside will be a directory `cert` and `privKey`
-		  
-		  The `cert` directory has the certificates of the trusted CAs in PEM format as well as the Document/Credential signer (DS) certificates in DER format
+2. Configure Docker Compose
 
-		  The `privKey` directory has the Document/Credential signer (DS) private keys
+    The service's container orchestration is managed by the `docker-compose.yml` file.
+
+    - **Customize the configuration:** Review and modify the local `docker-compose.yml` file to align with your specific deployment requirements (e.g., exposed ports, service names, volumes).
+    - *Reference file:* [docker-compose.yml](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/blob/main/docker-compose.yml){:target="_blank"}
+
+3. Set Up Environment Variables
+
+    Service parameters and sensitive settings are managed through an environment file.
+
+    - **Create the environment file:** We recommend copying the example file to create your local configuration.
+
+    - **Update variables:** Edit the newly created `app/.env` file with your specific settings and credentials.
+        - *Reference example:* [.env example](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/blob/main/app/.env.example){:target="_blank"}
 
 
-		Example:
-	   
+4. Pull the Docker Image
 
-		```bash
-		docker-issuer
-		├── Dockerfile
-		├── config_secrets
-		│   ├── config_secrets.py
-		│   ├── cert.pem
-		│   └── key.pem
-		└── pid-issuer
-			├── cert
-			│   ├── PID-DS-0001_UT_cert.der
-			│   └── PIDIssuerCAUT01.pem
-			└── privKey
-				└── PID-DS-0001_UT.pem
-		```
-
-5. Run Docker
-
-    If running a basic configuration without EIDAS node or Dynamic presentation, their respective variables can be removed from the run command below.
-    
-    ```bash
-    sudo docker run -d \
-    --name eudiw-issuer \
-    -e SERVICE_URL="https://your.service.url/" \
-    -e EIDAS_NODE_URL="https://your.eidas.node.url/" \
-    -e DYNAMIC_PRESENTATION_URL="https://your.dynamic.presentation.url/" \
-    -v ./config_secrets:/root/secrets \
-    -v ./pid-issuer:/etc/eudiw/pid-issuer \
-    -p 5000:5000 \
-    eudiw-issuer
+    ```
+    docker compose pull
     ```
 
-6. Docker logs
+5. Run the 
 
-    Issuer logs in real time: `sudo docker logs -f eudiw-issuer`
-    All logs: `sudo docker logs eudiw-issuer`
+    Start the EUDIW Issuer backend in detached mode (runs in the background):
 
-7. Stop Docker Issuer
-   `sudo docker stop eudiw-issuer`
+    ```
+    docker compose up -d
+    ```
+
+6. Check Logs
+
+    To confirm the service is running correctly and to monitor its output in real-time for troubleshooting, use the following command:
+    ```
+    docker compose logs -f
+    ```
+
+7. Deploy Related Services
+
+To complete the full EUDIW ecosystem, you will also need to deploy the associated Front-end and Authorization Server components.
+
+- **Front-end Installation:** Follow the guide to install the web issuing front-end component using Docker.
+    - [Front-end Deployment Guide](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-frontend-eudiw-py/blob/main/install.md#6-docker){:target="_blank"}.
+
+- **Authorization Server Installation:** Follow the guide to install the OIDC authorization server component using Docker.
+    - [Authorization Server Deployment Guide](https://github.com/eu-digital-identity-wallet/eudi-srv-issuer-oidc-py/blob/main/install.md#6-docker){:target="_blank"}.

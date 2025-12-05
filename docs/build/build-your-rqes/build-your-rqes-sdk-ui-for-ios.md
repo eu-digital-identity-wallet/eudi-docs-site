@@ -8,7 +8,7 @@ The entry point is the `EudiRQESUi` actor, which defines methods for configuring
 
 ## Requirements
 
-- **iOS 16** or higher
+- **iOS 16** or higher.
 
 ## Installation
 
@@ -104,7 +104,7 @@ It is the application's responsibility to retrieve the `code` query parameter fr
 </array>
 ```
 
-Alternatively, you can use universal app links with associated domains [Apple Documentation](https://developer.apple.com/documentation/xcode/supporting-associated-domains)
+Alternatively, you can use universal app links with associated domains [Apple Documentation](https://developer.apple.com/documentation/xcode/supporting-associated-domains){:target="_blank"}.
 
 Initialise the SDK by providing your configuration. You must first ensure instance availability before performing any actions.
 

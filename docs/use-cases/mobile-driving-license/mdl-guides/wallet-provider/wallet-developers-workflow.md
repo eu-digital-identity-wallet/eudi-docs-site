@@ -10,17 +10,17 @@ The reference implementation's preconditions listed in the relevant section on t
 
 Nevertheless, this section outlines essential integration dependencies and prerequisites for Member State organisations or entities mandated or recognised by Member States to successfully launch their EUDI Wallet Provider solution using the EUDI Wallet Reference Implementation for mDL support.
 
-**Platform Requirements**
+### Platform Requirements
 
 Your EUDI Wallet implementation must support the following platform specifications:
 
-**Android Implementation**
+#### Android Implementation
 
 - Target Operating Systems: Android 10.0+ (API 29+)
 - Programming Language: Kotlin
 - Development Framework: Native Android
 
-**iOS Implementation**
+#### iOS Implementation
 
 - Target Operating Systems: iOS 17+
 - Programming Language: Swift
@@ -40,12 +40,12 @@ Your EUDI Wallet must support remote presentation flow with requirements as foll
 
 **Data retrieval not based on user agent (Digital Credentials API)**
 
-- Shall be according to ISO/IEC 18013-5 (CBOR), OpenID4VP v1.0 specification instead of ISO/IEC 18013-7 (Annex B) where OpenID4VP is used
+- Shall be according to ISO/IEC 18013-5 (CBOR), OpenID4VP v1.0 specification instead of ISO/IEC 18013-7 (Annex B) where OpenID4VP is used.
 
 **Data retrieval based on user agent (Digital Credentials API) - Optional**
 
-- According to ISO/IEC 18013-5 (CBOR), ISO/IEC 18013-7 (Annex C – Digital credentials API retrieval)
-- According to OpenID4VP (Appendix A. OpenID4VP over the Digital Credentials API)
+- According to ISO/IEC 18013-5 (CBOR), ISO/IEC 18013-7 (Annex C – Digital credentials API retrieval).
+- According to OpenID4VP (Appendix A. OpenID4VP over the Digital Credentials API).
 
 **Proximity Presentation Flow Implementation**
 
@@ -54,7 +54,7 @@ Your EUDI Wallet must support proximity presentation flow of the mDL according t
 
 ## Trust and Security Implementation
 
-Your EUDI Wallet implementation must include the following trust and security mechanisms.
+Your EUDI Wallet implementation must include the following trust and security mechanisms:
 
 **Trust Relationships**
 

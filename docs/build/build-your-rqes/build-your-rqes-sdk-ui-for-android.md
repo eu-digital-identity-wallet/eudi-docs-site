@@ -20,7 +20,7 @@ Runtime and visual behaviour are configured via the `EudiRQESUiConfig` interface
 
 ## Requirements
 
-- Android 10 (API level 29) or higher
+- Android 10 (API level 29) or higher.
 
 ## Installation
 
@@ -72,9 +72,9 @@ class RQESConfigImpl(
 
 You can optionally override:
 
-- `translations` – to provide custom localization
-- `themeManager` – to adjust the UI appearance
-- `printLogs` – to enable or disable SDK logging
+- `translations` – to provide custom localization.
+- `themeManager` – to adjust the UI appearance.
+- `printLogs` – to enable or disable SDK logging.
 
 ### 2. Configure OAuth and Deep Links
 
@@ -98,7 +98,7 @@ This allows the RQES Service to redirect the user back to your app after authent
 </intent-filter>
 ```
 
-Alternatively, you can use Android App Links [Google Documentation](https://developer.android.com/studio/write/app-link-indexing)
+Alternatively, you can use Android App Links [Google Documentation](https://developer.android.com/studio/write/app-link-indexing).
 
 You must extract the `code` query parameter from this redirect and pass it to the SDK (see "Resuming
 a Flow" below).

@@ -2,7 +2,7 @@
 
 ## Minimum Device Requirements
 
-- Any device that supports iOS 16.0
+- Any device that supports iOS 16.0.
 
 ## Setup
 
@@ -22,7 +22,7 @@
 
 4. To run the app on a device, select your app scheme and press Run. Additionally, you need to supply your own provisioning profile and signing certificate in the Signing & Capabilities tab of your app target.
 
-You will also need to download the Android Verifier app. More information can be found on the [Proximity Verifier page](../proximity-verifier.md)
+You will also need to download the Android Verifier app. More information can be found on the [Proximity Verifier page](../proximity-verifier.md).
 
 ## App Launch
 

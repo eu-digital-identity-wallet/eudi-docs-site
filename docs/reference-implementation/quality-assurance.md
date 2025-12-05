@@ -7,7 +7,7 @@ Each release is planned and validated according to the agreed [roadmap milestone
 Releases undergo full verification and validation through a combination of **manual and automated testing**, with QA activities integrated across all development phases to detect and prevent defects early.
 
 All testing artefacts are managed in GitHub under: 
-[eu-digital-identity-wallet/eudi-doc-testing-application](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application){:target="_blank"}
+[eu-digital-identity-wallet/eudi-doc-testing-application](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application){:target="_blank"}.
 
 ## Code Quality Controls
 

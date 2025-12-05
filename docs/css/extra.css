@@ -35,3 +35,21 @@ tr:hover {
 .md-header__button.md-logo img, .md-header__button.md-logo svg {
     height: 2.7rem;
 }
+
+/* Make tables full-width and scrollable on small screens */
+.responsive-table {
+    width: 100%;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+/* Set consistent column widths */
+.responsive-table th:nth-child(1),
+.responsive-table td:nth-child(1) { width: 20%; }
+
+.responsive-table th:nth-child(2),
+.responsive-table td:nth-child(2) { width: 15%; }
+
+.responsive-table th:nth-child(3),
+.responsive-table td:nth-child(3) { width: 65%; }

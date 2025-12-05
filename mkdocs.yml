@@ -1,232 +1,154 @@
-site_name: EUDI Wallet Dev Hub
-site_url: https://eu-digital-identity-wallet.github.io/
-remote_branch: devhub
+site_name: European Digital Identity
 theme:
   name: material
-  font:
-    text: Roboto
-  logo: assets/logo_eudi_white.svg
-  favicon: assets/favicon.ico
   palette:
-    # Palette toggle for automatic mode
-    - media: "(prefers-color-scheme)"
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
       toggle:
-        icon: material/brightness-auto
+        icon: material/brightness-4
         name: Switch to light mode
-
-    # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
-
-    # Palette toggle for dark mode
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      toggle:
-        icon: material/brightness-4
-        name: Switch to system preference
-
   features:
-    - search.highlight
-    - search.suggest
-    - navigation.expand
     - navigation.tabs
     - navigation.tabs.sticky
+    - navigation.path
     - navigation.top
     - navigation.footer
-    - navigation.instant
     - navigation.indexes
+  logo: assets/logo_eudi_white.svg
+  favicon: assets/favicon.ico
 
 extra_css:
   - css/extra.css
 
 markdown_extensions:
   - footnotes
+  - sane_lists
   - tables
-  - abbr
-  - admonition
-  - def_list
-  - attr_list
-  - md_in_html
-  - pymdownx.arithmatex
-  - pymdownx.b64
-  - pymdownx.betterem
-  - pymdownx.blocks.admonition
-  - pymdownx.blocks.definition
-  - pymdownx.blocks.details
-  - pymdownx.blocks.html
-  - pymdownx.blocks.tab
-  - pymdownx.caret
-  - pymdownx.critic
-  - pymdownx.details
-  - pymdownx.emoji
-  - pymdownx.escapeall
-  - pymdownx.extra
-  - pymdownx.highlight
-  - pymdownx.inlinehilite
-  - pymdownx.keys
-  - pymdownx.magiclink
-  - pymdownx.mark
-  - pymdownx.pathconverter
-  - pymdownx.progressbar
-  - pymdownx.saneheaders
-  - pymdownx.smartsymbols
-  - pymdownx.snippets
-  - pymdownx.striphtml
-  - pymdownx.superfences
-  - pymdownx.tabbed
-  - pymdownx.tasklist:
-      custom_checkbox: true
-  - pymdownx.tilde
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
 
-extra:
-  generator: false
-  consent:
-    title: Cookie consent
-    description: >-
-      We use cookies to recognize your repeated visits and preferences, as well
-      as to measure the effectiveness of our documentation and whether users
-      find what they're searching for. With your consent, you're helping us to
-      make our documentation better.
-    
-plugins:
-  - search
-  - mkdocs-breadcrumbs-plugin:
-      delimiter: " / "  # separator between sections
-      log_level: "WARNING"  # "DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"
-      exclude_paths:
-        - "docs/mkdocs/**"
-        - "docs/mkdocs"
-        - "docs"
-      additional_index_folders:
-        - temp_dir
-      generate_home_index: false
-      use_page_titles: true
-      home_text: "Home"
-  - multirepo:
-      cleanup: true
-      keep_docs_dir: false
-#      nav_repos:
-#        - name: eudi-doc-architecture-and-reference-framework
-#          import_url: 'https://github.com/eu-digital-identity-wallet/eudi-doc-architecture-and-reference-framework?multi_docs=True&branch=main'
-#          imports:
-#            - '**/*.md'
-#            - '**/*.png'
-#        - name: eudi-web-booking-service-demo
-#          import_url: 'https://github.com/eu-digital-identity-wallet/eudi-web-booking-service-demo?multi_docs=True&branch=main'
-#          imports:
-#            - '**/*.md'
-#            - '**/*.png'
-#        - name: eudi-lib-android-wallet-core
-#          import_url: 'https://github.com/eu-digital-identity-wallet/eudi-lib-android-wallet-core?multi_docs=True&branch=main'
-#          imports:
-#            - '**/*.md'
-#
-#            - '**/*.png'
-#        - name: eudi-app-android-wallet-ui
-#          import_url: 'https://github.com/eu-digital-identity-wallet/eudi-app-android-wallet-ui?multi_docs=True&branch=main'
-#          imports:
-#            - '**/*.md'
-#            - '**/*.png'
-#        - name: eudi-lib-ios-wallet-kit
-#          import_url: 'https://github.com/eu-digital-identity-wallet/eudi-lib-ios-wallet-kit?multi_docs=True&branch=main'
-#          imports:
-#            - '**/*.md'
-#            - '**/*.png'
-#        - name: eudi-app-ios-wallet-ui
-#          import_url: 'https://github.com/eu-digital-identity-wallet/eudi-app-ios-wallet-ui?multi_docs=True&branch=main'
-#          imports:
-#            - '**/*.md'
-#            - '**/*.png'
-#        - name: eudi-srv-web-issuing-eudiw-py
-#          import_url: 'https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py?multi_docs=True&branch=main'
-#          imports:
-#            - '**/*.md'
-#            - '**/*.png'
-#        - name: eudi-web-verifier
-#          import_url: 'https://github.com/eu-digital-identity-wallet/eudi-web-verifier?multi_docs=True&branch=main'
-#          imports:
-#            - '**/*.md'
-#            - '**/*.png'
+site_url: https://docs.eudi.dev
+repo_url: https://github.com/eu-digital-identity-wallet/eudi-docs-site
+repo_name: eu-digital-identity-wallet/eudi-docs-site
 
 nav:
+  - European Digital Identity Wallet: https://eudi.dev/latest/
+  - Architecture and reference framework: https://eudi.dev/latest/architecture-and-reference-framework-main/
+  - Discussion topics: https://eudi.dev/latest/discussion-topics/
+  - Technical specifications: https://eudi.dev/latest/technical-specifications/
+  - Reference Implementation:
+      - Overview: 
+          - Overview: index.md
+          - Feature Map: reference-implementation/feature-map.md
+          - Roadmap: reference-implementation/roadmap.md
+          - Repositories: reference-implementation/repositories-list.md
+          - Code Quality Assurance: reference-implementation/quality-assurance.md
+      - Build:
+          - Build: build/index.md
+          - Build your Wallet:
+              - Build your Wallet: build/build-your-wallet/index.md
+              - Android:
+                  - Android: build/build-your-wallet/android/index.md
+                  - Wallet Application Level:
+                      - Build the App: build/build-your-wallet/android/wallet-application-level/index.md
+                      - Run with Remote Services: build/build-your-wallet/android/wallet-application-level/running-with-remote-services.md
+                      - Run with Local Services: build/build-your-wallet/android/wallet-application-level/running-with-local-services.md
+                      - Self-signed Certificates: build/build-your-wallet/android/wallet-application-level/self-signed-certificates.md
+                  - Library Level:
+                      - Introduction: build/build-your-wallet/android/library-level/index.md
+                      - Build the Core: build/build-your-wallet/android/library-level/build-the-core.md
+                      - Manage Documents: build/build-your-wallet/android/library-level/manage-documents.md
+              - iOS:
+                  - iOS: build/build-your-wallet/ios/index.md
+                  - Wallet Application Level:
+                      - Build the App: build/build-your-wallet/ios/wallet-application-level/index.md
+                      - Run with Remote Services: build/build-your-wallet/ios/wallet-application-level/running-with-remote-services.md
+                      - Run with Local Services: build/build-your-wallet/ios/wallet-application-level/running-with-local-services.md
+                      - Self-signed Certificates: build/build-your-wallet/ios/wallet-application-level/self-signed-certificates.md
+                  - Library Level:
+                      - Introduction: build/build-your-wallet/ios/library-level/index.md
+                      - Build the Kit: build/build-your-wallet/ios/library-level/build-the-kit.md
+                      - Manage Documents: build/build-your-wallet/ios/library-level/manage-documents.md
+          - Build your Issuer:
+              - Overview: build/build-your-issuer/index.md
+              - Steps to Build: build/build-your-issuer/steps-to-build.md
+              - Configure your Issuer: build/build-your-issuer/configure.md
+              - Add Attestations: build/build-your-issuer/new-attestation.md
+          - Build your Remote Verifier:
+              - Overview: build/build-your-remote-verifier/index.md
+              - Steps to Build: build/build-your-remote-verifier/steps-to-build.md
+              - Configure your Verifier: build/build-your-remote-verifier/configure.md 
+          - Build your Proximity Verifier:
+              - Overview: build/build-your-proximity-verifier/index.md
+              - Build your Proximity Verifier App for Android: build/build-your-proximity-verifier/build-your-proximity-verifier-app-for-android.md
+              - Build your Proximity Verifier Core for Android: build/build-your-proximity-verifier/build-your-proximity-verifier-core-for-android.md
+          - Build your rQES:
+              - Overview: build/build-your-rqes/index.md
+              - Build your rQES SDK UI for Android: build/build-your-rqes/build-your-rqes-sdk-ui-for-android.md
+              - Build your rQES Core for Android: build/build-your-rqes/build-your-rqes-core-for-android.md
+              - Build your rQES SDK UI for iOS: build/build-your-rqes/build-your-rqes-sdk-ui-for-ios.md
+              - Build your rQES Kit for iOS:  build/build-your-rqes/build-your-rqes-kit-for-ios.md
+          - Supporting Ecosystem Services:
+              - Overview: build/supporting-ecosystem-services/index.md
+              - RP Registration Service: build/supporting-ecosystem-services/rp-registration-service.md
+              - RSSP: build/supporting-ecosystem-services/rssp.md
+              - Revocation Service: build/supporting-ecosystem-services/revocation-service.md
+              - Trust List Service: build/supporting-ecosystem-services/trusted-list-service.md
+      - Test:
+          - Introduction: test/index.md
+          - Wallet Application:
+              - Wallet Application: test/wallet-application/index.md
+              - Android: test/wallet-application/android.md
+              - iOS: test/wallet-application/ios.md
+          - Issuer: test/issuer.md
+          - Online Verifier: test/online-verifier.md
+          - Proximity Verifier: test/proximity-verifier.md
+      - Use Cases:
+          - Use Cases: use-cases/index.md
+          - Mobile Driving License:
+              - Mobile Driving License: use-cases/mobile-driving-license/index.md
+              - mDL Solution:
+                  - mDL Solution: use-cases/mobile-driving-license/mdl-overview/index.md
+                  - Legal Basis: use-cases/mobile-driving-license/mdl-overview/legal-basis.md
+                  - Standards and Protocols: use-cases/mobile-driving-license/mdl-overview/standards-and-protocols.md
+              - mDL Architecture:
+                  - mDL Architecture: use-cases/mobile-driving-license/mdl-architecture/index.md
+                  - EUDI Wallet: use-cases/mobile-driving-license/mdl-architecture/eudi-wallet.md
+                  - Proximity Verifier: use-cases/mobile-driving-license/mdl-architecture/proximity-verifier.md
+                  - Remote Verifier Web: use-cases/mobile-driving-license/mdl-architecture/remote-verifier-web.md
+                  - mDL Issuing Authority: use-cases/mobile-driving-license/mdl-architecture/mdl-issuing-authority.md
+              - mDL Guides:
+                  - Introduction: use-cases/mobile-driving-license/mdl-guides/index.md
+                  - Wallet Provider:
+                      - Getting Started: use-cases/mobile-driving-license/mdl-guides/wallet-provider/index.md
+                      - Wallet Developers Workflow: use-cases/mobile-driving-license/mdl-guides/wallet-provider/wallet-developers-workflow.md
+                      - Wallet Provider Specs: use-cases/mobile-driving-license/mdl-guides/wallet-provider/wallet-provider-specs.md
+                  - mDL Issuer:
+                      - Getting Started: use-cases/mobile-driving-license/mdl-guides/mdl-issuer/index.md
+                      - mDL Issuance Workflow: use-cases/mobile-driving-license/mdl-guides/mdl-issuer/mdl-issuance-workflow.md
+                      - mDL Issuer Specs: use-cases/mobile-driving-license/mdl-guides/mdl-issuer/mdl-issuer-specs.md
+                      - mDL Revocation Specs: use-cases/mobile-driving-license/mdl-guides/mdl-issuer/mdl-revocation-specs.md
+                  - mDL Verifier: 
+                      - Getting Started: use-cases/mobile-driving-license/mdl-guides/mdl-verifier/index.md
+                      - mDL Verifier Workflow: use-cases/mobile-driving-license/mdl-guides/mdl-verifier/mdl-verifier-workflow.md
+                      - mDL Reader Specs: use-cases/mobile-driving-license/mdl-guides/mdl-verifier/mdl-reader-specs.md
+                      - mDL Remote Verifier Specs: use-cases/mobile-driving-license/mdl-guides/mdl-verifier/mdl-remote-verifier-specs.md
 
-  - Home: index.md
-#  - Getting Started:
-#      - Introduction: Getting Started.md
-#      - Build Wallet: Build Wallet.md
-#      - Build Issuer: Build Issuer.md
-#      - Build Verifier: Build Verifier.md
-#      - Demos:
-#           - Introduction: Demos.md
-#           - Travel Scenario: Travel Scenario.md
-#      - Regulation: Resources/Regulation.md
-#      - Architecture and Reference Framework: Resources/Architecture and Reference Implementation.md
-#      - Standards: Resources/Standards.md
-#      - Large-Scale Pilots: Resources/Large-Scale Pilots.md
-#  - Reference Implementation: 
-#      - Reference Implementation: Reference Implementation/index.md
-#      - Code Contributions: Reference Implementation/Code Contributions.md
-#      - Code of Conduct: Reference Implementation/Code of Conduct.md
-#      - Licensing: Reference Implementation/Licensing.md
-#      - Disclaimer: Reference Implementation/Disclaimer.md
-#      - Demos:
-#           - Demos: Reference Implementation/Demos/index.md
-#           - Travel Scenario: Reference Implementation/Demos/Travel Scenario.md
-  - Build:
-      - Build: Build/index.md
-      - Build your Wallet:
-          - Build your Wallet: Build/Build your Wallet/index.md
-          - Android:
-              - Wallet Application Level:
-                  - Build the App: Build/Build your Wallet/Android/Wallet Application Level/index.md
-                  - Run with Remote Services: Build/Build your Wallet/Android/Wallet Application Level/Running with Remote Services.md
-                  - Run with Local Services: Build/Build your Wallet/Android/Wallet Application Level/Running with Local Services.md
-                  - Self-signed Certificates: Build/Build your Wallet/Android/Wallet Application Level/Self-signed Certificates.md
-              - Library Level:
-                  - Library Level: Build/Build your Wallet/Android/Library Level/index.md
-                  - Build the Core: Build/Build your Wallet/Android/Library Level/Build the Core.md
-                  - Manage Documents: Build/Build your Wallet/Android/Library Level/Manage Documents.md
-          - iOS:
-              - Wallet Application Level:
-                  - Build the App: Build/Build your Wallet/iOS/Wallet Application Level/index.md
-                  - Run with Remote Services: Build/Build your Wallet/iOS/Wallet Application Level/Running with Remote Services.md
-                  - Run with Local Services: Build/Build your Wallet/iOS/Wallet Application Level/Running with Local Services.md
-                  - Self-signed Certificates: Build/Build your Wallet/iOS/Wallet Application Level/Self-signed Certificates.md
-              - Library Level:
-                  - Library Level: Build/Build your Wallet/iOS/Library Level/index.md
-                  - Build the Kit: Build/Build your Wallet/iOS/Library Level/Build the Kit.md
-                  - Manage Documents: Build/Build your Wallet/iOS/Library Level/Manage Documents.md
-      - Build your Issuer:
-          - Build your Issuer: Build/Build your Issuer/index.md
-          - Steps to Build: Build/Build your Issuer/Steps to Build.md
-          - Configure your Issuer: Build/Build your Issuer/Configure.md
-          - Add Attestations: Build/Build your Issuer/New Attestation.md
-      - Build your Verifier:
-          - Build your Verifier: Build/Build your Verifier/index.md
-          - Steps to Build: Build/Build your Verifier/Steps to Build.md
-          - Configure your Verifier: Build/Build your Verifier/Configure.md 
+extra:
+  version:
+    provider: mike
+    alias: true
 
-  - Test:
-      - Test: Test/index.md
-      - Wallet Application:
-          - Wallet Application: Test/Wallet Application/index.md
-          - Android: Test/Wallet Application/Android.md
-#              - Issue (Wallet Initiated): Test/Wallet Application/Android/Issue (Wallet Initiated).md
-#              - Issue (Credential Offer): Test/Wallet Application/Android/Issue (Credential Offer).md
-#              - Present (Same Device): Test/Wallet Application/Android/Present (Same Device).md
-#              - Present (Proximity): Test/Wallet Application/Android/Present (Proximity).md
-          - iOS: Test/Wallet Application/iOS.md
-#              - Issue (Wallet Initiated): Test/Wallet Application/iOS/Issue (Wallet Initiated).md
-#              - Issue (Credential Offer): Test/Wallet Application/iOS/Issue (Credential Offer).md
-#              - Present (Same Device): Test/Wallet Application/iOS/Present (Same Device).md
-#              - Present (Proximity): Test/Wallet Application/iOS/Present (Proximity).md
-      - Issuer: Test/Issuer.md
-      - Online Verifier: Test/Online Verifier.md
-      - Proximity Verifier: Test/Proximity Verifier.md
-  - Resources: 
-      - Resources: Resources/index.md
-  - Use Cases:
-      - mDL: Use Cases/Mobile Driving License.md
+plugins:
+  - mike
+  - tags
+  - privacy
+  - social

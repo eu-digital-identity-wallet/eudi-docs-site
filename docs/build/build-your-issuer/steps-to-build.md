@@ -42,13 +42,13 @@ To run the EUDIW Issuer, please follow these simple steps (some of which may hav
 
 3. Activate the environment:
 
-   Linux/macOS
+- Linux/macOS
 
     ```shell
     . .venv/bin/activate
     ```
 
-    Windows
+- Windows
 
     ```shell
     . .venv\Scripts\Activate
@@ -92,7 +92,7 @@ To run the EUDIW Issuer, please follow these simple steps (some of which may hav
 
     On the root directory of the clone repository, insert one of the following command lines to run the EUDIW Issuer.
 
-    - Linux/macOS/Windows (on <http://127.0.0.1:5000> or <http://localhost:5000>)
+    - Linux/macOS/Windows (on `http://127.0.0.1:5000` or `http://localhost:5000`)
 
     ```
     flask --app app run

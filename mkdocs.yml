@@ -56,6 +56,7 @@ nav:
           - Build your Wallet:
               - Build your Wallet: build/build-your-wallet/index.md
               - Android:
+                  - Android: build/build-your-wallet/android/index.md
                   - Wallet Application Level:
                       - Build the App: build/build-your-wallet/android/wallet-application-level/index.md
                       - Run with Remote Services: build/build-your-wallet/android/wallet-application-level/running-with-remote-services.md
@@ -66,6 +67,7 @@ nav:
                       - Build the Core: build/build-your-wallet/android/library-level/build-the-core.md
                       - Manage Documents: build/build-your-wallet/android/library-level/manage-documents.md
               - iOS:
+                  - iOS: build/build-your-wallet/ios/index.md
                   - Wallet Application Level:
                       - Build the App: build/build-your-wallet/ios/wallet-application-level/index.md
                       - Run with Remote Services: build/build-your-wallet/ios/wallet-application-level/running-with-remote-services.md

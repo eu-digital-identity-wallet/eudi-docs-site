@@ -81,8 +81,8 @@ The EUDI Wallet Reference Implementation includes the following components:
 
 | Repository | Description |
 |---|---|
-| [Token Status List (Kotlin)](https://github.com/eu-digital-identity-wallet/eudi-lib-kmp-statium){:target="_blank"} | Statium is a Kotlin multiplatform library supporting JVM and Android platforms. It implements the Token Status List Specification and allows callers to check the status of a 'Referenced Token' as defined in the specification, effectively enabling applications to verify if tokens are valid, revoked or in other states. |
-| [Token Status List (Swift)](https://github.com/eu-digital-identity-wallet/eudi-lib-ios-statium-swift){:target="_blank"} | Statium is a Swift library for iOS and macOS. It implements the Token Status List Specification and allows callers to check the status of a 'Referenced Token' as defined in the specification, effectively enabling applications to verify if tokens are valid, revoked or in other states.|
+| [Token Status List (Kotlin)](https://github.com/eu-digital-identity-wallet/eudi-lib-kmp-statium){:target="_blank"} | Statium is a Kotlin multiplatform library supporting JVM and Android platforms. It implements the Token Status List Specification and allows callers to check the status of a "Referenced Token" as defined in the specification, effectively enabling applications to verify if tokens are valid, revoked or in other states. |
+| [Token Status List (Swift)](https://github.com/eu-digital-identity-wallet/eudi-lib-ios-statium-swift){:target="_blank"} | Statium is a Swift library for iOS and macOS. It implements the Token Status List Specification and allows callers to check the status of a "Referenced Token" as defined in the specification, effectively enabling applications to verify if tokens are valid, revoked or in other states.|
 
 
 ### rQES: Low Level Libraries

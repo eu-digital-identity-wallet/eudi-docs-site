@@ -44,9 +44,9 @@ The following sections provide detailed features supported by the EUDI Wallet Re
 
 ### Issuance
 
-This covers applicable issuance flows in alignment with OpenID4VCI. Expand to explore detailed functional specifications for the 'Issuance' capabilities.
+This covers applicable issuance flows in alignment with OpenID4VCI. Expand to explore detailed functional specifications for the "Issuance" capabilities.
 
-The 'Issuance' functionality is aligned with the OpenID4VCI protocol and is continuously updated to align with the [evolving standards and protocols](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/77){:target="_blank"}.
+The "Issuance" functionality is aligned with the OpenID4VCI protocol and is continuously updated to align with the [evolving standards and protocols](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/77){:target="_blank"}.
 
 
 | Feature | Description | Status |
@@ -63,10 +63,10 @@ The 'Issuance' functionality is aligned with the OpenID4VCI protocol and is cont
 ---
 ### Presentation
 
-This covers applicable presentation flows in alignment with OpenID4VP and ISO/IEC 18013-5. Expand to explore detailed functional specifications for the 'Presentation' capabilities.
+This covers applicable presentation flows in alignment with OpenID4VP and ISO/IEC 18013-5. Expand to explore detailed functional specifications for the "Presentation" capabilities.
  
 
-The 'Presentation' functionality is aligned with the OpenID4VCP protocol (for remote presentation flows) and is continuously updated to align with the [evolving standards and protocols](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/64){:target="_blank"}.
+The "Presentation" functionality is aligned with the OpenID4VCP protocol (for remote presentation flows) and is continuously updated to align with the [evolving standards and protocols](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/64){:target="_blank"}.
 
 | Feature | Description | Status |
 | --- | --- | --- |
@@ -80,19 +80,19 @@ The 'Presentation' functionality is aligned with the OpenID4VCP protocol (for re
 ---
 ### rQES
 
-This covers scenarios for Remote qualified signatures. Expand to explore detailed functional specifications for the 'rQES' capabilities.
+This covers scenarios for Remote qualified signatures. Expand to explore detailed functional specifications for the "rQES" capabilities.
 
 | Feature | Description | Status |
 | --- | --- | --- |
-| [Wallet-Driven rQES (external SCA)](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/15){:target="_blank"} | Remote qualified signatures in a Wallet-driven model, using an external 'Signature Creation Application' | Completed |
-| [Wallet-Driven rQES (internal SCA)](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/27){:target="_blank"} | Remote qualified signatures in a Wallet-driven model, using an internal (i.e. wallet component) 'Signature Creation Application' | Completed |
+| [Wallet-Driven rQES (external SCA)](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/15){:target="_blank"} | Remote qualified signatures in a Wallet-driven model, using an external "Signature Creation Application" | Completed |
+| [Wallet-Driven rQES (internal SCA)](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/27){:target="_blank"} | Remote qualified signatures in a Wallet-driven model, using an internal (i.e. wallet component) "Signature Creation Application" | Completed |
 | [RP-Driven rQES (internal SCA)](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/16){:target="_blank"} | Remote qualified signatures in a RP-driven model | Completed |
-| [Document Retrieval (Wallet-Driven flows)](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/80){:target="_blank"} | A planned scenario for retrieving the document to be signed from the corresponding Relying Party, instead of from the device's file system ('wallet-centric' model for rQES) | Completed |
+| [Document Retrieval (Wallet-Driven flows)](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/80){:target="_blank"} | A planned scenario for retrieving the document to be signed from the corresponding Relying Party, instead of from the device's file system ("wallet-centric" model for rQES) | Completed |
 
 ---
 ### Pseudonyms
 
-This covers utilising passkeys through the EUDI Wallet for authentication purposes. Expand to explore detailed functional specifications for the 'Pseudonyms' capabilities.
+This covers utilising passkeys through the EUDI Wallet for authentication purposes. Expand to explore detailed functional specifications for the "Pseudonyms" capabilities.
 
 
 | Feature | Description | Status |
@@ -102,7 +102,7 @@ This covers utilising passkeys through the EUDI Wallet for authentication purpos
 ---
 ### Transaction Logs
 
-EUDI Wallet Privacy Dashboard provides a record of transactions (i.e. data exchanges) executed through the EUDI Wallet. Expand to explore detailed functional specifications for the 'Transaction Logs (Privacy Dashboard)' capabilities.
+EUDI Wallet Privacy Dashboard provides a record of transactions (i.e. data exchanges) executed through the EUDI Wallet. Expand to explore detailed functional specifications for the "Transaction Logs (Privacy Dashboard)" capabilities.
 
 
 | Feature | Description | Status |
@@ -138,7 +138,7 @@ Users report a Relying Party to the competent national Data Protection Authority
 
 ### Attestation Revocation
 
-This covers attestations revoked by the issuer. Expand to explore detailed functional specifications for the 'Attestation Revocation' capabilities.
+This covers attestations revoked by the issuer. Expand to explore detailed functional specifications for the "Attestation Revocation" capabilities.
 
 | Feature | Description | Status |
 | --- | --- | --- |
@@ -147,7 +147,7 @@ This covers attestations revoked by the issuer. Expand to explore detailed funct
 ---
 ### Wallet Revocation
 
-This covers wallet instances revoked by the wallet provider. Expand to explore detailed functional specifications for the 'Wallet Revocation' capabilities.
+This covers wallet instances revoked by the wallet provider. Expand to explore detailed functional specifications for the "Wallet Revocation" capabilities.
 
 
 | Feature | Description | Status |
@@ -158,7 +158,7 @@ This covers wallet instances revoked by the wallet provider. Expand to explore d
 
 ### Wallet to Wallet
 
-An EUDI Wallet User can request that another EUDI Wallet User share an attestation of attributes using their EUDI Wallet Instances when they are in close proximity. Expand to explore detailed functional specifications for 'Wallet to Wallet' interaction capabilities.
+An EUDI Wallet User can request that another EUDI Wallet User share an attestation of attributes using their EUDI Wallet Instances when they are in close proximity. Expand to explore detailed functional specifications for "Wallet to Wallet" interaction capabilities.
  
 
 | Feature | Description | Status |
@@ -169,7 +169,7 @@ An EUDI Wallet User can request that another EUDI Wallet User share an attestati
 ---
 ### Wallet Backup and Restore
 
-This covers backing up and restoring attestations of an EUDI Wallet. Expand to explore detailed functional specifications for 'Backup and Restore' interaction capabilities. 
+This covers backing up and restoring attestations of an EUDI Wallet. Expand to explore detailed functional specifications for "Backup and Restore" interaction capabilities. 
 
 
 | Feature | Description | Status |
@@ -179,7 +179,7 @@ This covers backing up and restoring attestations of an EUDI Wallet. Expand to e
 ---
 ### Migrate to a different wallet
 
-This covers migrating attestations to a different EUDI Wallet. Expand to explore detailed functional specifications for 'Migration' capabilities.
+This covers migrating attestations to a different EUDI Wallet. Expand to explore detailed functional specifications for "Migration" capabilities.
 
 
 | Feature | Description | Status |
@@ -207,10 +207,10 @@ The following table provides an overview of the key attestations supported by th
 
 | Attestation | Description | Status |
 | --- | --- | --- |
-| [PID](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/67){:target="_blank"} | Support for the 'Personal Identification Data (PID)' in alignment with the [PID Rulebook](https://github.com/eu-digital-identity-wallet/eudi-doc-attestation-rulebooks-catalog/blob/main/rulebooks/pid/pid-rulebook.md){:target="_blank"} | Completed|
-| [mDL](https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/latest/annexes/annex-3/annex-3.02-mDL-rulebook/){:target="_blank"} | Support for the 'Mobile Driving License' in alignment with the [mDL Rulebook](https://github.com/eu-digital-identity-wallet/eudi-doc-attestation-rulebooks-catalog/blob/main/rulebooks/mdl/mdl-rulebook.md){:target="_blank"} | Completed |
-| [EHIC](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/45){:target="_blank"} | Support for the 'European Health Insurance Card' | Completed |
-| [PDA1](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/46){:target="_blank"} | Support for the 'Portable Document A1' | Completed |
+| [PID](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/67){:target="_blank"} | Support for the "Personal Identification Data (PID)" in alignment with the [PID Rulebook](https://github.com/eu-digital-identity-wallet/eudi-doc-attestation-rulebooks-catalog/blob/main/rulebooks/pid/pid-rulebook.md){:target="_blank"} | Completed|
+| [mDL](https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/latest/annexes/annex-3/annex-3.02-mDL-rulebook/){:target="_blank"} | Support for the "Mobile Driving License" in alignment with the [mDL Rulebook](https://github.com/eu-digital-identity-wallet/eudi-doc-attestation-rulebooks-catalog/blob/main/rulebooks/mdl/mdl-rulebook.md){:target="_blank"} | Completed |
+| [EHIC](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/45){:target="_blank"} | Support for the "European Health Insurance Card" | Completed |
+| [PDA1](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/46){:target="_blank"} | Support for the "Portable Document A1" | Completed |
 
 For further attestations supported by the EUDI Wallet Reference Implementation you can check our [Issuer](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py){:target="_blank"}.
 

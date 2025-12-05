@@ -50,7 +50,7 @@ cd docker
 docker-compose down
 ```
 
-The 'verifier' service can be configured by setting its [configuration properties](./configure.md) by setting them as environment variables of the service in [docker-compose.yaml](https://github.com/eu-digital-identity-wallet/eudi-srv-web-verifier-endpoint-23220-4-kt/blob/main/docker/docker-compose.yaml){:target="_blank"}.
+The "verifier" service can be configured by setting its [configuration properties](./configure.md) by setting them as environment variables of the service in [docker-compose.yaml](https://github.com/eu-digital-identity-wallet/eudi-srv-web-verifier-endpoint-23220-4-kt/blob/main/docker/docker-compose.yaml){:target="_blank"}.
 
 **Example:**
 ```yaml

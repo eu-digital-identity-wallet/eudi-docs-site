@@ -65,7 +65,7 @@ Since mDLs are attestations valid for longer than 24 hours, the Issuer SHALL use
 
 If you decide to implement the Status List mechanism then when an mDL is issued, the mDL Issuer component must register it in the status list using this component's API. It shall register its unique identifier (e.g. serial number, unique hash, or index) and position, and initialise it (e.g. set to `VALID` or `0`). 
 
-If you decide to implement either mechanism, then when an mDL is revoked the mDL Issuer shall invoke this component's API to either add the unique identifier to the identifier list or set the status to 'INVALID' or '1' in the status list.
+If you decide to implement either mechanism, then when an mDL is revoked the mDL Issuer shall invoke this component's API to either add the unique identifier to the identifier list or set the status to `INVALID` or `1` in the status list.
 
 - **Embedding Revocation Information** 
 

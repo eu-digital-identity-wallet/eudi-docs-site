@@ -74,8 +74,8 @@ Relying Parties and Wallets use these trust anchors to verify:
 
 The TLP supports three user roles:
 
-- TSL Operator
-- TSP User
+- TSL Operator,
+- TSP User,
 - LoTL Operator.
 
 The TSL Operator manages the national TL by:

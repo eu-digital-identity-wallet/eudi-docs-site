@@ -2,7 +2,7 @@
 
 An RSSP is the entity that provides the remote electronic signature service. It operates the backend infrastructure that:
 
-- stores and protects users' signature keys;
+- stores and protects users' signature keys,
 - performs remote signature operations when the user requests a signature.
 
 ## Reference Implementation Signature Services
@@ -15,8 +15,8 @@ These RI Signature services are made available exclusively as part of the EUDI W
 
 The TrustProvider Signer is a CSC-compliant Remote Signature Service Provider (RSSP) and Signature Application. It includes:
 
-- an RSSP backend implementing CSC API behaviours;
-- a Signature Application handling signing orchestration;
+- an RSSP backend implementing CSC API behaviours,
+- a Signature Application handling signing orchestration,
 - a Client interface supporting account creation, OpenID4VP authentication, certificate and key-pair creation, and document signing.
 
 It enables Wallet implementers to test non-qualified remote signing workflows.

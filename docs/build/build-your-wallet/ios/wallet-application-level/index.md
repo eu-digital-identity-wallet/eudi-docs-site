@@ -37,4 +37,4 @@ This guide aims to assist developers to build the EUDI Wallet application on iOS
 
 7. (Optional) [Follow the instructions](./self-signed-certificates.md) if self-signed certificates are required.
 
-For a complete list of all configuration options, refer to [this document](https://github.com/eu-digital-identity-wallet/eudi-app-ios-wallet-ui/blob/main/wiki/configuration.md){:target="_blank"}
+For a complete list of all configuration options, refer to [this document](https://github.com/eu-digital-identity-wallet/eudi-app-ios-wallet-ui/blob/main/wiki/configuration.md){:target="_blank"}.

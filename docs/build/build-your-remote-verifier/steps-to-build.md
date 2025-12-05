@@ -1,38 +1,86 @@
 # Steps to Build your Verifier
 
-## Development Server
+## How to Build Backend
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Download the repository locally using:
 
-## Code Scaffolding
+```bash
+git clone git@github.com:eu-digital-identity-wallet/eudi-srv-web-verifier-endpoint-23220-4-kt.git
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+To start the service locally you can execute:
+```bash
+./gradlew bootRun
+```
+To build a local docker image of the service execute:
+```bash
+./gradlew bootBuildImage
+```
 
-## Build
+## How to Build the UI
+
+Download the repository locally using:
+
+```bash
+git clone git@github.com:eu-digital-identity-wallet/eudi-web-verifier.git
+```
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Run your Verifier
+## Run all verifier components together
 
-You need npm (node version 18.15.0) and [Angular CLI](https://github.com/angular/angular-cli){:target="_blank"} installed on your machine.
+To start both verifier UI and verifier backend services together a [docker compose file](https://github.com/eu-digital-identity-wallet/eudi-srv-web-verifier-endpoint-23220-4-kt/blob/main/docker/docker-compose.yaml){:target="_blank"} has been implemented.
+Running the command below will start the following service:
+- verifier: The Verifier/RP trusted end-point,
+- verifier-ui: The Verifier's UI application and
+- haproxy: A reverse proxy for SSL termination. 
+    - To change the ssl certificate update [haproxy.pem](https://github.com/eu-digital-identity-wallet/eudi-srv-web-verifier-endpoint-23220-4-kt/blob/main/docker/haproxy.pem){:target="_blank"}.
+    - To reconfigure haproxy update file [haproxy.conf](https://github.com/eu-digital-identity-wallet/eudi-srv-web-verifier-endpoint-23220-4-kt/blob/main/docker/haproxy.conf){:target="_blank"}.
 
-To run Verifier UI run the following commands:
-
+To start the docker compose environment:
 ```bash
-npm install
-ng serve --proxy-config src/proxy.conf.json
+# From project root directory 
+cd docker
+docker-compose up -d
 ```
-The above command utilizes [proxy.conf.json](https://github.com/eu-digital-identity-wallet/eudi-web-verifier/blob/main/src/proxy.conf.json){:target="_blank"} that proxies the calls to the expected verifier backend service.
-Update this file if you want your Verifier UI to point to a locally running verifier backend service.
+To stop the docker compose environment:
+```bash
+# From project root directory 
+cd docker
+docker-compose down
+```
 
-You can access the application at `http://localhost:4200`. 
+The 'verifier' service can be configured by setting its [configuration properties](./configure.md) by setting them as environment variables of the service in [docker-compose.yaml](https://github.com/eu-digital-identity-wallet/eudi-srv-web-verifier-endpoint-23220-4-kt/blob/main/docker/docker-compose.yaml){:target="_blank"}.
 
+**Example:**
+```yaml
+  verifier:
+    image: ghcr.io/eu-digital-identity-wallet/eudi-srv-web-verifier-endpoint-23220-4-kt:latest
+    container_name: verifier-backend
+    ports:
+      - "8080:8080"
+    environment:
+      VERIFIER_PUBLICURL: "https://10.240.174.10"
+      VERIFIER_RESPONSE_MODE: "DirectPost"
+      VERIFIER_JAR_SIGNING_KEY_KEYSTORE: file:///keystore.jks
+```
 
-## Run Tests
+### Mount external keystore to be used with Authorization Request signing 
+When property `VERIFIER_JAR_SIGNING_KEY` is set to `LoadFromKeystore` the service can be [configured accordingly](./configure.md#setting-verifier_jar_signing_key-to-loadfromkeystore)) to read from a keystore the certificate used for signing authorization requests. 
+To provide an external keystore mount it to the path designated by the value of property `VERIFIER_JAR_SIGNING_KEY_KEYSTORE`.   
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io){:target="_blank"}.
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli){:target="_blank"} page.
-
+**Example:**
+```yaml
+  verifier:
+    image: ghcr.io/eu-digital-identity-wallet/eudi-srv-web-verifier-endpoint-23220-4-kt:latest
+    container_name: verifier-backend
+    ports:
+      - "8080:8080"
+    environment:
+      VERIFIER_PUBLICURL: "https://10.240.174.10"
+      VERIFIER_RESPONSE_MODE: "DirectPost"
+      VERIFIER_JAR_SIGNING_KEY_KEYSTORE: file:///certs/keystore.jks
+    volumes:
+      - <PATH OF KEYSTORE IN HOST MACHINE>/keystore.jks:/certs/keystore.jks
+      
+```

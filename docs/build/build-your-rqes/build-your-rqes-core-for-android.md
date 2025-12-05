@@ -7,7 +7,7 @@ The EUDI rQES Core SDK provides the foundational service logic for enabling Remo
 This SDK provides the core functionality for an EUDI Wallet to interact with a remote Qualified Electronic Signature (rQES) service. It handles service authorisation, credential authorisation, and document signing.
 ## Requirements
 
-Android 10 (API level 29) or higher
+Android 10 (API level 29) or higher.
 
 ## Installation
 
@@ -22,7 +22,7 @@ dependencies {
 
 ## Integration guide
 
-The following diagram illustrates the high-level steps of the rQES document signing flow, from service authorization to obtaining the final signed documents.
+The following diagram illustrates the high-level steps of the rQES document signing flow, from service authorisation to obtaining the final signed documents.
 
 ```mermaid
 sequenceDiagram
@@ -77,19 +77,19 @@ You can fetch the rQES service metadata:
 val metadata = rqesService.getRSSPMetadata().getOrThrow()
 ``` 
 
-### 2. Authorize the rQES service
+### 2. Authorise the rQES service
 
 To begin the signing process, the user must authorise your application to use the rQES service.
 
-First, obtain the service authorization URL and open it in a custom tab or browser:
+First, obtain the service authorisation URL and open it in a custom tab or browser:
 
 ```kotlin
 val authorizationUrl = rqesService.getServiceAuthorizationUrl().getOrThrow()
 
 // Open the authorizationUrl in a browser
-// After the user has authorized the service, the browser will be redirected to the authFlowRedirectionURI that
+// After the user has authorised the service, the browser will be redirected to the authFlowRedirectionURI that
 // is configured in the `CSCClientConfig`
-// with a query parameter named "code" containing the authorization code
+// with a query parameter named "code" containing the authorisation code
 ```
 
 After the user grants authorisation, the service will redirect to the authFlowRedirectionURI you configured, appending an authorisation code as a query parameter. Your app must capture this redirect, extract the code, and exchange it for an access token.
@@ -124,11 +124,11 @@ val unsignedDocuments = UnsignedDocuments(
     )
 )
 ```
-### 4. Authorize the credential and sign
+### 4. Authorise the credential and sign
 
 The user must now authorise the use of their selected credential for this specific transaction. 
 
-Obtain the credential authorizationURL to open a browser and let the user authorize the credential.
+Obtain the credential authorizationURL to open a browser and let the user authorise the credential.
 
 ```kotlin
 val credentialAuthorizationUrl = authorizedService.getCredentialAuthorizationUrl(
@@ -139,8 +139,8 @@ val credentialAuthorizationUrl = authorizedService.getCredentialAuthorizationUrl
 ).getOrThrow()
 
 // Open credentialAuthorizationUrl in a browser.
-// After authorization, the browser will redirect to authFlowRedirectionURI
-// with a query parameter "code" containing the credential authorization code.
+// After authorisation, the browser will redirect to authFlowRedirectionURI
+// with a query parameter "code" containing the credential authorisation code.
 ```
 
 Similar to service authorisation, the user will be redirected back to your authFlowRedirectionURI with a new code.
@@ -167,4 +167,4 @@ You can also sign without explicitly calling authorizeCredential:
 val signedDocumentsAlt = authorizedService.signDocuments(credentialAuthorizationCode).getOrThrow()
 ```
 ## Source code
-The source code is available on GitHub: [eudi-lib-android-rqes-core](https://github.com/eu-digital-identity-wallet/eudi-lib-android-rqes-core/).
+[Build yourrQES SDK UI for Android](https://github.com/eu-digital-identity-wallet/eudi-lib-android-rqes-core/).

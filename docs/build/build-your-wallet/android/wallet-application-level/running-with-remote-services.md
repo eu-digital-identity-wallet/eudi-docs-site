@@ -1,8 +1,8 @@
 # Run with Remote Services
 
-The app is configured to use some configuration in the two ***ConfigWalletCoreImpl.kt*** files (located in the "**core-logic**" module, in either
-*src\dev\java\eu\europa\ec\corelogic\config* or
-*src\demo\java\eu\europa\ec\corelogic\config*,
+The app is configured to use some configuration in the two `ConfigWalletCoreImpl.kt` files (located in the `core-logic` module, in either
+`src\dev\java\eu\europa\ec\corelogic\config` or
+`src\demo\java\eu\europa\ec\corelogic\config`,
 depending on the flavor of your choice).
 
 These are the contents of the ConfigWalletCoreImpl file (dev flavor), and you don't need to change anything:

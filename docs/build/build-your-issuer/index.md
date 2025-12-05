@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Issuer is an implementation of  the PID and (Q)EAA Provider service, supporting the OpenID4VCI (draft 13) protocol.
+The Issuer is an implementation of  the PID and (Q)EAA Provider service, supporting the OpenID4VCI (draft 15) protocol.
 
 The service provides, by default, support for `mso_mdoc` and `SD-JWT-VC`formats, for the following credentials:
 
@@ -19,19 +19,19 @@ For authenticating the user, it requires the use of an eIDAS node, an OAUTH2 ser
 
 ## OpenId4VCI Coverage
 
-This version of the Issuer supports the [OpenId for Verifiable Credential Issuance (draft 13)](https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0-13.html){:target="_blank"} protocol with the following coverage:
+This version of the Issuer supports the [OpenId for Verifiable Credential Issuance (draft 15)](https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0-15.html){:target="_blank"} protocol with the following coverage:
 
 
 | Feature                                                   | Coverage                                                        |
 |---|---|
-| [Authorization Code flow draft](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/tree/main/api_docs/authorization.md)              | ✅ Support for credential configuration id, scope, (draft 13)               |
-| [Pre-authorized code flow](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/tree/main/api_docs/pre-authorized.md)            | ✅ (draft 13)                                                       |
-| [Credential Offer](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/tree/main/api_docs/credential_offer.md)                  | ✅ `authorization_code` , ✅ `pre-authorized_code`    (draft 13)          |
-| Dynamic Credential Request                                        | ✅ (draft 13)                                                             |
+| [Authorization Code flow draft](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/tree/main/api_docs/authorization.md)              | ✅ Support for credential configuration id, scope, (draft 15)               |
+| [Pre-authorized code flow](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/tree/main/api_docs/pre-authorized.md)            | ✅ (draft 15)                                                       |
+| [Credential Offer](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/tree/main/api_docs/credential_offer.md)                  | ✅ `authorization_code` , ✅ `pre-authorized_code`    (draft 15)          |
+| Dynamic Credential Request                                        | ✅ (draft 15)                                                             |
 | mso_mdoc format                                                   | ✅                                                              |
 | SD-JWT-VC format                                                  | ✅                                                              |
 | W3C VC DM                                                         | ❌                                                              |
-| [Token Endpoint](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/tree/main/api_docs/token.md)                               | ✅ (draft 13)                                                             |
+| [Token Endpoint](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/tree/main/api_docs/token.md)                               | ✅ (draft 15)                                                             |
 | [Credential Endpoint](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/tree/main/api_docs/credential.md)                     | ✅ Including proofs and repeatable invocations, (draft 15)               |
 | Credential Issuer MetaData                                        | ✅ Unsigned metadata, (draft 15)                                            | 
 | [Nonce endpoint](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/tree/main/api_docs/nonce_endpoint.md)                    | ✅ (draft 15)                                                             | 

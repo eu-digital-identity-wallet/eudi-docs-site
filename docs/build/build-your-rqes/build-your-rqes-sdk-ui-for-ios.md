@@ -2,13 +2,13 @@
 
 ## Overview
 
-The **EUDI RQES UI SDK for iOS** provides user interface components and integration logic for enabling **Remote Qualified Electronic Signatures (RQES)** in iOS applications. It is part of the **EUDI Wallet ecosystem**, allowing integrators to embed RQES flows — including document signing and Qualified Trust Service Provider (QTSP) communication — within their own apps.
+The **EUDI RQES UI SDK for iOS** provides user interface components and integration logic for enabling **Remote Qualified Electronic Signatures (RQES)** in iOS applications. It is part of the **EUDI Wallet ecosystem**, allowing integrators to embed RQES flows – including document signing and Qualified Trust Service Provider (QTSP) communication – within their own apps.
 
-The entry point is the `EudiRQESUi` actor, which defines methods for configuring, initializing, and using the SDK. Runtime and visual behavior can be customized through the `EudiRQESUiConfig` protocol.
+The entry point is the `EudiRQESUi` actor, which defines methods for configuring, initialising and using the SDK. Runtime and visual behaviour can be customised through the `EudiRQESUiConfig` protocol.
 
 ## Requirements
 
-- **iOS 16** or higher
+- **iOS 16** or higher.
 
 ## Installation
 
@@ -84,7 +84,7 @@ final class RQESConfigImpl: EudiRQESUiConfig {
 }
 ```
 
-### Setup
+### Set-up
 
 Register the `authFlowRedirectionURI` in your application's plist to ensure the RQES Service can trigger your application.
 It is the application's responsibility to retrieve the `code` query parameter from the deep link and pass it to the SDK to continue the flow.
@@ -104,9 +104,9 @@ It is the application's responsibility to retrieve the `code` query parameter fr
 </array>
 ```
 
-Alternatively, you can use universal app links with associated domains [Apple Documentation](https://developer.apple.com/documentation/xcode/supporting-associated-domains)
+Alternatively, you can use universal app links with associated domains [Apple Documentation](https://developer.apple.com/documentation/xcode/supporting-associated-domains){:target="_blank"}.
 
-Initialize the SDK by providing your configuration. You must first ensure instance availability before performing any actions
+Initialise the SDK by providing your configuration. You must first ensure instance availability before performing any actions.
 
 ```swift
 let eudiRQESUi: EudiRQESUi
@@ -117,7 +117,7 @@ do {
 }
 ```
 
-### Initialization
+### Initialisation
 
 Start the signing process by providing your TopViewController and the URL of the selected file.
 

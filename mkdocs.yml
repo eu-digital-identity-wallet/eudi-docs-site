@@ -17,8 +17,8 @@ theme:
     - navigation.tabs.sticky
     - navigation.path
     - navigation.top
-    - toc.integrate
-    - toc.follow
+    - navigation.footer
+    - navigation.indexes
   logo: assets/logo_eudi_white.svg
   favicon: assets/favicon.ico
 
@@ -29,10 +29,15 @@ markdown_extensions:
   - footnotes
   - sane_lists
   - tables
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
 
-site_url: https://eu-digital-identity-wallet.github.io
-repo_url: https://github.com/eu-digital-identity-wallet/eudi-doc-developers-hub-site
-repo_name: eu-digital-identity-wallet/eudi-doc-developers-hub-site
+site_url: https://docs.eudi.dev
+repo_url: https://github.com/eu-digital-identity-wallet/eudi-docs-site
+repo_name: eu-digital-identity-wallet/eudi-docs-site
 
 nav:
   - European Digital Identity Wallet: https://eudi.dev/latest/
@@ -41,15 +46,15 @@ nav:
   - Technical specifications: https://eudi.dev/latest/technical-specifications/
   - Reference Implementation:
       - Overview: 
-          - Introduction: index.md
+          - Overview: index.md
           - Feature Map: reference-implementation/feature-map.md
           - Roadmap: reference-implementation/roadmap.md
           - Repositories: reference-implementation/repositories-list.md
-          - Quality Assurance: reference-implementation/quality-assurance.md
+          - Code Quality Assurance: reference-implementation/quality-assurance.md
       - Build:
-          - Introduction: build/index.md
+          - Build: build/index.md
           - Build your Wallet:
-              - Introduction: build/build-your-wallet/index.md
+              - Build your Wallet: build/build-your-wallet/index.md
               - Android:
                   - Wallet Application Level:
                       - Build the App: build/build-your-wallet/android/wallet-application-level/index.md
@@ -91,10 +96,10 @@ nav:
               - Build your rQES Kit for iOS:  build/build-your-rqes/build-your-rqes-kit-for-ios.md
           - Supporting Ecosystem Services:
               - Overview: build/supporting-ecosystem-services/index.md
-              - Trust List Service: build/supporting-ecosystem-services/trusted-list-service.md
+              - RP Registration Service: build/supporting-ecosystem-services/rp-registration-service.md
               - RSSP: build/supporting-ecosystem-services/rssp.md
               - Revocation Service: build/supporting-ecosystem-services/revocation-service.md
-              - RP Registration Service: build/supporting-ecosystem-services/rp-registration-service.md
+              - Trust List Service: build/supporting-ecosystem-services/trusted-list-service.md
       - Test:
           - Introduction: test/index.md
           - Wallet Application:
@@ -105,10 +110,11 @@ nav:
           - Online Verifier: test/online-verifier.md
           - Proximity Verifier: test/proximity-verifier.md
       - Use Cases:
+          - Use Cases: use-cases/index.md
           - Mobile Driving License:
               - Mobile Driving License: use-cases/mobile-driving-license/index.md
-              - mDL Overview:
-                  - mDL Overview: use-cases/mobile-driving-license/mdl-overview/index.md
+              - mDL Solution:
+                  - mDL Solution: use-cases/mobile-driving-license/mdl-overview/index.md
                   - Legal Basis: use-cases/mobile-driving-license/mdl-overview/legal-basis.md
                   - Standards and Protocols: use-cases/mobile-driving-license/mdl-overview/standards-and-protocols.md
               - mDL Architecture:
@@ -120,16 +126,16 @@ nav:
               - mDL Guides:
                   - Introduction: use-cases/mobile-driving-license/mdl-guides/index.md
                   - Wallet Provider:
-                      - Getting Started: use-cases/mobile-driving-license/mdl-guides/wallet-provider/getting-started.md
+                      - Getting Started: use-cases/mobile-driving-license/mdl-guides/wallet-provider/index.md
                       - Wallet Developers Workflow: use-cases/mobile-driving-license/mdl-guides/wallet-provider/wallet-developers-workflow.md
                       - Wallet Provider Specs: use-cases/mobile-driving-license/mdl-guides/wallet-provider/wallet-provider-specs.md
                   - mDL Issuer:
-                      - Getting Started: use-cases/mobile-driving-license/mdl-guides/mdl-issuer/getting-started.md
+                      - Getting Started: use-cases/mobile-driving-license/mdl-guides/mdl-issuer/index.md
                       - mDL Issuance Workflow: use-cases/mobile-driving-license/mdl-guides/mdl-issuer/mdl-issuance-workflow.md
                       - mDL Issuer Specs: use-cases/mobile-driving-license/mdl-guides/mdl-issuer/mdl-issuer-specs.md
                       - mDL Revocation Specs: use-cases/mobile-driving-license/mdl-guides/mdl-issuer/mdl-revocation-specs.md
                   - mDL Verifier: 
-                      - Getting Started: use-cases/mobile-driving-license/mdl-guides/mdl-verifier/getting-started.md
+                      - Getting Started: use-cases/mobile-driving-license/mdl-guides/mdl-verifier/index.md
                       - mDL Verifier Workflow: use-cases/mobile-driving-license/mdl-guides/mdl-verifier/mdl-verifier-workflow.md
                       - mDL Reader Specs: use-cases/mobile-driving-license/mdl-guides/mdl-verifier/mdl-reader-specs.md
                       - mDL Remote Verifier Specs: use-cases/mobile-driving-license/mdl-guides/mdl-verifier/mdl-remote-verifier-specs.md

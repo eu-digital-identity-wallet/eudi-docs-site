@@ -1,6 +1,6 @@
 # Build your rQES SDK UI for Android
 
-The **EUDI RQES UI SDK** provides user interface components and integration logic for enabling **Remote Qualified Electronic Signatures (RQES)** in Android applications. It is part of the **EUDI Wallet ecosystem**, allowing integrators to embed RQES flows — including document signing and **Qualified Trust Service Provider (QTSP)** communication — within their own applications.
+The **EUDI RQES UI SDK** provides user interface components and integration logic for enabling **Remote Qualified Electronic Signatures (RQES)** in Android applications. It is part of the **EUDI Wallet ecosystem**, allowing integrators to embed RQES flows – including document signing and **Qualified Trust Service Provider (QTSP)** communication – within their own applications.
 
 This document focuses on **how to integrate and use** the SDK in your Android project.
 
@@ -12,19 +12,19 @@ The RQES UI SDK offers ready-to-use UI screens and the underlying logic to handl
 
 - **Signature initiation** (local or remote)
 - **QTSP interactions** (authentication, signing, and timestamping)
-- **User authorization** and **OAuth redirection flows**
+- **User authorisation** and **OAuth redirection flows**
 - **Document retrieval and validation**
 
-The entry point is the `EudiRQESUi` object, which exposes setup and flow-control functions.  
-Runtime and visual behavior are configured via the `EudiRQESUiConfig` interface.
+The entry point is the `EudiRQESUi` object, which exposes set-up and flow-control functions.  
+Runtime and visual behaviour are configured via the `EudiRQESUiConfig` interface.
 
 ## Requirements
 
-- Android 10 (API level 29) or higher
+- Android 10 (API level 29) or higher.
 
 ## Installation
 
-Add the SDK dependency to your app’s `build.gradle` file:
+Add the SDK dependency to your app's `build.gradle` file:
 
 ```gradle
 dependencies {
@@ -72,9 +72,9 @@ class RQESConfigImpl(
 
 You can optionally override:
 
-- `translations` — to provide custom localization
-- `themeManager` — to adjust the UI appearance
-- `printLogs` — to enable or disable SDK logging
+- `translations` – to provide custom localization.
+- `themeManager` – to adjust the UI appearance.
+- `printLogs` – to enable or disable SDK logging.
 
 ### 2. Configure OAuth and Deep Links
 
@@ -98,10 +98,10 @@ This allows the RQES Service to redirect the user back to your app after authent
 </intent-filter>
 ```
 
-Alternatively, you can use Android App Links [Google Documentation](https://developer.android.com/studio/write/app-link-indexing)
+Alternatively, you can use Android App Links [Google Documentation](https://developer.android.com/studio/write/app-link-indexing).
 
-You must extract the `code` query parameter from this redirect and pass it to the SDK (see “Resuming
-a Flow” below).
+You must extract the `code` query parameter from this redirect and pass it to the SDK (see "Resuming
+a Flow" below).
 
 #### Document Retrieval (Same Device Scenario)
 
@@ -122,12 +122,12 @@ your manifest:
 </intent-filter>
 ```
 
-This enables the RQES Service to trigger your app and pass a remote URL to initialize a same-device
+This enables the RQES Service to trigger your app and pass a remote URL to initialise a same-device
 retrieval flow.
 
-### 3. Initialize the SDK
+### 3. Initialise the SDK
 
-Initialize the SDK in your Application class by providing your application context, configuration, and, if you are using Koin for dependency injection, the KoinApplication.
+Initialise the SDK in your Application class by providing your application context, configuration, and, if you are using Koin for dependency injection, the KoinApplication.
 
 ```kotlin
 EudiRQESUi.setup(

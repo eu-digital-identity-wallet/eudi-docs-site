@@ -6,7 +6,7 @@ The Relying Party (RP) Registration Service (RS) is a supporting ecosystem servi
 
 The RP Registration Service Reference Implementation is provided solely as a non-production environment to enable Member State authorities, developers, and integrators to experiment with Relying Party registration, validate workflows, and test interoperability with Wallet instances. It does not constitute a production-grade service and must not be used to manage real Relying Party access certificates or other credentials.
 
-The [RPRS](https://registry.serviceproviders.eudiw.dev/) provides the following functionalities:
+The [RPRS](https://registry.serviceproviders.eudiw.dev/){:target="_blank"} provides the following functionalities:
 
 - Relying Party Registration: Collects essential information from the Relying Party (country, official name, common name, registration number, contact details, intended Wallet usage, and password for key protection) and automatically issues a certificate and keypair.
 - Certificate Management: Lists issued certificates and enables revocation when necessary, maintaining trust in the ecosystem.
@@ -27,4 +27,4 @@ keytool -importkeystore -srckeystore [FileIn.p12] -srcstoretype pkcs12 -destkeys
 
 ## Reference Implementation RPRS deployment and configuration
 
-The complete source code, deployment instructions and configuration details for the RP Registration Service Reference Implementation are publicly available in the GitHub repository at [eudi-srv-web-relyingparty-registration-py](https://github.com/eu-digital-identity-wallet/eudi-srv-web-relyingparty-registration-py).
+The complete source code, deployment instructions and configuration details for the RP Registration Service Reference Implementation are publicly available in the GitHub repository at [eudi-srv-web-relyingparty-registration-py](https://github.com/eu-digital-identity-wallet/eudi-srv-web-relyingparty-registration-py){:target="_blank"}.

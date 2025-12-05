@@ -2,9 +2,9 @@
 
 ## Overview
 
-The EUDI Wallet Reference Implementation is built based on the [Architecture Reference Framework](https://github.com/eu-digital-identity-wallet/architecture-and-reference-framework) and aims at showcasing a robust and interoperable platform for digital identification, authentication and electronic signatures based on common standards across the European Union.
+The EUDI Wallet Reference Implementation is built on the [Architecture Reference Framework](https://github.com/eu-digital-identity-wallet/architecture-and-reference-framework) and aims at showcasing a robust and interoperable platform for digital identification, authentication and electronic signatures based on common standards across the European Union.
 
-The EUDI Wallet Reference Implementation is based on a modular architecture composed of a set of business agnostic, re-usable components which are evolved in incremental steps and can be re-used across multiple projects.
+The EUDI Wallet Reference Implementation is based on a modular architecture composed of a set of business-agnostic, re-usable components which are evolved in incremental steps and can be re-used across multiple projects.
 
 ### 🔑 Quick Links
 | Section | Purpose |
@@ -34,7 +34,7 @@ The scope of the EUDI Wallet Reference Implementation is released in an iterativ
 
 
 ## Roadmap
-The roadmap of the EUDI Wallet reference implementation provides a transparent view of the features and enhancements that are currently being developed or planned to the future. Its purpose is to promote open communication and collaboration in our community.
+The roadmap of the EUDI Wallet reference implementation provides a transparent view of the features and enhancements that are currently being developed or planned for the future. Its purpose is to promote open communication and collaboration in our community.
 
 🧭 You can view further details in [EUDI Wallet Reference Implementation Roadmap](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap). 
 
@@ -74,17 +74,17 @@ A designated mailbox <a href="CNECT-EUDIW-SUPPORT@ec.europa.eu">CNECT-EUDIW-SUPP
 
 # Disclaimer
 
-The released software is a initial development release version: 
+The released software is an initial development release version that: 
 
-- The initial development release is an early endeavor reflecting the efforts of a short timeboxed period, and by no means can be considered as the final product.  
-- The initial development release may be changed substantially over time, might introduce new features but also may change or remove existing ones, potentially breaking compatibility with your existing code.
-- The initial development release is limited in functional scope.
-- The initial development release may contain errors or design flaws and other problems that could cause system or other failures and data loss.
-- The initial development release has reduced security, privacy, availability, and reliability standards relative to future releases. This could make the software slower, less reliable, or more vulnerable to attacks than mature software.
-- The initial development release is not yet comprehensively documented. 
-- Users of the software must perform sufficient engineering and additional testing in order to properly evaluate their application and determine whether any of the open-sourced components is suitable for use in that application.
-- We strongly recommend not putting this version of the software into production use.
-- Only the latest version of the software will be supported
+- is an early endeavor reflecting the efforts of a short timeboxed period, and by no means can be considered as the final product,
+- may be changed substantially over time, might introduce new features but also may change or remove existing ones, potentially breaking compatibility with your existing code,
+- is limited in functional scope.
+- may contain errors or design flaws and other problems that could cause system or other failures and data loss,
+- has reduced security, privacy, availability, and reliability standards relative to future releases. This could make the software slower, less reliable, or more vulnerable to attacks than mature software,
+- is not yet comprehensively documented,
+- must be sufficiently engineered and tested in order to properly evaluate their application and determine whether any of the open-sourced components is suitable for use in that application,
+- must not be put into production use and
+- supports only the latest version of the software.
 
 # About the project
 

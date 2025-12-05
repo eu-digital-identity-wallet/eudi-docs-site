@@ -10,34 +10,34 @@ required to implement the EUDI Wallet functionality. On top of that, it provides
 that can be used by the application to implement the EUDI Wallet functionality.
 
 <figure>
-<img src="../../../../../assets/ios_core.png"
+<img src="../../../../../latest/assets/ios_core.png"
 alt="iOS core liraries" />
 </figure>
 
 The library provides the following functionality:
 
 - Document management
-    - [x] Storage encryption
-    - [x] Using iOS Secure Enclave for generating/storing documents' keypair
-    - [x] Enforcing device user authentication when retrieving documents' private keys
+    - Storage encryption
+    - Using iOS Secure Enclave for generating/storing documents' keypair
+    - Enforcing device user authentication when retrieving documents' private keys
 - Document issuance
-    - [x] Support for OpenId4VCI document issuance
-        - [x] Authorization Code Flow
-        - [x] Pre-authorization Code Flow
-        - [x] Support for mso_mdoc format
-        - [x] Support for sd-jwt-vc format
-        - [x] Support credential offer
-        - [x] Support for DPoP JWT in authorization
-        - [x] Support for JWT and CWT proof types
-        - [x] Support for deferred issuing
+    - Support for OpenId4VCI document issuance
+        - Authorization Code Flow
+        - Pre-authorization Code Flow
+        - Support for mso_mdoc format
+        - Support for sd-jwt-vc format
+        - Support credential offer
+        - Support for DPoP JWT in authorization
+        - Support for JWT and CWT proof types
+        - Support for deferred issuing
 - Proximity document presentation
-    - [x] Support for ISO-18013-5 device retrieval
-        - [x] QR device engagement
-        - [x] BLE data transfer
+    - Support for ISO-18013-5 device retrieval
+        - QR device engagement
+        - BLE data transfer
 - Remote document presentation
-    - [x] OpenId4VP document transfer
-        - [x] For pre-registered verifiers
-        - [x] Dynamic registration of verifiers
+    - OpenId4VP document transfer
+        - For pre-registered verifiers
+        - Dynamic registration of verifiers
 
 The library is written in Swift and is compatible with iOS 14 or higher. It is distributed as a Swift package
 and can be included in any iOS project.

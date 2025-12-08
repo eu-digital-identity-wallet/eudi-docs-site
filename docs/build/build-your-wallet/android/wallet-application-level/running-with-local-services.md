@@ -9,7 +9,7 @@ You can follow these Repositories for further instructions:
 
 
 After this, and assuming you are now running everything locally,
-you need to change the contents of the ConfigWalletCoreImpl file, from:
+you need to change the contents of the `ConfigWalletCoreImpl` file, from:
 ```Kotlin
 override val vciConfig: List<OpenId4VciManager.Config>
     get() = listOf(

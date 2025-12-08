@@ -9,23 +9,25 @@ To build the application using the source code and connect it with the issuer an
 
 1. Download and install Android Studio and its associated tools by following the official [setup guide](https://developer.android.com/studio){:target="_blank"}. Using the latest stable version is recommended.
 2. Clone the [Android repository](https://github.com/eu-digital-identity-wallet/eudi-app-android-wallet-ui){:target="_blank"} using the following command:
-	```git clone git@github.com:eu-digital-identity-wallet/eudi-app-android-wallet-ui.git ```
+	```bash
+        git clone git@github.com:eu-digital-identity-wallet/eudi-app-android-wallet-ui.git 
+    ```
 3. Open the project in Android Studio.
 4. Configure the Build Variant by navigating to Build -> Select Build Variant and from the tool window you can click on the "Active Build Variant" of the module ":app" and select the one you prefer. It will automatically apply to the other modules as well.
 
-    The application has two product flavors:
+     The application has two product flavors:
     
-        - "Dev", which communicates with the services deployed in an environment based on the latest main branch.
-        - "Demo", which communicates with the services deployed in an environment based on the latest main branch.
+     - "Dev", which communicates with the services deployed in an environment based on the latest main branch.
+     - "Demo", which communicates with the services deployed in an environment based on the latest main branch.
 
-    and two Build Types:
+     and two Build Types:
     
-        - "Debug", which has full logging enabled.
-        - "Release", which has no logging enabled.
+     - "Debug", which has full logging enabled.
+     - "Release", which has no logging enabled.
 
-    which, ultimately, result in the following Build Variants:
+     which, ultimately, result in the following Build Variants:
 
-        - "devDebug", "devRelease", "demoDebug", "demoRelease"
+     - "devDebug", "devRelease", "demoDebug", "demoRelease"
 
 5. The App can be executed both on a device or on an emulator:
 

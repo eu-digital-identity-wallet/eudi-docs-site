@@ -49,9 +49,9 @@ Testing is organised across multiple levels to validate functionality, performan
 
 
 - **Objectives:** Functional and end-to-end (E2E) testing ensures that each release behaves as expected according to defined epics and user stories.
-- **Requirements:** The [Functional Requirements](./feature-map.md) against which the tests are executed.
+- **Requirements:** The Functional Requirements are presented in the [Feature Map](./feature-map.md).
 - **Test Specifications:** The Functional Testing Specifications can be found here:
-    - [Manual Testing](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application-internal/tree/main/src/test/resources/features){:target="_blank"}.
+    - [Manual Testing](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application/tree/milestone/2025.Q4/src/test/resources/features){:target="_blank"}.
     - [Automated Testing](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application-internal/tree/main){:target="_blank"}.
 - **Tools:** [Functional Testing Tools](#test-tools).
 
@@ -78,9 +78,9 @@ The following table summarises the tools used in the applicable test types:
 
 | Test Type | Tools | 
 | --- | --- | 
-| Unit | _SonarCloud_ |
-| Functional | **Manual Testing** <br> - Supported by _Serenity BDD_ for structured reporting and visual coverage <br> **Automation** <br> - **Appium** (for mobile automation on Android and iOS) <br> - **Java** (test scripting language) <br> - **JUnit** (test framework) <br> **Other Tools** <br> - **IntelliJ IDEA** (development and execution environment) <br> - **Maven** (dependency and build management) <br> - **Appium Inspector** (for element inspection and locator validation) <br> - **Xcode** (for building and exporting iOS .ipa files) <br> - **Android packages**: .apk packages retrieved manually from Firebase for testing). |
-| Security | - _OWASP MASVS/MASTG_ for mobile security verification <br> - _OWASP Dependency-Check_ for third-party library analysis <br> - _SQLCipher_ and _Android Keystore_ for data protection <br> - _Burp Suite_ and _MobSF_ for dynamic testing and static analysis|
+| Unit | SonarCloud |
+| Functional | **Manual Testing** <br> - Supported by Serenity BDD for structured reporting and visual coverage <br> **Automation** <br> - **Appium** (for mobile automation on Android and iOS) <br> - **Java** (test scripting language) <br> - **JUnit** (test framework) <br> **Other Tools** <br> - **IntelliJ IDEA** (development and execution environment) <br> - **Maven** (dependency and build management) <br> - **Appium Inspector** (for element inspection and locator validation) <br> - **Xcode** (for building and exporting iOS .ipa files) <br> - **Android packages**: .apk packages retrieved manually from Firebase for testing). |
+| Security | - OWASP MASVS/MASTG for mobile security verification <br> - OWASP Dependency-Check for third-party library analysis <br> - SQLCipher and Android Keystore for data protection <br> - Burp Suite and MobSF for dynamic testing and static analysis|
 | Performance | Android: Android Studio Profiler and App Inspection and iOS: Xcode Instruments for performance monitoring, memory usage and CPU/network profiling |
 
 

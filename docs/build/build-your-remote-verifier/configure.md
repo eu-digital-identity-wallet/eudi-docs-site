@@ -228,7 +228,7 @@ Example: `passwd`
 ### SD-JWT-VC Type Metadata Policy
 
 Variable: `VERIFIER_VALIDATION_SDJWTVC_TYPEMETADATA_POLICY`  
-Description: Choose SD-JWT VC Type Metadata policy. Information about the available policies can be found [here](https://github.com/eu-digital-identity-wallet/eudi-lib-jvm-sdjwt-kt?tab=readme-ov-file#type-metadata-resolution){:target="_blank"}.
+Description: Choose SD-JWT VC Type Metadata policy. Information about the [available policies](https://github.com/eu-digital-identity-wallet/eudi-lib-jvm-sdjwt-kt?tab=readme-ov-file#type-metadata-resolution){:target="_blank"}.
 Accepted values: `not_used`,`optional`,`always_required`,`required_for`  
 Default value: `not_used`  
 

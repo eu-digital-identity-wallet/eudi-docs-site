@@ -6,7 +6,7 @@
 
 ### Dependencies
 
-To use snapshot versions add the following to your project's settings.gradle file:
+To use snapshot versions add the following to your project's `settings.gradle` file:
 
 ```groovy
 
@@ -22,7 +22,7 @@ dependencyResolutionManagement {
 }
 ```
 
-To include the library in your project, add the following dependencies to your app's build.gradle
+To include the library in your project, add the following dependencies to your app's `build.gradle`
 file.
 
 ```groovy

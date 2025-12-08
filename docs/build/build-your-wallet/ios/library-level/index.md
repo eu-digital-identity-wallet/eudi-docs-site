@@ -2,7 +2,7 @@
 
 ## Overview
 
-This [repository](https://github.com/eu-digital-identity-wallet/eudi-lib-ios-wallet-kit){:target="_blank"} contains the EUDI Wallet Kit library for iOS. The library is part
+The [eudi-lib-ios-wallet-kit repository](https://github.com/eu-digital-identity-wallet/eudi-lib-ios-wallet-kit){:target="_blank"} contains the EUDI Wallet Kit library for iOS. The library is part
 of the EUDI Wallet Reference Implementation project.
 
 This library acts as a coordinator, by orchestrating the various components that are

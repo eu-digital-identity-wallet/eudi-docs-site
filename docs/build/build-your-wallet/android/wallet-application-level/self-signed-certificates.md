@@ -8,8 +8,8 @@ This section describes how to configure the application to interact with service
     implementation(libs.ktor.android)
     implementation(libs.ktor.logging)
     ```
-3. Now, you need to create a new Kotlin file *ProvideKtorHttpClient.kt* and place it into the `src\main\java\eu\europa\ec\corelogic\config` package.
-4. Copy and paste the following code into your newly created *ProvideKtorHttpClient.kt* file.
+3. Now, you need to create a new Kotlin file `ProvideKtorHttpClient.kt` and place it into the `src\main\java\eu\europa\ec\corelogic\config` package.
+4. Copy and paste the following code into your newly created `ProvideKtorHttpClient.kt` file.
     ```Kotlin
     import android.annotation.SuppressLint
     import io.ktor.client.HttpClient
@@ -64,7 +64,7 @@ This section describes how to configure the application to interact with service
 
     }
     ```
-5. Also, add this custom HttpClient to the EUDI Wallet provider function *provideEudiWallet* located in *LogicCoreModule.kt*
+5. Also, add this custom HttpClient to the EUDI Wallet provider function `provideEudiWallet` located in `LogicCoreModule.kt`
     ```Kotlin
     @Single
     fun provideEudiWallet(

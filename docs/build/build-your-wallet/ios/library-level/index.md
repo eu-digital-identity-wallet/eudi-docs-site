@@ -53,5 +53,4 @@ It is based on the following specifications:
 
 - ISO/IEC 18013-5 – Published
 - Presentation Exchange v2.0.0 - Published
-- OpenID4VP – Draft 18
-- SIOPv2 – Draft
+- OpenID4VP – Version 1.0

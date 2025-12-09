@@ -31,7 +31,7 @@ The library provides the following functionality:
     - ✅ Support for custom SecureArea implementations
     - ✅ Support for multiple SecureArea implementations
 - Document issuance
-    - Support for OpenId4VCI Draft 14 document issuance
+    - Support for OpenId4VCI v. 1.0 document issuance
         - ✅ Authorization Code Flow
         - ✅ Pre-authorization Code Flow
         - ✅ Support for mso_mdoc format

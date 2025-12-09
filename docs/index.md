@@ -1,29 +1,26 @@
----
-hide:
-  - navigation
----
+# Welcome to the EUDI Wallet Reference Implementation!
 
-# Welcome to the EUDI Wallet Dev Hub!
+The EUDI Wallet Reference Implementation is built on the [Architecture Reference Framework](https://eudi.dev/latest/architecture-and-reference-framework-main/) and demonstrates a robust and interoperable platform for digital identification, authentication and electronic signatures based on common standards across the European Union.
 
-EU Digital Identity Wallets will enable users to access online services, store and share digital documents, and create binding signatures.
+The EUDI Wallet Reference Implementation uses a modular architecture composed of a set of business-agnostic, re-usable components that can be developed incrementally and re-used across multiple projects.
 
-[Learn more about the EUDI Wallet project](https://ec.europa.eu/digital-building-blocks/sites/display/EUDIGITALIDENTITYWALLET/What+is+the+wallet){:target="_blank"}
+Start exploring the EUDI Wallet Reference Implementation!
 
-This is the developer's hub for the European Digital Identity Wallet—a key reference point for those building and testing EUDI Wallet solutions, whether for Wallet Providers, Issuers, or Relying Parties.
+| Section | Purpose |
+|---|---|
+| 🧭 [Feature Map](./reference-implementation/feature-map.md) | Overview of delivered and planned features |
+| 🗺️ [Roadmap](./reference-implementation/roadmap.md) | Timeline and upcoming milestones |
+| 📂 [Repositories](./reference-implementation/repositories-list.md) | All component and library repos |
+| 🏗️ [Designs](https://github.com/eu-digital-identity-wallet/eudi-doc-developers-hub-site/tree/doc_update/documentation){:target="_blank"} | [High-Level](https://github.com/eu-digital-identity-wallet/eudi-doc-developers-hub-site/tree/doc_update/documentation/eudi-wallet-hld-q3-25.md){:target="_blank"} and [Low-Level](https://github.com/eu-digital-identity-wallet/eudi-doc-developers-hub-site/tree/doc_update/documentation/eudi-wallet-lld-q3-25.md){:target="_blank"} design of the EUDI Wallet Reference Implementation|
+| ✅ [Code Quality Assurance](./reference-implementation/quality-assurance.md) | Quality assurance tools and processes for the code |
 
-Everything you need to start your development project is gathered here. You will find technical guidelines and tools as well as directions for how to get started defining, designing and building an EUDI Wallet project.
 
-## Build
-Access comprehensive resources to guide your development efforts. This section provides detailed instructions, open-source libraries, and tools to support the development of Wallet, Issuer, or Relying Party solutions that meet the EU technical specifications to ensure interoperability.
+**Contributions and feedback**
 
-[Get ready to build your solution](./Build/)
+We encourage you to provide feedback and suggestions for the EUDI Wallet Reference Implementation. Depending on the type of feedback you provide, you can use one of the following channels:
 
-## Test
-Validate your solution with the EUDI Wallet testing toolkit. This includes pre-built testing tools designed to ensure your solution meets all specified functional requirements, guaranteeing quality and compliance.
+- Comments and contributions on the codebase are welcome through the corresponding [GitHub space](https://github.com/eu-digital-identity-wallet/architecture-and-reference-framework){:target="_blank"}. 
+- If you have any questions or comments about roadmap features or wish to suggest new features, please use the [Discussions forum](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/discussions){:target="_blank"}.
+- For any other questions about the Wallet Reference Implementation, contact [CNECT-EUDIW-SUPPORT@ec.europa.eu](mailto:CNECT-EUDIW-SUPPORT@ec.europa.eu).
 
-[Get ready to test your solution](./Test/)
 
-## Resources
-Compliance with the established set of technical specifications is essential for the security, interoperability and reliability of the EUDI Wallet.
-
-[Discover essential resources](./Resources/)

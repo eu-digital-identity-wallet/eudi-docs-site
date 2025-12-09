@@ -1,5 +1,4 @@
 "Story","Title","Result","Date","Stability","Duration (s)"
-"Request/Issue PID","User successfully logs in and sees the dashboard","SUCCESS","2025-07-24T15:04:26.90159+03:00[Europe/Athens]","0.0","61.25"
-"Request/Issue PID","Add document via national ID","SUCCESS","2025-07-24T15:05:28.180558+03:00[Europe/Athens]","0.0","70.12"
-"Request/Issue PID","Enter data and display national ID","SUCCESS","2025-07-24T15:09:49.205284+03:00[Europe/Athens]","0.0","97.62"
-"Request/Issue PID","Select authentication method and enter data","SUCCESS","2025-07-25T11:48:36.647562+03:00[Europe/Athens]","0.0","74.22"
+"Request/Issue PID","Add document via national ID","SUCCESS","2025-10-14T10:58:27.755646+03:00[Europe/Athens]","0.0","65.63"
+"Request/Issue PID","Select authentication method and enter data","SUCCESS","2025-10-14T10:59:33.416333+03:00[Europe/Athens]","0.0","68.49"
+"Request/Issue PID","Enter data and display national ID","SUCCESS","2025-10-14T11:00:41.931817+03:00[Europe/Athens]","0.0","89.93"

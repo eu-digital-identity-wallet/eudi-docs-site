@@ -51,7 +51,7 @@ Testing is organised across multiple levels to validate functionality, performan
 - **Objectives:** Functional and end-to-end (E2E) testing ensures that each release behaves as expected according to defined epics and user stories.
 - **Requirements:** The Functional Requirements are presented in the [Feature Map](./feature-map.md).
 - **Test Specifications:** The Functional Testing Specifications can be found here:
-    - [Manual Testing](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application/tree/milestone/2025.Q4/src/test/resources/features){:target="_blank"}.
+    - [Manual Testing](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application/tree/main/src/test/resources/features){:target="_blank"}.
     - [Automated Testing](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application-internal/tree/main){:target="_blank"}.
 - **Tools:** [Functional Testing Tools](#test-tools).
 
@@ -60,7 +60,7 @@ Testing is organised across multiple levels to validate functionality, performan
 ### Security Testing
 
 - **Objectives:** Security testing ensures the continuous security, integrity and resilience of the EUDI Wallet applications throughout their lifecycle. By integrating automated and manual security testing within a Secure Software Development Life Cycle (SDLC) and aligning with OWASP MASVS and MASTG standards, the framework enables early detection and remediation of vulnerabilities. It combines code analysis, penetration testing, and vulnerability management using tools such as SonarQube, OWASP Dependency-Check and DefectDojo to maintain compliance with recognised security standards and safeguard user trust in the EUDI Wallet ecosystem.
-- **Requirements and Test Specifications:** The [Security Requirements and Security Test Specifications](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application/blob/milestone/2025.Q4/doc/security/EUDI-Wallet-NiScy_Security_Requirements_and_Controls_Documentation.md){:target="_blank"} of the EUDI Wallet.
+- **Requirements and Test Specifications:** The [Security Requirements and Security Test Specifications](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application/blob/main/doc/security/EUDI-Wallet-NiScy_Security_Requirements_and_Controls_Documentation.md){:target="_blank"} of the EUDI Wallet.
 - **Tools:** [Security Testing Tools](#test-tools).
 
 ---
@@ -68,8 +68,8 @@ Testing is organised across multiple levels to validate functionality, performan
 ### Performance Testing
 
 - **Objectives:** Tests are conducted to evaluate the performance of the EUDI Wallet application under average user load across various mobile devices. This testing focuses on central processing unit (CPU) and memory usage, as well as network activity during common scenarios.
-- **Requirements:** The [Performance Requirements](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application/blob/milestone/2025.Q4/doc/performance/performance_requirements.md){:target="_blank"} against which the tests are executed.
-- **Test Specifications**: The [Performance Test Specifications](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application/blob/milestone/2025.Q4/doc/performance/performance_specifications.md){:target="_blank"} result from relevant default metrics.
+- **Requirements:** The [Performance Requirements](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application/blob/main/doc/performance/performance_requirements.md){:target="_blank"} against which the tests are executed.
+- **Test Specifications**: The [Performance Test Specifications](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application/blob/main/doc/performance/performance_specifications.md){:target="_blank"} result from relevant default metrics.
 - **Tools:** [Performance Testing Tools](#test-tools).
 
 ## Test Tools

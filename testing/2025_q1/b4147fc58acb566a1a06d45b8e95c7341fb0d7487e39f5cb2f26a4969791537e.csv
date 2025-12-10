@@ -1,0 +1,5 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Retrieve and View Document in EUDI Wallet","Retrieve document from Relying Party","SUCCESS","2025-05-16T12:05:02.614796Z[UTC]","0.0","0.02"
+"Retrieve and View Document in EUDI Wallet","View document to EUDI Wallet","SUCCESS","2025-05-16T12:05:02.660022Z[UTC]","0.0","0.02"
+"Return Signed Document to Relying Party","User views shared data on success screen in EUDI Wallet","SUCCESS","2025-05-16T12:05:02.709472Z[UTC]","0.0","0.01"
+"Return Signed Document to Relying Party","Confirm sharing and passing of signed document to Relying Party","SUCCESS","2025-05-16T12:05:02.747119Z[UTC]","0.0","0.01"

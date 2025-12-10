@@ -1,0 +1,8 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Issuing and storing attestations in the EUDI Wallet via QR code","Successful navigation to the ""Home"" screen","SUCCESS","2025-02-28T10:16:12.986655+02:00[Europe/Athens]","0.0","0.01"
+"Issuing and storing attestations in the EUDI Wallet via QR code","Successful navigation to the ""Add Document"" screen","SUCCESS","2025-02-28T10:16:13.003574+02:00[Europe/Athens]","0.0","0.01"
+"Issuing and storing attestations in the EUDI Wallet via QR code","Selecting ""Scan a QR code"" option","SUCCESS","2025-02-28T10:16:13.02046+02:00[Europe/Athens]","0.0","0.01"
+"Issuing and storing attestations in the EUDI Wallet via QR code","Displaying credential offer after scanning QR code","SUCCESS","2025-02-28T10:16:13.039906+02:00[Europe/Athens]","0.0","0.07"
+"Issuing and storing attestations in the EUDI Wallet via QR code","Proceeding with the attestation issuing flow","SUCCESS","2025-02-28T10:16:13.135844+02:00[Europe/Athens]","0.0","0.01"
+"Issuing and storing attestations in the EUDI Wallet via QR code","Issuing a PID attestation successfully","SUCCESS","2025-02-28T10:16:13.151281+02:00[Europe/Athens]","0.0","0.01"
+"Issuing and storing attestations in the EUDI Wallet via QR code","Error during attestation issuance","SUCCESS","2025-02-28T10:16:13.167038+02:00[Europe/Athens]","0.0","0.01"

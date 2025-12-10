@@ -1,0 +1,6 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Support the latest version of PID in EUDI Wallet","Issue PID in wallet-initiated flow","SUCCESS","2025-05-16T12:05:06.310569Z[UTC]","0.0","0.01"
+"Support the latest version of PID in EUDI Wallet","Issue PID in issuer-initiated flow","SUCCESS","2025-05-16T12:05:06.328291Z[UTC]","0.0","0.01"
+"Support the latest version of PID in EUDI Wallet","View PID details in 'Documents' screen","SUCCESS","2025-05-16T12:05:06.347235Z[UTC]","0.0","0.01"
+"Support the latest version of PID in EUDI Wallet","Present PID in remote scenarios","SUCCESS","2025-05-16T12:05:06.369123Z[UTC]","0.0","0.01"
+"Support the latest version of PID in EUDI Wallet","Present PID in proximity scenarios","SUCCESS","2025-05-16T12:05:06.389224Z[UTC]","0.0","0.01"

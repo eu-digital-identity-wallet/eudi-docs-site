@@ -1,0 +1,6 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"EUDI Wallet Documents Screen","Bottom navigation bar includes 'Home', 'Documents', and 'Transactions' options","SUCCESS","2025-02-28T10:16:10.038537+02:00[Europe/Athens]","0.0","0.01"
+"EUDI Wallet Documents Screen","'Documents' screen includes a 'Search' bar","SUCCESS","2025-02-28T10:16:10.065314+02:00[Europe/Athens]","0.0","0.01"
+"EUDI Wallet Documents Screen","'Documents' screen includes a 'Filter/Sort' button","SUCCESS","2025-02-28T10:16:10.096958+02:00[Europe/Athens]","0.0","0.01"
+"EUDI Wallet Documents Screen","Documents screen includes a list of all issued attestations","SUCCESS","2025-02-28T10:16:10.121922+02:00[Europe/Athens]","0.0","0.01"
+"EUDI Wallet Documents Screen","View details of an attestation","SUCCESS","2025-02-28T10:16:10.14626+02:00[Europe/Athens]","0.0","0.01"

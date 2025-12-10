@@ -1,0 +1,5 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Support PDA1 Attestation in EUDI Wallet","Issue PDA1 attestation in wallet-initiated flow","SUCCESS","2025-05-16T12:05:04.950479Z[UTC]","0.0","0.01"
+"Support PDA1 Attestation in EUDI Wallet","Issue PDA1 attestation in issuer-initiated flow","SUCCESS","2025-05-16T12:05:04.969193Z[UTC]","0.0","0.01"
+"Support PDA1 Attestation in EUDI Wallet","View PDA1 attestation details in 'Documents' screen","SUCCESS","2025-05-16T12:05:04.996636Z[UTC]","0.0","0.01"
+"Support PDA1 Attestation in EUDI Wallet","Present PDA1 attestation in remote scenarios","SUCCESS","2025-05-16T12:05:05.015442Z[UTC]","0.0","0.01"

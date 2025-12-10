@@ -1,0 +1,5 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Support EHIC Attestation in EUDI Wallet","Issue EHIC attestation in wallet-initiated flow","SUCCESS","2025-05-16T12:05:04.850793Z[UTC]","0.0","0.01"
+"Support EHIC Attestation in EUDI Wallet","Issue EHIC attestation in issuer-initiated flow","SUCCESS","2025-05-16T12:05:04.878406Z[UTC]","0.0","0.01"
+"Support EHIC Attestation in EUDI Wallet","View EHIC attestation details in Documents screen","SUCCESS","2025-05-16T12:05:04.908076Z[UTC]","0.0","0.01"
+"Support EHIC Attestation in EUDI Wallet","Present EHIC attestation in remote scenarios","SUCCESS","2025-05-16T12:05:04.931417Z[UTC]","0.0","0.01"

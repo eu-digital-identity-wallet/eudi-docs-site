@@ -1,0 +1,6 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"EUDI Wallet Menu Screen","Access EUDI Wallet menu","FAILURE","2025-02-28T10:16:13.599+02:00[Europe/Athens]","0.0","0.08"
+"EUDI Wallet Menu Screen","Access Notifications from the navigation drawer","FAILURE","2025-02-28T10:16:13.708531+02:00[Europe/Athens]","0.0","0.01"
+"EUDI Wallet Menu Screen","Access Privacy Notice from the navigation drawer","FAILURE","2025-02-28T10:16:13.739732+02:00[Europe/Athens]","0.0","0.01"
+"EUDI Wallet Menu Screen","Access Help / FAQs from the navigation drawer","FAILURE","2025-02-28T10:16:13.758145+02:00[Europe/Athens]","0.0","0.01"
+"EUDI Wallet Menu Screen","Exit the application from the navigation drawer","FAILURE","2025-02-28T10:16:13.773568+02:00[Europe/Athens]","0.0","0.01"

@@ -1,0 +1,7 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Present Attestations from EUDI Wallet","Select 'In person' in ""Present document"" section","SUCCESS","2025-02-28T10:16:13.791049+02:00[Europe/Athens]","0.0","0.01"
+"Present Attestations from EUDI Wallet","Scan QR-code or tap for NFC with reader device and display presentation request","SUCCESS","2025-02-28T10:16:13.80643+02:00[Europe/Athens]","0.0","0.09"
+"Present Attestations from EUDI Wallet","Cancel data sharing process","SUCCESS","2025-02-28T10:16:13.900335+02:00[Europe/Athens]","0.0","0.01"
+"Present Attestations from EUDI Wallet","Proceed with data sharing flow","SUCCESS","2025-02-28T10:16:13.915068+02:00[Europe/Athens]","0.0","0.01"
+"Present Attestations from EUDI Wallet","Enter PIN to proceed with data sharing","SUCCESS","2025-02-28T10:16:13.93359+02:00[Europe/Athens]","0.0","0.01"
+"Present Attestations from EUDI Wallet","Return to ""Home"" screen after successful data sharing","SUCCESS","2025-02-28T10:16:13.951869+02:00[Europe/Athens]","0.0","0.01"

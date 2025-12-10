@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="0" name="Return Signed Document to Relying Party" skipped="0" tests="2" time="0.03" timestamp="2025-05-16 12:05:02"><testcase name="User views shared data on success screen in EUDI Wallet"/><testcase name="Confirm sharing and passing of signed document to Relying Party"/></testsuite>

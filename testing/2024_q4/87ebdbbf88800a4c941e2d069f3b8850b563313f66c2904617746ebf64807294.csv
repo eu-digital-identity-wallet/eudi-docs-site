@@ -1,0 +1,8 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Viewing and managing attestations in the EUDI Wallet","Navigating to the 'Documents' screen","SUCCESS","2025-02-28T10:16:11.778828+02:00[Europe/Athens]","0.0","0.01"
+"Viewing and managing attestations in the EUDI Wallet","Viewing details of an attestation","SUCCESS","2025-02-28T10:16:11.802988+02:00[Europe/Athens]","0.0","0.01"
+"Viewing and managing attestations in the EUDI Wallet","Viewing attestation details after selecting the 'eye' icon","SUCCESS","2025-02-28T10:16:11.821779+02:00[Europe/Athens]","0.0","0.01"
+"Viewing and managing attestations in the EUDI Wallet","Bookmarking an attestation","SUCCESS","2025-02-28T10:16:11.842017+02:00[Europe/Athens]","0.0","0.01"
+"Viewing and managing attestations in the EUDI Wallet","Viewing details of the issuer of the attestation","SUCCESS","2025-02-28T10:16:11.883265+02:00[Europe/Athens]","0.0","0.01"
+"Viewing and managing attestations in the EUDI Wallet","Deleting an attestation","SUCCESS","2025-02-28T10:16:11.927404+02:00[Europe/Athens]","0.0","0.01"
+"Viewing and managing attestations in the EUDI Wallet","Returning to 'Documents' screen from attestation details","SUCCESS","2025-02-28T10:16:11.947028+02:00[Europe/Athens]","0.0","0.01"

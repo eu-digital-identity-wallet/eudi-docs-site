@@ -1,0 +1,5 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Issuing and storing attestations in the EUDI Wallet","Successful navigation to ""Home"" screen","SUCCESS","2025-02-28T10:16:13.18177+02:00[Europe/Athens]","0.0","0.01"
+"Issuing and storing attestations in the EUDI Wallet","Selecting attestation from the predefined list","SUCCESS","2025-02-28T10:16:13.197261+02:00[Europe/Athens]","0.0","0.01"
+"Issuing and storing attestations in the EUDI Wallet","Issuing an attestation successfully","SUCCESS","2025-02-28T10:16:13.212026+02:00[Europe/Athens]","0.0","0.01"
+"Issuing and storing attestations in the EUDI Wallet","Returning to ""Home"" screen after success","SUCCESS","2025-02-28T10:16:13.22904+02:00[Europe/Athens]","0.0","0.01"

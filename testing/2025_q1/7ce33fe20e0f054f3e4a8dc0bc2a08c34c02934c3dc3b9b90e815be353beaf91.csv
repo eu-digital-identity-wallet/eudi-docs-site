@@ -1,0 +1,6 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"List Transactions in EUDI Wallet","Transactions screen includes an Export button","IGNORED","2025-05-16T12:05:03.398988Z[UTC]","0.0","0.04"
+"Transaction Search in EUDI Wallet","User taps on the ""Search"" button with search text","IGNORED","2025-05-16T12:05:04.04848Z[UTC]","0.0","0.11"
+"View Transaction in EUDI Wallet","User views attestation presentation transaction details","IGNORED","2025-05-16T12:05:04.200166Z[UTC]","0.0","0.19"
+"View Transaction in EUDI Wallet","User requests to delete transaction data","IGNORED","2025-05-16T12:05:04.399682Z[UTC]","0.0","0.01"
+"View Transaction in EUDI Wallet","User reports suspicious operations","IGNORED","2025-05-16T12:05:04.430978Z[UTC]","0.0","0.01"

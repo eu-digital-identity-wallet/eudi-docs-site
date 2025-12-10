@@ -1,0 +1,3 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Check and update on presentation request the requested attestations revocation status","Attestation is revoked by the issuer","SUCCESS","2025-05-16T12:05:01.8512Z[UTC]","0.0","0.03"
+"Check and update on presentation request the requested attestations revocation status","Attestation is revoked by the issuer during presentation request","SUCCESS","2025-05-16T12:05:04.66703Z[UTC]","0.0","0.01"

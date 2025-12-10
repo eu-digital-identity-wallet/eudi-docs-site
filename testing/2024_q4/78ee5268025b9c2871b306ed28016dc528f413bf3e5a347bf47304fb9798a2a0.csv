@@ -1,0 +1,7 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Relying Party Trusted Certificate Creation","User visits the Relying Party service and authenticates with PID","SUCCESS","2025-02-28T10:16:12.603377+02:00[Europe/Athens]","0.0","0.01"
+"Relying Party Trusted Certificate Creation","User fills in the required information for certificate creation","SUCCESS","2025-02-28T10:16:12.627572+02:00[Europe/Athens]","0.0","0.02"
+"Relying Party Trusted Certificate Creation","User downloads the certificate","SUCCESS","2025-02-28T10:16:12.654362+02:00[Europe/Athens]","0.0","0.01"
+"Relying Party Trusted Certificate Creation","User visits the Relying Party service and authenticates with PID","SUCCESS","2025-02-28T10:16:15.018437+02:00[Europe/Athens]","0.0","0.01"
+"Relying Party Trusted Certificate Creation","User fills in the required information for certificate creation","SUCCESS","2025-02-28T10:16:15.033252+02:00[Europe/Athens]","0.0","0.01"
+"Relying Party Trusted Certificate Creation","User downloads the certificate","SUCCESS","2025-02-28T10:16:15.049687+02:00[Europe/Athens]","0.0","0.01"

@@ -1,0 +1,8 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"EUDI Wallet User Signs Document through QTSP with Explicit Consent","Relying Party retrieves available Credential IDs","SUCCESS","2025-02-28T10:16:14.889977+02:00[Europe/Athens]","0.0","0.01"
+"EUDI Wallet User Signs Document through QTSP with Explicit Consent","No Credential IDs enrolled for user in QTSP","FAILURE","2025-02-28T10:16:14.906743+02:00[Europe/Athens]","0.0","0.02"
+"EUDI Wallet User Signs Document through QTSP with Explicit Consent","User selects preferred Credential ID (multiple options)","FAILURE","2025-02-28T10:16:14.937362+02:00[Europe/Athens]","0.0","0.01"
+"EUDI Wallet User Signs Document through QTSP with Explicit Consent","Relying Party retrieves details of selected Credential ID (single or selected ID)","SUCCESS","2025-02-28T10:16:14.953898+02:00[Europe/Athens]","0.0","0.01"
+"EUDI Wallet User Signs Document through QTSP with Explicit Consent","User does not want to proceed","SUCCESS","2025-02-28T10:16:14.969711+02:00[Europe/Athens]","0.0","0.01"
+"EUDI Wallet User Signs Document through QTSP with Explicit Consent","User consents to release attestation","SUCCESS","2025-02-28T10:16:14.986201+02:00[Europe/Athens]","0.0","0.01"
+"EUDI Wallet User Signs Document through QTSP with Explicit Consent","QTSP verifies the attestation successfully","SUCCESS","2025-02-28T10:16:15.002445+02:00[Europe/Athens]","0.0","0.01"

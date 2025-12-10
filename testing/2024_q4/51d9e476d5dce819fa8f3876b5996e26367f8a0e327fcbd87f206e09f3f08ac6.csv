@@ -1,0 +1,7 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Searching for documents in the EUDI Wallet","Typing in the search field","SUCCESS","2025-02-28T10:16:11.594771+02:00[Europe/Athens]","0.0","0.01"
+"Sign Document through EUDI Wallet","EUDI Wallet Stores the Signed Document","SUCCESS","2025-02-28T10:16:12.170501+02:00[Europe/Athens]","0.0","0.01"
+"EUDI Wallet User Signs Document through QTSP with Explicit Consent","Relying Party retrieves details of selected Credential ID (single or selected ID)","SUCCESS","2025-02-28T10:16:12.505644+02:00[Europe/Athens]","0.0","0.01"
+"Searching for documents in the EUDI Wallet","Typing in the search field","SUCCESS","2025-02-28T10:16:14.230264+02:00[Europe/Athens]","0.0","0.01"
+"Sign Document through EUDI Wallet","EUDI Wallet Stores the Signed Document","SUCCESS","2025-02-28T10:16:14.616357+02:00[Europe/Athens]","0.0","0.01"
+"EUDI Wallet User Signs Document through QTSP with Explicit Consent","Relying Party retrieves details of selected Credential ID (single or selected ID)","SUCCESS","2025-02-28T10:16:14.953898+02:00[Europe/Athens]","0.0","0.01"

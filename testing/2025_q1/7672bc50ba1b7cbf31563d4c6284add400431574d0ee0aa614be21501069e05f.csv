@@ -1,0 +1,5 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Filter and Sort Transactions in EUDI Wallet","Initial state of filter/sort option","SUCCESS","2025-05-16T12:05:05.034389Z[UTC]","0.0","0.01"
+"Filter and Sort Transactions in EUDI Wallet","Reset filter and sort options","SUCCESS","2025-05-16T12:05:05.265425Z[UTC]","0.0","0.01"
+"Filter and Sort Transactions in EUDI Wallet","Apply filter and sort options","SUCCESS","2025-05-16T12:05:05.296099Z[UTC]","0.0","0.01"
+"Filter and Sort Transactions in EUDI Wallet","No matching transactions found","SUCCESS","2025-05-16T12:05:05.326981Z[UTC]","0.0","0.01"

@@ -1,0 +1,6 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Filtering and sorting documents in the EUDI Wallet","Opening the filter/sort bottom sheet","FAILURE","2025-02-28T10:16:13.352078+02:00[Europe/Athens]","0.0","0.01"
+"Filtering and sorting documents in the EUDI Wallet","Expanding and collapsing the ""Sort by"" section","FAILURE","2025-02-28T10:16:13.37002+02:00[Europe/Athens]","0.0","0.01"
+"Filtering and sorting documents in the EUDI Wallet","Sorting documents by attribute","FAILURE","2025-02-28T10:16:13.386608+02:00[Europe/Athens]","0.0","0.01"
+"Filtering and sorting documents in the EUDI Wallet","Expanding and collapsing the ""Filter by Category"" section","FAILURE","2025-02-28T10:16:13.419006+02:00[Europe/Athens]","0.0","0.01"
+"Filtering and sorting documents in the EUDI Wallet","Filtering documents by category","FAILURE","2025-02-28T10:16:13.434085+02:00[Europe/Athens]","0.0","0.01"

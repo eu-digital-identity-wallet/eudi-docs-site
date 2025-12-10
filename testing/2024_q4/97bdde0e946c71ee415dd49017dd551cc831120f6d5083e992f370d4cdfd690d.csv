@@ -1,0 +1,5 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Sign Document through EUDI Wallet","Single Credential ID Available","SUCCESS","2025-02-28T10:16:14.569639+02:00[Europe/Athens]","0.0","0.01"
+"Sign Document through EUDI Wallet","User Aborts the Signing Operation","SUCCESS","2025-02-28T10:16:14.584874+02:00[Europe/Athens]","0.0","0.01"
+"Sign Document through EUDI Wallet","User consents to release attestation","SUCCESS","2025-02-28T10:16:14.600935+02:00[Europe/Athens]","0.0","0.01"
+"Sign Document through EUDI Wallet","EUDI Wallet Stores the Signed Document","SUCCESS","2025-02-28T10:16:14.616357+02:00[Europe/Athens]","0.0","0.01"

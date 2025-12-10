@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="0" name="Retrieve and View Document in EUDI Wallet" skipped="0" tests="2" time="0.04" timestamp="2025-05-16 12:05:02"><testcase name="Retrieve document from Relying Party"/><testcase name="View document to EUDI Wallet"/></testsuite>

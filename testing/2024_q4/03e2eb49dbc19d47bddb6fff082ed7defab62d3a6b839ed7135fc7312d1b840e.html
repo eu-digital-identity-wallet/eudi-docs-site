@@ -1,0 +1,2106 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>Features</title>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="bootstrap-icons/bootstrap-icons.css">
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.13.1/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.13.1/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.13.1/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/>
+<!--CHART.JS-->
+<script src="chartjs/chart.js"></script>
+<script src="chartjs/chartjs-plugin-datalabels@2.0.0"></script>
+<script src="chartjs/patternomaly.min.js"></script>
+<script>
+    // Register the plugin to all charts:
+    Chart.register(ChartDataLabels);
+</script>
+<!-- JQuery-UI -->
+<link type="text/css" href="jqueryui/1.11.2-start/jquery-ui.min.css" rel="Stylesheet" />
+<script type="text/javascript" src="jqueryui/1.11.2-start/jquery-ui.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.13.1/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.13.1/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.13.1/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+
+
+
+
+    <script>
+
+        $(document).ready(function () {
+
+            $("#scenario-results").DataTable({
+                "order": [[0, "asc",], [3, "asc",]],
+                "language": {
+                    searchPlaceholder: "Filter",
+                    search: ""
+                },
+                columnDefs: [
+                    {type: 'time-elapsed-dhms', targets: 4}
+                ]
+            })
+            $("#manual-scenario-results").DataTable({
+                "order": [[0, "asc",], [1, "asc",]],
+                "language": {
+                    searchPlaceholder: "Filter",
+                    search: ""
+                },
+            })
+
+            $('.example-table table').DataTable({
+                searching: false,
+                ordering: false,
+                paging: false,
+                info: false
+            });
+
+            $('.example-table-in-scenario table').DataTable({
+                searching: false,
+                ordering: false,
+                paging: false,
+                info: false
+            });
+
+            $('#evidence-table').DataTable(
+                {
+                    searching: false,
+                    ordering: false,
+                    paging: false,
+                    info: false
+                }
+            );
+
+
+            $(".scenario-docs .card-body table").wrap("<div class='table-responsive'></div>");
+
+            $("#requirements-tabs").tabs();
+            $("#test-tabs").tabs();
+
+            var requirementsTree = [{"text":"Filtering and sorting documents in the EUDI Wallet","type":"feature","href":"03e2eb49dbc19d47bddb6fff082ed7defab62d3a6b839ed7135fc7312d1b840e.html","nodes":[],"selectable":false,"tags":["\u003ca href\u003d\u0027##beforetable\u0027\u003e\u003ci class\u003d\u0027bi bi-x-circle-fill failure-icon \u0027 title\u003d\u0027FAILURE\u0027\u003e\u003c/i\u003e\u003c/a\u003e","\u003cspan class\u003d\u0027feature-count\u0027\u003e12 scenarios\u003c/span\u003e, \u003cspan class\u003d\u0027feature-count\u0027\u003e12 test cases\u003c/span\u003e"]}];
+
+            $('#tree').treeview({
+                data: requirementsTree,
+                enableLinks: true,
+                levels: 10,
+                showTags: true,
+                expandIcon: "bi bi-journal-plus",
+                collapseIcon: "bi bi-journal-minus",
+                emptyIcon: "bi bi-journal"
+            });
+
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $(".scenario-docs > div > p").html(function () {
+                var text = $(this).text().trim().split(" ");
+                var first = text.shift();
+                return (text.length > 0 ? "<strong>" + first + "</strong> " : first) + text.join(" ");
+            });
+        });
+    </script>
+</head>
+
+
+<body class="results-page">
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">EUDI Wallet Test Report</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+            <a href='index.html'>Home</a> > <a href="capabilities.html">Requirements</a>
+
+                > <a href="bf717543657627e1873dddd12e58c1061a06e00c15c58418e799c733aa80b520.html">Ios</a>
+                > <a href="a65dea936ff13dce6f6294aa691281e51a6340cd214bf18c523fb8714971db5f.html">New version of the wallet ui ux 2</a>
+                > <a href="8089e07c9a39acc4d221d511e0271064e65416861fec1be4a4c98fc1d810b698.html">Filter and sort documents redesign 116</a>
+
+
+                    > <span class="truncate-40">Filtering and sorting documents in the EUDI wallet</span>
+
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li >
+            <a href="index.html"><i class="bi bi-journal-check"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="bi bi-journal-text"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="dd7750c6dc86be28f39572a355a41442ba81daa3e70b6c781cfbc96e905bd672.html"><i class="bi bi-chat-text"></i> Platforms</a>
+        </li>
+        <li >
+            <a href="bf2946e24fd72447464f583d97d4f9006680caa0fc520443de6470185bd4ceb2.html"><i class="bi bi-chat-text"></i> Features</a>
+        </li>
+        <li >
+            <a href="0272dadd83d6e6ac748d9a947522ca78b8873f5156f9bd38d6a0eb735ee5993b.html"><i class="bi bi-chat-text"></i> Epics</a>
+        </li>
+        <li >
+            <a href="2a4631d87648e59c428d4cf0e9247f9d286e4679f436ca2ce872e931eb4dfd58.html"><i class="bi bi-chat-text"></i> Stories</a>
+        </li>
+        <li class="active">
+            <a href="#"><i class="bi bi-chat-text"></i> Features</a>
+        </li>
+        <li >
+            <a href="f00f76a04d2d99822f342e19edfb456d954ef898f485c501f324bafd9ade930f.html"><i class="bi bi-chat-text"></i> ##s</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 28-02-2025 10:16</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+    <div id="beforetable"></div>
+    <div id="results-dashboard">
+        <div class="table">
+            <div class=row">
+                <div class="col-sm-12">
+                    <div>
+                        <div clas="table">
+                            <div class="row">
+
+                                <div class="col-sm-8">
+                                        <span>
+                                            <h2><i class="bi bi-book"></i> Feature: Filtering and sorting documents in the EUDI wallet</h2>
+                                        </span>
+                                    </div>
+                                        <div class="col-sm-4">
+                                        <span class="feature-tags">
+                                            <p class="tag">
+                                                <span class="badge feature-tag tag-badge" style="background:default;">
+                                                        <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink"
+                                                                                               style="background:default;"
+                                                                                               href="17ac5db38eea49b8ef93a3621ce9518c337b26e4caf778f53835d7590bb38909.html">Q4_2024 (tag)</a>
+                                                    </span>
+                                                <span class="badge feature-tag tag-badge" style="background:default;">
+                                                        <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink"
+                                                                                               style="background:default;"
+                                                                                               href="6021971243aabd1053d895d12220b5e0fa729923cca65e4eafd91a8a044b7dee.html">US_FASD (tag)</a>
+                                                    </span>
+                                                <span class="badge feature-tag tag-badge" style="background:default;">
+                                                        <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink"
+                                                                                               style="background:default;"
+                                                                                               href="9a26bd101adfda745f743db04eb3269922eb1ff4d86d9997efeca1ebfe995ac4.html">manual (tag)</a>
+                                                    </span>
+                                                <span class="badge feature-tag tag-badge" style="background:default;">
+                                                        <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink"
+                                                                                               style="background:default;"
+                                                                                               href="6f8a5d68a7c6ca6142be6d100bb7953e91690ce198c99ea44c1bf7804e9f3b13.html">IOS (tag)</a>
+                                                    </span>
+                                            </p>
+                                        </span>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="requirementNarrativeTitle">
+                                As a EUDI Wallet User<br />
+I want to filter and sort the documents in EUDI Wallet<br />
+So that I can find and view the documents according to my needs
+                            </div>
+
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-sm-12">
+
+                        <!-- Requirements result tabs -->
+                        <ul class="nav nav-tabs">
+                            <li class="active">
+                                <a data-toggle="tab" href="#specs"><i class="bi bi-journal-text"></i> Specifications</a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#results"><i class="bi bi-speedometer"></i> Test Results</a>
+                            </li>
+                        </ul>
+
+                        <!-- Specifications and Results tabs -->
+                        <div class="card border">
+                            <div class="tab-content" id="pills-tabContent">
+                                <div id="specs" class="tab-pane fade in active">
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <h3>Feature Coverage By Scenario</h3>
+
+                                                <!-- REQUIREMENTS PIE CHART -->
+                                                    <div class="chart-container" style="position: relative; width:30vw">
+                                                        <canvas id="requirementChart" width="300" height="300"></canvas>
+                                                    </div>
+
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <!--- TOC --->
+                                                <div id="toc">
+                                                    <h3>Overview</h3>
+                                                    <table class="table" id="toc-table">
+                                                                    <tr>
+                                                                        <td style="width:95%;" class="toc-title">
+                                                                            <span class="orphan-scenario-toc-entry">
+                                                                                    <a href="#05d11c640aadcb684987f21b4e9f4af61cd6051ff8207ddf41dbe92585108203"
+                                                                                       title="View scenario details">
+                                                                                        <i class="bi bi-chat-dots"></i> Scenario: Initial state of the filter/sort option
+                                                                                    </a>
+                                                                                </span>
+                                                                        </td>
+                                                                        <td>
+
+                                                                        </td>
+                                                                        <td style="width:5%;">
+                                                                            <table>
+                                                                                <tr>
+                                                                                    <td class="icons-bar">
+                                                                                        <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                           href="816572840655400912af2833d84934b0f4876b4beba755af2007624531cddbee.html"
+                                                                                           title="View test results">
+                                                                                            <a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                                            </a>
+
+                                                                                            <i class="bi bi-person manual"
+                                                                                               title="Manual test"></i>
+                                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                               href="816572840655400912af2833d84934b0f4876b4beba755af2007624531cddbee.html"
+                                                                                               title="View test results">
+                                                                                                <i class="bi bi-eyeglasses"></i>
+                                                                                            </a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="width:95%;" class="toc-title">
+                                                                            <span class="orphan-scenario-toc-entry">
+                                                                                    <a href="#ba149fb62b69694f3ac69fdd88afd30bd1e3d615d1f517a0b4d83842d1b1be57"
+                                                                                       title="View scenario details">
+                                                                                        <i class="bi bi-chat-dots"></i> Scenario: Opening the filter/sort bottom sheet
+                                                                                    </a>
+                                                                                </span>
+                                                                        </td>
+                                                                        <td>
+
+                                                                        </td>
+                                                                        <td style="width:5%;">
+                                                                            <table>
+                                                                                <tr>
+                                                                                    <td class="icons-bar">
+                                                                                        <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                           href="430d6adbd95a6c732c4bbdd5e80352d243b844433eaac9af330b95b6e09f5fa6.html"
+                                                                                           title="View test results">
+                                                                                            <a href='##beforetable'><i class='bi bi-x-circle-fill failure-icon ' title='FAILURE'></i></a>
+                                                                                            </a>
+
+                                                                                            <i class="bi bi-person manual"
+                                                                                               title="Manual test"></i>
+                                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                               href="430d6adbd95a6c732c4bbdd5e80352d243b844433eaac9af330b95b6e09f5fa6.html"
+                                                                                               title="View test results">
+                                                                                                <i class="bi bi-eyeglasses"></i>
+                                                                                            </a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="width:95%;" class="toc-title">
+                                                                            <span class="orphan-scenario-toc-entry">
+                                                                                    <a href="#fad18d885fa0a5fef66f75cd81cf33224847cb4666202254e08f56bd6899ab43"
+                                                                                       title="View scenario details">
+                                                                                        <i class="bi bi-chat-dots"></i> Scenario: Expanding and collapsing the "Sort by" section
+                                                                                    </a>
+                                                                                </span>
+                                                                        </td>
+                                                                        <td>
+
+                                                                        </td>
+                                                                        <td style="width:5%;">
+                                                                            <table>
+                                                                                <tr>
+                                                                                    <td class="icons-bar">
+                                                                                        <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                           href="4e9237e43ff7285bd09e98563bf01131cfe4b2e5c52fa5975d72da1a19a86754.html"
+                                                                                           title="View test results">
+                                                                                            <a href='##beforetable'><i class='bi bi-x-circle-fill failure-icon ' title='FAILURE'></i></a>
+                                                                                            </a>
+
+                                                                                            <i class="bi bi-person manual"
+                                                                                               title="Manual test"></i>
+                                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                               href="4e9237e43ff7285bd09e98563bf01131cfe4b2e5c52fa5975d72da1a19a86754.html"
+                                                                                               title="View test results">
+                                                                                                <i class="bi bi-eyeglasses"></i>
+                                                                                            </a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="width:95%;" class="toc-title">
+                                                                            <span class="orphan-scenario-toc-entry">
+                                                                                    <a href="#996439fe745360d3ce1cb8475dc46fe16d37ee2311db310a73d889007a696a50"
+                                                                                       title="View scenario details">
+                                                                                        <i class="bi bi-chat-dots"></i> Scenario: Sorting documents by attribute
+                                                                                    </a>
+                                                                                </span>
+                                                                        </td>
+                                                                        <td>
+
+                                                                        </td>
+                                                                        <td style="width:5%;">
+                                                                            <table>
+                                                                                <tr>
+                                                                                    <td class="icons-bar">
+                                                                                        <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                           href="279e03b8c5cbdf48b525432b54f709b279852f4f8c1f3b2350506df09d378415.html"
+                                                                                           title="View test results">
+                                                                                            <a href='##beforetable'><i class='bi bi-x-circle-fill failure-icon ' title='FAILURE'></i></a>
+                                                                                            </a>
+
+                                                                                            <i class="bi bi-person manual"
+                                                                                               title="Manual test"></i>
+                                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                               href="279e03b8c5cbdf48b525432b54f709b279852f4f8c1f3b2350506df09d378415.html"
+                                                                                               title="View test results">
+                                                                                                <i class="bi bi-eyeglasses"></i>
+                                                                                            </a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="width:95%;" class="toc-title">
+                                                                            <span class="orphan-scenario-toc-entry">
+                                                                                    <a href="#85a3287fc0e371d258c4bbb96b3afdb258e4bccfa2ac233e2c291b98a065454c"
+                                                                                       title="View scenario details">
+                                                                                        <i class="bi bi-chat-dots"></i> Scenario: Sorting documents by default option with grouping
+                                                                                    </a>
+                                                                                </span>
+                                                                        </td>
+                                                                        <td>
+
+                                                                        </td>
+                                                                        <td style="width:5%;">
+                                                                            <table>
+                                                                                <tr>
+                                                                                    <td class="icons-bar">
+                                                                                        <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                           href="2d14600fce29be2948b4dbb56bb02908e1611aea9fdd8c349dd2b907d71b1298.html"
+                                                                                           title="View test results">
+                                                                                            <a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                                            </a>
+
+                                                                                            <i class="bi bi-person manual"
+                                                                                               title="Manual test"></i>
+                                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                               href="2d14600fce29be2948b4dbb56bb02908e1611aea9fdd8c349dd2b907d71b1298.html"
+                                                                                               title="View test results">
+                                                                                                <i class="bi bi-eyeglasses"></i>
+                                                                                            </a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="width:95%;" class="toc-title">
+                                                                            <span class="orphan-scenario-toc-entry">
+                                                                                    <a href="#6d156023cfa6dde041b0bdff8b6a317c96a3482e4078da169a32602465237287"
+                                                                                       title="View scenario details">
+                                                                                        <i class="bi bi-chat-dots"></i> Scenario: Expanding and collapsing the "Filter by Category" section
+                                                                                    </a>
+                                                                                </span>
+                                                                        </td>
+                                                                        <td>
+
+                                                                        </td>
+                                                                        <td style="width:5%;">
+                                                                            <table>
+                                                                                <tr>
+                                                                                    <td class="icons-bar">
+                                                                                        <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                           href="eab7b6602f6a783a42cd6c68aadb7cd77aa817a5cde0d41545bc27d9b09f1c93.html"
+                                                                                           title="View test results">
+                                                                                            <a href='##beforetable'><i class='bi bi-x-circle-fill failure-icon ' title='FAILURE'></i></a>
+                                                                                            </a>
+
+                                                                                            <i class="bi bi-person manual"
+                                                                                               title="Manual test"></i>
+                                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                               href="eab7b6602f6a783a42cd6c68aadb7cd77aa817a5cde0d41545bc27d9b09f1c93.html"
+                                                                                               title="View test results">
+                                                                                                <i class="bi bi-eyeglasses"></i>
+                                                                                            </a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="width:95%;" class="toc-title">
+                                                                            <span class="orphan-scenario-toc-entry">
+                                                                                    <a href="#2bf5a4e9d828c414133edeb5df12f27c18f678574204dbd1d64809a373adb8a8"
+                                                                                       title="View scenario details">
+                                                                                        <i class="bi bi-chat-dots"></i> Scenario: Filtering documents by category
+                                                                                    </a>
+                                                                                </span>
+                                                                        </td>
+                                                                        <td>
+
+                                                                        </td>
+                                                                        <td style="width:5%;">
+                                                                            <table>
+                                                                                <tr>
+                                                                                    <td class="icons-bar">
+                                                                                        <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                           href="e0778c670974feea38c43d6ffcbf77402c9932dc153e067efd8b5385000482fe.html"
+                                                                                           title="View test results">
+                                                                                            <a href='##beforetable'><i class='bi bi-x-circle-fill failure-icon ' title='FAILURE'></i></a>
+                                                                                            </a>
+
+                                                                                            <i class="bi bi-person manual"
+                                                                                               title="Manual test"></i>
+                                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                               href="e0778c670974feea38c43d6ffcbf77402c9932dc153e067efd8b5385000482fe.html"
+                                                                                               title="View test results">
+                                                                                                <i class="bi bi-eyeglasses"></i>
+                                                                                            </a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="width:95%;" class="toc-title">
+                                                                            <span class="orphan-scenario-toc-entry">
+                                                                                    <a href="#92f9b1ffcc1d0a75d4501a57f301d3cdfa994bab1bb3a9c417a30199ab131eb4"
+                                                                                       title="View scenario details">
+                                                                                        <i class="bi bi-chat-dots"></i> Scenario: Filtering documents by issuer
+                                                                                    </a>
+                                                                                </span>
+                                                                        </td>
+                                                                        <td>
+
+                                                                        </td>
+                                                                        <td style="width:5%;">
+                                                                            <table>
+                                                                                <tr>
+                                                                                    <td class="icons-bar">
+                                                                                        <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                           href="2586b9741545fddf90f69718f80241a3e13f6a8ef6cbb89c3b4c9f9710bd1690.html"
+                                                                                           title="View test results">
+                                                                                            <a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                                            </a>
+
+                                                                                            <i class="bi bi-person manual"
+                                                                                               title="Manual test"></i>
+                                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                               href="2586b9741545fddf90f69718f80241a3e13f6a8ef6cbb89c3b4c9f9710bd1690.html"
+                                                                                               title="View test results">
+                                                                                                <i class="bi bi-eyeglasses"></i>
+                                                                                            </a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="width:95%;" class="toc-title">
+                                                                            <span class="orphan-scenario-toc-entry">
+                                                                                    <a href="#65a0765d5bef863bd92e3029b1406c45056adf3d4703c1a87f1294f16d1c87a8"
+                                                                                       title="View scenario details">
+                                                                                        <i class="bi bi-chat-dots"></i> Scenario: Filtering documents by expiry period
+                                                                                    </a>
+                                                                                </span>
+                                                                        </td>
+                                                                        <td>
+
+                                                                        </td>
+                                                                        <td style="width:5%;">
+                                                                            <table>
+                                                                                <tr>
+                                                                                    <td class="icons-bar">
+                                                                                        <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                           href="aa9b15831da5e41356c29b855397bfa071504e3b2ab9134470d2a7eb4d025787.html"
+                                                                                           title="View test results">
+                                                                                            <a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                                            </a>
+
+                                                                                            <i class="bi bi-person manual"
+                                                                                               title="Manual test"></i>
+                                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                               href="aa9b15831da5e41356c29b855397bfa071504e3b2ab9134470d2a7eb4d025787.html"
+                                                                                               title="View test results">
+                                                                                                <i class="bi bi-eyeglasses"></i>
+                                                                                            </a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="width:95%;" class="toc-title">
+                                                                            <span class="orphan-scenario-toc-entry">
+                                                                                    <a href="#a1e360f868980accc9ecf41a49a16469d10a6012675926488a871d0780565543"
+                                                                                       title="View scenario details">
+                                                                                        <i class="bi bi-chat-dots"></i> Scenario: Resetting filters and sorting
+                                                                                    </a>
+                                                                                </span>
+                                                                        </td>
+                                                                        <td>
+
+                                                                        </td>
+                                                                        <td style="width:5%;">
+                                                                            <table>
+                                                                                <tr>
+                                                                                    <td class="icons-bar">
+                                                                                        <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                           href="ac6d6ff874b4b858d04713c563f672721eef38f5df40a650e4c5846939b72940.html"
+                                                                                           title="View test results">
+                                                                                            <a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                                            </a>
+
+                                                                                            <i class="bi bi-person manual"
+                                                                                               title="Manual test"></i>
+                                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                               href="ac6d6ff874b4b858d04713c563f672721eef38f5df40a650e4c5846939b72940.html"
+                                                                                               title="View test results">
+                                                                                                <i class="bi bi-eyeglasses"></i>
+                                                                                            </a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="width:95%;" class="toc-title">
+                                                                            <span class="orphan-scenario-toc-entry">
+                                                                                    <a href="#d9da6cf276baad51a95ad9e974769d0938baa0b0a92214422ce0a836b93422e5"
+                                                                                       title="View scenario details">
+                                                                                        <i class="bi bi-chat-dots"></i> Scenario: No matching documents found after applying filters
+                                                                                    </a>
+                                                                                </span>
+                                                                        </td>
+                                                                        <td>
+
+                                                                        </td>
+                                                                        <td style="width:5%;">
+                                                                            <table>
+                                                                                <tr>
+                                                                                    <td class="icons-bar">
+                                                                                        <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                           href="6aa9fbe98eb7f222825942dd4ed51cf6c09128f21c8167f1bcb2fbaf74d22c3a.html"
+                                                                                           title="View test results">
+                                                                                            <a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                                            </a>
+
+                                                                                            <i class="bi bi-person manual"
+                                                                                               title="Manual test"></i>
+                                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                               href="6aa9fbe98eb7f222825942dd4ed51cf6c09128f21c8167f1bcb2fbaf74d22c3a.html"
+                                                                                               title="View test results">
+                                                                                                <i class="bi bi-eyeglasses"></i>
+                                                                                            </a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="width:95%;" class="toc-title">
+                                                                            <span class="orphan-scenario-toc-entry">
+                                                                                    <a href="#be6bff12440686110c063e0972fae99e1e65e24102945b537cca864f1d2a5b42"
+                                                                                       title="View scenario details">
+                                                                                        <i class="bi bi-chat-dots"></i> Scenario: Visual indication of applied filters/sorting
+                                                                                    </a>
+                                                                                </span>
+                                                                        </td>
+                                                                        <td>
+
+                                                                        </td>
+                                                                        <td style="width:5%;">
+                                                                            <table>
+                                                                                <tr>
+                                                                                    <td class="icons-bar">
+                                                                                        <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                           href="4302b1bcaf33be6979f4c0294174f602da39b54cb54260f4330a14cfa62c3369.html"
+                                                                                           title="View test results">
+                                                                                            <a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                                            </a>
+
+                                                                                            <i class="bi bi-person manual"
+                                                                                               title="Manual test"></i>
+                                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                               href="4302b1bcaf33be6979f4c0294174f602da39b54cb54260f4330a14cfa62c3369.html"
+                                                                                               title="View test results">
+                                                                                                <i class="bi bi-eyeglasses"></i>
+                                                                                            </a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                    </table>
+                                                </div>
+                                                <!--- END OF TOC --->
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <h3>Scenarios</h3>
+
+                                                    <a name="b00bdab6-1029-4904-b086-77f49519eecb"></a>
+                                                    <p class="rule-tags inline-tag">
+                                                    </p>
+                                                        <div class="scenario-docs card">
+                                                            <div class="scenario-docs card-header"
+                                                                 style="min-height:1.5em;">
+                                                                    <span class="scenario-heading">
+                                                                    Background: </span>
+                                                                </span>
+                                                            </div>
+                                                            <div class="scenario-docs card-body">
+                                                                    <p>Given the user is registered to a valid EUDI Wallet on their mobile device</p>
+                                                                    <p>And the user is on the Documents screen</p>
+                                                            </div>
+                                                        </div>
+
+
+                                                        <div class="scenario-docs card" id="05d11c640aadcb684987f21b4e9f4af61cd6051ff8207ddf41dbe92585108203">
+                                                            <div class="scenario-docs card-header success"
+                                                                 style="min-height:1.5em;">
+                                                                <div>
+                                                                        <span class="scenario-heading">
+                                                                            <a href="816572840655400912af2833d84934b0f4876b4beba755af2007624531cddbee.html"
+                                                                               title="View test results">Scenario: Initial state of the filter/sort option</a>
+                                                                        </span>
+
+                                                                        <span class="example-tags inline-tag">
+                                                                                <span class="badge tag-badge"
+                                                                                      style="background:default;">
+                                                                                    <i class="bi bi-tag-fill"></i>&nbsp;
+                                                                                    <a class="tagLink"
+                                                                                       style="background:default;"
+                                                                                       href="220d8ef6080eb8a7746b6ccaff3b44ac3c1f123a09790bb9a8ff31e7b07c9746.html">Passed (manual)</a>
+                                                                                </span>
+                                                                                <span class="badge tag-badge"
+                                                                                      style="background:default;">
+                                                                                    <i class="bi bi-tag-fill"></i>&nbsp;
+                                                                                    <a class="tagLink"
+                                                                                       style="background:default;"
+                                                                                       href="158d521cf98e36f42080b86ad5c98ab867315c59f9bf9dcaffecc5a69e9e4255.html">US_FASD_TC_01 (tag)</a>
+                                                                                </span>
+                                                                        </span>
+
+                                                                    <span class="scenario-result-icon">
+                                                                     <i
+                                                                            class="bi bi-person manual"
+                                                                            title="Manual test"></i>
+
+                                                                            <a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                        </span>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="scenario-docs card-body">
+                                                                    <p>Given the user is viewing the Documents screen</p>
+                                                                    <p>Then no filter should be applied (default state)</p>
+                                                                    <p>And documents should be sorted by the default option (based on category)</p>
+                                                                    <p>And the documents should be ordered by attestation name ascending within each category</p>
+                                                                    <p>And the filter or sort button should have no visual indication that a filter or sort option is applied</p>
+                                                                <div class="examples">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="scenario-docs card" id="ba149fb62b69694f3ac69fdd88afd30bd1e3d615d1f517a0b4d83842d1b1be57">
+                                                            <div class="scenario-docs card-header failure"
+                                                                 style="min-height:1.5em;">
+                                                                <div>
+                                                                        <span class="scenario-heading">
+                                                                            <a href="430d6adbd95a6c732c4bbdd5e80352d243b844433eaac9af330b95b6e09f5fa6.html"
+                                                                               title="View test results">Scenario: Opening the filter/sort bottom sheet</a>
+                                                                        </span>
+
+                                                                        <span class="example-tags inline-tag">
+                                                                                <span class="badge tag-badge"
+                                                                                      style="background:default;">
+                                                                                    <i class="bi bi-tag-fill"></i>&nbsp;
+                                                                                    <a class="tagLink"
+                                                                                       style="background:default;"
+                                                                                       href="f91c474d59d03631ba83e27106391a6b61bd1f8e244aaa371042894a4351a3cc.html">US_FASD_TC_02 (tag)</a>
+                                                                                </span>
+                                                                                <span class="badge tag-badge"
+                                                                                      style="background:default;">
+                                                                                    <i class="bi bi-tag-fill"></i>&nbsp;
+                                                                                    <a class="tagLink"
+                                                                                       style="background:default;"
+                                                                                       href="0923b7190349c5aa1076646a6b403753291c93b29933eba9c5f2656dab5ba9b7.html">Failed (manual)</a>
+                                                                                </span>
+                                                                        </span>
+
+                                                                    <span class="scenario-result-icon">
+                                                                     <i
+                                                                            class="bi bi-person manual"
+                                                                            title="Manual test"></i>
+
+                                                                            <a href='##beforetable'><i class='bi bi-x-circle-fill failure-icon ' title='FAILURE'></i></a>
+                                                                        </span>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="scenario-docs card-body">
+                                                                    <p>Given the user is on the Documents screen</p>
+                                                                    <p>When the user taps the filter or sort button</p>
+                                                                    <p>Then the filter and sort bottom sheet should slide up from the bottom of the screen</p>
+                                                                    <p>And the “Sort by” and “Filter by ..” sections should be displayed in collapsed view</p>
+                                                                    <p>And each section should display the applied filter and sort options respectively</p>
+                                                                <div class="examples">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="scenario-docs card" id="fad18d885fa0a5fef66f75cd81cf33224847cb4666202254e08f56bd6899ab43">
+                                                            <div class="scenario-docs card-header failure"
+                                                                 style="min-height:1.5em;">
+                                                                <div>
+                                                                        <span class="scenario-heading">
+                                                                            <a href="4e9237e43ff7285bd09e98563bf01131cfe4b2e5c52fa5975d72da1a19a86754.html"
+                                                                               title="View test results">Scenario: Expanding and collapsing the "Sort by" section</a>
+                                                                        </span>
+
+                                                                        <span class="example-tags inline-tag">
+                                                                                <span class="badge tag-badge"
+                                                                                      style="background:default;">
+                                                                                    <i class="bi bi-tag-fill"></i>&nbsp;
+                                                                                    <a class="tagLink"
+                                                                                       style="background:default;"
+                                                                                       href="aa54818d094ea4f1123e917cc4cc37fef43e480e41f9166667585a53eb4df7d2.html">US_FASD_TC_03 (tag)</a>
+                                                                                </span>
+                                                                                <span class="badge tag-badge"
+                                                                                      style="background:default;">
+                                                                                    <i class="bi bi-tag-fill"></i>&nbsp;
+                                                                                    <a class="tagLink"
+                                                                                       style="background:default;"
+                                                                                       href="0923b7190349c5aa1076646a6b403753291c93b29933eba9c5f2656dab5ba9b7.html">Failed (manual)</a>
+                                                                                </span>
+                                                                        </span>
+
+                                                                    <span class="scenario-result-icon">
+                                                                     <i
+                                                                            class="bi bi-person manual"
+                                                                            title="Manual test"></i>
+
+                                                                            <a href='##beforetable'><i class='bi bi-x-circle-fill failure-icon ' title='FAILURE'></i></a>
+                                                                        </span>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="scenario-docs card-body">
+                                                                    <p>Given the user has opened the filter or sort bottom sheet</p>
+                                                                    <p>When the user taps the Sort by section</p>
+                                                                    <p>Then the section should switch between collapsed and expanded views</p>
+                                                                <div class="examples">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="scenario-docs card" id="996439fe745360d3ce1cb8475dc46fe16d37ee2311db310a73d889007a696a50">
+                                                            <div class="scenario-docs card-header failure"
+                                                                 style="min-height:1.5em;">
+                                                                <div>
+                                                                        <span class="scenario-heading">
+                                                                            <a href="279e03b8c5cbdf48b525432b54f709b279852f4f8c1f3b2350506df09d378415.html"
+                                                                               title="View test results">Scenario: Sorting documents by attribute</a>
+                                                                        </span>
+
+                                                                        <span class="example-tags inline-tag">
+                                                                                <span class="badge tag-badge"
+                                                                                      style="background:default;">
+                                                                                    <i class="bi bi-tag-fill"></i>&nbsp;
+                                                                                    <a class="tagLink"
+                                                                                       style="background:default;"
+                                                                                       href="cbb8e0e10aac722a6064f1fbee85c949a180ec35edc5b24b832f932b2a803047.html">US_FASD_TC_04 (tag)</a>
+                                                                                </span>
+                                                                                <span class="badge tag-badge"
+                                                                                      style="background:default;">
+                                                                                    <i class="bi bi-tag-fill"></i>&nbsp;
+                                                                                    <a class="tagLink"
+                                                                                       style="background:default;"
+                                                                                       href="0923b7190349c5aa1076646a6b403753291c93b29933eba9c5f2656dab5ba9b7.html">Failed (manual)</a>
+                                                                                </span>
+                                                                        </span>
+
+                                                                    <span class="scenario-result-icon">
+                                                                     <i
+                                                                            class="bi bi-person manual"
+                                                                            title="Manual test"></i>
+
+                                                                            <a href='##beforetable'><i class='bi bi-x-circle-fill failure-icon ' title='FAILURE'></i></a>
+                                                                        </span>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="scenario-docs card-body">
+                                                                    <p>Given the user has expanded the Sort by section</p>
+                                                                    <p>When the user selects to sort by Date Issued</p>
+                                                                    <p>And the user selects Descending order</p>
+                                                                    <p>And the user taps the Apply button</p>
+                                                                    <p>Then the bottom sheet should slide down</p>
+                                                                    <p>And the EUDI Wallet should apply the sorting by Date Issued in descending order</p>
+                                                                    <p>And the documents should be listed according to the selected sorting order</p>
+                                                                <div class="examples">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="scenario-docs card" id="85a3287fc0e371d258c4bbb96b3afdb258e4bccfa2ac233e2c291b98a065454c">
+                                                            <div class="scenario-docs card-header success"
+                                                                 style="min-height:1.5em;">
+                                                                <div>
+                                                                        <span class="scenario-heading">
+                                                                            <a href="2d14600fce29be2948b4dbb56bb02908e1611aea9fdd8c349dd2b907d71b1298.html"
+                                                                               title="View test results">Scenario: Sorting documents by default option with grouping</a>
+                                                                        </span>
+
+                                                                        <span class="example-tags inline-tag">
+                                                                                <span class="badge tag-badge"
+                                                                                      style="background:default;">
+                                                                                    <i class="bi bi-tag-fill"></i>&nbsp;
+                                                                                    <a class="tagLink"
+                                                                                       style="background:default;"
+                                                                                       href="220d8ef6080eb8a7746b6ccaff3b44ac3c1f123a09790bb9a8ff31e7b07c9746.html">Passed (manual)</a>
+                                                                                </span>
+                                                                                <span class="badge tag-badge"
+                                                                                      style="background:default;">
+                                                                                    <i class="bi bi-tag-fill"></i>&nbsp;
+                                                                                    <a class="tagLink"
+                                                                                       style="background:default;"
+                                                                                       href="d854452aedbba320858756bcef464118fb4bb7a1e786ce99ceb9ad8a5ce65a2e.html">US_FASD_TC_05 (tag)</a>
+                                                                                </span>
+                                                                        </span>
+
+                                                                    <span class="scenario-result-icon">
+                                                                     <i
+                                                                            class="bi bi-person manual"
+                                                                            title="Manual test"></i>
+
+                                                                            <a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                        </span>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="scenario-docs card-body">
+                                                                    <p>Given the user has opened the filter or sort bottom sheet</p>
+                                                                    <p>When the user selects to sort by Default or Category</p>
+                                                                    <p>And the user taps the Apply button</p>
+                                                                    <p>Then the documents list should be grouped by category</p>
+                                                                    <p>And within each category, the documents should be ordered by attestation name in ascending order</p>
+                                                                <div class="examples">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="scenario-docs card" id="6d156023cfa6dde041b0bdff8b6a317c96a3482e4078da169a32602465237287">
+                                                            <div class="scenario-docs card-header failure"
+                                                                 style="min-height:1.5em;">
+                                                                <div>
+                                                                        <span class="scenario-heading">
+                                                                            <a href="eab7b6602f6a783a42cd6c68aadb7cd77aa817a5cde0d41545bc27d9b09f1c93.html"
+                                                                               title="View test results">Scenario: Expanding and collapsing the "Filter by Category" section</a>
+                                                                        </span>
+
+                                                                        <span class="example-tags inline-tag">
+                                                                                <span class="badge tag-badge"
+                                                                                      style="background:default;">
+                                                                                    <i class="bi bi-tag-fill"></i>&nbsp;
+                                                                                    <a class="tagLink"
+                                                                                       style="background:default;"
+                                                                                       href="6e2c4eb4842e570ebc7a36a5e833e2804f9dcf9a9c00beaa3fe54c483fc2e67d.html">US_FASD_TC_06 (tag)</a>
+                                                                                </span>
+                                                                                <span class="badge tag-badge"
+                                                                                      style="background:default;">
+                                                                                    <i class="bi bi-tag-fill"></i>&nbsp;
+                                                                                    <a class="tagLink"
+                                                                                       style="background:default;"
+                                                                                       href="0923b7190349c5aa1076646a6b403753291c93b29933eba9c5f2656dab5ba9b7.html">Failed (manual)</a>
+                                                                                </span>
+                                                                        </span>
+
+                                                                    <span class="scenario-result-icon">
+                                                                     <i
+                                                                            class="bi bi-person manual"
+                                                                            title="Manual test"></i>
+
+                                                                            <a href='##beforetable'><i class='bi bi-x-circle-fill failure-icon ' title='FAILURE'></i></a>
+                                                                        </span>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="scenario-docs card-body">
+                                                                    <p>Given the user has opened the filter or sort bottom sheet</p>
+                                                                    <p>When the user taps the Filter by Category section</p>
+                                                                    <p>Then the section should switch between collapsed and expanded views</p>
+                                                                <div class="examples">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="scenario-docs card" id="2bf5a4e9d828c414133edeb5df12f27c18f678574204dbd1d64809a373adb8a8">
+                                                            <div class="scenario-docs card-header failure"
+                                                                 style="min-height:1.5em;">
+                                                                <div>
+                                                                        <span class="scenario-heading">
+                                                                            <a href="e0778c670974feea38c43d6ffcbf77402c9932dc153e067efd8b5385000482fe.html"
+                                                                               title="View test results">Scenario: Filtering documents by category</a>
+                                                                        </span>
+
+                                                                        <span class="example-tags inline-tag">
+                                                                                <span class="badge tag-badge"
+                                                                                      style="background:default;">
+                                                                                    <i class="bi bi-tag-fill"></i>&nbsp;
+                                                                                    <a class="tagLink"
+                                                                                       style="background:default;"
+                                                                                       href="fa989ffbf37f548e1898c811b06e61c84da5cb736c3228b47bf29fe0ff85dbd6.html">US_FASD_TC_07 (tag)</a>
+                                                                                </span>
+                                                                                <span class="badge tag-badge"
+                                                                                      style="background:default;">
+                                                                                    <i class="bi bi-tag-fill"></i>&nbsp;
+                                                                                    <a class="tagLink"
+                                                                                       style="background:default;"
+                                                                                       href="0923b7190349c5aa1076646a6b403753291c93b29933eba9c5f2656dab5ba9b7.html">Failed (manual)</a>
+                                                                                </span>
+                                                                        </span>
+
+                                                                    <span class="scenario-result-icon">
+                                                                     <i
+                                                                            class="bi bi-person manual"
+                                                                            title="Manual test"></i>
+
+                                                                            <a href='##beforetable'><i class='bi bi-x-circle-fill failure-icon ' title='FAILURE'></i></a>
+                                                                        </span>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="scenario-docs card-body">
+                                                                    <p>Given the user has expanded the Filter by Category section</p>
+                                                                    <p>When the user selects one or more categories</p>
+                                                                    <p>And the user taps the Apply button</p>
+                                                                    <p>Then the bottom sheet should slide down</p>
+                                                                    <p>And the EUDI Wallet should apply the filter by the selected categories</p>
+                                                                    <p>And only documents within those categories should be displayed</p>
+                                                                <div class="examples">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="scenario-docs card" id="92f9b1ffcc1d0a75d4501a57f301d3cdfa994bab1bb3a9c417a30199ab131eb4">
+                                                            <div class="scenario-docs card-header success"
+                                                                 style="min-height:1.5em;">
+                                                                <div>
+                                                                        <span class="scenario-heading">
+                                                                            <a href="2586b9741545fddf90f69718f80241a3e13f6a8ef6cbb89c3b4c9f9710bd1690.html"
+                                                                               title="View test results">Scenario: Filtering documents by issuer</a>
+                                                                        </span>
+
+                                                                        <span class="example-tags inline-tag">
+                                                                                <span class="badge tag-badge"
+                                                                                      style="background:default;">
+                                                                                    <i class="bi bi-tag-fill"></i>&nbsp;
+                                                                                    <a class="tagLink"
+                                                                                       style="background:default;"
+                                                                                       href="69a16c37de58bc16669a60115cbe07fdca4410c703210f5ceaf68ab7c9cf53ed.html">US_FASD_TC_08 (tag)</a>
+                                                                                </span>
+                                                                                <span class="badge tag-badge"
+                                                                                      style="background:default;">
+                                                                                    <i class="bi bi-tag-fill"></i>&nbsp;
+                                                                                    <a class="tagLink"
+                                                                                       style="background:default;"
+                                                                                       href="220d8ef6080eb8a7746b6ccaff3b44ac3c1f123a09790bb9a8ff31e7b07c9746.html">Passed (manual)</a>
+                                                                                </span>
+                                                                        </span>
+
+                                                                    <span class="scenario-result-icon">
+                                                                     <i
+                                                                            class="bi bi-person manual"
+                                                                            title="Manual test"></i>
+
+                                                                            <a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                        </span>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="scenario-docs card-body">
+                                                                    <p>Given the user has opened the filter orsort bottom sheet</p>
+                                                                    <p>When the user taps the Filter by Issuer section</p>
+                                                                    <p>And the user selects one or more issuers from the list</p>
+                                                                    <p>And the user taps the Apply button</p>
+                                                                    <p>Then the bottom sheet should slide down</p>
+                                                                    <p>And the EUDI Wallet should apply the filter by the selected issuers</p>
+                                                                    <p>And only documents issued by the selected issuers should be displayed</p>
+                                                                <div class="examples">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="scenario-docs card" id="65a0765d5bef863bd92e3029b1406c45056adf3d4703c1a87f1294f16d1c87a8">
+                                                            <div class="scenario-docs card-header success"
+                                                                 style="min-height:1.5em;">
+                                                                <div>
+                                                                        <span class="scenario-heading">
+                                                                            <a href="aa9b15831da5e41356c29b855397bfa071504e3b2ab9134470d2a7eb4d025787.html"
+                                                                               title="View test results">Scenario: Filtering documents by expiry period</a>
+                                                                        </span>
+
+                                                                        <span class="example-tags inline-tag">
+                                                                                <span class="badge tag-badge"
+                                                                                      style="background:default;">
+                                                                                    <i class="bi bi-tag-fill"></i>&nbsp;
+                                                                                    <a class="tagLink"
+                                                                                       style="background:default;"
+                                                                                       href="df5bcdd6afb969ac94cdd735a989e6ba8fb6016ada1a5632c4f07e5439e9b329.html">US_FASD_TC_09 (tag)</a>
+                                                                                </span>
+                                                                                <span class="badge tag-badge"
+                                                                                      style="background:default;">
+                                                                                    <i class="bi bi-tag-fill"></i>&nbsp;
+                                                                                    <a class="tagLink"
+                                                                                       style="background:default;"
+                                                                                       href="220d8ef6080eb8a7746b6ccaff3b44ac3c1f123a09790bb9a8ff31e7b07c9746.html">Passed (manual)</a>
+                                                                                </span>
+                                                                        </span>
+
+                                                                    <span class="scenario-result-icon">
+                                                                     <i
+                                                                            class="bi bi-person manual"
+                                                                            title="Manual test"></i>
+
+                                                                            <a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                        </span>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="scenario-docs card-body">
+                                                                    <p>Given the user has opened the filter or sort bottom sheet</p>
+                                                                    <p>When the user taps the Filter by Expiry Period section</p>
+                                                                    <p>And the user selects an expiry period (e.g., Next thirty Days)</p>
+                                                                    <p>And the user taps the Apply button</p>
+                                                                    <p>Then the bottom sheet should slide down</p>
+                                                                    <p>And the EUDI Wallet should apply the filter by the selected expiry period</p>
+                                                                    <p>And only documents expiring within the selected period should be displayed</p>
+                                                                <div class="examples">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="scenario-docs card" id="a1e360f868980accc9ecf41a49a16469d10a6012675926488a871d0780565543">
+                                                            <div class="scenario-docs card-header success"
+                                                                 style="min-height:1.5em;">
+                                                                <div>
+                                                                        <span class="scenario-heading">
+                                                                            <a href="ac6d6ff874b4b858d04713c563f672721eef38f5df40a650e4c5846939b72940.html"
+                                                                               title="View test results">Scenario: Resetting filters and sorting</a>
+                                                                        </span>
+
+                                                                        <span class="example-tags inline-tag">
+                                                                                <span class="badge tag-badge"
+                                                                                      style="background:default;">
+                                                                                    <i class="bi bi-tag-fill"></i>&nbsp;
+                                                                                    <a class="tagLink"
+                                                                                       style="background:default;"
+                                                                                       href="220d8ef6080eb8a7746b6ccaff3b44ac3c1f123a09790bb9a8ff31e7b07c9746.html">Passed (manual)</a>
+                                                                                </span>
+                                                                                <span class="badge tag-badge"
+                                                                                      style="background:default;">
+                                                                                    <i class="bi bi-tag-fill"></i>&nbsp;
+                                                                                    <a class="tagLink"
+                                                                                       style="background:default;"
+                                                                                       href="397e3d96e2355355934824313e34084bf6b9acb0cba3fddd06e63ad5562bfa0e.html">US_FASD_TC_10 (tag)</a>
+                                                                                </span>
+                                                                        </span>
+
+                                                                    <span class="scenario-result-icon">
+                                                                     <i
+                                                                            class="bi bi-person manual"
+                                                                            title="Manual test"></i>
+
+                                                                            <a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                        </span>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="scenario-docs card-body">
+                                                                    <p>Given the user has applied a filter or sort option</p>
+                                                                    <p>When the user taps the Reset all button in the filter or sort bottom sheet</p>
+                                                                    <p>Then the filters and sort options should be reset to the default values</p>
+                                                                    <p>And the bottom sheet should slide down</p>
+                                                                    <p>And the EUDI Wallet should display all non expired documents grouped by category in ascending order by attestation name</p>
+                                                                <div class="examples">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="scenario-docs card" id="d9da6cf276baad51a95ad9e974769d0938baa0b0a92214422ce0a836b93422e5">
+                                                            <div class="scenario-docs card-header success"
+                                                                 style="min-height:1.5em;">
+                                                                <div>
+                                                                        <span class="scenario-heading">
+                                                                            <a href="6aa9fbe98eb7f222825942dd4ed51cf6c09128f21c8167f1bcb2fbaf74d22c3a.html"
+                                                                               title="View test results">Scenario: No matching documents found after applying filters</a>
+                                                                        </span>
+
+                                                                        <span class="example-tags inline-tag">
+                                                                                <span class="badge tag-badge"
+                                                                                      style="background:default;">
+                                                                                    <i class="bi bi-tag-fill"></i>&nbsp;
+                                                                                    <a class="tagLink"
+                                                                                       style="background:default;"
+                                                                                       href="220d8ef6080eb8a7746b6ccaff3b44ac3c1f123a09790bb9a8ff31e7b07c9746.html">Passed (manual)</a>
+                                                                                </span>
+                                                                                <span class="badge tag-badge"
+                                                                                      style="background:default;">
+                                                                                    <i class="bi bi-tag-fill"></i>&nbsp;
+                                                                                    <a class="tagLink"
+                                                                                       style="background:default;"
+                                                                                       href="ae9f389ec750f1f82f807ad51a00bc4f7a6637788ce5351d63fb5e744abcdb89.html">US_FASD_TC_11 (tag)</a>
+                                                                                </span>
+                                                                        </span>
+
+                                                                    <span class="scenario-result-icon">
+                                                                     <i
+                                                                            class="bi bi-person manual"
+                                                                            title="Manual test"></i>
+
+                                                                            <a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                        </span>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="scenario-docs card-body">
+                                                                    <p>Given the user has applied a filter or sort option</p>
+                                                                    <p>When no matching documents are found based on the applied filters</p>
+                                                                    <p>Then the EUDI Wallet should display an informative message in the list section</p>
+                                                                    <p>And if no results are found within a category, that category should not be displayed when sorting is set to Default or Category</p>
+                                                                <div class="examples">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="scenario-docs card" id="be6bff12440686110c063e0972fae99e1e65e24102945b537cca864f1d2a5b42">
+                                                            <div class="scenario-docs card-header success"
+                                                                 style="min-height:1.5em;">
+                                                                <div>
+                                                                        <span class="scenario-heading">
+                                                                            <a href="4302b1bcaf33be6979f4c0294174f602da39b54cb54260f4330a14cfa62c3369.html"
+                                                                               title="View test results">Scenario: Visual indication of applied filters/sorting</a>
+                                                                        </span>
+
+                                                                        <span class="example-tags inline-tag">
+                                                                                <span class="badge tag-badge"
+                                                                                      style="background:default;">
+                                                                                    <i class="bi bi-tag-fill"></i>&nbsp;
+                                                                                    <a class="tagLink"
+                                                                                       style="background:default;"
+                                                                                       href="220d8ef6080eb8a7746b6ccaff3b44ac3c1f123a09790bb9a8ff31e7b07c9746.html">Passed (manual)</a>
+                                                                                </span>
+                                                                                <span class="badge tag-badge"
+                                                                                      style="background:default;">
+                                                                                    <i class="bi bi-tag-fill"></i>&nbsp;
+                                                                                    <a class="tagLink"
+                                                                                       style="background:default;"
+                                                                                       href="cbb427b64228613bd1be2c93489f7e1a2a4b4bb33f21b65ed9eb3c04f3c84250.html">US_FASD_TC_12 (tag)</a>
+                                                                                </span>
+                                                                        </span>
+
+                                                                    <span class="scenario-result-icon">
+                                                                     <i
+                                                                            class="bi bi-person manual"
+                                                                            title="Manual test"></i>
+
+                                                                            <a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                        </span>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="scenario-docs card-body">
+                                                                    <p>Given the user has applied a filter or sorting option that is different from the default</p>
+                                                                    <p>When the user returns to the Documents screen</p>
+                                                                    <p>Then the filter or sort button should have a visual indication that user filter(s) either and or or sorting options have been applied</p>
+                                                                <div class="examples">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="results" class="tab-pane fade">
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <h3>Feature Coverage By Scenario</h3>
+                                                <!-- TEST RESULT PIE CHART -->
+                                                    <div class="chart-container" style="position: relative; width:30vw">
+                                                        <canvas id="resultChart" width="300" height="300"></canvas>
+                                                    </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <h4><i class="bi bi-check-square"></i> Test Outcomes</h4>
+                                                <!-- Severity bar chart -->
+                                                <div class="chart-container" style="position: relative; width:30vw">
+                                                    <canvas id="severityChart" width="300" height="300"></canvas>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-4">
+                                                <h4><i class="bi bi-graph-up"></i> Test Performance</h4>
+
+                                                <!-- Duration bar chart -->
+                                                <div class="chart-container" style="position: relative; width:30vw">
+                                                    <canvas id="durationChart" width="300" height="300"></canvas>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+    <div>
+        <h3><i class="bi bi-speedometer2"></i> Key Statistics</h3>
+        <div>
+            <table class="table table-striped table-hover">
+                <tbody>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-card-checklist"></i> Number of Scenarios
+                    </td>
+                    <td>12</td>
+                    <td>
+                        <i class="bi bi-stopwatch"></i> Total
+                        Duration
+                    </td>
+                    <td>198ms</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-caret-right"></i> Total Number of Test Cases
+                    </td>
+                    <td>12</td>
+                    <td>
+                        <i class="bi bi-trophy"></i> Fastest Test
+                    </td>
+                    <td>7ms</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-person"></i> Number of Manual Test Cases
+                    </td>
+                    <td>12</td>
+                    <td>
+                        <i class="bi bi-skip-start"></i> Slowest
+                        Test
+                    </td>
+                    <td>13ms</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-flag-fill"></i> Tests Started
+                    </td>
+                    <td>Feb 28, 2025 10:16:13</td>
+                    <td>
+                        <i class="bi bi-stopwatch"></i> Average
+                        Execution Time
+                    </td>
+                    <td>9ms</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-stop-circle"></i> Tests
+                        Finished
+                    </td>
+                    <td>Feb 28, 2025 10:16:13</td>
+                    <td>
+                        <i class="bi bi-stopwatch-fill"></i> Total
+                        Execution Time
+                    </td>
+                    <td>108ms</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+                                                <h3><i class="bi bi-gear"></i> Automated Tests</h3>
+
+                                                    No automated tests were executed
+
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <h3><i class="bi bi-hand-index-thumb"></i> Manual Tests</h3>
+
+                                                    <table class="scenario-result-table table"
+                                                           id="manual-scenario-results">
+                                                        <thead>
+                                                        <tr>
+                                                            <th>##</th>
+                                                            <th class="test-name-column">Scenario</th>
+                                                            <th>Context</th>
+                                                            <th>Steps</th>
+                                                            <th>Result</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                                <tr class="scenario-result SUCCESS">
+                                                                    <td>
+                                                                            <a href="#">Filtering and sorting documents in the EUDI Wallet</a>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="816572840655400912af2833d84934b0f4876b4beba755af2007624531cddbee.html">Initial state of the filter/sort option</a>
+                                                                    </td>
+                                                                    <td><i class="bi bi-person"></i></td>
+                                                                    <td>5</td>
+                                                                    <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                        <span style="display:none">SUCCESS</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="scenario-result FAILURE">
+                                                                    <td>
+                                                                            <a href="#">Filtering and sorting documents in the EUDI Wallet</a>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="430d6adbd95a6c732c4bbdd5e80352d243b844433eaac9af330b95b6e09f5fa6.html">Opening the filter/sort bottom sheet</a>
+                                                                    </td>
+                                                                    <td><i class="bi bi-person"></i></td>
+                                                                    <td>5</td>
+                                                                    <td><a href='##beforetable'><i class='bi bi-x-circle-fill failure-icon ' title='FAILURE'></i></a>
+                                                                        <span style="display:none">FAILURE</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="scenario-result FAILURE">
+                                                                    <td>
+                                                                            <a href="#">Filtering and sorting documents in the EUDI Wallet</a>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="4e9237e43ff7285bd09e98563bf01131cfe4b2e5c52fa5975d72da1a19a86754.html">Expanding and collapsing the "Sort by" section</a>
+                                                                    </td>
+                                                                    <td><i class="bi bi-person"></i></td>
+                                                                    <td>3</td>
+                                                                    <td><a href='##beforetable'><i class='bi bi-x-circle-fill failure-icon ' title='FAILURE'></i></a>
+                                                                        <span style="display:none">FAILURE</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="scenario-result FAILURE">
+                                                                    <td>
+                                                                            <a href="#">Filtering and sorting documents in the EUDI Wallet</a>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="279e03b8c5cbdf48b525432b54f709b279852f4f8c1f3b2350506df09d378415.html">Sorting documents by attribute</a>
+                                                                    </td>
+                                                                    <td><i class="bi bi-person"></i></td>
+                                                                    <td>7</td>
+                                                                    <td><a href='##beforetable'><i class='bi bi-x-circle-fill failure-icon ' title='FAILURE'></i></a>
+                                                                        <span style="display:none">FAILURE</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="scenario-result SUCCESS">
+                                                                    <td>
+                                                                            <a href="#">Filtering and sorting documents in the EUDI Wallet</a>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="2d14600fce29be2948b4dbb56bb02908e1611aea9fdd8c349dd2b907d71b1298.html">Sorting documents by default option with grouping</a>
+                                                                    </td>
+                                                                    <td><i class="bi bi-person"></i></td>
+                                                                    <td>5</td>
+                                                                    <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                        <span style="display:none">SUCCESS</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="scenario-result FAILURE">
+                                                                    <td>
+                                                                            <a href="#">Filtering and sorting documents in the EUDI Wallet</a>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="eab7b6602f6a783a42cd6c68aadb7cd77aa817a5cde0d41545bc27d9b09f1c93.html">Expanding and collapsing the "Filter by Category" section</a>
+                                                                    </td>
+                                                                    <td><i class="bi bi-person"></i></td>
+                                                                    <td>3</td>
+                                                                    <td><a href='##beforetable'><i class='bi bi-x-circle-fill failure-icon ' title='FAILURE'></i></a>
+                                                                        <span style="display:none">FAILURE</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="scenario-result FAILURE">
+                                                                    <td>
+                                                                            <a href="#">Filtering and sorting documents in the EUDI Wallet</a>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="e0778c670974feea38c43d6ffcbf77402c9932dc153e067efd8b5385000482fe.html">Filtering documents by category</a>
+                                                                    </td>
+                                                                    <td><i class="bi bi-person"></i></td>
+                                                                    <td>6</td>
+                                                                    <td><a href='##beforetable'><i class='bi bi-x-circle-fill failure-icon ' title='FAILURE'></i></a>
+                                                                        <span style="display:none">FAILURE</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="scenario-result SUCCESS">
+                                                                    <td>
+                                                                            <a href="#">Filtering and sorting documents in the EUDI Wallet</a>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="2586b9741545fddf90f69718f80241a3e13f6a8ef6cbb89c3b4c9f9710bd1690.html">Filtering documents by issuer</a>
+                                                                    </td>
+                                                                    <td><i class="bi bi-person"></i></td>
+                                                                    <td>7</td>
+                                                                    <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                        <span style="display:none">SUCCESS</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="scenario-result SUCCESS">
+                                                                    <td>
+                                                                            <a href="#">Filtering and sorting documents in the EUDI Wallet</a>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="aa9b15831da5e41356c29b855397bfa071504e3b2ab9134470d2a7eb4d025787.html">Filtering documents by expiry period</a>
+                                                                    </td>
+                                                                    <td><i class="bi bi-person"></i></td>
+                                                                    <td>7</td>
+                                                                    <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                        <span style="display:none">SUCCESS</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="scenario-result SUCCESS">
+                                                                    <td>
+                                                                            <a href="#">Filtering and sorting documents in the EUDI Wallet</a>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="ac6d6ff874b4b858d04713c563f672721eef38f5df40a650e4c5846939b72940.html">Resetting filters and sorting</a>
+                                                                    </td>
+                                                                    <td><i class="bi bi-person"></i></td>
+                                                                    <td>5</td>
+                                                                    <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                        <span style="display:none">SUCCESS</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="scenario-result SUCCESS">
+                                                                    <td>
+                                                                            <a href="#">Filtering and sorting documents in the EUDI Wallet</a>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="6aa9fbe98eb7f222825942dd4ed51cf6c09128f21c8167f1bcb2fbaf74d22c3a.html">No matching documents found after applying filters</a>
+                                                                    </td>
+                                                                    <td><i class="bi bi-person"></i></td>
+                                                                    <td>4</td>
+                                                                    <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                        <span style="display:none">SUCCESS</span>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr class="scenario-result SUCCESS">
+                                                                    <td>
+                                                                            <a href="#">Filtering and sorting documents in the EUDI Wallet</a>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="4302b1bcaf33be6979f4c0294174f602da39b54cb54260f4330a14cfa62c3369.html">Visual indication of applied filters/sorting</a>
+                                                                    </td>
+                                                                    <td><i class="bi bi-person"></i></td>
+                                                                    <td>3</td>
+                                                                    <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                        <span style="display:none">SUCCESS</span>
+                                                                    </td>
+                                                                </tr>
+                                                        </tbody>
+                                                    </table>
+
+                                            </div>
+                                        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <h3>Tags</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <div>
+                                    <a href="17ac5db38eea49b8ef93a3621ce9518c337b26e4caf778f53835d7590bb38909.html">
+                                    <span class="tag-badge badge" style="background-color:#fd938e; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> Q4 2024&nbsp;&nbsp;&nbsp;12
+                                    </span>
+                                    </a>
+                                    <a href="69a16c37de58bc16669a60115cbe07fdca4410c703210f5ceaf68ab7c9cf53ed.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US FASD TC 08&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="df5bcdd6afb969ac94cdd735a989e6ba8fb6016ada1a5632c4f07e5439e9b329.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US FASD TC 09&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="6e2c4eb4842e570ebc7a36a5e833e2804f9dcf9a9c00beaa3fe54c483fc2e67d.html">
+                                    <span class="tag-badge badge" style="background-color:#fd938e; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US FASD TC 06&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="fa989ffbf37f548e1898c811b06e61c84da5cb736c3228b47bf29fe0ff85dbd6.html">
+                                    <span class="tag-badge badge" style="background-color:#fd938e; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US FASD TC 07&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="cbb8e0e10aac722a6064f1fbee85c949a180ec35edc5b24b832f932b2a803047.html">
+                                    <span class="tag-badge badge" style="background-color:#fd938e; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US FASD TC 04&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="9a26bd101adfda745f743db04eb3269922eb1ff4d86d9997efeca1ebfe995ac4.html">
+                                    <span class="tag-badge badge" style="background-color:#fd938e; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> Manual&nbsp;&nbsp;&nbsp;12
+                                    </span>
+                                    </a>
+                                    <a href="d854452aedbba320858756bcef464118fb4bb7a1e786ce99ceb9ad8a5ce65a2e.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US FASD TC 05&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="f91c474d59d03631ba83e27106391a6b61bd1f8e244aaa371042894a4351a3cc.html">
+                                    <span class="tag-badge badge" style="background-color:#fd938e; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US FASD TC 02&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="aa54818d094ea4f1123e917cc4cc37fef43e480e41f9166667585a53eb4df7d2.html">
+                                    <span class="tag-badge badge" style="background-color:#fd938e; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US FASD TC 03&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="ae9f389ec750f1f82f807ad51a00bc4f7a6637788ce5351d63fb5e744abcdb89.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US FASD TC 11&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="158d521cf98e36f42080b86ad5c98ab867315c59f9bf9dcaffecc5a69e9e4255.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US FASD TC 01&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="cbb427b64228613bd1be2c93489f7e1a2a4b4bb33f21b65ed9eb3c04f3c84250.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US FASD TC 12&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="397e3d96e2355355934824313e34084bf6b9acb0cba3fddd06e63ad5562bfa0e.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US FASD TC 10&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="6021971243aabd1053d895d12220b5e0fa729923cca65e4eafd91a8a044b7dee.html">
+                                    <span class="tag-badge badge" style="background-color:#fd938e; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US FASD&nbsp;&nbsp;&nbsp;12
+                                    </span>
+                                    </a>
+                                    <a href="6f8a5d68a7c6ca6142be6d100bb7953e91690ce198c99ea44c1bf7804e9f3b13.html">
+                                    <span class="tag-badge badge" style="background-color:#fd938e; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> Ios&nbsp;&nbsp;&nbsp;12
+                                    </span>
+                                    </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                                <h5 class="card-title">Context</h5>
+                            <div>
+                                    <a href="d7d055c3a782deac55af5fa0b3adcb8d18e602f046db40a54a53918076ac8a22.html">
+                                    <span class="tag-badge badge" style="background-color:#fd938e; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> Mac&nbsp;&nbsp;&nbsp;12
+                                    </span>
+                                    </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                                <h5 class="card-title">Manual</h5>
+                            <div>
+                                    <a href="220d8ef6080eb8a7746b6ccaff3b44ac3c1f123a09790bb9a8ff31e7b07c9746.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> Passed&nbsp;&nbsp;&nbsp;7
+                                    </span>
+                                    </a>
+                                    <a href="0923b7190349c5aa1076646a6b403753291c93b29933eba9c5f2656dab5ba9b7.html">
+                                    <span class="tag-badge badge" style="background-color:#fd938e; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> Failed&nbsp;&nbsp;&nbsp;5
+                                    </span>
+                                    </a>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12">
+                    <span class="version">Serenity BDD version 3.9.2</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Chart data -->
+    <!-- PIE CHART -->
+    <script>
+
+        // The results pie chart
+        const outcomeChartCtx = document.getElementById('resultChart');
+
+        // Options define for display value on top of bars
+        const outcomeDetailsReports = [
+            { title: 'Passing Test Cases', link: "0defd1c096f28f44d70efe17ebcecbaf4e1dd5b62320fc696dc3bb7072ea0b3f.html" },
+            { title: 'Pending Test Cases', link: "a7cb85249e34b7e7da3647010fc4891ec9fabf81fedca976a745846496099ea8.html" },
+            { title: 'Ignored Test Cases', link: "3bb1c2d4af32c2c8d40b3ef25c2981c5001e8408f77998831b6d0146b39d857e.html" },
+            { title: 'Skipped Test Cases', link: "b4743af0db8a9f694b9087a8cd50e0e0fe986bb7ea6e2d47218d6d3e8dc613b9.html" },
+            { title: 'Aborted Test Cases',  link: "a25617f5e906967c29f550dddf4965413e2505c231319a9d095247b32ed8190b.html"},
+            { title: 'Failed Test Cases', link: "2a984a151f95117dff03884b8995a3806791b0852485d749bbfaec3b49beacd4.html"  },
+            { title: 'Broken Test Cases', link: "cb4d3247582884ff64e4dbd3062489fed7b58747929a4e4905981fe3318c6a2c.html"    },
+            { title: 'Compromised Test Cases',  link: "aa1483a20e210c72030b4fc6d4a7be4c1595d7ebc42639d97cbff551708a03f4.html" },
+        ]
+        const outcomeData = {
+            labels: ['Passing Test Cases', 'Pending Test Cases', 'Ignored Test Cases', 'Skipped Test Cases', 'Aborted Test Cases', 'Failed Test Cases', 'Broken Test Cases', 'Compromised Test Cases','Undefined Test Cases'],
+            datasets: [{
+                label: 'Test Results',
+                fill: false,
+                data: [{meta: 'Passing tests', value: 7}, {meta: 'Pending tests', value: 0}, {meta: 'Ignored tests', value: 0}, {meta: 'Skipped tests', value: 0}, {meta: 'Aborted tests', value: 0}, {meta: 'Failing tests', value: 5}, {meta: 'Broken tests', value: 0}, {meta: 'Compromised tests', value: 0}],
+                backgroundColor: ['rgba(153,204,51,0.5)','rgba(165, 199, 238, 0.5)','rgba(168, 168, 168, 0.5)','rgba(238, 224, 152, 0.75)','rgba(255, 153, 102, 0.5)','rgba(255, 22, 49, 0.5)','rgba(255, 97, 8, 0.5)','rgba(255, 104, 255, 0.5)','rgba(83, 50, 168, 0.5)'],
+                borderColor: ['rgba(153,204,51,1)','rgba(165, 199, 238, 1)','rgba(168, 168, 168, 1)','rgba(238, 224, 152, 1)','rgba(255, 153, 102, 1)','rgba(255, 22, 49, 1)','rgba(255, 97, 8, 1)','rgba(255, 104, 255, 1)','rgba(83, 50, 168, 1)'],
+                borderWidth: 1,
+            }]
+        }
+        const outcomeOptions = {
+            responsive: true,
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'bottom'
+                },
+                // Change options for ALL labels of THIS CHART
+                datalabels: {
+                    color: '#444444',
+                    'font.weight': 'bold',
+                    formatter: (value, ctx) => {
+                        let sum = 0;
+                        let dataArr = ctx.chart.data.datasets[0].data;
+                        dataArr.map(data => {
+                            sum += data;
+                        });
+                        let percentage = (value * 100 / sum).toFixed(0) + "%";
+                        if (percentage === '0%' || percentage === 'NaN%') {
+                            return '';
+                        } else {
+                            return percentage;
+                        }
+                    },
+                },
+            }
+        }
+
+        const outcomeChart = new Chart(outcomeChartCtx, {
+            type: 'doughnut',
+            data: outcomeData,
+            options: outcomeOptions,
+            plugins: [
+                {
+                    id: 'text',
+                    beforeDraw: function (chart, a, b) {
+                        var width = chart.width,
+                            height = chart.height,
+                            ctx = chart.ctx;
+
+                        ctx.restore();
+                        var fontSize = (height / 200).toFixed(1);
+                        ctx.font = fontSize + "em sans-serif";
+                        ctx.textBaseline = "middle";
+
+                        var text = "58%"
+                        textX = 10 + Math.round((width - ctx.measureText(text).width) / 2);
+                        textY = (height / 2) - 40;
+
+                        ctx.fillText(text, textX, textY);
+                        ctx.save();
+                    }
+                }]
+        });
+
+        function clickHandler(click) {
+            const points = outcomeChart.getElementsAtEventForMode(click, 'nearest', {intersect: true}, true);
+            if (points.length) {
+                const firstPoint = points[0];
+                window.open(outcomeDetailsReports[firstPoint.index].link, "_self")
+
+            }
+        }
+        outcomeChartCtx.onclick = clickHandler;
+    </script>
+    <!-- END PIE CHART -->
+    <!-- PIE CHART -->
+    <script>
+
+        // The results pie chart
+        const requirementsChartCtx = document.getElementById('requirementChart');
+
+        // Options define for display value on top of bars
+        const requirementsOutcomeDetailsReports = [
+            { title: 'Passing Test Cases', link: "0defd1c096f28f44d70efe17ebcecbaf4e1dd5b62320fc696dc3bb7072ea0b3f.html" },
+            { title: 'Pending Test Cases', link: "a7cb85249e34b7e7da3647010fc4891ec9fabf81fedca976a745846496099ea8.html" },
+            { title: 'Ignored Test Cases', link: "3bb1c2d4af32c2c8d40b3ef25c2981c5001e8408f77998831b6d0146b39d857e.html" },
+            { title: 'Skipped Test Cases', link: "b4743af0db8a9f694b9087a8cd50e0e0fe986bb7ea6e2d47218d6d3e8dc613b9.html" },
+            { title: 'Aborted Test Cases',  link: "a25617f5e906967c29f550dddf4965413e2505c231319a9d095247b32ed8190b.html"},
+            { title: 'Failed Test Cases', link: "2a984a151f95117dff03884b8995a3806791b0852485d749bbfaec3b49beacd4.html"  },
+            { title: 'Broken Test Cases', link: "cb4d3247582884ff64e4dbd3062489fed7b58747929a4e4905981fe3318c6a2c.html"    },
+            { title: 'Compromised Test Cases',  link: "aa1483a20e210c72030b4fc6d4a7be4c1595d7ebc42639d97cbff551708a03f4.html" },
+            { title: 'Undefined Test Cases',  link: "" },
+        ]
+        const requirementsOutcomeData = {
+            labels: ['Passing Test Cases', 'Pending Test Cases', 'Ignored Test Cases', 'Skipped Test Cases', 'Aborted Test Cases', 'Failed Test Cases', 'Broken Test Cases', 'Compromised Test Cases','Undefined Test Cases'],
+            datasets: [{
+                label: 'Feature Coverage',
+                fill: false,
+                data: [{meta: 'Passing tests', value: 7}, {meta: 'Pending tests', value: 0}, {meta: 'Ignored tests', value: 0}, {meta: 'Skipped tests', value: 0}, {meta: 'Aborted tests', value: 0}, {meta: 'Failing tests', value: 5}, {meta: 'Broken tests', value: 0}, {meta: 'Compromised tests', value: 0}],
+                backgroundColor: ['rgba(153,204,51,0.5)','rgba(165, 199, 238, 0.5)','rgba(168, 168, 168, 0.5)','rgba(238, 224, 152, 0.75)','rgba(255, 153, 102, 0.5)','rgba(255, 22, 49, 0.5)','rgba(255, 97, 8, 0.5)','rgba(255, 104, 255, 0.5)','rgba(83, 50, 168, 0.5)'],
+                borderColor: ['rgba(153,204,51,1)','rgba(165, 199, 238, 1)','rgba(168, 168, 168, 1)','rgba(238, 224, 152, 1)','rgba(255, 153, 102, 1)','rgba(255, 22, 49, 1)','rgba(255, 97, 8, 1)','rgba(255, 104, 255, 1)','rgba(83, 50, 168, 1)'],
+                borderWidth: 1,
+            }]
+        }
+        const requirementsOutcomeOptions = {
+            responsive: true,
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'bottom'
+                },
+                // Change options for ALL labels of THIS CHART
+                datalabels: {
+                    color: '#444444',
+                    'font.weight': 'bold',
+                    formatter: (value, ctx) => {
+                        let sum = 0;
+                        let dataArr = ctx.chart.data.datasets[0].data;
+                        dataArr.map(data => {
+                            sum += data;
+                        });
+                        let percentage = (value * 100 / sum).toFixed(0) + "%";
+                        if (percentage === '0%' || percentage === 'NaN%') {
+                            return '';
+                        } else {
+                            return percentage;
+                        }
+                    },
+                },
+            }
+        }
+
+        const requirementsChart = new Chart(requirementsChartCtx, {
+            type: 'doughnut',
+            data: requirementsOutcomeData,
+            options: requirementsOutcomeOptions,
+            plugins: [
+                {
+                    id: 'text',
+                    beforeDraw: function (chart, a, b) {
+                        var width = chart.width,
+                            height = chart.height,
+                            ctx = chart.ctx;
+
+                        ctx.restore();
+                        var fontSize = (height / 200).toFixed(1);
+                        ctx.font = fontSize + "em sans-serif";
+                        ctx.textBaseline = "middle";
+
+                        var text = "58%"
+                        textX = 10 + Math.round((width - ctx.measureText(text).width) / 2);
+                        textY = (height / 2) - 40;
+
+                        ctx.fillText(text, textX, textY);
+                        ctx.save();
+                    }
+                }]
+        });
+
+        function reqsClickHandler(click) {
+            const points = requirementsChart.getElementsAtEventForMode(click, 'nearest', {intersect: true}, true);
+            if (points.length && requirementsOutcomeDetailsReports[firstPoint.index].link) {
+                const firstPoint = points[0];
+                window.open(requirementsOutcomeDetailsReports[firstPoint.index].link, "_self")
+
+            }
+        }
+        requirementsChartCtx.onclick = reqsClickHandler;
+    </script>
+    <!-- END PIE CHART -->
+
+    <!-- SUMMARY BAR CHART -->
+    <script>
+
+        // The Severity bar chart
+        const severityChartCtx = document.getElementById('severityChart');
+
+        // Options define for display value on top of bars
+
+        const severityDetailsReports = [
+            { title: 'Passing Scenarios', link: "0defd1c096f28f44d70efe17ebcecbaf4e1dd5b62320fc696dc3bb7072ea0b3f.html" },
+            { title: 'Pending Scenarios', link: "a7cb85249e34b7e7da3647010fc4891ec9fabf81fedca976a745846496099ea8.html" },
+            { title: 'Ignored Scenarios', link: "3bb1c2d4af32c2c8d40b3ef25c2981c5001e8408f77998831b6d0146b39d857e.html" },
+            { title: 'Skipped Scenarios', link: "b4743af0db8a9f694b9087a8cd50e0e0fe986bb7ea6e2d47218d6d3e8dc613b9.html" },
+            { title: 'Aborted Scenarios',  link: "a25617f5e906967c29f550dddf4965413e2505c231319a9d095247b32ed8190b.html"},
+            { title: 'Failed Scenarios', link: "2a984a151f95117dff03884b8995a3806791b0852485d749bbfaec3b49beacd4.html"  },
+            { title: 'Broken Scenarios', link: "cb4d3247582884ff64e4dbd3062489fed7b58747929a4e4905981fe3318c6a2c.html"    },
+            { title: 'Compromised Scenarios',  link: "aa1483a20e210c72030b4fc6d4a7be4c1595d7ebc42639d97cbff551708a03f4.html" },
+        ]
+        const severityData = {
+            labels: ['Passing', 'Pending', 'Ignored', 'Skipped', 'Aborted', 'Failed', 'Broken', 'Compromised'],
+            datasets: [
+                {
+                    label: 'Automated',
+                    data: [0,0,0,0,0,0,0,0],
+                    backgroundColor: ['rgba(153,204,51,0.5)','rgba(165, 199, 238, 0.5)','rgba(168, 168, 168, 0.5)','rgba(238, 224, 152, 0.75)','rgba(255, 153, 102, 0.5)','rgba(255, 22, 49, 0.5)','rgba(255, 97, 8, 0.5)','rgba(255, 104, 255, 0.5)','rgba(83, 50, 168, 0.5)'],
+                    borderColor: ['rgba(153,204,51,1)','rgba(165, 199, 238, 1)','rgba(168, 168, 168, 1)','rgba(238, 224, 152, 1)','rgba(255, 153, 102, 1)','rgba(255, 22, 49, 1)','rgba(255, 97, 8, 1)','rgba(255, 104, 255, 1)','rgba(83, 50, 168, 1)'],
+                    borderWidth: 1
+                },
+                {
+                    label: 'Manual',
+                    data: [7,0,0,0,0,5,0,0],
+                    backgroundColor: ['rgba(153,204,51,0.25)','rgba(165, 199, 238, 0.25)','rgba(168, 168, 168, 0.25)','rgba(238, 224, 152, 0.375)','rgba(255, 153, 102, 0.25)','rgba(255, 22, 49, 0.25)','rgba(255, 97, 8, 0.25)','rgba(255, 104, 255, 0.25)','rgba(83, 50, 168, 0.25)'],
+                    borderColor: ['rgba(153,204,51,1)','rgba(165, 199, 238, 1)','rgba(168, 168, 168, 1)','rgba(238, 224, 152, 1)','rgba(255, 153, 102, 1)','rgba(255, 22, 49, 1)','rgba(255, 97, 8, 1)','rgba(255, 104, 255, 1)','rgba(83, 50, 168, 1)'],
+                    borderWidth: 1
+                },
+
+            ]
+        }
+        const severityOptions = {
+            responsive: true,
+            skipNull: true,
+            scales: {
+                x: {
+                    stacked: true,
+                },
+                y: {
+                    stacked: true,
+                }
+            },
+            plugins: {
+                // Change options for ALL labels of THIS CHART
+                datalabels: {
+                    color: '#444444',
+                    'font.weight': 'bold',
+                    formatter: (value, ctx) => {
+                        if (value === 0) {
+                            return '';
+                        } else {
+                            return value;
+                        }
+                    },
+                }
+            }
+        }
+        const severityChart = new Chart(severityChartCtx, {
+            type: 'bar',
+            data: severityData,
+            options: severityOptions
+        });
+
+        function clickHandler(click) {
+            const points = severityChart.getElementsAtEventForMode(click, 'nearest', {intersect: true}, true);
+            if (points.length) {
+                const firstPoint = points[0];
+                window.open(severityDetailsReports[firstPoint.index].link, "_self")
+
+            }
+        }
+        severityChartCtx.onclick = clickHandler;
+    </script>
+    <!-- END SUMMARY CHART -->
+
+    <!-- DURATION CHART -->
+    <script>
+
+        // Options define for display value on top of bars
+        const durationDetailsReports = [
+                {title: "Under 1 second", link: "a1d66da26a3dda64ef9111a22b14e2dd267ab8ca76b9493bc9943a330d778b9e.html"},
+                {title: "1 to 10 seconds", link: "7fe07908af36fcedc3951482bd5502eb595e3361164d78e7a75f678dbe60e553.html"},
+                {title: "10 to 30 seconds", link: "01d1dd817f70765c0b1e4e8708db271a7df302b08783484d945d8c0f0026175e.html"},
+                {title: "30 to 60 seconds", link: "58115cf2f4f37e394e8fd4af5c441235c0e6220a53c67546b8cb88a146f8c6b4.html"},
+                {title: "1 to 2 minutes", link: "4d12b59dfdc4deb8115dedd93913c10f9d0ebb28e3a2fecc1dcf4cf2b73e3c41.html"},
+                {title: "2 to 5 minutes", link: "3997481d9dbf513f00f26e473cb6075f1161949b6468d635ce9b0c78e8977b30.html"},
+                {title: "5 to 10 minutes", link: "2c28b014a6cc53e68b5bf9b7e34366d80f79d3cba66fae610497d6096fc6b536.html"},
+                {title: "10 minutes or over", link: "e125a8ac0a250be0fc000f5c370404e5749c3d1cabd516c5ff7764a8795d69f8.html"},
+        ]
+        // The Severity bar chart
+        const durationChartCtx = document.getElementById('durationChart');
+
+        // Options define for display value on top of bars
+
+        const durationData = {
+            labels: ['Under 1 second','1 to 10 seconds','10 to 30 seconds','30 to 60 seconds','1 to 2 minutes','2 to 5 minutes','5 to 10 minutes','10 minutes or over'],
+            datasets: [{
+                label: 'Number of tests per duration',
+                fill: false,
+                data: ['12','0','0','0','0','0','0','0'],
+                backgroundColor: 'rgba(83, 146, 255,0.5)',
+                borderColor: 'rgba(83, 146, 255, 1)',
+            }]
+        }
+        const durationOptions = {
+            responsive: true,
+            plugins: {
+                // Change options for ALL labels of THIS CHART
+                datalabels: {
+                    color: '#444444',
+                    'font.weight': 'bold',
+                    formatter: (value, ctx) => {
+                        if (value > 0) {
+                            return value;
+                        } else {
+                            return '';
+                        }
+                    },
+                },
+                tooltip: {
+                    enabled: true,
+                    usePointStyle: true,
+                    callbacks: {
+                        label: (data) => {
+                            return data.parsed.y + ' tests'
+                        }
+                    },
+                },
+            },
+        }
+
+        const durationChart = new Chart(durationChartCtx, {
+            type: 'bar',
+            data: durationData,
+            options: durationOptions
+        });
+
+        function durationClickHandler(click) {
+            const points = durationChart.getElementsAtEventForMode(click, 'nearest', {intersect: true}, true);
+            if (points.length) {
+                const firstPoint = points[0];
+                window.open(durationDetailsReports[firstPoint.index].link, "_self")
+
+            }
+        }
+
+        durationChartCtx.onclick = durationClickHandler;
+    </script>
+    <!-- END DURATION CHART -->
+</body>
+</html>

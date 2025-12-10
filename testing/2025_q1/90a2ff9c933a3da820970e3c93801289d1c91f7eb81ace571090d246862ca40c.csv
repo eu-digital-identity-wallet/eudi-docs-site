@@ -1,0 +1,3 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Check and update periodically all attestations revocation status","Attestation is revoked by the issuer","SUCCESS","2025-05-16T12:05:01.986672Z[UTC]","0.0","0.05"
+"Check and update periodically all attestations revocation status","Attestation is revoked by the issuer","SUCCESS","2025-05-16T12:05:04.718358Z[UTC]","0.0","0.01"

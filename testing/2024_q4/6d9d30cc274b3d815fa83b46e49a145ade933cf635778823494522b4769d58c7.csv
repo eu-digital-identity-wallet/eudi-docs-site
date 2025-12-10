@@ -1,0 +1,5 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Select Document to be Signed","Display list of documents for signing","SUCCESS","2025-02-28T10:16:14.505483+02:00[Europe/Athens]","0.0","0.01"
+"Select Document to be Signed","Select a document from the list","SUCCESS","2025-02-28T10:16:14.521245+02:00[Europe/Athens]","0.0","0.01"
+"Select Document to be Signed","View the selected document details","SUCCESS","2025-02-28T10:16:14.537211+02:00[Europe/Athens]","0.0","0.01"
+"Select Document to be Signed","View the document's content","SUCCESS","2025-02-28T10:16:14.552239+02:00[Europe/Athens]","0.0","0.01"

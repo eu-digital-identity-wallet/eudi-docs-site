@@ -1,0 +1,5 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Searching for documents in the EUDI Wallet","Tapping on the search field for the first time","SUCCESS","2025-02-28T10:16:11.550154+02:00[Europe/Athens]","0.0","0.01"
+"Sign Document through EUDI Wallet","User Aborts the Signing Operation","SUCCESS","2025-02-28T10:16:12.133859+02:00[Europe/Athens]","0.0","0.01"
+"Searching for documents in the EUDI Wallet","Tapping on the search field for the first time","SUCCESS","2025-02-28T10:16:14.198207+02:00[Europe/Athens]","0.0","0.01"
+"Sign Document through EUDI Wallet","User Aborts the Signing Operation","SUCCESS","2025-02-28T10:16:14.584874+02:00[Europe/Athens]","0.0","0.01"

@@ -1,0 +1,3733 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://docs.eudi.dev/2.0.2/build/build-your-remote-verifier/configure/">
+      
+      
+        <link rel="prev" href="../steps-to-build/">
+      
+      
+        <link rel="next" href="../../build-your-proximity-verifier/">
+      
+      
+      <link rel="icon" href="../../../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
+    
+    
+      
+        <title>Configure your Verifier - European Digital Identity</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="../../../assets/external/fonts.googleapis.com/css.49ea35f2.css">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+      
+        <meta  property="og:type"  content="website" >
+      
+        <meta  property="og:title"  content="Configure your Verifier - European Digital Identity" >
+      
+        <meta  property="og:description"  content="None" >
+      
+        <meta  property="og:image"  content="https://docs.eudi.dev/2.0.2/assets/images/social/build/build-your-remote-verifier/configure.png" >
+      
+        <meta  property="og:image:type"  content="image/png" >
+      
+        <meta  property="og:image:width"  content="1200" >
+      
+        <meta  property="og:image:height"  content="630" >
+      
+        <meta  property="og:url"  content="https://docs.eudi.dev/2.0.2/build/build-your-remote-verifier/configure/" >
+      
+        <meta  name="twitter:card"  content="summary_large_image" >
+      
+        <meta  name="twitter:title"  content="Configure your Verifier - European Digital Identity" >
+      
+        <meta  name="twitter:description"  content="None" >
+      
+        <meta  name="twitter:image"  content="https://docs.eudi.dev/2.0.2/assets/images/social/build/build-your-remote-verifier/configure.png" >
+      
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#configure-your-verifier" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="European Digital Identity" class="md-header__button md-logo" aria-label="European Digital Identity" data-md-component="logo">
+      
+  <img src="../../../assets/logo_eudi_white.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            European Digital Identity
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Configure your Verifier
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/eu-digital-identity-wallet/eudi-docs-site" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    eu-digital-identity-wallet/eudi-docs-site
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://eudi.dev/latest/" class="md-tabs__link">
+        
+  
+    
+  
+  European Digital Identity Wallet
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://eudi.dev/latest/architecture-and-reference-framework-main/" class="md-tabs__link">
+        
+  
+    
+  
+  Architecture and reference framework
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://eudi.dev/latest/discussion-topics/" class="md-tabs__link">
+        
+  
+    
+  
+  Discussion topics
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://eudi.dev/latest/technical-specifications/" class="md-tabs__link">
+        
+  
+    
+  
+  Technical specifications
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+    
+  
+  Reference Implementation
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="European Digital Identity" class="md-nav__button md-logo" aria-label="European Digital Identity" data-md-component="logo">
+      
+  <img src="../../../assets/logo_eudi_white.svg" alt="logo">
+
+    </a>
+    European Digital Identity
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/eu-digital-identity-wallet/eudi-docs-site" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    eu-digital-identity-wallet/eudi-docs-site
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://eudi.dev/latest/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    European Digital Identity Wallet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://eudi.dev/latest/architecture-and-reference-framework-main/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Architecture and reference framework
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://eudi.dev/latest/discussion-topics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Discussion topics
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://eudi.dev/latest/technical-specifications/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Technical specifications
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Reference Implementation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Reference Implementation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../.." class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Overview
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference-implementation/feature-map/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Feature Map
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference-implementation/roadmap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Roadmap
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference-implementation/repositories-list/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Repositories
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../reference-implementation/quality-assurance/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Code Quality Assurance
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Build
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Build
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../build-your-wallet/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Build your Wallet
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_2_2" id="__nav_5_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Build your Wallet
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_2_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../build-your-wallet/android/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Android
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_2_2_2" id="__nav_5_2_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_5_2_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Android
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_2_2_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../build-your-wallet/android/wallet-application-level/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Wallet Application Level
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_2_2_2_2" id="__nav_5_2_2_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_5_2_2_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_2_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Wallet Application Level
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build-your-wallet/android/wallet-application-level/running-with-remote-services/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Run with Remote Services
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build-your-wallet/android/wallet-application-level/running-with-local-services/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Run with Local Services
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build-your-wallet/android/wallet-application-level/self-signed-certificates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Self-signed Certificates
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_2_2_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../build-your-wallet/android/library-level/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Library Level
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_2_2_2_3" id="__nav_5_2_2_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_5_2_2_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_2_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Library Level
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build-your-wallet/android/library-level/build-the-core/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Build the Core
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build-your-wallet/android/library-level/manage-documents/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Manage Documents
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_2_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../build-your-wallet/ios/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    iOS
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_2_2_3" id="__nav_5_2_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_5_2_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            iOS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_2_3_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../build-your-wallet/ios/wallet-application-level/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Wallet Application Level
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_2_2_3_2" id="__nav_5_2_2_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_5_2_2_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_2_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Wallet Application Level
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build-your-wallet/ios/wallet-application-level/running-with-remote-services/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Run with Remote Services
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build-your-wallet/ios/wallet-application-level/running-with-local-services/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Run with Local Services
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build-your-wallet/ios/wallet-application-level/self-signed-certificates/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Self-signed Certificates
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_2_3_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../build-your-wallet/ios/library-level/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Library Level
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_2_2_3_3" id="__nav_5_2_2_3_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_5_2_2_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_2_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Library Level
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build-your-wallet/ios/library-level/build-the-kit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Build the Kit
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build-your-wallet/ios/library-level/manage-documents/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Manage Documents
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../build-your-issuer/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Build your Issuer
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_2_3" id="__nav_5_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Build your Issuer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build-your-issuer/steps-to-build/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Steps to Build
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build-your-issuer/configure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configure your Issuer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build-your-issuer/new-attestation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Add Attestations
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Build your Remote Verifier
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_2_4" id="__nav_5_2_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Build your Remote Verifier
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../steps-to-build/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Steps to Build
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Configure your Verifier
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Configure your Verifier
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setting-verifier_jar_signing_key-to-loadfromkeystore" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting VERIFIER_JAR_SIGNING_KEY to LoadFromKeystore
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuring-trust-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuring Trust Sources
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proxy-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proxy Configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sd-jwt-vc-type-metadata-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      SD-JWT-VC Type Metadata Policy
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SD-JWT-VC Type Metadata Policy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sd-jwt-vc-type-metadata-resolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      SD-JWT-VC Type Metadata Resolution
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../build-your-proximity-verifier/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Build your Proximity Verifier
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_2_5" id="__nav_5_2_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Build your Proximity Verifier
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build-your-proximity-verifier/build-your-proximity-verifier-app-for-android/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Build your Proximity Verifier App for Android
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build-your-proximity-verifier/build-your-proximity-verifier-core-for-android/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Build your Proximity Verifier Core for Android
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../build-your-rqes/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Build your rQES
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_2_6" id="__nav_5_2_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Build your rQES
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build-your-rqes/build-your-rqes-sdk-ui-for-android/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Build your rQES SDK UI for Android
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build-your-rqes/build-your-rqes-core-for-android/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Build your rQES Core for Android
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build-your-rqes/build-your-rqes-sdk-ui-for-ios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Build your rQES SDK UI for iOS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../build-your-rqes/build-your-rqes-kit-for-ios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Build your rQES Kit for iOS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2_7" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../supporting-ecosystem-services/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Supporting Ecosystem Services
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_2_7" id="__nav_5_2_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            Supporting Ecosystem Services
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../supporting-ecosystem-services/rp-registration-service/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RP Registration Service
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../supporting-ecosystem-services/rssp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RSSP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../supporting-ecosystem-services/revocation-service/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Revocation Service
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../supporting-ecosystem-services/trusted-list-service/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Trust List Service
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../test/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Test
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Test
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../test/wallet-application/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Wallet Application
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_3_2" id="__nav_5_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Wallet Application
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../test/wallet-application/android/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Android
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../test/wallet-application/ios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    iOS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../test/issuer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Issuer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../test/online-verifier/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Online Verifier
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../test/proximity-verifier/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Proximity Verifier
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../use-cases/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Use Cases
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            Use Cases
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../use-cases/mobile-driving-license/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Mobile Driving License
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_4_2" id="__nav_5_4_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Mobile Driving License
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4_2_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../use-cases/mobile-driving-license/mdl-overview/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    mDL Solution
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_4_2_2" id="__nav_5_4_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_5_4_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            mDL Solution
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../use-cases/mobile-driving-license/mdl-overview/legal-basis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Legal Basis
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../use-cases/mobile-driving-license/mdl-overview/standards-and-protocols/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Standards and Protocols
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4_2_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../use-cases/mobile-driving-license/mdl-architecture/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    mDL Architecture
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_4_2_3" id="__nav_5_4_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_5_4_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            mDL Architecture
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../use-cases/mobile-driving-license/mdl-architecture/eudi-wallet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    EUDI Wallet
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../use-cases/mobile-driving-license/mdl-architecture/proximity-verifier/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Proximity Verifier
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../use-cases/mobile-driving-license/mdl-architecture/remote-verifier-web/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Remote Verifier Web
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../use-cases/mobile-driving-license/mdl-architecture/mdl-issuing-authority/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    mDL Issuing Authority
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4_2_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../use-cases/mobile-driving-license/mdl-guides/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    mDL Guides
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_4_2_4" id="__nav_5_4_2_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_5_4_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            mDL Guides
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4_2_4_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../use-cases/mobile-driving-license/mdl-guides/wallet-provider/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Wallet Provider
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_4_2_4_2" id="__nav_5_4_2_4_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_5_4_2_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4_2_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Wallet Provider
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../use-cases/mobile-driving-license/mdl-guides/wallet-provider/wallet-developers-workflow/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wallet Developers Workflow
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../use-cases/mobile-driving-license/mdl-guides/wallet-provider/wallet-provider-specs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Wallet Provider Specs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4_2_4_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../use-cases/mobile-driving-license/mdl-guides/mdl-issuer/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    mDL Issuer
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_4_2_4_3" id="__nav_5_4_2_4_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_5_4_2_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4_2_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            mDL Issuer
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../use-cases/mobile-driving-license/mdl-guides/mdl-issuer/mdl-issuance-workflow/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    mDL Issuance Workflow
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../use-cases/mobile-driving-license/mdl-guides/mdl-issuer/mdl-issuer-specs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    mDL Issuer Specs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../use-cases/mobile-driving-license/mdl-guides/mdl-issuer/mdl-revocation-specs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    mDL Revocation Specs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_4_2_4_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../use-cases/mobile-driving-license/mdl-guides/mdl-verifier/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    mDL Verifier
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_4_2_4_4" id="__nav_5_4_2_4_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_5_4_2_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4_2_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            mDL Verifier
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../use-cases/mobile-driving-license/mdl-guides/mdl-verifier/mdl-verifier-workflow/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    mDL Verifier Workflow
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../use-cases/mobile-driving-license/mdl-guides/mdl-verifier/mdl-reader-specs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    mDL Reader Specs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../use-cases/mobile-driving-license/mdl-guides/mdl-verifier/mdl-remote-verifier-specs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    mDL Remote Verifier Specs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setting-verifier_jar_signing_key-to-loadfromkeystore" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting VERIFIER_JAR_SIGNING_KEY to LoadFromKeystore
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuring-trust-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuring Trust Sources
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proxy-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proxy Configuration
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sd-jwt-vc-type-metadata-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      SD-JWT-VC Type Metadata Policy
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SD-JWT-VC Type Metadata Policy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#sd-jwt-vc-type-metadata-resolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      SD-JWT-VC Type Metadata Resolution
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="configure-your-verifier">Configure your Verifier</h1>
+<h2 id="configuration">Configuration</h2>
+<p>The Verifier Endpoint application can be configured using the following <em>environment</em> variables:</p>
+<p>Variable: <code>SPRING_PROFILES_ACTIVE</code><br />
+Description: Comma separated list of Spring Profiles to activate<br />
+Available profiles:</p>
+<ul>
+<li><code>self-signed</code>: Configures a Ktor HttpClient that trusts self-signed certificates and performs no hostname verification.</li>
+</ul>
+<p>Variable: <code>SPRING_WEBFLUX_BASEPATH</code><br />
+Description: Context path for the Verifier Endpoint application.<br />
+Default value: <code>/</code></p>
+<p>Variable: <code>SERVER_PORT</code><br />
+Description: Port for the HTTP listener of the Verifier Endpoint application.
+Default value: <code>8080</code></p>
+<p>Variable: <code>VERIFIER_ORIGINALCLIENTID</code><br />
+Description: Client Id of the Verifier Endpoint application <strong>without</strong> the Client Id prefix.<br>
+Default value: <code>Verifier</code></p>
+<p>Variable: <code>VERIFIER_CLIENTIDPREFIX</code><br />
+Description: Client Id Prefix used by the Verifier Endpoint application.<br>
+Possible values: <code>pre-registered</code>, <code>x509_san_dns</code>, <code>x509_hash</code><br />
+Default value: <code>pre-registered</code></p>
+<p>Variable: <code>VERIFIER_JAR_SIGNING_ALGORITHM</code><br />
+Description: Algorithm used to sign Authorization Request. <br />
+Possible values: Any <code>Algorithm Name</code> of an IANA registered asymmetric signature algorithm (i.e. Usage is <code>alg</code>):
+https://www.iana.org/assignments/jose/jose.xhtml#web-signature-encryption-algorithms <br />
+Note: The configured signing algorithm must be compatible with the configured signing key.<br />
+Default value: <code>ES256</code></p>
+<p>Variable: <code>VERIFIER_JAR_SIGNING_KEY</code><br />
+Description: Key to use for Authorization Request signing.<br />
+Possible values: <code>GenerateRandom</code>, <code>LoadFromKeystore</code><br />
+Setting this value to <code>GenerateRandom</code> will result in the generation of a random <code>EC</code> key using the curve <code>P-256</code>. <br />
+Note: The configured signing key must be compatible with the configured signing algorithm<br />
+Default value: <code>GenerateRandom</code></p>
+<p>Variable: <code>VERIFIER_PUBLICURL</code><br />
+Description: Public URL of the Verifier Endpoint application.<br />
+Default value: <code>http://localhost:${SERVER_PORT}</code></p>
+<p>Variable: <code>VERIFIER_REQUESTJWT_EMBED</code><br />
+Description: How Authorization Requests will be provided.  <br />
+Possible values: <code>ByValue</code>, <code>ByReference</code><br />
+Default value: <code>ByReference</code></p>
+<p>Variable: <code>VERIFIER_REQUESTJWT_REQUESTURIMETHOD</code><br />
+Description: Default <code>request_uri_method</code> to use for a Presentation when one is not provided during its initialization. Applicable when <code>VERIFIER_REQUESTJWT_EMBED</code> is <code>ByReference</code>.        <br />
+Possible values: <code>Get</code>, <code>Post</code><br />
+Default value: <code>Get</code>  </p>
+<p>Variable: <code>VERIFIER_RESPONSE_MODE</code><br />
+Description: How Authorization Responses are expected.  <br />
+Possible values: <code>DirectPost</code>, <code>DirectPostJwt</code><br />
+Default value: <code>DirectPostJwt</code></p>
+<p>Variable: <code>VERIFIER_MAXAGE</code><br />
+Description: TTL of an Authorization Request.<br />
+Notes: Provide a value using Java Duration syntax.<br />
+Example: <code>PT6400M</code><br />
+Default value: <code>PT6400M</code></p>
+<p>Variable: <code>VERIFIER_PRESENTATIONS_CLEANUP_MAXAGE</code><br />
+Description: Age of Authorization Requests. Authorization Requests older than this, are deleted.   <br />
+Notes: Provide a value using Java Duration syntax.
+Example: <code>P10D</code><br />
+Default value: <code>P10D</code></p>
+<p>Variable: <code>VERIFIER_AUTHORIZATIONREQUESTURI</code><br />
+Description: The Authorization Request Uri to be used when generating an Authorization Request.    <br />
+Example: <code>haip-vp://</code><br />
+Default value: <code>haip-vp://</code></p>
+<p>Variable: <code>VERIFIER_ALLOWEDREDIRECTURISCHEMES</code><br />
+Description: Comma-separated list of schemes allowed to be used in the <code>wallet_response_redirect_uri_template</code>. 
+When Verifier Endpoint is used by a native mobile application, <code>wallet_response_redirect_uri_template</code> might contain a URI with a custom scheme (i.e., a deep-link). 
+In such cases the custom scheme must be added to <code>VERIFIER_ALLOWEDREDIRECTURISCHEMES</code>.<br />
+Default value: <code>https</code></p>
+<p>Variable: <code>VERIFIER_CLIENTMETADATA_RESPONSEENCRYPTION_ALGORITHM</code><br />
+Description: Algorithm that verifier is advertising and supports for authorization response encryption.  <br />
+Possible values: <code>ECDH-ES</code>, <code>ECDH-ES+A128KW</code>, <code>ECDH-ES+A192KW</code>, <code>ECDH-ES+A256KW</code><br />
+Default value: <code>ECDH-ES</code></p>
+<p>Variable: <code>VERIFIER_CLIENTMETADATA_RESPONSEENCRYPTION_METHOD</code><br />
+Description: Method that verifier is advertising and supports for authorization response encryption. <br />
+Possible values: <code>A128CBC-HS256</code>, <code>A192CBC-HS384</code>, <code>A256CBC-HS512</code>, <code>A128GCM</code>, <code>A192GCM</code>, <code>256GCM</code>, <code>XC20P</code><br />
+Default value: <code>A128GCM</code>  </p>
+<p>Variable: <code>VERIFIER_CLIENTMETADATA_VPFORMATS_SDJWTVC_ENABLED</code><br />
+Description: Enables support for SD-JWT VC. <br />
+Default value: <code>true</code>  </p>
+<p>Variable: <code>VERIFIER_CLIENTMETADATA_VPFORMATS_SDJWTVC_SDJWTALGORITHMS</code><br />
+Description: Comma separated list of signature algorithms the Issuer Signed JWT of an SD-JWT VC can be signed with.   <br />
+Possible values: Any <code>Algorithm Name</code> of an IANA registered asymmetric signature algorithm (i.e. Usage is <code>alg</code>):
+https://www.iana.org/assignments/jose/jose.xhtml#web-signature-encryption-algorithms.
+Default value: <code>ES256</code></p>
+<p>Variable: <code>VERIFIER_CLIENTMETADATA_VPFORMATS_SDJWTVC_KBJWTALGORITHMS</code><br />
+Description: Comma separated list of signature algorithms the Key Binding JWT of an SD-JWT VC can be signed with.   <br />
+Possible values: Any <code>Algorithm Name</code> of an IANA registered asymmetric signature algorithm (i.e. Usage is <code>alg</code>):
+https://www.iana.org/assignments/jose/jose.xhtml#web-signature-encryption-algorithms.
+Default value: <code>ES256</code></p>
+<p>Variable: <code>VERIFIER_CLIENTMETADATA_VPFORMATS_MSOMDOC_ENABLED</code><br />
+Description: Enable support for MSO MDoc.  <br />
+Default value: <code>true</code>  </p>
+<p>Variable: <code>VERIFIER_VALIDATION_SDJWTVC_STATUSCHECK_ENABLED</code><br />
+Description: Enables status check validation for sd-jwt-vc attestations shared.<br />
+Default value: <code>true</code>  </p>
+<p>Variable: <code>VERIFIER_TRANSACTIONDATA_HASHALGORITHM</code><br />
+Description: Hash algorithm to communicate in the <code>transaction_data_hashes_alg</code> claim of transaction data.<br />
+Default value: <code>sha-256</code><br />
+Supported values: <code>sha-256</code>, <code>sha-384</code>, <code>sha-512</code>, <code>sha3-224</code>, <code>sha3-256</code>, <code>sha3-384</code>, <code>sha3-512</code>  </p>
+<p>Variable: <code>CORS_ORIGINS</code><br />
+Description: Comma separated list of allowed Origins for cross-origin requests.<br />
+Default value: <code>*</code></p>
+<p>Variable: <code>CORS_ORIGINPATTERNS</code><br />
+Description: Comma separated list of patterns used for more fine grained matching of allowed Origins for cross-origin requests.<br />
+Default value: <code>*</code></p>
+<p>Variable: <code>CORS_METHODS</code><br />
+Description: Comma separated list of HTTP methods allowed for cross-origin requests.<br />
+Default value: <code>*</code></p>
+<p>Variable: <code>CORS_HEADERS</code><br />
+Description: Comma separated list of allowed and exposed HTTP Headers for cross-origin requests.<br />
+Default value: <code>*</code></p>
+<p>Variable: <code>CORS_CREDENTIALS</code><br />
+Description: Whether credentials (i.e. Cookies or Authorization Header) are allowed for cross-origin requests.<br>
+Default value: <code>false</code></p>
+<p>Variable: <code>CORS_MAXAGE</code><br />
+Description: Time in seconds of how long pre-flight request responses can be cached by clients.<br />
+Default value: <code>3600</code></p>
+<h3 id="setting-verifier_jar_signing_key-to-loadfromkeystore">Setting <code>VERIFIER_JAR_SIGNING_KEY</code> to <code>LoadFromKeystore</code></h3>
+<p>When <code>VERIFIER_JAR_SIGNING_KEY</code> is set to <code>LoadFromKeystore</code> the following environment variables must also be configured.</p>
+<p>Variable: <code>VERIFIER_JAR_SIGNING_KEY_KEYSTORE</code><br />
+Description: URL of the Keystore from which to load the Key to use for JAR signing.<br />
+Examples: <code>classpath:keystore.jks</code>, <code>file:///keystore.jks</code></p>
+<p>Variable: <code>VERIFIER_JAR_SIGNING_KEY_KEYSTORE_TYPE</code><br />
+Description: Type of the Keystore from which to load the Key to use for JAR signing.<br />
+Examples: <code>jks</code>, <code>pkcs12</code></p>
+<p>Variable: <code>VERIFIER_JAR_SIGNING_KEY_KEYSTORE_PASSWORD</code><br />
+Description: Password of the Keystore from which to load the Key to use for JAR signing.</p>
+<p>Variable: <code>VERIFIER_JAR_SIGNING_KEY_ALIAS</code><br />
+Description: Alias of the Key to use for JAR signing, in the configured Keystore.</p>
+<p>Variable: <code>VERIFIER_JAR_SIGNING_KEY_PASSWORD</code><br />
+Description: Password of the Key to use for JAR signing, in the configured Keystore.</p>
+<h3 id="configuring-trust-sources">Configuring Trust Sources</h3>
+<p>The verifier supports the configuration of multiple trust sources, that will be used to trust the issuers of presented credentials.<br />
+Each trust source is associated with a regex pattern, that will be used to match the trust source to an issuer, based on a credential's docType/vct.
+Each trust source can be configured with a List of Trusted Lists, a Keystore or both.
+The trust sources are configured using the environment variable <code>VERIFIER_TRUSTSOURCES</code> and are indexed starting from <code>0</code>. You can define multiple trust sources by incrementing the index (e.g., VERIFIER_TRUSTSOURCES_0_<em>, VERIFIER_TRUSTSOURCES_1_</em>, etc.)</p>
+<p>Variable: <code>VERIFIER_TRUSTSOURCES_0_PATTERN</code><br>
+Description: The regex pattern used to match the trust source to an issuer, based on a credential's docType/vct.<br>
+Example: <code>eu.europa.ec.eudi.pid.*|urn:eu.europa.ec.eudi:pid:.*</code><br></p>
+<p>Variable: <code>VERIFIER_TRUSTSOURCES_0_LOTL_LOCATION</code><br>
+Description: If present, the URL of the List of Trusted Lists from which to load the X509 Certificates for this trust source.<br></p>
+<p>Variable: <code>VERIFIER_TRUSTSOURCES_0_LOTL_REFRESHINTERVAL</code><br>
+Description: If present, a cron expression with the refresh interval of the List of Trusted Lists in seconds. If not present, the default value is <code>0 0 * * * *</code> (every hour).<br>
+Example: <code>0 0 */4 * * *</code></p>
+<p>Variable: <code>VERIFIER_TRUSTSOURCES_0_LOTL_SERVICETYPEFILTER</code><br>
+Description: If present, the service type filter to be used when loading the List of Trusted Lists. If not present, all service types are loaded. Valid values are <code>PIDProvider</code>, <code>QEEAProvider</code> and <code>PubEAAProvider</code>.<br>
+Example: <code>PIDProvider</code></p>
+<p>Variable: <code>VERIFIER_TRUSTSOURCES_0_LOTL_KEYSTORE_PATH</code><br>
+Description: If present, the URL of the Keystore which contains the public key that was used to sign the List of Trusted Lists.<br>
+Examples: <code>classpath:lotl-key.jks</code>, <code>file:///lotl-key.jks</code></p>
+<p>Variable: <code>VERIFIER_TRUSTSOURCES_0_LOTL_KEYSTORE_TYPE</code><br>
+Description: Type of the Keystore which contains the public key that was used to sign the List of Trusted Lists.<br>
+Examples: <code>jks</code>, <code>pkcs12</code></p>
+<p>Variable: <code>VERIFIER_TRUSTSOURCES_0_LOTL_KEYSTORE_PASSWORD</code><br>
+Description: If present and non-blank, the password of the Keystore which contains the public key that was used to sign the List of Trusted Lists.<br></p>
+<p>Variable: <code>VERIFIER_TRUSTSOURCES_0_KEYSTORE_PATH</code><br>
+Description: If present, the URL of the Keystore from which to load the X509 Certificates for this trust source. <br>
+Examples: <code>classpath:trusted-issuers.jks</code>, <code>file:///trusted-issuers.jks</code></p>
+<p>Variable: <code>VERIFIER_TRUSTSOURCES_0_KEYSTORE_TYPE</code><br>
+Description: Type of the Keystore from which to load the X509 Certificates for this trust source.<br>
+Examples: <code>jks</code>, <code>pkcs12</code></p>
+<p>Variable: <code>VERIFIER_TRUSTSOURCES_0_KEYSTORE_PASSWORD</code><br>
+Description: If present and non-blank, the password of the Keystore from which to load the X509 Certificates for this trust source.<br></p>
+<h3 id="proxy-configuration">Proxy Configuration</h3>
+<p>Variable: <code>VERIFIER_HTTP_PROXY_URL</code><br />
+Description: Optional HTTP proxy server to use.<br />
+Example: <code>http://exmaple.com</code></p>
+<p>Variable: <code>VERIFIER_HTTP_PROXY_USERNAME</code><br />
+Description: Username to authenticate against the proxy.<br />
+Example: <code>username</code></p>
+<p>Variable: <code>VERIFIER_HTTP_PROXY_PASSWORD</code><br />
+Description: Password to authenticate against the proxy.<br />
+Example: <code>passwd</code></p>
+<h3 id="sd-jwt-vc-type-metadata-policy">SD-JWT-VC Type Metadata Policy</h3>
+<p>Variable: <code>VERIFIER_VALIDATION_SDJWTVC_TYPEMETADATA_POLICY</code><br />
+Description: Choose SD-JWT VC Type Metadata policy. Information about the <a href="https://github.com/eu-digital-identity-wallet/eudi-lib-jvm-sdjwt-kt?tab=readme-ov-file#type-metadata-resolution" target="_blank">available policies</a>.
+Accepted values: <code>not_used</code>,<code>optional</code>,<code>always_required</code>,<code>required_for</code><br />
+Default value: <code>not_used</code>  </p>
+<p>Variable: <code>VERIFIER_VALIDATION_SDJWTVC_TYPEMETADATA_POLICY_REQUIREDFOR</code><br />
+Description: Comma separated list of VCTs for which Type Metadata are required for. Required when <code>VERIFIER_VALIDATION_SDJWTVC_TYPEMETADATA_POLICY</code> is set to <code>required_for</code>.<br />
+Example: <code>urn:eudi:pid:1</code>  </p>
+<h4 id="sd-jwt-vc-type-metadata-resolution">SD-JWT-VC Type Metadata Resolution</h4>
+<p>Required when <code>VERIFIER_VALIDATION_SDJWTVC_TYPEMETADATA_POLICY</code> is not set to <code>not_used</code>.  </p>
+<p>Variable: <code>VERIFIER_VALIDATION_SDJWTVC_TYPEMETADATA_RESOLUTION_VCTS_XX_VCT</code> (e.g. <code>VERIFIER_VALIDATION_SDJWTVC_TYPEMETADATA_RESOLUTION_VCTS_0_VCT</code>) <br />
+Description: VCT for which Type Metadata resolution is enabled.<br />
+Example: <code>urn:eudi:pid:1</code>  </p>
+<p>Variable: <code>VERIFIER_VALIDATION_SDJWTVC_TYPEMETADATA_RESOLUTION_VCTS_XX_URL</code> (e.g. <code>VERIFIER_VALIDATION_SDJWTVC_TYPEMETADATA_RESOLUTION_VCTS_0_URL</code>)<br />
+Description: Url from which Type Metadata can be fetched from for <code>VERIFIER_VALIDATION_SDJWTVC_TYPEMETADATA_RESOLUTION_VCTS_XX_VCT</code>.<br />
+Example: <code>http://localhost:8080/type-metadata/urn:eudi:pid:1</code>  </p>
+<p>Variable: <code>VERIFIER_VALIDATION_SDJWTVC_TYPEMETADATA_RESOLUTION_CACHE_TTL</code><br />
+Description: Cache TTL for resolved Type Metadata.<br />
+Notes: Provide a value using Java Duration syntax.
+Default value: <code>PT1H</code>  </p>
+<p>Variable: <code>VERIFIER_VALIDATION_SDJWTVC_TYPEMETADATA_RESOLUTION_CACHE_MAXENTRIES</code><br />
+Description: Cache maximum entries for resolved Type Metadata.<br />
+Default value: <code>10</code>  </p>
+<p>Variable: <code>VERIFIER_VALIDATION_SDJWTVC_TYPEMETADATA_RESOLUTION_INTEGRITY_ENABLED</code><br />
+Description: Enables sub-resource integrity validation for SD-JWT VC Type Metadata and JSON schemas.<br />
+Default value: <code>false</code></p>
+<p>Variable: <code>VERIFIER_VALIDATION_SDJWTVC_TYPEMETADATA_RESOLUTION_INTEGRITY_ALLOWEDALGORITHMS</code>  <br />
+Description: Comma-separated list of allowed sub-resource integrity hash algorithms.<br />
+Allowed values: <code>sha256</code>, <code>sha384</code>, <code>sha512</code><br />
+Default value: <code>sha256,sha384,sha512</code>  </p>
+<p>Variable: <code>VERIFIER_VALIDATION_SDJWTVC_TYPEMETADATA_JSONSCHEMA_VALIDATION_ENABLED</code><br />
+Description: Whether Json Schema validation should be enabled or not.  <br />
+Default value: <code>true</code>   </p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../steps-to-build/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Steps to Build">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Steps to Build
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../build-your-proximity-verifier/" class="md-footer__link md-footer__link--next" aria-label="Next: Overview">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Overview
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.path", "navigation.top", "navigation.footer", "navigation.indexes"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"alias": true, "provider": "mike"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>

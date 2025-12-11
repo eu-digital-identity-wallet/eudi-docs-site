@@ -1,7 +1,7 @@
-# Mobile Driving License Toolkit
-Welcome to the Mobile Driving License (mDL) Implementation Toolkit.
+# Mobile Driving Licence Toolkit
+Welcome to the Mobile Driving Licence (mDL) Implementation Toolkit.
 
-This guide is designed to provide comprehensive technical guidance for the implementers of the mobile Driving License (mDL) Use Case. It targets a technical audience, including:
+This guide is designed to provide comprehensive technical guidance for the implementers of the mobile Driving Licence (mDL) Use Case. It targets a technical audience, including:
 
 - **EU Member States**: Specifically, the issuers and verifiers responsible for implementing mDL solutions.
 - **Wallet Providers**: Entities developing and providing European Digital Identity (EUDI) Wallets.
@@ -16,7 +16,7 @@ This section provides a high-level overview of the mDL solution within the broad
   [Learn more about the mDL solution](./mdl-overview/index.md)
 
 ## Architecture Overview
-This section describes the high-level architecture of the EUDI Wallet ecosystem, detailing its core components and how they interact to enable the mobile Driving License (mDL) use case. It provides the technical foundation to ensure interoperability, security, and privacy for all actors involved.
+This section describes the high-level architecture of the EUDI Wallet ecosystem, detailing its core components and how they interact to enable the mobile Driving Licence (mDL) use case. It provides the technical foundation to ensure interoperability, security, and privacy for all actors involved.
 
   [Learn more about the mDL architecture](./mdl-architecture/index.md)
 

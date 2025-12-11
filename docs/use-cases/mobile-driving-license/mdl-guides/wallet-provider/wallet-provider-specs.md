@@ -5,7 +5,7 @@ The following are considered necessary capabilities of the EUDI Wallet reference
 ## mDL Verifiable Credentials
 |Specification |Optionality |Description and Reference |
 |---|---|---|
-| ISO/IEC 18013-5 (CBOR) | Mandatory | [4th Driving License Directive] Annex I, Part C <br/>[ARF], High Level Requirement:  mDL_01 <br/>[ARF] "Annex 3.02 - mDL Rulebook" |
+| ISO/IEC 18013-5 (CBOR) | Mandatory | [4th Driving Licence Directive] Annex I, Part C <br/>[ARF], High Level Requirement:  mDL_01 <br/>[ARF] "Annex 3.02 - mDL Rulebook" |
 | mDL Data Model | Mandatory | As above |
 
 ## Attestation Issuance Interface (AII)

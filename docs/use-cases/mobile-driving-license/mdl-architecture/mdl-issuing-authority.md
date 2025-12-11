@@ -18,7 +18,7 @@ The components required by the mDL Issuing Authority are described below. The mD
 - The component interacts with the Driving Licence Authentic Source to retrieve the details (claims) of the mDL.
 
 ## Driving Licence Authentic Source
-- This component provides the mDL Issuer with the driving license holder's details (claims).
+- This component provides the mDL Issuer with the driving licence holder's details (claims).
 - Authentic Sources are public or private repositories or systems, recognised or required by law, containing attributes about natural or legal persons (ARF 3.10). For the mDL Use Case, the Driving Licence Authentic Source represents these systems.
 
 ## Issuing Authority CA (IACA)

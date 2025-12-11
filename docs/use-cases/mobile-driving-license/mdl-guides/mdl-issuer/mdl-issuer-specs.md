@@ -6,7 +6,7 @@ The following are considered necessary capabilities of the reference implementat
 
 | Specification | Optionality | Description and Reference |
 | --- | --- | --- |
-| ISO/IEC 18013-5 (CBOR) | Mandatory | [ARF], High Level Requirement:  mDL_01 <br/>[ARF] "Annex 3.02 - mDL Rulebook" [4<sup>th</sup> Driving License Directive] Annex I, Part C | 
+| ISO/IEC 18013-5 (CBOR) | Mandatory | [ARF], High Level Requirement:  mDL_01 <br/>[ARF] "Annex 3.02 - mDL Rulebook" [4<sup>th</sup> Driving Licence Directive] Annex I, Part C | 
 | mDL Data Model | Mandatory | As above |
 
 ## mDL Issuance Profile
@@ -101,6 +101,6 @@ The following are considered necessary capabilities of the reference implementat
 
 | Specification | Optionality | Description and Reference |
 | --- | --- | --- |
-| A Member State, other than the one issuing a driving license, imposing a driving disqualification shall immediately notify the Member State which issued the driving license | Excluded / not supported | [4<sup>th</sup> Driving License Directive] in the last sentence of Annex I, Part C mandates the notification obligations of Member States. This requirement is expected to be fulfilled in an out-of-band method and therefore is excluded from the mDL Use Case specifications. |
+| A Member State, other than the one issuing a driving licence, imposing a driving disqualification shall immediately notify the Member State which issued the driving licence | Excluded / not supported | [4<sup>th</sup> Driving Licence Directive] in the last sentence of Annex I, Part C mandates the notification obligations of Member States. This requirement is expected to be fulfilled in an out-of-band method and therefore is excluded from the mDL Use Case specifications. |
 
 [^1]: Support for one of the methods or both.

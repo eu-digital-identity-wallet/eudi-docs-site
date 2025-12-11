@@ -1,5 +1,5 @@
 # Standards and Protocols
-The [4th Driving License Directive] clarifies that the mDL Use Case target solution shall comply with the ISO/IEC 18013-5 standard on mobile driving licences and since the mDL can only be issued to EUDI wallets provided in accordance with Regulation (EU) 910/2014, some of the requirements applicable to EUDI Wallets are also applicable to mDL providers. The latter requirements are further detailed by Regulation (EU) 910/2014, including its implementing acts, and, in some cases, further detailed by the technical Architecture and Reference Framework (ARF).
+The [4th Driving Licence Directive] clarifies that the mDL Use Case target solution shall comply with the ISO/IEC 18013-5 standard on mobile driving licences and since the mDL can only be issued to EUDI wallets provided in accordance with Regulation (EU) 910/2014, some of the requirements applicable to EUDI Wallets are also applicable to mDL providers. The latter requirements are further detailed by Regulation (EU) 910/2014, including its implementing acts, and, in some cases, further detailed by the technical Architecture and Reference Framework (ARF).
 
 ## Standards and Specifications references
 
@@ -16,8 +16,8 @@ The mDL Use Case target solution is based on the following standards and specifi
 The main design options of the mDL target solution, backed by the Legal and Compliance Framework, are summarised as follows.
 
 - Wallet Reference Implementation accepts attestations only via the Attestation Issuance Interface (AII), which complies with the [OpenID4VCI] standard ([ARF] "4.3.3 Wallet Unit interfaces and protocols"). The latest OpenID4VCI is v1.0.
-- mDL can only be issued to EUDI Wallet ([4th Driving License Directive] Article 5.2 and Annex I, Part C (2)).
-- mDL shall comply with the ISO/IEC 18013-5 standard ([4th Driving License Directive] Annex I, Part C (2), [ARF] ANNEX 3.02 - mDL Rulebook ch2.1).
+- mDL can only be issued to EUDI Wallet ([4th Driving Licence Directive] Article 5.2 and Annex I, Part C (2)).
+- mDL shall comply with the ISO/IEC 18013-5 standard ([4th Driving Licence Directive] Annex I, Part C (2), [ARF] ANNEX 3.02 - mDL Rulebook ch2.1).
 - mDL can only be presented using the Presentation Interface (PI), which accommodates both remote and proximity interactions ([ARF] "4.3.3 Wallet Unit interfaces and protocols").
 
 ### Remote Presentation Flows

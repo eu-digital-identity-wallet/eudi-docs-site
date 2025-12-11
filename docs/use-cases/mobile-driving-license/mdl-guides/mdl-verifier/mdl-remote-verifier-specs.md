@@ -4,7 +4,7 @@ The following are considered necessary capabilities of the reference implementat
 ## mDL Verifiable Credentials
 |Specification |Optionality |Description and Reference |
 |---|---|---|
-| ISO/IEC 18013-5 (CBOR) | Mandatory | [4<sup>th</sup> Driving License Directive] Annex I, Part C [ARF], High Level Requirement:  mDL_01 <br/>[ARF] "Annex 3.02 - mDL Rulebook" |
+| ISO/IEC 18013-5 (CBOR) | Mandatory | [4<sup>th</sup> Driving Licence Directive] Annex I, Part C [ARF], High Level Requirement:  mDL_01 <br/>[ARF] "Annex 3.02 - mDL Rulebook" |
 | mDL Data Model | Mandatory | As above |
 
 ## Presentation Interface (PI)
@@ -73,4 +73,4 @@ The following are considered necessary capabilities of the reference implementat
 |---|---|---|
 | Certificate Revocation list | Mandatory | Section 9.3.3 in ISO/IEC 18013-5 specifies that "mdoc reader shall have access to certificate revocation information". A remote mDL verifier needs access to the issuing authority's certificate authority (IACA) root certificate to verify issuer data authentication. It checks the status of the Document Signing certificate and the IACA certificate against the published CRLs. <br/>Confirm that the issuer's IACA certificate is present, and that it is listed as an issuer of the doctype "org.iso.18013.5.1.mDL". |
 | ETSI LOTL support | Mandatory | The Reference Implementation supports ETSI trusted lists because of other use cases, see e.g. ARF Annex 2 requirement PuBPNot_03 "The format of the PuB-EAA Provider Trusted List SHALL comply with ETSI TS 119 612 v2.1.1 or with a suitable profile similarly derived from ETSI TS 102 231" |
-| IACA retrieval via VICAL | Mandatory | [4<sup>th</sup> Driving License Directive] in Article 5.7 mandates that the Commission shall adopt implementing acts [among others] for recognition of those driving licences by third country authorities. Annex C in ISO/IEC 18013-5 specifies the VICAL mechanism. It does not explicitly specify this mechanism as mandatory and therefore it is considered optional. This mechanism applies to the third countries |
+| IACA retrieval via VICAL | Mandatory | [4<sup>th</sup> Driving Licence Directive] in Article 5.7 mandates that the Commission shall adopt implementing acts [among others] for recognition of those driving licences by third country authorities. Annex C in ISO/IEC 18013-5 specifies the VICAL mechanism. It does not explicitly specify this mechanism as mandatory and therefore it is considered optional. This mechanism applies to the third countries |

@@ -1,6 +1,6 @@
 # Technical Deep Dive – Wallet Developers Workflow
 
-According to Article 5.2 of the 4th Driving License Directive, the mDL shall be issued to the European Digital Identity Wallets as electronic attestations of attributes. Therefore, an mDL can only be issued to an active EUDI Wallet instance, which has to comply with all requirements in the eIDAS 2 Regulation.
+According to Article 5.2 of the 4th Driving Licence Directive, the mDL shall be issued to the European Digital Identity Wallets as electronic attestations of attributes. Therefore, an mDL can only be issued to an active EUDI Wallet instance, which has to comply with all requirements in the eIDAS 2 Regulation.
 
 All baseline requirements outlined in the Architecture and Reference Framework (ARF) are applicable to EUDI Wallets. The mDL use case introduces specific technical requirements (defined in the mDL Rulebook, Annex 3.2 of the ARF) regarding the attribute schema, encoding and supported protocols.
 
@@ -32,7 +32,7 @@ The mDL Use Case target solution for the EUDI Wallet shall support the following
 
 **mDL Attestation Issuance**
 
-Your EUDI Wallet implementation must support issuance of the mDL according to the OpenID4VCI v1.0 specification based on ARF and ISO/IEC 18013-5 (CBOR) standards for remote flows based on specifications from the 4th Driving License Directive.
+Your EUDI Wallet implementation must support issuance of the mDL according to the OpenID4VCI v1.0 specification based on ARF and ISO/IEC 18013-5 (CBOR) standards for remote flows based on specifications from the 4th Driving Licence Directive.
 
 **Remote Presentation Flow Implementation**
 

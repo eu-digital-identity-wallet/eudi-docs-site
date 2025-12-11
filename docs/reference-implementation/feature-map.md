@@ -208,7 +208,7 @@ The following table provides an overview of the key attestations supported by th
 | Attestation | Description | Status |
 | --- | --- | --- |
 | [PID](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/67){:target="_blank"} | Support for the "Personal Identification Data (PID)" in alignment with the [PID Rulebook](https://github.com/eu-digital-identity-wallet/eudi-doc-attestation-rulebooks-catalog/blob/main/rulebooks/pid/pid-rulebook.md){:target="_blank"} | Completed|
-| [mDL](https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/latest/annexes/annex-3/annex-3.02-mDL-rulebook/){:target="_blank"} | Support for the "Mobile Driving License" in alignment with the [mDL Rulebook](https://github.com/eu-digital-identity-wallet/eudi-doc-attestation-rulebooks-catalog/blob/main/rulebooks/mdl/mdl-rulebook.md){:target="_blank"} | Completed |
+| [mDL](https://eu-digital-identity-wallet.github.io/eudi-doc-architecture-and-reference-framework/latest/annexes/annex-3/annex-3.02-mDL-rulebook/){:target="_blank"} | Support for the "Mobile Driving Licence" in alignment with the [mDL Rulebook](https://github.com/eu-digital-identity-wallet/eudi-doc-attestation-rulebooks-catalog/blob/main/rulebooks/mdl/mdl-rulebook.md){:target="_blank"} | Completed |
 | [EHIC](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/45){:target="_blank"} | Support for the "European Health Insurance Card" | Completed |
 | [PDA1](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/46){:target="_blank"} | Support for the "Portable Document A1" | Completed |
 

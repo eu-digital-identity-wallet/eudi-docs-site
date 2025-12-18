@@ -92,7 +92,7 @@ Each release is accompanied by serenity-generated reports summarising test execu
 
 | Release | Test Types | Report Links | Status |
 | --- | --- | --- | --- |
-| 2025.07.28 - Demo | Functional <br/> Security <br/> Performance | - [Functional test results](https://docs.eudi.dev/testing/2025_q2/){:target="_blank"} <br/> - [Security test results](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application/raw/refs/heads/milestone/2025.Q4/doc/security/EUDI-Wallet-NiScy_Security%20Testing%20Results-Version_2025.07.28-Demo.xlsx){:target="_blank"} <br/> - [Performance test results](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application/blob/milestone/2025.Q4/doc/performance/performance_test_results.md){:target="_blank"}| ✅ Released |
+| 2025.07.28 - Demo | Functional <br/> Security <br/> Performance | - [Functional test results](https://docs.eudi.dev/testing/2025_q2/){:target="_blank"} <br/> - [Security test results](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application/raw/refs/heads/milestone/2025.Q2/doc/security/EUDI-Wallet-NiScy_Security%20Testing%20Results-Version_2025.07.28-Demo.xlsx){:target="_blank"} <br/> - [Performance test results](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application/blob/milestone/2025.Q2/doc/performance/performance_test_results.md){:target="_blank"}| ✅ Released |
 | 2025.10.31 - Demo | Functional | - [Functional test results](https://docs.eudi.dev/testing/2025_q3/){:target="_blank"} | ✅ Released |
 | 2025.12.34 - Demo | Functional | - [Functional test results](https://docs.eudi.dev/testing/2025_q4/){:target="_blank"} | ✅ Released |
 

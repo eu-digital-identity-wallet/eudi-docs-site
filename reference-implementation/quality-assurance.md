@@ -57,8 +57,8 @@ Testing is organised across multiple levels to validate functionality, performan
 - **Objectives:** Functional and end-to-end (E2E) testing ensures that each release behaves as expected according to defined epics and user stories.
 - **Requirements:** [Functional Requirements](https://github.com/eu-digital-identity-wallet/eudi-wallet-product-roadmap/blob/main/EUDI%20Wallet%20Reference%20Implementation%20-%20Feature%20Map.md).
 - **Test Specifications:** The Functional Testing Specifications can be found here:
-    - [Manual Testing](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application/tree/milestone/2025.Q4/src/test/resources/features).
-    - [Automated Testing](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application/tree/milestone/2025.Q4).
+    - [Manual Testing](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application/tree/main/src/test/resources/features).
+    - [Automated Testing](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application/tree/main).
 - **Tools:** [Functional Testing Tools](#-test-tools).
 
 ### Security Testing
@@ -82,7 +82,7 @@ The following table summarises the tools utilised in the applicable test types:
 | Unit |  _SonarCloud_ |
 | Functional |  **Manual Testing** <br/> - _Serenity BDD_ for structured reporting and visual coverage <br/> **Automation Testing** <br/> - _Appium_ (for mobile automation on Android and iOS), <br/> - _Java_ (test scripting language), <br/> - _JUnit_ (test framework), <br/> **Other Tools** <br/> - _IntelliJ IDEA_ (development and execution environment), <br/> - _Maven_ (dependency and build management), <br/> - _Appium Inspector_ (for element inspection and locator validation), <br/> - _Xcode_ (for building and exporting iOS .ipa files and Android .apk packages retrieved manually from Firebase for testing). |
 | Security |  - _OWASP MASVS/MASTG_ for mobile security verification <br/> - _OWASP Dependency-Check_ for third-party library analysis <br/> - _SQLCipher_ and _Android Keystore_ for data protection <br/> - _Burp Suite_ and _MobSF_ for dynamic testing and static analysis|
-| Performance | **Android** <br/> - _Performance monitoring was performed using Android Studio Profiler and Xcode Instruments for local device execution, and BrowserStack App Live performance monitoring tools for tests executed on real Android and iOS devices in the BrowserStack device farm.|
+| Performance | **Android** <br/> - Performance execution was performed using Android Studio Profiler and Xcode Instruments for local device execution on real device, and BrowserStack App Live performance monitoring tools for tests executed across multiple real Android and iOS devices in the BrowserStack device farm.|
 
 
 ## 📊 Reporting

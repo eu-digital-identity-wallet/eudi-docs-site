@@ -82,14 +82,7 @@ The following table summarises the tools utilised in the applicable test types:
 | Unit |  _SonarCloud_ |
 | Functional |  **Manual Testing** <br/> - _Serenity BDD_ for structured reporting and visual coverage <br/> **Automation Testing** <br/> - _Appium_ (for mobile automation on Android and iOS), <br/> - _Java_ (test scripting language), <br/> - _JUnit_ (test framework), <br/> **Other Tools** <br/> - _IntelliJ IDEA_ (development and execution environment), <br/> - _Maven_ (dependency and build management), <br/> - _Appium Inspector_ (for element inspection and locator validation), <br/> - _Xcode_ (for building and exporting iOS .ipa files and Android .apk packages retrieved manually from Firebase for testing). |
 | Security |  - _OWASP MASVS/MASTG_ for mobile security verification <br/> - _OWASP Dependency-Check_ for third-party library analysis <br/> - _SQLCipher_ and _Android Keystore_ for data protection <br/> - _Burp Suite_ and _MobSF_ for dynamic testing and static analysis|
-| Performance | **Android** <br/> - Android
-- Android Studio Profiler and App Inspection or performance monitoring, memory usage, and CPU/network profiling
-iOS
-- Xcode Instruments for performance monitoring, memory usage, and CPU/network profiling <br/> **iOS** <br/> - Xcode Instruments
-Used during local execution on physical iOS devices for performance monitoring, memory usage analysis, and CPU/network profiling.
-
-BrowserStack App Live Performance Monitoring Tools
-Used on real iOS devices hosted in the BrowserStack device farm to collect runtime performance metrics, including CPU usage, memory consumption, response time, network activity, and application stability across multiple iOS versions and device models.
+| Performance | **Android** <br/> - _Performance monitoring was performed using Android Studio Profiler and Xcode Instruments for local device execution, and BrowserStack App Live performance monitoring tools for tests executed on real Android and iOS devices in the BrowserStack device farm.|
 
 
 ## 📊 Reporting

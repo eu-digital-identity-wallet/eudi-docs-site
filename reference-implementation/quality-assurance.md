@@ -80,9 +80,9 @@ The following table summarises the tools utilised in the applicable test types:
 | Test Type | Tools | 
 | -------- | ------- | 
 | Unit |  _SonarCloud_ |
-| Functional |  **Manual Testing** <br/> - _Serenity BDD_ for structured reporting and visual coverage <br/> **Automation Testing** <br/> - _Appium_ (for mobile automation on Android and iOS), <br/> - _Java_ (test scripting language), <br/> - _JUnit_ (test framework), <br/> **Other Tools** <br/> - _IntelliJ IDEA_ (development and execution environment), <br/> - _Maven_ (dependency and build management), <br/> - _Appium Inspector_ (for element inspection and locator validation), <br/> - _Xcode_ (for building and exporting iOS .ipa files and Android .apk packages retrieved manually from Firebase for testing). |
+| Functional |  **Manual Testing** <br/> - _Serenity BDD_ for structured reporting and visual coverage <br/> **Automation Testing** <br/> - _Appium_ (for mobile automation on Android and iOS), <br/> - _Java_ (test scripting language), <br/> - _JUnit_ (test framework), <br/> **Other Tools** <br/> - _IntelliJ IDEA_ (development and execution environment), <br/> - _Maven_ (dependency and build management), <br/> - _Appium Inspector_ (for element inspection and locator validation), <br/> - _Xcode_ (for building and exporting iOS .ipa files and Android .apk packages retrieved manually from Firebase for testing). _BrowserStack device farm (enables automated testing on real devices without managing physical hardware) |
 | Security |  - _OWASP MASVS/MASTG_ for mobile security verification <br/> - _OWASP Dependency-Check_ for third-party library analysis <br/> - _SQLCipher_ and _Android Keystore_ for data protection <br/> - _Burp Suite_ and _MobSF_ for dynamic testing and static analysis|
-| Performance | **Android** <br/> - Performance execution was performed using Android Studio Profiler and Xcode Instruments for local device execution on real device, and BrowserStack App Live performance monitoring tools for tests executed across multiple real Android and iOS devices in the BrowserStack device farm.|
+| Performance | **Android** <br/> Performance execution was performed using Android Studio Profiler and Xcode Instruments for local device execution on real device, and BrowserStack App Live performance monitoring tools for tests executed across multiple real Android and iOS devices in the BrowserStack device farm.|
 
 
 ## 📊 Reporting
@@ -93,7 +93,7 @@ Each release is accompanied with serenity-generated reports summarising test exe
 
 | Release | Test Types | Report Links | Status |
 | --- | --- | --- | --- |
-| 2025.07.28 - Demo | Functional <br/> Security <br/> Performance | - [Functional test results](https://mgiakkou.github.io/testing/2025_q3/) <br/> - [Security test results](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application/raw/refs/heads/milestone/2025.Q4/doc/security/EUDI-Wallet-NiScy_Security%20Testing%20Results-Version_2025.07.28-Demo.xlsx) <br/> - [Performance test results](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application/blob/milestone/2025.Q4/doc/performance/performance_test_results.md#test-execution-and-results)| ✅ Released |
+| 2025.07.28 - Demo | Functional <br/> Security <br/> Performance | - [Functional test results](https://mgiakkou.github.io/testing/2025_q3/) <br/> - [Security test results](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application/raw/refs/heads/milestone/2025.Q4/doc/security/EUDI-Wallet-NiScy_Security%20Testing%20Results-Version_2025.07.28-Demo.xlsx) <br/> - [Performance test results](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application/blob/milestone/2025.Q2/doc/performance/performance_test_results.md#test-execution-and-results)| ✅ Released |
 | 2025.10.31 - Demo | Functional | - [Functional test results](https://mgiakkou.github.io/testing/2025_q4/) | ✅ Released |
 | 2025.12.xx - xxx | (to be added) | (to be added) | 🔄 In progress |
 

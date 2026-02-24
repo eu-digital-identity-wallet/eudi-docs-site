@@ -34,6 +34,7 @@ The EUDI Wallet Reference Implementation includes the following components:
 | Repository | Description |
 |---|---|
 | [mDoc Data Transfer (Android)](https://github.com/eu-digital-identity-wallet/eudi-lib-android-iso18013-data-transfer){:target="_blank"} | This library provides a set of classes to manage the transfer of documents in a EUDI ISO/IEC 18013-5 Android Wallet. |
+| [mDoc Trust Manager (Android)](https://github.com/eu-digital-identity-wallet/eudi-lib-jvm-trust-manager-kt){:target="_blank"} | This is a Kotlin library, targeting JVM, that performs trust validations according to the ISO/IEC 18013-5 (cert path, digest, signature, mso doctype matching. |
 
 ### Remote Presentation iOS Libraries
 
@@ -121,6 +122,9 @@ The EUDI Wallet Reference Implementation includes the following components:
 |---|---|
 | [Web Verifier](https://github.com/eu-digital-identity-wallet/eudi-web-verifier){:target="_blank"} | Demo Web Verifier UI application (Frontend) that acts as a Verifier/RP trusted endpoint. Available at: [https://verifier.eudiw.dev](https://verifier.eudiw.dev){:target="_blank"} | 
 | [RESTful API (web-services)](https://github.com/eu-digital-identity-wallet/eudi-srv-web-verifier-endpoint-23220-4-kt){:target="_blank"} | Demo Web Verifier application (Backend RESTful service) that acts as a Verifier/RP trusted endpoint.| 
+| [Relying Party Registration](https://github.com/eu-digital-identity-wallet/eudi-srv-web-relyingparty-registration-py){:target="_blank"} | Demo Registration Site for a Relying Party under a specific IACA, providing demo certificates for OpenID4VP flow. | 
+| [Proximity Verifier UI App](https://github.com/eu-digital-identity-wallet/eudi-app-multiplatform-verifier-ui){:target="_blank"} |  Demo Proximity Verifier application. | 
+| [Proximity Verifier Core](https://github.com/eu-digital-identity-wallet/eudi-lib-android-verifier-core){:target="_blank"} | Proximity Verifier core libraries. | 
 
 
 ## Issuing Apps and Services
@@ -129,7 +133,8 @@ The EUDI Wallet Reference Implementation includes the following components:
 |---|---|
 | [OpenID4VCI issuer (Python)](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py){:target="_blank"} | An implementation of a credential issuing service, according to OpenID4VCI, in Python. Available at: https://issuer.eudiw.dev/ | 
 | [OpenID4VCI issuer (Kotlin)](https://github.com/eu-digital-identity-wallet/eudi-srv-pid-issuer){:target="_blank"} | An implementation of a credential issuing service, according to OpenID4VCI, in Kotlin. Available at: https://issuer-backend.eudiw.dev/ | 
-
+| [OpenId4VCI issuer frontend (Python)](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-frontend-eudiw-py){:target="_blank"} | An implementation of frontend for the credential issuing service, according to OpenId4VCI 1.0, in Python. |
+| [Status List API of Issuer](https://github.com/eu-digital-identity-wallet/eudi-srv-statuslist-py){:target="_blank"} | An implementation of a Python library designed to issue and manage revocation status using Attestation Status Lists and Attestation Revocation Lists. |
 
 ## Signing Apps and Services
 
@@ -139,3 +144,10 @@ The EUDI Wallet Reference Implementation includes the following components:
 | [EUDI Wallet-driven signer QTSP](https://github.com/eu-digital-identity-wallet/eudi-srv-web-walletdriven-rpcentric-signer-qtsp-java){:target="_blank"} | Implementation of a wallet-driven QTSP for the remote Qualified Electronic Signature component of the EUDI Wallet. The QTSP provides endpoints based on the CSC API v2.0 specification and supports authentication via OpenID4VP.| 
 | [EUDI Wallet-driven external SCA](https://github.com/eu-digital-identity-wallet/eudi-srv-web-walletdriven-signer-external-sca-java){:target="_blank"} | Implementation of a wallet-driven SCA for the remote Qualified Electronic Signature component of the EUDI Wallet. The SCA provides endpoints that allow the calculation of the hash value of a document and obtain the signed document given the signature value.| 
 | [RP Centric rQES SCA](https://github.com/eu-digital-identity-wallet/eudi-srv-web-rpcentric-signer-sca-java){:target="_blank"} | This is a REST API server implementing the RP-centric SCA for the remote Qualified Electronic Signature (rQES) component of the EUDI Wallet.| 
+| [A library for PDF manipulation](https://github.com/eu-digital-identity-wallet/eudi-lib-podofo){:target="_blank"} | A library for PDF manipulation based on PoDoFo (C++ 17 library) targeting iOS and Android platforms. | 
+
+## Other Demo Apps
+| Repository | Description |
+|---|---|
+| [Recruitment Service Demo](https://github.com/eu-digital-identity-wallet/eudi-web-recruitment-service-demo){:target="_blank"} | A demo recruitment service to showcase the utilisation of the EUDI Wallet in a ‘Cross-Border Recruitment’ business scenario. Available [here](https://dev.recruitement.demo.eudiw.dev){:target="_blank"}. | 
+

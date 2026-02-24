@@ -41,6 +41,7 @@ Testing is organised across multiple levels to validate functionality, performan
 ### Unit Testing
 
 - **Objectives:** Unit testing verifies the correctness of individual software components and is the first quality gate in the continuous integration (CI) pipeline. Unit testing supports early defect detection and continuous integration by ensuring each new change maintains baseline quality.
+- **Usage:** Unit testing is included in each repository next to the actual code development. Tests can be executed based on the information and instructions provided in the corresponding readme files.
 - **Tools:** [Unit Testing Tools](#test-tools).
 
 ---
@@ -53,6 +54,7 @@ Testing is organised across multiple levels to validate functionality, performan
 - **Test Specifications:** The Functional Testing Specifications can be found here:
     - [Manual Testing](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application/tree/main/src/test/resources/features){:target="_blank"}.
     - [Automated Testing](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application-internal/tree/main){:target="_blank"}.
+- **Usage:** Functional testing is currently performed on the main mobile application repositories ([Android UI mobile app](https://github.com/eu-digital-identity-wallet/eudi-app-android-wallet-ui){:target="_blank"} and [iOS UI mobile app](https://github.com/eu-digital-identity-wallet/eudi-app-ios-wallet-ui){:target="_blank"}) through which the functionality of the whole application is tested. Specific information on how to execute the tests through GitHub and download the corresponding results are included in the [main testing repository readme file](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application/blob/main/README.md#running-tests-via-github-actions-and-device-farm-browserstack){:target="_blank"}.
 - **Tools:** [Functional Testing Tools](#test-tools).
 
 ---
@@ -61,6 +63,7 @@ Testing is organised across multiple levels to validate functionality, performan
 
 - **Objectives:** Security testing ensures the continuous security, integrity and resilience of the EUDI Wallet applications throughout their lifecycle. By integrating automated and manual security testing within a Secure Software Development Life Cycle (SDLC) and aligning with OWASP MASVS and MASTG standards, the framework enables early detection and remediation of vulnerabilities. It combines code analysis, penetration testing, and vulnerability management using tools such as SonarQube, OWASP Dependency-Check and DefectDojo to maintain compliance with recognised security standards and safeguard user trust in the EUDI Wallet ecosystem.
 - **Requirements and Test Specifications:** The [Security Requirements and Security Test Specifications](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application/blob/main/doc/security/EUDI-Wallet-NiScy_Security_Requirements_and_Controls_Documentation.md){:target="_blank"} of the EUDI Wallet.
+- **Usage:** Security testing is applied on each separate repository, based on the specific programming language used. More information can be found in the corresponding readme files.
 - **Tools:** [Security Testing Tools](#test-tools).
 
 ---
@@ -70,6 +73,7 @@ Testing is organised across multiple levels to validate functionality, performan
 - **Objectives:** Tests are conducted to evaluate the performance of the EUDI Wallet application under average user load across various mobile devices. This testing focuses on central processing unit (CPU) and memory usage, as well as network activity during common scenarios.
 - **Requirements:** The [Performance Requirements](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application/blob/main/doc/performance/performance_requirements.md){:target="_blank"} against which the tests are executed.
 - **Test Specifications**: The [Performance Test Specifications](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application/blob/main/doc/performance/performance_specifications.md){:target="_blank"} result from relevant default metrics.
+- **Usage:** Performance testing is executed on the main mobile application repositories [Android UI mobile app](https://github.com/eu-digital-identity-wallet/eudi-app-android-wallet-ui){:target="_blank"} and [iOS UI mobile app](https://github.com/eu-digital-identity-wallet/eudi-app-ios-wallet-ui){:target="_blank"}) and covers the whole application. It can be executed using the corresponding functional tests in multiple devices.
 - **Tools:** [Performance Testing Tools](#test-tools).
 
 ## Test Tools

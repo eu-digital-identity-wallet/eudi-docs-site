@@ -40,7 +40,7 @@ The EUDI Wallet Reference Implementation includes the following components:
 | Repository | Description |
 |---|---|
 | [Presentation Exchange (iOS)](https://github.com/eu-digital-identity-wallet/eudi-lib-ios-presentation-exchange-swift){:target="_blank"} | Implementation of DIF Presentation Exchange v2 specification in Swift. | 
-| [SIOPv2 & OpenID4VP protocols (iOS)](https://github.com/eu-digital-identity-wallet/eudi-lib-ios-siop-openid4vp-swift){:target="_blank"} | Implementation of SIOPv2 and OpenID4VP protocols (wallet's role) in Swift. |
+| [OpenID4VP protocols (iOS)](https://github.com/eu-digital-identity-wallet/eudi-lib-ios-openid4vp-swift){:target="_blank"} | Implementation of OpenID4VP protocols (wallet's role) in Swift. |
 | [SD-JWT (iOS)](https://github.com/eu-digital-identity-wallet/eudi-lib-sdjwt-swift){:target="_blank"} | SD-JWT library for creating and verifying SD-JWT in Swift. | 
 
 
@@ -49,7 +49,7 @@ The EUDI Wallet Reference Implementation includes the following components:
 | Repository | Description |
 |---|---|
 | [Presentation Exchange (Android)](https://github.com/eu-digital-identity-wallet/eudi-lib-jvm-presentation-exchange-kt){:target="_blank"} | Implementation of DIF Presentation Exchange v2 specification in Kotlin. |
-| [SIOPv2 & OpenID4VP protocols (Android)](https://github.com/eu-digital-identity-wallet/eudi-lib-jvm-siop-openid4vp-kt){:target="_blank"} | Implementation of SIOPv2 and OpenID4VP protocols (wallet's role) in Kotlin. | 
+| [OpenID4VP protocols (Android)](https://github.com/eu-digital-identity-wallet/eudi-lib-jvm-openid4vp-kt){:target="_blank"} | Implementation of OpenID4VP protocols (wallet's role) in Kotlin. | 
 | [SD-JWT (Android)](https://github.com/eu-digital-identity-wallet/eudi-lib-jvm-sdjwt-kt){:target="_blank"} | SD-JWT library for creating and verifying SD-JWT in Kotlin. | 
 
 ### Issuing iOS Libraries

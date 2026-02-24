@@ -25,7 +25,7 @@ The following table provides a high-level overview of the key user functionaliti
 | --- | --- | --- |
 | [Issuance](#issuance) | Issuance of verifiable credentials | In Progress|
 | [Presentation](#presentation) | Presentation of verifiable credentials | In Progress|
-| [rQES](#rqes) | Electronic signing with EUDI Wallet | Completed |
+| [rQES](#rqes) | Electronic signing with EUDI Wallet | In Progress |
 | [Transaction Logs](#transaction-logs) | Log of historic transactions executed by the EUDI Wallet | In Progress|
 | [Request data deletion from RPs](#request-data-deletion-from-rps) | Users requesting data deletion from Relying Parties they have previously interacted with |Planned |
 | [Report unlawful or suspicious requests to DPA(s)](#report-unlawful-or-suspicious-requests) | Users reporting suspicious data requests to national Data Protection Authorities |Planned |
@@ -56,8 +56,8 @@ The "Issuance" functionality is aligned with the OpenID4VCI protocol and is cont
 | [Pre-authorisation code flow](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/41){:target="_blank"} | Issuance decoupled from the user's authorisation, as it is performed outside of the issuance flow | Completed|
 | [Batch Issuance](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/18){:target="_blank"} | Issuance of multiple instances of the same credential type | Completed|
 | [Attestation Re-Issuance](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/52){:target="_blank"} | Enabling the re-issuance of Personal Identification Data (PID)/attestation before its expiration | Planned|
-| [Alignment to latest version of the standard](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/77){:target="_blank"} | Enhancements to issuance functionalities as detailed by the latest version of the OpenID4VCI standard | In Progress|
-| [Alignment to latest version of the HAIP profile](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/69){:target="_blank"} | Enhancements to issuance, remote presentation and trust management as detailed by the HAIP v1.0 profile | Planned|
+| [Alignment to latest version of the standard](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/77){:target="_blank"} | Enhancements to issuance functionalities as detailed by the latest version of the OpenID4VCI standard | Completed |
+| [Alignment to latest version of the HAIP profile](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/69){:target="_blank"} | Enhancements to issuance, remote presentation and trust management as detailed by the HAIP v1.0 profile | Completed |
 
 
 ---
@@ -88,6 +88,7 @@ This covers scenarios for Remote qualified signatures. Expand to explore detaile
 | [Wallet-Driven rQES (internal SCA)](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/27){:target="_blank"} | Remote qualified signatures in a Wallet-driven model, using an internal (i.e. wallet component) "Signature Creation Application" | Completed |
 | [RP-Driven rQES (internal SCA)](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/16){:target="_blank"} | Remote qualified signatures in a RP-driven model | Completed |
 | [Document Retrieval (Wallet-Driven flows)](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/80){:target="_blank"} | A planned scenario for retrieving the document to be signed from the corresponding Relying Party, instead of from the device's file system ("wallet-centric" model for rQES) | Completed |
+| [Alignment with latest standards](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/85){:target="_blank"} | rQES R3/R4/R5 alignment with the Cloud Signature Consortium (CSC) API V2.2 and the CSC Data Model V1.0.0. | In Progress |
 
 ---
 ### Pseudonyms

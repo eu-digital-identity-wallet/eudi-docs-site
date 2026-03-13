@@ -141,6 +141,7 @@ nav:
                       - mDL Verifier Workflow: use-cases/mobile-driving-license/mdl-guides/mdl-verifier/mdl-verifier-workflow.md
                       - mDL Reader Specs: use-cases/mobile-driving-license/mdl-guides/mdl-verifier/mdl-reader-specs.md
                       - mDL Remote Verifier Specs: use-cases/mobile-driving-license/mdl-guides/mdl-verifier/mdl-remote-verifier-specs.md
+  - Functional Conformance: https://conformance.eudi.dev/latest/
 
 extra:
   version:

@@ -11,7 +11,7 @@ Start exploring the EUDI Wallet Reference Implementation!
 | 🧭 [Feature Map](./reference-implementation/feature-map.md) | Overview of delivered and planned features |
 | 🗺️ [Roadmap](./reference-implementation/roadmap.md) | Timeline and upcoming milestones |
 | 📂 [Repositories](./reference-implementation/repositories-list.md) | All component and library repos |
-| 🏗️ [Designs](https://github.com/eu-digital-identity-wallet/eudi-doc-developers-hub-site/tree/doc_update/documentation){:target="_blank"} | [High-Level](https://github.com/eu-digital-identity-wallet/eudi-doc-developers-hub-site/tree/doc_update/documentation/eudi-wallet-hld-q3-25.md){:target="_blank"} and [Low-Level](https://github.com/eu-digital-identity-wallet/eudi-doc-developers-hub-site/tree/doc_update/documentation/eudi-wallet-lld-q3-25.md){:target="_blank"} design of the EUDI Wallet Reference Implementation|
+| 🏗️ [Designs](https://github.com/eu-digital-identity-wallet/eudi-doc-developers-hub-site/tree/main/documentation){:target="_blank"} | [High-Level](https://github.com/eu-digital-identity-wallet/eudi-doc-developers-hub-site/tree/main/documentation/eudi-wallet-hld-q3-25.md){:target="_blank"} and [Low-Level](https://github.com/eu-digital-identity-wallet/eudi-doc-developers-hub-site/tree/main/documentation/eudi-wallet-lld-q3-25.md){:target="_blank"} design of the EUDI Wallet Reference Implementation|
 | ✅ [Code Quality Assurance](./reference-implementation/quality-assurance.md) | Quality assurance tools and processes for the code |
 
 

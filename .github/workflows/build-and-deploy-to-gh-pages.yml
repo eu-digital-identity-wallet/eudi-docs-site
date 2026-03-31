@@ -1,0 +1,82 @@
+name: Build MkDocs Site and Deploy to gh-pages 
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  repository_dispatch:
+    types: [trigger-build]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Configure Git Credentials for gh-pages push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+
+      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
+
+      - name: Cache MkDocs Material assets
+        uses: actions/cache@v5
+        with:
+          key: mkdocs-material-${{ env.cache_id }}
+          path: .cache
+          restore-keys: |
+            mkdocs-material-
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install \
+            mkdocs-material \
+            mike \
+            "mkdocs-material[imaging]"
+
+      - name: Get latest tag
+        id: latest_tag
+        uses: WyriHaximus/github-action-get-previous-tag@v2
+        with:
+          pattern: "v*"
+          fallback: 0.0.0
+
+      - name: Set version
+        run: |
+          TAG="${{ steps.latest_tag.outputs.tag }}"
+          VERSION="${TAG#v}"
+          echo "SITE_VERSION=${VERSION:-latest}" >> $GITHUB_ENV
+
+      - name: Fetch gh-pages branch
+        run: git fetch origin gh-pages --depth=1 || true
+
+      - name: Deploy with mike
+        if: github.event_name != 'pull_request'
+        run: |
+          mike deploy --push --update-aliases "$SITE_VERSION" latest
+          mike set-default --allow-empty --push latest
+
+      - name: Build only (PR check)
+        if: github.event_name == 'pull_request'
+        run: mkdocs build --strict

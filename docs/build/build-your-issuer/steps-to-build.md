@@ -200,7 +200,7 @@ server {
 3. Restart the Nginx server
 
 
-### 5.2 Install and run certbot to gef a free HTTPS certificate
+### 5.2 Install and run certbot to get a free HTTPS certificate
 
 1. Follow the [installation guide](https://certbot.eff.org){:target="_blank"}
 
@@ -242,7 +242,7 @@ This guide provides step-by-step instructions for deploying the **EUDIW Issuer**
     docker compose pull
     ```
 
-5. Run the 
+5. Start the services
 
     Start the EUDIW Issuer backend in detached mode (runs in the background):
 

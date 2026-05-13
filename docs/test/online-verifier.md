@@ -6,7 +6,5 @@ The test service provides extensive capabilities to test various credentials, in
 
 The test service supports both mDoc and SD-JWT formats.
 
-There are two options available:
-
-- [https://verifier.eudiw.dev/](https://verifier.eudiw.dev/){:target="_blank"}  
+You can use the online verifier service available at [https://verifier.eudiw.dev/](https://verifier.eudiw.dev/){:target="_blank"}.
 

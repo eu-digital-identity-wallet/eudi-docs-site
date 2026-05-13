@@ -153,7 +153,7 @@ This covers wallet instances revoked by the wallet provider. Expand to explore d
 
 | Feature | Description | Status |
 | --- | --- | --- |
-| [Wallet instance revocation](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/28){:target="_blank"}| TBC | Planned |
+| [Wallet instance revocation](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/28){:target="_blank"}| This provides wallet instance revocation support. | Completed |
 
 ---
 

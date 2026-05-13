@@ -102,7 +102,8 @@ nav:
               - RSSP: build/supporting-ecosystem-services/rssp.md
               - Revocation Service: build/supporting-ecosystem-services/revocation-service.md
               - Trust List Service: build/supporting-ecosystem-services/trusted-list-service.md
-              - Trust List Providers: build/supporting-ecosystem-services/trusted-list-providers.md
+              - Trust List Manager: build/supporting-ecosystem-services/trusted-list-manager.md
+              - Service Links: build/supporting-ecosystem-services/service-links.md
       - Test:
           - Introduction: test/index.md
           - Wallet Application:

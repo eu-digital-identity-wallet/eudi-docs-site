@@ -23,15 +23,15 @@ The following table provides a high-level overview of the key user functionaliti
 
 | Features | Description | Status | 
 | --- | --- | --- |
-| [Issuance](#issuance) | Issuance of verifiable credentials | In Progress|
-| [Presentation](#presentation) | Presentation of verifiable credentials | In Progress|
-| [rQES](#rqes) | Electronic signing with EUDI Wallet | In Progress |
-| [Transaction Logs](#transaction-logs) | Log of historic transactions executed by the EUDI Wallet | In Progress|
-| [Request data deletion from RPs](#request-data-deletion-from-rps) | Users requesting data deletion from Relying Parties they have previously interacted with |Planned |
-| [Report unlawful or suspicious requests to DPA(s)](#report-unlawful-or-suspicious-requests) | Users reporting suspicious data requests to national Data Protection Authorities |Planned |
+| [Issuance](#issuance) | Issuance of verifiable credentials | Completed |
+| [Presentation](#presentation) | Presentation of verifiable credentials | In Progress |
+| [rQES](#rqes) | Electronic signing with EUDI Wallet | Completed |
+| [Transaction Logs](#transaction-logs) | Log of historic transactions executed by the EUDI Wallet | In Progress |
+| [Request data deletion from RPs](#request-data-deletion-from-rps) | Users requesting data deletion from Relying Parties they have previously interacted with | In Progress |
+| [Report unlawful or suspicious requests to DPA(s)](#report-unlawful-or-suspicious-requests) | Users reporting suspicious data requests to national Data Protection Authorities | In Progress |
 | [Attestation Revocation](#attestation-revocation) | Revoking issued attestations | Completed |
 | [Pseudonyms](#pseudonyms) | Using pseudonyms (i.e. passkeys) for authentication | Planned |
-| [Wallet Revocation](#wallet-revocation) | Revoking wallet instance | Planned |
+| [Wallet Revocation](#wallet-revocation) | Revoking wallet instance | Completed |
 | [Wallet to Wallet](#wallet-to-wallet) | Enabling the exchange of PID/attestations between two EUDI Wallets | Planned|
 | [Wallet Backup and Restore](#wallet-backup-and-restore) | Supporting procedures for backing up and restoring attestations of an EUDI Wallet | Planned |
 | [Migrate to a different wallet](#migrate-to-a-different-wallet) | Supporting procedures for migrating attestations to a different EUDI Wallet |Planned |
@@ -55,7 +55,7 @@ The "Issuance" functionality is aligned with the OpenID4VCI protocol and is cont
 | [Credential Offer](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/42){:target="_blank"} | Supporting issuer-initiated flows | Completed |
 | [Pre-authorisation code flow](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/41){:target="_blank"} | Issuance decoupled from the user's authorisation, as it is performed outside of the issuance flow | Completed|
 | [Batch Issuance](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/18){:target="_blank"} | Issuance of multiple instances of the same credential type | Completed|
-| [Attestation Re-Issuance](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/52){:target="_blank"} | Enabling the re-issuance of Personal Identification Data (PID)/attestation before its expiration | Planned|
+| [Attestation Re-Issuance](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/52){:target="_blank"} | Enabling the re-issuance of Personal Identification Data (PID)/attestation before its expiration | Completed |
 | [Alignment to latest version of the standard](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/77){:target="_blank"} | Enhancements to issuance functionalities as detailed by the latest version of the OpenID4VCI standard | Completed |
 | [Alignment to latest version of the HAIP profile](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/69){:target="_blank"} | Enhancements to issuance, remote presentation and trust management as detailed by the HAIP v1.0 profile | Completed |
 
@@ -73,7 +73,7 @@ The "Presentation" functionality is aligned with the OpenID4VCP protocol (for re
 | [Remote Same-device presentation](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/64){:target="_blank"} | User uses a web browser or another application on the device on which the Wallet Unit is installed to share attestations to a requesting Relying Party. | Completed |
 | [Remote Cross-device presentation](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/64){:target="_blank"} | User uses a web browser on a device other than the device on which their Wallet Unit is installed to share attestations to a requesting Relying Party. |Completed |
 | [Proximity presentation](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/64){:target="_blank"} | User and their device are physically near the Relying Party Instance, and PIDs and attestations are exchanged via proximity technologies (e.g., NFC, Bluetooth), either under human supervision (Supervised) or directly to a machine without supervision (Unsupervised). | Completed |
-| [Digital Credential API](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/34){:target="_blank"} | The Digital Credentials API enables the secure presentation of attestations from the EUDI Wallet, leveraging the web browser for the presentation flow. | Planned |
+| [Digital Credential API](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/34){:target="_blank"} | The Digital Credentials API enables the secure presentation of attestations from the EUDI Wallet, leveraging the web browser for the presentation flow. | In Progress |
 | [Proximity Verifier](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/43){:target="_blank"} | This includes implementation of an open source verifier application for Android, supporting stakeholders for developing their own proximity reader solutions. | Completed |
 | [Alignment to latest version of the standard](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/64){:target="_blank"} | This provides enhancements to presentation functionalities as detailed by the latest version of the OpenID4VP standard (v1.0). | Completed|
 
@@ -88,7 +88,7 @@ This covers scenarios for Remote qualified signatures. Expand to explore detaile
 | [Wallet-Driven rQES (internal SCA)](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/27){:target="_blank"} | Remote qualified signatures in a Wallet-driven model, using an internal (i.e. wallet component) "Signature Creation Application" | Completed |
 | [RP-Driven rQES (internal SCA)](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/16){:target="_blank"} | Remote qualified signatures in a RP-driven model | Completed |
 | [Document Retrieval (Wallet-Driven flows)](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/80){:target="_blank"} | A planned scenario for retrieving the document to be signed from the corresponding Relying Party, instead of from the device's file system ("wallet-centric" model for rQES) | Completed |
-| [Alignment with latest standards](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/85){:target="_blank"} | rQES R3/R4/R5 alignment with the Cloud Signature Consortium (CSC) API V2.2 and the CSC Data Model V1.0.0. | In Progress |
+| [Alignment with latest standards](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/85){:target="_blank"} | rQES R3/R4/R5 alignment with the Cloud Signature Consortium (CSC) API V2.2 and the CSC Data Model V1.0.0. | Completed |
 
 ---
 ### Pseudonyms
@@ -108,7 +108,7 @@ EUDI Wallet Privacy Dashboard provides a record of transactions (i.e. data excha
 
 | Feature | Description | Status |
 | --- | --- | --- |
-| [Transaction Logs (Privacy Dashboard)](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/22){:target="_blank"} | The EUDI Wallet Privacy Dashboard provides a record of transactions (i.e. data exchanges) executed through the EUDI Wallet. Transaction logs provide a higher degree of transparency, privacy and control for Users over their personal data. | Completed |
+| [Transaction Logs (Privacy Dashboard)](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/22){:target="_blank"} | The EUDI Wallet Privacy Dashboard provides a record of transactions (i.e. data exchanges) executed through the EUDI Wallet. Transaction logs provide a higher degree of transparency, privacy and control for Users over their personal data. | In Progress |
 
 
 ---
@@ -120,7 +120,7 @@ This covers Users requesting data deletion from Relying Parties they have previo
 
 | Feature | Description | Status |
 | --- | --- | --- |
-|[Request Data Deletion](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/31){:target="_blank"}| Users request the deletion of their personal attributes from Relying Parties with which they have interacted through their Wallet Unit. | Planned |
+|[Request Data Deletion](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/31){:target="_blank"}| Users request the deletion of their personal attributes from Relying Parties with which they have interacted through their Wallet Unit. | In Progress |
 
 
 ---
@@ -132,7 +132,7 @@ Users report a Relying Party to the competent national Data Protection Authority
 
 | Feature | Description |Status |
 | --- | --- | --- |
-|[Report unlawful or suspicious requests](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/32){:target="_blank"}| Users, through the Wallet Unit, report a Relying Party to the competent national Data Protection Authority where an allegedly unlawful or suspicious request for data is received. |Planned |
+|[Report unlawful or suspicious requests](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/32){:target="_blank"}| Users, through the Wallet Unit, report a Relying Party to the competent national Data Protection Authority where an allegedly unlawful or suspicious request for data is received. | In Progress |
 
 
 ---
@@ -224,7 +224,7 @@ A set of demo implementations are available that mock business flows in differen
 | Business Scenario | Description | Status |
 | --- | --- | --- |
 |[Travel](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/6){:target="_blank"}| A "Travel Use Case" implementation for the EUDI Wallet that demonstrates how the EUDI Wallet works in a "Travel" business scenario. The EUDI Wallet is used for several purposes, such as presenting attestations (remotely and in proximity) and digitally signing documents. | Completed |
-|[Cross-border recruitment](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/55){:target="_blank"}| A "Cross-Border Recruitment Use Case" implementation for the EUDI Wallet that demonstrates how the EUDI Wallet works in a "Cross-Border Recruitment" business scenario. The EUDI Wallet is used for several purposes, such as presenting attestations (remotely and in proximity) when applying/on-boarding for a job and digitally signing a job contract. | In Progress |
+|[Cross-border recruitment](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/55){:target="_blank"}| A "Cross-Border Recruitment Use Case" implementation for the EUDI Wallet that demonstrates how the EUDI Wallet works in a "Cross-Border Recruitment" business scenario. The EUDI Wallet is used for several purposes, such as presenting attestations (remotely and in proximity) when applying/on-boarding for a job and digitally signing a job contract. | Completed |
 
 ## Releases
 The latest published versions of the key EUDI Wallet Reference Implementation components are summarised below:
@@ -241,11 +241,4 @@ The latest published versions of the key EUDI Wallet Reference Implementation co
 
 
 You can refer to the [EUDI Wallet Reference Implementation Roadmap](https://github.com/orgs/eu-digital-identity-wallet/projects/24){:target="_blank"} to view further details on the release roadmap.
-
-
-
-
-
-
-
 

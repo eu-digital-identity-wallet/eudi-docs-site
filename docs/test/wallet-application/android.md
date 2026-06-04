@@ -6,7 +6,7 @@
 
 ## Installation
 
-You can find and download all the Demo versions of the application in the [GitHub Releases] section (https://github.com/eu-digital-identity-wallet/eudi-app-android-wallet-ui/releases){:target="_blank"}.
+You can find and download all the Demo versions of the application in the [GitHub Releases](https://github.com/eu-digital-identity-wallet/eudi-app-android-wallet-ui/releases){:target="_blank"} section.
 
 For the proximity flow, you will also need to download the Android Verifier app. More information can be found [on the Proximity Verifier page](../proximity-verifier.md).
 

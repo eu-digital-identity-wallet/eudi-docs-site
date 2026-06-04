@@ -1,27 +1,32 @@
 # Proximity Verifier
 
-The Proximity Verifier (also referred as mDoc Verifier) is an Android application based on the `appverifier` from the [Google Identity Credential library](https://github.com/openwallet-foundation-labs/identity-credential){:target="_blank"}, implementing ISO/IEC 18013-5:2021.
+The EUDI Verifier App is a cross-platform (iOS and Android) reference implementation for ISO 18013-5 proximity-based credential verification. Built with Kotlin Multiplatform (KMP/CMP), the app provides a unified codebase for business logic, leveraging platform-native libraries to ensure compliance with the latest standards and security requirements.
+
+The EUDI Verifier App enables organizations and relying parties to:
+
+1. Read and verify ISO 18013-5 compliant mobile credentials (mDL, PID, etc.) over proximity channels (NFC/BLE).
+2. Support secure, privacy-preserving credential presentation flows, both for in-person and potentially remote scenarios.
+3. Demonstrate modular, reusable architecture by utilizing platform-specific low-level libraries, orchestrated by a shared multiplatform business logic layer.
+4. Provide an accessible, extensible codebase for pilots, research, and real-world integration projects targeting digital identity verification.
+
+This repository contains the source code for the multi-platform app, while credential-handling libraries are used as external dependencies.
 
 ## Purpose
 
 The Proximity Verifier app is provided to help developers test and validate their wallet implementations.
 
-## Modifications
+## Minimum device requirements
 
-Starting from the [original code](https://github.com/openwallet-foundation-labs/identity-credential/commit/0b9b31ef63047762e10300e23a22f6d7dcfb6d15){:target="_blank"} of the `appverifier`, the following modifications have been made (the code is not currently publicly available):
-
- - Support for requesting EU documents:
-     - Personal Identification Data (PID) document, according to the ARF PID RuleBook
-     - Age Verification (Pseudonym) document
- - IACA Certificates: Updated to support EUDI Wallet IACAs as trusted certificates
- - Reader Authentication Certificate.
+- API level 29 (Android 10) or higher.
+- iOS 18.6 or higher
 
 ## Install the Verifier
 
-The app is available for download from the [App Center](https://install.appcenter.ms/orgs/eu-digital-identity-wallet/apps/mdoc-verifier-testing/distribution_groups/eudi%20verifier%20(testing)%20public){:target="_blank"}.
+The application (APK file) is available for download through [GitHub releases](https://github.com/eu-digital-identity-wallet/eudi-app-multiplatform-verifier-ui/releases){:target="_blank"}.
+
 
 ## Important Note
 The Proximity Verifier app is a testing tool for developers to validate their wallet implementations. 
 It is not intended for production use. 
-The app may contain bugs or other issues that affect its functionality on different mobile devices or Android versions.
-These issues will be addressed in the upcoming open-source library, which will be available for developers to build their own verifier applications.
+Currently, the project supports building both Android and iOS applications. However, only the Android version is fully operational. The iOS version builds the user interface, but no actions are functional, as the ISO 18013-5 library has not yet been implemented. Support for this functionality is planned for a future release.
+

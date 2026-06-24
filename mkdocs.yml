@@ -1,43 +1,91 @@
+# ============================================================
+# eudi-docs-site (docs.eudi.dev) — Reference Implementation
+# Theme / markdown / plugins mirror the ARF canonical config.
+# Site-specific: nav, repo_url, asset paths, include-markdown not needed.
+# ============================================================
+
 site_name: European Digital Identity
+site_author: European Commission - DG CNECT
+site_url: https://docs.eudi.dev
+repo_url: https://github.com/eu-digital-identity-wallet/eudi-docs-site
+repo_name: eu-digital-identity-wallet/eudi-docs-site
+edit_uri: edit/main/docs/
+copyright: European Union, 2025 - Licensed under the EUPL-1.2 or later
+
+# ---------------- SHARED THEME BLOCK (identical to ARF) ----------------
 theme:
   name: material
+  custom_dir: overrides
+  icon:
+    repo: fontawesome/brands/github
   palette:
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
+      primary: custom
+      accent: custom
       toggle:
-        icon: material/brightness-4
+        icon: material/brightness-7
         name: Switch to light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
+      primary: custom
+      accent: custom
       toggle:
-        icon: material/brightness-7
+        icon: material/brightness-4
         name: Switch to dark mode
   features:
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.path
+    - navigation.indexes
     - navigation.top
     - navigation.footer
-    - navigation.indexes
+    - navigation.tracking
+    - toc.integrate
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.action.edit
+    - content.action.view
+    - content.code.copy
   logo: assets/logo_eudi_white.svg
   favicon: assets/favicon.ico
 
 extra_css:
-  - css/extra.css
+  - css/extra.css                # site-specific path; same file contents everywhere
 
+# ---------------- SHARED MARKDOWN BLOCK (identical to ARF, minus snippets) ----------------
 markdown_extensions:
   - footnotes
   - sane_lists
   - tables
+  - attr_list
+  - md_in_html
+  - admonition
+  - pymdownx.details
+  - pymdownx.tilde
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
+  - toc:
+      permalink: true
+      permalink_title: Link to this section
 
-site_url: https://docs.eudi.dev
-repo_url: https://github.com/eu-digital-identity-wallet/eudi-docs-site
-repo_name: eu-digital-identity-wallet/eudi-docs-site
+# ---------------- SHARED PLUGINS BLOCK (identical to ARF) ----------------
+plugins:
+  - search
+  - tags
+  - privacy
+  - social
+  - mike
+
+extra:
+  version:
+    provider: mike
+    alias: true
 
 nav:
   - European Digital Identity Wallet: https://eudi.dev/latest/
@@ -45,7 +93,7 @@ nav:
   - Discussion topics: https://eudi.dev/latest/discussion-topics/
   - Technical specifications: https://eudi.dev/latest/technical-specifications/
   - Reference Implementation:
-      - Overview: 
+      - Overview:
           - Overview: index.md
           - Feature Map: reference-implementation/feature-map.md
           - Roadmap: reference-implementation/roadmap.md
@@ -85,7 +133,7 @@ nav:
           - Build your Remote Verifier:
               - Overview: build/build-your-remote-verifier/index.md
               - Steps to Build: build/build-your-remote-verifier/steps-to-build.md
-              - Configure your Verifier: build/build-your-remote-verifier/configure.md 
+              - Configure your Verifier: build/build-your-remote-verifier/configure.md
           - Build your Proximity Verifier:
               - Overview: build/build-your-proximity-verifier/index.md
               - Build your Proximity Verifier App for Android: build/build-your-proximity-verifier/build-your-proximity-verifier-app-for-android.md
@@ -95,7 +143,7 @@ nav:
               - Build your rQES SDK UI for Android: build/build-your-rqes/build-your-rqes-sdk-ui-for-android.md
               - Build your rQES Core for Android: build/build-your-rqes/build-your-rqes-core-for-android.md
               - Build your rQES SDK UI for iOS: build/build-your-rqes/build-your-rqes-sdk-ui-for-ios.md
-              - Build your rQES Kit for iOS:  build/build-your-rqes/build-your-rqes-kit-for-ios.md
+              - Build your rQES Kit for iOS: build/build-your-rqes/build-your-rqes-kit-for-ios.md
           - Supporting Ecosystem Services:
               - Overview: build/supporting-ecosystem-services/index.md
               - RP Registration Service: build/supporting-ecosystem-services/rp-registration-service.md
@@ -138,20 +186,9 @@ nav:
                       - mDL Issuance Workflow: use-cases/mobile-driving-license/mdl-guides/mdl-issuer/mdl-issuance-workflow.md
                       - mDL Issuer Specs: use-cases/mobile-driving-license/mdl-guides/mdl-issuer/mdl-issuer-specs.md
                       - mDL Revocation Specs: use-cases/mobile-driving-license/mdl-guides/mdl-issuer/mdl-revocation-specs.md
-                  - mDL Verifier: 
+                  - mDL Verifier:
                       - Getting Started: use-cases/mobile-driving-license/mdl-guides/mdl-verifier/index.md
                       - mDL Verifier Workflow: use-cases/mobile-driving-license/mdl-guides/mdl-verifier/mdl-verifier-workflow.md
                       - mDL Reader Specs: use-cases/mobile-driving-license/mdl-guides/mdl-verifier/mdl-reader-specs.md
                       - mDL Remote Verifier Specs: use-cases/mobile-driving-license/mdl-guides/mdl-verifier/mdl-remote-verifier-specs.md
   - Functional Conformance: https://conformance.eudi.dev/latest/
-
-extra:
-  version:
-    provider: mike
-    alias: true
-
-plugins:
-  - mike
-  - tags
-  - privacy
-  - social

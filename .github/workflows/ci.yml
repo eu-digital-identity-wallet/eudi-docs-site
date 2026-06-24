@@ -1,0 +1,39 @@
+# Validate documentation changes on pull requests to main, before they are
+# merged. Mirrors the ARF canonical CI `build-docs` job
+# (eudi-doc-architecture-and-reference-framework/.github/workflows/ci.yml).
+# The ARF-specific PDF / HLR / reference-generation jobs do not apply here.
+name: CI
+
+on:
+  pull_request:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-docs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+
+      - name: Setup python environment
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
+        with:
+          python-version: 3.x
+          cache: pip
+
+      - name: Install mkdocs theme
+        run: pip install -r requirements.txt
+
+      # --strict fails on any broken link / nav / section anchor / markdown
+      # issue, so a PR that breaks the site fails here instead of post-merge.
+      - name: Build site (strict)
+        run: mkdocs build --strict

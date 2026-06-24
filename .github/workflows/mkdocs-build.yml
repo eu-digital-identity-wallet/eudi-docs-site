@@ -45,5 +45,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install mkdocs mkdocs-multirepo-plugin mkdocs-material mkdocs-breadcrumbs-plugin mike pillow cairosvg
 
+      - name: Build site (validate PRs without publishing)
+        if: github.event_name == 'pull_request'
+        run: mkdocs build
+
       - name: Deploy site
+        if: github.event_name != 'pull_request'
         run: mkdocs gh-deploy --force

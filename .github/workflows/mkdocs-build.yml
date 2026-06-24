@@ -35,10 +35,15 @@ jobs:
           restore-keys: |
             mkdocs-material-
 
+      - name: Install system dependencies (social cards)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libcairo2-dev libfreetype6-dev libffi-dev libjpeg-dev libpng-dev libz-dev
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install mkdocs mkdocs-multirepo-plugin mkdocs-material mkdocs-breadcrumbs-plugin
+          pip install mkdocs mkdocs-multirepo-plugin mkdocs-material mkdocs-breadcrumbs-plugin mike pillow cairosvg
 
       - name: Deploy site
         run: mkdocs gh-deploy --force

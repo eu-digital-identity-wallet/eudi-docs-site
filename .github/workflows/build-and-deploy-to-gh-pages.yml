@@ -1,0 +1,87 @@
+name: Build MkDocs Site and Deploy to gh-pages
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  repository_dispatch:
+    types: [trigger-build]
+
+permissions:
+  contents: read # global default is least privileged
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          fetch-depth: 0
+          persist-credentials: false # do not persist creds, explicitly set remote with token below
+
+      - name: Configure Git Credentials for gh-pages push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}"
+
+      - name: Set up Python
+        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
+        with:
+          python-version: "3.13"
+
+      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
+
+      - name: Cache MkDocs Material assets
+        uses: actions/cache@668228422ae6a00e4ad889ee87cd7109ec5666a7 # v5.0.4
+        with:
+          key: mkdocs-material-${{ env.cache_id }}
+          path: .cache
+          restore-keys: |
+            mkdocs-material-
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install \
+            mkdocs-material \
+            mike \
+            "mkdocs-material[imaging]"
+
+      - name: Get latest tag
+        id: latest_tag
+        uses: WyriHaximus/github-action-get-previous-tag@61819f33034117e6c686e6a31dba995a85afc9de # v2.0.0
+        with:
+          pattern: "v*"
+          fallback: 0.0.0
+
+      - name: Set version
+        env:
+          RAW_TAG: ${{ steps.latest_tag.outputs.tag }} # use a temp env var for safety
+        run: |
+          VERSION="${RAW_TAG#v}"
+          echo "SITE_VERSION=${VERSION:-latest}" >> $GITHUB_ENV
+
+      - name: Fetch gh-pages branch
+        run: git fetch origin gh-pages --depth=1 || true
+
+      - name: Deploy with mike
+        if: github.event_name != 'pull_request'
+        run: |
+          mike deploy --push --update-aliases "$SITE_VERSION" latest
+          mike set-default --allow-empty --push latest
+
+      - name: Build only (PR check)
+        if: github.event_name == 'pull_request'
+        run: mkdocs build --strict

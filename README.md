@@ -1,34 +1,35 @@
 # eudi-docs-site
 
-This guide will help you quickly get started with MkDocs.
+This repository contains the documentation for the Reference Implementation of the EU Digital Identity Wallet project, built with [MkDocs](https://www.mkdocs.org/) and the [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) theme.
 
-## Installation
+Take a look at [docs.eudi.dev](https://docs.eudi.dev/latest/) to check the published docs.
 
-To install MkDocs, use `pip`:
+## Prerequisites
+
+- Python 3.x and pip
+
+## Local build
+
+Install required plugins (take a look at the [mkdocs.yml](mkdocs.yml) file for reference on the required plugins):
 
 ```bash
-pip install mkdocs mkdocs-multirepo-plugin mkdocs-material pymdown-extensions
+pip install mkdocs "mkdocs-material[imaging]" mike
 ```
 
-## Serving the Documentation
-
-To view your documentation locally, navigate to the project directory and run:
+Then, serve locally:
 
 ```bash
 mkdocs serve
 ```
-Your documentation will be available at http://127.0.0.1:8000/ in your browser.
 
-## Deploy on Github pages
+The local deployment will be available at [http://127.0.0.1:8000/](http://127.0.0.1:8000/).
 
-MkDocs has built-in support for deploying to GitHub Pages.
+## Deploy (GitHub Pages)
+
+If you want, you could deploy directly from the local machine to a remote `gh-pages` branch using the following command:
 
 ```bash
 mkdocs gh-deploy
 ```
-This command will automatically push the contents of the site/ directory to the gh-pages branch of your repository.
-The site will be available at https://<.username.>.github.io/<.repository.>/.
 
-## Configuration
-
-The configuration file for MkDocs is mkdocs.yml, where you can customize the site name, theme, and other settings.
+however, it is recommended to use a proper Continuous Integration chain to do so.

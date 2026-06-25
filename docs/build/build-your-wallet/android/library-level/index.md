@@ -31,11 +31,11 @@ The library provides the following functionality:
     - ✅ Support for custom SecureArea implementations
     - ✅ Support for multiple SecureArea implementations
 - Document issuance
-    - Support for OpenId4VCI v. 1.0 document issuance
+    - Support for OpenID4VCI v. 1.0 document issuance
         - ✅ Authorization Code Flow
         - ✅ Pre-authorization Code Flow
         - ✅ Support for mso_mdoc format
-      - Support for sd-jwt-vc format
+      - Support for SD-JWT VC format
         - ✅ Support for credential offers
         - ✅ Support for DPoP JWT in authorization
       - ✅ Support for JWT proof types
@@ -48,7 +48,7 @@ The library provides the following functionality:
         - ⌛ NFC data transfer
         - ⌛ Wifi-Aware data transfer
 - Remote document presentation
-    - OpenId4VP document transfer
+    - OpenID4VP document transfer
         - ✅ For pre-registered verifiers
         - ✅ Dynamic registration of verifiers
 

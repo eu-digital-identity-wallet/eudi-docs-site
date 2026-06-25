@@ -14,7 +14,7 @@ The following table indicates the credential formats supported by the EUDI Walle
 | Format | Status | Description | 
 | --- | --- | --- |
 | `mso_mdoc` | Published (ISO/IEC 18013-5) | Credential format based on ISO/IEC 18013-5 using a signed Mobile Security Object (MSO) to bind and protect data elements. Supports selective disclosure. | 
-| `SD-JWT-VC` | Draft (IETF / OpenID Foundation) | Credential format extending JSON Web Tokens with selective disclosure for web-native verifiable credentials. | 
+| `SD-JWT VC` | Draft (IETF / OpenID Foundation) | Credential format extending JSON Web Tokens with selective disclosure for web-native verifiable credentials. | 
 
 
 ## Features
@@ -66,7 +66,7 @@ The "Issuance" functionality is aligned with the OpenID4VCI protocol and is cont
 This covers applicable presentation flows in alignment with OpenID4VP and ISO/IEC 18013-5. Expand to explore detailed functional specifications for the "Presentation" capabilities.
  
 
-The "Presentation" functionality is aligned with the OpenID4VCP protocol (for remote presentation flows) and is continuously updated to align with the [evolving standards and protocols](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/64){:target="_blank"}.
+The "Presentation" functionality is aligned with the OpenID4VP protocol (for remote presentation flows) and is continuously updated to align with the [evolving standards and protocols](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/64){:target="_blank"}.
 
 | Feature | Description | Status |
 | --- | --- | --- |
@@ -216,8 +216,6 @@ The following table provides an overview of the key attestations supported by th
 For further attestations supported by the EUDI Wallet Reference Implementation you can check our [Issuer](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py){:target="_blank"}.
 
 ## Business Demos
-
-### Business Demos
 
 A set of demo implementations are available that mock business flows in different contexts and demonstrate the EUDI Wallet functionalities in real-life scenarios. 
 

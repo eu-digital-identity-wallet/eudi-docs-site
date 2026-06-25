@@ -35,7 +35,7 @@ The Wallet-Driven signature flow supports an rQES flow initiated and processed w
 
     Before initiating the credential listing or signing operation, the Wallet must authenticate itself to the QTSP. In this signature flow, it is assumed that the Wallet has been previously registered with the QTSP.
 
-    To initiate user authentication with the QTSP (Service Authentication process), the SIC (Signature Activation Component) will send a request to the QTSP Authorization Server. The authentication is carried out using the OAuth2 protocol, complemented by the OpenId4VP protocol.
+    To initiate user authentication with the QTSP (Service Authentication process), the SIC (Signature Activation Component) will send a request to the QTSP Authorization Server. The authentication is carried out using the OAuth 2.0 protocol, complemented by the OpenID4VP protocol.
 
 ```mermaid
 sequenceDiagram
@@ -104,7 +104,7 @@ sequenceDiagram
 
     The signature process is divided into two main operations: credential authorisation and document signing.
 
-    In the credential authorisation flow, the Wallet sends the document to be signed, along with the certificate and the certificate chain of the credential chosen, and other relevant information required to the SCA. The SCA (Signature Creation Application) then computes the hash of the document to be signed. Following this, the Wallet requests authorisation from the QTSP to use the private signing key, initiating an OAuth2 flow with OpenID for Verifiable Presentations.
+    In the credential authorisation flow, the Wallet sends the document to be signed, along with the certificate and the certificate chain of the credential chosen, and other relevant information required to the SCA. The SCA (Signature Creation Application) then computes the hash of the document to be signed. Following this, the Wallet requests authorisation from the QTSP to use the private signing key, initiating an OAuth 2.0 flow with OpenID for Verifiable Presentations.
 
     Once the Wallet receives the token granting access to the chosen credential, the document signing process proceeds. The Wallet uses the QTSP API to obtain the signature for the hash value. Finally, a request is sent to the SCA with the signature value, the document to be signed, the certificate, and any other required data.
 

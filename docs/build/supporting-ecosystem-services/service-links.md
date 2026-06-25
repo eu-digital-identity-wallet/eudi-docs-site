@@ -2,13 +2,13 @@
 
 This page contains all the testing and development links for the EUDIW project
 
-## Issuer - Openid4VCI
+## Issuer - OpenID4VCI
     
 *   [https://issuer.eudiw.dev](https://issuer.eudiw.dev/)
 *   [https://tester.issuer.eudiw.dev](https://tester.issuer.eudiw.dev/)
 *   [https://issuer-backend.eudiw.dev](https://issuer-backend.eudiw.dev/)
 
-## Verifier - Openid4VP
+## Verifier - OpenID4VP
     
 *   [https://verifier.eudiw.dev](https://verifier.eudiw.dev)
 *   [https://verifier-backend.eudiw.dev](https://verifier-backend.eudiw.dev/)

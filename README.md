@@ -21,6 +21,8 @@ configured in [`mkdocs.yml`](mkdocs.yml); brand styling lives in
 Install the pinned toolchain and serve the site with live reload:
 
 ```bash
+python -m venv .venv
+source .venv/bin/activate
 pip install -r requirements.txt
 mkdocs serve
 ```

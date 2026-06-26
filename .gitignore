@@ -11,3 +11,4 @@
 /docs/assets/index.md
 /docs/css/index.md
 .cache
+.venv

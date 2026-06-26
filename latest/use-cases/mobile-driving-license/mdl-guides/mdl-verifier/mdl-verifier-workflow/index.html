@@ -3851,16 +3851,144 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#verification-of-mdl" class="md-nav__link">
+    <nav class="md-nav" aria-label="Development prerequisites">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trust-anchor-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Verification of mDL
+        Trust anchor configuration
       
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#relying-party-registration-and-authorisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relying Party registration and authorisation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-certificate-and-trust-list-inclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Access Certificate and Trust List inclusion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#revocation-status-checking-infrastructure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Revocation status checking infrastructure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verification-of-an-mdl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verification of an mDL
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Verification of an mDL">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#remote-verification-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Remote verification architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Remote verification architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#remote-mdl-verifier-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        (Remote) mDL Verifier Client
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remote-mdl-verifier-backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        (Remote) mDL Verifier Backend
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mdl-verifier-organisation-backend-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mDL Verifier organisation backend systems
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-retrieval-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data retrieval methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proximity-verification-flow-mdl-reader" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Proximity verification flow (mDL Reader)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4151,69 +4279,66 @@
 
 
 <h1 id="technical-deep-dive-mdl-verifier-workflow">Technical Deep Dive – mDL Verifier Workflow<a class="headerlink" href="#technical-deep-dive-mdl-verifier-workflow" title="Link to this section">&para;</a></h1>
+<p>This guide is a technical deep dive into how an organisation, acting as an mDL Verifier (Relying Party), launches an mDL verification solution using the EUDI Wallet Reference Implementation. It covers the development prerequisites and the remote and proximity verification flows.</p>
 <h2 id="development-prerequisites">Development prerequisites<a class="headerlink" href="#development-prerequisites" title="Link to this section">&para;</a></h2>
-<p>The reference implementation's preconditions listed in the relevant section on the implementer's hub do apply to the mDL Verifier.
-Nevertheless, this section outlines essential integration dependencies and prerequisite procedures for organisations (acting as mDL Verifiers/Relying Parties) to successfully launch their mDL verification solution using the EUDI Wallet Reference Implementation.</p>
+<p>The reference implementation's preconditions listed in the relevant section on the implementer's hub do apply to the mDL Verifier. Nevertheless, this section outlines the essential integration dependencies and prerequisite procedures for organisations (acting as mDL Verifiers/Relying Parties) to successfully launch their mDL verification solution using the EUDI Wallet Reference Implementation.</p>
 <p>For the technical team to successfully deploy the mDL Verifier, integration with the following external infrastructure components is required.</p>
-<p><strong>Trust Anchor Configuration</strong></p>
+<h3 id="trust-anchor-configuration">Trust anchor configuration<a class="headerlink" href="#trust-anchor-configuration" title="Link to this section">&para;</a></h3>
 <p>The mDL Verifier must be configured to access and validate trust anchors from relevant Trusted Lists to verify the authenticity of mDL attestations. This includes:</p>
 <ul>
-<li>Integration with ETSI Trusted Lists (via the List of Trusted Lists - LOTL), which contains the trust anchors for all recognised mDL Issuers,</li>
-<li>VICAL (Verified Issuer Certificate Authority List) integration for third-country recognition (optional, but recommended),</li>
+<li>Integration with ETSI Trusted Lists (via the List of Trusted Lists, LOTL), which contains the trust anchors for all recognised mDL Issuers;</li>
+<li>VICAL (Verified Issuer Certificate Authority List) integration for third-country recognition (optional, but recommended);</li>
 <li>Certificate Revocation List (CRL) access for certificate status validation of the Issuing Authority's key.</li>
 </ul>
 <p>Your implementation must ensure the mDL Verifier component can retrieve and validate these trust relationships during the verification process.</p>
-<p><strong>Relying Party Registration and Authorisation</strong></p>
-<p>To interact with EUDI Wallet Units, your organisation must register as a Relying Party with the designated national Registrar. This process confirms the RP identity and requires formal declaration of the "intended use": the specific user attributes you are authorised to request.</p>
+<h3 id="relying-party-registration-and-authorisation">Relying Party registration and authorisation<a class="headerlink" href="#relying-party-registration-and-authorisation" title="Link to this section">&para;</a></h3>
+<p>To interact with EUDI Wallet Units, your organisation must register as a Relying Party with the designated national Registrar. This process confirms the RP identity and requires a formal declaration of the "intended use": the specific user attributes you are authorised to request.</p>
 <ul>
-<li>RP Registration Certificate: After registering, the RP receives a Registration Certificate (a data object) that specifies the scope of attributes the RP is permitted to request from Wallet Users. The Wallet Unit checks this during presentation to enforce data minimisation.</li>
+<li><strong>RP Registration Certificate:</strong> after registering, the RP receives a Registration Certificate (a data object) that specifies the scope of attributes the RP is permitted to request from Wallet Users. The Wallet Unit checks this during presentation to enforce data minimisation.</li>
 </ul>
-<p><strong>Access Certificate and Trust List Inclusion</strong>
-Your organisation needs to obtain an Access Certificate to prove its identity during interactions with Wallet Unit.</p>
+<h3 id="access-certificate-and-trust-list-inclusion">Access Certificate and Trust List inclusion<a class="headerlink" href="#access-certificate-and-trust-list-inclusion" title="Link to this section">&para;</a></h3>
+<p>Your organisation needs to obtain an Access Certificate to prove its identity during interactions with the Wallet Unit.</p>
 <ul>
-<li>Access Certificate (X.509): this certificate is issued by the designated Access Certificate Authority. It is used to digitally sign presentation requests.</li>
+<li><strong>Access Certificate (X.509):</strong> this certificate is issued by the designated Access Certificate Authority. It is used to digitally sign presentation requests.</li>
 </ul>
 <p>The Trust List inclusion is linked to this mechanism: the public key of the Access Certificate Authority is reflected in the relevant national/EU Trust Lists. This allows every EUDI Wallet Unit across the EU to cryptographically verify that the RP's Access Certificate is legitimate.</p>
-<p><strong>Revocation Status Checking Infrastructure</strong></p>
-<p>Your mDL Verifier must be capable of checking the revocation status of presented mDLs by:</p>
-<ul>
-<li>Accessing Status Lists or Revocation Identifier Lists published by mDL Issuers</li>
-</ul>
-<h2 id="verification-of-mdl">Verification of mDL<a class="headerlink" href="#verification-of-mdl" title="Link to this section">&para;</a></h2>
+<h3 id="revocation-status-checking-infrastructure">Revocation status checking infrastructure<a class="headerlink" href="#revocation-status-checking-infrastructure" title="Link to this section">&para;</a></h3>
+<p>Your mDL Verifier must be capable of checking the revocation status of presented mDLs by accessing the Status Lists or Revocation Identifier Lists published by mDL Issuers.</p>
+<h2 id="verification-of-an-mdl">Verification of an mDL<a class="headerlink" href="#verification-of-an-mdl" title="Link to this section">&para;</a></h2>
 <p>The verification process supports both proximity and remote presentation flows, implementing the protocols specified in ISO/IEC 18013-5 and OpenID4VP respectively.</p>
-<p><strong>Remote Verification Architecture</strong></p>
-<p><strong>(Remote) mDL Verifier Client</strong></p>
+<h3 id="remote-verification-architecture">Remote verification architecture<a class="headerlink" href="#remote-verification-architecture" title="Link to this section">&para;</a></h3>
+<h4 id="remote-mdl-verifier-client">(Remote) mDL Verifier Client<a class="headerlink" href="#remote-mdl-verifier-client" title="Link to this section">&para;</a></h4>
 <ul>
-<li>This runs in the web browser and provides the user interface for initiating and managing the presentation flow. </li>
-<li>It renders and submits the presentation requests to the wallet. </li>
-<li>It interacts with the Digital Credential API of the web browser to manage the presentation requests and responses. </li>
+<li>Runs in the web browser and provides the user interface for initiating and managing the presentation flow.</li>
+<li>Renders and submits the presentation requests to the Wallet.</li>
+<li>Interacts with the Digital Credentials API of the web browser to manage the presentation requests and responses.</li>
 </ul>
-<p><strong>(Remote) mDL Verifier Backend</strong></p>
+<h4 id="remote-mdl-verifier-backend">(Remote) mDL Verifier Backend<a class="headerlink" href="#remote-mdl-verifier-backend" title="Link to this section">&para;</a></h4>
 <ul>
-<li>This is the server-side component of the mDL Verifier application that directly interacts with the Wallet via the frontend. </li>
-<li>sends presentation requests, compliant with the OpenID4VP specification, to the Wallet via the browser's Digital Credentials API. </li>
-<li>It receives the encrypted presentation response containing the requested attributes from the Wallet (forwarded by the browser). </li>
-<li>It performs the trust relationship checks. </li>
-<li>It integrates with the mDL Verifier Organisation's backend systems to provide information about the requested mDL claims and verification checks. </li>
+<li>The server-side component of the mDL Verifier application that directly interacts with the Wallet via the frontend.</li>
+<li>Sends presentation requests, compliant with the OpenID4VP specification, to the Wallet via the browser's Digital Credentials API.</li>
+<li>Receives the encrypted presentation response containing the requested attributes from the Wallet (forwarded by the browser).</li>
+<li>Performs the trust relationship checks.</li>
+<li>Integrates with the mDL Verifier organisation's backend systems to provide information about the requested mDL claims and verification checks.</li>
 </ul>
-<p><strong>mDL Verifier organisation backend systems</strong> </p>
+<h4 id="mdl-verifier-organisation-backend-systems">mDL Verifier organisation backend systems<a class="headerlink" href="#mdl-verifier-organisation-backend-systems" title="Link to this section">&para;</a></h4>
 <ul>
-<li>It requests the mDL Verifier Backend to initiate the mDL remote presentation flow. </li>
-<li>It receives from the mDL Verifier Backend the requested mDL attributes and validation and verification checks. </li>
+<li>Requests the mDL Verifier Backend to initiate the mDL remote presentation flow.</li>
+<li>Receives from the mDL Verifier Backend the requested mDL attributes and the validation and verification checks.</li>
 </ul>
-<p><strong>Data Retrieval Methods</strong></p>
+<h3 id="data-retrieval-methods">Data retrieval methods<a class="headerlink" href="#data-retrieval-methods" title="Link to this section">&para;</a></h3>
 <ul>
-<li><strong>Non-Digital Credentials API</strong>: Uses ISO/IEC 18013-5 (CBOR) and OpenID4VP v1.0 specification</li>
-<li><strong>Digital Credentials API based</strong>: Uses ISO/IEC 18013-5 (CBOR) with ISO/IEC 18013-7 Annex C, or OpenID4VP in combination with Digital Credentials API</li>
+<li><strong>Non-Digital Credentials API:</strong> uses ISO/IEC 18013-5 (CBOR) and the OpenID4VP v1.0 specification.</li>
+<li><strong>Digital Credentials API based:</strong> uses ISO/IEC 18013-5 (CBOR) with ISO/IEC 18013-7 Annex C, or OpenID4VP in combination with the Digital Credentials API.</li>
 </ul>
-<p><strong>Proximity Verification Flow (mDL Reader)</strong>
-The mDL Reader is a mobile application that can request, receive, and verify the integrity and authenticity of an mDL for proximity presentation flows. It is controlled by an mDL Verifier, which is a person or an organisation. This section focuses explicitly on the mDL Reader.
-The mDL reader implements the proximity presentation flow with the EUDI Wallet. ISO/IEC 18013-5 specifies the interfaces between:</p>
+<h3 id="proximity-verification-flow-mdl-reader">Proximity verification flow (mDL Reader)<a class="headerlink" href="#proximity-verification-flow-mdl-reader" title="Link to this section">&para;</a></h3>
+<p>The mDL Reader is a mobile application that can request, receive, and verify the integrity and authenticity of an mDL for proximity presentation flows. It is controlled by an mDL Verifier, which is a person or an organisation. This section focuses explicitly on the mDL Reader.</p>
+<p>The mDL Reader implements the proximity presentation flow with the EUDI Wallet. ISO/IEC 18013-5 specifies the interfaces between:</p>
 <ul>
-<li>the mDL (wallet) and mDL reader</li>
-<li>the mDL reader and the issuing authority infrastructure.</li>
+<li>the mDL (Wallet) and the mDL Reader;</li>
+<li>the mDL Reader and the issuing authority infrastructure.</li>
 </ul>
-<p>The interface of the mDL reader and the issuing authority infrastructure (online/server data retrieval) is excluded (not supported) from the mDL target solution since it allows the issuing authority to have knowledge when the mDL holder presents the mDL to a specific mDL verifier. This is prohibited explicitly by articles 5a.16 and 5a.5(b) of [eIDAS] and [ARF] Annex 2 High level requirement "ProxId_02" that states explicitly "Wallet Solutions, PID Providers, Attestation Providers, Wallet Providers, and Relying Parties SHALL NOT support server retrieval as specified in ISO/IEC 18013-5 for requesting and presenting PID or attestation attributes". Therefore, this method is excluded (not supported) from the mDL target solution.</p>
+<p>The interface between the mDL Reader and the issuing authority infrastructure (online/server data retrieval) is excluded (not supported) from the mDL target solution, since it would allow the issuing authority to know when the mDL holder presents the mDL to a specific mDL Verifier. This is prohibited explicitly by articles 5a.16 and 5a.5(b) of [eIDAS] and by [ARF] Annex 2 high-level requirement "ProxId_02", which states explicitly that "Wallet Solutions, PID Providers, Attestation Providers, Wallet Providers, and Relying Parties SHALL NOT support server retrieval as specified in ISO/IEC 18013-5 for requesting and presenting PID or attestation attributes". Therefore, this method is excluded (not supported) from the mDL target solution.</p>
 <h2 id="libraries-sdks">Libraries &amp; SDKs<a class="headerlink" href="#libraries-sdks" title="Link to this section">&para;</a></h2>
 <p>The EUDI Wallet Reference Implementation provides key reusable components to accelerate deployment. Please refer to the relevant section for detailed instructions on how to <a href="https://eu-digital-identity-wallet.github.io/Build/Build%20your%20Verifier/">build</a> and <a href="https://eu-digital-identity-wallet.github.io/Test/Online%20Verifier/">test</a> the mDL Verifier.</p>
 

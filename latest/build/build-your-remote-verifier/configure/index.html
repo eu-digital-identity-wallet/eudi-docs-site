@@ -2064,19 +2064,19 @@
   <a href="#sd-jwt-vc-type-metadata-policy" class="md-nav__link">
     <span class="md-ellipsis">
       
-        SD-JWT-VC Type Metadata Policy
+        SD-JWT VC Type Metadata Policy
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="SD-JWT-VC Type Metadata Policy">
+    <nav class="md-nav" aria-label="SD-JWT VC Type Metadata Policy">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#sd-jwt-vc-type-metadata-resolution" class="md-nav__link">
     <span class="md-ellipsis">
       
-        SD-JWT-VC Type Metadata Resolution
+        SD-JWT VC Type Metadata Resolution
       
     </span>
   </a>
@@ -4248,7 +4248,7 @@ Default value: <code>ES256</code></p>
 Description: Enable support for MSO MDoc.  <br />
 Default value: <code>true</code>  </p>
 <p>Variable: <code>VERIFIER_VALIDATION_SDJWTVC_STATUSCHECK_ENABLED</code><br />
-Description: Enables status check validation for sd-jwt-vc attestations shared.<br />
+Description: Enables status check validation for SD-JWT VC attestations shared.<br />
 Default value: <code>true</code>  </p>
 <p>Variable: <code>VERIFIER_TRANSACTIONDATA_HASHALGORITHM</code><br />
 Description: Hash algorithm to communicate in the <code>transaction_data_hashes_alg</code> claim of transaction data.<br />
@@ -4328,7 +4328,7 @@ Example: <code>username</code></p>
 <p>Variable: <code>VERIFIER_HTTP_PROXY_PASSWORD</code><br />
 Description: Password to authenticate against the proxy.<br />
 Example: <code>passwd</code></p>
-<h3 id="sd-jwt-vc-type-metadata-policy">SD-JWT-VC Type Metadata Policy<a class="headerlink" href="#sd-jwt-vc-type-metadata-policy" title="Link to this section">&para;</a></h3>
+<h3 id="sd-jwt-vc-type-metadata-policy">SD-JWT VC Type Metadata Policy<a class="headerlink" href="#sd-jwt-vc-type-metadata-policy" title="Link to this section">&para;</a></h3>
 <p>Variable: <code>VERIFIER_VALIDATION_SDJWTVC_TYPEMETADATA_POLICY</code><br />
 Description: Choose SD-JWT VC Type Metadata policy. Information about the <a href="https://github.com/eu-digital-identity-wallet/eudi-lib-jvm-sdjwt-kt?tab=readme-ov-file#type-metadata-resolution" target="_blank" rel="noopener">available policies</a>.
 Accepted values: <code>not_used</code>,<code>optional</code>,<code>always_required</code>,<code>required_for</code><br />
@@ -4336,7 +4336,7 @@ Default value: <code>not_used</code>  </p>
 <p>Variable: <code>VERIFIER_VALIDATION_SDJWTVC_TYPEMETADATA_POLICY_REQUIREDFOR</code><br />
 Description: Comma separated list of VCTs for which Type Metadata are required for. Required when <code>VERIFIER_VALIDATION_SDJWTVC_TYPEMETADATA_POLICY</code> is set to <code>required_for</code>.<br />
 Example: <code>urn:eudi:pid:1</code>  </p>
-<h4 id="sd-jwt-vc-type-metadata-resolution">SD-JWT-VC Type Metadata Resolution<a class="headerlink" href="#sd-jwt-vc-type-metadata-resolution" title="Link to this section">&para;</a></h4>
+<h4 id="sd-jwt-vc-type-metadata-resolution">SD-JWT VC Type Metadata Resolution<a class="headerlink" href="#sd-jwt-vc-type-metadata-resolution" title="Link to this section">&para;</a></h4>
 <p>Required when <code>VERIFIER_VALIDATION_SDJWTVC_TYPEMETADATA_POLICY</code> is not set to <code>not_used</code>.  </p>
 <p>Variable: <code>VERIFIER_VALIDATION_SDJWTVC_TYPEMETADATA_RESOLUTION_VCTS_XX_VCT</code> (e.g. <code>VERIFIER_VALIDATION_SDJWTVC_TYPEMETADATA_RESOLUTION_VCTS_0_VCT</code>) <br />
 Description: VCT for which Type Metadata resolution is enabled.<br />

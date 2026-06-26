@@ -3560,19 +3560,19 @@
   <a href="#platform-requirements" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Platform Requirements
+        Platform requirements
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Platform Requirements">
+    <nav class="md-nav" aria-label="Platform requirements">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#android-implementation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Android Implementation
+        Android implementation
       
     </span>
   </a>
@@ -3583,7 +3583,7 @@
   <a href="#ios-implementation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        iOS Implementation
+        iOS implementation
       
     </span>
   </a>
@@ -3604,10 +3604,77 @@
   <a href="#mdl-core-functionalities" class="md-nav__link">
     <span class="md-ellipsis">
       
-        mDL Core Functionalities
+        mDL core functionalities
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="mDL core functionalities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mdl-attestation-issuance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mDL attestation issuance
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remote-presentation-flow-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Remote presentation flow implementation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Remote presentation flow implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-retrieval-not-based-on-user-agent-digital-credentials-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data retrieval not based on user agent (Digital Credentials API)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-retrieval-based-on-user-agent-digital-credentials-api-optional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data retrieval based on user agent (Digital Credentials API) — optional
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proximity-presentation-flow-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Proximity presentation flow implementation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3615,10 +3682,38 @@
   <a href="#trust-and-security-implementation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Trust and Security Implementation
+        Trust and security implementation
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Trust and security implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trust-relationships" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trust relationships
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-mechanisms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security mechanisms
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3626,10 +3721,38 @@
   <a href="#wallet-provider-registration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Wallet Provider Registration
+        Wallet Provider registration
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Wallet Provider registration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#registration-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Registration process
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notification-and-publication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notification and publication
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -4218,63 +4341,63 @@
 
 
 <h1 id="technical-deep-dive-wallet-developers-workflow">Technical Deep Dive – Wallet Developers Workflow<a class="headerlink" href="#technical-deep-dive-wallet-developers-workflow" title="Link to this section">&para;</a></h1>
-<p>According to Article 5.2 of the 4th Driving Licence Directive, the mDL shall be issued to the European Digital Identity Wallets as electronic attestations of attributes. Therefore, an mDL can only be issued to an active EUDI Wallet instance, which has to comply with all requirements in the eIDAS 2 Regulation.</p>
+<p>According to Article 5.2 of the 4th Driving Licence Directive, the mDL shall be issued to European Digital Identity Wallets as electronic attestations of attributes. Therefore, an mDL can only be issued to an active EUDI Wallet instance, which has to comply with all requirements in the eIDAS 2 Regulation.</p>
 <p>All baseline requirements outlined in the Architecture and Reference Framework (ARF) are applicable to EUDI Wallets. The mDL use case introduces specific technical requirements (defined in the mDL Rulebook, Annex 3.2 of the ARF) regarding the attribute schema, encoding and supported protocols.</p>
 <h2 id="development-prerequisites">Development prerequisites<a class="headerlink" href="#development-prerequisites" title="Link to this section">&para;</a></h2>
 <p>The reference implementation's preconditions listed in the relevant section on the implementers' hub do apply to the Wallet Provider.</p>
-<p>Nevertheless, this section outlines essential integration dependencies and prerequisites for Member State organisations or entities mandated or recognised by Member States to successfully launch their EUDI Wallet Provider solution using the EUDI Wallet Reference Implementation for mDL support.</p>
-<h3 id="platform-requirements">Platform Requirements<a class="headerlink" href="#platform-requirements" title="Link to this section">&para;</a></h3>
+<p>Nevertheless, this section outlines the essential integration dependencies and prerequisites for Member State organisations or entities mandated or recognised by Member States to successfully launch their EUDI Wallet Provider solution using the EUDI Wallet Reference Implementation for mDL support.</p>
+<h3 id="platform-requirements">Platform requirements<a class="headerlink" href="#platform-requirements" title="Link to this section">&para;</a></h3>
 <p>Your EUDI Wallet implementation must support the following platform specifications:</p>
-<h4 id="android-implementation">Android Implementation<a class="headerlink" href="#android-implementation" title="Link to this section">&para;</a></h4>
+<h4 id="android-implementation">Android implementation<a class="headerlink" href="#android-implementation" title="Link to this section">&para;</a></h4>
 <ul>
-<li>Target Operating Systems: Android 10.0+ (API 29+)</li>
-<li>Programming Language: Kotlin</li>
-<li>Development Framework: Native Android</li>
+<li>Target operating systems: Android 10.0+ (API 29+)</li>
+<li>Programming language: Kotlin</li>
+<li>Development framework: Native Android</li>
 </ul>
-<h4 id="ios-implementation">iOS Implementation<a class="headerlink" href="#ios-implementation" title="Link to this section">&para;</a></h4>
+<h4 id="ios-implementation">iOS implementation<a class="headerlink" href="#ios-implementation" title="Link to this section">&para;</a></h4>
 <ul>
-<li>Target Operating Systems: iOS 17+</li>
-<li>Programming Language: Swift</li>
-<li>Development Framework: Native iOS</li>
+<li>Target operating systems: iOS 17+</li>
+<li>Programming language: Swift</li>
+<li>Development framework: Native iOS</li>
 </ul>
-<h2 id="mdl-core-functionalities">mDL Core Functionalities<a class="headerlink" href="#mdl-core-functionalities" title="Link to this section">&para;</a></h2>
-<p>The mDL Use Case target solution for the EUDI Wallet shall support the following core functionalities. </p>
-<p><strong>mDL Attestation Issuance</strong></p>
-<p>Your EUDI Wallet implementation must support issuance of the mDL according to the OpenID4VCI v1.0 specification based on ARF and ISO/IEC 18013-5 (CBOR) standards for remote flows based on specifications from the 4th Driving Licence Directive.</p>
-<p><strong>Remote Presentation Flow Implementation</strong></p>
-<p>Your EUDI Wallet must support remote presentation flow with requirements as follows.</p>
-<p><strong>Data retrieval not based on user agent (Digital Credentials API)</strong></p>
+<h2 id="mdl-core-functionalities">mDL core functionalities<a class="headerlink" href="#mdl-core-functionalities" title="Link to this section">&para;</a></h2>
+<p>The mDL Use Case target solution for the EUDI Wallet shall support the following core functionalities.</p>
+<h3 id="mdl-attestation-issuance">mDL attestation issuance<a class="headerlink" href="#mdl-attestation-issuance" title="Link to this section">&para;</a></h3>
+<p>Your EUDI Wallet implementation must support issuance of the mDL according to the OpenID4VCI v1.0 specification, based on the ARF and ISO/IEC 18013-5 (CBOR) standards for remote flows, based on specifications from the 4th Driving Licence Directive.</p>
+<h3 id="remote-presentation-flow-implementation">Remote presentation flow implementation<a class="headerlink" href="#remote-presentation-flow-implementation" title="Link to this section">&para;</a></h3>
+<p>Your EUDI Wallet must support the remote presentation flow with the requirements that follow.</p>
+<h4 id="data-retrieval-not-based-on-user-agent-digital-credentials-api">Data retrieval not based on user agent (Digital Credentials API)<a class="headerlink" href="#data-retrieval-not-based-on-user-agent-digital-credentials-api" title="Link to this section">&para;</a></h4>
 <ul>
-<li>Shall be according to ISO/IEC 18013-5 (CBOR), OpenID4VP v1.0 specification instead of ISO/IEC 18013-7 (Annex B) where OpenID4VP is used.</li>
+<li>Shall be according to ISO/IEC 18013-5 (CBOR), OpenID4VP v1.0 specification, instead of ISO/IEC 18013-7 (Annex B) where OpenID4VP is used.</li>
 </ul>
-<p><strong>Data retrieval based on user agent (Digital Credentials API) - Optional</strong></p>
+<h4 id="data-retrieval-based-on-user-agent-digital-credentials-api-optional">Data retrieval based on user agent (Digital Credentials API) — optional<a class="headerlink" href="#data-retrieval-based-on-user-agent-digital-credentials-api-optional" title="Link to this section">&para;</a></h4>
 <ul>
-<li>According to ISO/IEC 18013-5 (CBOR), ISO/IEC 18013-7 (Annex C – Digital credentials API retrieval).</li>
+<li>According to ISO/IEC 18013-5 (CBOR), ISO/IEC 18013-7 (Annex C – Digital Credentials API retrieval).</li>
 <li>According to OpenID4VP (Appendix A. OpenID4VP over the Digital Credentials API).</li>
 </ul>
-<p><strong>Proximity Presentation Flow Implementation</strong></p>
-<p>Your EUDI Wallet must support proximity presentation flow of the mDL according to ISO/IEC 18013-5 (CBOR) standard.</p>
-<h2 id="trust-and-security-implementation">Trust and Security Implementation<a class="headerlink" href="#trust-and-security-implementation" title="Link to this section">&para;</a></h2>
+<h3 id="proximity-presentation-flow-implementation">Proximity presentation flow implementation<a class="headerlink" href="#proximity-presentation-flow-implementation" title="Link to this section">&para;</a></h3>
+<p>Your EUDI Wallet must support the proximity presentation flow of the mDL according to the ISO/IEC 18013-5 (CBOR) standard.</p>
+<h2 id="trust-and-security-implementation">Trust and security implementation<a class="headerlink" href="#trust-and-security-implementation" title="Link to this section">&para;</a></h2>
 <p>Your EUDI Wallet implementation must include the following trust and security mechanisms:</p>
-<p><strong>Trust Relationships</strong></p>
+<h3 id="trust-relationships">Trust relationships<a class="headerlink" href="#trust-relationships" title="Link to this section">&para;</a></h3>
 <ul>
-<li>Authenticate mDL Issuer using the access certificate (IACA).</li>
-<li>Verify authenticity of mDL attestations.</li>
+<li>Authenticate the mDL Issuer using the access certificate (IACA).</li>
+<li>Verify the authenticity of mDL attestations.</li>
 <li>Download mDL Issuer Access CA Trusted Lists from relevant Trusted List Providers.</li>
 <li>Check registration certificates or online services of Registrars.</li>
 </ul>
-<p><strong>Security Mechanisms</strong></p>
+<h3 id="security-mechanisms">Security mechanisms<a class="headerlink" href="#security-mechanisms" title="Link to this section">&para;</a></h3>
 <ul>
 <li>Implement session encryption (mandatory for proximity flows).</li>
-<li>Support mDL issuer data authentication.</li>
+<li>Support mDL Issuer data authentication.</li>
 <li>Enable mdoc authentication (device binding) to prevent cloning of the mDL.</li>
 <li>Implement mdoc Reader authentication for proximity flows (mandatory) and remote flows (optional).</li>
 </ul>
-<h2 id="wallet-provider-registration">Wallet Provider Registration<a class="headerlink" href="#wallet-provider-registration" title="Link to this section">&para;</a></h2>
+<h2 id="wallet-provider-registration">Wallet Provider registration<a class="headerlink" href="#wallet-provider-registration" title="Link to this section">&para;</a></h2>
 <p>To operate as a trusted Wallet Provider within the EUDI Wallet ecosystem, your organisation must complete the registration and notification process as specified in the ARF.</p>
-<p><strong>Registration Process</strong></p>
+<h3 id="registration-process">Registration process<a class="headerlink" href="#registration-process" title="Link to this section">&para;</a></h3>
 <p>Register your organisation as a Wallet Provider with the national authorities in your Member State, ensuring compliance with all certification requirements for Wallet Solutions (see ARF section 7 – Certification and Risk Management).</p>
-<p><strong>Notification and Publication</strong></p>
+<h3 id="notification-and-publication">Notification and publication<a class="headerlink" href="#notification-and-publication" title="Link to this section">&para;</a></h3>
 <p>The Member State is responsible for notifying the Wallet Provider to the European Commission, enabling cross-border recognition and interoperability within the EUDI Wallet ecosystem.</p>
 <h2 id="libraries-sdks">Libraries &amp; SDKs<a class="headerlink" href="#libraries-sdks" title="Link to this section">&para;</a></h2>
 <p>The EUDI Wallet Reference Implementation provides key reusable components to accelerate deployment. Please refer to the relevant section for detailed instructions on how to <a href="https://eu-digital-identity-wallet.github.io/Build/Build%20your%20Wallet/">build</a> and <a href="https://eu-digital-identity-wallet.github.io/Test/Wallet%20Application/">test</a> the Wallet Provider.</p>

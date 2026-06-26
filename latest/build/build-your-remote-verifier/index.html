@@ -4032,14 +4032,14 @@
 
 <h1 id="build-your-remote-verifier">Build your Remote Verifier<a class="headerlink" href="#build-your-remote-verifier" title="Link to this section">&para;</a></h1>
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Link to this section">&para;</a></h2>
-<p>This is a Web application (Backend Restful service) that acts as a Verifier/RP trusted end-point that implements <a href="https://openid.net/specs/openid-4-verifiable-presentations-1_0-final.html" target="_blank" rel="noopener">OpenId4VP (1.0)</a> protocol. 
+<p>This is a Web application (Backend Restful service) that acts as a Verifier/RP trusted end-point that implements <a href="https://openid.net/specs/openid-4-verifiable-presentations-1_0-final.html" target="_blank" rel="noopener">OpenID4VP (1.0)</a> protocol. 
 This backend service is accompanied by a <a href="https://github.com/eu-digital-identity-wallet/eudi-web-verifier" target="_blank" rel="noopener">Web UI application</a>.</p>
-<p>Application exposes two APIs:</p>
+<p>The application exposes two APIs:</p>
 <ul>
 <li><a href="https://github.com/eu-digital-identity-wallet/eudi-srv-web-verifier-endpoint-23220-4-kt/blob/main/src/main/kotlin/eu/europa/ec/eudi/verifier/endpoint/adapter/input/web/VerifierApi.kt" target="_blank" rel="noopener">Verifier API</a>.</li>
 <li><a href="https://github.com/eu-digital-identity-wallet/eudi-srv-web-verifier-endpoint-23220-4-kt/blob/main/src/main/kotlin/eu/europa/ec/eudi/verifier/endpoint/adapter/input/web/WalletApi.kt" target="_blank" rel="noopener">Wallet API</a>.</li>
 </ul>
-<p>The Verifier API, supports two operations:</p>
+<p>The Verifier API supports two operations:</p>
 <ul>
 <li><a href="https://github.com/eu-digital-identity-wallet/eudi-srv-web-verifier-endpoint-23220-4-kt/blob/main/src/main/kotlin/eu/europa/ec/eudi/verifier/endpoint/port/input/InitTransaction.kt" target="_blank" rel="noopener">Initialise Transaction</a>, where Verifier may define whether it wants to request a SIOP or OpenID4VP or combined request.</li>
 <li><a href="https://github.com/eu-digital-identity-wallet/eudi-srv-web-verifier-endpoint-23220-4-kt/blob/main/src/main/kotlin/eu/europa/ec/eudi/verifier/endpoint/port/input/GetWalletResponse.kt" target="_blank" rel="noopener">Get Wallet response</a>, where Verifier receives a <code>vp_token</code>, or an error.</li>
@@ -4047,15 +4047,15 @@ This backend service is accompanied by a <a href="https://github.com/eu-digital-
 <p>These operations are specified in an <a href="https://github.com/eu-digital-identity-wallet/eudi-srv-web-verifier-endpoint-23220-4-kt/blob/main/src/main/resources/public/openapi.json" target="_blank" rel="noopener">Open API v3 specification</a>.</p>
 <p>The Wallet API, provides the following main operations:</p>
 <ul>
-<li><a href="https://github.com/eu-digital-identity-wallet/eudi-srv-web-verifier-endpoint-23220-4-kt/blob/main/src/main/kotlin/eu/europa/ec/eudi/verifier/endpoint/port/input/RetrieveRequestObject.kt" target="_blank" rel="noopener">Get Request Object</a> according JWT Secured Authorization Request.</li>
+<li><a href="https://github.com/eu-digital-identity-wallet/eudi-srv-web-verifier-endpoint-23220-4-kt/blob/main/src/main/kotlin/eu/europa/ec/eudi/verifier/endpoint/port/input/RetrieveRequestObject.kt" target="_blank" rel="noopener">Get Request Object</a> according to the JWT Secured Authorization Request.</li>
 <li><a href="https://github.com/eu-digital-identity-wallet/eudi-srv-web-verifier-endpoint-23220-4-kt/blob/main/src/main/kotlin/eu/europa/ec/eudi/verifier/endpoint/port/input/PostWalletResponse.kt" target="_blank" rel="noopener">Direct Post</a> according to OpenID4VP <code>direct_post</code>.</li>
 </ul>
 <p>Please note that:</p>
 <ul>
-<li>Both APIs need to be exposed over HTTPS.  </li>
-<li>Verifier API needs to be protected to allow only authorized access. </li>
+<li>Both APIs need to be exposed over HTTPS.</li>
+<li>The Verifier API needs to be protected to allow only authorised access.</li>
 </ul>
-<p>Both of those concerns have not been tackled by the current version of the application, since in its current version is merely a development tool, rather a production application.</p>
+<p>Neither of these concerns has been addressed by the current version of the application, since in its current form it is merely a development tool rather than a production application.</p>
 
 
 

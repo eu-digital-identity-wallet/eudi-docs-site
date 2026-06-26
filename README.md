@@ -52,4 +52,4 @@ request.
 
 ## Licence
 
-Content is licensed under the [EUPL-1.2](https://eupl.eu/) or later, © European Union.
+Content is licensed under the [CC-BY-4.0](LICENSE.md) or later, © European Union, 2026.

@@ -1,6 +1,6 @@
 # Technical Deep Dive – Wallet Developers Workflow
 
-According to Article 5.2 of the 4th Driving Licence Directive, the mDL shall be issued to the European Digital Identity Wallets as electronic attestations of attributes. Therefore, an mDL can only be issued to an active EUDI Wallet instance, which has to comply with all requirements in the eIDAS 2 Regulation.
+According to Article 5.2 of the 4th Driving Licence Directive, the mDL shall be issued to European Digital Identity Wallets as electronic attestations of attributes. Therefore, an mDL can only be issued to an active EUDI Wallet instance, which has to comply with all requirements in the eIDAS 2 Regulation.
 
 All baseline requirements outlined in the Architecture and Reference Framework (ARF) are applicable to EUDI Wallets. The mDL use case introduces specific technical requirements (defined in the mDL Rulebook, Annex 3.2 of the ARF) regarding the attribute schema, encoding and supported protocols.
 
@@ -8,77 +8,76 @@ All baseline requirements outlined in the Architecture and Reference Framework (
 
 The reference implementation's preconditions listed in the relevant section on the implementers' hub do apply to the Wallet Provider.
 
-Nevertheless, this section outlines essential integration dependencies and prerequisites for Member State organisations or entities mandated or recognised by Member States to successfully launch their EUDI Wallet Provider solution using the EUDI Wallet Reference Implementation for mDL support.
+Nevertheless, this section outlines the essential integration dependencies and prerequisites for Member State organisations or entities mandated or recognised by Member States to successfully launch their EUDI Wallet Provider solution using the EUDI Wallet Reference Implementation for mDL support.
 
-### Platform Requirements
+### Platform requirements
 
 Your EUDI Wallet implementation must support the following platform specifications:
 
-#### Android Implementation
+#### Android implementation
 
-- Target Operating Systems: Android 10.0+ (API 29+)
-- Programming Language: Kotlin
-- Development Framework: Native Android
+- Target operating systems: Android 10.0+ (API 29+)
+- Programming language: Kotlin
+- Development framework: Native Android
 
-#### iOS Implementation
+#### iOS implementation
 
-- Target Operating Systems: iOS 17+
-- Programming Language: Swift
-- Development Framework: Native iOS
+- Target operating systems: iOS 17+
+- Programming language: Swift
+- Development framework: Native iOS
 
-## mDL Core Functionalities
+## mDL core functionalities
 
-The mDL Use Case target solution for the EUDI Wallet shall support the following core functionalities. 
+The mDL Use Case target solution for the EUDI Wallet shall support the following core functionalities.
 
-**mDL Attestation Issuance**
+### mDL attestation issuance
 
-Your EUDI Wallet implementation must support issuance of the mDL according to the OpenID4VCI v1.0 specification based on ARF and ISO/IEC 18013-5 (CBOR) standards for remote flows based on specifications from the 4th Driving Licence Directive.
+Your EUDI Wallet implementation must support issuance of the mDL according to the OpenID4VCI v1.0 specification, based on the ARF and ISO/IEC 18013-5 (CBOR) standards for remote flows, based on specifications from the 4th Driving Licence Directive.
 
-**Remote Presentation Flow Implementation**
+### Remote presentation flow implementation
 
-Your EUDI Wallet must support remote presentation flow with requirements as follows.
+Your EUDI Wallet must support the remote presentation flow with the requirements that follow.
 
-**Data retrieval not based on user agent (Digital Credentials API)**
+#### Data retrieval not based on user agent (Digital Credentials API)
 
-- Shall be according to ISO/IEC 18013-5 (CBOR), OpenID4VP v1.0 specification instead of ISO/IEC 18013-7 (Annex B) where OpenID4VP is used.
+- Shall be according to ISO/IEC 18013-5 (CBOR), OpenID4VP v1.0 specification, instead of ISO/IEC 18013-7 (Annex B) where OpenID4VP is used.
 
-**Data retrieval based on user agent (Digital Credentials API) - Optional**
+#### Data retrieval based on user agent (Digital Credentials API) — optional
 
-- According to ISO/IEC 18013-5 (CBOR), ISO/IEC 18013-7 (Annex C – Digital credentials API retrieval).
+- According to ISO/IEC 18013-5 (CBOR), ISO/IEC 18013-7 (Annex C – Digital Credentials API retrieval).
 - According to OpenID4VP (Appendix A. OpenID4VP over the Digital Credentials API).
 
-**Proximity Presentation Flow Implementation**
+### Proximity presentation flow implementation
 
-Your EUDI Wallet must support proximity presentation flow of the mDL according to ISO/IEC 18013-5 (CBOR) standard.
+Your EUDI Wallet must support the proximity presentation flow of the mDL according to the ISO/IEC 18013-5 (CBOR) standard.
 
-
-## Trust and Security Implementation
+## Trust and security implementation
 
 Your EUDI Wallet implementation must include the following trust and security mechanisms:
 
-**Trust Relationships**
+### Trust relationships
 
-- Authenticate mDL Issuer using the access certificate (IACA).
-- Verify authenticity of mDL attestations.
+- Authenticate the mDL Issuer using the access certificate (IACA).
+- Verify the authenticity of mDL attestations.
 - Download mDL Issuer Access CA Trusted Lists from relevant Trusted List Providers.
 - Check registration certificates or online services of Registrars.
 
-**Security Mechanisms**
+### Security mechanisms
 
 - Implement session encryption (mandatory for proximity flows).
-- Support mDL issuer data authentication.
+- Support mDL Issuer data authentication.
 - Enable mdoc authentication (device binding) to prevent cloning of the mDL.
 - Implement mdoc Reader authentication for proximity flows (mandatory) and remote flows (optional).
 
-## Wallet Provider Registration
+## Wallet Provider registration
 
 To operate as a trusted Wallet Provider within the EUDI Wallet ecosystem, your organisation must complete the registration and notification process as specified in the ARF.
 
-**Registration Process**
+### Registration process
 
 Register your organisation as a Wallet Provider with the national authorities in your Member State, ensuring compliance with all certification requirements for Wallet Solutions (see ARF section 7 – Certification and Risk Management).
 
-**Notification and Publication**
+### Notification and publication
 
 The Member State is responsible for notifying the Wallet Provider to the European Commission, enabling cross-border recognition and interoperability within the EUDI Wallet ecosystem.
 

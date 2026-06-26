@@ -131,16 +131,16 @@ The EUDI Wallet Reference Implementation includes the following components:
 
 | Repository | Description |
 |---|---|
-| [OpenID4VCI issuer (Python)](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py){:target="_blank"} | An implementation of a credential issuing service, according to OpenID4VCI, in Python. Available at: https://issuer.eudiw.dev/ | 
-| [OpenID4VCI issuer (Kotlin)](https://github.com/eu-digital-identity-wallet/eudi-srv-pid-issuer){:target="_blank"} | An implementation of a credential issuing service, according to OpenID4VCI, in Kotlin. Available at: https://issuer-backend.eudiw.dev/ | 
-| [OpenId4VCI issuer frontend (Python)](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-frontend-eudiw-py){:target="_blank"} | An implementation of frontend for the credential issuing service, according to OpenId4VCI 1.0, in Python. |
+| [OpenID4VCI issuer (Python)](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py){:target="_blank"} | An implementation of a credential issuing service, according to OpenID4VCI, in Python. Available at [issuer.eudiw.dev](https://issuer.eudiw.dev/){:target="_blank"}. | 
+| [OpenID4VCI issuer (Kotlin)](https://github.com/eu-digital-identity-wallet/eudi-srv-pid-issuer){:target="_blank"} | An implementation of a credential issuing service, according to OpenID4VCI, in Kotlin. Available at [issuer-backend.eudiw.dev](https://issuer-backend.eudiw.dev/){:target="_blank"}. | 
+| [OpenID4VCI issuer frontend (Python)](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-frontend-eudiw-py){:target="_blank"} | An implementation of frontend for the credential issuing service, according to OpenID4VCI 1.0, in Python. |
 | [Status List API of Issuer](https://github.com/eu-digital-identity-wallet/eudi-srv-statuslist-py){:target="_blank"} | An implementation of a Python library designed to issue and manage revocation status using Attestation Status Lists and Attestation Revocation Lists. |
 
 ## Signing Apps and Services
 
 | Repository | Description |
 |---|---|
-| [TrustProvider Signer](https://github.com/eu-digital-identity-wallet/eudi-srv-web-trustprovider-signer-java){:target="_blank"} | The TrustProvider Signer is a remote signing service provider and client. The TrustProvider Signer can be accessed using the EUDI Wallet through OID4VP presentation of the PID. Available [here](https://trustprovider.signer.eudiw.dev/tester){:target="_blank"}. | 
+| [TrustProvider Signer](https://github.com/eu-digital-identity-wallet/eudi-srv-web-trustprovider-signer-java){:target="_blank"} | The TrustProvider Signer is a remote signing service provider and client. The TrustProvider Signer can be accessed using the EUDI Wallet through OpenID4VP presentation of the PID. Available [here](https://trustprovider.signer.eudiw.dev/tester){:target="_blank"}. | 
 | [EUDI Wallet-driven signer QTSP](https://github.com/eu-digital-identity-wallet/eudi-srv-web-walletdriven-rpcentric-signer-qtsp-java){:target="_blank"} | Implementation of a wallet-driven QTSP for the remote Qualified Electronic Signature component of the EUDI Wallet. The QTSP provides endpoints based on the CSC API v2.0 specification and supports authentication via OpenID4VP.| 
 | [EUDI Wallet-driven external SCA](https://github.com/eu-digital-identity-wallet/eudi-srv-web-walletdriven-signer-external-sca-java){:target="_blank"} | Implementation of a wallet-driven SCA for the remote Qualified Electronic Signature component of the EUDI Wallet. The SCA provides endpoints that allow the calculation of the hash value of a document and obtain the signed document given the signature value.| 
 | [RP Centric rQES SCA](https://github.com/eu-digital-identity-wallet/eudi-srv-web-rpcentric-signer-sca-java){:target="_blank"} | This is a REST API server implementing the RP-centric SCA for the remote Qualified Electronic Signature (rQES) component of the EUDI Wallet.| 

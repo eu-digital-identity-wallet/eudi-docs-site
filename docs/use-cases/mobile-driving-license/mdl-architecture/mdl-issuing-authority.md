@@ -6,7 +6,7 @@ The components required by the mDL Issuing Authority are described below. The mD
 - This service implements the "issuer-initiated" issuance flow, which is optional (as justified below), and consequently, makes this service optional as well.
 - The Issuer Client interacts with the mDL Issuer component to request the Credential Offer, which is delivered to the EUDI Wallet via either a QR code (cross device) or URI (same device).
 
-## OAuth2 Authorization Server
+## OAuth 2.0 Authorization Server
 - This component protects the mDL Issuer, which acts as a resource server, using Access Tokens as defined in the OAuth 2.0 specification.
 - The component shall comply with the OpenID4VCI, where the existing OAuth 2.0 mechanisms are extended as described in section 3.2 of OpenID4VCI.
 - OAuth 2.0 Authorization Server is responsible for authenticating and authorising the End User according to policies established in the mDL Issuing Authority.

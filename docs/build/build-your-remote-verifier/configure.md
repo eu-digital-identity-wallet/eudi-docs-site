@@ -114,7 +114,7 @@ Description: Enable support for MSO MDoc.
 Default value: `true`  
 
 Variable: `VERIFIER_VALIDATION_SDJWTVC_STATUSCHECK_ENABLED`  
-Description: Enables status check validation for sd-jwt-vc attestations shared.  
+Description: Enables status check validation for SD-JWT VC attestations shared.  
 Default value: `true`  
 
 Variable: `VERIFIER_TRANSACTIONDATA_HASHALGORITHM`  
@@ -225,7 +225,7 @@ Variable: `VERIFIER_HTTP_PROXY_PASSWORD`
 Description: Password to authenticate against the proxy.  
 Example: `passwd`
 
-### SD-JWT-VC Type Metadata Policy
+### SD-JWT VC Type Metadata Policy
 
 Variable: `VERIFIER_VALIDATION_SDJWTVC_TYPEMETADATA_POLICY`  
 Description: Choose SD-JWT VC Type Metadata policy. Information about the [available policies](https://github.com/eu-digital-identity-wallet/eudi-lib-jvm-sdjwt-kt?tab=readme-ov-file#type-metadata-resolution){:target="_blank"}.
@@ -236,7 +236,7 @@ Variable: `VERIFIER_VALIDATION_SDJWTVC_TYPEMETADATA_POLICY_REQUIREDFOR`
 Description: Comma separated list of VCTs for which Type Metadata are required for. Required when `VERIFIER_VALIDATION_SDJWTVC_TYPEMETADATA_POLICY` is set to `required_for`.  
 Example: `urn:eudi:pid:1`  
 
-#### SD-JWT-VC Type Metadata Resolution
+#### SD-JWT VC Type Metadata Resolution
 
 Required when `VERIFIER_VALIDATION_SDJWTVC_TYPEMETADATA_POLICY` is not set to `not_used`.  
 

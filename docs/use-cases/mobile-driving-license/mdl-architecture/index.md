@@ -2,7 +2,7 @@
 
 The design options for the mDL Use Case target solution are implemented by the software components shown in the following figure. These components are organised according to the roles defined in Chapter 3 of the Architecture and Reference Framework [ARF]. 
 
-![img.png](mdl-logical-components.png)
+![mDL target solution architecture: software components grouped by provider (Commission-provided, service-provider prerequisites, and eIDAS Dashboard services)](mdl-logical-components.png)
 
 The components are categorised as follows, based on their provider. 
 

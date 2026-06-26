@@ -28,11 +28,11 @@ The library provides the following functionality:
     - ✅ Using iOS Secure Enclave for generating/storing documents' keypair
     - ✅ Enforcing device user authentication when retrieving documents' private keys
 - Document issuance
-    - Support for OpenId4VCI document issuance
+    - Support for OpenID4VCI document issuance
         - ✅ Authorization Code Flow
         - ✅ Pre-authorization Code Flow
         - ✅ Support for mso_mdoc format
-        - ✅ Support for sd-jwt-vc format
+        - ✅ Support for SD-JWT VC format
         - ✅ Support credential offer
         - ✅ Support for DPoP JWT in authorization
         - ✅ Support for JWT and CWT proof types
@@ -42,7 +42,7 @@ The library provides the following functionality:
         - ✅ QR device engagement
         - ✅ BLE data transfer
 - Remote document presentation
-    - OpenId4VP document transfer
+    - OpenID4VP document transfer
         - ✅ For pre-registered verifiers
         - ✅ Dynamic registration of verifiers
 

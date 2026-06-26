@@ -8,7 +8,10 @@
 
 1. Download and install Xcode and its associated tools by following the official [set-up guide](https://xcodereleases.com){:target="_blank"}. Using the latest stable version is recommended.
 2. Clone the [iOS repository](https://github.com/eu-digital-identity-wallet/eudi-app-ios-wallet-ui){:target="_blank"} using the following command:
-	```git clone git@github.com:eu-digital-identity-wallet/eudi-app-ios-wallet-ui.git ```
+
+	```bash
+	git clone git@github.com:eu-digital-identity-wallet/eudi-app-ios-wallet-ui.git
+	```
 3. Make sure you have access to the dependencies below:
 
 	- [iso18013-data-model](https://github.com/eu-digital-identity-wallet/eudi-lib-ios-iso18013-data-model.git){:target="_blank"}

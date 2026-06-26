@@ -147,7 +147,7 @@ In the service configuration file (```app/app_config/config_service.py```), you 
 
 - Add a new entry to auth_method_supported_credencials (using the credential identifier specified in the metadata)
 
-    This configures the type of user authentication allowed for the credential. You may choose authentication through a PID using OpenId4VP, or through a country selection (options are: IDP, eidas node or a simple form).
+    This configures the type of user authentication allowed for the credential. You may choose authentication through a PID using OpenID4VP, or through a country selection (options are: IDP, eidas node or a simple form).
 
     In the following examples the authentication allowed for the loyalty credential is through country selection.
 

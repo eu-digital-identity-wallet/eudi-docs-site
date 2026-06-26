@@ -2,22 +2,22 @@
 
 ## Overview
 
-The Issuer is an implementation of  the PID and (Q)EAA Provider service, supporting the OpenID4VCI (version 1.0) protocol.
+The Issuer is an implementation of the PID and (Q)EAA Provider service, supporting the OpenID4VCI (version 1.0) protocol.
 
-The service provides, by default, support for `mso_mdoc` and `SD-JWT-VC`formats, for the following credentials:
+The service provides, by default, support for the `mso_mdoc` and `SD-JWT VC` formats, for the following credentials:
 
 
 | Credential/Attestation | Format    |
 |---|---|
 | PID                    | mso_mdoc  |
-| PID(sample)            | SD-JWT-VC |
+| PID(sample)            | SD-JWT VC |
 | mDL                    | mso_mdoc  | 
-| mDL                    | SD-JWT-VC  | 
+| mDL                    | SD-JWT VC  | 
 
-For authenticating the user, it requires the use of an eIDAS node, an OAUTH2 server or a simple form (for testing purposes).
+For authenticating the user, it requires the use of an eIDAS node, an OAuth 2.0 server or a simple form (for testing purposes).
 
 
-## OpenId4VCI Coverage
+## OpenID4VCI Coverage
 
 This version of the Issuer supports the [OpenId for Verifiable Credential Issuance (version 1.0)](https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0.html){:target="_blank"} protocol with the following coverage:
 
@@ -29,7 +29,7 @@ This version of the Issuer supports the [OpenId for Verifiable Credential Issuan
 | [Credential Offer](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/tree/main/api_docs/credential_offer.md)                  | ✅ `authorization_code` , ✅ `pre-authorized_code`    (version 1.0)          |
 | Dynamic Credential Request                                        | ✅ (version 1.0)                                                             |
 | mso_mdoc format                                                   | ✅                                                              |
-| SD-JWT-VC format                                                  | ✅                                                              |
+| SD-JWT VC format                                                  | ✅                                                              |
 | W3C VC DM                                                         | ❌                                                              |
 | [Token Endpoint](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/tree/main/api_docs/token.md)                               | ✅ (version 1.0)                                                             |
 | [Credential Endpoint](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/tree/main/api_docs/credential.md)                     | ✅ Including proofs and repeatable invocations, (version 1.0)               |

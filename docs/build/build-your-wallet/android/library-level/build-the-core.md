@@ -41,7 +41,7 @@ dependencies {
 To instantiate a `EudiWallet` use the `EudiWallet.Builder` class or the `EudiWallet.invoke` method,
 from the EudiWallet companion object.
 
-The minimum requirements to initialize the library are to provide a `EudiWalletConfit` object that
+The minimum requirements to initialize the library are to provide a `EudiWalletConfig` object that
 will be used to configure the library's built-in components.
 
 The built-in components are:

@@ -21,6 +21,8 @@ configured in [`mkdocs.yml`](mkdocs.yml); brand styling lives in
 Install the pinned toolchain and serve the site with live reload:
 
 ```bash
+python -m venv .venv
+source .venv/bin/activate
 pip install -r requirements.txt
 mkdocs serve
 ```
@@ -52,4 +54,4 @@ request.
 
 ## Licence
 
-Content is licensed under the [EUPL-1.2](https://eupl.eu/) or later, © European Union.
+Content is licensed under the [CC-BY-4.0](LICENSE.md) or later, © European Union, 2026.

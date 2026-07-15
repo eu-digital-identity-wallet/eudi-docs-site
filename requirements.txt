@@ -5,6 +5,5 @@
 # MkDocs 1.x is unmaintained and MkDocs 2.0 will be incompatible with
 # Material for MkDocs, so versions are pinned defensively.
 mkdocs==1.6.1
-mkdocs-material==9.7.6
 mkdocs-material[imaging]==9.7.6   # pillow + cairosvg, required by the social plugin
-mike==2.1.3
+mike==2.2.0

@@ -1,0 +1,1367 @@
+{
+  "name": "Successful credential issuance and presentation with selective disclosure - Python Issuer - mDL",
+  "id": "issuance-and-presentation---mdl;successful-credential-issuance-and-presentation-with-selective-disclosure---python-issuer---mdl",
+  "scenarioId": "android/regressionTests/Automated_Regression_Tests/MDL_MSO_Mdoc/issuanceAndPresentationScenariosMdl:Successful credential issuance and presentation with selective disclosure - Python Issuer - mDL",
+  "methodName": "Successful credential issuance and presentation with selective disclosure - Python Issuer - mDL",
+  "testSteps": [
+    {
+      "number": 1,
+      "description": "1: Successful credential issuance and presentation with selective disclosure - Python Issuer - mDL ({credential=mDL (MSO Mdoc), issuer=Python, issuance_method=from list, issue_scenario=same device, verifier=Web verifier, presentation_scenario=same device, selective_disclosure=specific attributes})",
+      "duration": 220306,
+      "startTime": "2026-05-06T17:15:23.987047+03:00[Europe/Athens]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "lineNumber": 16,
+      "children": [
+        {
+          "number": 2,
+          "description": "Given the user initiates a mDL (MSO Mdoc) issuance using the Python",
+          "duration": 17655,
+          "startTime": "2026-05-06T17:15:54.803923+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 3,
+          "description": "And the issuance method is from list",
+          "duration": 102580,
+          "startTime": "2026-05-06T17:16:12.461274+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 4,
+          "description": "And the issuance is performed on a same device for the mDL (MSO Mdoc)",
+          "duration": 0,
+          "startTime": "2026-05-06T17:17:55.042055+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 5,
+          "description": "When the issuance flow is completed",
+          "duration": 3195,
+          "startTime": "2026-05-06T17:17:55.042908+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 6,
+          "description": "Then the credential is stored in the Wallet",
+          "duration": 3449,
+          "startTime": "2026-05-06T17:17:58.239351+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 7,
+          "description": "When the user presents the credential to the Web verifier",
+          "duration": 11070,
+          "startTime": "2026-05-06T17:18:01.690274+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 8,
+          "description": "And the user shares specific attributes",
+          "duration": 0,
+          "startTime": "2026-05-06T17:18:12.761492+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 9,
+          "description": "And the presentation is performed on a same device for the mDL (MSO Mdoc)",
+          "duration": 38435,
+          "startTime": "2026-05-06T17:18:12.762446+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 10,
+          "description": "Then the verifier verifies the credential successfully with same device for specific attributes",
+          "duration": 10643,
+          "startTime": "2026-05-06T17:18:51.198497+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "description": "2: Successful credential issuance and presentation with selective disclosure - Python Issuer - mDL ({credential=mDL (MSO Mdoc), issuer=Python, issuance_method=from list, issue_scenario=same device, verifier=Web verifier, presentation_scenario=same device, selective_disclosure=all attributes})",
+      "duration": 241592,
+      "startTime": "2026-05-06T17:19:04.346345+03:00[Europe/Athens]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "lineNumber": 17,
+      "children": [
+        {
+          "number": 12,
+          "description": "Given the user initiates a mDL (MSO Mdoc) issuance using the Python",
+          "duration": 17788,
+          "startTime": "2026-05-06T17:19:32.526220+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 13,
+          "description": "And the issuance method is from list",
+          "duration": 103182,
+          "startTime": "2026-05-06T17:19:50.315255+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 14,
+          "description": "And the issuance is performed on a same device for the mDL (MSO Mdoc)",
+          "duration": 0,
+          "startTime": "2026-05-06T17:21:33.498963+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 15,
+          "description": "When the issuance flow is completed",
+          "duration": 2151,
+          "startTime": "2026-05-06T17:21:33.499519+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 16,
+          "description": "Then the credential is stored in the Wallet",
+          "duration": 3905,
+          "startTime": "2026-05-06T17:21:35.651787+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 17,
+          "description": "When the user presents the credential to the Web verifier",
+          "duration": 11101,
+          "startTime": "2026-05-06T17:21:39.558185+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 18,
+          "description": "And the user shares all attributes",
+          "duration": 0,
+          "startTime": "2026-05-06T17:21:50.660748+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 19,
+          "description": "And the presentation is performed on a same device for the mDL (MSO Mdoc)",
+          "duration": 36718,
+          "startTime": "2026-05-06T17:21:50.661365+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 20,
+          "description": "Then the verifier verifies the credential successfully with same device for all attributes",
+          "duration": 36136,
+          "startTime": "2026-05-06T17:22:27.380685+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    },
+    {
+      "number": 21,
+      "description": "3: Successful credential issuance and presentation with selective disclosure - Python Issuer - mDL ({credential=mDL (MSO Mdoc), issuer=Python, issuance_method=from list, issue_scenario=same device, verifier=Web verifier, presentation_scenario=cross device, selective_disclosure=specific attributes})",
+      "duration": 245837,
+      "startTime": "2026-05-06T17:23:05.973722+03:00[Europe/Athens]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "lineNumber": 18,
+      "children": [
+        {
+          "number": 2,
+          "description": "Given the user initiates a mDL (MSO Mdoc) issuance using the Python",
+          "duration": 18001,
+          "startTime": "2026-05-07T09:51:29.099637+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 3,
+          "description": "And the issuance method is from list",
+          "duration": 101748,
+          "startTime": "2026-05-07T09:51:47.103753+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 4,
+          "description": "And the issuance is performed on a same device for the mDL (MSO Mdoc)",
+          "duration": 1,
+          "startTime": "2026-05-07T09:53:28.853886+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 5,
+          "description": "When the issuance flow is completed",
+          "duration": 5643,
+          "startTime": "2026-05-07T09:53:28.855848+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 6,
+          "description": "Then the credential is stored in the Wallet",
+          "duration": 3472,
+          "startTime": "2026-05-07T09:53:34.500771+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 7,
+          "description": "When the user presents the credential to the Web verifier",
+          "duration": 10981,
+          "startTime": "2026-05-07T09:53:37.974650+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 8,
+          "description": "And the user shares specific attributes",
+          "duration": 0,
+          "startTime": "2026-05-07T09:53:48.957049+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 9,
+          "description": "And the presentation is performed on a cross device for the mDL (MSO Mdoc)",
+          "duration": 68189,
+          "startTime": "2026-05-07T09:53:48.957795+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 10,
+          "description": "Then the verifier verifies the credential successfully with cross device for specific attributes",
+          "duration": 1111,
+          "startTime": "2026-05-07T09:54:57.148733+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    },
+    {
+      "number": 31,
+      "description": "4: Successful credential issuance and presentation with selective disclosure - Python Issuer - mDL ({credential=mDL (MSO Mdoc), issuer=Python, issuance_method=from list, issue_scenario=same device, verifier=Web verifier, presentation_scenario=cross device, selective_disclosure=all attributes})",
+      "duration": 3448229,
+      "startTime": "2026-05-06T17:27:11.837086+03:00[Europe/Athens]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "lineNumber": 19,
+      "children": [
+        {
+          "number": 12,
+          "description": "Given the user initiates a mDL (MSO Mdoc) issuance using the Python",
+          "duration": 20364,
+          "startTime": "2026-05-06T23:04:05.357007+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 13,
+          "description": "And the issuance method is from list",
+          "duration": 112435,
+          "startTime": "2026-05-06T23:04:25.721720+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 14,
+          "description": "And the issuance is performed on a same device for the mDL (MSO Mdoc)",
+          "duration": 0,
+          "startTime": "2026-05-06T23:06:18.157442+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 15,
+          "description": "When the issuance flow is completed",
+          "duration": 4728,
+          "startTime": "2026-05-06T23:06:18.157788+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 16,
+          "description": "Then the credential is stored in the Wallet",
+          "duration": 3721,
+          "startTime": "2026-05-06T23:06:22.886935+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 17,
+          "description": "When the user presents the credential to the Web verifier",
+          "duration": 11016,
+          "startTime": "2026-05-06T23:06:26.609669+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 18,
+          "description": "And the user shares all attributes",
+          "duration": 0,
+          "startTime": "2026-05-06T23:06:37.627156+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 19,
+          "description": "And the presentation is performed on a cross device for the mDL (MSO Mdoc)",
+          "duration": 74761,
+          "startTime": "2026-05-06T23:06:37.634862+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 20,
+          "description": "Then the verifier verifies the credential successfully with cross device for all attributes",
+          "duration": 7642,
+          "startTime": "2026-05-06T23:07:52.396590+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    },
+    {
+      "number": 41,
+      "description": "5: Successful credential issuance and presentation with selective disclosure - Python Issuer - mDL ({credential=mDL (MSO Mdoc), issuer=Python, issuance_method=credential offer, issue_scenario=same device, verifier=Web verifier, presentation_scenario=same device, selective_disclosure=specific attributes})",
+      "duration": 255357,
+      "startTime": "2026-05-06T18:24:40.086343+03:00[Europe/Athens]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "lineNumber": 20,
+      "children": [
+        {
+          "number": 42,
+          "description": "Given the user initiates a mDL (MSO Mdoc) issuance using the Python",
+          "duration": 19090,
+          "startTime": "2026-05-06T18:25:13.120727+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 43,
+          "description": "And the issuance method is credential offer",
+          "duration": 11179,
+          "startTime": "2026-05-06T18:25:32.211975+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 44,
+          "description": "And the issuance is performed on a same device for the mDL (MSO Mdoc)",
+          "duration": 121019,
+          "startTime": "2026-05-06T18:25:43.391888+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 45,
+          "description": "When the issuance flow is completed",
+          "duration": 2813,
+          "startTime": "2026-05-06T18:27:44.411514+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 46,
+          "description": "Then the credential is stored in the Wallet",
+          "duration": 4051,
+          "startTime": "2026-05-06T18:27:47.225885+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 47,
+          "description": "When the user presents the credential to the Web verifier",
+          "duration": 11161,
+          "startTime": "2026-05-06T18:27:51.277612+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 48,
+          "description": "And the user shares specific attributes",
+          "duration": 0,
+          "startTime": "2026-05-06T18:28:02.440063+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 49,
+          "description": "And the presentation is performed on a same device for the mDL (MSO Mdoc)",
+          "duration": 40298,
+          "startTime": "2026-05-06T18:28:02.440946+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 50,
+          "description": "Then the verifier verifies the credential successfully with same device for specific attributes",
+          "duration": 10323,
+          "startTime": "2026-05-06T18:28:42.739983+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    },
+    {
+      "number": 51,
+      "description": "6: Successful credential issuance and presentation with selective disclosure - Python Issuer - mDL ({credential=mDL (MSO Mdoc), issuer=Python, issuance_method=credential offer, issue_scenario=same device, verifier=Web verifier, presentation_scenario=same device, selective_disclosure=all attributes})",
+      "duration": 273250,
+      "startTime": "2026-05-06T18:28:55.472584+03:00[Europe/Athens]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "lineNumber": 21,
+      "children": [
+        {
+          "number": 52,
+          "description": "Given the user initiates a mDL (MSO Mdoc) issuance using the Python",
+          "duration": 18825,
+          "startTime": "2026-05-06T18:29:28.462094+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 53,
+          "description": "And the issuance method is credential offer",
+          "duration": 11326,
+          "startTime": "2026-05-06T18:29:47.288596+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 54,
+          "description": "And the issuance is performed on a same device for the mDL (MSO Mdoc)",
+          "duration": 122548,
+          "startTime": "2026-05-06T18:29:58.615879+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 55,
+          "description": "When the issuance flow is completed",
+          "duration": 3208,
+          "startTime": "2026-05-06T18:32:01.165367+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 56,
+          "description": "Then the credential is stored in the Wallet",
+          "duration": 3479,
+          "startTime": "2026-05-06T18:32:04.374957+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 57,
+          "description": "When the user presents the credential to the Web verifier",
+          "duration": 10866,
+          "startTime": "2026-05-06T18:32:07.855736+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 58,
+          "description": "And the user shares all attributes",
+          "duration": 0,
+          "startTime": "2026-05-06T18:32:18.723215+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 59,
+          "description": "And the presentation is performed on a same device for the mDL (MSO Mdoc)",
+          "duration": 35718,
+          "startTime": "2026-05-06T18:32:18.723715+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 60,
+          "description": "Then the verifier verifies the credential successfully with same device for all attributes",
+          "duration": 32004,
+          "startTime": "2026-05-06T18:32:54.443387+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    },
+    {
+      "number": 61,
+      "description": "7: Successful credential issuance and presentation with selective disclosure - Python Issuer - mDL ({credential=mDL (MSO Mdoc), issuer=Python, issuance_method=credential offer, issue_scenario=same device, verifier=Web verifier, presentation_scenario=cross device, selective_disclosure=specific attributes})",
+      "duration": 279565,
+      "startTime": "2026-05-06T18:33:28.750115+03:00[Europe/Athens]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "lineNumber": 22,
+      "children": [
+        {
+          "number": 62,
+          "description": "Given the user initiates a mDL (MSO Mdoc) issuance using the Python",
+          "duration": 17841,
+          "startTime": "2026-05-06T18:34:07.020580+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 63,
+          "description": "And the issuance method is credential offer",
+          "duration": 11105,
+          "startTime": "2026-05-06T18:34:24.862546+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 64,
+          "description": "And the issuance is performed on a same device for the mDL (MSO Mdoc)",
+          "duration": 123346,
+          "startTime": "2026-05-06T18:34:35.969495+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 65,
+          "description": "When the issuance flow is completed",
+          "duration": 2158,
+          "startTime": "2026-05-06T18:36:39.317140+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 66,
+          "description": "Then the credential is stored in the Wallet",
+          "duration": 3722,
+          "startTime": "2026-05-06T18:36:41.476553+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 67,
+          "description": "When the user presents the credential to the Web verifier",
+          "duration": 11058,
+          "startTime": "2026-05-06T18:36:45.199429+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 68,
+          "description": "And the user shares specific attributes",
+          "duration": 0,
+          "startTime": "2026-05-06T18:36:56.258650+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 69,
+          "description": "And the presentation is performed on a cross device for the mDL (MSO Mdoc)",
+          "duration": 68083,
+          "startTime": "2026-05-06T18:36:56.259411+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 70,
+          "description": "Then the verifier verifies the credential successfully with cross device for specific attributes",
+          "duration": 1706,
+          "startTime": "2026-05-06T18:38:04.343626+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    },
+    {
+      "number": 71,
+      "description": "8: Successful credential issuance and presentation with selective disclosure - Python Issuer - mDL ({credential=mDL (MSO Mdoc), issuer=Python, issuance_method=credential offer, issue_scenario=same device, verifier=Web verifier, presentation_scenario=cross device, selective_disclosure=all attributes})",
+      "duration": 275002,
+      "startTime": "2026-05-06T18:38:08.339773+03:00[Europe/Athens]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "lineNumber": 23,
+      "children": [
+        {
+          "number": 72,
+          "description": "Given the user initiates a mDL (MSO Mdoc) issuance using the Python",
+          "duration": 17907,
+          "startTime": "2026-05-06T18:38:36.546143+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 73,
+          "description": "And the issuance method is credential offer",
+          "duration": 11037,
+          "startTime": "2026-05-06T18:38:54.454147+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 74,
+          "description": "And the issuance is performed on a same device for the mDL (MSO Mdoc)",
+          "duration": 117758,
+          "startTime": "2026-05-06T18:39:05.492146+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 75,
+          "description": "When the issuance flow is completed",
+          "duration": 2843,
+          "startTime": "2026-05-06T18:41:03.251650+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 76,
+          "description": "Then the credential is stored in the Wallet",
+          "duration": 3861,
+          "startTime": "2026-05-06T18:41:06.096451+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 77,
+          "description": "When the user presents the credential to the Web verifier",
+          "duration": 11006,
+          "startTime": "2026-05-06T18:41:09.958416+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 78,
+          "description": "And the user shares all attributes",
+          "duration": 0,
+          "startTime": "2026-05-06T18:41:20.965158+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 79,
+          "description": "And the presentation is performed on a cross device for the mDL (MSO Mdoc)",
+          "duration": 70776,
+          "startTime": "2026-05-06T18:41:20.965723+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 80,
+          "description": "Then the verifier verifies the credential successfully with cross device for all attributes",
+          "duration": 9357,
+          "startTime": "2026-05-06T18:42:31.742966+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    },
+    {
+      "number": 81,
+      "description": "9: Successful credential issuance and presentation with selective disclosure - Python Issuer - mDL ({credential=mDL (MSO Mdoc), issuer=Python, issuance_method=credential offer, issue_scenario=cross device, verifier=Web verifier, presentation_scenario=same device, selective_disclosure=specific attributes})",
+      "duration": 342462,
+      "startTime": "2026-05-06T18:42:43.369108+03:00[Europe/Athens]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "lineNumber": 24,
+      "children": [
+        {
+          "number": 82,
+          "description": "Given the user initiates a mDL (MSO Mdoc) issuance using the Python",
+          "duration": 21364,
+          "startTime": "2026-05-06T18:43:50.592910+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 83,
+          "description": "And the issuance method is credential offer",
+          "duration": 11719,
+          "startTime": "2026-05-06T18:44:11.958229+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 84,
+          "description": "And the issuance is performed on a cross device for the mDL (MSO Mdoc)",
+          "duration": 168800,
+          "startTime": "2026-05-06T18:44:23.678513+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 85,
+          "description": "When the issuance flow is completed",
+          "duration": 2669,
+          "startTime": "2026-05-06T18:47:12.479879+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 86,
+          "description": "Then the credential is stored in the Wallet",
+          "duration": 3459,
+          "startTime": "2026-05-06T18:47:15.150590+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 87,
+          "description": "When the user presents the credential to the Web verifier",
+          "duration": 11076,
+          "startTime": "2026-05-06T18:47:18.610879+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 88,
+          "description": "And the user shares specific attributes",
+          "duration": 0,
+          "startTime": "2026-05-06T18:47:29.688052+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 89,
+          "description": "And the presentation is performed on a same device for the mDL (MSO Mdoc)",
+          "duration": 43179,
+          "startTime": "2026-05-06T18:47:29.688739+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 90,
+          "description": "Then the verifier verifies the credential successfully with same device for specific attributes",
+          "duration": 10575,
+          "startTime": "2026-05-06T18:48:12.868908+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    },
+    {
+      "number": 91,
+      "description": "10: Successful credential issuance and presentation with selective disclosure - Python Issuer - mDL ({credential=mDL (MSO Mdoc), issuer=Python, issuance_method=credential offer, issue_scenario=cross device, verifier=Web verifier, presentation_scenario=same device, selective_disclosure=all attributes})",
+      "duration": 385420,
+      "startTime": "2026-05-06T18:48:25.857760+03:00[Europe/Athens]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "lineNumber": 25,
+      "children": [
+        {
+          "number": 92,
+          "description": "Given the user initiates a mDL (MSO Mdoc) issuance using the Python",
+          "duration": 24166,
+          "startTime": "2026-05-06T18:49:01.805869+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 93,
+          "description": "And the issuance method is credential offer",
+          "duration": 11263,
+          "startTime": "2026-05-06T18:49:25.973440+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 94,
+          "description": "And the issuance is performed on a cross device for the mDL (MSO Mdoc)",
+          "duration": 215143,
+          "startTime": "2026-05-06T18:49:37.237865+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 95,
+          "description": "When the issuance flow is completed",
+          "duration": 7054,
+          "startTime": "2026-05-06T18:53:12.382366+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 96,
+          "description": "Then the credential is stored in the Wallet",
+          "duration": 4836,
+          "startTime": "2026-05-06T18:53:19.438232+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 97,
+          "description": "When the user presents the credential to the Web verifier",
+          "duration": 11053,
+          "startTime": "2026-05-06T18:53:24.275643+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 98,
+          "description": "And the user shares all attributes",
+          "duration": 0,
+          "startTime": "2026-05-06T18:53:35.330727+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 99,
+          "description": "And the presentation is performed on a same device for the mDL (MSO Mdoc)",
+          "duration": 48737,
+          "startTime": "2026-05-06T18:53:35.331421+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 100,
+          "description": "Then the verifier verifies the credential successfully with same device for all attributes",
+          "duration": 24877,
+          "startTime": "2026-05-06T18:54:24.070047+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    },
+    {
+      "number": 101,
+      "description": "11: Successful credential issuance and presentation with selective disclosure - Python Issuer - mDL ({credential=mDL (MSO Mdoc), issuer=Python, issuance_method=credential offer, issue_scenario=cross device, verifier=Web verifier, presentation_scenario=cross device, selective_disclosure=all attributes})",
+      "duration": 322127,
+      "startTime": "2026-05-06T18:54:51.303014+03:00[Europe/Athens]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "lineNumber": 26,
+      "children": [
+        {
+          "number": 102,
+          "description": "Given the user initiates a mDL (MSO Mdoc) issuance using the Python",
+          "duration": 18391,
+          "startTime": "2026-05-06T18:55:16.679555+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 103,
+          "description": "And the issuance method is credential offer",
+          "duration": 10971,
+          "startTime": "2026-05-06T18:55:35.072402+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 104,
+          "description": "And the issuance is performed on a cross device for the mDL (MSO Mdoc)",
+          "duration": 166276,
+          "startTime": "2026-05-06T18:55:46.044883+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 105,
+          "description": "When the issuance flow is completed",
+          "duration": 2192,
+          "startTime": "2026-05-06T18:58:32.322276+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 106,
+          "description": "Then the credential is stored in the Wallet",
+          "duration": 3404,
+          "startTime": "2026-05-06T18:58:34.515625+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 107,
+          "description": "When the user presents the credential to the Web verifier",
+          "duration": 10833,
+          "startTime": "2026-05-06T18:58:37.921015+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 108,
+          "description": "And the user shares all attributes",
+          "duration": 0,
+          "startTime": "2026-05-06T18:58:48.755297+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 109,
+          "description": "And the presentation is performed on a cross device for the mDL (MSO Mdoc)",
+          "duration": 71146,
+          "startTime": "2026-05-06T18:58:48.756007+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 110,
+          "description": "Then the verifier verifies the credential successfully with cross device for all attributes",
+          "duration": 11175,
+          "startTime": "2026-05-06T18:59:59.903876+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    },
+    {
+      "number": 111,
+      "description": "12: Successful credential issuance and presentation with selective disclosure - Python Issuer - mDL ({credential=mDL (MSO Mdoc), issuer=Python, issuance_method=credential offer, issue_scenario=cross device, verifier=Web verifier, presentation_scenario=cross device, selective_disclosure=specific attributes})",
+      "duration": 323786,
+      "startTime": "2026-05-06T19:00:13.454930+03:00[Europe/Athens]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "lineNumber": 27,
+      "children": [
+        {
+          "number": 112,
+          "description": "Given the user initiates a mDL (MSO Mdoc) issuance using the Python",
+          "duration": 17975,
+          "startTime": "2026-05-06T19:00:55.284056+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 113,
+          "description": "And the issuance method is credential offer",
+          "duration": 11027,
+          "startTime": "2026-05-06T19:01:13.264480+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 114,
+          "description": "And the issuance is performed on a cross device for the mDL (MSO Mdoc)",
+          "duration": 166125,
+          "startTime": "2026-05-06T19:01:24.292705+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 115,
+          "description": "When the issuance flow is completed",
+          "duration": 2216,
+          "startTime": "2026-05-06T19:04:10.419395+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 116,
+          "description": "Then the credential is stored in the Wallet",
+          "duration": 3306,
+          "startTime": "2026-05-06T19:04:12.637076+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 117,
+          "description": "When the user presents the credential to the Web verifier",
+          "duration": 10972,
+          "startTime": "2026-05-06T19:04:15.944815+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 118,
+          "description": "And the user shares specific attributes",
+          "duration": 0,
+          "startTime": "2026-05-06T19:04:26.918480+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 119,
+          "description": "And the presentation is performed on a cross device for the mDL (MSO Mdoc)",
+          "duration": 66822,
+          "startTime": "2026-05-06T19:04:26.919188+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 120,
+          "description": "Then the verifier verifies the credential successfully with cross device for specific attributes",
+          "duration": 1116,
+          "startTime": "2026-05-06T19:05:33.742026+03:00[Europe/Athens]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    }
+  ],
+  "userStory": {
+    "id": "android/regressionTests/Automated_Regression_Tests/MDL_MSO_Mdoc/issuanceAndPresentationScenariosMdl",
+    "storyName": "Issuance and presentation - mDL",
+    "displayName": "Issuance and presentation - mDL",
+    "path": "android/regressionTests/Automated_Regression_Tests/MDL_MSO_Mdoc/issuanceAndPresentationScenariosMdl",
+    "pathElements": [
+      {
+        "name": "android",
+        "description": ""
+      },
+      {
+        "name": "regressionTests",
+        "description": ""
+      },
+      {
+        "name": "Automated_Regression_Tests",
+        "description": ""
+      },
+      {
+        "name": "MDL_MSO_Mdoc",
+        "description": ""
+      },
+      {
+        "name": "issuanceAndPresentationScenariosMdl",
+        "description": ""
+      }
+    ],
+    "type": "feature"
+  },
+  "title": "Successful credential issuance and presentation with selective disclosure - Python Issuer - mDL",
+  "description": "",
+  "tags": [
+    {
+      "name": "US_CIPSDPYMDL",
+      "type": "tag",
+      "displayName": "US_CIPSDPYMDL"
+    },
+    {
+      "name": "execution",
+      "type": "tag",
+      "displayName": "execution"
+    },
+    {
+      "name": "ANDROID",
+      "type": "tag",
+      "displayName": "ANDROID"
+    },
+    {
+      "name": "automated",
+      "type": "tag",
+      "displayName": "automated"
+    }
+  ],
+  "startTime": "2026-05-06T17:15:23.984574+03:00[Europe/Athens]",
+  "endTime": "2026-05-06T19:05:37.242945+03:00[Europe/Athens]",
+  "duration": 48473,
+  "projectKey": "",
+  "isManualTestingUpToDate": false,
+  "dataTable": {
+    "headers": [
+      "credential",
+      "issuer",
+      "issuance_method",
+      "issue_scenario",
+      "verifier",
+      "presentation_scenario",
+      "selective_disclosure"
+    ],
+    "rows": [
+      {
+        "values": [
+          "mDL (MSO Mdoc)",
+          "Python",
+          "from list",
+          "same device",
+          "Web verifier",
+          "same device",
+          "specific attributes"
+        ],
+        "lineNumber": 16,
+        "result": "SUCCESS"
+      },
+      {
+        "values": [
+          "mDL (MSO Mdoc)",
+          "Python",
+          "from list",
+          "same device",
+          "Web verifier",
+          "same device",
+          "all attributes"
+        ],
+        "lineNumber": 17,
+        "result": "SUCCESS"
+      },
+      {
+        "values": [
+          "mDL (MSO Mdoc)",
+          "Python",
+          "from list",
+          "same device",
+          "Web verifier",
+          "cross device",
+          "specific attributes"
+        ],
+        "lineNumber": 18,
+        "result": "SUCCESS"
+      },
+      {
+        "values": [
+          "mDL (MSO Mdoc)",
+          "Python",
+          "from list",
+          "same device",
+          "Web verifier",
+          "cross device",
+          "all attributes"
+        ],
+        "lineNumber": 19,
+        "result": "SUCCESS"
+      },
+      {
+        "values": [
+          "mDL (MSO Mdoc)",
+          "Python",
+          "credential offer",
+          "same device",
+          "Web verifier",
+          "same device",
+          "specific attributes"
+        ],
+        "lineNumber": 20,
+        "result": "SUCCESS"
+      },
+      {
+        "values": [
+          "mDL (MSO Mdoc)",
+          "Python",
+          "credential offer",
+          "same device",
+          "Web verifier",
+          "same device",
+          "all attributes"
+        ],
+        "lineNumber": 21,
+        "result": "SUCCESS"
+      },
+      {
+        "values": [
+          "mDL (MSO Mdoc)",
+          "Python",
+          "credential offer",
+          "same device",
+          "Web verifier",
+          "cross device",
+          "specific attributes"
+        ],
+        "lineNumber": 22,
+        "result": "SUCCESS"
+      },
+      {
+        "values": [
+          "mDL (MSO Mdoc)",
+          "Python",
+          "credential offer",
+          "same device",
+          "Web verifier",
+          "cross device",
+          "all attributes"
+        ],
+        "lineNumber": 23,
+        "result": "SUCCESS"
+      },
+      {
+        "values": [
+          "mDL (MSO Mdoc)",
+          "Python",
+          "credential offer",
+          "cross device",
+          "Web verifier",
+          "same device",
+          "specific attributes"
+        ],
+        "lineNumber": 24,
+        "result": "SUCCESS"
+      },
+      {
+        "values": [
+          "mDL (MSO Mdoc)",
+          "Python",
+          "credential offer",
+          "cross device",
+          "Web verifier",
+          "same device",
+          "all attributes"
+        ],
+        "lineNumber": 25,
+        "result": "SUCCESS"
+      },
+      {
+        "values": [
+          "mDL (MSO Mdoc)",
+          "Python",
+          "credential offer",
+          "cross device",
+          "Web verifier",
+          "cross device",
+          "all attributes"
+        ],
+        "lineNumber": 26,
+        "result": "SUCCESS"
+      },
+      {
+        "values": [
+          "mDL (MSO Mdoc)",
+          "Python",
+          "credential offer",
+          "cross device",
+          "Web verifier",
+          "cross device",
+          "specific attributes"
+        ],
+        "lineNumber": 27,
+        "result": "SUCCESS"
+      }
+    ],
+    "predefinedRows": true,
+    "scenarioOutline": "Given the user initiates a <credential> issuance using the <issuer>\n\rAnd the issuance method is <issuance_method>\n\rAnd the issuance is performed on a <issue_scenario> for the <credential>\n\rWhen the issuance flow is completed\n\rThen the credential is stored in the Wallet\n\rWhen the user presents the credential to the <verifier>\n\rAnd the user shares <selective_disclosure>\n\rAnd the presentation is performed on a <presentation_scenario> for the <credential>\n\rThen the verifier verifies the credential successfully with <presentation_scenario> for <selective_disclosure>\n\r",
+    "dataSetDescriptors": [
+      {
+        "startRow": 0,
+        "rowCount": 0,
+        "name": "",
+        "description": ""
+      }
+    ]
+  },
+  "manual": false,
+  "testSource": "Cucumber",
+  "order": 0,
+  "result": "SUCCESS",
+  "scenarioOutline": "Given the user initiates a <credential> issuance using the <issuer>\nAnd the issuance method is <issuance_method>\nAnd the issuance is performed on a <issue_scenario> for the <credential>\nWhen the issuance flow is completed\nThen the credential is stored in the Wallet\nWhen the user presents the credential to the <verifier>\nAnd the user shares <selective_disclosure>\nAnd the presentation is performed on a <presentation_scenario> for the <credential>\nThen the verifier verifies the credential successfully with <presentation_scenario> for <selective_disclosure>",
+  "annotatedResult": "SUCCESS"
+}

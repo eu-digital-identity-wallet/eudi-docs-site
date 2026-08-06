@@ -1,0 +1,3 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Deleting a PID document","User deletes the document and application reboots","SUCCESS","2025-10-14T10:49:34.49399+03:00[Europe/Athens]","0.0","52.93"
+"Deleting a PID document","User deletes the document and application reboots","SUCCESS","2025-10-14T11:55:58.668644+03:00[Europe/Athens]","0.0","90.06"

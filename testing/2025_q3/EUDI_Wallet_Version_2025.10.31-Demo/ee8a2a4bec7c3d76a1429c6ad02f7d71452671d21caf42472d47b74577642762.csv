@@ -1,0 +1,5 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Signing a document with EUDI Wallet","No Credential IDs enrolled for user in QTSP","PENDING","2025-10-14T10:23:48.254588+03:00[Europe/Athens]","0.0","8.82"
+"Selective Disclosure","Initiate Sharing Process","SUCCESS","2025-10-14T11:04:55.110752+03:00[Europe/Athens]","0.0","90.41"
+"Signing a document with EUDI Wallet","No Credential IDs enrolled for user in QTSP","PENDING","2025-10-14T11:25:52.851164+03:00[Europe/Athens]","0.0","7.24"
+"Selective Disclosure","Initiate Sharing Process","SUCCESS","2025-10-14T12:23:21.146099+03:00[Europe/Athens]","0.0","141.2"

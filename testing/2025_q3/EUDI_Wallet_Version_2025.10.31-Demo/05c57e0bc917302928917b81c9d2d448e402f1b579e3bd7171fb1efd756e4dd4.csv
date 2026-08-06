@@ -1,0 +1,5 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Signing a document with EUDI Wallet","Single Credential ID Available","SUCCESS","2025-10-14T10:23:30.5271+03:00[Europe/Athens]","0.0","8.98"
+"Selective Disclosure","View Requested Data from Verifier","SUCCESS","2025-10-14T11:02:11.888076+03:00[Europe/Athens]","0.0","74.15"
+"Signing a document with EUDI Wallet","Single Credential ID Available","SUCCESS","2025-10-14T11:25:38.13299+03:00[Europe/Athens]","0.0","7.29"
+"Selective Disclosure","View Requested Data from Verifier","SUCCESS","2025-10-14T12:18:45.376022+03:00[Europe/Athens]","0.0","136.33"

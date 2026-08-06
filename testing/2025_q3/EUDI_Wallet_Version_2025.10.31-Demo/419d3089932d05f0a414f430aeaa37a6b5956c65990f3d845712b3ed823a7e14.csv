@@ -1,0 +1,4 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Deleting a mDL document","User enters PIN and selects a mDL","SUCCESS","2025-10-14T12:55:28.846569+03:00[Europe/Athens]","0.0","108.16"
+"View mDL document","User opens the mDL document from the dashboard","SUCCESS","2025-10-14T11:14:29.355993+03:00[Europe/Athens]","0.0","94.07"
+"View mDL document","Viewing attestation details after selecting the 'eye' icon","SUCCESS","2025-10-14T11:16:03.452517+03:00[Europe/Athens]","0.0","96.18"

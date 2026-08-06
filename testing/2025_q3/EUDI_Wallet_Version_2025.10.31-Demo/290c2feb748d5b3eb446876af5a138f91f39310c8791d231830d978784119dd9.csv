@@ -1,0 +1,5 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Credential issuance process for the same device","User proceeds with the credential issuance","SUCCESS","2025-10-14T11:29:25.705067+03:00[Europe/Athens]","0.0","129.43"
+"Credential issuance process for the same device","User authenticates and consents to the issuance","SUCCESS","2025-10-14T11:31:35.16942+03:00[Europe/Athens]","0.0","180.32"
+"Credential issuance process for the same device","User views the issued credential in the EUDI Wallet","SUCCESS","2025-10-14T11:34:35.518166+03:00[Europe/Athens]","0.0","182.36"
+"Credential issuance process for the same device","User selects to issue a credential","SUCCESS","2025-10-14T13:04:04.998975+03:00[Europe/Athens]","0.0","126.63"

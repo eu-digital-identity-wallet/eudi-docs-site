@@ -1,0 +1,5 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Signing a document with EUDI Wallet","QTSP redirects user to attestation request","SUCCESS","2025-10-14T10:23:57.107961+03:00[Europe/Athens]","0.0","9.3"
+"Selective Disclosure","Expand Verification Section","SUCCESS","2025-10-14T11:06:25.550227+03:00[Europe/Athens]","0.0","93.28"
+"Signing a document with EUDI Wallet","QTSP redirects user to attestation request","SUCCESS","2025-10-14T11:26:00.122432+03:00[Europe/Athens]","0.0","7.3"
+"Selective Disclosure","Expand Verification Section","SUCCESS","2025-10-14T12:25:42.368613+03:00[Europe/Athens]","0.0","151.22"

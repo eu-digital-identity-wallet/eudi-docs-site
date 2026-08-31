@@ -1,0 +1,1774 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Serenity Reports</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="bootstrap-icons/bootstrap-icons.css">
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.13.1/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.13.1/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.13.1/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/>
+<!--CHART.JS-->
+<script src="chartjs/chart.js"></script>
+<script src="chartjs/chartjs-plugin-datalabels@2.0.0.min.js"></script>
+<script src="chartjs/patternomaly.min.js"></script>
+<script>
+    // Register the plugin to all charts:
+    Chart.register(ChartDataLabels);
+</script>
+<!-- JQuery-UI -->
+<link type="text/css" href="jqueryui/1.11.2-start/jquery-ui.min.css" rel="Stylesheet" />
+<script type="text/javascript" src="jqueryui/1.11.2-start/jquery-ui.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.13.1/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.13.1/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.13.1/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+
+
+
+    <script class="code" type="text/javascript">$(document).ready(function () {
+
+
+            $("#scenario-results").DataTable({
+                "order": [[0, "asc",], [3, "asc",]],
+                "language": {
+                    searchPlaceholder: "Filter",
+                    search: ""
+                },
+                columnDefs: [
+                    {type: 'time-elapsed-dhms', targets: 4}
+                ]
+            })
+            $("#manual-scenario-results").DataTable({
+                "order": [[0, "asc",], [1, "asc",]],
+                "language": {
+                    searchPlaceholder: "Filter",
+                    search: ""
+                },
+            })
+
+        // Results table
+        $('#test-results-table').DataTable({
+            "order": [[0, "asc",], [3, "asc",]],
+            "pageLength": 100,
+            "lengthMenu": [[25, 50, 100, 200, -1], [25, 50, 100, 200, "All"]]
+        });
+
+    })
+    ;
+    </script>
+</head>
+
+<body class="results-page">
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">EUDI Wallet Test Report</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+
+    <div id="contenttop">
+        <div class="middlebg">
+        <span class="breadcrumbs"><a href="index.html">Home</a>
+                > ## 
+        </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="bi bi-journal-check"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="bi bi-journal-text"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="bf2946e24fd72447464f583d97d4f9006680caa0fc520443de6470185bd4ceb2.html"><i class="bi bi-chat-text"></i> Features</a>
+        </li>
+        <li >
+            <a href="0272dadd83d6e6ac748d9a947522ca78b8873f5156f9bd38d6a0eb735ee5993b.html"><i class="bi bi-chat-text"></i> Epics</a>
+        </li>
+        <li >
+            <a href="2a4631d87648e59c428d4cf0e9247f9d286e4679f436ca2ce872e931eb4dfd58.html"><i class="bi bi-chat-text"></i> Stories</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="bi bi-chat-text"></i> Features</a>
+        </li>
+        <li >
+            <a href="f00f76a04d2d99822f342e19edfb456d954ef898f485c501f324bafd9ade930f.html"><i class="bi bi-chat-text"></i> ##s</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 28-08-2026 08:42:03</span>
+    <br style="clear:left"/>
+</div>
+    <div class="clr"></div>
+    <div id="beforetable"></div>
+    <div id="results-dashboard">
+        <div class="middlb">
+            <div class="table">
+
+                <h2>Test Results: All Tests</h2>
+                <table class='overview'>
+                    <tr>
+                        <td width="375px" valign="top">
+                            <div class="test-count-summary">
+                                <div>
+
+                                    25 tests
+
+                                     |
+                                        <a href="393a1335f6fc47f1c57958c09a41c2b7a1ab00922296006b934943dd7b4af069.csv" title="Download CSV"> <i class="bi bi-cloud-arrow-down" title="Download CSV"></i></a>
+
+                                    <p class="report-info"><i class="bi bi-info-circle"></i> Note that results include
+                                        data-driven scenarios containing tests ,
+                                        which may also contain results other than tests .</p>
+
+
+
+                                </div>
+                            </div>
+
+                            <div>
+                                <ul class="nav nav-tabs">
+                                    <li class="active">
+                                        <a data-toggle="tab" href="#summary"><i class="bi bi-house-door"></i> Summary</a>
+                                    </li>
+                                    <li>
+                                        <a data-toggle="tab" href="#tests"><i class="bi bi-speedometer"></i> Test
+                                            Results</a>
+                                    </li>
+                                </ul>
+
+                                <div class="card border">
+                                    <div class="tab-content" id="pills-tabContent">
+                                        <div id="summary" class="tab-pane fade in active">
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+    <div>
+        <h3><i class="bi bi-speedometer2"></i> Key Statistics</h3>
+        <div>
+            <table class="table table-striped table-hover">
+                <tbody>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-card-checklist"></i> Number of Scenarios
+                    </td>
+                    <td>25</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-caret-right"></i> Total Number of Test Cases
+                    </td>
+                    <td>25</td>
+                </tr>
+                    <tr scope="row">
+                        <td>
+                            <i class="bi bi-person"></i> Number of Manual Test Cases
+                        </td>
+                        <td>25</td>
+                    </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-flag-fill"></i> Tests Started
+                    </td>
+                    <td>Aug 28, 2026 08:26:52</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-stop-circle"></i> Tests
+                        Finished
+                    </td>
+                    <td>Aug 28, 2026 08:34:06</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-stopwatch"></i> Total
+                        Duration
+                    </td>
+                    <td> 7m 13s</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-trophy"></i> Fastest Test
+                    </td>
+                    <td>16s</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-skip-start"></i> Slowest
+                        Test
+                    </td>
+                    <td>18s</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-stopwatch"></i> Average
+                        Execution Time
+                    </td>
+                    <td>17s</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-stopwatch-fill"></i> Total
+                        Execution Time
+                    </td>
+                    <td> 7m 12s</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <h4><i class="bi bi-check-square"></i> Test Outcomes</h4>
+                                                        <!-- Severity bar chart -->
+                                                        <div class="chart-container" style="position: relative; width:30vw">
+                                                            <canvas id="severityChart" width="300" height="300"></canvas>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-sm-4">
+                                                        <h4><i class="bi bi-graph-up"></i> Test Performance</h4>
+
+                                                        <!-- Duration bar chart -->
+                                                        <div class="chart-container" style="position: relative; width:30vw">
+                                                            <canvas id="durationChart" width="300" height="300"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                        <div class="col-sm-12">
+                                                            <!-- High level coverage bar chart -->
+                                                            <div class="chart-container" style="position: relative; width:60vw">
+                                                                <h3><i class="bi bi-reception-3"></i> Functional Coverage Overview</h3>
+                                                                <h4>Features</h4>
+                                                                <canvas id="coverageChart"></canvas>
+                                                            </div>
+                                                        </div>
+                                                </div>
+                                                    <div class="row">
+                                                        <div class="col-sm-12">
+                                                            <h3>Tags</h3>
+
+                                                                <div class="card">
+                                                                    <div class="card-body">
+                                                                        <div>
+                                                                                <a href="7da31e8d2ab67439b12abab800e93844b61cc3df20077d8f6c343ca0e071a164.html">
+                                                                                    <span class="badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                                                                        <i class="bi bi-tag"></i> US VEAAPIDPRC&nbsp;&nbsp;&nbsp;2
+                                                                                    </span>
+                                                                                </a>
+                                                                                <a href="9a26bd101adfda745f743db04eb3269922eb1ff4d86d9997efeca1ebfe995ac4.html">
+                                                                                    <span class="badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                                                                        <i class="bi bi-tag"></i> Manual&nbsp;&nbsp;&nbsp;25
+                                                                                    </span>
+                                                                                </a>
+                                                                                <a href="b6093ecf4010625be6e2b087a19fb0011f9cee704ec10146dedbfd1b9bdb9162.html">
+                                                                                    <span class="badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                                                                        <i class="bi bi-tag"></i> US VRPDDPR TC 04&nbsp;&nbsp;&nbsp;1
+                                                                                    </span>
+                                                                                </a>
+                                                                                <a href="52dc7043f6d66c0c6d9a2a70666c3a3844717bcad8e6ecb763d04c9e4b463f67.html">
+                                                                                    <span class="badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                                                                        <i class="bi bi-tag"></i> US VRPDDPR TC 02&nbsp;&nbsp;&nbsp;1
+                                                                                    </span>
+                                                                                </a>
+                                                                                <a href="aed5727831b85feabf560b6f9bc4e6ecd2803823298e5ace68a8aab6e2d46439.html">
+                                                                                    <span class="badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                                                                        <i class="bi bi-tag"></i> US WWWUWPRCVF TC 03&nbsp;&nbsp;&nbsp;1
+                                                                                    </span>
+                                                                                </a>
+                                                                                <a href="4295a5e5719d59a3474e5b1db9c08f22a24291f6324d9d39f9480c6592330c87.html">
+                                                                                    <span class="badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                                                                        <i class="bi bi-tag"></i> US WWWUWPRCVF TC 01&nbsp;&nbsp;&nbsp;1
+                                                                                    </span>
+                                                                                </a>
+                                                                                <a href="e1de63b5975024017672b7086cdb482c5d785fb2021e81a138dff0588611f03f.html">
+                                                                                    <span class="badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                                                                        <i class="bi bi-tag"></i> US WDRPAPIFWRPACCS TC 02&nbsp;&nbsp;&nbsp;1
+                                                                                    </span>
+                                                                                </a>
+                                                                                <a href="779c14b3b3d9167442c27372a7bcd75d37d56050d68020dac61ac217dd1657a6.html">
+                                                                                    <span class="badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                                                                        <i class="bi bi-tag"></i> US VRPDDPR TC 06&nbsp;&nbsp;&nbsp;1
+                                                                                    </span>
+                                                                                </a>
+                                                                                <a href="84c5ab46792067d67f41e9affdd5a13e18975f020d1face13589535c7e929f8d.html">
+                                                                                    <span class="badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                                                                        <i class="bi bi-tag"></i> US WWWUWPRCVF&nbsp;&nbsp;&nbsp;3
+                                                                                    </span>
+                                                                                </a>
+                                                                                <a href="2782ab8ab0413a1a53ba20e48724189bb887c70c280905d47bb444ea48e511ee.html">
+                                                                                    <span class="badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                                                                        <i class="bi bi-tag"></i> US WDAWAOA TC 03&nbsp;&nbsp;&nbsp;1
+                                                                                    </span>
+                                                                                </a>
+                                                                                <a href="eb80bb7c8de23bf0655959857a3276ef804e00c4f072302fc08f7b51b59c909d.html">
+                                                                                    <span class="badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                                                                        <i class="bi bi-tag"></i> Q3.1 2026&nbsp;&nbsp;&nbsp;25
+                                                                                    </span>
+                                                                                </a>
+                                                                                <a href="9a23bf5995a4956bbb48152de1c866f3880040fce3e515086736f34e9889fc91.html">
+                                                                                    <span class="badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                                                                        <i class="bi bi-tag"></i> US VEAAPIDPRC TC 02&nbsp;&nbsp;&nbsp;1
+                                                                                    </span>
+                                                                                </a>
+                                                                                <a href="9d11e37a70bec372f3175f6d2c8af3ad7d2af33ce7dc3cc764ae1105920b105a.html">
+                                                                                    <span class="badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                                                                        <i class="bi bi-tag"></i> US VRPDDPR&nbsp;&nbsp;&nbsp;7
+                                                                                    </span>
+                                                                                </a>
+                                                                                <a href="27b119386a18326e47171a01d7cddb260f3e7c1514f6b21e62b3bfbc21e5d966.html">
+                                                                                    <span class="badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                                                                        <i class="bi bi-tag"></i> US WDAWAOA TC 01&nbsp;&nbsp;&nbsp;1
+                                                                                    </span>
+                                                                                </a>
+                                                                                <a href="63b40ff2ae65a8c3313d434a35fa25170034ded2451fb1643d2289bc4eb5320c.html">
+                                                                                    <span class="badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                                                                        <i class="bi bi-tag"></i> US WDAWAOA TC 07&nbsp;&nbsp;&nbsp;1
+                                                                                    </span>
+                                                                                </a>
+                                                                                <a href="ade868f99546ff6af133f38f0347baeeac9528a5268fb5dcb51a4e29a774da47.html">
+                                                                                    <span class="badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                                                                        <i class="bi bi-tag"></i> US WDAWAOA TC 05&nbsp;&nbsp;&nbsp;1
+                                                                                    </span>
+                                                                                </a>
+                                                                                <a href="7705edc40bd8bfc907d23e82740798c9668dadb35c12eb43dd5d88c54dd31275.html">
+                                                                                    <span class="badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                                                                        <i class="bi bi-tag"></i> US WDRPAPIFWRPACCS&nbsp;&nbsp;&nbsp;4
+                                                                                    </span>
+                                                                                </a>
+                                                                                <a href="a68167c9edb40e1bee6a6bdc5ccfa30187cbe29c4db020cb38787ac6691a9950.html">
+                                                                                    <span class="badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                                                                        <i class="bi bi-tag"></i> US WDRPAPIFWRPACCS TC 04&nbsp;&nbsp;&nbsp;1
+                                                                                    </span>
+                                                                                </a>
+                                                                                <a href="5ad280323f4341203db8f863dcec141abfb6f236fded5316ed07664017a984e9.html">
+                                                                                    <span class="badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                                                                        <i class="bi bi-tag"></i> US WDAWAOA TC 09&nbsp;&nbsp;&nbsp;1
+                                                                                    </span>
+                                                                                </a>
+                                                                                <a href="c7b30c21da09fabe5d627fe769e59fb982f294f5f911a102f30c91d0a9f883c8.html">
+                                                                                    <span class="badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                                                                        <i class="bi bi-tag"></i> US WDAWAOA&nbsp;&nbsp;&nbsp;9
+                                                                                    </span>
+                                                                                </a>
+                                                                                <a href="b5178fdb54c13a300adb85a5cf724e67462824a3a32b7cbae2ecffc79a4918a0.html">
+                                                                                    <span class="badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                                                                        <i class="bi bi-tag"></i> US VRPDDPR TC 01&nbsp;&nbsp;&nbsp;1
+                                                                                    </span>
+                                                                                </a>
+                                                                                <a href="a87abd4204ec96c8db74264eb8886fbfe73d8c3e1714488bb853210c21fb4e5a.html">
+                                                                                    <span class="badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                                                                        <i class="bi bi-tag"></i> Android&nbsp;&nbsp;&nbsp;25
+                                                                                    </span>
+                                                                                </a>
+                                                                                <a href="f261730af4126dd4634263cd8a3ef2448822dd97b5c901078b76955aba801f0b.html">
+                                                                                    <span class="badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                                                                        <i class="bi bi-tag"></i> US VRPDDPR TC 05&nbsp;&nbsp;&nbsp;1
+                                                                                    </span>
+                                                                                </a>
+                                                                                <a href="7ea2323c650c956272f5a6b5a5b3785b05dbe32a325b9c9c2094cac3b164abec.html">
+                                                                                    <span class="badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                                                                        <i class="bi bi-tag"></i> US VRPDDPR TC 03&nbsp;&nbsp;&nbsp;1
+                                                                                    </span>
+                                                                                </a>
+                                                                                <a href="10dbee6bb83749c6284c535d064c02e314bc9f88b40033d57062945bf8a298ff.html">
+                                                                                    <span class="badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                                                                        <i class="bi bi-tag"></i> US WWWUWPRCVF TC 02&nbsp;&nbsp;&nbsp;1
+                                                                                    </span>
+                                                                                </a>
+                                                                                <a href="1a5cd61e02a8c9b872633f8e25e6f863f0b8f43a39253b2375f25a36b665b093.html">
+                                                                                    <span class="badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                                                                        <i class="bi bi-tag"></i> US WDRPAPIFWRPACCS TC 01&nbsp;&nbsp;&nbsp;1
+                                                                                    </span>
+                                                                                </a>
+                                                                                <a href="d6a54fe46b331cadb2babdc3459530b440e6a4ff852aaae968053d0aa60bb5aa.html">
+                                                                                    <span class="badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                                                                        <i class="bi bi-tag"></i> US VRPDDPR TC 07&nbsp;&nbsp;&nbsp;1
+                                                                                    </span>
+                                                                                </a>
+                                                                                <a href="0b5d143f1836355341166b193c4fcfe1247d869e6c51c61b3a1ac1b26dc22400.html">
+                                                                                    <span class="badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                                                                        <i class="bi bi-tag"></i> US WDRPAPIFWRPACCS TC 03&nbsp;&nbsp;&nbsp;1
+                                                                                    </span>
+                                                                                </a>
+                                                                                <a href="971f0da84253a19d0347949baad49375ad8deec9270edfb5b14de3c2e5d47b0c.html">
+                                                                                    <span class="badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                                                                        <i class="bi bi-tag"></i> US VEAAPIDPRC TC 01&nbsp;&nbsp;&nbsp;1
+                                                                                    </span>
+                                                                                </a>
+                                                                                <a href="6275a7e256386564af27de1786140a8724e91e5c8f0c912a738d146d938e30a5.html">
+                                                                                    <span class="badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                                                                        <i class="bi bi-tag"></i> US WDAWAOA TC 02&nbsp;&nbsp;&nbsp;1
+                                                                                    </span>
+                                                                                </a>
+                                                                                <a href="c94309bb1a07b98ade6236446b251d65a2b0aaee630a0e574d3496b28cac5b7a.html">
+                                                                                    <span class="badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                                                                        <i class="bi bi-tag"></i> US WDAWAOA TC 06&nbsp;&nbsp;&nbsp;1
+                                                                                    </span>
+                                                                                </a>
+                                                                                <a href="805ef67946a107858be176010171b8481f044fb8bf7ea2ad61d1aa8cae2bab43.html">
+                                                                                    <span class="badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                                                                        <i class="bi bi-tag"></i> US WDAWAOA TC 04&nbsp;&nbsp;&nbsp;1
+                                                                                    </span>
+                                                                                </a>
+                                                                                <a href="e492c0cdbf8db73e348176b5d73cb2d7053e13f06a324d953136f4439726d928.html">
+                                                                                    <span class="badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                                                                        <i class="bi bi-tag"></i> US WDAWAOA TC 08&nbsp;&nbsp;&nbsp;1
+                                                                                    </span>
+                                                                                </a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card">
+                                                                    <div class="card-body">
+                                                                            <h5 class="card-title">Manual</h5>
+                                                                        <div>
+                                                                                <a href="220d8ef6080eb8a7746b6ccaff3b44ac3c1f123a09790bb9a8ff31e7b07c9746.html">
+                                                                                    <span class="badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                                                                        <i class="bi bi-tag"></i> Passed&nbsp;&nbsp;&nbsp;25
+                                                                                    </span>
+                                                                                </a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                        </div>
+                                                    </div>
+                                            </div>
+
+                                            <div class="container-fluid">
+                                                    <div class="row">
+                                                        <div class="col-sm-11">
+                                                            <h3>Functional Coverage Details</h3>
+
+
+                                                                    <h4>Features</h4>
+
+                                                                    <table class="table feature-coverage-table" id="Feature">
+                                                                        <thead>
+                                                                        <tr>
+                                                                            <th>Feature</th>
+                                                                            <th style="width:1em;">Test&nbsp;Cases</th>
+                                                                            <th style="width:1em;">Scenarios</th>
+                                                                            <th style="width:1em;">%&nbsp;Pass</th>
+                                                                            <th style="width:1em;">Result</th>
+                                                                            <th>Coverage</th>
+                                                                        </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                                <tr>
+                                                                                    <td>
+                                                                                            <a href="ccb52340d639435da7a93b4e8652d219295e7df7a5422965080e598d2d693afa.html" > Warning for presentation requests that exceed RP's registered scope</a>
+                                                                                    </td>
+                                                                                    <td>9</td>
+                                                                                    <td>9</td>
+                                                                                    <td>100%</td>
+                                                                                    <td>
+                                                                                            <a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <div class="progress">
+                                                                                                <div class="progress-bar"
+                                                                                                     role="progressbar"
+                                                                                                     style="width: 100%; background-color: #b0cf73"
+                                                                                                     aria-valuenow="9"
+                                                                                                     title="100% success"
+                                                                                                     aria-valuemin="0"
+                                                                                                     aria-valuemax="100">
+                                                                                                </div>
+                                                                                        </div>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td>
+                                                                                            <a href="73c643e15588b8690d3ebc0c3c19cf87b0e49583998f0459ea3992ee1f8cda8a.html" > Automatic validation of Provider's registration certificate before issuance</a>
+                                                                                    </td>
+                                                                                    <td>2</td>
+                                                                                    <td>2</td>
+                                                                                    <td>100%</td>
+                                                                                    <td>
+                                                                                            <a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <div class="progress">
+                                                                                                <div class="progress-bar"
+                                                                                                     role="progressbar"
+                                                                                                     style="width: 100%; background-color: #b0cf73"
+                                                                                                     aria-valuenow="2"
+                                                                                                     title="100% success"
+                                                                                                     aria-valuemin="0"
+                                                                                                     aria-valuemax="100">
+                                                                                                </div>
+                                                                                        </div>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td>
+                                                                                            <a href="a8d9e9e4acdd60c3418a85a275c69e6737e9e2de2a66699c50b5461c0ad4300f.html" > Warning when the provider's registration certificate cannot be validated</a>
+                                                                                    </td>
+                                                                                    <td>3</td>
+                                                                                    <td>3</td>
+                                                                                    <td>100%</td>
+                                                                                    <td>
+                                                                                            <a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <div class="progress">
+                                                                                                <div class="progress-bar"
+                                                                                                     role="progressbar"
+                                                                                                     style="width: 100%; background-color: #b0cf73"
+                                                                                                     aria-valuenow="3"
+                                                                                                     title="100% success"
+                                                                                                     aria-valuemin="0"
+                                                                                                     aria-valuemax="100">
+                                                                                                </div>
+                                                                                        </div>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td>
+                                                                                            <a href="38c817a3877acfca534a5b56869755cbb7790ee0e30367ff28de7c88d6c73e61.html" > Display of RP's registered details on the Consent Screen</a>
+                                                                                    </td>
+                                                                                    <td>7</td>
+                                                                                    <td>7</td>
+                                                                                    <td>100%</td>
+                                                                                    <td>
+                                                                                            <a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <div class="progress">
+                                                                                                <div class="progress-bar"
+                                                                                                     role="progressbar"
+                                                                                                     style="width: 100%; background-color: #b0cf73"
+                                                                                                     aria-valuenow="7"
+                                                                                                     title="100% success"
+                                                                                                     aria-valuemin="0"
+                                                                                                     aria-valuemax="100">
+                                                                                                </div>
+                                                                                        </div>
+                                                                                    </td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <td>
+                                                                                            <a href="061762a06e9f25a8cf1b820e9a2629d21aee106fd4dba6842b41b7b71f7dec3f.html" > Retrieval and display of the interacting party's identity from the Access Certificate</a>
+                                                                                    </td>
+                                                                                    <td>4</td>
+                                                                                    <td>4</td>
+                                                                                    <td>100%</td>
+                                                                                    <td>
+                                                                                            <a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <div class="progress">
+                                                                                                <div class="progress-bar"
+                                                                                                     role="progressbar"
+                                                                                                     style="width: 100%; background-color: #b0cf73"
+                                                                                                     aria-valuenow="4"
+                                                                                                     title="100% success"
+                                                                                                     aria-valuemin="0"
+                                                                                                     aria-valuemax="100">
+                                                                                                </div>
+                                                                                        </div>
+                                                                                    </td>
+                                                                                </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                        </div>
+                                                    </div>
+
+                                            </div>
+                                            <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <h3>Tags</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <div>
+                                    <a href="7da31e8d2ab67439b12abab800e93844b61cc3df20077d8f6c343ca0e071a164.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US VEAAPIDPRC&nbsp;&nbsp;&nbsp;2
+                                    </span>
+                                    </a>
+                                    <a href="9a26bd101adfda745f743db04eb3269922eb1ff4d86d9997efeca1ebfe995ac4.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> Manual&nbsp;&nbsp;&nbsp;25
+                                    </span>
+                                    </a>
+                                    <a href="b6093ecf4010625be6e2b087a19fb0011f9cee704ec10146dedbfd1b9bdb9162.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US VRPDDPR TC 04&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="52dc7043f6d66c0c6d9a2a70666c3a3844717bcad8e6ecb763d04c9e4b463f67.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US VRPDDPR TC 02&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="aed5727831b85feabf560b6f9bc4e6ecd2803823298e5ace68a8aab6e2d46439.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US WWWUWPRCVF TC 03&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="4295a5e5719d59a3474e5b1db9c08f22a24291f6324d9d39f9480c6592330c87.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US WWWUWPRCVF TC 01&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="e1de63b5975024017672b7086cdb482c5d785fb2021e81a138dff0588611f03f.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US WDRPAPIFWRPACCS TC 02&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="779c14b3b3d9167442c27372a7bcd75d37d56050d68020dac61ac217dd1657a6.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US VRPDDPR TC 06&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="84c5ab46792067d67f41e9affdd5a13e18975f020d1face13589535c7e929f8d.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US WWWUWPRCVF&nbsp;&nbsp;&nbsp;3
+                                    </span>
+                                    </a>
+                                    <a href="2782ab8ab0413a1a53ba20e48724189bb887c70c280905d47bb444ea48e511ee.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US WDAWAOA TC 03&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="eb80bb7c8de23bf0655959857a3276ef804e00c4f072302fc08f7b51b59c909d.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> Q3.1 2026&nbsp;&nbsp;&nbsp;25
+                                    </span>
+                                    </a>
+                                    <a href="9a23bf5995a4956bbb48152de1c866f3880040fce3e515086736f34e9889fc91.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US VEAAPIDPRC TC 02&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="9d11e37a70bec372f3175f6d2c8af3ad7d2af33ce7dc3cc764ae1105920b105a.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US VRPDDPR&nbsp;&nbsp;&nbsp;7
+                                    </span>
+                                    </a>
+                                    <a href="27b119386a18326e47171a01d7cddb260f3e7c1514f6b21e62b3bfbc21e5d966.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US WDAWAOA TC 01&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="63b40ff2ae65a8c3313d434a35fa25170034ded2451fb1643d2289bc4eb5320c.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US WDAWAOA TC 07&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="ade868f99546ff6af133f38f0347baeeac9528a5268fb5dcb51a4e29a774da47.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US WDAWAOA TC 05&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="7705edc40bd8bfc907d23e82740798c9668dadb35c12eb43dd5d88c54dd31275.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US WDRPAPIFWRPACCS&nbsp;&nbsp;&nbsp;4
+                                    </span>
+                                    </a>
+                                    <a href="a68167c9edb40e1bee6a6bdc5ccfa30187cbe29c4db020cb38787ac6691a9950.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US WDRPAPIFWRPACCS TC 04&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="5ad280323f4341203db8f863dcec141abfb6f236fded5316ed07664017a984e9.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US WDAWAOA TC 09&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="c7b30c21da09fabe5d627fe769e59fb982f294f5f911a102f30c91d0a9f883c8.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US WDAWAOA&nbsp;&nbsp;&nbsp;9
+                                    </span>
+                                    </a>
+                                    <a href="b5178fdb54c13a300adb85a5cf724e67462824a3a32b7cbae2ecffc79a4918a0.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US VRPDDPR TC 01&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="a87abd4204ec96c8db74264eb8886fbfe73d8c3e1714488bb853210c21fb4e5a.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> Android&nbsp;&nbsp;&nbsp;25
+                                    </span>
+                                    </a>
+                                    <a href="f261730af4126dd4634263cd8a3ef2448822dd97b5c901078b76955aba801f0b.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US VRPDDPR TC 05&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="7ea2323c650c956272f5a6b5a5b3785b05dbe32a325b9c9c2094cac3b164abec.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US VRPDDPR TC 03&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="10dbee6bb83749c6284c535d064c02e314bc9f88b40033d57062945bf8a298ff.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US WWWUWPRCVF TC 02&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="1a5cd61e02a8c9b872633f8e25e6f863f0b8f43a39253b2375f25a36b665b093.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US WDRPAPIFWRPACCS TC 01&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="d6a54fe46b331cadb2babdc3459530b440e6a4ff852aaae968053d0aa60bb5aa.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US VRPDDPR TC 07&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="0b5d143f1836355341166b193c4fcfe1247d869e6c51c61b3a1ac1b26dc22400.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US WDRPAPIFWRPACCS TC 03&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="971f0da84253a19d0347949baad49375ad8deec9270edfb5b14de3c2e5d47b0c.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US VEAAPIDPRC TC 01&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="6275a7e256386564af27de1786140a8724e91e5c8f0c912a738d146d938e30a5.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US WDAWAOA TC 02&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="c94309bb1a07b98ade6236446b251d65a2b0aaee630a0e574d3496b28cac5b7a.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US WDAWAOA TC 06&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="805ef67946a107858be176010171b8481f044fb8bf7ea2ad61d1aa8cae2bab43.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US WDAWAOA TC 04&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="e492c0cdbf8db73e348176b5d73cb2d7053e13f06a324d953136f4439726d928.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US WDAWAOA TC 08&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                                <h5 class="card-title">Manual</h5>
+                            <div>
+                                    <a href="220d8ef6080eb8a7746b6ccaff3b44ac3c1f123a09790bb9a8ff31e7b07c9746.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> Passed&nbsp;&nbsp;&nbsp;25
+                                    </span>
+                                    </a>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+                                            </div>
+                                        </div>
+                                        <div id="tests" class="tab-pane fade in">
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <h3><i class="bi bi-gear"></i> Automated Tests</h3>
+
+                                            No automated tests were executed
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <h3><i class="bi bi-hand-index-thumb"></i> Manual Tests</h3>
+
+                                            <table class="scenario-result-table table" id="manual-scenario-results">
+                                                <thead>
+                                                <tr>
+                                                    <th>##</th>
+                                                    <th class="test-name-column" style="width:60em;">Scenario</th>
+                                                    <th>Steps</th>
+                                                    <th>Result</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr>
+                                                    <td>
+                                                            <a href="73c643e15588b8690d3ebc0c3c19cf87b0e49583998f0459ea3992ee1f8cda8a.html">Automatic validation of Provider's registration certificate before issuance</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="f750fc44af6b636e8f6ba4731b2e532409fee0b92440ced7e9672acf8ee9e7e2.html">Issuance proceeds to approval screen when the registration certificate is valid</a>
+                                                    </td>
+                                                    <td>10</td>
+                                                    <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                            <a href="73c643e15588b8690d3ebc0c3c19cf87b0e49583998f0459ea3992ee1f8cda8a.html">Automatic validation of Provider's registration certificate before issuance</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="62b391631dbacc2ca0c004bd62a1e7262a52c1d0980368767703a079a52054af.html">Validation fails when the registration certificate does not contain a registration certificate</a>
+                                                    </td>
+                                                    <td>8</td>
+                                                    <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                            <a href="a8d9e9e4acdd60c3418a85a275c69e6737e9e2de2a66699c50b5461c0ad4300f.html">Warning when the provider's registration certificate cannot be validated</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="6610761787164532add4953b39ed28f7db464f5d03ae6ef67c979905a6311e90.html">User requests to add a document and is redirected to the provider's service</a>
+                                                    </td>
+                                                    <td>7</td>
+                                                    <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                            <a href="a8d9e9e4acdd60c3418a85a275c69e6737e9e2de2a66699c50b5461c0ad4300f.html">Warning when the provider's registration certificate cannot be validated</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="39bbfcc1d66689ce0769356172afe2e3bb412c97dfc18ad5a04fc0fc3e8fe0e0.html">Issuance approval screen is not displayed when WRPRC validation fails</a>
+                                                    </td>
+                                                    <td>8</td>
+                                                    <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                            <a href="a8d9e9e4acdd60c3418a85a275c69e6737e9e2de2a66699c50b5461c0ad4300f.html">Warning when the provider's registration certificate cannot be validated</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="417384c91d7ee281fe6fbe15362ffa38ba21b6533003535472666c94d27ec595.html">User cancels from the blocker and returns to the issuance initiation request page</a>
+                                                    </td>
+                                                    <td>7</td>
+                                                    <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                            <a href="ccb52340d639435da7a93b4e8652d219295e7df7a5422965080e598d2d693afa.html">Warning for presentation requests that exceed RP's registered scope</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="c02b0c81a022242ed60ae17995a8a6b697218ab4e90ed1b383c8829298eac12e.html">User initiates presentation of attestations from the RP service</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                            <a href="ccb52340d639435da7a93b4e8652d219295e7df7a5422965080e598d2d693afa.html">Warning for presentation requests that exceed RP's registered scope</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="a3a4c40e72631d7ec49a3e8566c4e5d76e697931adb426118f502b7c720cc0d2.html">No warning is shown when all requested attributes are covered by the WRPRC</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                            <a href="ccb52340d639435da7a93b4e8652d219295e7df7a5422965080e598d2d693afa.html">Warning for presentation requests that exceed RP's registered scope</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="07da5811ff33d3bd2fcf460b45b5d35818601364bb86f9332d8cc5f096a5418e.html">Warning is displayed when requested attributes are not covered by the WRPRC</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                            <a href="ccb52340d639435da7a93b4e8652d219295e7df7a5422965080e598d2d693afa.html">Warning for presentation requests that exceed RP's registered scope</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="fe27b8e219a7a92c7998e74c19b32c29be21dce1506d7fdbec0f8b9129ef3a85.html">Consent screen visually distinguishes registered from unregistered attributes</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                            <a href="ccb52340d639435da7a93b4e8652d219295e7df7a5422965080e598d2d693afa.html">Warning for presentation requests that exceed RP's registered scope</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="19ede68245b227b904a3e525b7763de49c60365ac552807aae2261b30a35db63.html">User cancels the presentation after seeing the warning</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                            <a href="ccb52340d639435da7a93b4e8652d219295e7df7a5422965080e598d2d693afa.html">Warning for presentation requests that exceed RP's registered scope</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="72c6c59df65b8853d93cff53719dbac2b1550eab6ed701ae77ba2acb98ddf889.html">Silence or pre-ticked boxes are not accepted as approval to proceed</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                            <a href="ccb52340d639435da7a93b4e8652d219295e7df7a5422965080e598d2d693afa.html">Warning for presentation requests that exceed RP's registered scope</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="b7304a90adb0e691730f32219e128895cfa1288abb0d3fecafe9336045e78c29.html">User reviews the Data Sharing/Approval screen and consents to share selected attributes</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                            <a href="ccb52340d639435da7a93b4e8652d219295e7df7a5422965080e598d2d693afa.html">Warning for presentation requests that exceed RP's registered scope</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="d29ffea7b2f142e6c87d00aeb1e1928d5dc438317207cbd149a4626180aac77b.html">User authenticates successfully with PIN/biometrics after giving consent</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                            <a href="ccb52340d639435da7a93b4e8652d219295e7df7a5422965080e598d2d693afa.html">Warning for presentation requests that exceed RP's registered scope</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="36eb59acfd7a69486937561308b3640704022af1d2a54acf02ae66cce1412c1c.html">Confirmation of successful presentation is displayed</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                            <a href="38c817a3877acfca534a5b56869755cbb7790ee0e30367ff28de7c88d6c73e61.html">Display of RP's registered details on the Consent Screen</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="4df465075fe8e86fdd30c48704709b143dffe0fa2fd4ab468b70a3fd97314636.html">Successful display of RP details and completion of the presentation flow</a>
+                                                    </td>
+                                                    <td>9</td>
+                                                    <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                            <a href="38c817a3877acfca534a5b56869755cbb7790ee0e30367ff28de7c88d6c73e61.html">Display of RP's registered details on the Consent Screen</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="a9be02fbcc84c414b50b8392a9e5ac511ea1617fca34f19eb197f96d901981bc.html">User consents and completes the presentation successfully</a>
+                                                    </td>
+                                                    <td>4</td>
+                                                    <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                            <a href="38c817a3877acfca534a5b56869755cbb7790ee0e30367ff28de7c88d6c73e61.html">Display of RP's registered details on the Consent Screen</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="58daac7dd4a29149a377807e706ad48852fa43a6ed713236a3f59b0e09570e7a.html">User-friendly description of the RP's intended use is displayed</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                            <a href="38c817a3877acfca534a5b56869755cbb7790ee0e30367ff28de7c88d6c73e61.html">Display of RP's registered details on the Consent Screen</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="89c1c1e44b9d46a632536fc397cbfe579858dc9400440eb137c1328f3698eb45.html">Warning indicator is retained when WRPRC validation fails and the user chooses to proceed</a>
+                                                    </td>
+                                                    <td>4</td>
+                                                    <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                            <a href="38c817a3877acfca534a5b56869755cbb7790ee0e30367ff28de7c88d6c73e61.html">Display of RP's registered details on the Consent Screen</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="9422089d4639b51df56a2a1aa70bd523aa4d1eec4d901243cdda209be8a8c908.html">Warning indicator is retained when WRPRC validation fails due to revoked certificate</a>
+                                                    </td>
+                                                    <td>4</td>
+                                                    <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                            <a href="38c817a3877acfca534a5b56869755cbb7790ee0e30367ff28de7c88d6c73e61.html">Display of RP's registered details on the Consent Screen</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="c4af1f7762598c94d73721f410d6870d3b6caac23f9f85b778c3a56b2f6702e2.html">User reviews information and consents to share selected attributes</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                            <a href="38c817a3877acfca534a5b56869755cbb7790ee0e30367ff28de7c88d6c73e61.html">Display of RP's registered details on the Consent Screen</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="4f0b7da386a01cffd3821891e77c23aa32b4c42766f51b68e645c9e082d1b18e.html">User authenticates successfully with PIN after giving consent</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                            <a href="061762a06e9f25a8cf1b820e9a2629d21aee106fd4dba6842b41b7b71f7dec3f.html">Retrieval and display of the interacting party's identity from the Access Certificate</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="70a9e1cb96a5ffa29591991d94652e2995cc84a57106972f69cc8d65e327cca5.html">Consent screen displays the RP's trade name and service trade name</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                            <a href="061762a06e9f25a8cf1b820e9a2629d21aee106fd4dba6842b41b7b71f7dec3f.html">Retrieval and display of the interacting party's identity from the Access Certificate</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="4b080ed6047ddc464c9231709dcceecea1a6b9ba72cf00014c69d5b610826082.html">Intermediary's trade name is not disclosed to the user during the transaction</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                            <a href="061762a06e9f25a8cf1b820e9a2629d21aee106fd4dba6842b41b7b71f7dec3f.html">Retrieval and display of the interacting party's identity from the Access Certificate</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="8fe76c2cf2295b527a38543d239e48d5211fef72c95b3205bb687d8deb3cac08.html">Intermediary's trade name is recorded in the transaction log</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                            <a href="061762a06e9f25a8cf1b820e9a2629d21aee106fd4dba6842b41b7b71f7dec3f.html">Retrieval and display of the interacting party's identity from the Access Certificate</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="facc464407032be31ab072946be67e0f9e01d9d2a3a6c578884b604152d137fb.html">Issuance approval screen displays the identity of the Provider</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <h3>Tags</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <div>
+                                    <a href="7da31e8d2ab67439b12abab800e93844b61cc3df20077d8f6c343ca0e071a164.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US VEAAPIDPRC&nbsp;&nbsp;&nbsp;2
+                                    </span>
+                                    </a>
+                                    <a href="9a26bd101adfda745f743db04eb3269922eb1ff4d86d9997efeca1ebfe995ac4.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> Manual&nbsp;&nbsp;&nbsp;25
+                                    </span>
+                                    </a>
+                                    <a href="b6093ecf4010625be6e2b087a19fb0011f9cee704ec10146dedbfd1b9bdb9162.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US VRPDDPR TC 04&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="52dc7043f6d66c0c6d9a2a70666c3a3844717bcad8e6ecb763d04c9e4b463f67.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US VRPDDPR TC 02&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="aed5727831b85feabf560b6f9bc4e6ecd2803823298e5ace68a8aab6e2d46439.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US WWWUWPRCVF TC 03&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="4295a5e5719d59a3474e5b1db9c08f22a24291f6324d9d39f9480c6592330c87.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US WWWUWPRCVF TC 01&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="e1de63b5975024017672b7086cdb482c5d785fb2021e81a138dff0588611f03f.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US WDRPAPIFWRPACCS TC 02&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="779c14b3b3d9167442c27372a7bcd75d37d56050d68020dac61ac217dd1657a6.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US VRPDDPR TC 06&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="84c5ab46792067d67f41e9affdd5a13e18975f020d1face13589535c7e929f8d.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US WWWUWPRCVF&nbsp;&nbsp;&nbsp;3
+                                    </span>
+                                    </a>
+                                    <a href="2782ab8ab0413a1a53ba20e48724189bb887c70c280905d47bb444ea48e511ee.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US WDAWAOA TC 03&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="eb80bb7c8de23bf0655959857a3276ef804e00c4f072302fc08f7b51b59c909d.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> Q3.1 2026&nbsp;&nbsp;&nbsp;25
+                                    </span>
+                                    </a>
+                                    <a href="9a23bf5995a4956bbb48152de1c866f3880040fce3e515086736f34e9889fc91.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US VEAAPIDPRC TC 02&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="9d11e37a70bec372f3175f6d2c8af3ad7d2af33ce7dc3cc764ae1105920b105a.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US VRPDDPR&nbsp;&nbsp;&nbsp;7
+                                    </span>
+                                    </a>
+                                    <a href="27b119386a18326e47171a01d7cddb260f3e7c1514f6b21e62b3bfbc21e5d966.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US WDAWAOA TC 01&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="63b40ff2ae65a8c3313d434a35fa25170034ded2451fb1643d2289bc4eb5320c.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US WDAWAOA TC 07&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="ade868f99546ff6af133f38f0347baeeac9528a5268fb5dcb51a4e29a774da47.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US WDAWAOA TC 05&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="7705edc40bd8bfc907d23e82740798c9668dadb35c12eb43dd5d88c54dd31275.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US WDRPAPIFWRPACCS&nbsp;&nbsp;&nbsp;4
+                                    </span>
+                                    </a>
+                                    <a href="a68167c9edb40e1bee6a6bdc5ccfa30187cbe29c4db020cb38787ac6691a9950.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US WDRPAPIFWRPACCS TC 04&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="5ad280323f4341203db8f863dcec141abfb6f236fded5316ed07664017a984e9.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US WDAWAOA TC 09&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="c7b30c21da09fabe5d627fe769e59fb982f294f5f911a102f30c91d0a9f883c8.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US WDAWAOA&nbsp;&nbsp;&nbsp;9
+                                    </span>
+                                    </a>
+                                    <a href="b5178fdb54c13a300adb85a5cf724e67462824a3a32b7cbae2ecffc79a4918a0.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US VRPDDPR TC 01&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="a87abd4204ec96c8db74264eb8886fbfe73d8c3e1714488bb853210c21fb4e5a.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> Android&nbsp;&nbsp;&nbsp;25
+                                    </span>
+                                    </a>
+                                    <a href="f261730af4126dd4634263cd8a3ef2448822dd97b5c901078b76955aba801f0b.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US VRPDDPR TC 05&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="7ea2323c650c956272f5a6b5a5b3785b05dbe32a325b9c9c2094cac3b164abec.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US VRPDDPR TC 03&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="10dbee6bb83749c6284c535d064c02e314bc9f88b40033d57062945bf8a298ff.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US WWWUWPRCVF TC 02&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="1a5cd61e02a8c9b872633f8e25e6f863f0b8f43a39253b2375f25a36b665b093.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US WDRPAPIFWRPACCS TC 01&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="d6a54fe46b331cadb2babdc3459530b440e6a4ff852aaae968053d0aa60bb5aa.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US VRPDDPR TC 07&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="0b5d143f1836355341166b193c4fcfe1247d869e6c51c61b3a1ac1b26dc22400.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US WDRPAPIFWRPACCS TC 03&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="971f0da84253a19d0347949baad49375ad8deec9270edfb5b14de3c2e5d47b0c.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US VEAAPIDPRC TC 01&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="6275a7e256386564af27de1786140a8724e91e5c8f0c912a738d146d938e30a5.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US WDAWAOA TC 02&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="c94309bb1a07b98ade6236446b251d65a2b0aaee630a0e574d3496b28cac5b7a.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US WDAWAOA TC 06&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="805ef67946a107858be176010171b8481f044fb8bf7ea2ad61d1aa8cae2bab43.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US WDAWAOA TC 04&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="e492c0cdbf8db73e348176b5d73cb2d7053e13f06a324d953136f4439726d928.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US WDAWAOA TC 08&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                                <h5 class="card-title">Manual</h5>
+                            <div>
+                                    <a href="220d8ef6080eb8a7746b6ccaff3b44ac3c1f123a09790bb9a8ff31e7b07c9746.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> Passed&nbsp;&nbsp;&nbsp;25
+                                    </span>
+                                    </a>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="beforefooter"></div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <span class="version">Serenity BDD version 4.2.22</span>
+        </div>
+    </div>
+</div>
+
+<!-- Chart data -->
+    <!-- PIE CHART -->
+    <script>
+
+        // The results pie chart
+        const outcomeChartCtx = document.getElementById('resultChart');
+
+        // Options define for display value on top of bars
+        const outcomeDetailsReports = [
+            { title: 'Passing Test Cases', link: "35da39ee06201d8444e25d2f68b4db5a83d49fe06c003c0427b553d89ec926aa.html" },
+            { title: 'Pending Test Cases', link: "5c380f5132ddb6486e1f47e418b416bc1b5809ca6b9ef3daf6d16647e4b4fbd8.html" },
+            { title: 'Ignored Test Cases', link: "0b3a6962a434fb9512fd1f78e5404b79a4236e6af6288392f658dd1573eaa60e.html" },
+            { title: 'Skipped Test Cases', link: "f2a5bc1313638325b8cf7ce9f3b1c0be23e2a10fd0a80a7d238d68ca07f5b644.html" },
+            { title: 'Aborted Test Cases',  link: "72dfd3398c3f8d66e04dbccfa380e89a6f7c12fe8a8c7b905d8d27246405812c.html"},
+            { title: 'Failed Test Cases', link: "6064b4c06c3e6e03381ebbcbefa8aec975d36071267fc5fe1d7e173b25ff331e.html"  },
+            { title: 'Broken Test Cases', link: "ef39342c243dfe29ee44e5f8327fc2c629660f2f8541e8be34911c3061ac797e.html"    },
+            { title: 'Compromised Test Cases',  link: "0609ca7945b9c245c918c49802233eb528a151fe245b2de633cb94c4dd10b24a.html" },
+        ]
+        const outcomeData = {
+            labels: ['Passing Test Cases', 'Pending Test Cases', 'Ignored Test Cases', 'Skipped Test Cases', 'Aborted Test Cases', 'Failed Test Cases', 'Broken Test Cases', 'Compromised Test Cases','Undefined Test Cases'],
+            datasets: [{
+                label: 'Test Results',
+                fill: false,
+                data: [{meta: 'Passing tests', value: 25}, {meta: 'Pending tests', value: 0}, {meta: 'Ignored tests', value: 0}, {meta: 'Skipped tests', value: 0}, {meta: 'Aborted tests', value: 0}, {meta: 'Failing tests', value: 0}, {meta: 'Broken tests', value: 0}, {meta: 'Compromised tests', value: 0}],
+                backgroundColor: ['rgba(153,204,51,0.5)','rgba(165, 199, 238, 0.5)','rgba(168, 168, 168, 0.5)','rgba(238, 224, 152, 0.75)','rgba(255, 153, 102, 0.5)','rgba(255, 22, 49, 0.5)','rgba(255, 97, 8, 0.5)','rgba(255, 104, 255, 0.5)','rgba(83, 50, 168, 0.5)'],
+                borderColor: ['rgba(153,204,51,1)','rgba(165, 199, 238, 1)','rgba(168, 168, 168, 1)','rgba(238, 224, 152, 1)','rgba(255, 153, 102, 1)','rgba(255, 22, 49, 1)','rgba(255, 97, 8, 1)','rgba(255, 104, 255, 1)','rgba(83, 50, 168, 1)'],
+                borderWidth: 1,
+            }]
+        }
+        const outcomeOptions = {
+            responsive: true,
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'bottom'
+                },
+                // Change options for ALL labels of THIS CHART
+                datalabels: {
+                    color: '#444444',
+                    'font.weight': 'bold',
+                    formatter: (value, ctx) => {
+                        let sum = 0;
+                        let dataArr = ctx.chart.data.datasets[0].data;
+                        dataArr.map(data => {
+                            sum += data;
+                        });
+                        let percentage = (value * 100 / sum).toFixed(0) + "%";
+                        if (percentage === '0%' || percentage === 'NaN%') {
+                            return '';
+                        } else {
+                            return percentage;
+                        }
+                    },
+                },
+            }
+        }
+
+        const outcomeChart = new Chart(outcomeChartCtx, {
+            type: 'doughnut',
+            data: outcomeData,
+            options: outcomeOptions,
+            plugins: [
+                {
+                    id: 'text',
+                    beforeDraw: function (chart, a, b) {
+                        var width = chart.width,
+                            height = chart.height,
+                            ctx = chart.ctx;
+
+                        ctx.restore();
+                        var fontSize = (height / 200).toFixed(1);
+                        ctx.font = fontSize + "em sans-serif";
+                        ctx.textBaseline = "middle";
+
+                        var text = "100%"
+                        textX = 10 + Math.round((width - ctx.measureText(text).width) / 2);
+                        textY = (height / 2) - 40;
+
+                        ctx.fillText(text, textX, textY);
+                        ctx.save();
+                    }
+                }]
+        });
+
+        function clickHandler(click) {
+            const points = outcomeChart.getElementsAtEventForMode(click, 'nearest', {intersect: true}, true);
+            if (points.length) {
+                const firstPoint = points[0];
+                window.open(outcomeDetailsReports[firstPoint.index].link, "_self")
+
+            }
+        }
+        outcomeChartCtx.onclick = clickHandler;
+    </script>
+    <!-- END PIE CHART -->
+
+    <!-- SUMMARY BAR CHART -->
+    <script>
+
+        // The Severity bar chart
+        const severityChartCtx = document.getElementById('severityChart');
+
+        // Options define for display value on top of bars
+
+        const severityDetailsReports = [
+            { title: 'Passing Scenarios', link: "35da39ee06201d8444e25d2f68b4db5a83d49fe06c003c0427b553d89ec926aa.html" },
+            { title: 'Pending Scenarios', link: "5c380f5132ddb6486e1f47e418b416bc1b5809ca6b9ef3daf6d16647e4b4fbd8.html" },
+            { title: 'Ignored Scenarios', link: "0b3a6962a434fb9512fd1f78e5404b79a4236e6af6288392f658dd1573eaa60e.html" },
+            { title: 'Skipped Scenarios', link: "f2a5bc1313638325b8cf7ce9f3b1c0be23e2a10fd0a80a7d238d68ca07f5b644.html" },
+            { title: 'Aborted Scenarios',  link: "72dfd3398c3f8d66e04dbccfa380e89a6f7c12fe8a8c7b905d8d27246405812c.html"},
+            { title: 'Failed Scenarios', link: "6064b4c06c3e6e03381ebbcbefa8aec975d36071267fc5fe1d7e173b25ff331e.html"  },
+            { title: 'Broken Scenarios', link: "ef39342c243dfe29ee44e5f8327fc2c629660f2f8541e8be34911c3061ac797e.html"    },
+            { title: 'Compromised Scenarios',  link: "0609ca7945b9c245c918c49802233eb528a151fe245b2de633cb94c4dd10b24a.html" },
+        ]
+        const severityData = {
+            labels: ['Passing', 'Pending', 'Ignored', 'Skipped', 'Aborted', 'Failed', 'Broken', 'Compromised'],
+            datasets: [
+                {
+                    label: 'Automated',
+                    data: [0,0,0,0,0,0,0,0],
+                    backgroundColor: ['rgba(153,204,51,0.5)','rgba(165, 199, 238, 0.5)','rgba(168, 168, 168, 0.5)','rgba(238, 224, 152, 0.75)','rgba(255, 153, 102, 0.5)','rgba(255, 22, 49, 0.5)','rgba(255, 97, 8, 0.5)','rgba(255, 104, 255, 0.5)','rgba(83, 50, 168, 0.5)'],
+                    borderColor: ['rgba(153,204,51,1)','rgba(165, 199, 238, 1)','rgba(168, 168, 168, 1)','rgba(238, 224, 152, 1)','rgba(255, 153, 102, 1)','rgba(255, 22, 49, 1)','rgba(255, 97, 8, 1)','rgba(255, 104, 255, 1)','rgba(83, 50, 168, 1)'],
+                    borderWidth: 1
+                },
+                {
+                    label: 'Manual',
+                    data: [25,0,0,0,0,0,0,0],
+                    backgroundColor: ['rgba(153,204,51,0.25)','rgba(165, 199, 238, 0.25)','rgba(168, 168, 168, 0.25)','rgba(238, 224, 152, 0.375)','rgba(255, 153, 102, 0.25)','rgba(255, 22, 49, 0.25)','rgba(255, 97, 8, 0.25)','rgba(255, 104, 255, 0.25)','rgba(83, 50, 168, 0.25)'],
+                    borderColor: ['rgba(153,204,51,1)','rgba(165, 199, 238, 1)','rgba(168, 168, 168, 1)','rgba(238, 224, 152, 1)','rgba(255, 153, 102, 1)','rgba(255, 22, 49, 1)','rgba(255, 97, 8, 1)','rgba(255, 104, 255, 1)','rgba(83, 50, 168, 1)'],
+                    borderWidth: 1
+                },
+
+            ]
+        }
+        const severityOptions = {
+            responsive: true,
+            skipNull: true,
+            scales: {
+                x: {
+                    stacked: true,
+                },
+                y: {
+                    stacked: true,
+                }
+            },
+            plugins: {
+                // Change options for ALL labels of THIS CHART
+                datalabels: {
+                    color: '#444444',
+                    'font.weight': 'bold',
+                    formatter: (value, ctx) => {
+                        if (value === 0) {
+                            return '';
+                        } else {
+                            return value;
+                        }
+                    },
+                }
+            }
+        }
+        const severityChart = new Chart(severityChartCtx, {
+            type: 'bar',
+            data: severityData,
+            options: severityOptions
+        });
+
+        function clickHandler(click) {
+            const points = severityChart.getElementsAtEventForMode(click, 'nearest', {intersect: true}, true);
+            if (points.length) {
+                const firstPoint = points[0];
+                window.open(severityDetailsReports[firstPoint.index].link, "_self")
+
+            }
+        }
+        severityChartCtx.onclick = clickHandler;
+    </script>
+    <!-- END SUMMARY CHART -->
+
+    <!-- DURATION CHART -->
+    <script>
+
+        // Options define for display value on top of bars
+        const durationDetailsReports = [
+                {title: "Under 1 second", link: "afed4e1e923638cb76199f95558d738838363f841e97acc94bec7461825709e5.html"},
+                {title: "1 to 10 seconds", link: "46225bf351e59f771cd86d61c501edaebd7dbc4bc43008d94fb187869d3a619d.html"},
+                {title: "10 to 30 seconds", link: "ab4343a4a2c52d023a757f38233e3b229913d9e37a7d8aa51683612725c414c2.html"},
+                {title: "30 to 60 seconds", link: "6504ba3a8ef8cdf4621f917b06ca61c5336b14f788c8c21b2beb6a3235da921a.html"},
+                {title: "1 to 2 minutes", link: "a2c32231a57264e2c82972494d5f5514a2662931913e7bfb3ac86b591d8e36de.html"},
+                {title: "2 to 5 minutes", link: "4c78d8e46c3a54d7f16e2a04e510a36a91b6f98f3ce1af6b860528998ef61179.html"},
+                {title: "5 to 10 minutes", link: "aefca522670a649487eebf0e924fca551db246246e1e466c0a438a53cecc2000.html"},
+                {title: "10 minutes or over", link: "7b67f6869ab0d124956bccfd5dbaf615542d99cf795f9e59e139eaeae03efd5a.html"},
+        ]
+        // The Severity bar chart
+        const durationChartCtx = document.getElementById('durationChart');
+
+        // Options define for display value on top of bars
+
+        const durationData = {
+            labels: ['Under 1 second','1 to 10 seconds','10 to 30 seconds','30 to 60 seconds','1 to 2 minutes','2 to 5 minutes','5 to 10 minutes','10 minutes or over'],
+            datasets: [{
+                label: 'Number of tests per duration',
+                fill: false,
+                data: ['0','0','25','0','0','0','0','0'],
+                backgroundColor: 'rgba(83, 146, 255,0.5)',
+                borderColor: 'rgba(83, 146, 255, 1)',
+            }]
+        }
+        const durationOptions = {
+            responsive: true,
+            plugins: {
+                // Change options for ALL labels of THIS CHART
+                datalabels: {
+                    color: '#444444',
+                    'font.weight': 'bold',
+                    formatter: (value, ctx) => {
+                        if (value > 0) {
+                            return value;
+                        } else {
+                            return '';
+                        }
+                    },
+                },
+                tooltip: {
+                    enabled: true,
+                    usePointStyle: true,
+                    callbacks: {
+                        label: (data) => {
+                            return data.parsed.y + ' tests'
+                        }
+                    },
+                },
+            },
+        }
+
+        const durationChart = new Chart(durationChartCtx, {
+            type: 'bar',
+            data: durationData,
+            options: durationOptions
+        });
+
+        function durationClickHandler(click) {
+            const points = durationChart.getElementsAtEventForMode(click, 'nearest', {intersect: true}, true);
+            if (points.length) {
+                const firstPoint = points[0];
+                window.open(durationDetailsReports[firstPoint.index].link, "_self")
+
+            }
+        }
+
+        durationChartCtx.onclick = durationClickHandler;
+    </script>
+    <!-- END DURATION CHART -->
+
+
+
+    <!-- COVERAGE BAR CHART -->
+    <script>
+
+        // The coverage bar chart
+        const coverageChartCtx = document.getElementById('coverageChart');
+
+        // Options define for display value on top of bars
+
+        const coverageReports = [
+            {
+                title: 'Warning for presentation requests that exceed RP\'s registered scope',
+                result: 'SUCCESS',
+                link: "ccb52340d639435da7a93b4e8652d219295e7df7a5422965080e598d2d693afa.html"
+            },
+            {
+                title: 'Automatic validation of Provider\'s registration certificate before issuance',
+                result: 'SUCCESS',
+                link: "73c643e15588b8690d3ebc0c3c19cf87b0e49583998f0459ea3992ee1f8cda8a.html"
+            },
+            {
+                title: 'Warning when the provider\'s registration certificate cannot be validated',
+                result: 'SUCCESS',
+                link: "a8d9e9e4acdd60c3418a85a275c69e6737e9e2de2a66699c50b5461c0ad4300f.html"
+            },
+            {
+                title: 'Display of RP\'s registered details on the Consent Screen',
+                result: 'SUCCESS',
+                link: "38c817a3877acfca534a5b56869755cbb7790ee0e30367ff28de7c88d6c73e61.html"
+            },
+            {
+                title: 'Retrieval and display of the interacting party\'s identity from the Access Certificate',
+                result: 'SUCCESS',
+                link: "061762a06e9f25a8cf1b820e9a2629d21aee106fd4dba6842b41b7b71f7dec3f.html"
+            },
+        ]
+        const coverageData = {
+            labels: [
+                'Warning for presentation requests that exceed RP\'s registered scope',
+                'Automatic validation of Provider\'s registration certificate before issuance',
+                'Warning when the provider\'s registration certificate cannot be validated',
+                'Display of RP\'s registered details on the Consent Screen',
+                'Retrieval and display of the interacting party\'s identity from the Access Certificate',
+            ],
+            datasets: [
+                {
+                    label: ['Passing Tests'],
+                    data: [9,2,3,7,4],
+                    backgroundColor: [ 'rgba(153,204,51,0.5)' ]
+                },
+                {
+                    label: ['Pending Tests'],
+                    data: [0,0,0,0,0],
+                    backgroundColor: [ 'rgba(165, 199, 238, 0.5)' ]
+                },
+                {
+                    label: ['Ignored Tests'],
+                    data: [0,0,0,0,0],
+                    backgroundColor: [ 'rgba(168, 168, 168, 0.5)' ]
+                },
+                {
+                    label: ['Skipped Tests'],
+                    data: [0,0,0,0,0],
+                    backgroundColor: [ 'rgba(238, 224, 152, 0.75)' ]
+                },
+                {
+                    label: ['Aborted Tests'],
+                    data: [0,0,0,0,0],
+                    backgroundColor: [ 'rgba(255, 153, 102, 0.5)' ]
+                },
+                {
+                    label: ['Failed Tests'],
+                    data: [0,0,0,0,0],
+                    backgroundColor: [ 'rgba(255, 22, 49, 0.5)' ]
+                },
+                {
+                    label: ['Errors'],
+                    data: [0,0,0,0,0],
+                    backgroundColor: [ 'rgba(255, 97, 8, 0.5)' ]
+                },
+                {
+                    label: ['Compromised Tests'],
+                    data: [0,0,0,0,0],
+                    backgroundColor: [ 'rgba(255, 104, 255, 0.5)' ]
+                },
+            ]
+        }
+        const coverageOptions = {
+            responsive: true,
+            indexAxis: 'y',
+            // barPercentage: ,
+            barThickness: 'flex',
+            maxBarThickness: 30,
+            minBarLength: 2,
+            skipNull: true,
+            scales: {
+                x: {
+                    stacked: true,
+                },
+                y: {
+                    stacked: true,
+                }
+            },
+            plugins: {
+                // Change options for ALL labels of THIS CHART
+                datalabels: {
+                    color: '#444444',
+                    'font.weight': 'bold'
+                },
+                tooltip: {
+                    enabled: true,
+                    usePointStyle: true,
+                },
+            },
+        }
+
+        const coverageChart = new Chart(coverageChartCtx, {
+            type: 'bar',
+            data: coverageData,
+            options: coverageOptions
+        });
+
+        function coverageClickHandler(click) {
+            const points = coverageChart.getElementsAtEventForMode(click, 'nearest', {intersect: true}, true);
+            if (points.length) {
+                const firstPoint = points[0];
+                if (coverageReports[firstPoint.index].link) {
+                    window.open(coverageReports[firstPoint.index].link, "_self")
+                }
+            }
+        }
+
+        coverageChartCtx.onclick = coverageClickHandler;
+    </script>
+    <!-- END COVERAGE CHART -->
+
+</body>
+</html>

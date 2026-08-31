@@ -1,0 +1,524 @@
+{
+  "name": "Successful credential issuance and presentation with selective disclosure - Kotlin Issuer - mDL",
+  "id": "issuance-and-presentation---mdl;successful-credential-issuance-and-presentation-with-selective-disclosure---kotlin-issuer---mdl",
+  "scenarioId": "android/regressionTests/Automated_Regression_Tests/MDL_MSO_Mdoc/issuanceAndPresentationScenariosMdl:Successful credential issuance and presentation with selective disclosure - Kotlin Issuer - mDL",
+  "methodName": "Successful credential issuance and presentation with selective disclosure - Kotlin Issuer - mDL",
+  "testSteps": [
+    {
+      "number": 1,
+      "description": "1: Successful credential issuance and presentation with selective disclosure - Kotlin Issuer - mDL ({credential=mDL (MSO Mdoc), issuer=Kotlin, issuance_method=credential offer, issue_scenario=same device, verifier=Web verifier, presentation_scenario=same device, selective_disclosure=specific attributes})",
+      "duration": 192928,
+      "startTime": "2026-07-30T12:49:27.725438Z[UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "lineNumber": 36,
+      "children": [
+        {
+          "number": 2,
+          "description": "Given the user initiates a mDL (MSO Mdoc) issuance using the Kotlin",
+          "duration": 20005,
+          "startTime": "2026-07-30T12:50:09.573544Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 3,
+          "description": "And the issuance method is credential offer",
+          "duration": 18112,
+          "startTime": "2026-07-30T12:50:29.578976Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 4,
+          "description": "And the issuance is performed on a same device for the mDL (MSO Mdoc) and credential offer",
+          "duration": 49164,
+          "startTime": "2026-07-30T12:50:47.692027Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 5,
+          "description": "When the issuance flow is completed",
+          "duration": 9446,
+          "startTime": "2026-07-30T12:51:36.857525Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 6,
+          "description": "Then the credential is stored in the Wallet",
+          "duration": 2280,
+          "startTime": "2026-07-30T12:51:46.304435Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 7,
+          "description": "When the user presents the credential to the Web verifier",
+          "duration": 10750,
+          "startTime": "2026-07-30T12:51:48.585121Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 8,
+          "description": "And the user shares specific attributes",
+          "duration": 0,
+          "startTime": "2026-07-30T12:51:59.335679Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 9,
+          "description": "And the presentation is performed on a same device for the mDL (MSO Mdoc)",
+          "duration": 32522,
+          "startTime": "2026-07-30T12:51:59.336050Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 10,
+          "description": "Then the verifier verifies the credential successfully with same device for specific attributes",
+          "duration": 8113,
+          "startTime": "2026-07-30T12:52:31.858520Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    },
+    {
+      "number": 11,
+      "description": "2: Successful credential issuance and presentation with selective disclosure - Kotlin Issuer - mDL ({credential=mDL (MSO Mdoc), issuer=Kotlin, issuance_method=credential offer, issue_scenario=same device, verifier=Web verifier, presentation_scenario=cross device, selective_disclosure=specific attributes})",
+      "duration": 251931,
+      "startTime": "2026-07-30T12:52:40.686747Z[UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "lineNumber": 37,
+      "children": [
+        {
+          "number": 12,
+          "description": "Given the user initiates a mDL (MSO Mdoc) issuance using the Kotlin",
+          "duration": 20615,
+          "startTime": "2026-07-30T12:53:49.109832Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 13,
+          "description": "And the issuance method is credential offer",
+          "duration": 18258,
+          "startTime": "2026-07-30T12:54:09.725506Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 14,
+          "description": "And the issuance is performed on a same device for the mDL (MSO Mdoc) and credential offer",
+          "duration": 49879,
+          "startTime": "2026-07-30T12:54:27.984527Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 15,
+          "description": "When the issuance flow is completed",
+          "duration": 9730,
+          "startTime": "2026-07-30T12:55:17.864107Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 16,
+          "description": "Then the credential is stored in the Wallet",
+          "duration": 2007,
+          "startTime": "2026-07-30T12:55:27.594931Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 17,
+          "description": "When the user presents the credential to the Web verifier",
+          "duration": 10745,
+          "startTime": "2026-07-30T12:55:29.603190Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 18,
+          "description": "And the user shares specific attributes",
+          "duration": 0,
+          "startTime": "2026-07-30T12:55:40.349274Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 19,
+          "description": "And the presentation is performed on a cross device for the mDL (MSO Mdoc)",
+          "duration": 49226,
+          "startTime": "2026-07-30T12:55:40.349555Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 20,
+          "description": "Then the verifier verifies the credential successfully with cross device for specific attributes",
+          "duration": 22378,
+          "startTime": "2026-07-30T12:56:29.576285Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    },
+    {
+      "number": 21,
+      "description": "3: Successful credential issuance and presentation with selective disclosure - Kotlin Issuer - mDL ({credential=mDL (MSO Mdoc), issuer=Kotlin, issuance_method=credential offer, issue_scenario=cross device, verifier=Web verifier, presentation_scenario=same device, selective_disclosure=specific attributes})",
+      "duration": 215798,
+      "startTime": "2026-07-30T12:56:52.664767Z[UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "lineNumber": 38,
+      "children": [
+        {
+          "number": 22,
+          "description": "Given the user initiates a mDL (MSO Mdoc) issuance using the Kotlin",
+          "duration": 21049,
+          "startTime": "2026-07-30T12:57:24.217478Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 23,
+          "description": "And the issuance method is credential offer",
+          "duration": 18129,
+          "startTime": "2026-07-30T12:57:45.267766Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 24,
+          "description": "And the issuance is performed on a cross device for the mDL (MSO Mdoc) and credential offer",
+          "duration": 82404,
+          "startTime": "2026-07-30T12:58:03.397364Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 25,
+          "description": "When the issuance flow is completed",
+          "duration": 8755,
+          "startTime": "2026-07-30T12:59:25.802690Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 26,
+          "description": "Then the credential is stored in the Wallet",
+          "duration": 1516,
+          "startTime": "2026-07-30T12:59:34.558149Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 27,
+          "description": "When the user presents the credential to the Web verifier",
+          "duration": 10740,
+          "startTime": "2026-07-30T12:59:36.074790Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 28,
+          "description": "And the user shares specific attributes",
+          "duration": 0,
+          "startTime": "2026-07-30T12:59:46.815370Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 29,
+          "description": "And the presentation is performed on a same device for the mDL (MSO Mdoc)",
+          "duration": 32746,
+          "startTime": "2026-07-30T12:59:46.815668Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 30,
+          "description": "Then the verifier verifies the credential successfully with same device for specific attributes",
+          "duration": 8206,
+          "startTime": "2026-07-30T13:00:19.562206Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    },
+    {
+      "number": 31,
+      "description": "4: Successful credential issuance and presentation with selective disclosure - Kotlin Issuer - mDL ({credential=mDL (MSO Mdoc), issuer=Kotlin, issuance_method=credential offer, issue_scenario=cross device, verifier=Web verifier, presentation_scenario=cross device, selective_disclosure=specific attributes})",
+      "duration": 458445,
+      "startTime": "2026-07-30T13:00:28.499910Z[UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "lineNumber": 39,
+      "children": [
+        {
+          "number": 2,
+          "description": "Given the user initiates a mDL (MSO Mdoc) issuance using the Kotlin",
+          "duration": 22345,
+          "startTime": "2026-07-30T13:23:15.530850Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 3,
+          "description": "And the issuance method is credential offer",
+          "duration": 18346,
+          "startTime": "2026-07-30T13:23:37.876559Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 4,
+          "description": "And the issuance is performed on a cross device for the mDL (MSO Mdoc) and credential offer",
+          "duration": 97032,
+          "startTime": "2026-07-30T13:23:56.222977Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 5,
+          "description": "When the issuance flow is completed",
+          "duration": 9640,
+          "startTime": "2026-07-30T13:25:33.256091Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 6,
+          "description": "Then the credential is stored in the Wallet",
+          "duration": 1373,
+          "startTime": "2026-07-30T13:25:42.897421Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 7,
+          "description": "When the user presents the credential to the Web verifier",
+          "duration": 10828,
+          "startTime": "2026-07-30T13:25:44.271500Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 8,
+          "description": "And the user shares specific attributes",
+          "duration": 0,
+          "startTime": "2026-07-30T13:25:55.100457Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 9,
+          "description": "And the presentation is performed on a cross device for the mDL (MSO Mdoc)",
+          "duration": 48431,
+          "startTime": "2026-07-30T13:25:55.100621Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 10,
+          "description": "Then the verifier verifies the credential successfully with cross device for specific attributes",
+          "duration": 755,
+          "startTime": "2026-07-30T13:26:43.533134Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    }
+  ],
+  "userStory": {
+    "id": "android/regressionTests/Automated_Regression_Tests/MDL_MSO_Mdoc/issuanceAndPresentationScenariosMdl",
+    "storyName": "Issuance and presentation - mDL",
+    "displayName": "Issuance and presentation - mDL",
+    "path": "android/regressionTests/Automated_Regression_Tests/MDL_MSO_Mdoc/issuanceAndPresentationScenariosMdl",
+    "pathElements": [
+      {
+        "name": "android",
+        "description": ""
+      },
+      {
+        "name": "regressionTests",
+        "description": ""
+      },
+      {
+        "name": "Automated_Regression_Tests",
+        "description": ""
+      },
+      {
+        "name": "MDL_MSO_Mdoc",
+        "description": ""
+      },
+      {
+        "name": "issuanceAndPresentationScenariosMdl",
+        "description": ""
+      }
+    ],
+    "type": "feature"
+  },
+  "title": "Successful credential issuance and presentation with selective disclosure - Kotlin Issuer - mDL",
+  "description": "",
+  "tags": [
+    {
+      "name": "MDL",
+      "type": "tag",
+      "displayName": "MDL"
+    },
+    {
+      "name": "execution_Q2_2026",
+      "type": "tag",
+      "displayName": "execution_Q2_2026"
+    },
+    {
+      "name": "US_ETESA",
+      "type": "tag",
+      "displayName": "US_ETESA"
+    },
+    {
+      "name": "ANDROID",
+      "type": "tag",
+      "displayName": "ANDROID"
+    },
+    {
+      "name": "automated",
+      "type": "tag",
+      "displayName": "automated"
+    }
+  ],
+  "startTime": "2026-07-30T12:49:27.724989Z[UTC]",
+  "endTime": "2026-07-30T13:08:06.946252Z[UTC]",
+  "duration": 61853,
+  "projectKey": "",
+  "annotatedResult": "SUCCESS",
+  "isManualTestingUpToDate": false,
+  "dataTable": {
+    "headers": [
+      "credential",
+      "issuer",
+      "issuance_method",
+      "issue_scenario",
+      "verifier",
+      "presentation_scenario",
+      "selective_disclosure"
+    ],
+    "rows": [
+      {
+        "values": [
+          "mDL (MSO Mdoc)",
+          "Kotlin",
+          "credential offer",
+          "same device",
+          "Web verifier",
+          "same device",
+          "specific attributes"
+        ],
+        "lineNumber": 36,
+        "result": "SUCCESS"
+      },
+      {
+        "values": [
+          "mDL (MSO Mdoc)",
+          "Kotlin",
+          "credential offer",
+          "same device",
+          "Web verifier",
+          "cross device",
+          "specific attributes"
+        ],
+        "lineNumber": 37,
+        "result": "SUCCESS"
+      },
+      {
+        "values": [
+          "mDL (MSO Mdoc)",
+          "Kotlin",
+          "credential offer",
+          "cross device",
+          "Web verifier",
+          "same device",
+          "specific attributes"
+        ],
+        "lineNumber": 38,
+        "result": "SUCCESS"
+      },
+      {
+        "values": [
+          "mDL (MSO Mdoc)",
+          "Kotlin",
+          "credential offer",
+          "cross device",
+          "Web verifier",
+          "cross device",
+          "specific attributes"
+        ],
+        "lineNumber": 39,
+        "result": "SUCCESS"
+      }
+    ],
+    "predefinedRows": true,
+    "scenarioOutline": "Given the user initiates a <credential> issuance using the <issuer>\n\rAnd the issuance method is <issuance_method>\n\rAnd the issuance is performed on a <issue_scenario> for the <credential> and <issuance_method>\n\rWhen the issuance flow is completed\n\rThen the credential is stored in the Wallet\n\rWhen the user presents the credential to the <verifier>\n\rAnd the user shares <selective_disclosure>\n\rAnd the presentation is performed on a <presentation_scenario> for the <credential>\n\rThen the verifier verifies the credential successfully with <presentation_scenario> for <selective_disclosure>\n\r",
+    "dataSetDescriptors": [
+      {
+        "startRow": 0,
+        "rowCount": 0,
+        "name": "",
+        "description": ""
+      }
+    ]
+  },
+  "manual": false,
+  "testSource": "Cucumber",
+  "order": 0,
+  "result": "SUCCESS",
+  "scenarioOutline": "Given the user initiates a <credential> issuance using the <issuer>\nAnd the issuance method is <issuance_method>\nAnd the issuance is performed on a <issue_scenario> for the <credential> and <issuance_method>\nWhen the issuance flow is completed\nThen the credential is stored in the Wallet\nWhen the user presents the credential to the <verifier>\nAnd the user shares <selective_disclosure>\nAnd the presentation is performed on a <presentation_scenario> for the <credential>\nThen the verifier verifies the credential successfully with <presentation_scenario> for <selective_disclosure>"
+}

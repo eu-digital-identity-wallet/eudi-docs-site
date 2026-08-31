@@ -101,7 +101,7 @@ Each release is accompanied by serenity-generated reports summarising test execu
 | 2025.12.34 - Demo | Functional | - [Functional test results](https://docs.eudi.dev/testing/2025_q4/){:target="_blank"} | ✅ Released |
 | 2026.05.37 - Demo | Functional <br/> Performance | - [Functional test results](https://docs.eudi.dev/testing/2026_q1/){:target="_blank"} <br/> - [Performance test results](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application/blob/milestone/2026.Q1/doc/performance/performance_test_results.md){:target="_blank"}| ✅ Released |
 | 2026.07.38 - Demo | Functional | - [Functional test results](https://docs.eudi.dev/testing/2026_q2/){:target="_blank"} | ✅ Released |
-| 2026.08.41 - Demo | Functional | - [Functional test results](https://docs.eudi.dev/testing/2025_q3a/){:target="_blank"} | ✅ Released |
+| 2026.08.41 - Demo | Functional | - [Functional test results](https://docs.eudi.dev/testing/2026_q3a/){:target="_blank"} | ✅ Released |
 
 Older releases remain available in the reports directory of the [testing repository](https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application-internal/actions){:target="_blank"}.
 

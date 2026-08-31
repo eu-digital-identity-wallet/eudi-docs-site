@@ -4152,16 +4152,16 @@
 <p>You can also retrieve documents based on a predicate. The following snippet shows how to retrieve
 documents of mso_mdoc format of a specific docType:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">val</span><span class="w"> </span><span class="nv">documents</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">wallet</span><span class="p">.</span><span class="na">getDocuments</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">document</span><span class="w"> </span><span class="o">-&gt;</span>
-<span class="w">    </span><span class="p">(</span><span class="n">document</span><span class="p">.</span><span class="na">format</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">MsoMdocFormat</span><span class="p">).</span><span class="na">docType</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;eu.europa.ec.eudi.pid.1&quot;</span>
+<span class="w">    </span><span class="p">(</span><span class="n">document</span><span class="p">.</span><span class="na">format</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">MsoMdocFormat</span><span class="p">).</span><span class="na">docType</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">"eu.europa.ec.eudi.pid.1"</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>The following snippet shows how to retrieve a document by its id:</p>
-<div class="highlight"><pre><span></span><code><span class="kd">val</span><span class="w"> </span><span class="nv">documentId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;some_document_id&quot;</span>
-<span class="kd">val</span><span class="w"> </span><span class="nv">document</span><span class="p">:</span><span class="w"> </span><span class="n">Document? </span><span class="o">=</span><span class="w"> </span><span class="n">wallet</span><span class="p">.</span><span class="na">getDocumentById</span><span class="p">(</span><span class="n">documentId</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="kd">val</span><span class="w"> </span><span class="nv">documentId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"some_document_id"</span>
+<span class="kd">val</span><span class="w"> </span><span class="nv">document</span><span class="p">:</span><span class="w"> </span><span class="n">Document?</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">wallet</span><span class="p">.</span><span class="na">getDocumentById</span><span class="p">(</span><span class="n">documentId</span><span class="p">)</span>
 </code></pre></div>
 <p>To delete a document, use the following code snippet:</p>
 <div class="highlight"><pre><span></span><code><span class="k">try</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">documentId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;some_document_id&quot;</span>
+<span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">documentId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"some_document_id"</span>
 <span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">deleteResult</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">wallet</span><span class="p">.</span><span class="na">deleteDocumentById</span><span class="p">(</span><span class="n">documentId</span><span class="p">)</span>
 <span class="w">    </span><span class="n">deleteResult</span><span class="p">.</span><span class="na">getOrThrow</span><span class="p">()</span>
 <span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">e</span><span class="p">:</span><span class="w"> </span><span class="n">Throwable</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
@@ -4187,7 +4187,7 @@ library's default implementation of CreateDocumentSettings.</p>
 <span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">createSettings</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">wallet</span><span class="p">.</span><span class="na">getDefaultCreateDocumentSettings</span><span class="p">()</span>
 
 <span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">createDocumentResult</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">wallet</span><span class="p">.</span><span class="na">createDocument</span><span class="p">(</span>
-<span class="w">        </span><span class="n">format</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MsoMdocFormat</span><span class="p">(</span><span class="n">docType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;eu.europa.ec.eudi.pid.1&quot;</span><span class="p">),</span>
+<span class="w">        </span><span class="n">format</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MsoMdocFormat</span><span class="p">(</span><span class="n">docType</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"eu.europa.ec.eudi.pid.1"</span><span class="p">),</span>
 <span class="w">        </span><span class="n">createSettings</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">createSettings</span>
 <span class="w">    </span><span class="p">)</span>
 <span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">unsignedDocument</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">createDocumentResult</span><span class="p">.</span><span class="na">getOrThrow</span><span class="p">()</span>
@@ -4224,7 +4224,7 @@ library's default implementation of CreateDocumentSettings.</p>
 <span class="c1">// ...</span>
 
 <span class="kd">fun</span><span class="w"> </span><span class="nf">sendToIssuer</span><span class="p">(</span><span class="n">publicKeyCoseBytes</span><span class="p">:</span><span class="w"> </span><span class="n">ByteArray</span><span class="p">,</span><span class="w"> </span><span class="n">signatureCoseBytes</span><span class="p">:</span><span class="w"> </span><span class="n">ByteArray</span><span class="p">):</span><span class="w"> </span><span class="n">ByteArray</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">TODO</span><span class="p">(</span><span class="s">&quot;Send publicKey and proof of possession signature to issuer and retrieve document&#39;s data&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="n">TODO</span><span class="p">(</span><span class="s">"Send publicKey and proof of possession signature to issuer and retrieve document's data"</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div>
 <p><strong>Important!:</strong> In the case of <code>DocumentFormat.MsoMdoc</code>, the <code>DocumentManager.storeIssuedDocument()</code> 
@@ -4233,18 +4233,18 @@ ISO 23220-4.</p>
 <p>Currently, the library does not support IssuerSigned structure without the <code>nameSpaces</code> field.</p>
 <p>The following CDDL schema describes the structure of the IssuerSigned structure:</p>
 <div class="highlight"><pre><span></span><code><span class="nc">IssuerSigned</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w"> </span><span class="o">?</span><span class="s2">&quot;nameSpaces&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nc">IssuerNameSpaces</span><span class="p">,</span><span class="w"> </span><span class="c1">; Returned data elements</span>
-<span class="w"> </span><span class="s2">&quot;issuerAuth&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nc">IssuerAuth</span><span class="w"> </span><span class="c1">; Contains the mobile security object (MSO) for issuer data authentication</span>
+<span class="w"> </span><span class="o">?</span><span class="s2">"nameSpaces"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nc">IssuerNameSpaces</span><span class="p">,</span><span class="w"> </span><span class="c1">; Returned data elements</span>
+<span class="w"> </span><span class="s2">"issuerAuth"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nc">IssuerAuth</span><span class="w"> </span><span class="c1">; Contains the mobile security object (MSO) for issuer data authentication</span>
 <span class="p">}</span>
 <span class="nc">IssuerNameSpaces</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">; Returned data elements for each namespace</span>
 <span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nc">NameSpace</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nc">IssuerSignedItemBytes</span><span class="w"> </span><span class="p">]</span>
 <span class="p">}</span>
 <span class="nc">IssuerSignedItemBytes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">#6.24</span><span class="p">(</span><span class="nb">bstr</span><span class="w"> </span><span class="ow">.cbor</span><span class="w"> </span><span class="nc">IssuerSignedItem</span><span class="p">)</span>
 <span class="nc">IssuerSignedItem</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-<span class="w"> </span><span class="s2">&quot;digestID&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nb">uint</span><span class="p">,</span><span class="w"> </span><span class="c1">; Digest ID for issuer data authentication</span>
-<span class="w"> </span><span class="s2">&quot;random&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nb">bstr</span><span class="p">,</span><span class="w"> </span><span class="c1">; Random value for issuer data authentication</span>
-<span class="w"> </span><span class="s2">&quot;elementIdentifier&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nc">DataElementIdentifier</span><span class="p">,</span><span class="w"> </span><span class="c1">; Data element identifier</span>
-<span class="w"> </span><span class="s2">&quot;elementValue&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nc">DataElementValue</span><span class="w"> </span><span class="c1">; Data element value</span>
+<span class="w"> </span><span class="s2">"digestID"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nb">uint</span><span class="p">,</span><span class="w"> </span><span class="c1">; Digest ID for issuer data authentication</span>
+<span class="w"> </span><span class="s2">"random"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nb">bstr</span><span class="p">,</span><span class="w"> </span><span class="c1">; Random value for issuer data authentication</span>
+<span class="w"> </span><span class="s2">"elementIdentifier"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nc">DataElementIdentifier</span><span class="p">,</span><span class="w"> </span><span class="c1">; Data element identifier</span>
+<span class="w"> </span><span class="s2">"elementValue"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nc">DataElementValue</span><span class="w"> </span><span class="c1">; Data element value</span>
 <span class="p">}</span>
 <span class="nc">IssuerAuth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nc">COSE_Sign1</span><span class="w"> </span><span class="c1">; The payload is MobileSecurityObjectBytes</span>
 </code></pre></div>
@@ -4260,8 +4260,8 @@ for demonstration or testing purposes.</p>
 <span class="w">    </span><span class="n">sampleData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sampleMdocDocuments</span><span class="p">,</span>
 <span class="w">    </span><span class="n">createSettings</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">createSettings</span><span class="p">,</span>
 <span class="w">    </span><span class="n">documentNamesMap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mapOf</span><span class="p">(</span>
-<span class="w">        </span><span class="s">&quot;eu.europa.ec.eudi.pid.1&quot;</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="s">&quot;EU PID&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="s">&quot;org.iso.18013.5.1.mDL&quot;</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="s">&quot;mDL&quot;</span>
+<span class="w">        </span><span class="s">"eu.europa.ec.eudi.pid.1"</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="s">"EU PID"</span><span class="p">,</span>
+<span class="w">        </span><span class="s">"org.iso.18013.5.1.mDL"</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="s">"mDL"</span>
 <span class="w">    </span><span class="p">)</span>
 <span class="p">)</span>
 
@@ -4269,27 +4269,27 @@ for demonstration or testing purposes.</p>
 
 <span class="c1">// ...</span>
 
-<span class="kd">fun</span><span class="w"> </span><span class="nf">readFileWithSampleData</span><span class="p">():</span><span class="w"> </span><span class="n">ByteArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TODO</span><span class="p">(</span><span class="s">&quot;Reads the bytes from file with sample documents&quot;</span><span class="p">)</span>
+<span class="kd">fun</span><span class="w"> </span><span class="nf">readFileWithSampleData</span><span class="p">():</span><span class="w"> </span><span class="n">ByteArray</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TODO</span><span class="p">(</span><span class="s">"Reads the bytes from file with sample documents"</span><span class="p">)</span>
 </code></pre></div>
 <p>Sample documents must be in CBOR format with the following structure:</p>
 <div class="highlight"><pre><span></span><code>Data = {
- &quot;documents&quot; : [+Document] ; Sample documents
+ "documents" : [+Document] ; Sample documents
 }
 Document = {
- &quot;docType&quot; : DocType, ; Document type returned
- &quot;issuerSigned&quot; : IssuerSigned ; Data elements
+ "docType" : DocType, ; Document type returned
+ "issuerSigned" : IssuerSigned ; Data elements
 }
 IssuerSigned = {
- &quot;nameSpaces&quot; : IssuerNameSpaces, ; Returned data elements
+ "nameSpaces" : IssuerNameSpaces, ; Returned data elements
 }
 IssuerNameSpaces = { ; Returned data elements for each namespace
  + NameSpace =&gt; [ + IssuerSignedItemBytes ]
 }
 IssuerSignedItem = {
- &quot;digestID&quot; : uint, ; Digest ID for issuer data authentication
- &quot;random&quot; : bstr, ; Random value for issuer data authentication
- &quot;elementIdentifier&quot; : DataElementIdentifier, ; Data element identifier
- &quot;elementValue&quot; : DataElementValue ; Data element value
+ "digestID" : uint, ; Digest ID for issuer data authentication
+ "random" : bstr, ; Random value for issuer data authentication
+ "elementIdentifier" : DataElementIdentifier, ; Data element identifier
+ "elementValue" : DataElementValue ; Data element value
 }
 </code></pre></div>
 

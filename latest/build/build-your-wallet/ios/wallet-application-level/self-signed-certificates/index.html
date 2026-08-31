@@ -4115,7 +4115,7 @@
 </code></pre></div>
 <p>Once the above is in place, adjust the initialiser:</p>
 <div class="highlight"><pre><span></span><code><span class="k">guard</span><span class="w"> </span><span class="kd">let</span><span class="w"> </span><span class="nv">walletKit</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">try</span><span class="p">?</span><span class="w"> </span><span class="n">EudiWallet</span><span class="p">(</span><span class="n">serviceName</span><span class="p">:</span><span class="w"> </span><span class="n">configLogic</span><span class="p">.</span><span class="n">documentStorageServiceName</span><span class="p">,</span><span class="w"> </span><span class="n">networking</span><span class="p">:</span><span class="w"> </span><span class="n">walletSession</span><span class="p">)</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="bp">fatalError</span><span class="p">(</span><span class="s">&quot;Unable to Initialize WalletKit&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="bp">fatalError</span><span class="p">(</span><span class="s">"Unable to Initialize WalletKit"</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div>
 <p>This change will allow the app to interact with web services that rely on self-signed certificates.</p>

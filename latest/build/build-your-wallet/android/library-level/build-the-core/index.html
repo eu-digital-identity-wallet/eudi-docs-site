@@ -4184,7 +4184,7 @@
 <span class="w">    </span><span class="n">repositories</span><span class="w"> </span><span class="o">{</span>
 <span class="w">        </span><span class="c1">// ...</span>
 <span class="w">        </span><span class="n">maven</span><span class="w"> </span><span class="o">{</span>
-<span class="w">            </span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">uri</span><span class="o">(</span><span class="s2">&quot;https://s01.oss.sonatype.org/content/repositories/snapshots/&quot;</span><span class="o">)</span>
+<span class="w">            </span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">uri</span><span class="o">(</span><span class="s2">"https://s01.oss.sonatype.org/content/repositories/snapshots/"</span><span class="o">)</span>
 <span class="w">            </span><span class="n">mavenContent</span><span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="n">snapshotsOnly</span><span class="o">()</span><span class="w"> </span><span class="o">}</span>
 <span class="w">        </span><span class="o">}</span>
 <span class="w">        </span><span class="c1">// ...</span>
@@ -4194,10 +4194,10 @@
 <p>To include the library in your project, add the following dependencies to your app's <code>build.gradle</code>
 file.</p>
 <div class="highlight"><pre><span></span><code><span class="n">dependencies</span><span class="w"> </span><span class="o">{</span>
-<span class="w">    </span><span class="n">implementation</span><span class="w"> </span><span class="s2">&quot;eu.europa.ec.eudi:eudi-lib-android-wallet-core:0.14.0&quot;</span>
+<span class="w">    </span><span class="n">implementation</span><span class="w"> </span><span class="s2">"eu.europa.ec.eudi:eudi-lib-android-wallet-core:0.14.0"</span>
 <span class="w">    </span><span class="c1">// required when using the built-in AndroidKeystoreSecureArea implementation provided by the library</span>
 <span class="w">    </span><span class="c1">// for user authentication with biometrics</span>
-<span class="w">    </span><span class="n">implementation</span><span class="w"> </span><span class="s2">&quot;androidx.biometric:biometric-ktx:1.2.0-alpha05&quot;</span>
+<span class="w">    </span><span class="n">implementation</span><span class="w"> </span><span class="s2">"androidx.biometric:biometric-ktx:1.2.0-alpha05"</span>
 <span class="o">}</span>
 </code></pre></div>
 <h2 id="how-to-use">How to use<a class="headerlink" href="#how-to-use" title="Link to this section">&para;</a></h2>
@@ -4232,7 +4232,7 @@ will be used to configure the library's built-in components.</p>
 <span class="w">        </span><span class="n">userAuthenticationRequired</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
 <span class="w">        </span><span class="c1">// set userAuthenticationTimeout to 30 seconds</span>
 <span class="w">        </span><span class="n">userAuthenticationTimeout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">30</span><span class="n">_000L</span><span class="p">,</span>
-<span class="w">        </span><span class="c1">// set useStrongBoxForKeys to true to use the the device&#39;s StrongBox if available</span>
+<span class="w">        </span><span class="c1">// set useStrongBoxForKeys to true to use the the device's StrongBox if available</span>
 <span class="w">        </span><span class="c1">// to store the keys</span>
 <span class="w">        </span><span class="n">useStrongBoxForKeys</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
 <span class="w">    </span><span class="p">)</span>
@@ -4242,9 +4242,9 @@ will be used to configure the library's built-in components.</p>
 <span class="w">    </span><span class="p">)</span>
 <span class="w">    </span><span class="c1">// mandatory configuration for OpenId4Vci if you want to issue documents</span>
 <span class="w">    </span><span class="p">.</span><span class="na">configureOpenId4Vci</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">withIssuerUrl</span><span class="p">(</span><span class="s">&quot;https://issuer.com&quot;</span><span class="p">)</span>
-<span class="w">        </span><span class="n">withClientId</span><span class="p">(</span><span class="s">&quot;client-id&quot;</span><span class="p">)</span>
-<span class="w">        </span><span class="n">withAuthFlowRedirectionURI</span><span class="p">(</span><span class="s">&quot;eudi-openid4ci://authorize&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="n">withIssuerUrl</span><span class="p">(</span><span class="s">"https://issuer.com"</span><span class="p">)</span>
+<span class="w">        </span><span class="n">withClientId</span><span class="p">(</span><span class="s">"client-id"</span><span class="p">)</span>
+<span class="w">        </span><span class="n">withAuthFlowRedirectionURI</span><span class="p">(</span><span class="s">"eudi-openid4ci://authorize"</span><span class="p">)</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">    </span><span class="c1">// configuration for proximity presentation</span>
 <span class="w">    </span><span class="c1">// the values below are the default values</span>
@@ -4270,9 +4270,9 @@ will be used to configure the library's built-in components.</p>
 <span class="w">            </span><span class="n">ClientIdScheme</span><span class="p">.</span><span class="na">X509SanDns</span>
 <span class="w">        </span><span class="p">)</span>
 <span class="w">        </span><span class="n">withSchemes</span><span class="p">(</span>
-<span class="w">            </span><span class="s">&quot;openid4vp&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="s">&quot;eudi-openid4vp&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="s">&quot;mdoc-openid4vp&quot;</span>
+<span class="w">            </span><span class="s">"openid4vp"</span><span class="p">,</span>
+<span class="w">            </span><span class="s">"eudi-openid4vp"</span><span class="p">,</span>
+<span class="w">            </span><span class="s">"mdoc-openid4vp"</span>
 <span class="w">        </span><span class="p">)</span>
 <span class="w">        </span><span class="n">withFormats</span><span class="p">(</span>
 <span class="w">            </span><span class="n">Format</span><span class="p">.</span><span class="na">MsoMdoc</span><span class="p">,</span><span class="w"> </span>
@@ -4287,7 +4287,7 @@ components.</p>
 <p>The following example demonstrates how to initialize the library with custom implementations for
 StorageEngine, SecureArea, ReaderTrustStore, and Logger:</p>
 <div class="highlight"><pre><span></span><code><span class="kd">val</span><span class="w"> </span><span class="nv">wallet</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">EudiWallet</span><span class="p">(</span><span class="n">context</span><span class="p">,</span><span class="w"> </span><span class="n">config</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="c1">// custom StorageEngine to store documents&#39; data</span>
+<span class="w">    </span><span class="c1">// custom StorageEngine to store documents' data</span>
 <span class="w">    </span><span class="n">withStorageEngine</span><span class="p">(</span><span class="n">myStorageEngine</span><span class="p">)</span>
 <span class="w">    </span><span class="c1">// a list of SecureArea implementations to be used</span>
 <span class="w">    </span><span class="n">withSecureAreas</span><span class="p">(</span><span class="n">listOf</span><span class="p">(</span><span class="n">deviceSecureArea</span><span class="p">,</span><span class="w"> </span><span class="n">cloudSecureArea</span><span class="p">))</span>

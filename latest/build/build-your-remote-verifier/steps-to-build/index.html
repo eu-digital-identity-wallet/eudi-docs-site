@@ -4167,10 +4167,10 @@ docker-compose<span class="w"> </span>down
 <span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/eu-digital-identity-wallet/eudi-srv-web-verifier-endpoint-23220-4-kt:latest</span>
 <span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">verifier-backend</span>
 <span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;8080:8080&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"8080:8080"</span>
 <span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">VERIFIER_PUBLICURL</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;https://10.240.174.10&quot;</span>
-<span class="w">      </span><span class="nt">VERIFIER_RESPONSE_MODE</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;DirectPost&quot;</span>
+<span class="w">      </span><span class="nt">VERIFIER_PUBLICURL</span><span class="p">:</span><span class="w"> </span><span class="s">"https://10.240.174.10"</span>
+<span class="w">      </span><span class="nt">VERIFIER_RESPONSE_MODE</span><span class="p">:</span><span class="w"> </span><span class="s">"DirectPost"</span>
 <span class="w">      </span><span class="nt">VERIFIER_JAR_SIGNING_KEY_KEYSTORE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">file:///keystore.jks</span>
 </code></pre></div></p>
 <h3 id="mount-external-keystore-to-be-used-with-authorization-request-signing">Mount external keystore to be used with Authorization Request signing<a class="headerlink" href="#mount-external-keystore-to-be-used-with-authorization-request-signing" title="Link to this section">&para;</a></h3>
@@ -4181,10 +4181,10 @@ To provide an external keystore mount it to the path designated by the value of 
 <span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/eu-digital-identity-wallet/eudi-srv-web-verifier-endpoint-23220-4-kt:latest</span>
 <span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">verifier-backend</span>
 <span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;8080:8080&quot;</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"8080:8080"</span>
 <span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
-<span class="w">      </span><span class="nt">VERIFIER_PUBLICURL</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;https://10.240.174.10&quot;</span>
-<span class="w">      </span><span class="nt">VERIFIER_RESPONSE_MODE</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;DirectPost&quot;</span>
+<span class="w">      </span><span class="nt">VERIFIER_PUBLICURL</span><span class="p">:</span><span class="w"> </span><span class="s">"https://10.240.174.10"</span>
+<span class="w">      </span><span class="nt">VERIFIER_RESPONSE_MODE</span><span class="p">:</span><span class="w"> </span><span class="s">"DirectPost"</span>
 <span class="w">      </span><span class="nt">VERIFIER_JAR_SIGNING_KEY_KEYSTORE</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">file:///certs/keystore.jks</span>
 <span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;PATH OF KEYSTORE IN HOST MACHINE&gt;/keystore.jks:/certs/keystore.jks</span>

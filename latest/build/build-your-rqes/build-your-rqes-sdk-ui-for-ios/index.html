@@ -4192,15 +4192,15 @@
 </code></pre></div></p>
 <p>You can also add <code>EudiRQESUi</code> as a dependency to your <code>Package.swift</code>:
 <div class="highlight"><pre><span></span><code><span class="n">dependencies</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">  </span><span class="p">.</span><span class="n">package</span><span class="p">(</span><span class="n">url</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;https://github.com/eu-digital-identity-wallet/eudi-lib-ios-rqes-ui.git&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">from</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;LATEST_RELEASE&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="p">.</span><span class="n">package</span><span class="p">(</span><span class="n">url</span><span class="p">:</span><span class="w"> </span><span class="s">"https://github.com/eu-digital-identity-wallet/eudi-lib-ios-rqes-ui.git"</span><span class="p">,</span><span class="w"> </span><span class="n">from</span><span class="p">:</span><span class="w"> </span><span class="s">"LATEST_RELEASE"</span><span class="p">)</span>
 <span class="p">]</span>
 </code></pre></div></p>
 <div class="highlight"><pre><span></span><code><span class="w"> </span><span class="n">targets</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">    </span><span class="p">.</span><span class="n">target</span><span class="p">(</span>
 <span class="w">      </span><span class="n">dependencies</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">        </span><span class="p">.</span><span class="n">product</span><span class="p">(</span>
-<span class="w">          </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;EudiRQESUi&quot;</span><span class="p">,</span>
-<span class="w">          </span><span class="n">package</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;eudi-lib-ios-rqes-ui&quot;</span>
+<span class="w">          </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="s">"EudiRQESUi"</span><span class="p">,</span>
+<span class="w">          </span><span class="n">package</span><span class="p">:</span><span class="w"> </span><span class="s">"eudi-lib-ios-rqes-ui"</span>
 <span class="w">        </span><span class="p">)</span>
 <span class="w">      </span><span class="p">]</span>
 <span class="w">    </span><span class="p">)</span>
@@ -4227,12 +4227,12 @@
 
 <span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nv">rssps</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="n">QTSPData</span><span class="p">]</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">.</span><span class="kd">init</span><span class="p">(</span>
-<span class="w">            </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;your_dev_name&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="n">rsspId</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;your_dev_rssp&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="n">tsaUrl</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;your_dev_tsa&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="n">clientId</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;your_dev_clientid&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="n">clientSecret</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;your_dev_secret&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="n">authFlowRedirectionURI</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;your_registered_deeplink&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="s">"your_dev_name"</span><span class="p">,</span>
+<span class="w">            </span><span class="n">rsspId</span><span class="p">:</span><span class="w"> </span><span class="s">"your_dev_rssp"</span><span class="p">,</span>
+<span class="w">            </span><span class="n">tsaUrl</span><span class="p">:</span><span class="w"> </span><span class="s">"your_dev_tsa"</span><span class="p">,</span>
+<span class="w">            </span><span class="n">clientId</span><span class="p">:</span><span class="w"> </span><span class="s">"your_dev_clientid"</span><span class="p">,</span>
+<span class="w">            </span><span class="n">clientSecret</span><span class="p">:</span><span class="w"> </span><span class="s">"your_dev_secret"</span><span class="p">,</span>
+<span class="w">            </span><span class="n">authFlowRedirectionURI</span><span class="p">:</span><span class="w"> </span><span class="s">"your_registered_deeplink"</span><span class="p">,</span>
 <span class="w">            </span><span class="n">hashAlgorithm</span><span class="p">:</span><span class="w"> </span><span class="p">.</span><span class="n">SHA256</span><span class="p">,</span>
 <span class="w">            </span><span class="n">includeRevocationInfo</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
 <span class="w">        </span><span class="p">)</span>

@@ -4118,104 +4118,104 @@ We will use a generic loyalty card credential as an example for this configurati
 <p>For this example, we will use <code>app/metadata_config/credentials_supported/loyalty_mdoc.json</code></p>
 <p>Example loyalty card metadata for mso_mdoc format (ISO 18013-5), with namespace <code>eu.europa.ec.eudi.loyalty_mdoc</code>:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;eu.europa.ec.eudi.loyalty_mdoc&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;format&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;mso_mdoc&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;doctype&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;eu.europa.ec.eudi.loyalty.1&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;scope&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;eu.europa.ec.eudi.loyalty.1&quot;</span><span class="p">,</span>
-<span class="w">      </span><span class="nt">&quot;cryptographic_binding_methods_supported&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">        </span><span class="s2">&quot;jwk&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;cose_key&quot;</span>
+<span class="w">  </span><span class="nt">"eu.europa.ec.eudi.loyalty_mdoc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">"format"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mso_mdoc"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"doctype"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eu.europa.ec.eudi.loyalty.1"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"scope"</span><span class="p">:</span><span class="w"> </span><span class="s2">"eu.europa.ec.eudi.loyalty.1"</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">"cryptographic_binding_methods_supported"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">"jwk"</span><span class="p">,</span><span class="w"> </span><span class="s2">"cose_key"</span>
 <span class="w">      </span><span class="p">],</span>
-<span class="w">      </span><span class="nt">&quot;credential_signing_alg_values_supported&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">        </span><span class="s2">&quot;ES256&quot;</span>
+<span class="w">      </span><span class="nt">"credential_signing_alg_values_supported"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">"ES256"</span>
 <span class="w">      </span><span class="p">],</span>
-<span class="w">      </span><span class="nt">&quot;proof_types_supported&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;jwt&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">          </span><span class="nt">&quot;proof_signing_alg_values_supported&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">            </span><span class="s2">&quot;ES256&quot;</span>
+<span class="w">      </span><span class="nt">"proof_types_supported"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"jwt"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">"proof_signing_alg_values_supported"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="s2">"ES256"</span>
 <span class="w">          </span><span class="p">]</span>
 <span class="w">        </span><span class="p">},</span>
-<span class="w">        </span><span class="nt">&quot;cwt&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">          </span><span class="nt">&quot;proof_signing_alg_values_supported&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">            </span><span class="s2">&quot;ES256&quot;</span>
+<span class="w">        </span><span class="nt">"cwt"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">"proof_signing_alg_values_supported"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">            </span><span class="s2">"ES256"</span>
 <span class="w">          </span><span class="p">],</span>
-<span class="w">          </span><span class="nt">&quot;proof_alg_values_supported&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">          </span><span class="nt">"proof_alg_values_supported"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">            </span><span class="mi">-7</span>
 <span class="w">          </span><span class="p">],</span>
-<span class="w">          </span><span class="nt">&quot;proof_crv_values_supported&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">          </span><span class="nt">"proof_crv_values_supported"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">            </span><span class="mi">1</span>
 <span class="w">          </span><span class="p">]</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">      </span><span class="p">},</span>
-<span class="w">      </span><span class="nt">&quot;display&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">        </span><span class="p">{</span>
-<span class="w">          </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Loyalty&quot;</span><span class="p">,</span>
-<span class="w">          </span><span class="nt">&quot;locale&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;en&quot;</span><span class="p">,</span>
-<span class="w">          </span><span class="nt">&quot;logo&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://examplestate.com/public/pid.png&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;alt_text&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A square figure of a PID&quot;</span>
+<span class="w">          </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Loyalty"</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">"logo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://examplestate.com/public/pid.png"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"alt_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A square figure of a PID"</span>
 <span class="w">          </span><span class="p">}</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">      </span><span class="p">],</span>
-<span class="w">      </span><span class="nt">&quot;claims&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;eu.europa.ec.eudi.loyalty.1&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">          </span><span class="nt">&quot;given_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">&quot;mandatory&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;value_type&quot;</span><span class="p">:</span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="s2">&quot;user&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;display&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="nt">"claims"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">"eu.europa.ec.eudi.loyalty.1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">"given_name"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"mandatory"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"value_type"</span><span class="p">:</span><span class="s2">"string"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"source"</span><span class="p">:</span><span class="s2">"user"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">              </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Given Name&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;locale&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;en&quot;</span>
+<span class="w">                </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Given Name"</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span>
 <span class="w">              </span><span class="p">}</span>
 <span class="w">            </span><span class="p">]</span>
 <span class="w">          </span><span class="p">},</span>
-<span class="w">          </span><span class="nt">&quot;family_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">&quot;mandatory&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;value_type&quot;</span><span class="p">:</span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="s2">&quot;user&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;display&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">          </span><span class="nt">"family_name"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"mandatory"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"value_type"</span><span class="p">:</span><span class="s2">"string"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"source"</span><span class="p">:</span><span class="s2">"user"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">              </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Family Name&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;locale&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;en&quot;</span><span class="w">              </span><span class="p">}</span>
+<span class="w">                </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Family Name"</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="w">              </span><span class="p">}</span>
 <span class="w">            </span><span class="p">]</span>
 <span class="w">          </span><span class="p">},</span>
-<span class="w">          </span><span class="nt">&quot;company&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">&quot;mandatory&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;value_type&quot;</span><span class="p">:</span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="s2">&quot;user&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;display&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">          </span><span class="nt">"company"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"mandatory"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"value_type"</span><span class="p">:</span><span class="s2">"string"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"source"</span><span class="p">:</span><span class="s2">"user"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">              </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Loyalty Card Company&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;locale&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;en&quot;</span><span class="w">              </span><span class="p">}</span>
+<span class="w">                </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Loyalty Card Company"</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="w">              </span><span class="p">}</span>
 <span class="w">            </span><span class="p">]</span>
 <span class="w">          </span><span class="p">},</span>
-<span class="w">          </span><span class="nt">&quot;client_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">&quot;mandatory&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;value_type&quot;</span><span class="p">:</span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="s2">&quot;user&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;display&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">          </span><span class="nt">"client_id"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"mandatory"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"value_type"</span><span class="p">:</span><span class="s2">"string"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"source"</span><span class="p">:</span><span class="s2">"user"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">              </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Client ID&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;locale&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;en&quot;</span><span class="w">              </span><span class="p">}</span>
+<span class="w">                </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Client ID"</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="w">              </span><span class="p">}</span>
 <span class="w">            </span><span class="p">]</span>
 <span class="w">          </span><span class="p">},</span>
-<span class="w">          </span><span class="nt">&quot;issuance_date&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">&quot;mandatory&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="s2">&quot;issuer&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;display&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">          </span><span class="nt">"issuance_date"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"mandatory"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"source"</span><span class="p">:</span><span class="s2">"issuer"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">              </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Issuance Date&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;locale&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;en&quot;</span>
+<span class="w">                </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Issuance Date"</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span>
 <span class="w">              </span><span class="p">}</span>
 <span class="w">            </span><span class="p">]</span>
 <span class="w">          </span><span class="p">},</span>
-<span class="w">          </span><span class="nt">&quot;expiry_date&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">&quot;mandatory&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="s2">&quot;issuer&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;display&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">          </span><span class="nt">"expiry_date"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">"mandatory"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"source"</span><span class="p">:</span><span class="s2">"issuer"</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">              </span><span class="p">{</span>
-<span class="w">                </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Expiry Date&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="nt">&quot;locale&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;en&quot;</span>
+<span class="w">                </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Expiry Date"</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">"locale"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span>
 <span class="w">              </span><span class="p">}</span>
 <span class="w">            </span><span class="p">]</span>
 <span class="w">          </span><span class="p">}</span>
@@ -4234,12 +4234,12 @@ We will use a generic loyalty card credential as an example for this configurati
 <ul>
 <li>Add a new entry to config_doctype (using the doctype of the credential as key)</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="s2">&quot;eu.europa.ec.eudi.loyalty.1&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">&quot;issuing_authority&quot;</span><span class="p">:</span> <span class="s2">&quot;Test QEAA issuer&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;organization_id&quot;</span><span class="p">:</span> <span class="n">pid_organization_id</span><span class="p">,</span>
-    <span class="s2">&quot;validity&quot;</span><span class="p">:</span> <span class="n">qeaa_validity</span><span class="p">,</span>
-    <span class="s2">&quot;organization_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Test QEAA issuer&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;namespace&quot;</span><span class="p">:</span> <span class="s2">&quot;eu.europa.ec.eudi.loyalty.1&quot;</span><span class="p">,</span>
+<div class="highlight"><pre><span></span><code><span class="s2">"eu.europa.ec.eudi.loyalty.1"</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">"issuing_authority"</span><span class="p">:</span> <span class="s2">"Test QEAA issuer"</span><span class="p">,</span>
+    <span class="s2">"organization_id"</span><span class="p">:</span> <span class="n">pid_organization_id</span><span class="p">,</span>
+    <span class="s2">"validity"</span><span class="p">:</span> <span class="n">qeaa_validity</span><span class="p">,</span>
+    <span class="s2">"organization_name"</span><span class="p">:</span> <span class="s2">"Test QEAA issuer"</span><span class="p">,</span>
+    <span class="s2">"namespace"</span><span class="p">:</span> <span class="s2">"eu.europa.ec.eudi.loyalty.1"</span><span class="p">,</span>
 <span class="p">}</span>
 </code></pre></div>
 <ul>
@@ -4250,10 +4250,10 @@ We will use a generic loyalty card credential as an example for this configurati
 </li>
 </ul>
 <div class="highlight"><pre><span></span><code><span class="n">auth_method_supported_credentials</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;PID_login&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">"PID_login"</span><span class="p">:</span> <span class="p">[</span>
     <span class="p">],</span>
-    <span class="s2">&quot;country_selection&quot;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="s2">&quot;eu.europa.ec.eudi.loyalty_mdoc&quot;</span><span class="p">,</span>
+    <span class="s2">"country_selection"</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">"eu.europa.ec.eudi.loyalty_mdoc"</span><span class="p">,</span>
     <span class="p">],</span>
 <span class="p">}</span>
 </code></pre></div>
@@ -4263,23 +4263,23 @@ We will use a generic loyalty card credential as an example for this configurati
 <p>This configures which attestation and attributes are asked for in the OID4VP Request When using Dynamic credential request to issue this credential.</p>
 <p>Follows the format:
 <div class="highlight"><pre><span></span><code><span class="n">dynamic_issuing</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="s2">&quot;credential_configuration_id&quot;</span><span class="p">:{</span>
-          <span class="s2">&quot;DocType&quot;</span><span class="p">:{</span><span class="s2">&quot;Namespace&quot;</span><span class="p">:[</span><span class="s2">&quot;attribute&quot;</span><span class="p">,</span><span class="o">...</span><span class="p">,</span><span class="s2">&quot;attribute&quot;</span><span class="p">]}</span>
+      <span class="s2">"credential_configuration_id"</span><span class="p">:{</span>
+          <span class="s2">"DocType"</span><span class="p">:{</span><span class="s2">"Namespace"</span><span class="p">:[</span><span class="s2">"attribute"</span><span class="p">,</span><span class="o">...</span><span class="p">,</span><span class="s2">"attribute"</span><span class="p">]}</span>
       <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></p>
 <p>Example from age over 18 pseudonym:
 <div class="highlight"><pre><span></span><code><span class="n">dynamic_issuing</span> <span class="o">=</span> <span class="p">{</span>
-      <span class="s2">&quot;eu.europa.ec.eudi.pseudonym_over18_mdoc&quot;</span><span class="p">:{</span>
-          <span class="s2">&quot;eu.europa.ec.eudi.pid.1&quot;</span><span class="p">:{</span><span class="s2">&quot;eu.europa.ec.eudi.pid.1&quot;</span><span class="p">:[</span><span class="s2">&quot;age_over_18&quot;</span><span class="p">]}</span>
+      <span class="s2">"eu.europa.ec.eudi.pseudonym_over18_mdoc"</span><span class="p">:{</span>
+          <span class="s2">"eu.europa.ec.eudi.pid.1"</span><span class="p">:{</span><span class="s2">"eu.europa.ec.eudi.pid.1"</span><span class="p">:[</span><span class="s2">"age_over_18"</span><span class="p">]}</span>
       <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></p>
 <h2 id="3-configuration-of-countries">3. Configuration of Countries<a class="headerlink" href="#3-configuration-of-countries" title="Link to this section">&para;</a></h2>
 <p>Located in <code>app/app_config/config_countries.py</code>, this configuration file contains configuration data related to the countries supported by the PID Issuer, and the credentials supported by each country.</p>
 <p>For example, to add the loyalty credential to the <code>formCountry</code>, you need to add the loyalty credential id (defined in the metadata) to the <code>supported_credentials</code> of the <code>formCountry</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="s2">&quot;supported_credentials&quot;</span><span class="p">:</span> <span class="p">[</span>
-  <span class="s2">&quot;eu.europa.ec.eudi.loyalty_mdoc&quot;</span>
+<div class="highlight"><pre><span></span><code><span class="s2">"supported_credentials"</span><span class="p">:</span> <span class="p">[</span>
+  <span class="s2">"eu.europa.ec.eudi.loyalty_mdoc"</span>
 <span class="p">]</span>
 </code></pre></div>
 

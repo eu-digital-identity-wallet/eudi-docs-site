@@ -4169,18 +4169,18 @@
 </ul>
 <h2 id="permissions">Permissions<a class="headerlink" href="#permissions" title="Link to this section">&para;</a></h2>
 <p>The following permissions must be declared in the <code>AndroidManifest.xml</code> file and requested at runtime:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;uses-permission</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;android.permission.CAMERA&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="nt">&lt;uses-permission</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;android.permission.INTERNET&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="nt">&lt;uses-permission</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;android.permission.BLUETOOTH_CONNECT&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="nt">&lt;uses-permission</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;android.permission.BLUETOOTH_SCAN&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="nt">&lt;uses-permission</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;android.permission.BLUETOOTH_ADVERTISE&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;uses-permission</span><span class="w"> </span><span class="na">android:name=</span><span class="s">"android.permission.CAMERA"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;uses-permission</span><span class="w"> </span><span class="na">android:name=</span><span class="s">"android.permission.INTERNET"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;uses-permission</span><span class="w"> </span><span class="na">android:name=</span><span class="s">"android.permission.BLUETOOTH_CONNECT"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;uses-permission</span><span class="w"> </span><span class="na">android:name=</span><span class="s">"android.permission.BLUETOOTH_SCAN"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="nt">&lt;uses-permission</span><span class="w"> </span><span class="na">android:name=</span><span class="s">"android.permission.BLUETOOTH_ADVERTISE"</span><span class="w"> </span><span class="nt">/&gt;</span>
 </code></pre></div>
 <h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Link to this section">&para;</a></h2>
 <p>To utilise snapshot versions, include the Sonatype Snapshots repository in the <code>settings.gradle</code> file as follows:</p>
 <div class="highlight"><pre><span></span><code>dependencyResolutionManagement {
   repositories {
     maven {
-      url = uri(&quot;https://central.sonatype.com/repository/maven-snapshots/&quot;)
+      url = uri("https://central.sonatype.com/repository/maven-snapshots/")
       mavenContent { snapshotsOnly() }
     }
   }
@@ -4188,7 +4188,7 @@
 </code></pre></div>
 <p>Subsequently, add the library dependency to the application module:</p>
 <div class="highlight"><pre><span></span><code>dependencies {
-  implementation(&quot;eu.europa.ec.eudi:eudi-lib-android-verifier-core:0.1.0&quot;)
+  implementation("eu.europa.ec.eudi:eudi-lib-android-verifier-core:0.1.0")
 }
 </code></pre></div>
 <h2 id="set-up">Set-up<a class="headerlink" href="#set-up" title="Link to this section">&para;</a></h2>

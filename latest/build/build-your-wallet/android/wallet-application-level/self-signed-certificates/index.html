@@ -4103,7 +4103,7 @@ implementation(libs.ktor.logging)
 
 <span class="kd">object</span><span class="w"> </span><span class="nc">ProvideKtorHttpClient</span><span class="w"> </span><span class="p">{</span>
 
-<span class="w">    </span><span class="nd">@SuppressLint</span><span class="p">(</span><span class="s">&quot;TrustAllX509TrustManager&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;CustomX509TrustManager&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="nd">@SuppressLint</span><span class="p">(</span><span class="s">"TrustAllX509TrustManager"</span><span class="p">,</span><span class="w"> </span><span class="s">"CustomX509TrustManager"</span><span class="p">)</span>
 <span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">client</span><span class="p">():</span><span class="w"> </span><span class="n">HttpClient</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="kd">val</span><span class="w"> </span><span class="nv">trustAllCerts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">arrayOf</span><span class="o">&lt;</span><span class="n">TrustManager</span><span class="o">&gt;</span><span class="p">(</span>
 <span class="w">            </span><span class="k">object</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="nc">X509TrustManager</span><span class="w"> </span><span class="p">{</span>
@@ -4132,7 +4132,7 @@ implementation(libs.ktor.logging)
 <span class="w">            </span><span class="n">engine</span><span class="w"> </span><span class="p">{</span>
 <span class="w">                </span><span class="n">requestConfig</span>
 <span class="w">                </span><span class="n">sslManager</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">httpsURLConnection</span><span class="w"> </span><span class="o">-&gt;</span>
-<span class="w">                    </span><span class="n">httpsURLConnection</span><span class="p">.</span><span class="na">sslSocketFactory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SSLContext</span><span class="p">.</span><span class="na">getInstance</span><span class="p">(</span><span class="s">&quot;TLS&quot;</span><span class="p">).</span><span class="na">apply</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                    </span><span class="n">httpsURLConnection</span><span class="p">.</span><span class="na">sslSocketFactory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SSLContext</span><span class="p">.</span><span class="na">getInstance</span><span class="p">(</span><span class="s">"TLS"</span><span class="p">).</span><span class="na">apply</span><span class="w"> </span><span class="p">{</span>
 <span class="w">                        </span><span class="k">init</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="n">trustAllCerts</span><span class="p">,</span><span class="w"> </span><span class="n">SecureRandom</span><span class="p">())</span>
 <span class="w">                    </span><span class="p">}.</span><span class="na">socketFactory</span>
 <span class="w">                    </span><span class="n">httpsURLConnection</span><span class="p">.</span><span class="na">hostnameVerifier</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">HostnameVerifier</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">_</span><span class="p">,</span><span class="w"> </span><span class="n">_</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">}</span>
@@ -4173,9 +4173,9 @@ implementation(libs.ktor.logging)
 <span class="w">         </span><span class="n">preregisteredVerifiers</span><span class="w"> </span><span class="o">=</span>
 <span class="w">             </span><span class="n">listOf</span><span class="p">(</span>
 <span class="w">                 </span><span class="n">PreregisteredVerifier</span><span class="p">(</span>
-<span class="w">                     </span><span class="n">clientId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Verifier&quot;</span><span class="p">,</span>
-<span class="w">                     </span><span class="n">legalName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Verifier&quot;</span><span class="p">,</span>
-<span class="w">                     </span><span class="n">verifierApi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;https://10.0.2.2&quot;</span>
+<span class="w">                     </span><span class="n">clientId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Verifier"</span><span class="p">,</span>
+<span class="w">                     </span><span class="n">legalName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Verifier"</span><span class="p">,</span>
+<span class="w">                     </span><span class="n">verifierApi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"https://10.0.2.2"</span>
 <span class="w">                 </span><span class="p">)</span>
 <span class="w">             </span><span class="p">)</span>
 <span class="w">         </span><span class="p">)</span>

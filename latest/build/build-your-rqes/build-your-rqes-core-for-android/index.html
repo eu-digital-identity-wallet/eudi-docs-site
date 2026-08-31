@@ -4192,7 +4192,7 @@
 <p>To include the library in your project, add the following dependencies to your app's <code>build.gradle</code> file.</p>
 <div class="highlight"><pre><span></span><code><span class="n">dependencies</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="c1">// EUDI Wallet rQES service library</span>
-<span class="w">    </span><span class="n">implementation</span><span class="p">(</span><span class="s">&quot;eu.europa.ec.eudi:eudi-lib-android-rqes-core:0.4.0&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="n">implementation</span><span class="p">(</span><span class="s">"eu.europa.ec.eudi:eudi-lib-android-rqes-core:0.4.0"</span><span class="p">)</span>
 <span class="p">}</span>
 </code></pre></div>
 <h2 id="integration-guide">Integration guide<a class="headerlink" href="#integration-guide" title="Link to this section">&para;</a></h2>
@@ -4218,15 +4218,15 @@
     rQESService.CredentialAuthorized --&gt;&gt;- Client: SignedDocuments</code></pre>
 <h3 id="1-create-an-rqes-service-instance">1. Create an rQES Service instance<a class="headerlink" href="#1-create-an-rqes-service-instance" title="Link to this section">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kd">val</span><span class="w"> </span><span class="nv">rqesService</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rQESService</span><span class="p">(</span>
-<span class="w">    </span><span class="n">serviceEndpointUrl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;https://example.com/csc/v2&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">serviceEndpointUrl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"https://example.com/csc/v2"</span><span class="p">,</span>
 <span class="w">    </span><span class="n">config</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CSCClientConfig</span><span class="p">(</span>
 <span class="w">        </span><span class="n">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">OAuth2Client</span><span class="p">.</span><span class="na">Confidential</span><span class="p">.</span><span class="na">ClientSecretBasic</span><span class="p">(</span>
-<span class="w">            </span><span class="n">clientId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;client-id&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="n">clientSecret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;client-secret&quot;</span>
+<span class="w">            </span><span class="n">clientId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"client-id"</span><span class="p">,</span>
+<span class="w">            </span><span class="n">clientSecret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"client-secret"</span>
 <span class="w">        </span><span class="p">),</span>
-<span class="w">        </span><span class="n">authFlowRedirectionURI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">URI</span><span class="p">(</span><span class="s">&quot;rqes:redirect&quot;</span><span class="p">),</span>
+<span class="w">        </span><span class="n">authFlowRedirectionURI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">URI</span><span class="p">(</span><span class="s">"rqes:redirect"</span><span class="p">),</span>
 <span class="w">    </span><span class="p">),</span>
-<span class="w">    </span><span class="n">outputPathDir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;/path/to/output/dir&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="n">outputPathDir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"/path/to/output/dir"</span><span class="p">,</span>
 <span class="w">    </span><span class="c1">// set the hashing algorithm that will be used</span>
 <span class="w">    </span><span class="c1">// default is SHA-256 as shown below</span>
 <span class="w">    </span><span class="n">hashAlgorithm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">HashAlgorithmOID</span><span class="p">.</span><span class="na">SHA_256</span><span class="p">,</span>
@@ -4249,10 +4249,10 @@
 <span class="c1">// Open the authorizationUrl in a browser</span>
 <span class="c1">// After the user has authorised the service, the browser will be redirected to the authFlowRedirectionURI that</span>
 <span class="c1">// is configured in the `CSCClientConfig`</span>
-<span class="c1">// with a query parameter named &quot;code&quot; containing the authorisation code</span>
+<span class="c1">// with a query parameter named "code" containing the authorisation code</span>
 </code></pre></div>
 <p>After the user grants authorisation, the service will redirect to the authFlowRedirectionURI you configured, appending an authorisation code as a query parameter. Your app must capture this redirect, extract the code, and exchange it for an access token.</p>
-<div class="highlight"><pre><span></span><code><span class="kd">val</span><span class="w"> </span><span class="nv">authorizationCode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AuthorizationCode</span><span class="p">(</span><span class="s">&quot;code&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="kd">val</span><span class="w"> </span><span class="nv">authorizationCode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AuthorizationCode</span><span class="p">(</span><span class="s">"code"</span><span class="p">)</span>
 <span class="kd">val</span><span class="w"> </span><span class="nv">authorizedService</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rqesService</span><span class="p">.</span><span class="na">authorizeService</span><span class="p">(</span><span class="n">authorizationCode</span><span class="p">).</span><span class="na">getOrThrow</span><span class="p">()</span>
 </code></pre></div>
 <h3 id="3-select-a-credential-and-prepare-documents">3. Select a credential and prepare documents<a class="headerlink" href="#3-select-a-credential-and-prepare-documents" title="Link to this section">&para;</a></h3>
@@ -4263,8 +4263,8 @@
 <p>Next, prepare the documents that need to be signed.</p>
 <div class="highlight"><pre><span></span><code><span class="kd">val</span><span class="w"> </span><span class="nv">unsignedDocuments</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UnsignedDocuments</span><span class="p">(</span>
 <span class="w">    </span><span class="n">UnsignedDocument</span><span class="p">(</span>
-<span class="w">        </span><span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Document to sign&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">File</span><span class="p">(</span><span class="s">&quot;document.pdf&quot;</span><span class="p">),</span>
+<span class="w">        </span><span class="n">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"Document to sign"</span><span class="p">,</span>
+<span class="w">        </span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">File</span><span class="p">(</span><span class="s">"document.pdf"</span><span class="p">),</span>
 <span class="w">        </span><span class="c1">// Optionally override default signing configuration</span>
 <span class="w">        </span><span class="n">signingConfig</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">UnsignedDocument</span><span class="p">.</span><span class="na">Config</span><span class="p">(</span>
 <span class="w">            </span><span class="n">signatureFormat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SignatureFormat</span><span class="p">.</span><span class="na">P</span><span class="p">,</span>
@@ -4287,11 +4287,11 @@
 
 <span class="c1">// Open credentialAuthorizationUrl in a browser.</span>
 <span class="c1">// After authorisation, the browser will redirect to authFlowRedirectionURI</span>
-<span class="c1">// with a query parameter &quot;code&quot; containing the credential authorisation code.</span>
+<span class="c1">// with a query parameter "code" containing the credential authorisation code.</span>
 </code></pre></div>
 <p>Similar to service authorisation, the user will be redirected back to your authFlowRedirectionURI with a new code.</p>
 <p>Use this code to complete the signing process:</p>
-<div class="highlight"><pre><span></span><code><span class="kd">val</span><span class="w"> </span><span class="nv">credentialAuthorizationCode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AuthorizationCode</span><span class="p">(</span><span class="s">&quot;credential-code&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="kd">val</span><span class="w"> </span><span class="nv">credentialAuthorizationCode</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">AuthorizationCode</span><span class="p">(</span><span class="s">"credential-code"</span><span class="p">)</span>
 
 <span class="kd">val</span><span class="w"> </span><span class="nv">authorizedCredential</span><span class="w"> </span><span class="o">=</span>
 <span class="w">    </span><span class="n">authorizedService</span><span class="p">.</span><span class="na">authorizeCredential</span><span class="p">(</span><span class="n">credentialAuthorizationCode</span><span class="p">).</span><span class="na">getOrThrow</span><span class="p">()</span>

@@ -4226,12 +4226,12 @@
 <p>To integrate RQES Kit using Swift Package Manager, add the following to your Package.swift file.</p>
 <p>First, add the package repository to your dependencies:</p>
 <div class="highlight"><pre><span></span><code><span class="n">dependencies</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">    </span><span class="p">.</span><span class="n">package</span><span class="p">(</span><span class="n">url</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;https://github.com/niscy-eudiw/eudi-lib-ios-rqes-kit&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">exact</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;0.6.4&quot;</span><span class="p">)</span>
+<span class="w">    </span><span class="p">.</span><span class="n">package</span><span class="p">(</span><span class="n">url</span><span class="p">:</span><span class="w"> </span><span class="s">"https://github.com/niscy-eudiw/eudi-lib-ios-rqes-kit"</span><span class="p">,</span><span class="w"> </span><span class="n">exact</span><span class="p">:</span><span class="w"> </span><span class="s">"0.6.4"</span><span class="p">)</span>
 <span class="p">]</span>
 </code></pre></div>
 <p>Then add the <code>RqesKit</code> product to your app target's dependencies:</p>
 <div class="highlight"><pre><span></span><code><span class="n">dependencies</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">    </span><span class="p">.</span><span class="n">product</span><span class="p">(</span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;RqesKit&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">package</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;eudi-lib-ios-rqes-kit&quot;</span><span class="p">),</span>
+<span class="w">    </span><span class="p">.</span><span class="n">product</span><span class="p">(</span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="s">"RqesKit"</span><span class="p">,</span><span class="w"> </span><span class="n">package</span><span class="p">:</span><span class="w"> </span><span class="s">"eudi-lib-ios-rqes-kit"</span><span class="p">),</span>
 <span class="p">]</span>
 </code></pre></div>
 <h2 id="integration-guide">Integration guide<a class="headerlink" href="#integration-guide" title="Link to this section">&para;</a></h2>
@@ -4256,10 +4256,10 @@
 <h3 id="1-create-an-rqes-service-instance">1. Create an rQES Service instance<a class="headerlink" href="#1-create-an-rqes-service-instance" title="Link to this section">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nv">cscClientConfig</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">CSCClientConfig</span><span class="p">(</span>
 <span class="w">        </span><span class="n">OAuth2Client</span><span class="p">:</span><span class="w"> </span><span class="n">CSCClientConfig</span><span class="p">.</span><span class="n">OAuth2Client</span><span class="p">(</span>
-<span class="w">                </span><span class="n">clientId</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;wallet-client&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="n">clientSecret</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;somesecret2&quot;</span>
+<span class="w">                </span><span class="n">clientId</span><span class="p">:</span><span class="w"> </span><span class="s">"wallet-client"</span><span class="p">,</span>
+<span class="w">                </span><span class="n">clientSecret</span><span class="p">:</span><span class="w"> </span><span class="s">"somesecret2"</span>
 <span class="w">        </span><span class="p">),</span>
-<span class="w">        </span><span class="n">authFlowRedirectionURI</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;https://oauthdebugger.com/debug&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">rsspId</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">)</span>
+<span class="w">        </span><span class="n">authFlowRedirectionURI</span><span class="p">:</span><span class="w"> </span><span class="s">"https://oauthdebugger.com/debug"</span><span class="p">,</span><span class="w"> </span><span class="n">rsspId</span><span class="p">:</span><span class="w"> </span><span class="s">""</span><span class="p">)</span>
 <span class="kd">var</span><span class="w"> </span><span class="nv">rqesService</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">rQESService</span><span class="p">(</span>
 <span class="w">    </span><span class="n">clientConfig</span><span class="p">:</span><span class="w"> </span><span class="n">cscClientConfig</span><span class="p">,</span>
 <span class="w">    </span><span class="n">defaultHashAlgorithmOID</span><span class="p">:</span><span class="w"> </span><span class="p">.</span><span class="n">SHA256</span>
@@ -4287,10 +4287,10 @@ that is configured in the <code>CSCClientConfig</code>, with a query parameter n
 <p>Create an array of Document objects pointing to the local files you wish to have signed.</p>
 <div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nv">unsignedDocuments</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span>
 <span class="n">Document</span><span class="p">(</span>
-<span class="n">label</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Document to sign&quot;</span><span class="p">,</span>
+<span class="n">label</span><span class="p">:</span><span class="w"> </span><span class="s">"Document to sign"</span><span class="p">,</span>
 <span class="n">fileURL</span><span class="p">:</span><span class="w"> </span><span class="n">Bundle</span><span class="p">.</span><span class="n">main</span><span class="p">.</span><span class="n">url</span><span class="p">(</span>
-<span class="n">forResource</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;document&quot;</span><span class="p">,</span>
-<span class="n">withExtension</span><span class="p">:</span><span class="s">&quot;pdf&quot;</span><span class="p">)</span>
+<span class="n">forResource</span><span class="p">:</span><span class="w"> </span><span class="s">"document"</span><span class="p">,</span>
+<span class="n">withExtension</span><span class="p">:</span><span class="s">"pdf"</span><span class="p">)</span>
 <span class="p">)</span>
 <span class="p">]</span>
 </code></pre></div>

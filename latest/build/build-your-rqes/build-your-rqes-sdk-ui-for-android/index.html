@@ -4259,7 +4259,7 @@ Runtime and visual behaviour are configured via the <code>EudiRQESUiConfig</code
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Link to this section">&para;</a></h2>
 <p>Add the SDK dependency to your app's <code>build.gradle</code> file:</p>
 <div class="highlight"><pre><span></span><code>dependencies {
-    implementation(&quot;eu.europa.ec.eudi:eudi-lib-android-rqes-ui:&lt;version&gt;&quot;)
+    implementation("eu.europa.ec.eudi:eudi-lib-android-rqes-ui:&lt;version&gt;")
 }
 </code></pre></div>
 <p>Replace <code>&lt;version&gt;</code> with the latest published release available on Maven Central.</p>
@@ -4274,12 +4274,12 @@ integration.</p>
 <span class="w">    </span><span class="kd">override</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">qtsps</span><span class="p">:</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">QtspData</span><span class="o">&gt;</span>
 <span class="w">        </span><span class="k">get</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">listOf</span><span class="p">(</span>
 <span class="w">            </span><span class="n">QtspData</span><span class="p">(</span>
-<span class="w">                </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;your_name&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="n">endpoint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;your_endpoint&quot;</span><span class="p">.</span><span class="na">toUriOrEmpty</span><span class="p">(),</span>
-<span class="w">                </span><span class="n">tsaUrl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;your_tsaUrl&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="n">clientId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;your_clientid&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="n">clientSecret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;your_secret&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="n">authFlowRedirectionURI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">URI</span><span class="p">.</span><span class="na">create</span><span class="p">(</span><span class="s">&quot;your_registered_deeplink&quot;</span><span class="p">),</span>
+<span class="w">                </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"your_name"</span><span class="p">,</span>
+<span class="w">                </span><span class="n">endpoint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"your_endpoint"</span><span class="p">.</span><span class="na">toUriOrEmpty</span><span class="p">(),</span>
+<span class="w">                </span><span class="n">tsaUrl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"your_tsaUrl"</span><span class="p">,</span>
+<span class="w">                </span><span class="n">clientId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"your_clientid"</span><span class="p">,</span>
+<span class="w">                </span><span class="n">clientSecret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"your_secret"</span><span class="p">,</span>
+<span class="w">                </span><span class="n">authFlowRedirectionURI</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">URI</span><span class="p">.</span><span class="na">create</span><span class="p">(</span><span class="s">"your_registered_deeplink"</span><span class="p">),</span>
 <span class="w">                </span><span class="n">hashAlgorithm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">HashAlgorithmOID</span><span class="p">.</span><span class="na">SHA_256</span><span class="p">,</span>
 <span class="w">            </span><span class="p">)</span>
 <span class="w">        </span><span class="p">)</span>
@@ -4305,15 +4305,15 @@ integration.</p>
 <p>Register the <code>authFlowRedirectionURI</code> in your app manifest.<br />
 This allows the RQES Service to redirect the user back to your app after authentication.</p>
 <div class="highlight"><pre><span></span><code><span class="nt">&lt;intent-filter&gt;</span>
-<span class="w">    </span><span class="nt">&lt;action</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;android.intent.action.VIEW&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;action</span><span class="w"> </span><span class="na">android:name=</span><span class="s">"android.intent.action.VIEW"</span><span class="w"> </span><span class="nt">/&gt;</span>
 
-<span class="w">    </span><span class="nt">&lt;category</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;android.intent.category.DEFAULT&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;category</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;android.intent.category.BROWSABLE&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;category</span><span class="w"> </span><span class="na">android:name=</span><span class="s">"android.intent.category.DEFAULT"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;category</span><span class="w"> </span><span class="na">android:name=</span><span class="s">"android.intent.category.BROWSABLE"</span><span class="w"> </span><span class="nt">/&gt;</span>
 
 <span class="w">    </span><span class="nt">&lt;data</span>
-<span class="w">        </span><span class="na">android:host=</span><span class="s">&quot;oauth&quot;</span>
-<span class="w">        </span><span class="na">android:path=</span><span class="s">&quot;/callback&quot;</span>
-<span class="w">        </span><span class="na">android:scheme=</span><span class="s">&quot;rqes://&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="na">android:host=</span><span class="s">"oauth"</span>
+<span class="w">        </span><span class="na">android:path=</span><span class="s">"/callback"</span>
+<span class="w">        </span><span class="na">android:scheme=</span><span class="s">"rqes://"</span><span class="w"> </span><span class="nt">/&gt;</span>
 
 <span class="nt">&lt;/intent-filter&gt;</span>
 </code></pre></div>
@@ -4324,14 +4324,14 @@ a Flow" below).</p>
 <p>If your use case supports <strong>same-device document retrieval</strong>, register an additional deep link in
 your manifest:</p>
 <div class="highlight"><pre><span></span><code><span class="nt">&lt;intent-filter&gt;</span>
-<span class="w">    </span><span class="nt">&lt;action</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;android.intent.action.VIEW&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;action</span><span class="w"> </span><span class="na">android:name=</span><span class="s">"android.intent.action.VIEW"</span><span class="w"> </span><span class="nt">/&gt;</span>
 
-<span class="w">    </span><span class="nt">&lt;category</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;android.intent.category.DEFAULT&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
-<span class="w">    </span><span class="nt">&lt;category</span><span class="w"> </span><span class="na">android:name=</span><span class="s">&quot;android.intent.category.BROWSABLE&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;category</span><span class="w"> </span><span class="na">android:name=</span><span class="s">"android.intent.category.DEFAULT"</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;category</span><span class="w"> </span><span class="na">android:name=</span><span class="s">"android.intent.category.BROWSABLE"</span><span class="w"> </span><span class="nt">/&gt;</span>
 
 <span class="w">    </span><span class="nt">&lt;data</span>
-<span class="w">        </span><span class="na">android:host=</span><span class="s">&quot;your_host&quot;</span>
-<span class="w">        </span><span class="na">android:scheme=</span><span class="s">&quot;your_scheme://&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">        </span><span class="na">android:host=</span><span class="s">"your_host"</span>
+<span class="w">        </span><span class="na">android:scheme=</span><span class="s">"your_scheme://"</span><span class="w"> </span><span class="nt">/&gt;</span>
 
 <span class="nt">&lt;/intent-filter&gt;</span>
 </code></pre></div>

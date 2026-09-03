@@ -24,7 +24,7 @@ The following table provides a high-level overview of the key user functionaliti
 | Features | Description | Status | 
 | --- | --- | --- |
 | [Issuance](#issuance) | Issuance of verifiable credentials | Completed |
-| [Presentation](#presentation) | Presentation of verifiable credentials | In Progress |
+| [Presentation](#presentation) | Presentation of verifiable credentials | Completed |
 | [rQES](#rqes) | Electronic signing with EUDI Wallet | Completed |
 | [Transaction Logs](#transaction-logs) | Log of historic transactions executed by the EUDI Wallet | In Progress |
 | [Request data deletion from RPs](#request-data-deletion-from-rps) | Users requesting data deletion from Relying Parties they have previously interacted with | In Progress |
@@ -73,7 +73,7 @@ The "Presentation" functionality is aligned with the OpenID4VP protocol (for rem
 | [Remote Same-device presentation](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/64){:target="_blank"} | User uses a web browser or another application on the device on which the Wallet Unit is installed to share attestations to a requesting Relying Party. | Completed |
 | [Remote Cross-device presentation](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/64){:target="_blank"} | User uses a web browser on a device other than the device on which their Wallet Unit is installed to share attestations to a requesting Relying Party. |Completed |
 | [Proximity presentation](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/64){:target="_blank"} | User and their device are physically near the Relying Party Instance, and PIDs and attestations are exchanged via proximity technologies (e.g., NFC, Bluetooth), either under human supervision (Supervised) or directly to a machine without supervision (Unsupervised). | Completed |
-| [Digital Credential API](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/34){:target="_blank"} | The Digital Credentials API enables the secure presentation of attestations from the EUDI Wallet, leveraging the web browser for the presentation flow. | In Progress |
+| [Digital Credential API](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/34){:target="_blank"} | The Digital Credentials API enables the secure presentation of attestations from the EUDI Wallet, leveraging the web browser for the presentation flow. | Completed |
 | [Proximity Verifier](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/43){:target="_blank"} | This includes implementation of an open source verifier application for Android, supporting stakeholders for developing their own proximity reader solutions. | Completed |
 | [Alignment to latest version of the standard](https://github.com/eu-digital-identity-wallet/eudi-wallet-reference-implementation-roadmap/issues/64){:target="_blank"} | This provides enhancements to presentation functionalities as detailed by the latest version of the OpenID4VP standard (v1.0). | Completed|
 

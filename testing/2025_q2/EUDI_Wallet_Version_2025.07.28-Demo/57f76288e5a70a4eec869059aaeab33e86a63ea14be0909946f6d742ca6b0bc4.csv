@@ -1,0 +1,5 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Request/Issue mDL","Log in successfully","ERROR","2025-07-28T16:33:52.107082+03:00[Europe/Athens]","0.0","0.0"
+"Request/Issue mDL","Select document for issuance","ERROR","2025-07-28T16:34:12.25491+03:00[Europe/Athens]","0.0","0.0"
+"Request/Issue mDL","Country and credential provider selection","ERROR","2025-07-28T16:34:32.411288+03:00[Europe/Athens]","0.0","0.0"
+"Request/Issue mDL","Register personal data and view driving license","ERROR","2025-07-28T16:34:52.55149+03:00[Europe/Athens]","0.0","0.0"

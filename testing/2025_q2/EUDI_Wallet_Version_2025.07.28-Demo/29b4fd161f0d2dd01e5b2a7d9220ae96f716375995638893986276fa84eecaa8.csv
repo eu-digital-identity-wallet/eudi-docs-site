@@ -1,0 +1,5 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"View PID document","User successfully logs in and sees the dashboard","ERROR","2025-07-28T16:41:46.109343+03:00[Europe/Athens]","0.0","0.0"
+"View PID document","User opens the PID document from the dashboard","ERROR","2025-07-28T16:41:46.316303+03:00[Europe/Athens]","0.0","0.0"
+"View PID document","Viewing attestation details after selecting the 'eye' icon","ERROR","2025-07-28T16:41:46.520544+03:00[Europe/Athens]","0.0","0.0"
+"View PID document","User closes the PID document and returns to the dashboard","ERROR","2025-07-28T16:41:46.728274+03:00[Europe/Athens]","0.0","0.0"

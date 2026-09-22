@@ -1,0 +1,8 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Signing a document with EUDI Wallet","Single Credential ID Available","SUCCESS","2025-10-14T10:23:30.5271+03:00[Europe/Athens]","0.0","8.98"
+"Signing a document with EUDI Wallet","QTSP redirects user to attestation request","SUCCESS","2025-10-14T10:23:57.107961+03:00[Europe/Athens]","0.0","9.3"
+"Signing a document with EUDI Wallet","No matching attestations available","SUCCESS","2025-10-14T10:24:06.440785+03:00[Europe/Athens]","0.0","9.37"
+"Signing a document with EUDI Wallet","User consents to release attestation","SUCCESS","2025-10-14T10:24:15.84297+03:00[Europe/Athens]","0.0","8.86"
+"Signing a document with EUDI Wallet","User authentication fails","SUCCESS","2025-10-14T10:24:24.736208+03:00[Europe/Athens]","0.0","8.82"
+"Signing a document with EUDI Wallet","User cancels attestation release","SUCCESS","2025-10-14T10:24:33.577883+03:00[Europe/Athens]","0.0","9.4"
+"Signing a document with EUDI Wallet","QTSP signs the document successfully","SUCCESS","2025-10-14T10:24:43.006478+03:00[Europe/Athens]","0.0","9.33"

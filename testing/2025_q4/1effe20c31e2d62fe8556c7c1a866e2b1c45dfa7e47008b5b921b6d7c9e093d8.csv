@@ -1,0 +1,4 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Request/Issue PID","Add document via national ID","SUCCESS","2025-10-14T10:58:27.755646+03:00[Europe/Athens]","0.0","65.63"
+"Request/Issue PID","Select authentication method and enter data","SUCCESS","2025-10-14T10:59:33.416333+03:00[Europe/Athens]","0.0","68.49"
+"Request/Issue PID","Enter data and display national ID","SUCCESS","2025-10-14T11:00:41.931817+03:00[Europe/Athens]","0.0","89.93"

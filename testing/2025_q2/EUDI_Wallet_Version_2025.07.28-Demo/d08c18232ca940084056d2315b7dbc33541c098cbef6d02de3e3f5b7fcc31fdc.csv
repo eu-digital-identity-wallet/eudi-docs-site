@@ -1,0 +1,3 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Batch Issuance of Attestations in EUDI Wallet","Attestations stored based on issuer's smaller batch size","SUCCESS","2025-07-28T16:00:16.588411+03:00[Europe/Athens]","0.0","20.23"
+"Batch Issuance of Attestations in EUDI Wallet","Attestations stored based on issuer's smaller batch size","SUCCESS","2025-07-28T16:29:19.764033+03:00[Europe/Athens]","0.0","0.18"

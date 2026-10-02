@@ -40,4 +40,4 @@ To build the application using the source code and connect it with the issuer an
 
 7. (Optional) [Follow the instructions](./self-signed-certificates.md) if self-signed certificates are required.
 
-[Check the full list of configuration options](https://github.com/eu-digital-identity-wallet/eudi-app-android-wallet-ui/blob/main/wiki/configuration.md){:target="_blank"}.
+[Check the full list of configuration options](https://github.com/eu-digital-identity-wallet/eudi-app-android-wallet-ui/blob/main/wiki/CONFIGURATION.md){:target="_blank"}.

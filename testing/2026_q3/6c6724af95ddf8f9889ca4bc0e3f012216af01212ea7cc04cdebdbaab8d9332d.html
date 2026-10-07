@@ -1,0 +1,1877 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>Features</title>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="bootstrap-icons/bootstrap-icons.css">
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.13.1/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.13.1/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.13.1/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/>
+<!--CHART.JS-->
+<script src="chartjs/chart.js"></script>
+<script src="chartjs/chartjs-plugin-datalabels@2.0.0.min.js"></script>
+<script src="chartjs/patternomaly.min.js"></script>
+<script>
+    // Register the plugin to all charts:
+    Chart.register(ChartDataLabels);
+</script>
+<!-- JQuery-UI -->
+<link type="text/css" href="jqueryui/1.11.2-start/jquery-ui.min.css" rel="Stylesheet" />
+<script type="text/javascript" src="jqueryui/1.11.2-start/jquery-ui.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.13.1/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.13.1/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.13.1/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+
+
+
+
+    <script>
+
+        $(document).ready(function () {
+
+            $("#scenario-results").DataTable({
+                "order": [[0, "asc",], [3, "asc",]],
+                "language": {
+                    searchPlaceholder: "Filter",
+                    search: ""
+                },
+                columnDefs: [
+                    {type: 'time-elapsed-dhms', targets: 4}
+                ]
+            })
+            $("#manual-scenario-results").DataTable({
+                "order": [[0, "asc",], [1, "asc",]],
+                "language": {
+                    searchPlaceholder: "Filter",
+                    search: ""
+                },
+            })
+
+            $('.example-table table').DataTable({
+                searching: false,
+                ordering: false,
+                paging: false,
+                info: false
+            });
+
+            $('.example-table-in-scenario table').DataTable({
+                searching: false,
+                ordering: false,
+                paging: false,
+                info: false
+            });
+
+            $('#evidence-table').DataTable(
+                {
+                    searching: false,
+                    ordering: false,
+                    paging: false,
+                    info: false
+                }
+            );
+
+
+            $(".scenario-docs .card-body table").wrap("<div class='table-responsive'></div>");
+
+            $("#requirements-tabs").tabs();
+            $("#test-tabs").tabs();
+
+            var requirementsTree = [{"text":"View Transactions in History tab","type":"feature","href":"6c6724af95ddf8f9889ca4bc0e3f012216af01212ea7cc04cdebdbaab8d9332d.html","nodes":[],"selectable":false,"tags":["\u003ca href\u003d\u0027##beforetable\u0027\u003e\u003ci class\u003d\u0027bi bi-check-circle-fill success-icon \u0027 title\u003d\u0027SUCCESS\u0027\u003e\u003c/i\u003e\u003c/a\u003e","\u003cspan class\u003d\u0027feature-count\u0027\u003e6 scenarios\u003c/span\u003e, \u003cspan class\u003d\u0027feature-count\u0027\u003e26 test cases\u003c/span\u003e"]}];
+
+            $('#tree').treeview({
+                data: requirementsTree,
+                enableLinks: true,
+                levels: 10,
+                showTags: true,
+                expandIcon: "bi bi-journal-plus",
+                collapseIcon: "bi bi-journal-minus",
+                emptyIcon: "bi bi-journal"
+            });
+
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $(".scenario-docs > div > p").html(function () {
+                var text = $(this).text().trim().split(" ");
+                var first = text.shift();
+                return (text.length > 0 ? "<strong>" + first + "</strong> " : first) + text.join(" ");
+            });
+        });
+    </script>
+</head>
+
+
+<body class="results-page">
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">EUDI Wallet Test Report</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+            <a href='index.html'>Home</a> > <a href="capabilities.html">Requirements</a>
+
+                > <a href="dbf453fa563676cf06b7906d65758b8dacb179d962bf05de8a816af62d650590.html">Ios</a>
+                > <a href="68393ca330e279ef279a1cf78cadff14a51d2db23ce131bec2879da28ef0cddf.html">Transaction log ARF alignment 193</a>
+                > <a href="337807089c018c672411efb2b984cb7f65a50a5c6a45fcd59e68bab17171b83b.html">View transactions 328</a>
+
+
+                    > <span class="truncate-40">View transactions in history tab</span>
+
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li >
+            <a href="index.html"><i class="bi bi-journal-check"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="bi bi-journal-text"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="dd7750c6dc86be28f39572a355a41442ba81daa3e70b6c781cfbc96e905bd672.html"><i class="bi bi-chat-text"></i> Platforms</a>
+        </li>
+        <li >
+            <a href="0272dadd83d6e6ac748d9a947522ca78b8873f5156f9bd38d6a0eb735ee5993b.html"><i class="bi bi-chat-text"></i> Epics</a>
+        </li>
+        <li class="active">
+            <a href="#"><i class="bi bi-chat-text"></i> Features</a>
+        </li>
+        <li >
+            <a href="f00f76a04d2d99822f342e19edfb456d954ef898f485c501f324bafd9ade930f.html"><i class="bi bi-chat-text"></i> ##s</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 06-10-2026 11:29</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+    <div id="beforetable"></div>
+    <div id="results-dashboard">
+        <div class="table">
+            <div class=row">
+                <div class="col-sm-12">
+                    <div>
+                        <div clas="table">
+                            <div class="row">
+
+                                <div class="col-sm-8">
+                                        <span>
+                                            <h2><i class="bi bi-book"></i> Feature: View transactions in history tab</h2>
+                                        </span>
+                                    </div>
+                                        <div class="col-sm-4">
+                                        <span class="feature-tags">
+                                            <p class="tag">
+                                                <span class="badge feature-tag tag-badge" style="background:default;">
+                                                        <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink"
+                                                                                               style="background:default;"
+                                                                                               href="4d818a5f41e441a87b693ff4e39ed794d609f664e9f0322c453779b3e2a96970.html">US_VT (tag)</a>
+                                                    </span>
+                                                <span class="badge feature-tag tag-badge" style="background:default;">
+                                                        <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink"
+                                                                                               style="background:default;"
+                                                                                               href="1077391a8c9765fef7156685713044bd9278de8033435b0004261aa28e658fa3.html">Q3_2026 (tag)</a>
+                                                    </span>
+                                                <span class="badge feature-tag tag-badge" style="background:default;">
+                                                        <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink"
+                                                                                               style="background:default;"
+                                                                                               href="6f8a5d68a7c6ca6142be6d100bb7953e91690ce198c99ea44c1bf7804e9f3b13.html">IOS (tag)</a>
+                                                    </span>
+                                            </p>
+                                        </span>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                            <div class="requirementNarrativeTitle">
+                                As a EUDI Wallet User<br />
+I want to view any transaction in my EUDI Wallet<br />
+So that I can review the details of my transaction
+                            </div>
+
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-sm-12">
+
+                        <!-- Requirements result tabs -->
+                        <ul class="nav nav-tabs">
+                            <li class="active">
+                                <a data-toggle="tab" href="#specs"><i class="bi bi-journal-text"></i> Specifications</a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#results"><i class="bi bi-speedometer"></i> Test Results</a>
+                            </li>
+                        </ul>
+
+                        <!-- Specifications and Results tabs -->
+                        <div class="card border">
+                            <div class="tab-content" id="pills-tabContent">
+                                <div id="specs" class="tab-pane fade in active">
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <h3>Feature Coverage By Scenario</h3>
+
+                                                <!-- REQUIREMENTS PIE CHART -->
+                                                    <div class="chart-container" style="position: relative; width:30vw">
+                                                        <canvas id="requirementChart" width="300" height="300"></canvas>
+                                                    </div>
+
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <!--- TOC --->
+                                                <div id="toc">
+                                                    <h3>Overview</h3>
+                                                    <table class="table" id="toc-table">
+                                                                    <tr>
+                                                                        <td style="width:95%;" class="toc-title">
+                                                                            <span class="orphan-scenario-toc-entry">
+                                                                                    <a href="#54275b2bb198fdeb63538fe41f7c5fcb70043eb2b21f4335f08a894ac6e63f7e"
+                                                                                       title="View scenario details">
+                                                                                        <i class="bi bi-chat-dots"></i> Scenario: User navigates to the History screen
+                                                                                    </a>
+                                                                                </span>
+                                                                        </td>
+                                                                        <td>
+
+                                                                        </td>
+                                                                        <td style="width:5%;">
+                                                                            <table>
+                                                                                <tr>
+                                                                                    <td class="icons-bar">
+                                                                                        <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                           href="05ca99e6de4a7f8972955ac5fdc7a12005ee1768c9b3188053348ee23e13d7f7.html"
+                                                                                           title="View test results">
+                                                                                            <a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                                            </a>
+
+                                                                                            <i class="bi bi-person manual"
+                                                                                               title="Manual test"></i>
+                                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                               href="05ca99e6de4a7f8972955ac5fdc7a12005ee1768c9b3188053348ee23e13d7f7.html"
+                                                                                               title="View test results">
+                                                                                                <i class="bi bi-eyeglasses"></i>
+                                                                                            </a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="width:95%;" class="toc-title">
+                                                                            <span class="orphan-scenario-toc-entry">
+                                                                                    <a href="#c0704c161506baa9871f27c6174f9d8a327b8ccaed951d8f4c3b31babb56b92b"
+                                                                                       title="View scenario details">
+                                                                                        <i class="bi bi-chat-dots"></i> Scenario Outline: User views credential presentation transaction details
+                                                                                    </a>
+                                                                                        (10 examples)
+                                                                                </span>
+                                                                        </td>
+                                                                        <td>
+
+                                                                        </td>
+                                                                        <td style="width:5%;">
+                                                                            <table>
+                                                                                <tr>
+                                                                                    <td class="icons-bar">
+                                                                                        <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                           href="3556fbc05302892e61b6ac6460ddaad83bf1854fd257ba277ede46114943c562.html"
+                                                                                           title="View test results">
+                                                                                            <a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                                            </a>
+
+                                                                                            <i class="bi bi-person manual"
+                                                                                               title="Manual test"></i>
+                                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                               href="3556fbc05302892e61b6ac6460ddaad83bf1854fd257ba277ede46114943c562.html"
+                                                                                               title="View test results">
+                                                                                                <i class="bi bi-eyeglasses"></i>
+                                                                                            </a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="width:95%;" class="toc-title">
+                                                                            <span class="orphan-scenario-toc-entry">
+                                                                                    <a href="#6c1c6686d7ede891395e125b62e825047a57f67c27bc79f61fcaee7893fc2950"
+                                                                                       title="View scenario details">
+                                                                                        <i class="bi bi-chat-dots"></i> Scenario Outline: User views signing/sealing transaction details
+                                                                                    </a>
+                                                                                        (6 examples)
+                                                                                </span>
+                                                                        </td>
+                                                                        <td>
+
+                                                                        </td>
+                                                                        <td style="width:5%;">
+                                                                            <table>
+                                                                                <tr>
+                                                                                    <td class="icons-bar">
+                                                                                        <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                           href="aecc3c35724f52b9939a308c97c4741a0a12a62ba6cdeb5e76d02842f5fa2401.html"
+                                                                                           title="View test results">
+                                                                                            <a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                                            </a>
+
+                                                                                            <i class="bi bi-person manual"
+                                                                                               title="Manual test"></i>
+                                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                               href="aecc3c35724f52b9939a308c97c4741a0a12a62ba6cdeb5e76d02842f5fa2401.html"
+                                                                                               title="View test results">
+                                                                                                <i class="bi bi-eyeglasses"></i>
+                                                                                            </a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="width:95%;" class="toc-title">
+                                                                            <span class="orphan-scenario-toc-entry">
+                                                                                    <a href="#9eca852eb0a16b77a6f2763dbf5f9af1274f605dda9158ed984b8a751d477288"
+                                                                                       title="View scenario details">
+                                                                                        <i class="bi bi-chat-dots"></i> Scenario Outline: User views credential (PID/attestation) issuance/re-issuance transaction details
+                                                                                    </a>
+                                                                                        (5 examples)
+                                                                                </span>
+                                                                        </td>
+                                                                        <td>
+
+                                                                        </td>
+                                                                        <td style="width:5%;">
+                                                                            <table>
+                                                                                <tr>
+                                                                                    <td class="icons-bar">
+                                                                                        <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                           href="71a451812f90fb73afc30973ca356cb52e98b819debf7ce5424d8c92d5d73dc8.html"
+                                                                                           title="View test results">
+                                                                                            <a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                                            </a>
+
+                                                                                            <i class="bi bi-person manual"
+                                                                                               title="Manual test"></i>
+                                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                               href="71a451812f90fb73afc30973ca356cb52e98b819debf7ce5424d8c92d5d73dc8.html"
+                                                                                               title="View test results">
+                                                                                                <i class="bi bi-eyeglasses"></i>
+                                                                                            </a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="width:95%;" class="toc-title">
+                                                                            <span class="orphan-scenario-toc-entry">
+                                                                                    <a href="#eb199a98d7f514ac2145e08203a46acd5401f0667f4710449efc4a79408b213e"
+                                                                                       title="View scenario details">
+                                                                                        <i class="bi bi-chat-dots"></i> Scenario Outline: User views credential (PID/attestation) deletion transaction details
+                                                                                    </a>
+                                                                                        (3 examples)
+                                                                                </span>
+                                                                        </td>
+                                                                        <td>
+
+                                                                        </td>
+                                                                        <td style="width:5%;">
+                                                                            <table>
+                                                                                <tr>
+                                                                                    <td class="icons-bar">
+                                                                                        <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                           href="09b7d2b11d8d73d06a22625f6e009dc9a6b6c71ef375137568f031ae3c766e09.html"
+                                                                                           title="View test results">
+                                                                                            <a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                                            </a>
+
+                                                                                            <i class="bi bi-person manual"
+                                                                                               title="Manual test"></i>
+                                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                               href="09b7d2b11d8d73d06a22625f6e009dc9a6b6c71ef375137568f031ae3c766e09.html"
+                                                                                               title="View test results">
+                                                                                                <i class="bi bi-eyeglasses"></i>
+                                                                                            </a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td style="width:95%;" class="toc-title">
+                                                                            <span class="orphan-scenario-toc-entry">
+                                                                                    <a href="#3ca90490d0cbfa82581f3f2d2a873dfd870b5e24c4f3570455669389bd0dab3d"
+                                                                                       title="View scenario details">
+                                                                                        <i class="bi bi-chat-dots"></i> Scenario: Details screen back button
+                                                                                    </a>
+                                                                                </span>
+                                                                        </td>
+                                                                        <td>
+
+                                                                        </td>
+                                                                        <td style="width:5%;">
+                                                                            <table>
+                                                                                <tr>
+                                                                                    <td class="icons-bar">
+                                                                                        <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                           href="f83b1339af501b2a46fd6c1b1b4055c00b2ba7fe15704d877867fc867f3d3a4d.html"
+                                                                                           title="View test results">
+                                                                                            <a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                                            </a>
+
+                                                                                            <i class="bi bi-person manual"
+                                                                                               title="Manual test"></i>
+                                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
+                                                                                               href="f83b1339af501b2a46fd6c1b1b4055c00b2ba7fe15704d877867fc867f3d3a4d.html"
+                                                                                               title="View test results">
+                                                                                                <i class="bi bi-eyeglasses"></i>
+                                                                                            </a>
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </table>
+                                                                        </td>
+                                                                    </tr>
+                                                    </table>
+                                                </div>
+                                                <!--- END OF TOC --->
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <h3>Scenarios</h3>
+
+                                                    <a name="254a2f2b-4895-4ec8-9a19-1bd334c3a115"></a>
+                                                    <p class="rule-tags inline-tag">
+                                                    </p>
+                                                        <div class="scenario-docs card">
+                                                            <div class="scenario-docs card-header"
+                                                                 style="min-height:1.5em;">
+                                                                    <span class="scenario-heading">
+                                                                    Background: </span>
+                                                                </span>
+                                                            </div>
+                                                            <div class="scenario-docs card-body">
+                                                                    <p>Given the user is registered to a valid EUDI Wallet on their mobile device</p>
+                                                                    <p>And the user is authenticated in the EUDI Wallet</p>
+                                                            </div>
+                                                        </div>
+
+
+                                                        <div class="scenario-docs card" id="54275b2bb198fdeb63538fe41f7c5fcb70043eb2b21f4335f08a894ac6e63f7e">
+                                                            <div class="scenario-docs card-header success"
+                                                                 style="min-height:1.5em;">
+                                                                <div>
+                                                                        <span class="scenario-heading">
+                                                                            <a href="05ca99e6de4a7f8972955ac5fdc7a12005ee1768c9b3188053348ee23e13d7f7.html"
+                                                                               title="View test results">Scenario: User navigates to the History screen</a>
+                                                                        </span>
+
+                                                                        <span class="example-tags inline-tag">
+                                                                                <span class="badge tag-badge"
+                                                                                      style="background:default;">
+                                                                                    <i class="bi bi-tag-fill"></i>&nbsp;
+                                                                                    <a class="tagLink"
+                                                                                       style="background:default;"
+                                                                                       href="220d8ef6080eb8a7746b6ccaff3b44ac3c1f123a09790bb9a8ff31e7b07c9746.html">Passed (manual)</a>
+                                                                                </span>
+                                                                                <span class="badge tag-badge"
+                                                                                      style="background:default;">
+                                                                                    <i class="bi bi-tag-fill"></i>&nbsp;
+                                                                                    <a class="tagLink"
+                                                                                       style="background:default;"
+                                                                                       href="73252a022a99ede30e040aac912ccc0553b3be8e8462a6db3aebd282611a28c3.html">US_VT_TC_01 (tag)</a>
+                                                                                </span>
+                                                                        </span>
+
+                                                                    <span class="scenario-result-icon">
+                                                                     <i
+                                                                            class="bi bi-person manual"
+                                                                            title="Manual test"></i>
+
+                                                                            <a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                        </span>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="scenario-docs card-body">
+                                                                    <p>Given the user is on the Home screen</p>
+                                                                    <p>When the user clicks the History button</p>
+                                                                    <p>Then the user navigates to the Transactions screen</p>
+                                                                    <p>And all transactions are displayed</p>
+                                                                <div class="examples">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="scenario-docs card" id="c0704c161506baa9871f27c6174f9d8a327b8ccaed951d8f4c3b31babb56b92b">
+                                                            <div class="scenario-docs card-header success"
+                                                                 style="min-height:1.5em;">
+                                                                <div>
+                                                                        <span class="scenario-heading">
+                                                                            <a href="3556fbc05302892e61b6ac6460ddaad83bf1854fd257ba277ede46114943c562.html"
+                                                                               title="View test results">Scenario Outline: User views credential presentation transaction details</a>
+                                                                        </span>
+
+                                                                        <span class="example-tags inline-tag">
+                                                                                <span class="badge tag-badge"
+                                                                                      style="background:default;">
+                                                                                    <i class="bi bi-tag-fill"></i>&nbsp;
+                                                                                    <a class="tagLink"
+                                                                                       style="background:default;"
+                                                                                       href="220d8ef6080eb8a7746b6ccaff3b44ac3c1f123a09790bb9a8ff31e7b07c9746.html">Passed (manual)</a>
+                                                                                </span>
+                                                                                <span class="badge tag-badge"
+                                                                                      style="background:default;">
+                                                                                    <i class="bi bi-tag-fill"></i>&nbsp;
+                                                                                    <a class="tagLink"
+                                                                                       style="background:default;"
+                                                                                       href="2a28d5f0f6290628a1e022635eac6ce060a4dd572b7ea36421cb0bf3c688adb4.html">US_VT_TC_02 (tag)</a>
+                                                                                </span>
+                                                                        </span>
+
+                                                                    <span class="scenario-result-icon">
+                                                                     <i
+                                                                            class="bi bi-person manual"
+                                                                            title="Manual test"></i>
+
+                                                                            <a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                        </span>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="scenario-docs card-body">
+                                                                    <p>Given the user is on the History screen</p>
+                                                                    <p>When the user selects a credential presentation transaction entry from the list</p>
+                                                                    <p>Then the EUDI Wallet presents the following details by {Detail} and {Description}</p>
+                                                                <div class="examples">
+                                                                        <p><p>Examples:</p>
+<blockquote>
+</blockquote>
+<div class='example-table-in-scenario'><table>
+<thead>
+<tr><th>Detail</th><th>Description</th><th> </th></tr>
+</thead>
+<tbody>
+<tr><td>Relying Party name</td><td>The Interacting Party name with a verification badge next to it, for trusted Parties (if available)</td><td> </td></tr>
+<tr><td>Relying Party information</td><td>URL, country and contact details (if available)</td><td> </td></tr>
+<tr><td>Intermediary RP information</td><td>Intermediary Relying Party information (if applicable)</td><td> </td></tr>
+<tr><td>DateTime</td><td>The presentation operation was performed in ISO8601 format</td><td> </td></tr>
+<tr><td>Status</td><td>The presentation result (Completed or Not Completed), reason of non-completion shown where available</td><td> </td></tr>
+<tr><td>Credential(s)</td><td>Each credential details shared presented as an expandable/collapsible card; only attribute identifiers displayed (no values)</td><td> </td></tr>
+<tr><td>Intended use</td><td>The purpose and privacy policy link, where available</td><td> </td></tr>
+<tr><td>Transaction Data</td><td>Transactional data displayed only if explicitly required by the applicable technical specification</td><td> </td></tr>
+<tr><td>&quot;View previously attempted requests&quot; and &quot;Initiate Deletion Request&quot; button</td><td>The user can request deletion of personal data previously shared with the Relying Party (only for presentation transactions)</td><td> </td></tr>
+<tr><td>&quot;View previously attempted requests&quot; and &quot;Initiate Transaction report&quot; button</td><td>The user can report any suspicious operations related to this presentation</td><td> </td></tr>
+</tbody>
+</table></div>
+</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="scenario-docs card" id="6c1c6686d7ede891395e125b62e825047a57f67c27bc79f61fcaee7893fc2950">
+                                                            <div class="scenario-docs card-header success"
+                                                                 style="min-height:1.5em;">
+                                                                <div>
+                                                                        <span class="scenario-heading">
+                                                                            <a href="aecc3c35724f52b9939a308c97c4741a0a12a62ba6cdeb5e76d02842f5fa2401.html"
+                                                                               title="View test results">Scenario Outline: User views signing/sealing transaction details</a>
+                                                                        </span>
+
+                                                                        <span class="example-tags inline-tag">
+                                                                                <span class="badge tag-badge"
+                                                                                      style="background:default;">
+                                                                                    <i class="bi bi-tag-fill"></i>&nbsp;
+                                                                                    <a class="tagLink"
+                                                                                       style="background:default;"
+                                                                                       href="220d8ef6080eb8a7746b6ccaff3b44ac3c1f123a09790bb9a8ff31e7b07c9746.html">Passed (manual)</a>
+                                                                                </span>
+                                                                                <span class="badge tag-badge"
+                                                                                      style="background:default;">
+                                                                                    <i class="bi bi-tag-fill"></i>&nbsp;
+                                                                                    <a class="tagLink"
+                                                                                       style="background:default;"
+                                                                                       href="e3cf15a2415eb5a2ee53937624a660dabecab6a9915d2e019ace011c000aaba3.html">US_VT_TC_03 (tag)</a>
+                                                                                </span>
+                                                                        </span>
+
+                                                                    <span class="scenario-result-icon">
+                                                                     <i
+                                                                            class="bi bi-person manual"
+                                                                            title="Manual test"></i>
+
+                                                                            <a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                        </span>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="scenario-docs card-body">
+                                                                    <p>Given the user is on the History screen</p>
+                                                                    <p>When the user selects a signing sealing transaction entry from the list</p>
+                                                                    <p>Then the EUDI Wallet presents the following details by {Detail} and {Description}</p>
+                                                                <div class="examples">
+                                                                        <p><p>Examples:</p>
+<blockquote>
+</blockquote>
+<div class='example-table-in-scenario'><table>
+<thead>
+<tr><th>Detail</th><th>Description</th><th> </th></tr>
+</thead>
+<tbody>
+<tr><td>DateTime</td><td>The datetime the operation was performed</td><td> </td></tr>
+<tr><td>Purpose</td><td>Purpose/type of the transaction, where applicable</td><td> </td></tr>
+<tr><td>Status</td><td>The transaction result (Completed or Not Completed)</td><td> </td></tr>
+<tr><td>Relying Party</td><td>The Interacting Party name</td><td> </td></tr>
+<tr><td>signingTransactionIdentifier</td><td>where applicable</td><td> </td></tr>
+<tr><td>Document/data</td><td>The document or data signed or sealed, if available</td><td> </td></tr>
+</tbody>
+</table></div>
+</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="scenario-docs card" id="9eca852eb0a16b77a6f2763dbf5f9af1274f605dda9158ed984b8a751d477288">
+                                                            <div class="scenario-docs card-header success"
+                                                                 style="min-height:1.5em;">
+                                                                <div>
+                                                                        <span class="scenario-heading">
+                                                                            <a href="71a451812f90fb73afc30973ca356cb52e98b819debf7ce5424d8c92d5d73dc8.html"
+                                                                               title="View test results">Scenario Outline: User views credential (PID/attestation) issuance/re-issuance transaction details</a>
+                                                                        </span>
+
+                                                                        <span class="example-tags inline-tag">
+                                                                                <span class="badge tag-badge"
+                                                                                      style="background:default;">
+                                                                                    <i class="bi bi-tag-fill"></i>&nbsp;
+                                                                                    <a class="tagLink"
+                                                                                       style="background:default;"
+                                                                                       href="220d8ef6080eb8a7746b6ccaff3b44ac3c1f123a09790bb9a8ff31e7b07c9746.html">Passed (manual)</a>
+                                                                                </span>
+                                                                                <span class="badge tag-badge"
+                                                                                      style="background:default;">
+                                                                                    <i class="bi bi-tag-fill"></i>&nbsp;
+                                                                                    <a class="tagLink"
+                                                                                       style="background:default;"
+                                                                                       href="7bdd4d75607d08f7e78e0785a9d9ee5dfdde248fda692994bd64c7d0788af5f4.html">US_VT_TC_04 (tag)</a>
+                                                                                </span>
+                                                                        </span>
+
+                                                                    <span class="scenario-result-icon">
+                                                                     <i
+                                                                            class="bi bi-person manual"
+                                                                            title="Manual test"></i>
+
+                                                                            <a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                        </span>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="scenario-docs card-body">
+                                                                    <p>Given the user is on the History screen</p>
+                                                                    <p>When the user selects a credential issuance or reissuance transaction entry from the list</p>
+                                                                    <p>Then the EUDI Wallet presents the following details by {Detail} and {Description}</p>
+                                                                <div class="examples">
+                                                                        <p><p>Examples:</p>
+<blockquote>
+</blockquote>
+<div class='example-table-in-scenario'><table>
+<thead>
+<tr><th>Detail</th><th>Description</th><th> </th></tr>
+</thead>
+<tbody>
+<tr><td>DateTime</td><td>The date and time of the transaction</td><td> </td></tr>
+<tr><td>Status</td><td>The transaction result (Completed or Not Completed), reason of non-completion shown where available</td><td> </td></tr>
+<tr><td>Interacting Party name</td><td>i.e. PID Provider or Attestation Provider name</td><td> </td></tr>
+<tr><td>Credential</td><td>The credential requested and issued</td><td> </td></tr>
+<tr><td>Re-issuance</td><td>Whether User-triggered or automatically initiated by the Wallet Unit and Interacting Party contact details (if available)</td><td> </td></tr>
+</tbody>
+</table></div>
+</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="scenario-docs card" id="eb199a98d7f514ac2145e08203a46acd5401f0667f4710449efc4a79408b213e">
+                                                            <div class="scenario-docs card-header success"
+                                                                 style="min-height:1.5em;">
+                                                                <div>
+                                                                        <span class="scenario-heading">
+                                                                            <a href="09b7d2b11d8d73d06a22625f6e009dc9a6b6c71ef375137568f031ae3c766e09.html"
+                                                                               title="View test results">Scenario Outline: User views credential (PID/attestation) deletion transaction details</a>
+                                                                        </span>
+
+                                                                        <span class="example-tags inline-tag">
+                                                                                <span class="badge tag-badge"
+                                                                                      style="background:default;">
+                                                                                    <i class="bi bi-tag-fill"></i>&nbsp;
+                                                                                    <a class="tagLink"
+                                                                                       style="background:default;"
+                                                                                       href="220d8ef6080eb8a7746b6ccaff3b44ac3c1f123a09790bb9a8ff31e7b07c9746.html">Passed (manual)</a>
+                                                                                </span>
+                                                                                <span class="badge tag-badge"
+                                                                                      style="background:default;">
+                                                                                    <i class="bi bi-tag-fill"></i>&nbsp;
+                                                                                    <a class="tagLink"
+                                                                                       style="background:default;"
+                                                                                       href="ed75ebade6d709587f5c056ac17c33c58ce16f5212e4df7089551e672be57452.html">US_VT_TC_05 (tag)</a>
+                                                                                </span>
+                                                                        </span>
+
+                                                                    <span class="scenario-result-icon">
+                                                                     <i
+                                                                            class="bi bi-person manual"
+                                                                            title="Manual test"></i>
+
+                                                                            <a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                        </span>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="scenario-docs card-body">
+                                                                    <p>Given the user is on the History screen</p>
+                                                                    <p>When the user selects a credential deletion transaction entry from the list</p>
+                                                                    <p>Then the EUDI Wallet presents the following details by {Detail} and {Description}</p>
+                                                                <div class="examples">
+                                                                        <p><p>Examples:</p>
+<blockquote>
+</blockquote>
+<div class='example-table-in-scenario'><table>
+<thead>
+<tr><th>Detail</th><th>Description</th><th> </th></tr>
+</thead>
+<tbody>
+<tr><td>DateTime</td><td>The date and time of the deletion</td><td> </td></tr>
+<tr><td>Credential</td><td>The credential deleted</td><td> </td></tr>
+<tr><td>Provider name</td><td>The original PID Provider or Attestation Provider name</td><td> </td></tr>
+</tbody>
+</table></div>
+</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="scenario-docs card" id="3ca90490d0cbfa82581f3f2d2a873dfd870b5e24c4f3570455669389bd0dab3d">
+                                                            <div class="scenario-docs card-header success"
+                                                                 style="min-height:1.5em;">
+                                                                <div>
+                                                                        <span class="scenario-heading">
+                                                                            <a href="f83b1339af501b2a46fd6c1b1b4055c00b2ba7fe15704d877867fc867f3d3a4d.html"
+                                                                               title="View test results">Scenario: Details screen back button</a>
+                                                                        </span>
+
+                                                                        <span class="example-tags inline-tag">
+                                                                                <span class="badge tag-badge"
+                                                                                      style="background:default;">
+                                                                                    <i class="bi bi-tag-fill"></i>&nbsp;
+                                                                                    <a class="tagLink"
+                                                                                       style="background:default;"
+                                                                                       href="220d8ef6080eb8a7746b6ccaff3b44ac3c1f123a09790bb9a8ff31e7b07c9746.html">Passed (manual)</a>
+                                                                                </span>
+                                                                                <span class="badge tag-badge"
+                                                                                      style="background:default;">
+                                                                                    <i class="bi bi-tag-fill"></i>&nbsp;
+                                                                                    <a class="tagLink"
+                                                                                       style="background:default;"
+                                                                                       href="807bca312b4cd46ae6ad46d48328b00f0a6345886fb35efdd58cbac248d5501e.html">US_VT_TC_06 (tag)</a>
+                                                                                </span>
+                                                                        </span>
+
+                                                                    <span class="scenario-result-icon">
+                                                                     <i
+                                                                            class="bi bi-person manual"
+                                                                            title="Manual test"></i>
+
+                                                                            <a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                        </span>
+                                                                </div>
+
+                                                            </div>
+                                                            <div class="scenario-docs card-body">
+                                                                    <p>Given the user is viewing the details of a transaction entry</p>
+                                                                    <p>When the user presses the back button on top of the screen</p>
+                                                                    <p>Then the user is returned to the History page</p>
+                                                                <div class="examples">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="results" class="tab-pane fade">
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                <h3>Feature Coverage By Scenario</h3>
+                                                <!-- TEST RESULT PIE CHART -->
+                                                    <div class="chart-container" style="position: relative; width:30vw">
+                                                        <canvas id="resultChart" width="300" height="300"></canvas>
+                                                    </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <h4><i class="bi bi-check-square"></i> Test Outcomes</h4>
+                                                <!-- Severity bar chart -->
+                                                <div class="chart-container" style="position: relative; width:30vw">
+                                                    <canvas id="severityChart" width="300" height="300"></canvas>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-4">
+                                                <h4><i class="bi bi-graph-up"></i> Test Performance</h4>
+
+                                                <!-- Duration bar chart -->
+                                                <div class="chart-container" style="position: relative; width:30vw">
+                                                    <canvas id="durationChart" width="300" height="300"></canvas>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+    <div>
+        <h3><i class="bi bi-speedometer2"></i> Key Statistics</h3>
+        <div>
+            <table class="table table-striped table-hover">
+                <tbody>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-card-checklist"></i> Number of Scenarios
+                    </td>
+                    <td>6</td>
+                    <td>
+                        <i class="bi bi-stopwatch"></i> Total
+                        Duration
+                    </td>
+                    <td>1s</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-caret-right"></i> Total Number of Test Cases
+                    </td>
+                    <td>26</td>
+                    <td>
+                        <i class="bi bi-trophy"></i> Fastest Test
+                    </td>
+                    <td>6ms</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-person"></i> Number of Manual Test Cases
+                    </td>
+                    <td>26</td>
+                    <td>
+                        <i class="bi bi-skip-start"></i> Slowest
+                        Test
+                    </td>
+                    <td>48ms</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-flag-fill"></i> Tests Started
+                    </td>
+                    <td>Oct 06, 2026 11:29:53</td>
+                    <td>
+                        <i class="bi bi-stopwatch"></i> Average
+                        Execution Time
+                    </td>
+                    <td>15ms</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-stop-circle"></i> Tests
+                        Finished
+                    </td>
+                    <td>Oct 06, 2026 11:29:55</td>
+                    <td>
+                        <i class="bi bi-stopwatch-fill"></i> Total
+                        Execution Time
+                    </td>
+                    <td>1s</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+                                                <h3><i class="bi bi-gear"></i> Automated Tests</h3>
+
+                                                    No automated tests were executed
+
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <h3><i class="bi bi-hand-index-thumb"></i> Manual Tests</h3>
+
+                                                    <table class="scenario-result-table table"
+                                                           id="manual-scenario-results">
+                                                        <thead>
+                                                        <tr>
+                                                            <th>##</th>
+                                                            <th class="test-name-column">Scenario</th>
+                                                            <th>Context</th>
+                                                            <th>Steps</th>
+                                                            <th>Result</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                                <tr class="scenario-result SUCCESS">
+                                                                    <td>
+                                                                            <a href="#">View Transactions in History tab</a>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="05ca99e6de4a7f8972955ac5fdc7a12005ee1768c9b3188053348ee23e13d7f7.html">User navigates to the History screen</a>
+                                                                    </td>
+                                                                    <td><i class="bi bi-person"></i></td>
+                                                                    <td>4</td>
+                                                                    <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                        <span style="display:none">SUCCESS</span>
+                                                                    </td>
+                                                                </tr>
+                                                                    <tr class="scenario-result SUCCESS">
+                                                                        <td>
+                                                                                <a href="#">View Transactions in History tab</a>
+                                                                        </td>
+                                                                        <td>
+                                                                            <i class="bi bi-table"
+                                                                               title="Data Driven Scenario">
+                                                                                <a href="3556fbc05302892e61b6ac6460ddaad83bf1854fd257ba277ede46114943c562.html">1: User views credential presentation transaction details </a>
+                                                                                    <br/>Detail=Relying Party name, Description=The Interacting Party name with a verification badge next to it, for trusted Parties (if available)
+                                                                        </td>
+                                                                        <td><i class="bi bi-person"></i></td>
+                                                                        <td>5</td>
+                                                                        <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                                                    style="display:none">SUCCESS</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="scenario-result SUCCESS">
+                                                                        <td>
+                                                                                <a href="#">View Transactions in History tab</a>
+                                                                        </td>
+                                                                        <td>
+                                                                            <i class="bi bi-table"
+                                                                               title="Data Driven Scenario">
+                                                                                <a href="3556fbc05302892e61b6ac6460ddaad83bf1854fd257ba277ede46114943c562.html">2: User views credential presentation transaction details </a>
+                                                                                    <br/>Detail=Relying Party information, Description=URL, country and contact details (if available)
+                                                                        </td>
+                                                                        <td><i class="bi bi-person"></i></td>
+                                                                        <td>5</td>
+                                                                        <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                                                    style="display:none">SUCCESS</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="scenario-result SUCCESS">
+                                                                        <td>
+                                                                                <a href="#">View Transactions in History tab</a>
+                                                                        </td>
+                                                                        <td>
+                                                                            <i class="bi bi-table"
+                                                                               title="Data Driven Scenario">
+                                                                                <a href="3556fbc05302892e61b6ac6460ddaad83bf1854fd257ba277ede46114943c562.html">3: User views credential presentation transaction details </a>
+                                                                                    <br/>Detail=Intermediary RP information, Description=Intermediary Relying Party information (if applicable)
+                                                                        </td>
+                                                                        <td><i class="bi bi-person"></i></td>
+                                                                        <td>5</td>
+                                                                        <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                                                    style="display:none">SUCCESS</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="scenario-result SUCCESS">
+                                                                        <td>
+                                                                                <a href="#">View Transactions in History tab</a>
+                                                                        </td>
+                                                                        <td>
+                                                                            <i class="bi bi-table"
+                                                                               title="Data Driven Scenario">
+                                                                                <a href="3556fbc05302892e61b6ac6460ddaad83bf1854fd257ba277ede46114943c562.html">4: User views credential presentation transaction details </a>
+                                                                                    <br/>Detail=DateTime, Description=The presentation operation was performed in ISO8601 format
+                                                                        </td>
+                                                                        <td><i class="bi bi-person"></i></td>
+                                                                        <td>5</td>
+                                                                        <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                                                    style="display:none">SUCCESS</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="scenario-result SUCCESS">
+                                                                        <td>
+                                                                                <a href="#">View Transactions in History tab</a>
+                                                                        </td>
+                                                                        <td>
+                                                                            <i class="bi bi-table"
+                                                                               title="Data Driven Scenario">
+                                                                                <a href="3556fbc05302892e61b6ac6460ddaad83bf1854fd257ba277ede46114943c562.html">5: User views credential presentation transaction details </a>
+                                                                                    <br/>Detail=Status, Description=The presentation result (Completed or Not Completed), reason of non-completion shown where available
+                                                                        </td>
+                                                                        <td><i class="bi bi-person"></i></td>
+                                                                        <td>5</td>
+                                                                        <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                                                    style="display:none">SUCCESS</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="scenario-result SUCCESS">
+                                                                        <td>
+                                                                                <a href="#">View Transactions in History tab</a>
+                                                                        </td>
+                                                                        <td>
+                                                                            <i class="bi bi-table"
+                                                                               title="Data Driven Scenario">
+                                                                                <a href="3556fbc05302892e61b6ac6460ddaad83bf1854fd257ba277ede46114943c562.html">6: User views credential presentation transaction details </a>
+                                                                                    <br/>Detail=Credential(s), Description=Each credential details shared presented as an expandable/collapsible card; only attribute identifiers displayed (no values)
+                                                                        </td>
+                                                                        <td><i class="bi bi-person"></i></td>
+                                                                        <td>5</td>
+                                                                        <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                                                    style="display:none">SUCCESS</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="scenario-result SUCCESS">
+                                                                        <td>
+                                                                                <a href="#">View Transactions in History tab</a>
+                                                                        </td>
+                                                                        <td>
+                                                                            <i class="bi bi-table"
+                                                                               title="Data Driven Scenario">
+                                                                                <a href="3556fbc05302892e61b6ac6460ddaad83bf1854fd257ba277ede46114943c562.html">7: User views credential presentation transaction details </a>
+                                                                                    <br/>Detail=Intended use, Description=The purpose and privacy policy link, where available
+                                                                        </td>
+                                                                        <td><i class="bi bi-person"></i></td>
+                                                                        <td>5</td>
+                                                                        <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                                                    style="display:none">SUCCESS</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="scenario-result SUCCESS">
+                                                                        <td>
+                                                                                <a href="#">View Transactions in History tab</a>
+                                                                        </td>
+                                                                        <td>
+                                                                            <i class="bi bi-table"
+                                                                               title="Data Driven Scenario">
+                                                                                <a href="3556fbc05302892e61b6ac6460ddaad83bf1854fd257ba277ede46114943c562.html">8: User views credential presentation transaction details </a>
+                                                                                    <br/>Detail=Transaction Data, Description=Transactional data displayed only if explicitly required by the applicable technical specification
+                                                                        </td>
+                                                                        <td><i class="bi bi-person"></i></td>
+                                                                        <td>5</td>
+                                                                        <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                                                    style="display:none">SUCCESS</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="scenario-result SUCCESS">
+                                                                        <td>
+                                                                                <a href="#">View Transactions in History tab</a>
+                                                                        </td>
+                                                                        <td>
+                                                                            <i class="bi bi-table"
+                                                                               title="Data Driven Scenario">
+                                                                                <a href="3556fbc05302892e61b6ac6460ddaad83bf1854fd257ba277ede46114943c562.html">9: User views credential presentation transaction details </a>
+                                                                                    <br/>Detail="View previously attempted requests" and "Initiate Deletion Request" button, Description=The user can request deletion of personal data previously shared with the Relying Party (only for presentation transactions)
+                                                                        </td>
+                                                                        <td><i class="bi bi-person"></i></td>
+                                                                        <td>5</td>
+                                                                        <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                                                    style="display:none">SUCCESS</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="scenario-result SUCCESS">
+                                                                        <td>
+                                                                                <a href="#">View Transactions in History tab</a>
+                                                                        </td>
+                                                                        <td>
+                                                                            <i class="bi bi-table"
+                                                                               title="Data Driven Scenario">
+                                                                                <a href="3556fbc05302892e61b6ac6460ddaad83bf1854fd257ba277ede46114943c562.html">10: User views credential presentation transaction details </a>
+                                                                                    <br/>Detail="View previously attempted requests" and "Initiate Transaction report" button, Description=The user can report any suspicious operations related to this presentation
+                                                                        </td>
+                                                                        <td><i class="bi bi-person"></i></td>
+                                                                        <td>5</td>
+                                                                        <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                                                    style="display:none">SUCCESS</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="scenario-result SUCCESS">
+                                                                        <td>
+                                                                                <a href="#">View Transactions in History tab</a>
+                                                                        </td>
+                                                                        <td>
+                                                                            <i class="bi bi-table"
+                                                                               title="Data Driven Scenario">
+                                                                                <a href="aecc3c35724f52b9939a308c97c4741a0a12a62ba6cdeb5e76d02842f5fa2401.html">1: User views signing/sealing transaction details </a>
+                                                                                    <br/>Detail=DateTime, Description=The datetime the operation was performed
+                                                                        </td>
+                                                                        <td><i class="bi bi-person"></i></td>
+                                                                        <td>5</td>
+                                                                        <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                                                    style="display:none">SUCCESS</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="scenario-result SUCCESS">
+                                                                        <td>
+                                                                                <a href="#">View Transactions in History tab</a>
+                                                                        </td>
+                                                                        <td>
+                                                                            <i class="bi bi-table"
+                                                                               title="Data Driven Scenario">
+                                                                                <a href="aecc3c35724f52b9939a308c97c4741a0a12a62ba6cdeb5e76d02842f5fa2401.html">2: User views signing/sealing transaction details </a>
+                                                                                    <br/>Detail=Purpose, Description=Purpose/type of the transaction, where applicable
+                                                                        </td>
+                                                                        <td><i class="bi bi-person"></i></td>
+                                                                        <td>5</td>
+                                                                        <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                                                    style="display:none">SUCCESS</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="scenario-result SUCCESS">
+                                                                        <td>
+                                                                                <a href="#">View Transactions in History tab</a>
+                                                                        </td>
+                                                                        <td>
+                                                                            <i class="bi bi-table"
+                                                                               title="Data Driven Scenario">
+                                                                                <a href="aecc3c35724f52b9939a308c97c4741a0a12a62ba6cdeb5e76d02842f5fa2401.html">3: User views signing/sealing transaction details </a>
+                                                                                    <br/>Detail=Status, Description=The transaction result (Completed or Not Completed)
+                                                                        </td>
+                                                                        <td><i class="bi bi-person"></i></td>
+                                                                        <td>5</td>
+                                                                        <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                                                    style="display:none">SUCCESS</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="scenario-result SUCCESS">
+                                                                        <td>
+                                                                                <a href="#">View Transactions in History tab</a>
+                                                                        </td>
+                                                                        <td>
+                                                                            <i class="bi bi-table"
+                                                                               title="Data Driven Scenario">
+                                                                                <a href="aecc3c35724f52b9939a308c97c4741a0a12a62ba6cdeb5e76d02842f5fa2401.html">4: User views signing/sealing transaction details </a>
+                                                                                    <br/>Detail=Relying Party, Description=The Interacting Party name
+                                                                        </td>
+                                                                        <td><i class="bi bi-person"></i></td>
+                                                                        <td>5</td>
+                                                                        <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                                                    style="display:none">SUCCESS</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="scenario-result SUCCESS">
+                                                                        <td>
+                                                                                <a href="#">View Transactions in History tab</a>
+                                                                        </td>
+                                                                        <td>
+                                                                            <i class="bi bi-table"
+                                                                               title="Data Driven Scenario">
+                                                                                <a href="aecc3c35724f52b9939a308c97c4741a0a12a62ba6cdeb5e76d02842f5fa2401.html">5: User views signing/sealing transaction details </a>
+                                                                                    <br/>Detail=signingTransactionIdentifier, Description=where applicable
+                                                                        </td>
+                                                                        <td><i class="bi bi-person"></i></td>
+                                                                        <td>5</td>
+                                                                        <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                                                    style="display:none">SUCCESS</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="scenario-result SUCCESS">
+                                                                        <td>
+                                                                                <a href="#">View Transactions in History tab</a>
+                                                                        </td>
+                                                                        <td>
+                                                                            <i class="bi bi-table"
+                                                                               title="Data Driven Scenario">
+                                                                                <a href="aecc3c35724f52b9939a308c97c4741a0a12a62ba6cdeb5e76d02842f5fa2401.html">6: User views signing/sealing transaction details </a>
+                                                                                    <br/>Detail=Document/data, Description=The document or data signed or sealed, if available
+                                                                        </td>
+                                                                        <td><i class="bi bi-person"></i></td>
+                                                                        <td>5</td>
+                                                                        <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                                                    style="display:none">SUCCESS</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="scenario-result SUCCESS">
+                                                                        <td>
+                                                                                <a href="#">View Transactions in History tab</a>
+                                                                        </td>
+                                                                        <td>
+                                                                            <i class="bi bi-table"
+                                                                               title="Data Driven Scenario">
+                                                                                <a href="71a451812f90fb73afc30973ca356cb52e98b819debf7ce5424d8c92d5d73dc8.html">1: User views credential (PID/attestation) issuance/re-issuance transaction details </a>
+                                                                                    <br/>Detail=DateTime, Description=The date and time of the transaction
+                                                                        </td>
+                                                                        <td><i class="bi bi-person"></i></td>
+                                                                        <td>5</td>
+                                                                        <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                                                    style="display:none">SUCCESS</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="scenario-result SUCCESS">
+                                                                        <td>
+                                                                                <a href="#">View Transactions in History tab</a>
+                                                                        </td>
+                                                                        <td>
+                                                                            <i class="bi bi-table"
+                                                                               title="Data Driven Scenario">
+                                                                                <a href="71a451812f90fb73afc30973ca356cb52e98b819debf7ce5424d8c92d5d73dc8.html">2: User views credential (PID/attestation) issuance/re-issuance transaction details </a>
+                                                                                    <br/>Detail=Status, Description=The transaction result (Completed or Not Completed), reason of non-completion shown where available
+                                                                        </td>
+                                                                        <td><i class="bi bi-person"></i></td>
+                                                                        <td>5</td>
+                                                                        <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                                                    style="display:none">SUCCESS</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="scenario-result SUCCESS">
+                                                                        <td>
+                                                                                <a href="#">View Transactions in History tab</a>
+                                                                        </td>
+                                                                        <td>
+                                                                            <i class="bi bi-table"
+                                                                               title="Data Driven Scenario">
+                                                                                <a href="71a451812f90fb73afc30973ca356cb52e98b819debf7ce5424d8c92d5d73dc8.html">3: User views credential (PID/attestation) issuance/re-issuance transaction details </a>
+                                                                                    <br/>Detail=Interacting Party name, Description=i.e. PID Provider or Attestation Provider name
+                                                                        </td>
+                                                                        <td><i class="bi bi-person"></i></td>
+                                                                        <td>5</td>
+                                                                        <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                                                    style="display:none">SUCCESS</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="scenario-result SUCCESS">
+                                                                        <td>
+                                                                                <a href="#">View Transactions in History tab</a>
+                                                                        </td>
+                                                                        <td>
+                                                                            <i class="bi bi-table"
+                                                                               title="Data Driven Scenario">
+                                                                                <a href="71a451812f90fb73afc30973ca356cb52e98b819debf7ce5424d8c92d5d73dc8.html">4: User views credential (PID/attestation) issuance/re-issuance transaction details </a>
+                                                                                    <br/>Detail=Credential, Description=The credential requested and issued
+                                                                        </td>
+                                                                        <td><i class="bi bi-person"></i></td>
+                                                                        <td>5</td>
+                                                                        <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                                                    style="display:none">SUCCESS</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="scenario-result SUCCESS">
+                                                                        <td>
+                                                                                <a href="#">View Transactions in History tab</a>
+                                                                        </td>
+                                                                        <td>
+                                                                            <i class="bi bi-table"
+                                                                               title="Data Driven Scenario">
+                                                                                <a href="71a451812f90fb73afc30973ca356cb52e98b819debf7ce5424d8c92d5d73dc8.html">5: User views credential (PID/attestation) issuance/re-issuance transaction details </a>
+                                                                                    <br/>Detail=Re-issuance, Description=Whether User-triggered or automatically initiated by the Wallet Unit and Interacting Party contact details (if available)
+                                                                        </td>
+                                                                        <td><i class="bi bi-person"></i></td>
+                                                                        <td>5</td>
+                                                                        <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                                                    style="display:none">SUCCESS</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="scenario-result SUCCESS">
+                                                                        <td>
+                                                                                <a href="#">View Transactions in History tab</a>
+                                                                        </td>
+                                                                        <td>
+                                                                            <i class="bi bi-table"
+                                                                               title="Data Driven Scenario">
+                                                                                <a href="09b7d2b11d8d73d06a22625f6e009dc9a6b6c71ef375137568f031ae3c766e09.html">1: User views credential (PID/attestation) deletion transaction details </a>
+                                                                                    <br/>Detail=DateTime, Description=The date and time of the deletion
+                                                                        </td>
+                                                                        <td><i class="bi bi-person"></i></td>
+                                                                        <td>5</td>
+                                                                        <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                                                    style="display:none">SUCCESS</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="scenario-result SUCCESS">
+                                                                        <td>
+                                                                                <a href="#">View Transactions in History tab</a>
+                                                                        </td>
+                                                                        <td>
+                                                                            <i class="bi bi-table"
+                                                                               title="Data Driven Scenario">
+                                                                                <a href="09b7d2b11d8d73d06a22625f6e009dc9a6b6c71ef375137568f031ae3c766e09.html">2: User views credential (PID/attestation) deletion transaction details </a>
+                                                                                    <br/>Detail=Credential, Description=The credential deleted
+                                                                        </td>
+                                                                        <td><i class="bi bi-person"></i></td>
+                                                                        <td>5</td>
+                                                                        <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                                                    style="display:none">SUCCESS</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr class="scenario-result SUCCESS">
+                                                                        <td>
+                                                                                <a href="#">View Transactions in History tab</a>
+                                                                        </td>
+                                                                        <td>
+                                                                            <i class="bi bi-table"
+                                                                               title="Data Driven Scenario">
+                                                                                <a href="09b7d2b11d8d73d06a22625f6e009dc9a6b6c71ef375137568f031ae3c766e09.html">3: User views credential (PID/attestation) deletion transaction details </a>
+                                                                                    <br/>Detail=Provider name, Description=The original PID Provider or Attestation Provider name
+                                                                        </td>
+                                                                        <td><i class="bi bi-person"></i></td>
+                                                                        <td>5</td>
+                                                                        <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                                                    style="display:none">SUCCESS</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                <tr class="scenario-result SUCCESS">
+                                                                    <td>
+                                                                            <a href="#">View Transactions in History tab</a>
+                                                                    </td>
+                                                                    <td>
+                                                                        <a href="f83b1339af501b2a46fd6c1b1b4055c00b2ba7fe15704d877867fc867f3d3a4d.html">Details screen back button</a>
+                                                                    </td>
+                                                                    <td><i class="bi bi-person"></i></td>
+                                                                    <td>3</td>
+                                                                    <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                        <span style="display:none">SUCCESS</span>
+                                                                    </td>
+                                                                </tr>
+                                                        </tbody>
+                                                    </table>
+
+                                            </div>
+                                        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <h3>Tags</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <div>
+                                    <a href="73252a022a99ede30e040aac912ccc0553b3be8e8462a6db3aebd282611a28c3.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US VT TC 01&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="9a26bd101adfda745f743db04eb3269922eb1ff4d86d9997efeca1ebfe995ac4.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> Manual&nbsp;&nbsp;&nbsp;26
+                                    </span>
+                                    </a>
+                                    <a href="ed75ebade6d709587f5c056ac17c33c58ce16f5212e4df7089551e672be57452.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US VT TC 05&nbsp;&nbsp;&nbsp;3
+                                    </span>
+                                    </a>
+                                    <a href="7bdd4d75607d08f7e78e0785a9d9ee5dfdde248fda692994bd64c7d0788af5f4.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US VT TC 04&nbsp;&nbsp;&nbsp;5
+                                    </span>
+                                    </a>
+                                    <a href="e3cf15a2415eb5a2ee53937624a660dabecab6a9915d2e019ace011c000aaba3.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US VT TC 03&nbsp;&nbsp;&nbsp;6
+                                    </span>
+                                    </a>
+                                    <a href="2a28d5f0f6290628a1e022635eac6ce060a4dd572b7ea36421cb0bf3c688adb4.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US VT TC 02&nbsp;&nbsp;&nbsp;10
+                                    </span>
+                                    </a>
+                                    <a href="1077391a8c9765fef7156685713044bd9278de8033435b0004261aa28e658fa3.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> Q3 2026&nbsp;&nbsp;&nbsp;26
+                                    </span>
+                                    </a>
+                                    <a href="807bca312b4cd46ae6ad46d48328b00f0a6345886fb35efdd58cbac248d5501e.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US VT TC 06&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="4d818a5f41e441a87b693ff4e39ed794d609f664e9f0322c453779b3e2a96970.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US VT&nbsp;&nbsp;&nbsp;26
+                                    </span>
+                                    </a>
+                                    <a href="6f8a5d68a7c6ca6142be6d100bb7953e91690ce198c99ea44c1bf7804e9f3b13.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> Ios&nbsp;&nbsp;&nbsp;26
+                                    </span>
+                                    </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                                <h5 class="card-title">Manual</h5>
+                            <div>
+                                    <a href="220d8ef6080eb8a7746b6ccaff3b44ac3c1f123a09790bb9a8ff31e7b07c9746.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> Passed&nbsp;&nbsp;&nbsp;26
+                                    </span>
+                                    </a>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12">
+                    <span class="version">Serenity BDD version 4.2.22</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Chart data -->
+    <!-- PIE CHART -->
+    <script>
+
+        // The results pie chart
+        const outcomeChartCtx = document.getElementById('resultChart');
+
+        // Options define for display value on top of bars
+        const outcomeDetailsReports = [
+            { title: 'Passing Test Cases', link: "daf3dbee863bd7a028cd8a8dbc6d9e7639fd7b1773df8347fbdee2b3f3251972.html" },
+            { title: 'Pending Test Cases', link: "6996cf67b9c0f50417df5aaffce650092a7d0433768043ac7b9b8130b78f5c3a.html" },
+            { title: 'Ignored Test Cases', link: "68bc77217744d3c283ca30d995faf7d142da9be11eb2c233b31a4165adb86cfb.html" },
+            { title: 'Skipped Test Cases', link: "2fffb7321b32f21fff408abd2035248f0b4486af00f50e5b27fc0f8e0a0f8d86.html" },
+            { title: 'Aborted Test Cases',  link: "d5a50fc6812d8a6609467815cefd4959f716f3a8f78ad0e2b690b6fba3f56c38.html"},
+            { title: 'Failed Test Cases', link: "c74e414c75029a7a507ebde3be045d6fe683fa86347109fdc4c3a3e08faad9f0.html"  },
+            { title: 'Broken Test Cases', link: "dc89fb6f10e385c3944ab5daed03e6dce04f12f20d3aa26b7ef3c13a1b5d2235.html"    },
+            { title: 'Compromised Test Cases',  link: "ae89c2cde10b143a30c57cd508d3361128dc9317b0606ab8bbfcdda4388ee420.html" },
+        ]
+        const outcomeData = {
+            labels: ['Passing Test Cases', 'Pending Test Cases', 'Ignored Test Cases', 'Skipped Test Cases', 'Aborted Test Cases', 'Failed Test Cases', 'Broken Test Cases', 'Compromised Test Cases','Undefined Test Cases'],
+            datasets: [{
+                label: 'Test Results',
+                fill: false,
+                data: [{meta: 'Passing tests', value: 26}, {meta: 'Pending tests', value: 0}, {meta: 'Ignored tests', value: 0}, {meta: 'Skipped tests', value: 0}, {meta: 'Aborted tests', value: 0}, {meta: 'Failing tests', value: 0}, {meta: 'Broken tests', value: 0}, {meta: 'Compromised tests', value: 0}],
+                backgroundColor: ['rgba(153,204,51,0.5)','rgba(165, 199, 238, 0.5)','rgba(168, 168, 168, 0.5)','rgba(238, 224, 152, 0.75)','rgba(255, 153, 102, 0.5)','rgba(255, 22, 49, 0.5)','rgba(255, 97, 8, 0.5)','rgba(255, 104, 255, 0.5)','rgba(83, 50, 168, 0.5)'],
+                borderColor: ['rgba(153,204,51,1)','rgba(165, 199, 238, 1)','rgba(168, 168, 168, 1)','rgba(238, 224, 152, 1)','rgba(255, 153, 102, 1)','rgba(255, 22, 49, 1)','rgba(255, 97, 8, 1)','rgba(255, 104, 255, 1)','rgba(83, 50, 168, 1)'],
+                borderWidth: 1,
+            }]
+        }
+        const outcomeOptions = {
+            responsive: true,
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'bottom'
+                },
+                // Change options for ALL labels of THIS CHART
+                datalabels: {
+                    color: '#444444',
+                    'font.weight': 'bold',
+                    formatter: (value, ctx) => {
+                        let sum = 0;
+                        let dataArr = ctx.chart.data.datasets[0].data;
+                        dataArr.map(data => {
+                            sum += data;
+                        });
+                        let percentage = (value * 100 / sum).toFixed(0) + "%";
+                        if (percentage === '0%' || percentage === 'NaN%') {
+                            return '';
+                        } else {
+                            return percentage;
+                        }
+                    },
+                },
+            }
+        }
+
+        const outcomeChart = new Chart(outcomeChartCtx, {
+            type: 'doughnut',
+            data: outcomeData,
+            options: outcomeOptions,
+            plugins: [
+                {
+                    id: 'text',
+                    beforeDraw: function (chart, a, b) {
+                        var width = chart.width,
+                            height = chart.height,
+                            ctx = chart.ctx;
+
+                        ctx.restore();
+                        var fontSize = (height / 200).toFixed(1);
+                        ctx.font = fontSize + "em sans-serif";
+                        ctx.textBaseline = "middle";
+
+                        var text = "100%"
+                        textX = 10 + Math.round((width - ctx.measureText(text).width) / 2);
+                        textY = (height / 2) - 40;
+
+                        ctx.fillText(text, textX, textY);
+                        ctx.save();
+                    }
+                }]
+        });
+
+        function clickHandler(click) {
+            const points = outcomeChart.getElementsAtEventForMode(click, 'nearest', {intersect: true}, true);
+            if (points.length) {
+                const firstPoint = points[0];
+                window.open(outcomeDetailsReports[firstPoint.index].link, "_self")
+
+            }
+        }
+        outcomeChartCtx.onclick = clickHandler;
+    </script>
+    <!-- END PIE CHART -->
+    <!-- PIE CHART -->
+    <script>
+
+        // The results pie chart
+        const requirementsChartCtx = document.getElementById('requirementChart');
+
+        // Options define for display value on top of bars
+        const requirementsOutcomeDetailsReports = [
+            { title: 'Passing Test Cases', link: "daf3dbee863bd7a028cd8a8dbc6d9e7639fd7b1773df8347fbdee2b3f3251972.html" },
+            { title: 'Pending Test Cases', link: "6996cf67b9c0f50417df5aaffce650092a7d0433768043ac7b9b8130b78f5c3a.html" },
+            { title: 'Ignored Test Cases', link: "68bc77217744d3c283ca30d995faf7d142da9be11eb2c233b31a4165adb86cfb.html" },
+            { title: 'Skipped Test Cases', link: "2fffb7321b32f21fff408abd2035248f0b4486af00f50e5b27fc0f8e0a0f8d86.html" },
+            { title: 'Aborted Test Cases',  link: "d5a50fc6812d8a6609467815cefd4959f716f3a8f78ad0e2b690b6fba3f56c38.html"},
+            { title: 'Failed Test Cases', link: "c74e414c75029a7a507ebde3be045d6fe683fa86347109fdc4c3a3e08faad9f0.html"  },
+            { title: 'Broken Test Cases', link: "dc89fb6f10e385c3944ab5daed03e6dce04f12f20d3aa26b7ef3c13a1b5d2235.html"    },
+            { title: 'Compromised Test Cases',  link: "ae89c2cde10b143a30c57cd508d3361128dc9317b0606ab8bbfcdda4388ee420.html" },
+            { title: 'Undefined Test Cases',  link: "" },
+        ]
+        const requirementsOutcomeData = {
+            labels: ['Passing Test Cases', 'Pending Test Cases', 'Ignored Test Cases', 'Skipped Test Cases', 'Aborted Test Cases', 'Failed Test Cases', 'Broken Test Cases', 'Compromised Test Cases','Undefined Test Cases'],
+            datasets: [{
+                label: 'Feature Coverage',
+                fill: false,
+                data: [{meta: 'Passing tests', value: 26}, {meta: 'Pending tests', value: 0}, {meta: 'Ignored tests', value: 0}, {meta: 'Skipped tests', value: 0}, {meta: 'Aborted tests', value: 0}, {meta: 'Failing tests', value: 0}, {meta: 'Broken tests', value: 0}, {meta: 'Compromised tests', value: 0}],
+                backgroundColor: ['rgba(153,204,51,0.5)','rgba(165, 199, 238, 0.5)','rgba(168, 168, 168, 0.5)','rgba(238, 224, 152, 0.75)','rgba(255, 153, 102, 0.5)','rgba(255, 22, 49, 0.5)','rgba(255, 97, 8, 0.5)','rgba(255, 104, 255, 0.5)','rgba(83, 50, 168, 0.5)'],
+                borderColor: ['rgba(153,204,51,1)','rgba(165, 199, 238, 1)','rgba(168, 168, 168, 1)','rgba(238, 224, 152, 1)','rgba(255, 153, 102, 1)','rgba(255, 22, 49, 1)','rgba(255, 97, 8, 1)','rgba(255, 104, 255, 1)','rgba(83, 50, 168, 1)'],
+                borderWidth: 1,
+            }]
+        }
+        const requirementsOutcomeOptions = {
+            responsive: true,
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'bottom'
+                },
+                // Change options for ALL labels of THIS CHART
+                datalabels: {
+                    color: '#444444',
+                    'font.weight': 'bold',
+                    formatter: (value, ctx) => {
+                        let sum = 0;
+                        let dataArr = ctx.chart.data.datasets[0].data;
+                        dataArr.map(data => {
+                            sum += data;
+                        });
+                        let percentage = (value * 100 / sum).toFixed(0) + "%";
+                        if (percentage === '0%' || percentage === 'NaN%') {
+                            return '';
+                        } else {
+                            return percentage;
+                        }
+                    },
+                },
+            }
+        }
+
+        const requirementsChart = new Chart(requirementsChartCtx, {
+            type: 'doughnut',
+            data: requirementsOutcomeData,
+            options: requirementsOutcomeOptions,
+            plugins: [
+                {
+                    id: 'text',
+                    beforeDraw: function (chart, a, b) {
+                        var width = chart.width,
+                            height = chart.height,
+                            ctx = chart.ctx;
+
+                        ctx.restore();
+                        var fontSize = (height / 200).toFixed(1);
+                        ctx.font = fontSize + "em sans-serif";
+                        ctx.textBaseline = "middle";
+
+                        var text = "100%"
+                        textX = 10 + Math.round((width - ctx.measureText(text).width) / 2);
+                        textY = (height / 2) - 40;
+
+                        ctx.fillText(text, textX, textY);
+                        ctx.save();
+                    }
+                }]
+        });
+
+        function reqsClickHandler(click) {
+            const points = requirementsChart.getElementsAtEventForMode(click, 'nearest', {intersect: true}, true);
+            if (points.length && requirementsOutcomeDetailsReports[firstPoint.index].link) {
+                const firstPoint = points[0];
+                window.open(requirementsOutcomeDetailsReports[firstPoint.index].link, "_self")
+
+            }
+        }
+        requirementsChartCtx.onclick = reqsClickHandler;
+    </script>
+    <!-- END PIE CHART -->
+
+    <!-- SUMMARY BAR CHART -->
+    <script>
+
+        // The Severity bar chart
+        const severityChartCtx = document.getElementById('severityChart');
+
+        // Options define for display value on top of bars
+
+        const severityDetailsReports = [
+            { title: 'Passing Scenarios', link: "daf3dbee863bd7a028cd8a8dbc6d9e7639fd7b1773df8347fbdee2b3f3251972.html" },
+            { title: 'Pending Scenarios', link: "6996cf67b9c0f50417df5aaffce650092a7d0433768043ac7b9b8130b78f5c3a.html" },
+            { title: 'Ignored Scenarios', link: "68bc77217744d3c283ca30d995faf7d142da9be11eb2c233b31a4165adb86cfb.html" },
+            { title: 'Skipped Scenarios', link: "2fffb7321b32f21fff408abd2035248f0b4486af00f50e5b27fc0f8e0a0f8d86.html" },
+            { title: 'Aborted Scenarios',  link: "d5a50fc6812d8a6609467815cefd4959f716f3a8f78ad0e2b690b6fba3f56c38.html"},
+            { title: 'Failed Scenarios', link: "c74e414c75029a7a507ebde3be045d6fe683fa86347109fdc4c3a3e08faad9f0.html"  },
+            { title: 'Broken Scenarios', link: "dc89fb6f10e385c3944ab5daed03e6dce04f12f20d3aa26b7ef3c13a1b5d2235.html"    },
+            { title: 'Compromised Scenarios',  link: "ae89c2cde10b143a30c57cd508d3361128dc9317b0606ab8bbfcdda4388ee420.html" },
+        ]
+        const severityData = {
+            labels: ['Passing', 'Pending', 'Ignored', 'Skipped', 'Aborted', 'Failed', 'Broken', 'Compromised'],
+            datasets: [
+                {
+                    label: 'Automated',
+                    data: [0,0,0,0,0,0,0,0],
+                    backgroundColor: ['rgba(153,204,51,0.5)','rgba(165, 199, 238, 0.5)','rgba(168, 168, 168, 0.5)','rgba(238, 224, 152, 0.75)','rgba(255, 153, 102, 0.5)','rgba(255, 22, 49, 0.5)','rgba(255, 97, 8, 0.5)','rgba(255, 104, 255, 0.5)','rgba(83, 50, 168, 0.5)'],
+                    borderColor: ['rgba(153,204,51,1)','rgba(165, 199, 238, 1)','rgba(168, 168, 168, 1)','rgba(238, 224, 152, 1)','rgba(255, 153, 102, 1)','rgba(255, 22, 49, 1)','rgba(255, 97, 8, 1)','rgba(255, 104, 255, 1)','rgba(83, 50, 168, 1)'],
+                    borderWidth: 1
+                },
+                {
+                    label: 'Manual',
+                    data: [26,0,0,0,0,0,0,0],
+                    backgroundColor: ['rgba(153,204,51,0.25)','rgba(165, 199, 238, 0.25)','rgba(168, 168, 168, 0.25)','rgba(238, 224, 152, 0.375)','rgba(255, 153, 102, 0.25)','rgba(255, 22, 49, 0.25)','rgba(255, 97, 8, 0.25)','rgba(255, 104, 255, 0.25)','rgba(83, 50, 168, 0.25)'],
+                    borderColor: ['rgba(153,204,51,1)','rgba(165, 199, 238, 1)','rgba(168, 168, 168, 1)','rgba(238, 224, 152, 1)','rgba(255, 153, 102, 1)','rgba(255, 22, 49, 1)','rgba(255, 97, 8, 1)','rgba(255, 104, 255, 1)','rgba(83, 50, 168, 1)'],
+                    borderWidth: 1
+                },
+
+            ]
+        }
+        const severityOptions = {
+            responsive: true,
+            skipNull: true,
+            scales: {
+                x: {
+                    stacked: true,
+                },
+                y: {
+                    stacked: true,
+                }
+            },
+            plugins: {
+                // Change options for ALL labels of THIS CHART
+                datalabels: {
+                    color: '#444444',
+                    'font.weight': 'bold',
+                    formatter: (value, ctx) => {
+                        if (value === 0) {
+                            return '';
+                        } else {
+                            return value;
+                        }
+                    },
+                }
+            }
+        }
+        const severityChart = new Chart(severityChartCtx, {
+            type: 'bar',
+            data: severityData,
+            options: severityOptions
+        });
+
+        function clickHandler(click) {
+            const points = severityChart.getElementsAtEventForMode(click, 'nearest', {intersect: true}, true);
+            if (points.length) {
+                const firstPoint = points[0];
+                window.open(severityDetailsReports[firstPoint.index].link, "_self")
+
+            }
+        }
+        severityChartCtx.onclick = clickHandler;
+    </script>
+    <!-- END SUMMARY CHART -->
+
+    <!-- DURATION CHART -->
+    <script>
+
+        // Options define for display value on top of bars
+        const durationDetailsReports = [
+                {title: "Under 1 second", link: "79154f11da4a993f35ff663f77150d0a8b3982096db63d605fa7a3daf852d43a.html"},
+                {title: "1 to 10 seconds", link: "34aeeb4c56a441a595ab3985992c6872d58c709ea397952039ac0d7eaf8a53f6.html"},
+                {title: "10 to 30 seconds", link: "bbb75f042958a46fd23164d288b170e38ba2461e7bfe380a1b1d4719c3af0f6a.html"},
+                {title: "30 to 60 seconds", link: "fa8ca91c5dc4f6f8f36a10d7369c54479d2afea0a70c58e7bac4b9d8056ca217.html"},
+                {title: "1 to 2 minutes", link: "0a9c88ba2faae30a8372dee18b582777667becea729a2dfca14e7de2081f06a1.html"},
+                {title: "2 to 5 minutes", link: "f0cc65dbb71090e41ffee8eeba63c2be4d636c206098b9e64c7b2d682ebd8e16.html"},
+                {title: "5 to 10 minutes", link: "1c81ba11adbf1b4d178b7fb65e1333a98a27c6af3a846be03df7c2dfd1c543dc.html"},
+                {title: "10 minutes or over", link: "d09b26ed7c902552b68cc804f5d35f06c4a47086ceb95bf029002e2fb188cdac.html"},
+        ]
+        // The Severity bar chart
+        const durationChartCtx = document.getElementById('durationChart');
+
+        // Options define for display value on top of bars
+
+        const durationData = {
+            labels: ['Under 1 second','1 to 10 seconds','10 to 30 seconds','30 to 60 seconds','1 to 2 minutes','2 to 5 minutes','5 to 10 minutes','10 minutes or over'],
+            datasets: [{
+                label: 'Number of tests per duration',
+                fill: false,
+                data: ['26','0','0','0','0','0','0','0'],
+                backgroundColor: 'rgba(83, 146, 255,0.5)',
+                borderColor: 'rgba(83, 146, 255, 1)',
+            }]
+        }
+        const durationOptions = {
+            responsive: true,
+            plugins: {
+                // Change options for ALL labels of THIS CHART
+                datalabels: {
+                    color: '#444444',
+                    'font.weight': 'bold',
+                    formatter: (value, ctx) => {
+                        if (value > 0) {
+                            return value;
+                        } else {
+                            return '';
+                        }
+                    },
+                },
+                tooltip: {
+                    enabled: true,
+                    usePointStyle: true,
+                    callbacks: {
+                        label: (data) => {
+                            return data.parsed.y + ' tests'
+                        }
+                    },
+                },
+            },
+        }
+
+        const durationChart = new Chart(durationChartCtx, {
+            type: 'bar',
+            data: durationData,
+            options: durationOptions
+        });
+
+        function durationClickHandler(click) {
+            const points = durationChart.getElementsAtEventForMode(click, 'nearest', {intersect: true}, true);
+            if (points.length) {
+                const firstPoint = points[0];
+                window.open(durationDetailsReports[firstPoint.index].link, "_self")
+
+            }
+        }
+
+        durationChartCtx.onclick = durationClickHandler;
+    </script>
+    <!-- END DURATION CHART -->
+</body>
+</html>

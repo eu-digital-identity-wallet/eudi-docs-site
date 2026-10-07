@@ -1,0 +1,265 @@
+{
+  "name": "User can cancel and then complete an online data sharing presentation",
+  "id": "eudi-wallet-online-document-presentation;user-can-cancel-and-then-complete-an-online-data-sharing-presentation",
+  "scenarioId": "ios/regressionTests/Automated_Regression_Tests/presentDocumentOnline:User can cancel and then complete an online data sharing presentation",
+  "methodName": "User can cancel and then complete an online data sharing presentation",
+  "testSteps": [
+    {
+      "number": 1,
+      "description": "1: User can cancel and then complete an online data sharing presentation ({credential=PID (MSO Mdoc), issuer=Python})",
+      "duration": 339950,
+      "startTime": "2026-09-25T14:36:38.172267Z[UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "lineNumber": 30,
+      "children": [
+        {
+          "number": 2,
+          "description": "Given the user issues a PID (MSO Mdoc) attestation using Python",
+          "duration": 172207,
+          "startTime": "2026-09-25T14:36:57.477719Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 3,
+          "description": "And the user is on the Home screen of the Wallet",
+          "duration": 2139,
+          "startTime": "2026-09-25T14:39:49.686923Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 4,
+          "description": "And a Relying Party renders a presentation request as a QR code",
+          "duration": 17778,
+          "startTime": "2026-09-25T14:39:51.826984Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 5,
+          "description": "When the user opens the Online option from the Authenticate section",
+          "duration": 26621,
+          "startTime": "2026-09-25T14:40:09.606130Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 6,
+          "description": "And the Wallet scans the Relying Party's presentation request QR code",
+          "duration": 206,
+          "startTime": "2026-09-25T14:40:36.234518Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 7,
+          "description": "Then the Wallet displays the attestation details requested for sharing",
+          "duration": 9599,
+          "startTime": "2026-09-25T14:40:36.440992Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 8,
+          "description": "When the user cancels the presentation request",
+          "duration": 1631,
+          "startTime": "2026-09-25T14:40:46.047972Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 9,
+          "description": "Then the user returns to the Wallet Home screen",
+          "duration": 547,
+          "startTime": "2026-09-25T14:40:47.679967Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 10,
+          "description": "And a Relying Party renders a presentation request as a QR code",
+          "duration": 16978,
+          "startTime": "2026-09-25T14:40:48.228257Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 11,
+          "description": "When the user opens the Online option from the Authenticate section",
+          "duration": 44480,
+          "startTime": "2026-09-25T14:41:05.208754Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 12,
+          "description": "And the Wallet scans the Relying Party's presentation request QR code",
+          "duration": 225,
+          "startTime": "2026-09-25T14:41:49.692037Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 13,
+          "description": "Then the Wallet displays the attestation details requested for sharing",
+          "duration": 9487,
+          "startTime": "2026-09-25T14:41:49.918056Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 14,
+          "description": "When the user selects the Share button",
+          "duration": 1621,
+          "startTime": "2026-09-25T14:41:59.409654Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 15,
+          "description": "And the user enters their six-digit PIN correctly",
+          "duration": 12182,
+          "startTime": "2026-09-25T14:42:01.032175Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 16,
+          "description": "Then a success message is displayed for the successful presentation of the PID",
+          "duration": 1590,
+          "startTime": "2026-09-25T14:42:13.221460Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 17,
+          "description": "When the user closes the success screen",
+          "duration": 1945,
+          "startTime": "2026-09-25T14:42:14.812206Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 18,
+          "description": "Then the user returns to the Wallet Home screen",
+          "duration": 547,
+          "startTime": "2026-09-25T14:42:16.757929Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    }
+  ],
+  "userStory": {
+    "id": "ios/regressionTests/Automated_Regression_Tests/presentDocumentOnline",
+    "storyName": "EUDI Wallet Online Document Presentation",
+    "displayName": "EUDI Wallet Online Document Presentation",
+    "path": "ios/regressionTests/Automated_Regression_Tests/presentDocumentOnline",
+    "pathElements": [
+      {
+        "name": "ios",
+        "description": ""
+      },
+      {
+        "name": "regressionTests",
+        "description": ""
+      },
+      {
+        "name": "Automated_Regression_Tests",
+        "description": ""
+      },
+      {
+        "name": "presentDocumentOnline",
+        "description": ""
+      }
+    ],
+    "narrative": "  As a EUDI Wallet User\n  I want to be able to present attestations from my EUDI Wallet\n  So that I can authenticate, authorise transactions and present personal information upon requests of a Relying Party in remote scenarios",
+    "type": "feature"
+  },
+  "title": "User can cancel and then complete an online data sharing presentation",
+  "description": "",
+  "tags": [
+    {
+      "name": "US_PDO_TC_01",
+      "type": "tag",
+      "displayName": "US_PDO_TC_01"
+    },
+    {
+      "name": "IOS",
+      "type": "tag",
+      "displayName": "IOS"
+    },
+    {
+      "name": "US_PDO",
+      "type": "tag",
+      "displayName": "US_PDO"
+    },
+    {
+      "name": "GENERAL_TESTS",
+      "type": "tag",
+      "displayName": "GENERAL_TESTS"
+    },
+    {
+      "name": "automated",
+      "type": "tag",
+      "displayName": "automated"
+    }
+  ],
+  "startTime": "2026-09-25T14:36:38.171982Z[UTC]",
+  "endTime": "2026-09-25T14:42:18.125034Z[UTC]",
+  "duration": 191512,
+  "projectKey": "",
+  "isManualTestingUpToDate": false,
+  "dataTable": {
+    "headers": [
+      "credential",
+      "issuer"
+    ],
+    "rows": [
+      {
+        "values": [
+          "PID (MSO Mdoc)",
+          "Python"
+        ],
+        "lineNumber": 30,
+        "result": "SUCCESS"
+      }
+    ],
+    "predefinedRows": true,
+    "scenarioOutline": "Given the user issues a <credential> attestation using <issuer>\n\rAnd the user is on the Home screen of the Wallet\n\rAnd a Relying Party renders a presentation request as a QR code\n\rWhen the user opens the Online option from the Authenticate section\n\rAnd the Wallet scans the Relying Party's presentation request QR code\n\rThen the Wallet displays the attestation details requested for sharing\n\rWhen the user cancels the presentation request\n\rThen the user returns to the Wallet Home screen\n\rAnd a Relying Party renders a presentation request as a QR code\n\rWhen the user opens the Online option from the Authenticate section\n\rAnd the Wallet scans the Relying Party's presentation request QR code\n\rThen the Wallet displays the attestation details requested for sharing\n\rWhen the user selects the Share button\n\rAnd the user enters their six-digit PIN correctly\n\rThen a success message is displayed for the successful presentation of the PID\n\rWhen the user closes the success screen\n\rThen the user returns to the Wallet Home screen\n\r",
+    "dataSetDescriptors": [
+      {
+        "startRow": 0,
+        "rowCount": 0,
+        "name": "",
+        "description": ""
+      }
+    ]
+  },
+  "manual": false,
+  "testSource": "Cucumber",
+  "order": 0,
+  "result": "SUCCESS",
+  "scenarioOutline": "Given the user issues a <credential> attestation using <issuer>\nAnd the user is on the Home screen of the Wallet\nAnd a Relying Party renders a presentation request as a QR code\nWhen the user opens the Online option from the Authenticate section\nAnd the Wallet scans the Relying Party's presentation request QR code\nThen the Wallet displays the attestation details requested for sharing\nWhen the user cancels the presentation request\nThen the user returns to the Wallet Home screen\nAnd a Relying Party renders a presentation request as a QR code\nWhen the user opens the Online option from the Authenticate section\nAnd the Wallet scans the Relying Party's presentation request QR code\nThen the Wallet displays the attestation details requested for sharing\nWhen the user selects the Share button\nAnd the user enters their six-digit PIN correctly\nThen a success message is displayed for the successful presentation of the PID\nWhen the user closes the success screen\nThen the user returns to the Wallet Home screen",
+  "annotatedResult": "SUCCESS"
+}

@@ -1,0 +1,159 @@
+{
+  "name": "Bottom navigation bar options",
+  "id": "eudi-wallet-home-screen;bottom-navigation-bar-options",
+  "scenarioId": "android/regressionTests/Automated_Regression_Tests/homeScreen:Bottom navigation bar options",
+  "methodName": "Bottom navigation bar options",
+  "testSteps": [
+    {
+      "number": 1,
+      "description": "Given the user is viewing the EUDI Wallet Home screen",
+      "duration": 10312,
+      "startTime": "2026-09-23T15:51:20.840533Z[UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 2,
+      "description": "Then the bottom navigation bar displays Home, Documents, and Transactions",
+      "duration": 2089,
+      "startTime": "2026-09-23T15:51:31.153111Z[UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 3,
+      "description": "When the user chooses the Home option from the bottom navigation bar",
+      "duration": 0,
+      "startTime": "2026-09-23T15:51:33.243979Z[UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 4,
+      "description": "Then the Home option appears highlighted",
+      "duration": 664,
+      "startTime": "2026-09-23T15:51:33.244735Z[UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 5,
+      "description": "And the Home screen presents the Authenticate and Sign a document sections",
+      "duration": 968,
+      "startTime": "2026-09-23T15:51:33.910042Z[UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 6,
+      "description": "When the user taps the Authenticate section",
+      "duration": 416,
+      "startTime": "2026-09-23T15:51:34.879945Z[UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 7,
+      "description": "Then the Authenticate section provides In Person and Online options",
+      "duration": 1763,
+      "startTime": "2026-09-23T15:51:35.297539Z[UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 8,
+      "description": "When the user selects the Sign a document section",
+      "duration": 2354,
+      "startTime": "2026-09-23T15:51:37.060957Z[UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 9,
+      "description": "Then the Sign Document screen appears",
+      "duration": 889,
+      "startTime": "2026-09-23T15:51:39.415918Z[UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    }
+  ],
+  "userStory": {
+    "id": "android/regressionTests/Automated_Regression_Tests/homeScreen",
+    "storyName": "EUDI Wallet Home Screen",
+    "displayName": "EUDI Wallet Home Screen",
+    "path": "android/regressionTests/Automated_Regression_Tests/homeScreen",
+    "pathElements": [
+      {
+        "name": "android",
+        "description": ""
+      },
+      {
+        "name": "regressionTests",
+        "description": ""
+      },
+      {
+        "name": "Automated_Regression_Tests",
+        "description": ""
+      },
+      {
+        "name": "homeScreen",
+        "description": ""
+      }
+    ],
+    "narrative": "  As a EUDI Wallet User\n  I want to have a \u2018Home\u2019 screen as the main screen of the EUDI Wallet\n  So that I can have quick access to the key functionalities of the EUDI Wallet",
+    "type": "feature"
+  },
+  "title": "Bottom navigation bar options",
+  "description": "",
+  "tags": [
+    {
+      "name": "US_HS",
+      "type": "tag",
+      "displayName": "US_HS"
+    },
+    {
+      "name": "Q4_2024",
+      "type": "tag",
+      "displayName": "Q4_2024"
+    },
+    {
+      "name": "US_HS_TC_01",
+      "type": "tag",
+      "displayName": "US_HS_TC_01"
+    },
+    {
+      "name": "ANDROID",
+      "type": "tag",
+      "displayName": "ANDROID"
+    },
+    {
+      "name": "GENERAL_TESTS",
+      "type": "tag",
+      "displayName": "GENERAL_TESTS"
+    },
+    {
+      "name": "automated",
+      "type": "tag",
+      "displayName": "automated"
+    }
+  ],
+  "startTime": "2026-09-23T15:50:49.395956Z[UTC]",
+  "endTime": "2026-09-23T15:51:41.062092Z[UTC]",
+  "duration": 41756,
+  "projectKey": "",
+  "isManualTestingUpToDate": false,
+  "manual": false,
+  "testSource": "Cucumber",
+  "order": 0,
+  "result": "SUCCESS",
+  "annotatedResult": "SUCCESS"
+}

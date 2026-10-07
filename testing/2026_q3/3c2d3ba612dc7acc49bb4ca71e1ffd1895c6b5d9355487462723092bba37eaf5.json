@@ -1,0 +1,453 @@
+{
+  "name": "Add a document to the EUDI Wallet by scanning a QR code",
+  "id": "issuing-and-storing-attestations-in-the-eudi-wallet-via-qr-code;add-a-document-to-the-eudi-wallet-by-scanning-a-qr-code",
+  "scenarioId": "android/regressionTests/Automated_Regression_Tests/addDocumentByScanningQRCode:Add a document to the EUDI Wallet by scanning a QR code",
+  "methodName": "Add a document to the EUDI Wallet by scanning a QR code",
+  "testSteps": [
+    {
+      "number": 1,
+      "description": "1: Add a document to the EUDI Wallet by scanning a QR code ({issuer=Python})",
+      "duration": 270490,
+      "startTime": "2026-09-23T15:18:21.608173Z[UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "lineNumber": 31,
+      "children": [
+        {
+          "number": 2,
+          "description": "Given the user visits the Issuer service, generates a QR code for a PID attestation using Python and returns to the Home screen of the Wallet",
+          "duration": 40713,
+          "startTime": "2026-09-23T15:19:15.398333Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 3,
+          "description": "When the user opens the Documents screen",
+          "duration": 597,
+          "startTime": "2026-09-23T15:19:56.113831Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 4,
+          "description": "Then the Documents screen is displayed",
+          "duration": 508,
+          "startTime": "2026-09-23T15:19:56.711806Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 5,
+          "description": "When the user taps the add document button on the Documents screen",
+          "duration": 1167,
+          "startTime": "2026-09-23T15:19:57.221192Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 6,
+          "description": "Then the wallet displays the Add document screen",
+          "duration": 1475,
+          "startTime": "2026-09-23T15:19:58.388927Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 7,
+          "description": "When the user selects the option to scan a QR code",
+          "duration": 1773,
+          "startTime": "2026-09-23T15:19:59.864485Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 8,
+          "description": "Then the wallet opens the scanner to scan the QR code rendered by the Issuer",
+          "duration": 20830,
+          "startTime": "2026-09-23T15:20:01.638875Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 9,
+          "description": "When the user scans a valid QR code rendered by the Issuer",
+          "duration": 1697,
+          "startTime": "2026-09-23T15:20:22.470141Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 10,
+          "description": "Then the wallet displays the credential offer with the attestation to be issued and the name of the issuer",
+          "duration": 8454,
+          "startTime": "2026-09-23T15:20:24.167981Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 11,
+          "description": "When the user selects the Cancel button on the credential offer",
+          "duration": 768,
+          "startTime": "2026-09-23T15:20:32.623778Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 12,
+          "description": "Then the issuing process is canceled",
+          "duration": 178,
+          "startTime": "2026-09-23T15:20:33.393789Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 13,
+          "description": "And the user is returned to the Documents screen",
+          "duration": 1252,
+          "startTime": "2026-09-23T15:20:33.572616Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 14,
+          "description": "When the user scans a valid QR code rendered by the Issuer",
+          "duration": 469,
+          "startTime": "2026-09-23T15:20:34.825067Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 15,
+          "description": "And the user selects the Add document button on the credential offer",
+          "duration": 1764,
+          "startTime": "2026-09-23T15:20:35.294604Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 16,
+          "description": "Then the user proceeds with the attestation issuing flow",
+          "duration": 93482,
+          "startTime": "2026-09-23T15:20:37.060245Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 17,
+          "description": "And the wallet displays a success screen with the details of the issued attestation",
+          "duration": 38952,
+          "startTime": "2026-09-23T15:22:10.545501Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 18,
+          "description": "When the user closes the success screen",
+          "duration": 1011,
+          "startTime": "2026-09-23T15:22:49.499170Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 19,
+          "description": "Then the attestation is added to the EUDI Wallet",
+          "duration": 822,
+          "startTime": "2026-09-23T15:22:50.511284Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    },
+    {
+      "number": 20,
+      "description": "2: Add a document to the EUDI Wallet by scanning a QR code ({issuer=Kotlin})",
+      "duration": 669260,
+      "startTime": "2026-09-23T15:22:52.274218Z[UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "lineNumber": 32,
+      "children": [
+        {
+          "number": 2,
+          "description": "Given the user visits the Issuer service, generates a QR code for a PID attestation using Kotlin and returns to the Home screen of the Wallet",
+          "duration": 54504,
+          "startTime": "2026-09-23T16:51:47.510520Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 3,
+          "description": "When the user opens the Documents screen",
+          "duration": 618,
+          "startTime": "2026-09-23T16:52:42.021060Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 4,
+          "description": "Then the Documents screen is displayed",
+          "duration": 421,
+          "startTime": "2026-09-23T16:52:42.640379Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 5,
+          "description": "When the user taps the add document button on the Documents screen",
+          "duration": 1116,
+          "startTime": "2026-09-23T16:52:43.062196Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 6,
+          "description": "Then the wallet displays the Add document screen",
+          "duration": 830,
+          "startTime": "2026-09-23T16:52:44.179263Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 7,
+          "description": "When the user selects the option to scan a QR code",
+          "duration": 1210,
+          "startTime": "2026-09-23T16:52:45.010053Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 8,
+          "description": "Then the wallet opens the scanner to scan the QR code rendered by the Issuer",
+          "duration": 20607,
+          "startTime": "2026-09-23T16:52:46.220731Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 9,
+          "description": "When the user scans a valid QR code rendered by the Issuer",
+          "duration": 1285,
+          "startTime": "2026-09-23T16:53:06.830759Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 10,
+          "description": "Then the wallet displays the credential offer with the attestation to be issued and the name of the issuer",
+          "duration": 9470,
+          "startTime": "2026-09-23T16:53:08.116232Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 11,
+          "description": "When the user selects the Cancel button on the credential offer",
+          "duration": 617,
+          "startTime": "2026-09-23T16:53:17.588797Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 12,
+          "description": "Then the issuing process is canceled",
+          "duration": 0,
+          "startTime": "2026-09-23T16:53:18.207536Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 13,
+          "description": "And the user is returned to the Documents screen",
+          "duration": 1039,
+          "startTime": "2026-09-23T16:53:18.208690Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 14,
+          "description": "When the user scans a valid QR code rendered by the Issuer",
+          "duration": 329,
+          "startTime": "2026-09-23T16:53:19.248726Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 15,
+          "description": "And the user selects the Add document button on the credential offer",
+          "duration": 1157,
+          "startTime": "2026-09-23T16:53:19.579001Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 16,
+          "description": "Then the user proceeds with the attestation issuing flow",
+          "duration": 15880,
+          "startTime": "2026-09-23T16:53:20.737036Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 17,
+          "description": "And the wallet displays a success screen with the details of the issued attestation",
+          "duration": 20009,
+          "startTime": "2026-09-23T16:53:36.619620Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 18,
+          "description": "When the user closes the success screen",
+          "duration": 988,
+          "startTime": "2026-09-23T16:53:56.630649Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 19,
+          "description": "Then the attestation is added to the EUDI Wallet",
+          "duration": 1013,
+          "startTime": "2026-09-23T16:53:57.620126Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    }
+  ],
+  "userStory": {
+    "id": "android/regressionTests/Automated_Regression_Tests/addDocumentByScanningQRCode",
+    "storyName": "Issuing and storing attestations in the EUDI Wallet via QR code",
+    "displayName": "Issuing and storing attestations in the EUDI Wallet via QR code",
+    "path": "android/regressionTests/Automated_Regression_Tests/addDocumentByScanningQRCode",
+    "pathElements": [
+      {
+        "name": "android",
+        "description": ""
+      },
+      {
+        "name": "regressionTests",
+        "description": ""
+      },
+      {
+        "name": "Automated_Regression_Tests",
+        "description": ""
+      },
+      {
+        "name": "addDocumentByScanningQRCode",
+        "description": ""
+      }
+    ],
+    "narrative": "  As a EUDI Wallet User\n  I want to issue and store attestations in my EUDI Wallet advertised by issuers\n  So that I can prove to the Relying Parties that I own them when I am requested using my EUDI Wallet",
+    "type": "feature"
+  },
+  "title": "Add a document to the EUDI Wallet by scanning a QR code",
+  "description": "",
+  "tags": [
+    {
+      "name": "US_ADBSQRC",
+      "type": "tag",
+      "displayName": "US_ADBSQRC"
+    },
+    {
+      "name": "ANDROID",
+      "type": "tag",
+      "displayName": "ANDROID"
+    },
+    {
+      "name": "GENERAL_TESTS",
+      "type": "tag",
+      "displayName": "GENERAL_TESTS"
+    },
+    {
+      "name": "US_ADBSQRC_TC_01",
+      "type": "tag",
+      "displayName": "US_ADBSQRC_TC_01"
+    },
+    {
+      "name": "automated",
+      "type": "tag",
+      "displayName": "automated"
+    }
+  ],
+  "startTime": "2026-09-23T15:18:21.602560Z[UTC]",
+  "endTime": "2026-09-23T15:34:01.535721Z[UTC]",
+  "duration": 94507,
+  "projectKey": "",
+  "annotatedResult": "SUCCESS",
+  "isManualTestingUpToDate": false,
+  "dataTable": {
+    "headers": [
+      "issuer"
+    ],
+    "rows": [
+      {
+        "values": [
+          "Python"
+        ],
+        "lineNumber": 31,
+        "result": "SUCCESS"
+      },
+      {
+        "values": [
+          "Kotlin"
+        ],
+        "lineNumber": 32,
+        "result": "SUCCESS"
+      }
+    ],
+    "predefinedRows": true,
+    "scenarioOutline": "Given the user visits the Issuer service, generates a QR code for a PID attestation using <issuer> and returns to the Home screen of the Wallet\n\rWhen the user opens the Documents screen\n\rThen the Documents screen is displayed\n\rWhen the user taps the add document button on the Documents screen\n\rThen the wallet displays the Add document screen\n\rWhen the user selects the option to scan a QR code\n\rThen the wallet opens the scanner to scan the QR code rendered by the Issuer\n\rWhen the user scans a valid QR code rendered by the Issuer\n\rThen the wallet displays the credential offer with the attestation to be issued and the name of the issuer\n\rWhen the user selects the Cancel button on the credential offer\n\rThen the issuing process is canceled\n\rAnd the user is returned to the Documents screen\n\rWhen the user scans a valid QR code rendered by the Issuer\n\rAnd the user selects the Add document button on the credential offer\n\rThen the user proceeds with the attestation issuing flow\n\rAnd the wallet displays a success screen with the details of the issued attestation\n\rWhen the user closes the success screen\n\rThen the attestation is added to the EUDI Wallet\n\r",
+    "dataSetDescriptors": [
+      {
+        "startRow": 0,
+        "rowCount": 0,
+        "name": "",
+        "description": ""
+      }
+    ]
+  },
+  "manual": false,
+  "testSource": "Cucumber",
+  "order": 0,
+  "result": "SUCCESS",
+  "scenarioOutline": "Given the user visits the Issuer service, generates a QR code for a PID attestation using <issuer> and returns to the Home screen of the Wallet\nWhen the user opens the Documents screen\nThen the Documents screen is displayed\nWhen the user taps the add document button on the Documents screen\nThen the wallet displays the Add document screen\nWhen the user selects the option to scan a QR code\nThen the wallet opens the scanner to scan the QR code rendered by the Issuer\nWhen the user scans a valid QR code rendered by the Issuer\nThen the wallet displays the credential offer with the attestation to be issued and the name of the issuer\nWhen the user selects the Cancel button on the credential offer\nThen the issuing process is canceled\nAnd the user is returned to the Documents screen\nWhen the user scans a valid QR code rendered by the Issuer\nAnd the user selects the Add document button on the credential offer\nThen the user proceeds with the attestation issuing flow\nAnd the wallet displays a success screen with the details of the issued attestation\nWhen the user closes the success screen\nThen the attestation is added to the EUDI Wallet"
+}

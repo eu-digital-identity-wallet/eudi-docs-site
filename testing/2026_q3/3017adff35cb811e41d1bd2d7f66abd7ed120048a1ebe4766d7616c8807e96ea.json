@@ -1,0 +1,363 @@
+{
+  "name": "Sign a document through the EUDI Wallet",
+  "id": "sign-document-through-eudi-wallet;sign-a-document-through-the-eudi-wallet",
+  "scenarioId": "android/regressionTests/Automated_Regression_Tests/signDocument:Sign a document through the EUDI Wallet",
+  "methodName": "Sign a document through the EUDI Wallet",
+  "testSteps": [
+    {
+      "number": 1,
+      "description": "1: Sign a document through the EUDI Wallet ({issuer=Kotlin})",
+      "duration": 403091,
+      "startTime": "2026-09-23T16:33:12.961532Z[UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "lineNumber": 26,
+      "children": [
+        {
+          "number": 2,
+          "description": "Given the user uploads a document and an attestation using Kotlin and selects a QTSP",
+          "duration": 91881,
+          "startTime": "2026-09-23T17:24:26.121053Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 3,
+          "description": "When the EUDI Wallet fetches the Credential ID details from the QTSP",
+          "duration": 4934,
+          "startTime": "2026-09-23T17:25:58.007646Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 4,
+          "description": "Then the EUDI Wallet displays the Credential ID details to the user",
+          "duration": 2098,
+          "startTime": "2026-09-23T17:26:02.943076Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 5,
+          "description": "And the user agrees to proceed with the signing operation",
+          "duration": 1700,
+          "startTime": "2026-09-23T17:26:05.042139Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 6,
+          "description": "When the user opts not to proceed",
+          "duration": 8427,
+          "startTime": "2026-09-23T17:26:06.743942Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 7,
+          "description": "Then the user selects the Abort operation option",
+          "duration": 0,
+          "startTime": "2026-09-23T17:26:15.172163Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 8,
+          "description": "And the EUDI Wallet redirects the user to the main page",
+          "duration": 265,
+          "startTime": "2026-09-23T17:26:15.173133Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 9,
+          "description": "When the EUDI Wallet asks the user to consent to the release of the requested attestation",
+          "duration": 9616,
+          "startTime": "2026-09-23T17:26:15.439060Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 10,
+          "description": "And the user successfully authenticates in the Wallet",
+          "duration": 3260,
+          "startTime": "2026-09-23T17:26:25.057969Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 11,
+          "description": "Then the EUDI Wallet shares the requested attestation with the QTSP",
+          "duration": 26676,
+          "startTime": "2026-09-23T17:26:28.319174Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 12,
+          "description": "And a success screen appears with the signed document",
+          "duration": 4699,
+          "startTime": "2026-09-23T17:26:54.997647Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 13,
+          "description": "When the EUDI Wallet obtains the signed document",
+          "duration": 9283,
+          "startTime": "2026-09-23T17:26:59.697720Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 14,
+          "description": "Then the EUDI Wallet allows the user to share the document or close the process",
+          "duration": 2031,
+          "startTime": "2026-09-23T17:27:08.982155Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    },
+    {
+      "number": 15,
+      "description": "2: Sign a document through the EUDI Wallet ({issuer=Python})",
+      "duration": 202811,
+      "startTime": "2026-09-23T16:39:56.149943Z[UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "lineNumber": 27,
+      "children": [
+        {
+          "number": 2,
+          "description": "Given the user uploads a document and an attestation using Python and selects a QTSP",
+          "duration": 157675,
+          "startTime": "2026-09-23T17:31:30.005214Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 3,
+          "description": "When the EUDI Wallet fetches the Credential ID details from the QTSP",
+          "duration": 4833,
+          "startTime": "2026-09-23T17:34:07.683624Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 4,
+          "description": "Then the EUDI Wallet displays the Credential ID details to the user",
+          "duration": 2081,
+          "startTime": "2026-09-23T17:34:12.518819Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 5,
+          "description": "And the user agrees to proceed with the signing operation",
+          "duration": 1145,
+          "startTime": "2026-09-23T17:34:14.601302Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 6,
+          "description": "When the user opts not to proceed",
+          "duration": 2933,
+          "startTime": "2026-09-23T17:34:15.747620Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 7,
+          "description": "Then the user selects the Abort operation option",
+          "duration": 0,
+          "startTime": "2026-09-23T17:34:18.682037Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 8,
+          "description": "And the EUDI Wallet redirects the user to the main page",
+          "duration": 343,
+          "startTime": "2026-09-23T17:34:18.683027Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 9,
+          "description": "When the EUDI Wallet asks the user to consent to the release of the requested attestation",
+          "duration": 9853,
+          "startTime": "2026-09-23T17:34:19.027240Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 10,
+          "description": "And the user successfully authenticates in the Wallet",
+          "duration": 3842,
+          "startTime": "2026-09-23T17:34:28.881409Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 11,
+          "description": "Then the EUDI Wallet shares the requested attestation with the QTSP",
+          "duration": 20083,
+          "startTime": "2026-09-23T17:34:32.723999Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 12,
+          "description": "And a success screen appears with the signed document",
+          "duration": 5220,
+          "startTime": "2026-09-23T17:34:52.808542Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 13,
+          "description": "When the EUDI Wallet obtains the signed document",
+          "duration": 7764,
+          "startTime": "2026-09-23T17:34:58.029573Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 14,
+          "description": "Then the EUDI Wallet allows the user to share the document or close the process",
+          "duration": 1952,
+          "startTime": "2026-09-23T17:35:05.795150Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    }
+  ],
+  "userStory": {
+    "id": "android/regressionTests/Automated_Regression_Tests/signDocument",
+    "storyName": "Sign Document through EUDI Wallet",
+    "displayName": "Sign Document through EUDI Wallet",
+    "path": "android/regressionTests/Automated_Regression_Tests/signDocument",
+    "pathElements": [
+      {
+        "name": "android",
+        "description": ""
+      },
+      {
+        "name": "regressionTests",
+        "description": ""
+      },
+      {
+        "name": "Automated_Regression_Tests",
+        "description": ""
+      },
+      {
+        "name": "signDocument",
+        "description": ""
+      }
+    ],
+    "narrative": "  As a EUDI Wallet User,\n  I want to provide my explicit consent on signing a document through my EUDI Wallet and sing the document\n  So that I can ensure that I am the sole signer of the specific document.",
+    "type": "feature"
+  },
+  "title": "Sign a document through the EUDI Wallet",
+  "description": "",
+  "tags": [
+    {
+      "name": "US_SD_TC_01",
+      "type": "tag",
+      "displayName": "US_SD_TC_01"
+    },
+    {
+      "name": "US_SD",
+      "type": "tag",
+      "displayName": "US_SD"
+    },
+    {
+      "name": "ANDROID",
+      "type": "tag",
+      "displayName": "ANDROID"
+    },
+    {
+      "name": "GENERAL_TESTS",
+      "type": "tag",
+      "displayName": "GENERAL_TESTS"
+    },
+    {
+      "name": "automated",
+      "type": "tag",
+      "displayName": "automated"
+    }
+  ],
+  "startTime": "2026-09-23T16:33:12.961343Z[UTC]",
+  "endTime": "2026-09-23T16:39:56.054220Z[UTC]",
+  "duration": 403092,
+  "projectKey": "",
+  "annotatedResult": "SUCCESS",
+  "isManualTestingUpToDate": false,
+  "dataTable": {
+    "headers": [
+      "issuer"
+    ],
+    "rows": [
+      {
+        "values": [
+          "Kotlin"
+        ],
+        "lineNumber": 26,
+        "result": "SUCCESS"
+      },
+      {
+        "values": [
+          "Python"
+        ],
+        "lineNumber": 27,
+        "result": "SUCCESS"
+      }
+    ],
+    "predefinedRows": true,
+    "scenarioOutline": "Given the user uploads a document and an attestation using <issuer> and selects a QTSP\n\rWhen the EUDI Wallet fetches the Credential ID details from the QTSP\n\rThen the EUDI Wallet displays the Credential ID details to the user\n\rAnd the user agrees to proceed with the signing operation\n\rWhen the user opts not to proceed\n\rThen the user selects the Abort operation option\n\rAnd the EUDI Wallet redirects the user to the main page\n\rWhen the EUDI Wallet asks the user to consent to the release of the requested attestation\n\rAnd the user successfully authenticates in the Wallet\n\rThen the EUDI Wallet shares the requested attestation with the QTSP\n\rAnd a success screen appears with the signed document\n\rWhen the EUDI Wallet obtains the signed document\n\rThen the EUDI Wallet allows the user to share the document or close the process\n\r",
+    "dataSetDescriptors": [
+      {
+        "startRow": 0,
+        "rowCount": 0,
+        "name": "",
+        "description": ""
+      }
+    ]
+  },
+  "manual": false,
+  "testSource": "Cucumber",
+  "order": 0,
+  "result": "SUCCESS",
+  "scenarioOutline": "Given the user uploads a document and an attestation using <issuer> and selects a QTSP\nWhen the EUDI Wallet fetches the Credential ID details from the QTSP\nThen the EUDI Wallet displays the Credential ID details to the user\nAnd the user agrees to proceed with the signing operation\nWhen the user opts not to proceed\nThen the user selects the Abort operation option\nAnd the EUDI Wallet redirects the user to the main page\nWhen the EUDI Wallet asks the user to consent to the release of the requested attestation\nAnd the user successfully authenticates in the Wallet\nThen the EUDI Wallet shares the requested attestation with the QTSP\nAnd a success screen appears with the signed document\nWhen the EUDI Wallet obtains the signed document\nThen the EUDI Wallet allows the user to share the document or close the process"
+}

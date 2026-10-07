@@ -1,0 +1,766 @@
+{
+  "name": "Batch Issuance of Attestations in EUDI Wallet",
+  "id": "batch-issuance-of-attestations-in-eudi-wallet;batch-issuance-of-attestations-in-eudi-wallet",
+  "scenarioId": "android/regressionTests/Automated_Regression_Tests/issueMultipleInstancesOfACredentialIssuerInitiatedRemoteCrossAndSameDevice:Batch Issuance of Attestations in EUDI Wallet",
+  "methodName": "Batch Issuance of Attestations in EUDI Wallet",
+  "testSteps": [
+    {
+      "number": 1,
+      "description": "1: Batch Issuance of Attestations in EUDI Wallet ({credential=PID (MSO Mdoc), issuer=Python, issuance_method=from list, issue_scenario=same device})",
+      "duration": 246153,
+      "startTime": "2026-09-23T15:51:41.146137Z[UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "lineNumber": 22,
+      "children": [
+        {
+          "number": 2,
+          "description": "Given the user initiates a PID (MSO Mdoc) issuance using the Python",
+          "duration": 8620,
+          "startTime": "2026-09-23T15:52:11.029650Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 3,
+          "description": "And the issuance method is from list",
+          "duration": 114644,
+          "startTime": "2026-09-23T15:52:19.650277Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 4,
+          "description": "And the issuance is performed on a same device for the PID (MSO Mdoc) and from list",
+          "duration": 0,
+          "startTime": "2026-09-23T15:54:14.297117Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 5,
+          "description": "When the issuance flow is completed",
+          "duration": 58067,
+          "startTime": "2026-09-23T15:54:14.297902Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 6,
+          "description": "Then the credential is stored in the Wallet",
+          "duration": 33791,
+          "startTime": "2026-09-23T15:55:12.368226Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 7,
+          "description": "And the issuer service generates multiple attestations",
+          "duration": 0,
+          "startTime": "2026-09-23T15:55:46.160920Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 8,
+          "description": "And the Wallet shows a counter indicating the total number of attestations issued",
+          "duration": 417,
+          "startTime": "2026-09-23T15:55:46.161664Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 9,
+          "description": "When the issuer advertised maximum batch size is below the Wallet internal minimum threshold",
+          "duration": 0,
+          "startTime": "2026-09-23T15:55:46.579387Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 10,
+          "description": "Then the issuance process continues with the issuer's maximum batch size",
+          "duration": 0,
+          "startTime": "2026-09-23T15:55:46.579750Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 11,
+          "description": "And the Wallet saves the attestations based on the issuer-defined batch size",
+          "duration": 0,
+          "startTime": "2026-09-23T15:55:46.580073Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    },
+    {
+      "number": 12,
+      "description": "2: Batch Issuance of Attestations in EUDI Wallet ({credential=PID (MSO Mdoc), issuer=Kotlin, issuance_method=from list, issue_scenario=same device})",
+      "duration": 160540,
+      "startTime": "2026-09-23T15:55:47.389357Z[UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "lineNumber": 23,
+      "children": [
+        {
+          "number": 13,
+          "description": "Given the user initiates a PID (MSO Mdoc) issuance using the Kotlin",
+          "duration": 10194,
+          "startTime": "2026-09-23T15:56:20.017447Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 14,
+          "description": "And the issuance method is from list",
+          "duration": 66181,
+          "startTime": "2026-09-23T15:56:30.212977Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 15,
+          "description": "And the issuance is performed on a same device for the PID (MSO Mdoc) and from list",
+          "duration": 0,
+          "startTime": "2026-09-23T15:57:36.396519Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 16,
+          "description": "When the issuance flow is completed",
+          "duration": 30373,
+          "startTime": "2026-09-23T15:57:36.397480Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 17,
+          "description": "Then the credential is stored in the Wallet",
+          "duration": 20109,
+          "startTime": "2026-09-23T15:58:06.772144Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 18,
+          "description": "And the issuer service generates multiple attestations",
+          "duration": 0,
+          "startTime": "2026-09-23T15:58:26.882492Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 19,
+          "description": "And the Wallet shows a counter indicating the total number of attestations issued",
+          "duration": 372,
+          "startTime": "2026-09-23T15:58:26.882986Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 20,
+          "description": "When the issuer advertised maximum batch size is below the Wallet internal minimum threshold",
+          "duration": 0,
+          "startTime": "2026-09-23T15:58:27.256001Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 21,
+          "description": "Then the issuance process continues with the issuer's maximum batch size",
+          "duration": 0,
+          "startTime": "2026-09-23T15:58:27.256572Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 22,
+          "description": "And the Wallet saves the attestations based on the issuer-defined batch size",
+          "duration": 0,
+          "startTime": "2026-09-23T15:58:27.256969Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    },
+    {
+      "number": 23,
+      "description": "3: Batch Issuance of Attestations in EUDI Wallet ({credential=PID (MSO Mdoc), issuer=Python, issuance_method=credential offer, issue_scenario=same device})",
+      "duration": 306931,
+      "startTime": "2026-09-23T15:58:28.010756Z[UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "lineNumber": 24,
+      "children": [
+        {
+          "number": 2,
+          "description": "Given the user initiates a PID (MSO Mdoc) issuance using the Python",
+          "duration": 11007,
+          "startTime": "2026-09-23T16:54:21.944834Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 3,
+          "description": "And the issuance method is credential offer",
+          "duration": 11553,
+          "startTime": "2026-09-23T16:54:32.954793Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 4,
+          "description": "And the issuance is performed on a same device for the PID (MSO Mdoc) and credential offer",
+          "duration": 206856,
+          "startTime": "2026-09-23T16:54:44.509610Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 5,
+          "description": "When the issuance flow is completed",
+          "duration": 39119,
+          "startTime": "2026-09-23T16:58:11.367420Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 6,
+          "description": "Then the credential is stored in the Wallet",
+          "duration": 33258,
+          "startTime": "2026-09-23T16:58:50.488024Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 7,
+          "description": "And the issuer service generates multiple attestations",
+          "duration": 1,
+          "startTime": "2026-09-23T16:59:23.749099Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 8,
+          "description": "And the Wallet shows a counter indicating the total number of attestations issued",
+          "duration": 442,
+          "startTime": "2026-09-23T16:59:23.750974Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 9,
+          "description": "When the issuer advertised maximum batch size is below the Wallet internal minimum threshold",
+          "duration": 0,
+          "startTime": "2026-09-23T16:59:24.193800Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 10,
+          "description": "Then the issuance process continues with the issuer's maximum batch size",
+          "duration": 0,
+          "startTime": "2026-09-23T16:59:24.194659Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 11,
+          "description": "And the Wallet saves the attestations based on the issuer-defined batch size",
+          "duration": 0,
+          "startTime": "2026-09-23T16:59:24.195172Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    },
+    {
+      "number": 34,
+      "description": "4: Batch Issuance of Attestations in EUDI Wallet ({credential=PID (MSO Mdoc), issuer=Kotlin, issuance_method=credential offer, issue_scenario=same device})",
+      "duration": 324254,
+      "startTime": "2026-09-23T16:03:34.995482Z[UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "lineNumber": 25,
+      "children": [
+        {
+          "number": 35,
+          "description": "Given the user initiates a PID (MSO Mdoc) issuance using the Kotlin",
+          "duration": 9351,
+          "startTime": "2026-09-23T16:03:59.407038Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 36,
+          "description": "And the issuance method is credential offer",
+          "duration": 20043,
+          "startTime": "2026-09-23T16:04:08.759659Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 37,
+          "description": "And the issuance is performed on a same device for the PID (MSO Mdoc) and credential offer",
+          "duration": 227466,
+          "startTime": "2026-09-23T16:04:28.803489Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 38,
+          "description": "When the issuance flow is completed",
+          "duration": 20729,
+          "startTime": "2026-09-23T16:08:16.271175Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 39,
+          "description": "Then the credential is stored in the Wallet",
+          "duration": 21037,
+          "startTime": "2026-09-23T16:08:37.001524Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 40,
+          "description": "And the issuer service generates multiple attestations",
+          "duration": 0,
+          "startTime": "2026-09-23T16:08:58.040060Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 41,
+          "description": "And the Wallet shows a counter indicating the total number of attestations issued",
+          "duration": 464,
+          "startTime": "2026-09-23T16:08:58.040525Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 42,
+          "description": "When the issuer advertised maximum batch size is below the Wallet internal minimum threshold",
+          "duration": 0,
+          "startTime": "2026-09-23T16:08:58.505237Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 43,
+          "description": "Then the issuance process continues with the issuer's maximum batch size",
+          "duration": 0,
+          "startTime": "2026-09-23T16:08:58.505390Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 44,
+          "description": "And the Wallet saves the attestations based on the issuer-defined batch size",
+          "duration": 0,
+          "startTime": "2026-09-23T16:08:58.505478Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    },
+    {
+      "number": 45,
+      "description": "5: Batch Issuance of Attestations in EUDI Wallet ({credential=PID (MSO Mdoc), issuer=Python, issuance_method=credential offer, issue_scenario=cross device})",
+      "duration": 307053,
+      "startTime": "2026-09-23T16:08:59.295406Z[UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "lineNumber": 26,
+      "children": [
+        {
+          "number": 13,
+          "description": "Given the user initiates a PID (MSO Mdoc) issuance using the Python",
+          "duration": 10126,
+          "startTime": "2026-09-23T17:00:06.918005Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 14,
+          "description": "And the issuance method is credential offer",
+          "duration": 11392,
+          "startTime": "2026-09-23T17:00:17.045384Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 15,
+          "description": "And the issuance is performed on a cross device for the PID (MSO Mdoc) and credential offer",
+          "duration": 249075,
+          "startTime": "2026-09-23T17:00:28.438642Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 16,
+          "description": "When the issuance flow is completed",
+          "duration": 39151,
+          "startTime": "2026-09-23T17:04:37.515446Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 17,
+          "description": "Then the credential is stored in the Wallet",
+          "duration": 33025,
+          "startTime": "2026-09-23T17:05:16.667174Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 18,
+          "description": "And the issuer service generates multiple attestations",
+          "duration": 0,
+          "startTime": "2026-09-23T17:05:49.694440Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 19,
+          "description": "And the Wallet shows a counter indicating the total number of attestations issued",
+          "duration": 357,
+          "startTime": "2026-09-23T17:05:49.695359Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 20,
+          "description": "When the issuer advertised maximum batch size is below the Wallet internal minimum threshold",
+          "duration": 0,
+          "startTime": "2026-09-23T17:05:50.053620Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 21,
+          "description": "Then the issuance process continues with the issuer's maximum batch size",
+          "duration": 0,
+          "startTime": "2026-09-23T17:05:50.053949Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 22,
+          "description": "And the Wallet saves the attestations based on the issuer-defined batch size",
+          "duration": 0,
+          "startTime": "2026-09-23T17:05:50.054505Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    },
+    {
+      "number": 56,
+      "description": "6: Batch Issuance of Attestations in EUDI Wallet ({credential=PID (MSO Mdoc), issuer=Kotlin, issuance_method=credential offer, issue_scenario=cross device})",
+      "duration": 180615,
+      "startTime": "2026-09-23T16:14:06.404142Z[UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "lineNumber": 27,
+      "children": [
+        {
+          "number": 57,
+          "description": "Given the user initiates a PID (MSO Mdoc) issuance using the Kotlin",
+          "duration": 9741,
+          "startTime": "2026-09-23T16:14:30.871718Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 58,
+          "description": "And the issuance method is credential offer",
+          "duration": 21377,
+          "startTime": "2026-09-23T16:14:40.614439Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 59,
+          "description": "And the issuance is performed on a cross device for the PID (MSO Mdoc) and credential offer",
+          "duration": 83585,
+          "startTime": "2026-09-23T16:15:01.992917Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 60,
+          "description": "When the issuance flow is completed",
+          "duration": 21785,
+          "startTime": "2026-09-23T16:16:25.579543Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 61,
+          "description": "Then the credential is stored in the Wallet",
+          "duration": 18351,
+          "startTime": "2026-09-23T16:16:47.370715Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 62,
+          "description": "And the issuer service generates multiple attestations",
+          "duration": 0,
+          "startTime": "2026-09-23T16:17:05.724002Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 63,
+          "description": "And the Wallet shows a counter indicating the total number of attestations issued",
+          "duration": 366,
+          "startTime": "2026-09-23T16:17:05.724838Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 64,
+          "description": "When the issuer advertised maximum batch size is below the Wallet internal minimum threshold",
+          "duration": 0,
+          "startTime": "2026-09-23T16:17:06.091747Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 65,
+          "description": "Then the issuance process continues with the issuer's maximum batch size",
+          "duration": 0,
+          "startTime": "2026-09-23T16:17:06.092114Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 66,
+          "description": "And the Wallet saves the attestations based on the issuer-defined batch size",
+          "duration": 0,
+          "startTime": "2026-09-23T16:17:06.092315Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    }
+  ],
+  "userStory": {
+    "id": "android/regressionTests/Automated_Regression_Tests/issueMultipleInstancesOfACredentialIssuerInitiatedRemoteCrossAndSameDevice",
+    "storyName": "Batch Issuance of Attestations in EUDI Wallet",
+    "displayName": "Batch Issuance of Attestations in EUDI Wallet",
+    "path": "android/regressionTests/Automated_Regression_Tests/issueMultipleInstancesOfACredentialIssuerInitiatedRemoteCrossAndSameDevice",
+    "pathElements": [
+      {
+        "name": "android",
+        "description": ""
+      },
+      {
+        "name": "regressionTests",
+        "description": ""
+      },
+      {
+        "name": "Automated_Regression_Tests",
+        "description": ""
+      },
+      {
+        "name": "issueMultipleInstancesOfACredentialIssuerInitiatedRemoteCrossAndSameDevice",
+        "description": ""
+      }
+    ],
+    "narrative": "  As a EUDI Wallet User,\n  I want to request the issuance of multiple attestations of the same attestation type, attribute values and technical validity period (batch issuance)\n  so that my privacy is protected when presenting attributes from an attestation multiple times to the same Relying Party or colluding Relying Parties (Relying Party linkability)",
+    "type": "feature"
+  },
+  "title": "Batch Issuance of Attestations in EUDI Wallet",
+  "description": "",
+  "tags": [
+    {
+      "name": "US_IMIOACIIRCASD",
+      "type": "tag",
+      "displayName": "US_IMIOACIIRCASD"
+    },
+    {
+      "name": "Q2_2025",
+      "type": "tag",
+      "displayName": "Q2_2025"
+    },
+    {
+      "name": "ANDROID",
+      "type": "tag",
+      "displayName": "ANDROID"
+    },
+    {
+      "name": "GENERAL_TESTS",
+      "type": "tag",
+      "displayName": "GENERAL_TESTS"
+    },
+    {
+      "name": "automated",
+      "type": "tag",
+      "displayName": "automated"
+    }
+  ],
+  "startTime": "2026-09-23T15:51:41.146009Z[UTC]",
+  "endTime": "2026-09-23T16:17:07.020179Z[UTC]",
+  "duration": 38503,
+  "projectKey": "",
+  "isManualTestingUpToDate": false,
+  "dataTable": {
+    "headers": [
+      "credential",
+      "issuer",
+      "issuance_method",
+      "issue_scenario"
+    ],
+    "rows": [
+      {
+        "values": [
+          "PID (MSO Mdoc)",
+          "Python",
+          "from list",
+          "same device"
+        ],
+        "lineNumber": 22,
+        "result": "SUCCESS"
+      },
+      {
+        "values": [
+          "PID (MSO Mdoc)",
+          "Kotlin",
+          "from list",
+          "same device"
+        ],
+        "lineNumber": 23,
+        "result": "SUCCESS"
+      },
+      {
+        "values": [
+          "PID (MSO Mdoc)",
+          "Python",
+          "credential offer",
+          "same device"
+        ],
+        "lineNumber": 24,
+        "result": "SUCCESS"
+      },
+      {
+        "values": [
+          "PID (MSO Mdoc)",
+          "Kotlin",
+          "credential offer",
+          "same device"
+        ],
+        "lineNumber": 25,
+        "result": "SUCCESS"
+      },
+      {
+        "values": [
+          "PID (MSO Mdoc)",
+          "Python",
+          "credential offer",
+          "cross device"
+        ],
+        "lineNumber": 26,
+        "result": "SUCCESS"
+      },
+      {
+        "values": [
+          "PID (MSO Mdoc)",
+          "Kotlin",
+          "credential offer",
+          "cross device"
+        ],
+        "lineNumber": 27,
+        "result": "SUCCESS"
+      }
+    ],
+    "predefinedRows": true,
+    "scenarioOutline": "Given the user initiates a <credential> issuance using the <issuer>\n\rAnd the issuance method is <issuance_method>\n\rAnd the issuance is performed on a <issue_scenario> for the <credential> and <issuance_method>\n\rWhen the issuance flow is completed\n\rThen the credential is stored in the Wallet\n\rAnd the issuer service generates multiple attestations\n\rAnd the Wallet shows a counter indicating the total number of attestations issued\n\rWhen the issuer advertised maximum batch size is below the Wallet internal minimum threshold\n\rThen the issuance process continues with the issuer's maximum batch size\n\rAnd the Wallet saves the attestations based on the issuer-defined batch size\n\r",
+    "dataSetDescriptors": [
+      {
+        "startRow": 0,
+        "rowCount": 0,
+        "name": "",
+        "description": ""
+      }
+    ]
+  },
+  "manual": false,
+  "testSource": "Cucumber",
+  "order": 0,
+  "result": "SUCCESS",
+  "scenarioOutline": "Given the user initiates a <credential> issuance using the <issuer>\nAnd the issuance method is <issuance_method>\nAnd the issuance is performed on a <issue_scenario> for the <credential> and <issuance_method>\nWhen the issuance flow is completed\nThen the credential is stored in the Wallet\nAnd the issuer service generates multiple attestations\nAnd the Wallet shows a counter indicating the total number of attestations issued\nWhen the issuer advertised maximum batch size is below the Wallet internal minimum threshold\nThen the issuance process continues with the issuer's maximum batch size\nAnd the Wallet saves the attestations based on the issuer-defined batch size",
+  "annotatedResult": "SUCCESS"
+}

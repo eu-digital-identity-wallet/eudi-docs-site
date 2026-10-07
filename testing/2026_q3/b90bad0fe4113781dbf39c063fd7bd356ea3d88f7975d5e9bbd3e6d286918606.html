@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Serenity Reports</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="bootstrap-icons/bootstrap-icons.css">
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.13.1/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.13.1/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.13.1/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/>
+<!--CHART.JS-->
+<script src="chartjs/chart.js"></script>
+<script src="chartjs/chartjs-plugin-datalabels@2.0.0.min.js"></script>
+<script src="chartjs/patternomaly.min.js"></script>
+<script>
+    // Register the plugin to all charts:
+    Chart.register(ChartDataLabels);
+</script>
+<!-- JQuery-UI -->
+<link type="text/css" href="jqueryui/1.11.2-start/jquery-ui.min.css" rel="Stylesheet" />
+<script type="text/javascript" src="jqueryui/1.11.2-start/jquery-ui.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.13.1/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.13.1/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.13.1/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+
+
+
+    <script class="code" type="text/javascript">$(document).ready(function () {
+
+
+            $("#scenario-results").DataTable({
+                "order": [[0, "asc",], [3, "asc",]],
+                "language": {
+                    searchPlaceholder: "Filter",
+                    search: ""
+                },
+                columnDefs: [
+                    {type: 'time-elapsed-dhms', targets: 4}
+                ]
+            })
+            $("#manual-scenario-results").DataTable({
+                "order": [[0, "asc",], [1, "asc",]],
+                "language": {
+                    searchPlaceholder: "Filter",
+                    search: ""
+                },
+            })
+
+        // Results table
+        $('#test-results-table').DataTable({
+            "order": [[0, "asc",], [3, "asc",]],
+            "pageLength": 100,
+            "lengthMenu": [[25, 50, 100, 200, -1], [25, 50, 100, 200, "All"]]
+        });
+
+    })
+    ;
+    </script>
+</head>
+
+<body class="results-page">
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">EUDI Wallet Test Report</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+
+    <div id="contenttop">
+        <div class="middlebg">
+        <span class="breadcrumbs"><a href="index.html">Home</a>
+                > Story 
+        </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="bi bi-journal-check"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="bi bi-journal-text"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="0272dadd83d6e6ac748d9a947522ca78b8873f5156f9bd38d6a0eb735ee5993b.html"><i class="bi bi-chat-text"></i> Epics</a>
+        </li>
+        <li >
+            <a href="2a4631d87648e59c428d4cf0e9247f9d286e4679f436ca2ce872e931eb4dfd58.html"><i class="bi bi-chat-text"></i> Stories</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="bi bi-chat-text"></i> Features</a>
+        </li>
+        <li >
+            <a href="f00f76a04d2d99822f342e19edfb456d954ef898f485c501f324bafd9ade930f.html"><i class="bi bi-chat-text"></i> ##s</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 06-10-2026 11:31:29</span>
+    <br style="clear:left"/>
+</div>
+    <div class="clr"></div>
+    <div id="beforetable"></div>
+    <div id="results-dashboard">
+        <div class="middlb">
+            <div class="table">
+
+                <h2>Test Results: All Tests</h2>
+                <table class='overview'>
+                    <tr>
+                        <td width="375px" valign="top">
+                            <div class="test-count-summary">
+                                <div>
+
+                                    4 tests
+
+                                     |
+                                        <a href="f8983da4b86f1189534609d2d10bff3b3f4bb233291c948b300b39aa63dc77b6.csv" title="Download CSV"> <i class="bi bi-cloud-arrow-down" title="Download CSV"></i></a>
+
+                                    <p class="report-info"><i class="bi bi-info-circle"></i> Note that results include
+                                        data-driven scenarios containing tests ,
+                                        which may also contain results other than tests .</p>
+
+
+
+                                </div>
+                            </div>
+
+                            <div>
+                                <ul class="nav nav-tabs">
+                                    <li class="active">
+                                        <a data-toggle="tab" href="#summary"><i class="bi bi-house-door"></i> Summary</a>
+                                    </li>
+                                    <li>
+                                        <a data-toggle="tab" href="#tests"><i class="bi bi-speedometer"></i> Test
+                                            Results</a>
+                                    </li>
+                                </ul>
+
+                                <div class="card border">
+                                    <div class="tab-content" id="pills-tabContent">
+                                        <div id="summary" class="tab-pane fade in active">
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <div class="col-sm-4">
+    <div>
+        <h3><i class="bi bi-speedometer2"></i> Key Statistics</h3>
+        <div>
+            <table class="table table-striped table-hover">
+                <tbody>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-card-checklist"></i> Number of Scenarios
+                    </td>
+                    <td>4</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-caret-right"></i> Total Number of Test Cases
+                    </td>
+                    <td>4</td>
+                </tr>
+                    <tr scope="row">
+                        <td>
+                            <i class="bi bi-person"></i> Number of Manual Test Cases
+                        </td>
+                        <td>4</td>
+                    </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-flag-fill"></i> Tests Started
+                    </td>
+                    <td>Oct 06, 2026 11:29:38</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-stop-circle"></i> Tests
+                        Finished
+                    </td>
+                    <td>Oct 06, 2026 11:29:39</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-stopwatch"></i> Total
+                        Duration
+                    </td>
+                    <td>1s</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-trophy"></i> Fastest Test
+                    </td>
+                    <td>62ms</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-skip-start"></i> Slowest
+                        Test
+                    </td>
+                    <td>660ms</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-stopwatch"></i> Average
+                        Execution Time
+                    </td>
+                    <td>227ms</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-stopwatch-fill"></i> Total
+                        Execution Time
+                    </td>
+                    <td>908ms</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <h4><i class="bi bi-check-square"></i> Test Outcomes</h4>
+                                                        <!-- Severity bar chart -->
+                                                        <div class="chart-container" style="position: relative; width:30vw">
+                                                            <canvas id="severityChart" width="300" height="300"></canvas>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-sm-4">
+                                                        <h4><i class="bi bi-graph-up"></i> Test Performance</h4>
+
+                                                        <!-- Duration bar chart -->
+                                                        <div class="chart-container" style="position: relative; width:30vw">
+                                                            <canvas id="durationChart" width="300" height="300"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                        <div class="col-sm-12">
+                                                            <!-- High level coverage bar chart -->
+                                                            <div class="chart-container" style="position: relative; width:60vw">
+                                                                <h3><i class="bi bi-reception-3"></i> Functional Coverage Overview</h3>
+                                                                <h4>Features</h4>
+                                                                <canvas id="coverageChart"></canvas>
+                                                            </div>
+                                                        </div>
+                                                </div>
+                                                    <div class="row">
+                                                        <div class="col-sm-12">
+                                                            <h3>Tags</h3>
+
+                                                                <div class="card">
+                                                                    <div class="card-body">
+                                                                        <div>
+                                                                                <a href="9a26bd101adfda745f743db04eb3269922eb1ff4d86d9997efeca1ebfe995ac4.html">
+                                                                                    <span class="badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                                                                        <i class="bi bi-tag"></i> Manual&nbsp;&nbsp;&nbsp;4
+                                                                                    </span>
+                                                                                </a>
+                                                                                <a href="a87abd4204ec96c8db74264eb8886fbfe73d8c3e1714488bb853210c21fb4e5a.html">
+                                                                                    <span class="badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                                                                        <i class="bi bi-tag"></i> Android&nbsp;&nbsp;&nbsp;4
+                                                                                    </span>
+                                                                                </a>
+                                                                                <a href="1077391a8c9765fef7156685713044bd9278de8033435b0004261aa28e658fa3.html">
+                                                                                    <span class="badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                                                                        <i class="bi bi-tag"></i> Q3 2026&nbsp;&nbsp;&nbsp;4
+                                                                                    </span>
+                                                                                </a>
+                                                                                <a href="cde53f4908d8f4e1417e5e014b872609b45225cfb70ab15ad046baec81733a63.html">
+                                                                                    <span class="badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                                                                        <i class="bi bi-tag"></i> US ALOCWS&nbsp;&nbsp;&nbsp;4
+                                                                                    </span>
+                                                                                </a>
+                                                                                <a href="2aee9d77308870d4a0407c81b70e2beb9ab643ba018bb6d76b5e7631e7484b6e.html">
+                                                                                    <span class="badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                                                                        <i class="bi bi-tag"></i> US ALOCWS TC 04&nbsp;&nbsp;&nbsp;1
+                                                                                    </span>
+                                                                                </a>
+                                                                                <a href="1cbd7c3daf5955ffc19e1cb980959bb1d27c93139a5af2e81ca09285c58ad2a2.html">
+                                                                                    <span class="badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                                                                        <i class="bi bi-tag"></i> US ALOCWS TC 03&nbsp;&nbsp;&nbsp;1
+                                                                                    </span>
+                                                                                </a>
+                                                                                <a href="953314004d76175270eca11f059e538252da01caf90ef2e44994a9deacab3017.html">
+                                                                                    <span class="badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                                                                        <i class="bi bi-tag"></i> US ALOCWS TC 02&nbsp;&nbsp;&nbsp;1
+                                                                                    </span>
+                                                                                </a>
+                                                                                <a href="d168aef07509cfd93ac4eb7372189b74ce3baea41f177e5009748b73db780715.html">
+                                                                                    <span class="badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                                                                        <i class="bi bi-tag"></i> US ALOCWS TC 01&nbsp;&nbsp;&nbsp;1
+                                                                                    </span>
+                                                                                </a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card">
+                                                                    <div class="card-body">
+                                                                            <h5 class="card-title">Manual</h5>
+                                                                        <div>
+                                                                                <a href="220d8ef6080eb8a7746b6ccaff3b44ac3c1f123a09790bb9a8ff31e7b07c9746.html">
+                                                                                    <span class="badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                                                                        <i class="bi bi-tag"></i> Passed&nbsp;&nbsp;&nbsp;4
+                                                                                    </span>
+                                                                                </a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                        </div>
+                                                    </div>
+                                            </div>
+
+                                            <div class="container-fluid">
+                                                    <div class="row">
+                                                        <div class="col-sm-11">
+                                                            <h3>Functional Coverage Details</h3>
+
+
+                                                                    <h4>Features</h4>
+
+                                                                    <table class="table feature-coverage-table-with-pagination" id="Feature">
+                                                                        <thead>
+                                                                        <tr>
+                                                                            <th>Feature</th>
+                                                                            <th style="width:1em;">Test&nbsp;Cases</th>
+                                                                            <th style="width:1em;">Scenarios</th>
+                                                                            <th style="width:1em;">%&nbsp;Pass</th>
+                                                                            <th style="width:1em;">Result</th>
+                                                                            <th>Coverage</th>
+                                                                        </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                                <tr>
+                                                                                    <td>
+                                                                                            <a href="c2931c1ca6e520c7f2bc7be267b4b54d87ced9528cfd7cc283d7f69418c5e6bd.html" > Android/eudi wallet trust mark 245/ access list of certified wallet solutions 354 > Access the official list of certified Wallet Solutions</a>
+                                                                                    </td>
+                                                                                    <td>4</td>
+                                                                                    <td>4</td>
+                                                                                    <td>100%</td>
+                                                                                    <td>
+                                                                                            <a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        <div class="progress">
+                                                                                                <div class="progress-bar"
+                                                                                                     role="progressbar"
+                                                                                                     style="width: 100%; background-color: #b0cf73"
+                                                                                                     aria-valuenow="4"
+                                                                                                     title="100% success"
+                                                                                                     aria-valuemin="0"
+                                                                                                     aria-valuemax="100">
+                                                                                                </div>
+                                                                                        </div>
+                                                                                    </td>
+                                                                                </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                        </div>
+                                                    </div>
+
+                                            </div>
+                                            <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <h3>Tags</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <div>
+                                    <a href="9a26bd101adfda745f743db04eb3269922eb1ff4d86d9997efeca1ebfe995ac4.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> Manual&nbsp;&nbsp;&nbsp;4
+                                    </span>
+                                    </a>
+                                    <a href="a87abd4204ec96c8db74264eb8886fbfe73d8c3e1714488bb853210c21fb4e5a.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> Android&nbsp;&nbsp;&nbsp;4
+                                    </span>
+                                    </a>
+                                    <a href="1077391a8c9765fef7156685713044bd9278de8033435b0004261aa28e658fa3.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> Q3 2026&nbsp;&nbsp;&nbsp;4
+                                    </span>
+                                    </a>
+                                    <a href="cde53f4908d8f4e1417e5e014b872609b45225cfb70ab15ad046baec81733a63.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US ALOCWS&nbsp;&nbsp;&nbsp;4
+                                    </span>
+                                    </a>
+                                    <a href="2aee9d77308870d4a0407c81b70e2beb9ab643ba018bb6d76b5e7631e7484b6e.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US ALOCWS TC 04&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="1cbd7c3daf5955ffc19e1cb980959bb1d27c93139a5af2e81ca09285c58ad2a2.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US ALOCWS TC 03&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="953314004d76175270eca11f059e538252da01caf90ef2e44994a9deacab3017.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US ALOCWS TC 02&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="d168aef07509cfd93ac4eb7372189b74ce3baea41f177e5009748b73db780715.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US ALOCWS TC 01&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                                <h5 class="card-title">Manual</h5>
+                            <div>
+                                    <a href="220d8ef6080eb8a7746b6ccaff3b44ac3c1f123a09790bb9a8ff31e7b07c9746.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> Passed&nbsp;&nbsp;&nbsp;4
+                                    </span>
+                                    </a>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+                                            </div>
+                                        </div>
+                                        <div id="tests" class="tab-pane fade in">
+                                            <div class="container-fluid">
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <h3><i class="bi bi-gear"></i> Automated Tests</h3>
+
+                                            No automated tests were executed
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <h3><i class="bi bi-hand-index-thumb"></i> Manual Tests</h3>
+
+                                            <table class="scenario-result-table table" id="manual-scenario-results">
+                                                <thead>
+                                                <tr>
+                                                    <th>##</th>
+                                                    <th class="test-name-column" style="width:60em;">Scenario</th>
+                                                    <th>Steps</th>
+                                                    <th>Result</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr>
+                                                    <td>
+                                                            <a href="c2931c1ca6e520c7f2bc7be267b4b54d87ced9528cfd7cc283d7f69418c5e6bd.html">Access the official list of certified Wallet Solutions</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="4c1f416fcc0aaa2e94fc5a5ea437ef0d5a0db674e39551049ae3b1d7f8f7b7a3.html">Display Trust Mark when opening the Wallet for the first time</a>
+                                                    </td>
+                                                    <td>4</td>
+                                                    <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                            <a href="c2931c1ca6e520c7f2bc7be267b4b54d87ced9528cfd7cc283d7f69418c5e6bd.html">Access the official list of certified Wallet Solutions</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="aa0002be99b41418957cee9d649af830359ab68d0e9fac5eb5fb93b5b59f1556.html">Access Trust Mark from the Wallet menu</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                            <a href="c2931c1ca6e520c7f2bc7be267b4b54d87ced9528cfd7cc283d7f69418c5e6bd.html">Access the official list of certified Wallet Solutions</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="941e283126b7bf06321e8d09b67f60792b234939e47908ece8c45e9b8268b70f.html">Display EUDI Wallet Provider Trusted List link</a>
+                                                    </td>
+                                                    <td>3</td>
+                                                    <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                            <a href="c2931c1ca6e520c7f2bc7be267b4b54d87ced9528cfd7cc283d7f69418c5e6bd.html">Access the official list of certified Wallet Solutions</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="2fc5a6d372dac2265738b0cf4d52f0b6c2de5b4dd1256db92ea7b5a06c8cbf0e.html">Open the certified Wallet Solutions list</a>
+                                                    </td>
+                                                    <td>4</td>
+                                                    <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
+                                                            style="display:none">SUCCESS</span></td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                <h3>Tags</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <div>
+                                    <a href="9a26bd101adfda745f743db04eb3269922eb1ff4d86d9997efeca1ebfe995ac4.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> Manual&nbsp;&nbsp;&nbsp;4
+                                    </span>
+                                    </a>
+                                    <a href="a87abd4204ec96c8db74264eb8886fbfe73d8c3e1714488bb853210c21fb4e5a.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> Android&nbsp;&nbsp;&nbsp;4
+                                    </span>
+                                    </a>
+                                    <a href="1077391a8c9765fef7156685713044bd9278de8033435b0004261aa28e658fa3.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> Q3 2026&nbsp;&nbsp;&nbsp;4
+                                    </span>
+                                    </a>
+                                    <a href="cde53f4908d8f4e1417e5e014b872609b45225cfb70ab15ad046baec81733a63.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US ALOCWS&nbsp;&nbsp;&nbsp;4
+                                    </span>
+                                    </a>
+                                    <a href="2aee9d77308870d4a0407c81b70e2beb9ab643ba018bb6d76b5e7631e7484b6e.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US ALOCWS TC 04&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="1cbd7c3daf5955ffc19e1cb980959bb1d27c93139a5af2e81ca09285c58ad2a2.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US ALOCWS TC 03&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="953314004d76175270eca11f059e538252da01caf90ef2e44994a9deacab3017.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US ALOCWS TC 02&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                                    <a href="d168aef07509cfd93ac4eb7372189b74ce3baea41f177e5009748b73db780715.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> US ALOCWS TC 01&nbsp;&nbsp;&nbsp;1
+                                    </span>
+                                    </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                                <h5 class="card-title">Manual</h5>
+                            <div>
+                                    <a href="220d8ef6080eb8a7746b6ccaff3b44ac3c1f123a09790bb9a8ff31e7b07c9746.html">
+                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
+                                        <i class="bi bi-tag-fill"></i> Passed&nbsp;&nbsp;&nbsp;4
+                                    </span>
+                                    </a>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="beforefooter"></div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <span class="version">Serenity BDD version 4.2.22</span>
+        </div>
+    </div>
+</div>
+
+<!-- Chart data -->
+    <!-- PIE CHART -->
+    <script>
+
+        // The results pie chart
+        const outcomeChartCtx = document.getElementById('resultChart');
+
+        // Options define for display value on top of bars
+        const outcomeDetailsReports = [
+            { title: 'Passing Test Cases', link: "b90bad0fe4113781dbf39c063fd7bd356ea3d88f7975d5e9bbd3e6d286918606.html" },
+            { title: 'Pending Test Cases', link: "4a3fb6e8be7ff1710ec5e9a81406a8437adb7e407712ed5f9c4c179c4873e201.html" },
+            { title: 'Ignored Test Cases', link: "6367427d523e871bbba8ebfa478341da998a5bff445decec1183a4ad017a2cbd.html" },
+            { title: 'Skipped Test Cases', link: "bfa7c473f19c466266720be8e1497408ff6a183863e051c11c5ee5750d818314.html" },
+            { title: 'Aborted Test Cases',  link: "9c1af3e6519cb5a40cd48046d19f0aa3fe606c3a0f988976512602043193b4d0.html"},
+            { title: 'Failed Test Cases', link: "681d45f2efe02ba82b7aaf90d2581431899f6043cb340b2ce7f81c0139fcd819.html"  },
+            { title: 'Broken Test Cases', link: "ef46e81350c7184230fa231fca170271bef09ecd8d347b09b1f983aaa358ceff.html"    },
+            { title: 'Compromised Test Cases',  link: "72f9233c962c97cae1fc7ffdf02c344b22421a9a67f7e9dc48be7ad91195f4e9.html" },
+        ]
+        const outcomeData = {
+            labels: ['Passing Test Cases', 'Pending Test Cases', 'Ignored Test Cases', 'Skipped Test Cases', 'Aborted Test Cases', 'Failed Test Cases', 'Broken Test Cases', 'Compromised Test Cases','Undefined Test Cases'],
+            datasets: [{
+                label: 'Test Results',
+                fill: false,
+                data: [{meta: 'Passing tests', value: 4}, {meta: 'Pending tests', value: 0}, {meta: 'Ignored tests', value: 0}, {meta: 'Skipped tests', value: 0}, {meta: 'Aborted tests', value: 0}, {meta: 'Failing tests', value: 0}, {meta: 'Broken tests', value: 0}, {meta: 'Compromised tests', value: 0}],
+                backgroundColor: ['rgba(153,204,51,0.5)','rgba(165, 199, 238, 0.5)','rgba(168, 168, 168, 0.5)','rgba(238, 224, 152, 0.75)','rgba(255, 153, 102, 0.5)','rgba(255, 22, 49, 0.5)','rgba(255, 97, 8, 0.5)','rgba(255, 104, 255, 0.5)','rgba(83, 50, 168, 0.5)'],
+                borderColor: ['rgba(153,204,51,1)','rgba(165, 199, 238, 1)','rgba(168, 168, 168, 1)','rgba(238, 224, 152, 1)','rgba(255, 153, 102, 1)','rgba(255, 22, 49, 1)','rgba(255, 97, 8, 1)','rgba(255, 104, 255, 1)','rgba(83, 50, 168, 1)'],
+                borderWidth: 1,
+            }]
+        }
+        const outcomeOptions = {
+            responsive: true,
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'bottom'
+                },
+                // Change options for ALL labels of THIS CHART
+                datalabels: {
+                    color: '#444444',
+                    'font.weight': 'bold',
+                    formatter: (value, ctx) => {
+                        let sum = 0;
+                        let dataArr = ctx.chart.data.datasets[0].data;
+                        dataArr.map(data => {
+                            sum += data;
+                        });
+                        let percentage = (value * 100 / sum).toFixed(0) + "%";
+                        if (percentage === '0%' || percentage === 'NaN%') {
+                            return '';
+                        } else {
+                            return percentage;
+                        }
+                    },
+                },
+            }
+        }
+
+        const outcomeChart = new Chart(outcomeChartCtx, {
+            type: 'doughnut',
+            data: outcomeData,
+            options: outcomeOptions,
+            plugins: [
+                {
+                    id: 'text',
+                    beforeDraw: function (chart, a, b) {
+                        var width = chart.width,
+                            height = chart.height,
+                            ctx = chart.ctx;
+
+                        ctx.restore();
+                        var fontSize = (height / 200).toFixed(1);
+                        ctx.font = fontSize + "em sans-serif";
+                        ctx.textBaseline = "middle";
+
+                        var text = "100%"
+                        textX = 10 + Math.round((width - ctx.measureText(text).width) / 2);
+                        textY = (height / 2) - 40;
+
+                        ctx.fillText(text, textX, textY);
+                        ctx.save();
+                    }
+                }]
+        });
+
+        function clickHandler(click) {
+            const points = outcomeChart.getElementsAtEventForMode(click, 'nearest', {intersect: true}, true);
+            if (points.length) {
+                const firstPoint = points[0];
+                window.open(outcomeDetailsReports[firstPoint.index].link, "_self")
+
+            }
+        }
+        outcomeChartCtx.onclick = clickHandler;
+    </script>
+    <!-- END PIE CHART -->
+
+    <!-- SUMMARY BAR CHART -->
+    <script>
+
+        // The Severity bar chart
+        const severityChartCtx = document.getElementById('severityChart');
+
+        // Options define for display value on top of bars
+
+        const severityDetailsReports = [
+            { title: 'Passing Scenarios', link: "b90bad0fe4113781dbf39c063fd7bd356ea3d88f7975d5e9bbd3e6d286918606.html" },
+            { title: 'Pending Scenarios', link: "4a3fb6e8be7ff1710ec5e9a81406a8437adb7e407712ed5f9c4c179c4873e201.html" },
+            { title: 'Ignored Scenarios', link: "6367427d523e871bbba8ebfa478341da998a5bff445decec1183a4ad017a2cbd.html" },
+            { title: 'Skipped Scenarios', link: "bfa7c473f19c466266720be8e1497408ff6a183863e051c11c5ee5750d818314.html" },
+            { title: 'Aborted Scenarios',  link: "9c1af3e6519cb5a40cd48046d19f0aa3fe606c3a0f988976512602043193b4d0.html"},
+            { title: 'Failed Scenarios', link: "681d45f2efe02ba82b7aaf90d2581431899f6043cb340b2ce7f81c0139fcd819.html"  },
+            { title: 'Broken Scenarios', link: "ef46e81350c7184230fa231fca170271bef09ecd8d347b09b1f983aaa358ceff.html"    },
+            { title: 'Compromised Scenarios',  link: "72f9233c962c97cae1fc7ffdf02c344b22421a9a67f7e9dc48be7ad91195f4e9.html" },
+        ]
+        const severityData = {
+            labels: ['Passing', 'Pending', 'Ignored', 'Skipped', 'Aborted', 'Failed', 'Broken', 'Compromised'],
+            datasets: [
+                {
+                    label: 'Automated',
+                    data: [0,0,0,0,0,0,0,0],
+                    backgroundColor: ['rgba(153,204,51,0.5)','rgba(165, 199, 238, 0.5)','rgba(168, 168, 168, 0.5)','rgba(238, 224, 152, 0.75)','rgba(255, 153, 102, 0.5)','rgba(255, 22, 49, 0.5)','rgba(255, 97, 8, 0.5)','rgba(255, 104, 255, 0.5)','rgba(83, 50, 168, 0.5)'],
+                    borderColor: ['rgba(153,204,51,1)','rgba(165, 199, 238, 1)','rgba(168, 168, 168, 1)','rgba(238, 224, 152, 1)','rgba(255, 153, 102, 1)','rgba(255, 22, 49, 1)','rgba(255, 97, 8, 1)','rgba(255, 104, 255, 1)','rgba(83, 50, 168, 1)'],
+                    borderWidth: 1
+                },
+                {
+                    label: 'Manual',
+                    data: [4,0,0,0,0,0,0,0],
+                    backgroundColor: ['rgba(153,204,51,0.25)','rgba(165, 199, 238, 0.25)','rgba(168, 168, 168, 0.25)','rgba(238, 224, 152, 0.375)','rgba(255, 153, 102, 0.25)','rgba(255, 22, 49, 0.25)','rgba(255, 97, 8, 0.25)','rgba(255, 104, 255, 0.25)','rgba(83, 50, 168, 0.25)'],
+                    borderColor: ['rgba(153,204,51,1)','rgba(165, 199, 238, 1)','rgba(168, 168, 168, 1)','rgba(238, 224, 152, 1)','rgba(255, 153, 102, 1)','rgba(255, 22, 49, 1)','rgba(255, 97, 8, 1)','rgba(255, 104, 255, 1)','rgba(83, 50, 168, 1)'],
+                    borderWidth: 1
+                },
+
+            ]
+        }
+        const severityOptions = {
+            responsive: true,
+            skipNull: true,
+            scales: {
+                x: {
+                    stacked: true,
+                },
+                y: {
+                    stacked: true,
+                }
+            },
+            plugins: {
+                // Change options for ALL labels of THIS CHART
+                datalabels: {
+                    color: '#444444',
+                    'font.weight': 'bold',
+                    formatter: (value, ctx) => {
+                        if (value === 0) {
+                            return '';
+                        } else {
+                            return value;
+                        }
+                    },
+                }
+            }
+        }
+        const severityChart = new Chart(severityChartCtx, {
+            type: 'bar',
+            data: severityData,
+            options: severityOptions
+        });
+
+        function clickHandler(click) {
+            const points = severityChart.getElementsAtEventForMode(click, 'nearest', {intersect: true}, true);
+            if (points.length) {
+                const firstPoint = points[0];
+                window.open(severityDetailsReports[firstPoint.index].link, "_self")
+
+            }
+        }
+        severityChartCtx.onclick = clickHandler;
+    </script>
+    <!-- END SUMMARY CHART -->
+
+    <!-- DURATION CHART -->
+    <script>
+
+        // Options define for display value on top of bars
+        const durationDetailsReports = [
+                {title: "Under 1 second", link: "d5d0eae664239462b79c31c1ac9bb3bc2e41cf70f40df518d7268c6a9cded25e.html"},
+                {title: "1 to 10 seconds", link: "4130959109d975e06d428c5a4f2f884873d080c075285b0615190a4ffd0b33f5.html"},
+                {title: "10 to 30 seconds", link: "61180e008e64df73e76b9c4d5800b342c4750cc74fad232fe0217ba95645551a.html"},
+                {title: "30 to 60 seconds", link: "28ea8cbfc44d2f7576c22c28ecc1079ff563b5669c197743dfd4232e0b06557d.html"},
+                {title: "1 to 2 minutes", link: "f74782fa74d8c7e0c8aeebbb4bc7cf4981aed21c2ad75742758b09c9dc64e785.html"},
+                {title: "2 to 5 minutes", link: "d126ac9779d82c42d075488a243369152eb8e86173361f1d5e2c89962bdf4f0b.html"},
+                {title: "5 to 10 minutes", link: "2ce9ee2874320dfc4b7361b0049c42a288d57824b16159bd318a11e49477f0a2.html"},
+                {title: "10 minutes or over", link: "c8bc749b440552464435e0c32c2ee2718c6e1727c7a1b1486091403b06de175e.html"},
+        ]
+        // The Severity bar chart
+        const durationChartCtx = document.getElementById('durationChart');
+
+        // Options define for display value on top of bars
+
+        const durationData = {
+            labels: ['Under 1 second','1 to 10 seconds','10 to 30 seconds','30 to 60 seconds','1 to 2 minutes','2 to 5 minutes','5 to 10 minutes','10 minutes or over'],
+            datasets: [{
+                label: 'Number of tests per duration',
+                fill: false,
+                data: ['4','0','0','0','0','0','0','0'],
+                backgroundColor: 'rgba(83, 146, 255,0.5)',
+                borderColor: 'rgba(83, 146, 255, 1)',
+            }]
+        }
+        const durationOptions = {
+            responsive: true,
+            plugins: {
+                // Change options for ALL labels of THIS CHART
+                datalabels: {
+                    color: '#444444',
+                    'font.weight': 'bold',
+                    formatter: (value, ctx) => {
+                        if (value > 0) {
+                            return value;
+                        } else {
+                            return '';
+                        }
+                    },
+                },
+                tooltip: {
+                    enabled: true,
+                    usePointStyle: true,
+                    callbacks: {
+                        label: (data) => {
+                            return data.parsed.y + ' tests'
+                        }
+                    },
+                },
+            },
+        }
+
+        const durationChart = new Chart(durationChartCtx, {
+            type: 'bar',
+            data: durationData,
+            options: durationOptions
+        });
+
+        function durationClickHandler(click) {
+            const points = durationChart.getElementsAtEventForMode(click, 'nearest', {intersect: true}, true);
+            if (points.length) {
+                const firstPoint = points[0];
+                window.open(durationDetailsReports[firstPoint.index].link, "_self")
+
+            }
+        }
+
+        durationChartCtx.onclick = durationClickHandler;
+    </script>
+    <!-- END DURATION CHART -->
+
+
+
+    <!-- COVERAGE BAR CHART -->
+    <script>
+
+        // The coverage bar chart
+        const coverageChartCtx = document.getElementById('coverageChart');
+
+        // Options define for display value on top of bars
+
+        const coverageReports = [
+            {
+                title: 'Access the official list of certified Wallet Solutions',
+                result: 'SUCCESS',
+                link: "c2931c1ca6e520c7f2bc7be267b4b54d87ced9528cfd7cc283d7f69418c5e6bd.html"
+            },
+            {
+                title: 'View Transactions in History tab',
+                result: 'SUCCESS',
+                link: "d18883ffb69e1f8c133f3ed045ada9df3c9e5ca4bec0af29475d890940bcf628.html"
+            },
+            {
+                title: 'Review and authorise QES transaction data',
+                result: 'SUCCESS',
+                link: "85c5967f7f1b61be406146eec5eb7286c24ae47951bb35d191535eecedc6e164.html"
+            },
+            {
+                title: 'Delete a transaction from transaction log',
+                result: 'SUCCESS',
+                link: "e5e01fbf71c93b22eaddf232ef0fa60da8e733eb5c8aa978c4140ad2587eb1aa.html"
+            },
+            {
+                title: 'List Transactions in History tab',
+                result: 'SUCCESS',
+                link: "9cbbf5045a9e85d6fbe0c1942c2e0dac9592fbeaa05222416721001027b01290.html"
+            },
+            {
+                title: 'Initiate a report for an unlawful or suspicious data request',
+                result: 'SUCCESS',
+                link: "c8f41211025f8e8aa5e98720e020782565f6fb3ae8be5dc6e913f24d35fb2ff8.html"
+            },
+            {
+                title: 'Filter and Sort Transactions in History tab',
+                result: 'SUCCESS',
+                link: "535c5beb5e8b44f4bdd9e0a6ba1168eb4b3402c80b0ee361430233d28bbefa81.html"
+            },
+            {
+                title: 'View Wallet Solution certification information',
+                result: 'SUCCESS',
+                link: "a9c78677b5c1207964323852be0c2537c88a1a1248ce91928c28885867bafa48.html"
+            },
+            {
+                title: 'View previously attempted data deletion requests',
+                result: 'SUCCESS',
+                link: "93179460207d835d1bbb7a4e00eaadcb18c60ee7852a532ce78a09ede2c072cb.html"
+            },
+            {
+                title: 'Review and authorise QES transaction data',
+                result: 'SUCCESS',
+                link: "6b4c8e6e127cd039dbab4cab5fd9ddae8cf594b01c4f949f9aa510cd23ccc6c8.html"
+            },
+            {
+                title: 'View Wallet Trust Mark',
+                result: 'SUCCESS',
+                link: "68f503d2ef30a3cd81c18acbcd9abb7d111b175f493113f7fb42da37d866b1a7.html"
+            },
+            {
+                title: 'View previously attempted transaction reports',
+                result: 'SUCCESS',
+                link: "54018a8d70305db39bdf51149544aa88724cf84108d365274916d238e42738aa.html"
+            },
+            {
+                title: 'View Wallet Solution certification information',
+                result: 'SUCCESS',
+                link: "275bbeffb61d92c8661104599b3079fbd213b4c0b76ac8c1b7a1fc55fc0e8a56.html"
+            },
+            {
+                title: 'List Transactions in History tab',
+                result: 'SUCCESS',
+                link: "1f8fdf603dfc1718cd695089e100a8262b45335aba54dcf90398d11d0a727688.html"
+            },
+            {
+                title: 'Initiate a data deletion request',
+                result: 'SUCCESS',
+                link: "88c18fe7dac6bccc83cdf2c7bd699fdb319b002e6194d8f4bcc609b4afa0c67e.html"
+            },
+            {
+                title: 'Delete a transaction from transaction log',
+                result: 'SUCCESS',
+                link: "62625103dccb9978c8ea6f6ca9be2e2cb536891a6dce789f0a8e5a5829bcbacd.html"
+            },
+            {
+                title: 'Transaction Search in History tab',
+                result: 'SUCCESS',
+                link: "c2056294a02a9253467876170ed0776e99d10f397ffe283c351800df5115c547.html"
+            },
+            {
+                title: 'View previously attempted data deletion requests',
+                result: 'SUCCESS',
+                link: "432927dbf0e4717b9266f9abea6f988660af99882b0048a6db04c3359e61d5bb.html"
+            },
+            {
+                title: 'View previously attempted transaction reports',
+                result: 'SUCCESS',
+                link: "0aa2ca627f09892c41db502e5fd01080cb43f9ed9e8a790320bfcdd84f02e550.html"
+            },
+            {
+                title: 'View Transactions in History tab',
+                result: 'SUCCESS',
+                link: "6c6724af95ddf8f9889ca4bc0e3f012216af01212ea7cc04cdebdbaab8d9332d.html"
+            },
+            {
+                title: 'View Wallet Trust Mark',
+                result: 'SUCCESS',
+                link: "55e2dbd887f89223592576e03cbfaa0db064410a4c03521fa1459c11a7ed02a5.html"
+            },
+            {
+                title: 'Initiate a data deletion request',
+                result: 'SUCCESS',
+                link: "35f90c5f8152c40798cace9876e0941527d3be2e4b1c5fe65be23e8350094fde.html"
+            },
+            {
+                title: 'Access Wallet Solution certification status information',
+                result: 'SUCCESS',
+                link: "0cfc3196cca9db5d299ec64de18b204fb40751d95788d5dc095ee39af1a4765b.html"
+            },
+            {
+                title: 'Filter and Sort Transactions in History tab',
+                result: 'SUCCESS',
+                link: "810396f5e47873515dd1c8852692edf0f1c386111dd537540128507be84d48e9.html"
+            },
+            {
+                title: 'Initiate a report for an unlawful or suspicious data request',
+                result: 'SUCCESS',
+                link: "594da246b5e316b092d74dcdea90f7246184d5f286ee934064c68ffd90c9025d.html"
+            },
+            {
+                title: 'Transaction Search in History tab',
+                result: 'SUCCESS',
+                link: "8753fac26778e548b99b00a1437bf0193ba446e5655e12ee23156ad9fc4911ca.html"
+            },
+            {
+                title: 'Access Wallet Solution certification status information',
+                result: 'SUCCESS',
+                link: "3d7b1bf028cbff4080a67ba17a56540e1313a1c61c7350faac953fc9fca22847.html"
+            },
+        ]
+        const coverageData = {
+            labels: [
+                'Access the official list of certified Wallet Solutions',
+                'View Transactions in History tab',
+                'Review and authorise QES transaction data',
+                'Delete a transaction from transaction log',
+                'List Transactions in History tab',
+                'Initiate a report for an unlawful or suspicious data request',
+                'Filter and Sort Transactions in History tab',
+                'View Wallet Solution certification information',
+                'View previously attempted data deletion requests',
+                'Review and authorise QES transaction data',
+                'View Wallet Trust Mark',
+                'View previously attempted transaction reports',
+                'View Wallet Solution certification information',
+                'List Transactions in History tab',
+                'Initiate a data deletion request',
+                'Delete a transaction from transaction log',
+                'Transaction Search in History tab',
+                'View previously attempted data deletion requests',
+                'View previously attempted transaction reports',
+                'View Transactions in History tab',
+                'View Wallet Trust Mark',
+                'Initiate a data deletion request',
+                'Access Wallet Solution certification status information',
+                'Filter and Sort Transactions in History tab',
+                'Initiate a report for an unlawful or suspicious data request',
+                'Transaction Search in History tab',
+                'Access Wallet Solution certification status information',
+            ],
+            datasets: [
+                {
+                    label: ['Passing Tests'],
+                    data: [4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                    backgroundColor: [ 'rgba(153,204,51,0.5)' ]
+                },
+                {
+                    label: ['Pending Tests'],
+                    data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                    backgroundColor: [ 'rgba(165, 199, 238, 0.5)' ]
+                },
+                {
+                    label: ['Ignored Tests'],
+                    data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                    backgroundColor: [ 'rgba(168, 168, 168, 0.5)' ]
+                },
+                {
+                    label: ['Skipped Tests'],
+                    data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                    backgroundColor: [ 'rgba(238, 224, 152, 0.75)' ]
+                },
+                {
+                    label: ['Aborted Tests'],
+                    data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                    backgroundColor: [ 'rgba(255, 153, 102, 0.5)' ]
+                },
+                {
+                    label: ['Failed Tests'],
+                    data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                    backgroundColor: [ 'rgba(255, 22, 49, 0.5)' ]
+                },
+                {
+                    label: ['Errors'],
+                    data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                    backgroundColor: [ 'rgba(255, 97, 8, 0.5)' ]
+                },
+                {
+                    label: ['Compromised Tests'],
+                    data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                    backgroundColor: [ 'rgba(255, 104, 255, 0.5)' ]
+                },
+            ]
+        }
+        const coverageOptions = {
+            responsive: true,
+            indexAxis: 'y',
+            // barPercentage: ,
+            barThickness: 'flex',
+            maxBarThickness: 30,
+            minBarLength: 2,
+            skipNull: true,
+            scales: {
+                x: {
+                    stacked: true,
+                },
+                y: {
+                    stacked: true,
+                }
+            },
+            plugins: {
+                // Change options for ALL labels of THIS CHART
+                datalabels: {
+                    color: '#444444',
+                    'font.weight': 'bold'
+                },
+                tooltip: {
+                    enabled: true,
+                    usePointStyle: true,
+                },
+            },
+        }
+
+        const coverageChart = new Chart(coverageChartCtx, {
+            type: 'bar',
+            data: coverageData,
+            options: coverageOptions
+        });
+
+        function coverageClickHandler(click) {
+            const points = coverageChart.getElementsAtEventForMode(click, 'nearest', {intersect: true}, true);
+            if (points.length) {
+                const firstPoint = points[0];
+                if (coverageReports[firstPoint.index].link) {
+                    window.open(coverageReports[firstPoint.index].link, "_self")
+                }
+            }
+        }
+
+        coverageChartCtx.onclick = coverageClickHandler;
+    </script>
+    <!-- END COVERAGE CHART -->
+
+</body>
+</html>

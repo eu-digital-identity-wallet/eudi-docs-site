@@ -1,0 +1,471 @@
+{
+  "name": "Completing the deferred credential delivery process with Python Issuer",
+  "id": "deferred-credential-issuance;completing-the-deferred-credential-delivery-process-with-python-issuer",
+  "scenarioId": "android/regressionTests/Automated_Regression_Tests/deferedIssuing:Completing the deferred credential delivery process with Python Issuer",
+  "methodName": "Completing the deferred credential delivery process with Python Issuer",
+  "testSteps": [
+    {
+      "number": 1,
+      "description": "1: Completing the deferred credential delivery process with Python Issuer ({issuer=Python})",
+      "duration": 268998,
+      "startTime": "2026-09-23T15:34:01.678564Z[UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "lineNumber": 33,
+      "children": [
+        {
+          "number": 2,
+          "description": "Given the user is accessing Python service",
+          "duration": 19880,
+          "startTime": "2026-09-23T15:35:51.866708Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 3,
+          "description": "When the user chooses to deliver a deferred credential to the wallet with Python",
+          "duration": 9139,
+          "startTime": "2026-09-23T15:36:11.747734Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 4,
+          "description": "Then the EUDI Wallet application is opened",
+          "duration": 15983,
+          "startTime": "2026-09-23T15:36:20.887288Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 5,
+          "description": "And the issuance information is displayed to the user for Python",
+          "duration": 407,
+          "startTime": "2026-09-23T15:36:36.874242Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 6,
+          "description": "Then the user selects the ISSUE button for Python",
+          "duration": 748,
+          "startTime": "2026-09-23T15:36:37.282880Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 7,
+          "description": "And the user is redirected to the issuer service for authentication and authorization for Python",
+          "duration": 77518,
+          "startTime": "2026-09-23T15:36:38.032384Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 8,
+          "description": "When the user completes authentication and confirms the issuance for Python",
+          "duration": 14326,
+          "startTime": "2026-09-23T15:37:55.552259Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 9,
+          "description": "And the user is navigated to the EUDI wallet application",
+          "duration": 0,
+          "startTime": "2026-09-23T15:38:09.880031Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 10,
+          "description": "And a notification indicates that the credential request is being processed",
+          "duration": 5300,
+          "startTime": "2026-09-23T15:38:09.880904Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 11,
+          "description": "When the user dismisses the notification by pressing OK",
+          "duration": 578,
+          "startTime": "2026-09-23T15:38:15.182509Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 12,
+          "description": "And the user is on the Home page",
+          "duration": 464,
+          "startTime": "2026-09-23T15:38:15.761946Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 13,
+          "description": "And the document is displayed as unavailable with a pending status",
+          "duration": 1594,
+          "startTime": "2026-09-23T15:38:16.227050Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 14,
+          "description": "When the issuer provides the requested credential to the wallet",
+          "duration": 0,
+          "startTime": "2026-09-23T15:38:17.822199Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 15,
+          "description": "Then the user receives a confirmation message indicating that the document has been issued",
+          "duration": 8299,
+          "startTime": "2026-09-23T15:38:17.822703Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 16,
+          "description": "When the user chooses to inspect the document details",
+          "duration": 1185,
+          "startTime": "2026-09-23T15:38:26.122934Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 17,
+          "description": "Then the issued credential information is displayed for Python",
+          "duration": 832,
+          "startTime": "2026-09-23T15:38:27.309501Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 18,
+          "description": "And the user presses the X button to close the document",
+          "duration": 984,
+          "startTime": "2026-09-23T15:38:28.142639Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 19,
+          "description": "Then the document details are no longer displayed",
+          "duration": 450,
+          "startTime": "2026-09-23T15:38:29.127222Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 20,
+          "description": "And the document appears on the documents screen for Python",
+          "duration": 394,
+          "startTime": "2026-09-23T15:38:29.578425Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    },
+    {
+      "number": 21,
+      "description": "2: Completing the deferred credential delivery process with Python Issuer ({issuer=Kotlin})",
+      "duration": 175184,
+      "startTime": "2026-09-23T15:38:30.770836Z[UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "lineNumber": 34,
+      "children": [
+        {
+          "number": 22,
+          "description": "Given the user is accessing Kotlin service",
+          "duration": 12737,
+          "startTime": "2026-09-23T15:38:54.277579Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 23,
+          "description": "When the user chooses to deliver a deferred credential to the wallet with Kotlin",
+          "duration": 31109,
+          "startTime": "2026-09-23T15:39:07.015966Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 24,
+          "description": "Then the EUDI Wallet application is opened",
+          "duration": 16423,
+          "startTime": "2026-09-23T15:39:38.126347Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 25,
+          "description": "And the issuance information is displayed to the user for Kotlin",
+          "duration": 15519,
+          "startTime": "2026-09-23T15:39:54.550363Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 26,
+          "description": "Then the user selects the ISSUE button for Kotlin",
+          "duration": 0,
+          "startTime": "2026-09-23T15:40:10.070762Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 27,
+          "description": "And the user is redirected to the issuer service for authentication and authorization for Kotlin",
+          "duration": 0,
+          "startTime": "2026-09-23T15:40:10.071212Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 28,
+          "description": "When the user completes authentication and confirms the issuance for Kotlin",
+          "duration": 0,
+          "startTime": "2026-09-23T15:40:10.071561Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 29,
+          "description": "And the user is navigated to the EUDI wallet application",
+          "duration": 0,
+          "startTime": "2026-09-23T15:40:10.071923Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 30,
+          "description": "And a notification indicates that the credential request is being processed",
+          "duration": 4022,
+          "startTime": "2026-09-23T15:40:10.072313Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 31,
+          "description": "When the user dismisses the notification by pressing OK",
+          "duration": 592,
+          "startTime": "2026-09-23T15:40:14.095605Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 32,
+          "description": "And the user is on the Home page",
+          "duration": 462,
+          "startTime": "2026-09-23T15:40:14.688418Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 33,
+          "description": "And the document is displayed as unavailable with a pending status",
+          "duration": 1701,
+          "startTime": "2026-09-23T15:40:15.151506Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 34,
+          "description": "When the issuer provides the requested credential to the wallet",
+          "duration": 0,
+          "startTime": "2026-09-23T15:40:16.853434Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 35,
+          "description": "Then the user receives a confirmation message indicating that the document has been issued",
+          "duration": 64697,
+          "startTime": "2026-09-23T15:40:16.854139Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 36,
+          "description": "When the user chooses to inspect the document details",
+          "duration": 1429,
+          "startTime": "2026-09-23T15:41:21.552668Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 37,
+          "description": "Then the issued credential information is displayed for Kotlin",
+          "duration": 373,
+          "startTime": "2026-09-23T15:41:22.982061Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 38,
+          "description": "And the user presses the X button to close the document",
+          "duration": 968,
+          "startTime": "2026-09-23T15:41:23.356328Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 39,
+          "description": "Then the document details are no longer displayed",
+          "duration": 398,
+          "startTime": "2026-09-23T15:41:24.324888Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 40,
+          "description": "And the document appears on the documents screen for Kotlin",
+          "duration": 434,
+          "startTime": "2026-09-23T15:41:24.723784Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    }
+  ],
+  "userStory": {
+    "id": "android/regressionTests/Automated_Regression_Tests/deferedIssuing",
+    "storyName": "Deferred Credential Issuance",
+    "displayName": "Deferred Credential Issuance",
+    "path": "android/regressionTests/Automated_Regression_Tests/deferedIssuing",
+    "pathElements": [
+      {
+        "name": "android",
+        "description": ""
+      },
+      {
+        "name": "regressionTests",
+        "description": ""
+      },
+      {
+        "name": "Automated_Regression_Tests",
+        "description": ""
+      },
+      {
+        "name": "deferedIssuing",
+        "description": ""
+      }
+    ],
+    "narrative": "  As a user interacting with the issuer service\n  I want to receive a credential through deferred issuance\n  So that the credential can be securely delivered to my EUDI Wallet",
+    "type": "feature"
+  },
+  "title": "Completing the deferred credential delivery process with Python Issuer",
+  "description": "",
+  "tags": [
+    {
+      "name": "ANDROID",
+      "type": "tag",
+      "displayName": "ANDROID"
+    },
+    {
+      "name": "US_DI",
+      "type": "tag",
+      "displayName": "US_DI"
+    },
+    {
+      "name": "GENERAL_TESTS",
+      "type": "tag",
+      "displayName": "GENERAL_TESTS"
+    },
+    {
+      "name": "US_DI_TC_01",
+      "type": "tag",
+      "displayName": "US_DI_TC_01"
+    },
+    {
+      "name": "automated",
+      "type": "tag",
+      "displayName": "automated"
+    }
+  ],
+  "startTime": "2026-09-23T15:34:01.678340Z[UTC]",
+  "endTime": "2026-09-23T15:41:25.956037Z[UTC]",
+  "duration": 130068,
+  "projectKey": "",
+  "isManualTestingUpToDate": false,
+  "dataTable": {
+    "headers": [
+      "issuer"
+    ],
+    "rows": [
+      {
+        "values": [
+          "Python"
+        ],
+        "lineNumber": 33,
+        "result": "SUCCESS"
+      },
+      {
+        "values": [
+          "Kotlin"
+        ],
+        "lineNumber": 34,
+        "result": "SUCCESS"
+      }
+    ],
+    "predefinedRows": true,
+    "scenarioOutline": "Given the user is accessing <issuer> service\n\rWhen the user chooses to deliver a deferred credential to the wallet with <issuer>\n\rThen the EUDI Wallet application is opened\n\rAnd the issuance information is displayed to the user for <issuer>\n\rThen the user selects the ISSUE button for <issuer>\n\rAnd the user is redirected to the issuer service for authentication and authorization for <issuer>\n\rWhen the user completes authentication and confirms the issuance for <issuer>\n\rAnd the user is navigated to the EUDI wallet application\n\rAnd a notification indicates that the credential request is being processed\n\rWhen the user dismisses the notification by pressing OK\n\rAnd the user is on the Home page\n\rAnd the document is displayed as unavailable with a pending status\n\rWhen the issuer provides the requested credential to the wallet\n\rThen the user receives a confirmation message indicating that the document has been issued\n\rWhen the user chooses to inspect the document details\n\rThen the issued credential information is displayed for <issuer>\n\rAnd the user presses the X button to close the document\n\rThen the document details are no longer displayed\n\rAnd the document appears on the documents screen for <issuer>\n\r",
+    "dataSetDescriptors": [
+      {
+        "startRow": 0,
+        "rowCount": 0,
+        "name": "",
+        "description": ""
+      }
+    ]
+  },
+  "manual": false,
+  "testSource": "Cucumber",
+  "order": 0,
+  "result": "SUCCESS",
+  "scenarioOutline": "Given the user is accessing <issuer> service\nWhen the user chooses to deliver a deferred credential to the wallet with <issuer>\nThen the EUDI Wallet application is opened\nAnd the issuance information is displayed to the user for <issuer>\nThen the user selects the ISSUE button for <issuer>\nAnd the user is redirected to the issuer service for authentication and authorization for <issuer>\nWhen the user completes authentication and confirms the issuance for <issuer>\nAnd the user is navigated to the EUDI wallet application\nAnd a notification indicates that the credential request is being processed\nWhen the user dismisses the notification by pressing OK\nAnd the user is on the Home page\nAnd the document is displayed as unavailable with a pending status\nWhen the issuer provides the requested credential to the wallet\nThen the user receives a confirmation message indicating that the document has been issued\nWhen the user chooses to inspect the document details\nThen the issued credential information is displayed for <issuer>\nAnd the user presses the X button to close the document\nThen the document details are no longer displayed\nAnd the document appears on the documents screen for <issuer>",
+  "annotatedResult": "SUCCESS"
+}

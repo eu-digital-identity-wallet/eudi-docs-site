@@ -1,0 +1,366 @@
+{
+  "name": "Documents screen consolidates and lists issued attestations",
+  "id": "eudi-wallet-documents-screen;documents-screen-consolidates-and-lists-issued-attestations",
+  "scenarioId": "ios/regressionTests/Automated_Regression_Tests/documentsScreen:Documents screen consolidates and lists issued attestations",
+  "methodName": "Documents screen consolidates and lists issued attestations",
+  "testSteps": [
+    {
+      "number": 1,
+      "description": "1: Documents screen consolidates and lists issued attestations ({credential=PID (MSO Mdoc), issuer=Python})",
+      "duration": 369683,
+      "startTime": "2026-09-25T13:45:05.566940Z[UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "lineNumber": 26,
+      "children": [
+        {
+          "number": 2,
+          "description": "Given the user issues a PID (MSO Mdoc) attestation using Python",
+          "duration": 181602,
+          "startTime": "2026-09-25T13:45:33.319211Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 3,
+          "description": "And the user issues the second attestation for Python",
+          "duration": 115284,
+          "startTime": "2026-09-25T13:48:34.925500Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 4,
+          "description": "And the user is on the Home screen of the Wallet",
+          "duration": 2161,
+          "startTime": "2026-09-25T13:50:30.212125Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 5,
+          "description": "Then the bottom navigation bar shows the Home, Documents, and History tabs",
+          "duration": 2816,
+          "startTime": "2026-09-25T13:50:32.373852Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 6,
+          "description": "When the user opens the Documents screen",
+          "duration": 1499,
+          "startTime": "2026-09-25T13:50:35.191268Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 7,
+          "description": "Then the Documents tab becomes highlighted after selection",
+          "duration": 944,
+          "startTime": "2026-09-25T13:50:36.691774Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 8,
+          "description": "And the Documents screen provides a Search bar",
+          "duration": 653,
+          "startTime": "2026-09-25T13:50:37.636734Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 9,
+          "description": "And the Documents screen provides a Filter control",
+          "duration": 668,
+          "startTime": "2026-09-25T13:50:38.290990Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 10,
+          "description": "And the Documents screen lists the issued attestations",
+          "duration": 1181,
+          "startTime": "2026-09-25T13:50:38.960785Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 11,
+          "description": "And the listed attestations are organized by category",
+          "duration": 1317,
+          "startTime": "2026-09-25T13:50:40.143262Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 12,
+          "description": "And each attestation card shows the attestation name, the issuer, and the validity end date",
+          "duration": 1114,
+          "startTime": "2026-09-25T13:50:41.461535Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 13,
+          "description": "When the user taps twice on an attestation from the list",
+          "duration": 2803,
+          "startTime": "2026-09-25T13:50:42.576335Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 14,
+          "description": "Then the attestation details are displayed",
+          "duration": 29105,
+          "startTime": "2026-09-25T13:50:45.379712Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    },
+    {
+      "number": 15,
+      "description": "2: Documents screen consolidates and lists issued attestations ({credential=PID (MSO Mdoc), issuer=Kotlin})",
+      "duration": 231590,
+      "startTime": "2026-09-25T13:51:15.335934Z[UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "lineNumber": 27,
+      "children": [
+        {
+          "number": 16,
+          "description": "Given the user issues a PID (MSO Mdoc) attestation using Kotlin",
+          "duration": 124132,
+          "startTime": "2026-09-25T13:51:38.775231Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 17,
+          "description": "And the user issues the second attestation for Kotlin",
+          "duration": 30611,
+          "startTime": "2026-09-25T13:53:42.909164Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 18,
+          "description": "And the user is on the Home screen of the Wallet",
+          "duration": 2211,
+          "startTime": "2026-09-25T13:54:13.523408Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 19,
+          "description": "Then the bottom navigation bar shows the Home, Documents, and History tabs",
+          "duration": 2733,
+          "startTime": "2026-09-25T13:54:15.735383Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 20,
+          "description": "When the user opens the Documents screen",
+          "duration": 1376,
+          "startTime": "2026-09-25T13:54:18.469334Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 21,
+          "description": "Then the Documents tab becomes highlighted after selection",
+          "duration": 1385,
+          "startTime": "2026-09-25T13:54:19.845772Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 22,
+          "description": "And the Documents screen provides a Search bar",
+          "duration": 646,
+          "startTime": "2026-09-25T13:54:21.231878Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 23,
+          "description": "And the Documents screen provides a Filter control",
+          "duration": 707,
+          "startTime": "2026-09-25T13:54:21.878723Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 24,
+          "description": "And the Documents screen lists the issued attestations",
+          "duration": 1279,
+          "startTime": "2026-09-25T13:54:22.587043Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 25,
+          "description": "And the listed attestations are organized by category",
+          "duration": 1277,
+          "startTime": "2026-09-25T13:54:23.866815Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 26,
+          "description": "And each attestation card shows the attestation name, the issuer, and the validity end date",
+          "duration": 2069,
+          "startTime": "2026-09-25T13:54:25.145003Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 27,
+          "description": "When the user taps twice on an attestation from the list",
+          "duration": 2612,
+          "startTime": "2026-09-25T13:54:27.214642Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 28,
+          "description": "Then the attestation details are displayed",
+          "duration": 36405,
+          "startTime": "2026-09-25T13:54:29.827123Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    }
+  ],
+  "userStory": {
+    "id": "ios/regressionTests/Automated_Regression_Tests/documentsScreen",
+    "storyName": "EUDI Wallet Documents Screen",
+    "displayName": "EUDI Wallet Documents Screen",
+    "path": "ios/regressionTests/Automated_Regression_Tests/documentsScreen",
+    "pathElements": [
+      {
+        "name": "ios",
+        "description": ""
+      },
+      {
+        "name": "regressionTests",
+        "description": ""
+      },
+      {
+        "name": "Automated_Regression_Tests",
+        "description": ""
+      },
+      {
+        "name": "documentsScreen",
+        "description": ""
+      }
+    ],
+    "narrative": "  As a EUDI Wallet User\n  I want to have a 'Documents' screen consolidating my issued attestations\n  So that I can easily view and perform actions on the attestations",
+    "type": "feature"
+  },
+  "title": "Documents screen consolidates and lists issued attestations",
+  "description": "",
+  "tags": [
+    {
+      "name": "US_DS",
+      "type": "tag",
+      "displayName": "US_DS"
+    },
+    {
+      "name": "US_DS_TC_01",
+      "type": "tag",
+      "displayName": "US_DS_TC_01"
+    },
+    {
+      "name": "IOS",
+      "type": "tag",
+      "displayName": "IOS"
+    },
+    {
+      "name": "GENERAL_TESTS",
+      "type": "tag",
+      "displayName": "GENERAL_TESTS"
+    },
+    {
+      "name": "automated",
+      "type": "tag",
+      "displayName": "automated"
+    }
+  ],
+  "startTime": "2026-09-25T13:45:05.566773Z[UTC]",
+  "endTime": "2026-09-25T13:55:06.926698Z[UTC]",
+  "duration": 209353,
+  "projectKey": "",
+  "isManualTestingUpToDate": false,
+  "dataTable": {
+    "headers": [
+      "credential",
+      "issuer"
+    ],
+    "rows": [
+      {
+        "values": [
+          "PID (MSO Mdoc)",
+          "Python"
+        ],
+        "lineNumber": 26,
+        "result": "SUCCESS"
+      },
+      {
+        "values": [
+          "PID (MSO Mdoc)",
+          "Kotlin"
+        ],
+        "lineNumber": 27,
+        "result": "SUCCESS"
+      }
+    ],
+    "predefinedRows": true,
+    "scenarioOutline": "Given the user issues a <credential> attestation using <issuer>\n\rAnd the user issues the second attestation for <issuer>\n\rAnd the user is on the Home screen of the Wallet\n\rThen the bottom navigation bar shows the Home, Documents, and History tabs\n\rWhen the user opens the Documents screen\n\rThen the Documents tab becomes highlighted after selection\n\rAnd the Documents screen provides a Search bar\n\rAnd the Documents screen provides a Filter control\n\rAnd the Documents screen lists the issued attestations\n\rAnd the listed attestations are organized by category\n\rAnd each attestation card shows the attestation name, the issuer, and the validity end date\n\rWhen the user taps twice on an attestation from the list\n\rThen the attestation details are displayed\n\r",
+    "dataSetDescriptors": [
+      {
+        "startRow": 0,
+        "rowCount": 0,
+        "name": "",
+        "description": ""
+      }
+    ]
+  },
+  "manual": false,
+  "testSource": "Cucumber",
+  "order": 0,
+  "result": "SUCCESS",
+  "scenarioOutline": "Given the user issues a <credential> attestation using <issuer>\nAnd the user issues the second attestation for <issuer>\nAnd the user is on the Home screen of the Wallet\nThen the bottom navigation bar shows the Home, Documents, and History tabs\nWhen the user opens the Documents screen\nThen the Documents tab becomes highlighted after selection\nAnd the Documents screen provides a Search bar\nAnd the Documents screen provides a Filter control\nAnd the Documents screen lists the issued attestations\nAnd the listed attestations are organized by category\nAnd each attestation card shows the attestation name, the issuer, and the validity end date\nWhen the user taps twice on an attestation from the list\nThen the attestation details are displayed",
+  "annotatedResult": "SUCCESS"
+}

@@ -1,0 +1,199 @@
+{
+  "name": "User initiates credential issuance",
+  "id": "pre-authorization-code-same-device;user-initiates-credential-issuance",
+  "scenarioId": "ios/regressionTests/Automated_Regression_Tests/preAuthorizationCodeSameDevice:User initiates credential issuance",
+  "methodName": "User initiates credential issuance",
+  "testSteps": [
+    {
+      "number": 1,
+      "description": "Given the user is accessing the issuer service",
+      "duration": 17875,
+      "startTime": "2026-09-25T14:22:22.206745Z[UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 2,
+      "description": "When the user selects to issue a document using pre-authorization",
+      "duration": 41122,
+      "startTime": "2026-09-25T14:22:40.083056Z[UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 3,
+      "description": "Then the user provides their personal information",
+      "duration": 48476,
+      "startTime": "2026-09-25T14:23:21.208384Z[UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 4,
+      "description": "And a transaction code is generated",
+      "duration": 2682,
+      "startTime": "2026-09-25T14:24:09.685292Z[UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 5,
+      "description": "And the user chooses to register through the EUDI wallet app",
+      "duration": 3091,
+      "startTime": "2026-09-25T14:24:12.368127Z[UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 6,
+      "description": "And the user is navigated to the EUDI wallet application",
+      "duration": 0,
+      "startTime": "2026-09-25T14:24:15.460543Z[UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 7,
+      "description": "And the user provides the PIN",
+      "duration": 25241,
+      "startTime": "2026-09-25T14:24:15.460995Z[UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 8,
+      "description": "When the issuer request is shown in the wallet app",
+      "duration": 448,
+      "startTime": "2026-09-25T14:24:40.703506Z[UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 9,
+      "description": "Then the user selects ISSUE button",
+      "duration": 22222,
+      "startTime": "2026-09-25T14:24:41.152020Z[UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 10,
+      "description": "And the Wallet app prompts for the transaction code",
+      "duration": 731,
+      "startTime": "2026-09-25T14:25:03.374788Z[UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 11,
+      "description": "And the user enters the transaction code received from the Issuer",
+      "duration": 10266,
+      "startTime": "2026-09-25T14:25:04.106700Z[UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 12,
+      "description": "And the Wallet application shows a successful issuance message",
+      "duration": 8595,
+      "startTime": "2026-09-25T14:25:14.373829Z[UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 13,
+      "description": "And the user selects the CONTINUE button",
+      "duration": 1107,
+      "startTime": "2026-09-25T14:25:22.970176Z[UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 14,
+      "description": "Then the document appears on the documents screen",
+      "duration": 4279,
+      "startTime": "2026-09-25T14:25:24.078521Z[UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    }
+  ],
+  "userStory": {
+    "id": "ios/regressionTests/Automated_Regression_Tests/preAuthorizationCodeSameDevice",
+    "storyName": "Pre-authorization code same device",
+    "displayName": "Pre-authorization code same device",
+    "path": "ios/regressionTests/Automated_Regression_Tests/preAuthorizationCodeSameDevice",
+    "pathElements": [
+      {
+        "name": "ios",
+        "description": ""
+      },
+      {
+        "name": "regressionTests",
+        "description": ""
+      },
+      {
+        "name": "Automated_Regression_Tests",
+        "description": ""
+      },
+      {
+        "name": "preAuthorizationCodeSameDevice",
+        "description": ""
+      }
+    ],
+    "narrative": "  As a user of the issuer service\n  I want to be able to issue a credential using a transaction code\n  So that it can be securely added to my EUDI Wallet",
+    "type": "feature"
+  },
+  "title": "User initiates credential issuance",
+  "description": "",
+  "tags": [
+    {
+      "name": "US_PACSD",
+      "type": "tag",
+      "displayName": "US_PACSD"
+    },
+    {
+      "name": "US_PACSD_TC_01",
+      "type": "tag",
+      "displayName": "US_PACSD_TC_01"
+    },
+    {
+      "name": "IOS",
+      "type": "tag",
+      "displayName": "IOS"
+    },
+    {
+      "name": "GENERAL_TESTS",
+      "type": "tag",
+      "displayName": "GENERAL_TESTS"
+    },
+    {
+      "name": "automated",
+      "type": "tag",
+      "displayName": "automated"
+    }
+  ],
+  "startTime": "2026-09-25T14:21:59.069438Z[UTC]",
+  "endTime": "2026-09-25T14:25:29.446500Z[UTC]",
+  "duration": 41012,
+  "projectKey": "",
+  "isManualTestingUpToDate": false,
+  "manual": false,
+  "testSource": "Cucumber",
+  "order": 0,
+  "result": "SUCCESS",
+  "annotatedResult": "SUCCESS"
+}

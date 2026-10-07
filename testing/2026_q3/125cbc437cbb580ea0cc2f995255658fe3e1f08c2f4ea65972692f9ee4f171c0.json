@@ -1,0 +1,510 @@
+{
+  "name": "View, bookmark, inspect and delete an attestation through the EUDI Wallet",
+  "id": "view--bookmark-and-manage-attestations-in-the-eudi-wallet;view--bookmark--inspect-and-delete-an-attestation-through-the-eudi-wallet",
+  "scenarioId": "ios/regressionTests/Automated_Regression_Tests/viewDocument:View, bookmark, inspect and delete an attestation through the EUDI Wallet",
+  "methodName": "View, bookmark, inspect and delete an attestation through the EUDI Wallet",
+  "testSteps": [
+    {
+      "number": 1,
+      "description": "1: View, bookmark, inspect and delete an attestation through the EUDI Wallet ({credential=PID (MSO Mdoc), issuer=Python})",
+      "duration": 261156,
+      "startTime": "2026-09-25T14:52:03.964690Z[UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "lineNumber": 35,
+      "children": [
+        {
+          "number": 2,
+          "description": "Given the user issues a PID (MSO Mdoc) attestation using Python",
+          "duration": 174859,
+          "startTime": "2026-09-25T14:52:25.746109Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 3,
+          "description": "And the user is on the Home screen of the Wallet",
+          "duration": 2168,
+          "startTime": "2026-09-25T14:55:20.608350Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 4,
+          "description": "When the user opens the Documents screen",
+          "duration": 1556,
+          "startTime": "2026-09-25T14:55:22.777648Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 5,
+          "description": "Then the Documents screen lists the issued attestations",
+          "duration": 1484,
+          "startTime": "2026-09-25T14:55:24.334439Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 6,
+          "description": "When the user taps on an attestation from the list",
+          "duration": 1515,
+          "startTime": "2026-09-25T14:55:25.819305Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 7,
+          "description": "Then the attestation details are displayed",
+          "duration": 29060,
+          "startTime": "2026-09-25T14:55:27.335564Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 8,
+          "description": "And the attestation details are blurred by default",
+          "duration": 5726,
+          "startTime": "2026-09-25T14:55:56.398328Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 9,
+          "description": "And an eye icon is shown to reveal the attestation details",
+          "duration": 0,
+          "startTime": "2026-09-25T14:56:02.125605Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 10,
+          "description": "When the user taps on the eye icon",
+          "duration": 2886,
+          "startTime": "2026-09-25T14:56:02.126325Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 11,
+          "description": "Then the attestation details are no longer blurred",
+          "duration": 1413,
+          "startTime": "2026-09-25T14:56:05.012913Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 12,
+          "description": "And the user can view the full attestation details",
+          "duration": 0,
+          "startTime": "2026-09-25T14:56:06.427610Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 13,
+          "description": "When the user taps the bookmark icon on the attestation",
+          "duration": 1424,
+          "startTime": "2026-09-25T14:56:06.427931Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 14,
+          "description": "Then the attestation gets marked as bookmarked",
+          "duration": 0,
+          "startTime": "2026-09-25T14:56:07.853010Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 15,
+          "description": "And the bookmark icon updates to indicate the bookmarked state",
+          "duration": 2707,
+          "startTime": "2026-09-25T14:56:07.853396Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 16,
+          "description": "When the user opens the issuer details from the attestation",
+          "duration": 1538,
+          "startTime": "2026-09-25T14:56:10.561833Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 17,
+          "description": "Then the issuer details are displayed to the user",
+          "duration": 2496,
+          "startTime": "2026-09-25T14:56:12.100586Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 18,
+          "description": "When the user closes the attestation details without deleting it",
+          "duration": 1213,
+          "startTime": "2026-09-25T14:56:14.599419Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 19,
+          "description": "Then the user lands back on the Documents screen",
+          "duration": 1305,
+          "startTime": "2026-09-25T14:56:15.813117Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 20,
+          "description": "When the user reopens the attestation and selects the delete option",
+          "duration": 6695,
+          "startTime": "2026-09-25T14:56:17.119372Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 21,
+          "description": "Then the attestation gets removed from the EUDI Wallet",
+          "duration": 0,
+          "startTime": "2026-09-25T14:56:23.815778Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 22,
+          "description": "And the Documents screen no longer lists the deleted attestation",
+          "duration": 553,
+          "startTime": "2026-09-25T14:56:23.817074Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    },
+    {
+      "number": 23,
+      "description": "2: View, bookmark, inspect and delete an attestation through the EUDI Wallet ({credential=PID (MSO Mdoc), issuer=Kotlin})",
+      "duration": 263898,
+      "startTime": "2026-09-25T14:56:25.213941Z[UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "lineNumber": 36,
+      "children": [
+        {
+          "number": 24,
+          "description": "Given the user issues a PID (MSO Mdoc) attestation using Kotlin",
+          "duration": 132948,
+          "startTime": "2026-09-25T14:56:53.875079Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 25,
+          "description": "And the user is on the Home screen of the Wallet",
+          "duration": 2489,
+          "startTime": "2026-09-25T14:59:06.824377Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 26,
+          "description": "When the user opens the Documents screen",
+          "duration": 1333,
+          "startTime": "2026-09-25T14:59:09.314306Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 27,
+          "description": "Then the Documents screen lists the issued attestations",
+          "duration": 2230,
+          "startTime": "2026-09-25T14:59:10.648289Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 28,
+          "description": "When the user taps on an attestation from the list",
+          "duration": 1055,
+          "startTime": "2026-09-25T14:59:12.879451Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 29,
+          "description": "Then the attestation details are displayed",
+          "duration": 34842,
+          "startTime": "2026-09-25T14:59:13.934879Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 30,
+          "description": "And the attestation details are blurred by default",
+          "duration": 14583,
+          "startTime": "2026-09-25T14:59:48.779493Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 31,
+          "description": "And an eye icon is shown to reveal the attestation details",
+          "duration": 0,
+          "startTime": "2026-09-25T15:00:03.364465Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 32,
+          "description": "When the user taps on the eye icon",
+          "duration": 2425,
+          "startTime": "2026-09-25T15:00:03.364961Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 33,
+          "description": "Then the attestation details are no longer blurred",
+          "duration": 11950,
+          "startTime": "2026-09-25T15:00:05.791225Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 34,
+          "description": "And the user can view the full attestation details",
+          "duration": 0,
+          "startTime": "2026-09-25T15:00:17.742552Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 35,
+          "description": "When the user taps the bookmark icon on the attestation",
+          "duration": 1528,
+          "startTime": "2026-09-25T15:00:17.742951Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 36,
+          "description": "Then the attestation gets marked as bookmarked",
+          "duration": 0,
+          "startTime": "2026-09-25T15:00:19.271455Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 37,
+          "description": "And the bookmark icon updates to indicate the bookmarked state",
+          "duration": 2901,
+          "startTime": "2026-09-25T15:00:19.271690Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 38,
+          "description": "When the user opens the issuer details from the attestation",
+          "duration": 3618,
+          "startTime": "2026-09-25T15:00:22.173472Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 39,
+          "description": "Then the issuer details are displayed to the user",
+          "duration": 2968,
+          "startTime": "2026-09-25T15:00:25.792520Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 40,
+          "description": "When the user closes the attestation details without deleting it",
+          "duration": 1671,
+          "startTime": "2026-09-25T15:00:28.761466Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 41,
+          "description": "Then the user lands back on the Documents screen",
+          "duration": 1332,
+          "startTime": "2026-09-25T15:00:30.432776Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 42,
+          "description": "When the user reopens the attestation and selects the delete option",
+          "duration": 15750,
+          "startTime": "2026-09-25T15:00:31.765306Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 43,
+          "description": "Then the attestation gets removed from the EUDI Wallet",
+          "duration": 0,
+          "startTime": "2026-09-25T15:00:47.516627Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 44,
+          "description": "And the Documents screen no longer lists the deleted attestation",
+          "duration": 893,
+          "startTime": "2026-09-25T15:00:47.517115Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    }
+  ],
+  "userStory": {
+    "id": "ios/regressionTests/Automated_Regression_Tests/viewDocument",
+    "storyName": "View, bookmark and manage attestations in the EUDI Wallet",
+    "displayName": "View, bookmark and manage attestations in the EUDI Wallet",
+    "path": "ios/regressionTests/Automated_Regression_Tests/viewDocument",
+    "pathElements": [
+      {
+        "name": "ios",
+        "description": ""
+      },
+      {
+        "name": "regressionTests",
+        "description": ""
+      },
+      {
+        "name": "Automated_Regression_Tests",
+        "description": ""
+      },
+      {
+        "name": "viewDocument",
+        "description": ""
+      }
+    ],
+    "narrative": "  As a EUDI Wallet User\n  I want to be able to view my attestations issued in the EUDI Wallet\n  So that I can review the details of my issued attestation",
+    "type": "feature"
+  },
+  "title": "View, bookmark, inspect and delete an attestation through the EUDI Wallet",
+  "description": "",
+  "tags": [
+    {
+      "name": "US_VD_TC_01",
+      "type": "tag",
+      "displayName": "US_VD_TC_01"
+    },
+    {
+      "name": "US_VD",
+      "type": "tag",
+      "displayName": "US_VD"
+    },
+    {
+      "name": "IOS",
+      "type": "tag",
+      "displayName": "IOS"
+    },
+    {
+      "name": "GENERAL_TESTS",
+      "type": "tag",
+      "displayName": "GENERAL_TESTS"
+    },
+    {
+      "name": "automated",
+      "type": "tag",
+      "displayName": "automated"
+    }
+  ],
+  "startTime": "2026-09-25T14:52:03.964525Z[UTC]",
+  "endTime": "2026-09-25T15:00:49.113343Z[UTC]",
+  "duration": 196640,
+  "projectKey": "",
+  "isManualTestingUpToDate": false,
+  "dataTable": {
+    "headers": [
+      "credential",
+      "issuer"
+    ],
+    "rows": [
+      {
+        "values": [
+          "PID (MSO Mdoc)",
+          "Python"
+        ],
+        "lineNumber": 35,
+        "result": "SUCCESS"
+      },
+      {
+        "values": [
+          "PID (MSO Mdoc)",
+          "Kotlin"
+        ],
+        "lineNumber": 36,
+        "result": "SUCCESS"
+      }
+    ],
+    "predefinedRows": true,
+    "scenarioOutline": "Given the user issues a <credential> attestation using <issuer>\n\rAnd the user is on the Home screen of the Wallet\n\rWhen the user opens the Documents screen\n\rThen the Documents screen lists the issued attestations\n\rWhen the user taps on an attestation from the list\n\rThen the attestation details are displayed\n\rAnd the attestation details are blurred by default\n\rAnd an eye icon is shown to reveal the attestation details\n\rWhen the user taps on the eye icon\n\rThen the attestation details are no longer blurred\n\rAnd the user can view the full attestation details\n\rWhen the user taps the bookmark icon on the attestation\n\rThen the attestation gets marked as bookmarked\n\rAnd the bookmark icon updates to indicate the bookmarked state\n\rWhen the user opens the issuer details from the attestation\n\rThen the issuer details are displayed to the user\n\rWhen the user closes the attestation details without deleting it\n\rThen the user lands back on the Documents screen\n\rWhen the user reopens the attestation and selects the delete option\n\rThen the attestation gets removed from the EUDI Wallet\n\rAnd the Documents screen no longer lists the deleted attestation\n\r",
+    "dataSetDescriptors": [
+      {
+        "startRow": 0,
+        "rowCount": 0,
+        "name": "",
+        "description": ""
+      }
+    ]
+  },
+  "manual": false,
+  "testSource": "Cucumber",
+  "order": 0,
+  "result": "SUCCESS",
+  "scenarioOutline": "Given the user issues a <credential> attestation using <issuer>\nAnd the user is on the Home screen of the Wallet\nWhen the user opens the Documents screen\nThen the Documents screen lists the issued attestations\nWhen the user taps on an attestation from the list\nThen the attestation details are displayed\nAnd the attestation details are blurred by default\nAnd an eye icon is shown to reveal the attestation details\nWhen the user taps on the eye icon\nThen the attestation details are no longer blurred\nAnd the user can view the full attestation details\nWhen the user taps the bookmark icon on the attestation\nThen the attestation gets marked as bookmarked\nAnd the bookmark icon updates to indicate the bookmarked state\nWhen the user opens the issuer details from the attestation\nThen the issuer details are displayed to the user\nWhen the user closes the attestation details without deleting it\nThen the user lands back on the Documents screen\nWhen the user reopens the attestation and selects the delete option\nThen the attestation gets removed from the EUDI Wallet\nAnd the Documents screen no longer lists the deleted attestation",
+  "annotatedResult": "SUCCESS"
+}

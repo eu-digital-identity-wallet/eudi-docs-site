@@ -1,0 +1,457 @@
+{
+  "name": "Relying Party initiated presentation flow",
+  "id": "presentation-of-batch-issued-attestations-in-eudi-wallet;relying-party-initiated-presentation-flow",
+  "scenarioId": "ios/regressionTests/Automated_Regression_Tests/presentAnInstanceOfACredentialRelyingPartyInitiatedRemoteSameDevice:Relying Party initiated presentation flow",
+  "methodName": "Relying Party initiated presentation flow",
+  "testSteps": [
+    {
+      "number": 1,
+      "description": "1: Relying Party initiated presentation flow ({credential=PID (MSO Mdoc), issuer=Python, issuance_method=from list, issue_scenario=same device, verifier=Web verifier, presentation_scenario=same device})",
+      "duration": 341874,
+      "startTime": "2026-09-25T14:25:29.503049Z[UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "lineNumber": 33,
+      "children": [
+        {
+          "number": 2,
+          "description": "Given the user is registered to a valid EUDI Wallet on their mobile device",
+          "duration": 5,
+          "startTime": "2026-09-25T14:25:48.242115Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 3,
+          "description": "And the EUDI Wallet and the Relying Party User Interface reside on the same device",
+          "duration": 0,
+          "startTime": "2026-09-25T14:25:48.248412Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 4,
+          "description": "And there is an active internet connection",
+          "duration": 0,
+          "startTime": "2026-09-25T14:25:48.248918Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 5,
+          "description": "Given the user initiates a PID (MSO Mdoc) issuance using the Python",
+          "duration": 26973,
+          "startTime": "2026-09-25T14:25:48.249436Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 6,
+          "description": "And the issuance method is from list",
+          "duration": 110937,
+          "startTime": "2026-09-25T14:26:15.223883Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 7,
+          "description": "And the issuance is performed on a same device for the PID (MSO Mdoc) and from list",
+          "duration": 0,
+          "startTime": "2026-09-25T14:28:06.162504Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 8,
+          "description": "When the issuance flow is completed",
+          "duration": 31043,
+          "startTime": "2026-09-25T14:28:06.163317Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 9,
+          "description": "Then the credential is stored in the Wallet",
+          "duration": 35835,
+          "startTime": "2026-09-25T14:28:37.207050Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 10,
+          "description": "And the user accesses the Relying Party service through their mobile device using Web verifier",
+          "duration": 12742,
+          "startTime": "2026-09-25T14:29:13.042961Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 11,
+          "description": "When the user chooses to present an attestation type",
+          "duration": 44317,
+          "startTime": "2026-09-25T14:29:25.785632Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 12,
+          "description": "Then the Relying Party service navigates the user to the EUDI Wallet",
+          "duration": 3573,
+          "startTime": "2026-09-25T14:30:10.104223Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 13,
+          "description": "When the user is unable to authenticate using a six-digit PIN or Biometrics",
+          "duration": 34965,
+          "startTime": "2026-09-25T14:30:13.681789Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 14,
+          "description": "Then the Wallet displays an authentication error",
+          "duration": 595,
+          "startTime": "2026-09-25T14:30:48.649476Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 15,
+          "description": "And the user is allowed to attempt the authentication again",
+          "duration": 0,
+          "startTime": "2026-09-25T14:30:49.245850Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 16,
+          "description": "When the user verifies their identity using a six-digit PIN or Biometrics",
+          "duration": 12417,
+          "startTime": "2026-09-25T14:30:49.246182Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 17,
+          "description": "And the authentication is completed successfully",
+          "duration": 2034,
+          "startTime": "2026-09-25T14:31:01.664182Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 18,
+          "description": "Then the EUDI Wallet notifies the user that the Relying Party is requesting an attestation with same device",
+          "duration": 6912,
+          "startTime": "2026-09-25T14:31:03.698955Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    },
+    {
+      "number": 19,
+      "description": "2: Relying Party initiated presentation flow ({credential=PID (MSO Mdoc), issuer=Kotlin, issuance_method=from list, issue_scenario=same device, verifier=Web verifier, presentation_scenario=same device})",
+      "duration": 326628,
+      "startTime": "2026-09-25T14:31:11.455041Z[UTC]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "lineNumber": 34,
+      "children": [
+        {
+          "number": 20,
+          "description": "Given the user is registered to a valid EUDI Wallet on their mobile device",
+          "duration": 6,
+          "startTime": "2026-09-25T14:31:47.476519Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 21,
+          "description": "And the EUDI Wallet and the Relying Party User Interface reside on the same device",
+          "duration": 0,
+          "startTime": "2026-09-25T14:31:47.484049Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 22,
+          "description": "And there is an active internet connection",
+          "duration": 0,
+          "startTime": "2026-09-25T14:31:47.484636Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 23,
+          "description": "Given the user initiates a PID (MSO Mdoc) issuance using the Kotlin",
+          "duration": 29203,
+          "startTime": "2026-09-25T14:31:47.484996Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 24,
+          "description": "And the issuance method is from list",
+          "duration": 69658,
+          "startTime": "2026-09-25T14:32:16.689781Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 25,
+          "description": "And the issuance is performed on a same device for the PID (MSO Mdoc) and from list",
+          "duration": 0,
+          "startTime": "2026-09-25T14:33:26.348957Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 26,
+          "description": "When the issuance flow is completed",
+          "duration": 33203,
+          "startTime": "2026-09-25T14:33:26.349375Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 27,
+          "description": "Then the credential is stored in the Wallet",
+          "duration": 42860,
+          "startTime": "2026-09-25T14:33:59.555589Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 28,
+          "description": "And the user accesses the Relying Party service through their mobile device using Web verifier",
+          "duration": 12366,
+          "startTime": "2026-09-25T14:34:42.425988Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 29,
+          "description": "When the user chooses to present an attestation type",
+          "duration": 48270,
+          "startTime": "2026-09-25T14:34:54.793673Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 30,
+          "description": "Then the Relying Party service navigates the user to the EUDI Wallet",
+          "duration": 3663,
+          "startTime": "2026-09-25T14:35:43.066264Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 31,
+          "description": "When the user is unable to authenticate using a six-digit PIN or Biometrics",
+          "duration": 28770,
+          "startTime": "2026-09-25T14:35:46.729755Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 32,
+          "description": "Then the Wallet displays an authentication error",
+          "duration": 732,
+          "startTime": "2026-09-25T14:36:15.504099Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 33,
+          "description": "And the user is allowed to attempt the authentication again",
+          "duration": 0,
+          "startTime": "2026-09-25T14:36:16.237339Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 34,
+          "description": "When the user verifies their identity using a six-digit PIN or Biometrics",
+          "duration": 12272,
+          "startTime": "2026-09-25T14:36:16.237454Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 35,
+          "description": "And the authentication is completed successfully",
+          "duration": 2023,
+          "startTime": "2026-09-25T14:36:28.511313Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 36,
+          "description": "Then the EUDI Wallet notifies the user that the Relying Party is requesting an attestation with same device",
+          "duration": 6822,
+          "startTime": "2026-09-25T14:36:30.536025Z[UTC]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    }
+  ],
+  "userStory": {
+    "id": "ios/regressionTests/Automated_Regression_Tests/presentAnInstanceOfACredentialRelyingPartyInitiatedRemoteSameDevice",
+    "storyName": "Presentation of Batch Issued Attestations in EUDI Wallet",
+    "displayName": "Presentation of Batch Issued Attestations in EUDI Wallet",
+    "path": "ios/regressionTests/Automated_Regression_Tests/presentAnInstanceOfACredentialRelyingPartyInitiatedRemoteSameDevice",
+    "pathElements": [
+      {
+        "name": "ios",
+        "description": ""
+      },
+      {
+        "name": "regressionTests",
+        "description": ""
+      },
+      {
+        "name": "Automated_Regression_Tests",
+        "description": ""
+      },
+      {
+        "name": "presentAnInstanceOfACredentialRelyingPartyInitiatedRemoteSameDevice",
+        "description": ""
+      }
+    ],
+    "narrative": "  As an EUDI Wallet User,,\n  I want to present attributes of a batch issued attestation to a requestor Relying Party residing on the same device as my EUDI Wallet\n  so that my privacy is protected when presenting attributes from an attestation multiple times to the same Relying Party or colluding Relying Parties (Relying Party linkability)",
+    "type": "feature"
+  },
+  "title": "Relying Party initiated presentation flow",
+  "description": "",
+  "backgroundTitle": "",
+  "backgroundDescription": "",
+  "tags": [
+    {
+      "name": "US_PAIOACRPIRSD",
+      "type": "tag",
+      "displayName": "US_PAIOACRPIRSD"
+    },
+    {
+      "name": "Q2_2025",
+      "type": "tag",
+      "displayName": "Q2_2025"
+    },
+    {
+      "name": "US_PAIOACRPIRSD_TC_01",
+      "type": "tag",
+      "displayName": "US_PAIOACRPIRSD_TC_01"
+    },
+    {
+      "name": "IOS",
+      "type": "tag",
+      "displayName": "IOS"
+    },
+    {
+      "name": "GENERAL_TESTS",
+      "type": "tag",
+      "displayName": "GENERAL_TESTS"
+    },
+    {
+      "name": "automated",
+      "type": "tag",
+      "displayName": "automated"
+    }
+  ],
+  "startTime": "2026-09-25T14:25:29.502840Z[UTC]",
+  "endTime": "2026-09-25T14:36:38.085398Z[UTC]",
+  "duration": 18744,
+  "projectKey": "",
+  "isManualTestingUpToDate": false,
+  "dataTable": {
+    "headers": [
+      "credential",
+      "issuer",
+      "issuance_method",
+      "issue_scenario",
+      "verifier",
+      "presentation_scenario"
+    ],
+    "rows": [
+      {
+        "values": [
+          "PID (MSO Mdoc)",
+          "Python",
+          "from list",
+          "same device",
+          "Web verifier",
+          "same device"
+        ],
+        "lineNumber": 33,
+        "result": "SUCCESS"
+      },
+      {
+        "values": [
+          "PID (MSO Mdoc)",
+          "Kotlin",
+          "from list",
+          "same device",
+          "Web verifier",
+          "same device"
+        ],
+        "lineNumber": 34,
+        "result": "SUCCESS"
+      }
+    ],
+    "predefinedRows": true,
+    "scenarioOutline": "Given the user initiates a <credential> issuance using the <issuer>\n\rAnd the issuance method is <issuance_method>\n\rAnd the issuance is performed on a <issue_scenario> for the <credential> and <issuance_method>\n\rWhen the issuance flow is completed\n\rThen the credential is stored in the Wallet\n\rAnd the user accesses the Relying Party service through their mobile device using <verifier>\n\rWhen the user chooses to present an attestation type\n\rThen the Relying Party service navigates the user to the EUDI Wallet\n\rWhen the user is unable to authenticate using a six-digit PIN or Biometrics\n\rThen the Wallet displays an authentication error\n\rAnd the user is allowed to attempt the authentication again\n\rWhen the user verifies their identity using a six-digit PIN or Biometrics\n\rAnd the authentication is completed successfully\n\rThen the EUDI Wallet notifies the user that the Relying Party is requesting an attestation with <presentation_scenario>\n\r",
+    "dataSetDescriptors": [
+      {
+        "startRow": 0,
+        "rowCount": 0,
+        "name": "",
+        "description": ""
+      }
+    ]
+  },
+  "manual": false,
+  "testSource": "Cucumber",
+  "order": 0,
+  "result": "SUCCESS",
+  "scenarioOutline": "Given the user initiates a <credential> issuance using the <issuer>\nAnd the issuance method is <issuance_method>\nAnd the issuance is performed on a <issue_scenario> for the <credential> and <issuance_method>\nWhen the issuance flow is completed\nThen the credential is stored in the Wallet\nAnd the user accesses the Relying Party service through their mobile device using <verifier>\nWhen the user chooses to present an attestation type\nThen the Relying Party service navigates the user to the EUDI Wallet\nWhen the user is unable to authenticate using a six-digit PIN or Biometrics\nThen the Wallet displays an authentication error\nAnd the user is allowed to attempt the authentication again\nWhen the user verifies their identity using a six-digit PIN or Biometrics\nAnd the authentication is completed successfully\nThen the EUDI Wallet notifies the user that the Relying Party is requesting an attestation with <presentation_scenario>",
+  "annotatedResult": "SUCCESS"
+}

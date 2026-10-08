@@ -1,0 +1,84 @@
+# GitHub Issue Response Templates
+
+Reusable response templates for issues in the EUDI open-source repositories.
+
+## 1. Feature Request — Under Assessment
+
+> Thank you for raising this feature request.
+>
+> We have reviewed the proposal and will assess it against the project's technical requirements, architecture, roadmap, and priorities.
+>
+> The outcome of the assessment will determine whether the proposal can be considered for implementation in a future release. For more information you can visit the [RI roadmap](https://github.com/orgs/eu-digital-identity-wallet/projects/24).
+
+## 2. Feature Request — Not Currently Planned
+
+> Thank you for the suggestion.
+>
+> We have reviewed the proposal. At this time, this feature is not part of the project's [current roadmap](https://github.com/orgs/eu-digital-identity-wallet/projects/24) and therefore is not planned for implementation.
+>
+> The project's roadmap and priorities may evolve in future releases, so the proposal may be reconsidered if the relevant requirements or priorities change.
+
+## 3. Out of Scope
+
+> Thank you for raising this proposal.
+>
+> After review, this functionality is outside the current scope of the project and will therefore not be implemented as part of the current development scope. You can check the future planned features in the [RI roadmap](https://github.com/orgs/eu-digital-identity-wallet/projects/24).
+>
+> Thank you for the contribution and for helping us identify potential areas for future consideration.
+
+## 4. Already Supported
+
+> Thank you for reporting this.
+>
+> The requested functionality is already supported by the project.
+>
+> Please refer to the relevant [documentation]() for details on how to use or configure this functionality.
+
+## 5. Bug Confirmed — Correction in Current Release
+
+> Thank you for reporting this issue.
+>
+> We have reviewed the reported behavior and confirmed that it is a defect in the current implementation.
+>
+> The issue has been classified as a correction to the current release and will be addressed through the project's normal development and review process.
+
+## 6. Bug — More Information Required
+
+> Thank you for reporting this issue.
+>
+> To investigate the problem, we need some additional information, such as the affected version, environment, steps to reproduce the issue, and relevant logs or error messages.
+>
+> Please provide the available details so that we can proceed with the investigation.
+
+## 7. Duplicate Issue
+
+> Thank you for the report.
+>
+> This issue duplicates an existing issue [link to the issue](link).
+>
+> We will continue tracking the matter through the existing issue. This issue can therefore be closed as a duplicate.
+
+## 8. Unable to Reproduce
+
+> Thank you for reporting this issue.
+>
+> We have attempted to reproduce the reported behavior using the information currently available but were unable to reproduce the issue.
+>
+> If the problem persists, please provide additional reproduction steps, environment information, affected version, and relevant logs so that we can investigate further.
+
+## 9. Proposal Not Accepted
+
+> Thank you for the proposal.
+>
+> We have assessed the request against the project's requirements, architecture, and current priorities.
+>
+> Following this assessment, we have decided not to implement the proposed change. The current implementation will therefore remain unchanged in this area.
+
+## 10. Contribution Welcome
+
+> Thank you for the proposal.
+>
+> The suggested improvement is consistent with the project's objectives and may be considered as a contribution.
+>
+> If you would like to implement the change, please follow the contribution guidelines in `CONTRIBUTING.md` and submit a pull request for review.
+

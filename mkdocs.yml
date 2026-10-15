@@ -101,7 +101,8 @@ nav:
           - Code Quality Assurance: reference-implementation/quality-assurance.md
           - Releases:
                - Releases: reference-implementation/releases/index.md
-               - Q3 2026: reference-implementation/releases/2026_q3.md
+               - Q3 2026 Release: reference-implementation/releases/2026_q3.md
+               - Launchpad Release: reference-implementation/releases/launchpad_release.md
       - Build:
           - Build: build/index.md
           - Build your Wallet:

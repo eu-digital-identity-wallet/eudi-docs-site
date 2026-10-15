@@ -24,14 +24,14 @@ This version of the Issuer supports the [OpenId for Verifiable Credential Issuan
 
 | Feature                                                   | Coverage                                                        |
 |---|---|
-| [Authorization Code flow draft](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/tree/main/api_docs/authorization.md)              | ✅ Support for credential configuration id, scope, (version 1.0)               |
+| Authorization Code flow draft                                                    | ✅ Support for credential configuration id, scope, (version 1.0)               |
 | [Pre-authorized code flow](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/tree/main/api_docs/pre-authorized.md)            | ✅ (version 1.0)                                                       |
 | [Credential Offer](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/tree/main/api_docs/credential_offer.md)                  | ✅ `authorization_code` , ✅ `pre-authorized_code`    (version 1.0)          |
 | Dynamic Credential Request                                        | ✅ (version 1.0)                                                             |
 | mso_mdoc format                                                   | ✅                                                              |
 | SD-JWT VC format                                                  | ✅                                                              |
 | W3C VC DM                                                         | ❌                                                              |
-| [Token Endpoint](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/tree/main/api_docs/token.md)                               | ✅ (version 1.0)                                                             |
+| Token Endpoint                                                                | ✅ (version 1.0)                                                             |
 | [Credential Endpoint](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/tree/main/api_docs/credential.md)                     | ✅ Including proofs and repeatable invocations, (version 1.0)               |
 | Credential Issuer MetaData                                        | ✅ Unsigned metadata, (version 1.0)                                            | 
 | [Nonce endpoint](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/tree/main/api_docs/nonce_endpoint.md)                    | ✅ (version 1.0)                                                             | 

@@ -68,17 +68,19 @@ To run the EUDIW Issuer, please follow these simple steps (some of which may hav
     pip install -r app/requirements.txt
     ```
 
-6. Setup env
-   
-   -  Copy ```app/.env.example``` to ```app/.env``` and modify variables.
+6. Setup configuration
+
+   -  Copy ```app/config_issuer_backend_example.yaml``` to ```etc/issuer_config/config_issuer_backend.yaml``` and modify variables.
 
    ```shell
-   cp app/.env.example app/.env
+   cp app/config_issuer_backend_example.yaml etc/issuer_config/config_issuer_backend.yaml
    ```
+
+   The configuration location can be changed with the `ISSUER_CONFIG_PATH` environment variable.
 
 7. Service Configuration
 
-- Configure the service according to [documentation](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/blob/main/api_docs/configuration.md){:target="_blank"}  
+- Configure the service according to [documentation](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/blob/main/app/config_issuer_backend_example.yaml){:target="_blank"}  
 
 8. Install Authorization Server
 
@@ -226,14 +228,14 @@ This guide provides step-by-step instructions for deploying the **EUDIW Issuer**
     - **Customize the configuration:** Review and modify the local `docker-compose.yml` file to align with your specific deployment requirements (e.g., exposed ports, service names, volumes).
     - *Reference file:* [docker-compose.yml](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/blob/main/docker-compose.yml){:target="_blank"}
 
-3. Set Up Environment Variables
+3. Set Up the Configuration File
 
-    Service parameters and sensitive settings are managed through an environment file.
+    Service parameters and sensitive settings are managed through a YAML configuration file.
 
-    - **Create the environment file:** We recommend copying the example file to create your local configuration.
+    - **Create the configuration file:** Copy the example file to create your local configuration.
 
-    - **Update variables:** Edit the newly created `app/.env` file with your specific settings and credentials.
-        - *Reference example:* [.env example](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/blob/main/app/.env.example){:target="_blank"}
+    - **Update variables:** Edit the newly created `etc/issuer_config/config_issuer_backend.yaml` file with your specific settings and credentials.
+        - *Reference example:* [config_issuer_backend_example.yaml](https://github.com/eu-digital-identity-wallet/eudi-srv-web-issuing-eudiw-py/blob/main/app/config_issuer_backend_example.yaml){:target="_blank"}
 
 
 4. Pull the Docker Image

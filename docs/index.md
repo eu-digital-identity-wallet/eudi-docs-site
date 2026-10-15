@@ -13,7 +13,7 @@ Start exploring the EUDI Wallet Reference Implementation!
 | 📂 [Repositories](./reference-implementation/repositories-list.md) | All component and library repos |
 | 🏗️ [Designs](https://github.com/eu-digital-identity-wallet/eudi-doc-developers-hub-site/tree/main/documentation){:target="_blank"} | [High-Level](https://github.com/eu-digital-identity-wallet/eudi-doc-developers-hub-site/tree/main/documentation/eudi-wallet-hld-q3-25.md){:target="_blank"} and [Low-Level](https://github.com/eu-digital-identity-wallet/eudi-doc-developers-hub-site/tree/main/documentation/eudi-wallet-lld-q3-25.md){:target="_blank"} design of the EUDI Wallet Reference Implementation|
 | ✅ [Code Quality Assurance](./reference-implementation/quality-assurance.md) | Quality assurance tools and processes for the code |
-
+| 💻 [Releases](./reference-implementation/releases/) | Prior and current releases |
 
 **Contributions and feedback**
 

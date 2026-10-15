@@ -99,6 +99,9 @@ nav:
           - Roadmap: reference-implementation/roadmap.md
           - Repositories: reference-implementation/repositories-list.md
           - Code Quality Assurance: reference-implementation/quality-assurance.md
+          - Releases:
+               - Releases: reference-implementation/releases/index.md
+               - Q3 2026: reference-implementation/releases/2026_q3.md
       - Build:
           - Build: build/index.md
           - Build your Wallet:

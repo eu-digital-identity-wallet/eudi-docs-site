@@ -149,5 +149,5 @@ The EUDI Wallet Reference Implementation includes the following components:
 ## Other Demo Apps
 | Repository | Description |
 |---|---|
-| [Recruitment Service Demo](https://github.com/eu-digital-identity-wallet/eudi-web-recruitment-service-demo){:target="_blank"} | A demo recruitment service to showcase the utilisation of the EUDI Wallet in a ‘Cross-Border Recruitment’ business scenario. Available [here](https://dev.recruitement.demo.eudiw.dev){:target="_blank"}. | 
+| [Recruitment Service Demo](https://github.com/eu-digital-identity-wallet/eudi-web-recruitment-service-demo){:target="_blank"} | A demo recruitment service to showcase the utilisation of the EUDI Wallet in a ‘Cross-Border Recruitment’ business scenario. Available [here](https://dev.recruitment.demo.eudiw.dev){:target="_blank"}. | 
 

@@ -4317,6 +4317,9 @@
 <ul>
 <li><strong>Security Vulnerabilities</strong>: Flaws in code or configuration that attackers can exploit to compromise the system. Through SonarCloud, the following security vulnerabilities have been identified: SQL Injection, Deserialisation, and Command Injection vulnerabilities.</li>
 <li><strong>Security Hotspots based on OWASP Top 10 / CWE Mappings</strong>: <a href="https://owasp.org/www-project-top-ten/" target="_blank" rel="noopener">OWASP Top 10</a> refers to a list of the 10 most critical web application security risks. <a href="https://cwe.mitre.org/top25/" target="_blank" rel="noopener">CWE (Common Weakness Enumeration)</a> refers to a standardised catalogue of software weaknesses. Vulnerabilities and hotspots can be mapped to these categories for classification.</li>
+<li><strong>CodeQL</strong>: Performs semantic source code analysis to identify potential security vulnerabilities, such as injection flaws, insecure data handling and other coding weaknesses. It is integrated into the CI/CD workflow to support automated security checks during development and pull request reviews.</li>
+<li><strong>Dependency Management with Dependabot</strong>: Monitors project dependencies for known vulnerabilities and generates alerts when affected versions are identified. It also proposes dependency updates to help maintain secure and up-to-date third-party libraries.</li>
+<li><strong>GitHub Secret Protection</strong>: Detects exposed credentials, API keys, access tokens and other sensitive information in repositories. It helps prevent accidental disclosure of secrets through repository scanning and, where enabled, push protection.</li>
 </ul>
 </li>
 <li>
@@ -4390,9 +4393,9 @@
 <hr />
 <h3 id="security-testing">Security Testing<a class="headerlink" href="#security-testing" title="Link to this section">&para;</a></h3>
 <ul>
-<li><strong>Objectives:</strong> Security testing ensures the continuous security, integrity and resilience of the EUDI Wallet applications throughout their lifecycle. By integrating automated and manual security testing within a Secure Software Development Life Cycle (SDLC) and aligning with OWASP MASVS and MASTG standards, the framework enables early detection and remediation of vulnerabilities. It combines code analysis, penetration testing, and vulnerability management using tools such as SonarQube, OWASP Dependency-Check and DefectDojo to maintain compliance with recognised security standards and safeguard user trust in the EUDI Wallet ecosystem.</li>
+<li><strong>Objectives:</strong> Security testing aims to identify, assess and validate security vulnerabilities throughout the EUDI Wallet application lifecycle. It combines automated security checks integrated into the CI/CD pipeline with static and dynamic application security testing. The approach covers source code, compiled mobile application packages and runtime behaviour, helping identify weaknesses in application logic, data handling, configurations, dependencies and network communications. Security assessments are guided by the OWASP Mobile Application Security Verification Standard (MASVS) and Mobile Application Security Testing Guide (MASTG).</li>
 <li><strong>Requirements and Test Specifications:</strong> The <a href="https://github.com/eu-digital-identity-wallet/eudi-doc-testing-application/blob/main/doc/security/EUDI-Wallet-NiScy_Security_Requirements_and_Controls_Documentation.md" target="_blank" rel="noopener">Security Requirements and Security Test Specifications</a> of the EUDI Wallet.</li>
-<li><strong>Usage:</strong> Security testing is applied on each separate repository, based on the specific programming language used. More information can be found in the corresponding readme files.</li>
+<li><strong>Usage:</strong> Security testing is applied across the relevant application repositories, based on the specific programming language and technology used. Automated source code analysis, dependency monitoring and secret detection are incorporated into the CI/CD workflow. Static analysis of mobile application packages is performed using MobSF to identify insecure configurations, permissions, exposed information and other mobile-specific security weaknesses. Dynamic testing is performed using Frida to inspect application behaviour at runtime and Burp Suite to intercept and analyse network traffic, including API communications, authentication and session management. More information can be found in the corresponding readme files.</li>
 <li><strong>Tools:</strong> <a href="#test-tools">Security Testing Tools</a>.</li>
 </ul>
 <hr />
@@ -4424,7 +4427,7 @@
 </tr>
 <tr>
 <td>Security</td>
-<td>- OWASP MASVS/MASTG for mobile security verification <br> - OWASP Dependency-Check for third-party library analysis <br> - SQLCipher and Android Keystore for data protection <br> - Burp Suite and MobSF for dynamic testing and static analysis</td>
+<td>- <strong>CodeQL</strong>: Semantic source code analysis (SAST) to identify potential security vulnerabilities. <br> - <strong>SonarCloud</strong>: Static code analysis for security vulnerabilities and security hotspots. <br> - <strong>GitHub Dependabot</strong>: Monitoring of third-party dependencies for known vulnerabilities and dependency update recommendations. <br> - <strong>GitHub Secret Protection</strong>: Detection of exposed credentials, API keys and tokens, with push protection where enabled. <br> - <strong>MobSF (Mobile Security Framework)</strong>: Static analysis of Android and iOS application packages to identify insecure configurations, permissions, cryptographic weaknesses and exposed sensitive information. <br> - <strong>Frida</strong>: Dynamic instrumentation of running applications to inspect runtime behaviour, method calls and security mechanisms. <br> - <strong>Burp Suite</strong>: Interception and analysis of HTTP/HTTPS traffic for testing API communications, authentication, session management and network security. <br> - <strong>OWASP MASVS/MASTG</strong>: Mobile application security verification standards and testing guidelines.</td>
 </tr>
 <tr>
 <td>Performance</td>
